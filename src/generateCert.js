@@ -57,7 +57,8 @@ async function loadFonts(pdfDoc) {
  * Conversion factor: 1 pt = 1.333 px (96 DPI), so 1 px = 0.75 pt.
  * Y values are baselines in PDF coordinates (origin bottom-left).
  */
-export async function generateCertificatePdf({ name, courses, dateStr }) {
+export async function generateCertificatePdf({ name, courses, dateStr, lang = 'de' }) {
+  const L = lang === 'en'
   const templateBytes = await fetch('/cert-template.pdf').then(r => r.arrayBuffer())
   const pdfDoc = await PDFDocument.load(templateBytes)
   const page = pdfDoc.getPages()[0]
@@ -74,29 +75,31 @@ export async function generateCertificatePdf({ name, courses, dateStr }) {
     font: fonts.medium, color: COLOR_WINE,
   })
 
-  // 2) GENETIK COACH — black, Bold, 48pt
-  draw('GENETIK COACH', {
+  // 2) GENETIK COACH / GENETICS COACH — black, Bold, 48pt
+  draw(L ? 'GENETICS COACH' : 'GENETIK COACH', {
     x: 52.5, y: 617.5, size: 48,
     font: fonts.bold, color: COLOR_BLACK,
   })
 
   // 3) "Dieses Zertifikat bestätigt, dass" — black, SemiBold, 9.7pt
-  draw('Dieses Zertifikat bestätigt, dass', {
+  draw(L ? 'This certificate confirms that' : 'Dieses Zertifikat bestätigt, dass', {
     x: 52.5, y: 578, size: 9.7,
     font: fonts.semibold, color: COLOR_BLACK,
   })
 
   // 4) Recipient name — wine, Medium, 24pt (matches NOVOGENIA style, slightly smaller)
-  draw(name || 'Maria Mustermann', {
+  draw(name || (L ? 'Jane Doe' : 'Maria Mustermann'), {
     x: 52.5, y: 549, size: 24,
     font: fonts.medium, color: COLOR_WINE,
   })
 
   // 5) Date sentence — black, SemiBold, 9.7pt with bold inline date
   // (drawn as parts so the date is bold and the rest is regular)
-  const datePrefix = 'Am '
+  const datePrefix = L ? 'On ' : 'Am '
   const dateBold = dateStr
-  const dateSuffix = ' erfolgreich die folgenden Schulungsmodule absolviert und bestanden hat:'
+  const dateSuffix = L
+    ? ' successfully completed and passed the following training modules:'
+    : ' erfolgreich die folgenden Schulungsmodule absolviert und bestanden hat:'
   let dx = 52.5
   const dy = 516
   const dsize = 9.7
@@ -132,8 +135,8 @@ export async function generateCertificatePdf({ name, courses, dateStr }) {
     y -= lineGap
   }
 
-  // 7) "CEO von Novogenia" — small, Regular, aligned with the bold name above (which is in the template)
-  draw('CEO von Novogenia', {
+  // 7) "CEO von Novogenia" / "CEO of Novogenia" — small, Regular
+  draw(L ? 'CEO of Novogenia' : 'CEO von Novogenia', {
     x: 78.7, y: 77, size: 10.5,
     font: fonts.regular, color: COLOR_BLACK,
   })
@@ -142,13 +145,15 @@ export async function generateCertificatePdf({ name, courses, dateStr }) {
 }
 
 /** Trigger a browser download of the generated PDF. */
-export async function downloadCertificate({ name, courses, dateStr }) {
-  const bytes = await generateCertificatePdf({ name, courses, dateStr })
+export async function downloadCertificate({ name, courses, dateStr, lang = 'de' }) {
+  const bytes = await generateCertificatePdf({ name, courses, dateStr, lang })
   const blob = new Blob([bytes], { type: 'application/pdf' })
   const url = URL.createObjectURL(blob)
   const link = document.createElement('a')
   link.href = url
-  link.download = `NovoAcademy_Zertifikat_${(name || 'Beispiel').replace(/\s+/g, '_')}.pdf`
+  const filenamePrefix = lang === 'en' ? 'NovoAcademy_Certificate' : 'NovoAcademy_Zertifikat'
+  const fallback = lang === 'en' ? 'Example' : 'Beispiel'
+  link.download = `${filenamePrefix}_${(name || fallback).replace(/\s+/g, '_')}.pdf`
   document.body.appendChild(link)
   link.click()
   document.body.removeChild(link)

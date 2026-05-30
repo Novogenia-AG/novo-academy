@@ -37,6 +37,11 @@ public/course-materials/performance/Demo_Performance_Trainingsplan.pdf
 public/course-materials/performance/Schulungsfolien_Performance.pptx
 public/course-materials/supplements/Schulungsfolien_Supplements.pptx
 
+# ===== Env (Supabase keys etc.) =====
+.env
+.env.local
+.env.*.local
+
 # ===== Misc =====
 *.pyc
 __pycache__/

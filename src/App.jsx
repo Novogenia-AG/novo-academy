@@ -1,9 +1,22 @@
-import React, { useState, useMemo, useRef, useEffect } from 'react'
+import React, { useState, useMemo, useRef, useEffect, useContext, createContext } from 'react'
 import { downloadCertificate } from './generateCert.js'
 import CertTemplateBg from './CertTemplateBg.jsx'
 import PdfThumb from './PdfThumb.jsx'
-import { COURSES, isCertifiable, isCertified, buildInitialState, groupForDisplay, SAMPLE_COURSE_LIST, CATEGORY_CONTENT, HOME_VIDEO_SECTION, getContentTags } from './data.js'
-import * as admin from './admin.js'
+import { COURSES, isCertifiable, isCertified, buildInitialState, groupForDisplay, SAMPLE_COURSE_LIST, CATEGORY_CONTENT, HOME_VIDEO_SECTION, getHomeVideoSection, getHomeTopVideos, getContentTags, courseKey, t as tBase, getSampleCourseList } from './data.js'
+import {
+  getCurrentSession, onAuthChange, signUpWithEmail, signInWithEmail,
+  signInWithGoogle, signOut, loadProgress, saveProgress, isUsingRealSupabase,
+} from './auth.js'
+
+/* ===================== I18N CONTEXT =====================
+   Liefert die aktive Sprache an alle Komponenten ohne Prop-Drilling.
+   `useT()` gibt eine t(key)-Funktion für die aktive Sprache zurück. */
+const LangContext = createContext('de')
+const useLang = () => useContext(LangContext)
+const useT = () => {
+  const lang = useLang()
+  return (key) => tBase(lang, key)
+}
 
 /* ===================== ICONS ===================== */
 const Icon = {
@@ -46,30 +59,32 @@ const Icon = {
    Verwendet in mehreren Kursen, um auf Marken- und Design-Variationen
    der Berichte hinzuweisen. */
 function BrandNotice() {
+  const t = useT()
   return (
     <aside className="brand-notice">
       <div className="brand-notice-icon"><Icon.Info /></div>
       <div className="brand-notice-body">
-        <div className="brand-notice-title">WICHTIG ZU WISSEN</div>
-        <p className="brand-notice-text">
-          Die Analyseprogramme gibt es unter verschiedenen Marken und in
-          verschiedenen Ausführungen, also kann es sein, dass die Designs
-          und Covers der in den Materialien gezeigten Berichte nicht 1:1
-          mit den eigenen Designs zusammenpassen. Diese Schulungen sind
-          aber markenübergreifend gültig.
-        </p>
+        <div className="brand-notice-title">{t('brand_notice_title')}</div>
+        <p className="brand-notice-text">{t('brand_notice_text')}</p>
       </div>
     </aside>
   )
 }
 
 const CATEGORY_ICONS = {
+  // DE
   'Die Gen-Diät': Icon.Scale,
   'Gewichtsmanagement-Genetik': Icon.Scale, // legacy fallback
   'Genetik der gesunden Ernährung': Icon.Apple,
   'Personalisierte Nahrungsergänzung': Icon.Pill,
   'Leistungs-Genetik': Icon.Lightning,
   'Rechtlich sicher werben mit Produkten': Icon.Shield,
+  // EN — match CATEGORIES_EN values from data.en.js
+  'The Gene-Diet': Icon.Scale,
+  'Eat Healthy by Your Genes': Icon.Apple,
+  'Personalized Supplementation': Icon.Pill,
+  'Athletic Performance': Icon.Lightning,
+  'Legally Safe Advertising with Products': Icon.Shield,
 }
 
 /* ===================== SIDEBAR ===================== */
@@ -130,10 +145,12 @@ function Sidebar() {
 
 /* ===================== SEAL (real stamp — serrated, banner, stars) ===================== */
 function Seal({ certified, certifiable, size = 'normal' }) {
+  const lang = useLang()
   if (!certifiable) return null
 
   const color = certified ? '#3FA85C' : '#D5D5D5'
   const colorDark = certified ? '#2F8546' : '#BFBFBF'
+  const sealText = lang === 'en' ? 'CERTIFIED' : 'ZERTIFIZIERT'
 
   // Serrated outer edge (path)
   const N = 32
@@ -184,7 +201,7 @@ function Seal({ certified, certifiable, size = 'normal' }) {
                 fontWeight="900"
                 fontFamily="Montserrat, sans-serif"
                 letterSpacing="1.2">
-            ZERTIFIZIERT
+            {sealText}
           </text>
         </g>
       </svg>
@@ -212,7 +229,7 @@ function Tile({ course, state, onClick }) {
   }
 
   const certifiable = isCertifiable(course)
-  const certified = isCertified(course, { [course.id]: state })
+  const certified = isCertified(course, { [courseKey(course)]: state })
   const watch = state.watched ? 'completed' : (state.progress > 0 ? 'in-progress' : 'unseen')
   const tileClass = [
     'tile',
@@ -257,12 +274,13 @@ const TAG_CLASS = {
 
 /* Inline content-tag row — shows which materials the course offers. */
 function ContentTags({ course, size = 'sm' }) {
-  const tags = getContentTags(course)
+  const lang = useLang()
+  const tags = getContentTags(course, lang)
   if (!tags.length) return null
   return (
     <div className={`content-tags is-${size}`}>
-      {tags.map((t, i) => (
-        <span key={i} className={`tag ${t.className}`}>{t.label}</span>
+      {tags.map((tg, i) => (
+        <span key={i} className={`tag ${tg.className}`}>{tg.label}</span>
       ))}
     </div>
   )
@@ -305,18 +323,18 @@ function CategoryRow({ category, label, items, courseState, navigate }) {
 
       <div className="row-wrap">
         {canLeft && (
-          <button className="scroll-btn left" onClick={() => scroll(-1)} aria-label="zurück">
+          <button className="scroll-btn left" onClick={() => scroll(-1)} aria-label="previous">
             <Icon.ArrowLeft />
           </button>
         )}
         <div className="row" ref={ref}>
           {items.map(c => (
-            <Tile key={c.id} course={c} state={courseState[c.id]}
+            <Tile key={c.id} course={c} state={courseState[courseKey(c)] || {}}
                   onClick={() => c.placeholder ? null : navigate({ name: 'course-landing', courseId: c.id })} />
           ))}
         </div>
         {canRight && (
-          <button className="scroll-btn right" onClick={() => scroll(1)} aria-label="weiter">
+          <button className="scroll-btn right" onClick={() => scroll(1)} aria-label="next">
             <Icon.ArrowRight />
           </button>
         )}
@@ -366,7 +384,7 @@ function WelcomePlayer({ youtubeId = null, coverImage = null }) {
         <iframe
           className="welcome-iframe"
           src={`https://www.youtube.com/embed/${youtubeId}?${YT_EMBED_PARAMS}`}
-          title="Einleitung zur NOVO ACADEMY"
+          title="NOVO ACADEMY video"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
@@ -396,10 +414,10 @@ function WelcomePlayer({ youtubeId = null, coverImage = null }) {
               }}
             />
           )}
-          <button className="welcome-play" aria-label="Abspielen">
+          <button className="welcome-play" aria-label="Play">
             <Icon.Play />
           </button>
-          {playing && !youtubeId && <div className="welcome-fake">▶ Wiedergabe (Demo — YouTube-ID fehlt)</div>}
+          {playing && !youtubeId && <div className="welcome-fake">▶ Playback (demo — YouTube ID missing)</div>}
         </>
       )}
     </div>
@@ -416,60 +434,49 @@ function WelcomeText({ title, sub }) {
 }
 
 /* ===================== HOME PAGE ===================== */
-function HomePage({ courseState, navigate, certName, setCertName, completedCertifiableCount, certifiedTitles }) {
-  const [adminRevision, setAdminRevision] = useState(0)
-  // React to admin-toggle changes so home re-renders without page reload
-  useEffect(() => {
-    const onChange = () => setAdminRevision(r => r + 1)
-    window.addEventListener('novoacademy-admin-change', onChange)
-    return () => window.removeEventListener('novoacademy-admin-change', onChange)
-  }, [])
+function HomePage({ courseState, navigate, certName, setCertName, completedCertifiableCount, certifiedTitles, lang = 'de' }) {
   const mains = useMemo(
-    () => admin.reorderGroups(admin.filterGroups(groupForDisplay())),
-    [adminRevision]
+    () => groupForDisplay(lang),
+    [lang]
   )
   // Exclude placeholders from progress count — they aren't real modules
-  const realCourses = COURSES.filter(c => c.contentType !== 'placeholder')
+  // and respect the current language (only the visible courses count toward "100%")
+  const realCourses = COURSES.filter(c => c.contentType !== 'placeholder' && (c.lang || 'de') === lang)
   const totalModules = realCourses.length
-  const completedModules = realCourses.filter(c => courseState[c.id]?.watched).length
+  const completedModules = realCourses.filter(c => courseState[courseKey(c)]?.watched).length
   const pct = totalModules > 0 ? Math.round((completedModules / totalModules) * 100) : 0
+
+  const topVideos = getHomeTopVideos(lang)
+  const t = (k) => tBase(lang, k)
 
   return (
     <div className="content">
       {/* Two introduction videos side-by-side, each ~2 tile widths.
           Title + description sit underneath each video. */}
       <div className="home-top-row">
-        <div className="welcome-block">
-          <WelcomePlayer youtubeId="71EHqtv3NOA" />
-          <WelcomeText
-            title="Einleitung zur NOVO ACADEMY"
-            sub="Wer ist Novogenia und was kann man in diesem Schulungsportal erwarten?"
-          />
-        </div>
-        <div className="welcome-block">
-          <WelcomePlayer youtubeId="CFtFwezScLs" coverImage="/thumbnails/firmentour-cover.jpg" />
-          <WelcomeText
-            title="TOUR durch das UNTERNEHMEN"
-            sub="Lass dir von Dr. Wallerstorfer zeigen, wie Genanalysen durchgeführt werden, wie personalisierte Nahrungsergänzung und Kosmetik produziert werden kann und wir von Probe und Rohstoffen zu fertigen Produkten kommen."
-          />
-        </div>
+        {topVideos.map((v, i) => (
+          <div key={i} className="welcome-block">
+            <WelcomePlayer youtubeId={v.youtubeId} coverImage={v.coverImage} />
+            <WelcomeText title={v.title} sub={v.sub} />
+          </div>
+        ))}
       </div>
 
       {/* Clear demarcation: course section starts here */}
       <div className="courses-section-header">
         <h2 className="courses-section-title">
-          <span className="cs-text">DEINE ONLINE KURSE</span>
+          <span className="cs-text">{t('home_courses_section_title')}</span>
           <span className="cs-accent" />
         </h2>
-        <p className="courses-section-sub">Wähle ein Modul aus den folgenden Themen und beginne dein Training.</p>
+        <p className="courses-section-sub">{t('home_courses_section_sub')}</p>
 
         <section className="academy-progress">
           <div className="ap-text">
             <div className="ap-stats">
               <span className="ap-num">{completedModules}</span>
-              <span className="ap-of">von</span>
+              <span className="ap-of">{t('home_progress_of')}</span>
               <span className="ap-total">{totalModules}</span>
-              <span className="ap-label">verfügbaren Modulen absolviert</span>
+              <span className="ap-label">{t('home_progress_label')}</span>
             </div>
             <div className="ap-pct">{pct}%</div>
           </div>
@@ -498,20 +505,22 @@ function HomePage({ courseState, navigate, certName, setCertName, completedCerti
         </section>
       ))}
 
-      {/* Letzte Sektion: Bonus-Videos (Longevity etc.) */}
-      {HOME_VIDEO_SECTION?.videos?.length > 0 && (
-        <section className="home-bonus-videos">
-          <h2 className="home-bonus-title">{HOME_VIDEO_SECTION.category}</h2>
-          {HOME_VIDEO_SECTION.subtitle && (
-            <p className="home-bonus-sub">{HOME_VIDEO_SECTION.subtitle}</p>
-          )}
-          <div className="home-bonus-grid">
-            {HOME_VIDEO_SECTION.videos.map((v, i) => (
-              <RelatedVideoTile key={i} youtubeId={v.youtubeId} title={v.title} coverImage={v.coverImage} />
-            ))}
-          </div>
-        </section>
-      )}
+      {/* Letzte Sektion: Bonus-Videos — sprach-spezifisch */}
+      {(() => {
+        const hvs = getHomeVideoSection(lang)
+        if (!hvs?.videos?.length) return null
+        return (
+          <section className="home-bonus-videos">
+            <h2 className="home-bonus-title">{hvs.category}</h2>
+            {hvs.subtitle && <p className="home-bonus-sub">{hvs.subtitle}</p>}
+            <div className="home-bonus-grid">
+              {hvs.videos.map((v, i) => (
+                <RelatedVideoTile key={i} youtubeId={v.youtubeId} title={v.title} coverImage={v.coverImage} />
+              ))}
+            </div>
+          </section>
+        )
+      })()}
 
       <CertificateCTA
         name={certName}
@@ -526,7 +535,9 @@ function HomePage({ courseState, navigate, certName, setCertName, completedCerti
 }
 
 /* ===================== MINI CERTIFICATE PREVIEW (new portrait Genoacademy-style) ===================== */
-function CertificateMini({ name = 'Maria Mustermann' }) {
+function CertificateMini({ name }) {
+  const t = useT()
+  const displayName = name ?? (useLang() === 'en' ? 'Jane Doe' : 'Maria Mustermann')
   return (
     <div className="cert-mini">
       <div className="cert-mini-paper">
@@ -542,9 +553,9 @@ function CertificateMini({ name = 'Maria Mustermann' }) {
             </div>
           </div>
           <div className="cert-mini-novo-title">NOVOGENIA</div>
-          <div className="cert-mini-coach-title">GENETIK COACH</div>
-          <div className="cert-mini-presented">Dieses Zertifikat bestätigt, dass</div>
-          <div className="cert-mini-name">{name}</div>
+          <div className="cert-mini-coach-title">{t('cert_mini_genetik_coach')}</div>
+          <div className="cert-mini-presented">{t('cert_mini_presented')}</div>
+          <div className="cert-mini-name">{displayName}</div>
           <div className="cert-mini-rules"><span /><span /><span /></div>
         </div>
       </div>
@@ -554,33 +565,32 @@ function CertificateMini({ name = 'Maria Mustermann' }) {
 
 /* ===================== CERTIFICATE CTA (on home, wine bg with seal + preview) ===================== */
 function CertificateCTA({ name, onNameChange, onGenerate, onShowSample, completedCount }) {
+  const t = useT()
   return (
     <section className="cert-cta">
       <div className="cert-cta-body">
-        <h2>Zertifikat erstellen</h2>
+        <h2>{t('cert_cta_title')}</h2>
         <p>
-          Bestätige deinen Lernerfolg mit dem offiziellen <strong>Novogenia Genetics Coach</strong>-Zertifikat.
-          Es enthält alle <strong>{completedCount}</strong> abgeschlossenen und mit Test bestandenen Module deines Kontos
-          und wird mit der Unterschrift von Dr.&nbsp;Daniel Wallerstorfer ausgestellt.
+          {t('cert_cta_intro_a')}<strong>Novogenia Genetics Coach</strong>{t('cert_cta_intro_b')}<strong>{completedCount}</strong>{t('cert_cta_intro_c')}
         </p>
         <div className="cert-form">
           <label className="cert-input-wrap">
-            <span>Name auf dem Zertifikat</span>
-            <input type="text" value={name} onChange={e => onNameChange(e.target.value)} placeholder="z. B. Maria Mustermann" />
+            <span>{t('cert_cta_name_label')}</span>
+            <input type="text" value={name} onChange={e => onNameChange(e.target.value)} placeholder={t('cert_cta_name_placeholder')} />
           </label>
           <div className="cert-actions">
             <button className="btn-primary" onClick={onGenerate} disabled={!name.trim() || completedCount === 0}>
-              Zertifikat generieren →
+              {t('cert_cta_generate')}
             </button>
-            <button className="btn-ghost" onClick={onShowSample}>Beispiel ansehen</button>
+            <button className="btn-ghost" onClick={onShowSample}>{t('cert_cta_sample')}</button>
           </div>
-          {completedCount === 0 && <p className="cert-hint">Du hast noch keine Kurse zertifiziert. Sieh dir ein Beispielzertifikat an.</p>}
+          {completedCount === 0 && <p className="cert-hint">{t('cert_cta_empty_hint')}</p>}
         </div>
       </div>
 
       <div className="cert-cta-visual">
         <div className="cert-cta-stack">
-          <CertificateMini name={name?.trim() || 'Dein Name hier'} />
+          <CertificateMini name={name?.trim() || t('cert_cta_name_placeholder_seal')} />
           <div className="cert-cta-bigseal">
             <Seal certified={true} certifiable={true} size="big" />
           </div>
@@ -592,17 +602,31 @@ function CertificateCTA({ name, onNameChange, onGenerate, onShowSample, complete
 
 /* ===================== COURSE LANDING PAGE ===================== */
 function CourseLandingPage({ course, state, navigate, onBack }) {
+  const t = useT()
+  const lang = useLang()
   const certifiable = isCertifiable(course)
-  const certified = isCertified(course, { [course.id]: state })
-  const tagBadge = course.contentType === 'course' ? 'Kurs'
-    : course.contentType === 'training' ? 'Training'
-    : course.contentType === 'faq' ? 'FAQ-Sammlung'
-    : 'Zusatzmaterial'
+  const certified = isCertified(course, { [courseKey(course)]: state })
+  const tagBadge = course.contentType === 'course' ? t('cl_tag_course')
+    : course.contentType === 'training' ? t('cl_tag_training')
+    : course.contentType === 'faq' ? t('cl_tag_faq')
+    : t('cl_tag_supplementary')
+
+  const startLabel = course.contentType === 'faq'
+    ? (state.watched ? (lang === 'en' ? 'Re-open FAQ collection' : 'FAQ-Sammlung erneut öffnen') : t('cl_open_faq'))
+    : (state.watched ? (lang === 'en' ? 'Re-watch course' : 'Kurs erneut ansehen') : t('cl_start_course'))
+
+  const testLabel = state.testPassed
+    ? (lang === 'en' ? 'Retake test' : 'Test wiederholen')
+    : (lang === 'en' ? 'Start test' : 'Test starten')
+
+  const testDoneLabel = lang === 'en'
+    ? `✓ Test passed (${state.testScore}%)`
+    : `✓ Test erfolgreich abgeschlossen (${state.testScore}%)`
 
   return (
     <div className="course-landing">
       <div className="course-landing-bar">
-        <button className="btn-back" onClick={onBack}><Icon.ChevronLeft /> Zurück zur Akademie</button>
+        <button className="btn-back" onClick={onBack}><Icon.ChevronLeft /> {t('cl_back')}</button>
       </div>
 
       <div className="course-hero">
@@ -618,32 +642,30 @@ function CourseLandingPage({ course, state, navigate, onBack }) {
         <div className="course-tag-row">
           <span className={`type-pill type-${course.contentType}`}>{tagBadge}</span>
           {certifiable
-            ? <span className="cert-info">Zertifizierbar — bestehst du den Test, fließt dieses Modul in dein Zertifikat ein.</span>
-            : <span className="cert-info muted">Reines Zusatzmaterial — wird nicht im Zertifikat ausgewiesen.</span>}
-          {certified && <span className="cert-info success">✓ Du hast dieses Modul bereits zertifiziert abgeschlossen.</span>}
+            ? <span className="cert-info">{t('cl_certifiable_yes')}</span>
+            : <span className="cert-info muted">{t('cl_certifiable_no')}</span>}
+          {certified && <span className="cert-info success">{t('cl_certified_done')}</span>}
         </div>
 
         <p className="course-paragraph">{course.longDescription}</p>
         <ContentTags course={course} size="lg" />
 
-        <h3 className="course-bullets-h">Was dieser {tagBadge} dir vermittelt</h3>
+        <h3 className="course-bullets-h">{t('cl_bullets_h_prefix')}{tagBadge}{t('cl_bullets_h_suffix')}</h3>
         <ul className="course-bullets">
           {course.bullets.map((b, i) => <li key={i}>{b}</li>)}
         </ul>
 
         <div className="course-actions">
           <button className="btn-primary big" onClick={() => navigate({ name: 'course-content', courseId: course.id })}>
-            ▶ {course.contentType === 'faq'
-                ? (state.watched ? 'FAQ-Sammlung erneut öffnen' : 'FAQ-Sammlung öffnen')
-                : (state.watched ? 'Kurs erneut ansehen' : 'Kurs starten')}
+            ▶ {startLabel}
           </button>
           {certifiable && (
             <div className="course-test-wrap">
               <button className="btn-ghost big" onClick={() => navigate({ name: 'test', courseId: course.id })}>
-                ✎ {state.testPassed ? 'Test wiederholen' : 'Test starten'}
+                ✎ {testLabel}
               </button>
               {state.testPassed && (
-                <span className="test-completed">✓ Test erfolgreich abgeschlossen ({state.testScore}%)</span>
+                <span className="test-completed">{testDoneLabel}</span>
               )}
             </div>
           )}
@@ -656,21 +678,23 @@ function CourseLandingPage({ course, state, navigate, onBack }) {
 /* ===================== COURSE CONTENT PAGE ===================== */
 function VideoBlock({ video, course }) {
   const [playing, setPlaying] = useState(false)
+  const t = useT()
+  const lang = useLang()
   return (
     <div className="vid-block">
       <div className="vid-frame" onClick={() => setPlaying(true)}>
         <img src={course.thumbnail} alt="" className="vid-thumb" />
         {!playing && (
-          <button className="vid-play" aria-label="Abspielen">
+          <button className="vid-play" aria-label={lang === 'en' ? 'Play' : 'Abspielen'}>
             <Icon.Play />
           </button>
         )}
-        {playing && <div className="vid-fake-playing">▶ Wiedergabe (Demo)</div>}
+        {playing && <div className="vid-fake-playing">{lang === 'en' ? '▶ Playback (demo)' : '▶ Wiedergabe (Demo)'}</div>}
         <span className="vid-duration">{video.duration}</span>
       </div>
       <div className="vid-meta">
         <span className="vid-title">{video.title}</span>
-        <span className="vid-hint">Optional ansehen — die Reihenfolge ist nicht zwingend.</span>
+        <span className="vid-hint">{t('cc_video_optional')}</span>
       </div>
     </div>
   )
@@ -743,717 +767,6 @@ function FaqItem({ q, a }) {
 
 /* Compact YouTube tile — used for "Weitere relevante Inhalte" section.
    Tile size matches a course-preview tile. Click → inline iframe playback. */
-/* ===================== ADMIN PAGE =====================
-   Password-gated management view for the platform owner.
-   - shows all sections + courses currently in data.js
-   - per-course / per-section visibility toggles persisted in localStorage
-   - data.js stays the source of truth; this layer only adds a hide-flag.
-   - lock/unlock state is sessionStorage so it expires when the tab closes. */
-function AdminPage({ onBack }) {
-  const [pw, setPw] = useState('')
-  const [pwError, setPwError] = useState(false)
-  const [unlocked, setUnlocked] = useState(admin.isUnlocked())
-  const [revision, setRevision] = useState(0)
-  const [editingCourseId, setEditingCourseId] = useState(null)
-  // Drag state. dragging = { kind: 'section' | 'course', main?, category?, id? }
-  const [dragging, setDragging] = useState(null)
-  const [dropTarget, setDropTarget] = useState(null)  // for visual indicator
-
-  // Listen for cross-component admin state changes
-  useEffect(() => {
-    const onChange = () => setRevision(r => r + 1)
-    window.addEventListener('novoacademy-admin-change', onChange)
-    return () => window.removeEventListener('novoacademy-admin-change', onChange)
-  }, [])
-
-  const tryUnlock = (e) => {
-    e?.preventDefault?.()
-    if (admin.unlock(pw)) {
-      setUnlocked(true)
-      setPwError(false)
-      setPw('')
-    } else {
-      setPwError(true)
-    }
-  }
-
-  if (!unlocked) {
-    return (
-      <div className="admin-page">
-        <div className="admin-gate">
-          <div className="admin-gate-card">
-            <Icon.Lock />
-            <h2>Admin-Bereich</h2>
-            <p>Zugang nur für Administratoren. Bitte Passwort eingeben.</p>
-            <form onSubmit={tryUnlock} className="admin-gate-form">
-              <input
-                type="password"
-                className={`admin-gate-input${pwError ? ' is-error' : ''}`}
-                value={pw}
-                onChange={e => { setPw(e.target.value); setPwError(false) }}
-                placeholder="Passwort"
-                autoFocus
-              />
-              <button type="submit" className="btn-primary big">Entsperren</button>
-            </form>
-            {pwError && <p className="admin-gate-error">Falsches Passwort.</p>}
-            <button className="btn-ghost" onClick={onBack}>Zurück zur Akademie</button>
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  // Build group tree but ignore the visibility filter (admin sees everything).
-  // We still apply reorderGroups so the admin sees items in the current
-  // (custom) order — and rearranging here directly updates that order.
-  const allGroups = admin.reorderGroups(groupForDisplay())
-  const hiddenCourses = admin.getHiddenCourseIds()
-  const hiddenCategories = admin.getHiddenCategories()
-  const totalHidden = hiddenCourses.size + hiddenCategories.size
-  const customOrders = Object.keys(admin.getSectionOrder()).length
-                     + Object.keys(admin.getCourseOrder()).length
-
-  /* ---- drag-and-drop helpers ---- */
-  const moveItem = (list, fromIdx, toIdx) => {
-    if (fromIdx === toIdx || fromIdx < 0 || toIdx < 0) return list
-    const next = list.slice()
-    const [item] = next.splice(fromIdx, 1)
-    next.splice(toIdx, 0, item)
-    return next
-  }
-  const dropSection = (mainCat, fromCategory, toCategory) => {
-    const main = allGroups.find(g => g.mainCategory === mainCat)
-    if (!main) return
-    const cur = main.sections.map(s => s.category)
-    const fromIdx = cur.indexOf(fromCategory)
-    const toIdx = cur.indexOf(toCategory)
-    admin.setSectionOrder(mainCat, moveItem(cur, fromIdx, toIdx))
-  }
-  const dropCourse = (category, fromId, toId) => {
-    const sec = allGroups.flatMap(g => g.sections).find(s => s.category === category)
-    if (!sec) return
-    const cur = sec.items.map(c => c.id)
-    const fromIdx = cur.indexOf(fromId)
-    const toIdx = cur.indexOf(toId)
-    admin.setCourseOrder(category, moveItem(cur, fromIdx, toIdx))
-  }
-
-  return (
-    <div className="admin-page">
-      <div className="admin-bar">
-        <button className="btn-back" onClick={onBack}><Icon.ChevronLeft /> Zurück zur Akademie</button>
-        <button className="btn-ghost" onClick={() => { admin.lock(); setUnlocked(false) }}>
-          <Icon.Lock /> Abmelden
-        </button>
-      </div>
-
-      <div className="admin-wrap">
-        <header className="admin-header">
-          <h1>Admin — Kursverwaltung</h1>
-          <p className="admin-sub">
-            Hier kannst du Sektionen und Kurse für Lernende ausblenden. Die Inhalte bleiben
-            in der Plattform — sie sind nur nicht mehr in der Übersicht sichtbar.
-          </p>
-          <div className="admin-stats">
-            <span className="admin-stat"><strong>{COURSES.length}</strong> Kurse insgesamt</span>
-            <span className="admin-stat"><strong>{allGroups.reduce((s,g)=>s+g.sections.length,0)}</strong> Sektionen</span>
-            <span className="admin-stat is-hidden-stat">
-              <strong>{totalHidden}</strong> aktuell ausgeblendet
-            </span>
-            {totalHidden > 0 && (
-              <button className="admin-reset" onClick={() => admin.resetHidden()}>
-                Alle wieder anzeigen
-              </button>
-            )}
-            {customOrders > 0 && (
-              <button className="admin-reset" onClick={() => admin.resetOrders()}>
-                Reihenfolge zurücksetzen
-              </button>
-            )}
-          </div>
-          <p className="admin-hint">
-            💡 <strong>Tipp:</strong> Du kannst Sektionen und Kurse per Drag-and-Drop am ≡-Symbol neu sortieren.
-          </p>
-        </header>
-
-        {allGroups.map(g => (
-          <section key={g.mainCategory} className="admin-main-cat">
-            <h2 className="admin-main-cat-title">{g.mainCategory}</h2>
-            {g.sections.map(s => {
-              const catHidden = hiddenCategories.has(s.category)
-              const isSectionDragOver = dropTarget?.kind === 'section'
-                                        && dropTarget.main === g.mainCategory
-                                        && dropTarget.category === s.category
-              return (
-                <div
-                  key={s.category}
-                  className={[
-                    'admin-section',
-                    catHidden ? 'is-hidden' : '',
-                    dragging?.kind === 'section' && dragging.category === s.category ? 'is-dragging' : '',
-                    isSectionDragOver ? 'is-drop-target' : '',
-                  ].filter(Boolean).join(' ')}
-                  onDragOver={(e) => {
-                    if (dragging?.kind === 'section' && dragging.main === g.mainCategory
-                        && dragging.category !== s.category) {
-                      e.preventDefault()
-                      e.dataTransfer.dropEffect = 'move'
-                      setDropTarget({ kind: 'section', main: g.mainCategory, category: s.category })
-                    }
-                  }}
-                  onDragLeave={() => {
-                    if (isSectionDragOver) setDropTarget(null)
-                  }}
-                  onDrop={(e) => {
-                    if (dragging?.kind === 'section' && dragging.main === g.mainCategory) {
-                      e.preventDefault()
-                      dropSection(g.mainCategory, dragging.category, s.category)
-                      setDragging(null); setDropTarget(null)
-                    }
-                  }}
-                >
-                  <div className="admin-section-head">
-                    <span
-                      className="admin-drag-handle"
-                      draggable
-                      onDragStart={(e) => {
-                        e.dataTransfer.effectAllowed = 'move'
-                        e.dataTransfer.setData('text/plain', `section:${s.category}`)
-                        setDragging({ kind: 'section', main: g.mainCategory, category: s.category })
-                      }}
-                      onDragEnd={() => { setDragging(null); setDropTarget(null) }}
-                      title="Verschieben"
-                    >
-                      <Icon.Drag />
-                    </span>
-                    <div className="admin-section-info">
-                      <span className="admin-section-name">{s.category}</span>
-                      {s.label && <span className="admin-section-label">{s.label}</span>}
-                      <span className="admin-section-count">{s.items.length} Kurs{s.items.length !== 1 ? 'e' : ''}</span>
-                    </div>
-                    <button
-                      className={`admin-toggle ${catHidden ? 'is-off' : 'is-on'}`}
-                      onClick={() => admin.toggleCategoryHidden(s.category)}
-                      title={catHidden ? 'Sektion einblenden' : 'Ganze Sektion ausblenden'}
-                    >
-                      {catHidden ? <Icon.EyeOff /> : <Icon.Eye />}
-                      <span>{catHidden ? 'Ausgeblendet' : 'Sichtbar'}</span>
-                    </button>
-                  </div>
-                  <ul className="admin-course-list">
-                    {s.items.map(c => {
-                      const courseHidden = hiddenCourses.has(c.id) || catHidden
-                      const isModified = admin.hasOverride(c.id)
-                      const isCourseDragOver = dropTarget?.kind === 'course'
-                                               && dropTarget.category === s.category
-                                               && dropTarget.id === c.id
-                      return (
-                        <li
-                          key={c.id}
-                          className={[
-                            'admin-course',
-                            courseHidden ? 'is-hidden' : '',
-                            dragging?.kind === 'course' && dragging.id === c.id ? 'is-dragging' : '',
-                            isCourseDragOver ? 'is-drop-target' : '',
-                          ].filter(Boolean).join(' ')}
-                          onDragOver={(e) => {
-                            if (dragging?.kind === 'course' && dragging.category === s.category
-                                && dragging.id !== c.id) {
-                              e.preventDefault()
-                              e.dataTransfer.dropEffect = 'move'
-                              setDropTarget({ kind: 'course', category: s.category, id: c.id })
-                            }
-                          }}
-                          onDragLeave={() => {
-                            if (isCourseDragOver) setDropTarget(null)
-                          }}
-                          onDrop={(e) => {
-                            if (dragging?.kind === 'course' && dragging.category === s.category) {
-                              e.preventDefault()
-                              dropCourse(s.category, dragging.id, c.id)
-                              setDragging(null); setDropTarget(null)
-                            }
-                          }}
-                        >
-                          <span
-                            className="admin-drag-handle small"
-                            draggable
-                            onDragStart={(e) => {
-                              e.dataTransfer.effectAllowed = 'move'
-                              e.dataTransfer.setData('text/plain', `course:${c.id}`)
-                              setDragging({ kind: 'course', category: s.category, id: c.id })
-                            }}
-                            onDragEnd={() => { setDragging(null); setDropTarget(null) }}
-                            title="Verschieben"
-                          >
-                            <Icon.Drag />
-                          </span>
-                          <span className="admin-course-meta">
-                            <span className={`admin-course-type type-${c.contentType}`}>{c.topic}</span>
-                            <span className="admin-course-id">{c.id}</span>
-                            {isModified && <span className="admin-course-modified" title="Manuell bearbeitet">●&nbsp;bearbeitet</span>}
-                          </span>
-                          <span className="admin-course-actions">
-                            <button
-                              className="admin-edit"
-                              onClick={() => setEditingCourseId(c.id)}
-                              title="Kurs bearbeiten"
-                            >
-                              Bearbeiten
-                            </button>
-                            <button
-                              className={`admin-toggle small ${hiddenCourses.has(c.id) ? 'is-off' : 'is-on'}`}
-                              onClick={() => admin.toggleCourseHidden(c.id)}
-                              disabled={catHidden}
-                              title={catHidden ? 'Sektion ist ausgeblendet — entsperre sie zuerst' : (hiddenCourses.has(c.id) ? 'Kurs einblenden' : 'Kurs ausblenden')}
-                            >
-                              {hiddenCourses.has(c.id) ? <Icon.EyeOff /> : <Icon.Eye />}
-                            </button>
-                          </span>
-                        </li>
-                      )
-                    })}
-                  </ul>
-                </div>
-              )
-            })}
-          </section>
-        ))}
-
-        {/* Editor modal */}
-        {editingCourseId && (
-          <CourseEditor
-            key={editingCourseId + ':' + revision}
-            courseId={editingCourseId}
-            onClose={() => setEditingCourseId(null)}
-          />
-        )}
-
-        {/* Cowork workflow info */}
-        <section className="admin-cowork">
-          <h2>Neue Kurse hinzufügen — Workflow mit Claude Cowork</h2>
-          <p>
-            Für neue Kurse gibt es einen vordefinierten Ordner-Aufbau. Ein neuer Kurs ist
-            ein Ordner unter <code>content/courses/&lt;course-id&gt;/</code> mit standardisierten Dateien.
-            Cowork kann diese Ordnerstruktur für dich erzeugen — Vollständige Anleitung
-            in <code>content/README.md</code>.
-          </p>
-          <pre className="admin-pre">{`content/
-└─ courses/
-   └─ <course-id>/                         ← z. B. "supp-sci"
-      ├─ course.json                       ← Metadaten (Titel, Kategorie, Topic, Tags)
-      ├─ article.md          (optional)    ← Texteinhalte für training-Kurse
-      ├─ questions.json      (optional)    ← Test-Fragen (für certifiable Kurse)
-      ├─ faqs.json           (optional)    ← Frage/Antwort-Paare (für faq Kurse)
-      └─ documents/
-         ├─ powerpoint.pptx
-         ├─ demo-bericht.pdf
-         └─ science-review.pdf`}
-          </pre>
-          <p className="admin-cowork-hint">
-            <strong>Workflow:</strong> Du sagst Cowork „Mach mir einen neuen Kurs zu XY",
-            es legt den Ordner an, du fügst Assets hinzu — beim nächsten Build werden
-            die neuen Kurse automatisch aufgenommen.
-          </p>
-        </section>
-      </div>
-    </div>
-  )
-}
-
-/* ===================== COURSE EDITOR =====================
-   Modal that lets the admin edit any course's content. Values are stored
-   as a per-course override in localStorage; on save we re-apply them on
-   top of the baseline COURSES array (in admin.applyCourseOverrides). */
-
-// Tiny string-list editor: each row is an input + a delete button, plus
-// an "add row" link at the bottom. Used for bullets and intro-questions.
-function StringListEditor({ items = [], onChange, placeholder = '' }) {
-  return (
-    <div className="ed-list">
-      {items.map((v, i) => (
-        <div key={i} className="ed-list-row">
-          <textarea
-            className="ed-input"
-            value={v}
-            rows={Math.min(4, Math.max(1, Math.ceil((v || '').length / 80)))}
-            placeholder={placeholder}
-            onChange={e => {
-              const next = items.slice()
-              next[i] = e.target.value
-              onChange(next)
-            }}
-          />
-          <button type="button" className="ed-del" title="Entfernen"
-                  onClick={() => onChange(items.filter((_, j) => j !== i))}>×</button>
-        </div>
-      ))}
-      <button type="button" className="ed-add"
-              onClick={() => onChange([...items, ''])}>＋ Hinzufügen</button>
-    </div>
-  )
-}
-
-// Test-question editor: each row has the prompt, 4 options, and a "correct" radio.
-function QuestionListEditor({ items = [], onChange }) {
-  const updateAt = (idx, patch) => {
-    const next = items.slice()
-    next[idx] = { ...next[idx], ...patch }
-    onChange(next)
-  }
-  const updateOpt = (idx, optIdx, value) => {
-    const next = items.slice()
-    const options = (next[idx].options || ['', '', '', '']).slice()
-    options[optIdx] = value
-    next[idx] = { ...next[idx], options }
-    onChange(next)
-  }
-  return (
-    <div className="ed-questions">
-      {items.map((q, i) => (
-        <div key={i} className="ed-question">
-          <div className="ed-question-head">
-            <span className="ed-question-idx">Frage {i + 1}</span>
-            <button type="button" className="ed-del" title="Frage entfernen"
-                    onClick={() => onChange(items.filter((_, j) => j !== i))}>×</button>
-          </div>
-          <textarea
-            className="ed-input"
-            value={q.q || ''}
-            rows={2}
-            placeholder="Frage-Text"
-            onChange={e => updateAt(i, { q: e.target.value })}
-          />
-          {(q.options || ['', '', '', '']).map((opt, oi) => (
-            <div key={oi} className="ed-question-opt">
-              <input
-                type="radio"
-                name={`correct-${i}`}
-                checked={q.correct === oi}
-                onChange={() => updateAt(i, { correct: oi })}
-              />
-              <input
-                type="text"
-                className="ed-input"
-                value={opt}
-                placeholder={`Antwort ${oi + 1}`}
-                onChange={e => updateOpt(i, oi, e.target.value)}
-              />
-            </div>
-          ))}
-        </div>
-      ))}
-      <button type="button" className="ed-add"
-              onClick={() => onChange([...items, { q: '', options: ['', '', '', ''], correct: 0 }])}>
-        ＋ Frage hinzufügen
-      </button>
-    </div>
-  )
-}
-
-// Document editor: list of { title, size, type, url, thumbnail }
-function DocumentListEditor({ items = [], onChange }) {
-  const updateAt = (idx, patch) => {
-    const next = items.slice()
-    next[idx] = { ...next[idx], ...patch }
-    onChange(next)
-  }
-  return (
-    <div className="ed-docs">
-      {items.map((d, i) => (
-        <div key={i} className="ed-doc">
-          <div className="ed-doc-head">
-            <span className="ed-doc-idx">Dokument {i + 1}</span>
-            <button type="button" className="ed-del" title="Dokument entfernen"
-                    onClick={() => onChange(items.filter((_, j) => j !== i))}>×</button>
-          </div>
-          <label className="ed-field">
-            <span>Titel</span>
-            <input type="text" className="ed-input" value={d.title || ''}
-                   onChange={e => updateAt(i, { title: e.target.value })} />
-          </label>
-          <div className="ed-row">
-            <label className="ed-field" style={{ flex: 1 }}>
-              <span>Größe</span>
-              <input type="text" className="ed-input" value={d.size || ''}
-                     placeholder="z. B. 78 MB"
-                     onChange={e => updateAt(i, { size: e.target.value })} />
-            </label>
-            <label className="ed-field" style={{ width: 110 }}>
-              <span>Typ</span>
-              <select className="ed-input" value={d.type || 'pdf'}
-                      onChange={e => updateAt(i, { type: e.target.value })}>
-                <option value="pdf">pdf</option>
-                <option value="pptx">pptx</option>
-                <option value="docx">docx</option>
-                <option value="xlsx">xlsx</option>
-              </select>
-            </label>
-          </div>
-          <label className="ed-field">
-            <span>URL (Pfad zur Datei)</span>
-            <input type="text" className="ed-input" value={d.url || ''}
-                   placeholder="/course-materials/.../file.pdf"
-                   onChange={e => updateAt(i, { url: e.target.value })} />
-          </label>
-          <label className="ed-field">
-            <span>Thumbnail (optional, Pfad zum Bild)</span>
-            <input type="text" className="ed-input" value={d.thumbnail || ''}
-                   placeholder="/thumbnails/pptx-template.jpg"
-                   onChange={e => updateAt(i, { thumbnail: e.target.value || undefined })} />
-          </label>
-        </div>
-      ))}
-      <button type="button" className="ed-add"
-              onClick={() => onChange([...items, { title: '', size: '', type: 'pdf', url: '' }])}>
-        ＋ Dokument hinzufügen
-      </button>
-    </div>
-  )
-}
-
-// Video-segment editor: list of { title, youtubeId }
-function VideoSegmentEditor({ items = [], onChange }) {
-  const updateAt = (idx, patch) => {
-    const next = items.slice()
-    next[idx] = { ...next[idx], ...patch }
-    onChange(next)
-  }
-  return (
-    <div className="ed-list">
-      {items.map((seg, i) => (
-        <div key={i} className="ed-video-row">
-          <input type="text" className="ed-input" value={seg.title || ''}
-                 placeholder="Titel des Video-Kapitels"
-                 onChange={e => updateAt(i, { title: e.target.value })} />
-          <input type="text" className="ed-input ed-input-mono" value={seg.youtubeId || ''}
-                 placeholder="YouTube-ID"
-                 onChange={e => updateAt(i, { youtubeId: e.target.value })} />
-          <button type="button" className="ed-del" title="Entfernen"
-                  onClick={() => onChange(items.filter((_, j) => j !== i))}>×</button>
-        </div>
-      ))}
-      <button type="button" className="ed-add"
-              onClick={() => onChange([...items, { title: '', youtubeId: '' }])}>
-        ＋ Video-Kapitel
-      </button>
-    </div>
-  )
-}
-
-function CourseEditor({ courseId, onClose }) {
-  const baseline = admin.getBaseline(COURSES)
-  const baseCourse = baseline[courseId]
-  const current = COURSES.find(c => c.id === courseId)
-  const hasOv = admin.hasOverride(courseId)
-  // Form state starts from the *current* (possibly overridden) course
-  const [form, setForm] = useState(() => JSON.parse(JSON.stringify(current)))
-
-  const set = (key, value) => setForm(f => ({ ...f, [key]: value }))
-
-  const save = () => {
-    // Build the override as the diff vs. baseline, so we only persist
-    // what was actually changed.  Reduces noise and keeps localStorage small.
-    const override = {}
-    const fields = [
-      'category', 'topic', 'contentType', 'description', 'longDescription',
-      'bullets', 'thumbnail', 'coverImage', 'youtubeId',
-      'introQuestionsHeader', 'introQuestions',
-      'postVideoText', 'brandNoticeAboveVideos', 'brandNoticeAboveDownloads',
-      'videoSegments', 'questions', 'documents',
-      'hasDownload', 'hasText',
-    ]
-    for (const k of fields) {
-      const a = JSON.stringify(form[k] ?? null)
-      const b = JSON.stringify(baseCourse[k] ?? null)
-      if (a !== b) override[k] = form[k]
-    }
-    admin.replaceCourseOverride(courseId, override)
-    onClose()
-  }
-
-  const resetToOriginal = () => {
-    if (!confirm('Alle Änderungen an diesem Kurs zurücksetzen?')) return
-    admin.resetCourseOverride(courseId)
-    onClose()
-  }
-
-  return (
-    <div className="ed-modal-overlay" onClick={(e) => { if (e.target === e.currentTarget) onClose() }}>
-      <div className="ed-modal">
-        <div className="ed-modal-head">
-          <div>
-            <span className="ed-modal-id">{courseId}</span>
-            <h2>Kurs bearbeiten {hasOv && <span className="ed-mod-badge">geändert</span>}</h2>
-          </div>
-          <button type="button" className="ed-modal-close" onClick={onClose}>×</button>
-        </div>
-
-        <div className="ed-modal-body">
-          {/* ---- Grunddaten ---- */}
-          <fieldset className="ed-group">
-            <legend>Grunddaten</legend>
-            <label className="ed-field">
-              <span>Kategorie (Sektion)</span>
-              <input type="text" className="ed-input" value={form.category || ''}
-                     onChange={e => set('category', e.target.value)} />
-            </label>
-            <label className="ed-field">
-              <span>Topic</span>
-              <select className="ed-input" value={form.topic || ''}
-                      onChange={e => set('topic', e.target.value)}>
-                <option value="Wissenschaftliche Basis">Wissenschaftliche Basis</option>
-                <option value="Beratungsschulung">Beratungsschulung</option>
-                <option value="Häufige Fragen">Häufige Fragen</option>
-                <option value={form.topic}>{form.topic}</option>
-              </select>
-            </label>
-            <label className="ed-field">
-              <span>Content-Type</span>
-              <select className="ed-input" value={form.contentType || ''}
-                      onChange={e => set('contentType', e.target.value)}>
-                <option value="course">course (Video + Test)</option>
-                <option value="training">training (Text-basiert)</option>
-                <option value="faq">faq (Fragen-Sammlung)</option>
-                <option value="supplementary">supplementary (nur Material)</option>
-              </select>
-            </label>
-          </fieldset>
-
-          {/* ---- Texte ---- */}
-          <fieldset className="ed-group">
-            <legend>Beschreibungstexte</legend>
-            <label className="ed-field">
-              <span>Kurzbeschreibung (Tile)</span>
-              <textarea className="ed-input" rows={2} value={form.description || ''}
-                        onChange={e => set('description', e.target.value)} />
-            </label>
-            <label className="ed-field">
-              <span>Lange Beschreibung (Kurs-Detail)</span>
-              <textarea className="ed-input" rows={4} value={form.longDescription || ''}
-                        onChange={e => set('longDescription', e.target.value)} />
-            </label>
-            <label className="ed-field">
-              <span>Bullets (Was dieser Kurs vermittelt)</span>
-              <StringListEditor items={form.bullets || []}
-                                onChange={v => set('bullets', v)}
-                                placeholder="Stichpunkt" />
-            </label>
-          </fieldset>
-
-          {/* ---- Intro-Fragen ---- */}
-          <fieldset className="ed-group">
-            <legend>Intro-Fragen (oberhalb Video)</legend>
-            <label className="ed-field">
-              <span>Header-Zeile</span>
-              <input type="text" className="ed-input" value={form.introQuestionsHeader || ''}
-                     placeholder="z. B. In dieser Schulung lernst du:"
-                     onChange={e => set('introQuestionsHeader', e.target.value)} />
-            </label>
-            <label className="ed-field">
-              <span>Fragen-Liste</span>
-              <StringListEditor items={form.introQuestions || []}
-                                onChange={v => set('introQuestions', v)}
-                                placeholder="Frage, die das Video beantwortet" />
-            </label>
-            <label className="ed-field">
-              <span>Text nach den Videos (postVideoText)</span>
-              <textarea className="ed-input" rows={3} value={form.postVideoText || ''}
-                        onChange={e => set('postVideoText', e.target.value)} />
-            </label>
-          </fieldset>
-
-          {/* ---- Bilder & Video ---- */}
-          <fieldset className="ed-group">
-            <legend>Bilder & Video</legend>
-            <label className="ed-field">
-              <span>Tile-Thumbnail (Pfad oder T(N))</span>
-              <input type="text" className="ed-input ed-input-mono" value={form.thumbnail || ''}
-                     placeholder="/thumbnails/course-xy.jpg"
-                     onChange={e => set('thumbnail', e.target.value)} />
-            </label>
-            <label className="ed-field">
-              <span>YouTube-ID (Haupt-Video)</span>
-              <input type="text" className="ed-input ed-input-mono" value={form.youtubeId || ''}
-                     placeholder="abc123XYZ"
-                     onChange={e => set('youtubeId', e.target.value || undefined)} />
-            </label>
-            <label className="ed-field">
-              <span>Cover-Image (Override für YouTube-Thumb, optional)</span>
-              <input type="text" className="ed-input ed-input-mono" value={form.coverImage || ''}
-                     placeholder="/thumbnails/xy-cover.jpg"
-                     onChange={e => set('coverImage', e.target.value || undefined)} />
-            </label>
-            {(form.videoSegments?.length > 0 || form.contentType === 'course') && (
-              <label className="ed-field">
-                <span>Video-Kapitel (für Beratungsschulungen)</span>
-                <VideoSegmentEditor items={form.videoSegments || []}
-                                    onChange={v => set('videoSegments', v.length ? v : undefined)} />
-              </label>
-            )}
-          </fieldset>
-
-          {/* ---- Test-Fragen ---- */}
-          {(form.contentType === 'course' || form.contentType === 'training') && (
-            <fieldset className="ed-group">
-              <legend>Test-Fragen (für Zertifizierung)</legend>
-              <QuestionListEditor items={form.questions || []}
-                                  onChange={v => set('questions', v)} />
-            </fieldset>
-          )}
-
-          {/* ---- Downloads ---- */}
-          <fieldset className="ed-group">
-            <legend>Downloads (Dokumente)</legend>
-            <DocumentListEditor items={form.documents || []}
-                                onChange={v => set('documents', v)} />
-            <div className="ed-row">
-              <label className="ed-checkbox">
-                <input type="checkbox" checked={!!form.hasDownload}
-                       onChange={e => set('hasDownload', e.target.checked)} />
-                <span>hasDownload (Download-Bereich anzeigen)</span>
-              </label>
-              <label className="ed-checkbox">
-                <input type="checkbox" checked={!!form.hasText}
-                       onChange={e => set('hasText', e.target.checked)} />
-                <span>hasText (Text-Inhalt anzeigen)</span>
-              </label>
-            </div>
-          </fieldset>
-
-          {/* ---- Branding ---- */}
-          <fieldset className="ed-group">
-            <legend>Brand-Hinweise</legend>
-            <label className="ed-checkbox">
-              <input type="checkbox" checked={!!form.brandNoticeAboveVideos}
-                     onChange={e => set('brandNoticeAboveVideos', e.target.checked)} />
-              <span>BrandNotice oberhalb der Videos anzeigen</span>
-            </label>
-            <label className="ed-checkbox">
-              <input type="checkbox" checked={!!form.brandNoticeAboveDownloads}
-                     onChange={e => set('brandNoticeAboveDownloads', e.target.checked)} />
-              <span>BrandNotice oberhalb der Downloads anzeigen</span>
-            </label>
-          </fieldset>
-        </div>
-
-        <div className="ed-modal-foot">
-          {hasOv && (
-            <button type="button" className="ed-reset" onClick={resetToOriginal}>
-              Original wiederherstellen
-            </button>
-          )}
-          <div className="ed-modal-foot-right">
-            <button type="button" className="btn-ghost" onClick={onClose}>Abbrechen</button>
-            <button type="button" className="btn-primary big" onClick={save}>Speichern</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
 function RelatedVideoTile({ youtubeId, title, coverImage = null }) {
   const [playing, setPlaying] = useState(false)
   // Use explicit coverImage if provided (for unlisted videos whose YouTube
@@ -1484,7 +797,7 @@ function RelatedVideoTile({ youtubeId, title, coverImage = null }) {
                    e.target.src = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`
                  }
                }} />
-          <button className="related-video-play" aria-label="Video abspielen">
+          <button className="related-video-play" aria-label="Play video">
             <Icon.Play />
           </button>
         </>
@@ -1495,10 +808,12 @@ function RelatedVideoTile({ youtubeId, title, coverImage = null }) {
 
 function FaqPage({ course, state, onComplete, onBack }) {
   const [expandedAll, setExpandedAll] = useState(false)
+  const lang = useLang()
+  const L = lang === 'en'
   return (
     <div className="course-content-page faq-page">
       <div className="course-landing-bar">
-        <button className="btn-back" onClick={onBack}><Icon.ChevronLeft /> Zurück zur Kursübersicht</button>
+        <button className="btn-back" onClick={onBack}><Icon.ChevronLeft /> {L ? 'Back to course overview' : 'Zurück zur Kursübersicht'}</button>
       </div>
 
       <div className="cc-wrap">
@@ -1509,7 +824,7 @@ function FaqPage({ course, state, onComplete, onBack }) {
         <p className="cc-paragraph">{course.longDescription}</p>
 
         <div className="faq-toolbar">
-          <span className="faq-hint">Klicke auf eine Frage, um die Antwort einzublenden — perfekt zum Selbsttest.</span>
+          <span className="faq-hint">{L ? 'Click a question to reveal the answer — perfect for self-testing.' : 'Klicke auf eine Frage, um die Antwort einzublenden — perfekt zum Selbsttest.'}</span>
         </div>
 
         {course.faqGroups?.map((group, gi) => (
@@ -1525,9 +840,11 @@ function FaqPage({ course, state, onComplete, onBack }) {
 
         {course.hasDownload && course.documents?.length > 0 && (
           <>
-            <h2 className="cc-h">Komplette FAQ-Sammlung als PDF</h2>
+            <h2 className="cc-h">{L ? 'Complete FAQ collection as PDF' : 'Komplette FAQ-Sammlung als PDF'}</h2>
             <p className="cc-paragraph">
-              Lade die gesamte Sammlung als Novogenia/Novodaily-gebrandetes PDF herunter — ideal als Nachschlagewerk für Beratungsgespräche oder zum Ausdrucken.
+              {L
+                ? 'Download the entire collection as a Novogenia/Novodaily-branded PDF — perfect as a reference for consultation sessions or for printing.'
+                : 'Lade die gesamte Sammlung als Novogenia/Novodaily-gebrandetes PDF herunter — ideal als Nachschlagewerk für Beratungsgespräche oder zum Ausdrucken.'}
             </p>
             <div className="cc-docs">
               {course.documents.map((d, i) => {
@@ -1557,14 +874,14 @@ function FaqPage({ course, state, onComplete, onBack }) {
 
         <div className="cc-complete">
           {state.watched
-            ? <p className="cc-already">Du hast diese FAQ-Sammlung bereits durchgesehen.</p>
-            : <p className="cc-prompt">Wenn du alle Fragen durchgegangen bist, kannst du das Modul als angesehen markieren.</p>}
+            ? <p className="cc-already">{L ? 'You have already gone through this FAQ collection.' : 'Du hast diese FAQ-Sammlung bereits durchgesehen.'}</p>
+            : <p className="cc-prompt">{L ? 'When you have gone through all questions, you can mark the module as viewed.' : 'Wenn du alle Fragen durchgegangen bist, kannst du das Modul als angesehen markieren.'}</p>}
           <div className="cc-actions-row">
             <button className="cc-action-btn" onClick={onComplete}>
               <span className="cc-action-icon"><Icon.Cap /></span>
               <span className="cc-action-text">
-                <span className="cc-action-title">Modul abschließen</span>
-                <span className="cc-action-sub">Markiere die FAQ-Sammlung als durchgesehen</span>
+                <span className="cc-action-title">{L ? 'Complete module' : 'Modul abschließen'}</span>
+                <span className="cc-action-sub">{L ? 'Mark the FAQ collection as viewed' : 'Markiere die FAQ-Sammlung als durchgesehen'}</span>
               </span>
             </button>
           </div>
@@ -1575,6 +892,10 @@ function FaqPage({ course, state, onComplete, onBack }) {
 }
 
 function CourseContentPage({ course, state, onComplete, onBack, onStartTest }) {
+  const lang = useLang()
+  const L = lang === 'en'
+  // CATEGORY_CONTENT is only keyed for German categories. For EN courses
+  // (which always use introText/introQuestions), this lookup returns {} and is unused.
   const content = CATEGORY_CONTENT[course.category] || {}
   // Per-course introText / introQuestions overrides the generic "Warum Gene…" block
   const useIntroText = !!course.introText || !!course.introQuestions
@@ -1582,7 +903,7 @@ function CourseContentPage({ course, state, onComplete, onBack, onStartTest }) {
   return (
     <div className="course-content-page">
       <div className="course-landing-bar">
-        <button className="btn-back" onClick={onBack}><Icon.ChevronLeft /> Zurück zur Kursübersicht</button>
+        <button className="btn-back" onClick={onBack}><Icon.ChevronLeft /> {L ? 'Back to course overview' : 'Zurück zur Kursübersicht'}</button>
       </div>
 
       <div className="cc-wrap">
@@ -1591,7 +912,7 @@ function CourseContentPage({ course, state, onComplete, onBack, onStartTest }) {
           {certifiable && (
             <div className="cc-cert-badge">
               <Seal certified={false} certifiable={true} />
-              <span className="cc-cert-label">ZERTIFIZIERBARER KURS</span>
+              <span className="cc-cert-label">{L ? 'CERTIFIABLE COURSE' : 'ZERTIFIZIERBARER KURS'}</span>
             </div>
           )}
         </div>
@@ -1624,11 +945,15 @@ function CourseContentPage({ course, state, onComplete, onBack, onStartTest }) {
             const callout = sec.callout
               ? (typeof sec.callout === 'string' ? { text: sec.callout, tone: 'neutral' } : sec.callout)
               : null
-            const calloutLabel = callout && (
-              callout.tone === 'safe' ? 'SICHER'
-              : callout.tone === 'critical' ? 'KRITISCH'
-              : callout.tone === 'caveat' ? 'MIT DISCLAIMER'
-              : 'WICHTIG'
+            const calloutLabel = callout && (L
+              ? (callout.tone === 'safe' ? 'SAFE'
+                : callout.tone === 'critical' ? 'CRITICAL'
+                : callout.tone === 'caveat' ? 'WITH DISCLAIMER'
+                : 'IMPORTANT')
+              : (callout.tone === 'safe' ? 'SICHER'
+                : callout.tone === 'critical' ? 'KRITISCH'
+                : callout.tone === 'caveat' ? 'MIT DISCLAIMER'
+                : 'WICHTIG')
             )
             return (
             <section key={i} className="cc-article-section">
@@ -1662,8 +987,21 @@ function CourseContentPage({ course, state, onComplete, onBack, onStartTest }) {
               <FullVideo course={course} youtubeId={seg.youtubeId} title={seg.title} />
             </section>
           ))
-        ) : (
+        ) : course.youtubeId ? (
           <FullVideo course={course} />
+        ) : (
+          // No video available — show a notice instead of an unclickable empty player.
+          <aside className="brand-notice">
+            <div className="brand-notice-icon"><Icon.Info /></div>
+            <div className="brand-notice-body">
+              <div className="brand-notice-title">{L ? 'VIDEO COMING SOON' : 'VIDEO IN VORBEREITUNG'}</div>
+              <p className="brand-notice-text">
+                {L
+                  ? 'A dedicated English video for this module has not been recorded yet. The training content and test below remain fully functional — the video segment will be added as soon as the recording is available.'
+                  : 'Ein passendes Video für dieses Modul ist noch in Vorbereitung. Die Inhalte und der Test funktionieren bereits vollständig — der Video-Block wird ergänzt, sobald die Aufnahme verfügbar ist.'}
+              </p>
+            </div>
+          </aside>
         )}
 
         {course.postVideoText && <p className="cc-paragraph">{course.postVideoText}</p>}
@@ -1675,7 +1013,7 @@ function CourseContentPage({ course, state, onComplete, onBack, onStartTest }) {
 
         {course.hasDownload && (
           <>
-            <h2 className="cc-h">Dokumente zum Mitnehmen</h2>
+            <h2 className="cc-h">{L ? 'Documents to take with you' : 'Dokumente zum Mitnehmen'}</h2>
             {course.brandNoticeAboveDownloads && <BrandNotice />}
             <div className="cc-docs">
               {course.documents.map((d, i) => {
@@ -1705,22 +1043,22 @@ function CourseContentPage({ course, state, onComplete, onBack, onStartTest }) {
 
         <div className="cc-complete">
           {state.watched
-            ? <p className="cc-already">Du hast dieses Modul bereits erfolgreich abgeschlossen.</p>
-            : <p className="cc-prompt">Wenn du alle relevanten Inhalte angesehen hast, schließe das Modul ab und lege deinen Test ab.</p>}
+            ? <p className="cc-already">{L ? 'You have already successfully completed this module.' : 'Du hast dieses Modul bereits erfolgreich abgeschlossen.'}</p>
+            : <p className="cc-prompt">{L ? 'When you have watched all relevant content, complete the module and take your test.' : 'Wenn du alle relevanten Inhalte angesehen hast, schließe das Modul ab und lege deinen Test ab.'}</p>}
           <div className="cc-actions-row">
             <button className="cc-action-btn" onClick={onComplete}>
               <span className="cc-action-icon"><Icon.Cap /></span>
               <span className="cc-action-text">
-                <span className="cc-action-title">Training abschließen</span>
-                <span className="cc-action-sub">Markiere dieses Modul als erfolgreich abgeschlossen</span>
+                <span className="cc-action-title">{L ? 'Complete training' : 'Training abschließen'}</span>
+                <span className="cc-action-sub">{L ? 'Mark this module as successfully completed' : 'Markiere dieses Modul als erfolgreich abgeschlossen'}</span>
               </span>
             </button>
             {isCertifiable(course) && onStartTest && (
               <button className="cc-action-btn cc-action-btn-alt" onClick={onStartTest}>
                 <span className="cc-action-icon"><Icon.Quiz /></span>
                 <span className="cc-action-text">
-                  <span className="cc-action-title">Test beginnen</span>
-                  <span className="cc-action-sub">Stelle dein Wissen unter Beweis und sichere dein Zertifikat</span>
+                  <span className="cc-action-title">{L ? 'Start the test' : 'Test beginnen'}</span>
+                  <span className="cc-action-sub">{L ? 'Prove your knowledge and secure your certificate' : 'Stelle dein Wissen unter Beweis und sichere dein Zertifikat'}</span>
                 </span>
               </button>
             )}
@@ -1748,10 +1086,14 @@ function GenReportDemo({ title = 'Fettempfindlichkeit hoch', position = 20, text
 
 function TestPage({ course, onSubmit, onBack }) {
   const [answers, setAnswers] = useState({})
+  const lang = useLang()
+  const L = lang === 'en'
 
   const submit = () => {
     if (Object.keys(answers).length < course.questions.length) {
-      if (!confirm('Du hast nicht alle Fragen beantwortet. Trotzdem abgeben?')) return
+      if (!confirm(L
+        ? 'You haven\'t answered all questions. Submit anyway?'
+        : 'Du hast nicht alle Fragen beantwortet. Trotzdem abgeben?')) return
     }
     let correct = 0
     course.questions.forEach((q, i) => {
@@ -1762,46 +1104,35 @@ function TestPage({ course, onSubmit, onBack }) {
     onSubmit({ score, passed })
   }
 
-  // Demo: attach a genreport image to the first question of every test
-  const demoImage = (
-    <GenReportDemo
-      title="Fettempfindlichkeit hoch"
-      position={22}
-      text="Aufgrund deiner Gene tendierst du dazu, mehr Fett aus dem Darm aufzunehmen und zu speichern als Menschen mit anderen Genen. Ein hoher Fettgehalt in Lebensmitteln führt somit zu Übergewicht. Dabei geht es hauptsächlich um das Gesamtfett. Deshalb wäre das gesunde, ungesättigte Fett zu bevorzugen."
-    />
-  )
-
   return (
     <div className="test-page">
       <div className="course-landing-bar">
-        <button className="btn-back" onClick={onBack}><Icon.ChevronLeft /> Zurück zur Kursübersicht</button>
+        <button className="btn-back" onClick={onBack}><Icon.ChevronLeft /> {L ? 'Back to course overview' : 'Zurück zur Kursübersicht'}</button>
       </div>
 
       <div className="cc-wrap">
-        <h1 className="cc-title">Test: {course.category}: {course.topic}</h1>
+        <h1 className="cc-title">{L ? 'Test' : 'Test'}: {course.category}: {course.topic}</h1>
         <p className="cc-sub">
-          Beantworte alle Fragen in einem Durchgang. Bestehensgrenze: <strong>80&nbsp;% korrekte Antworten</strong>.
-          Du erhältst nach Abgabe nur das Gesamtergebnis (keine Einzelauflösung).
+          {L ? (
+            <>Answer all questions in a single attempt. Pass threshold: <strong>80&nbsp;% correct answers</strong>. After submission you will only receive the overall result (no per-question breakdown).</>
+          ) : (
+            <>Beantworte alle Fragen in einem Durchgang. Bestehensgrenze: <strong>80&nbsp;% korrekte Antworten</strong>. Du erhältst nach Abgabe nur das Gesamtergebnis (keine Einzelauflösung).</>
+          )}
         </p>
 
         <div className="test-questions">
           {course.questions.map((q, qi) => {
-            // Determine what visual aid (if any) to show with the question:
-            //   1. q.screenshot  → URL string of an actual screenshot image
-            //   2. q.screenshotNote → placeholder marker until a real screenshot is dropped in
-            //   3. q.image  → custom JSX (legacy support)
-            //   4. fallback: only the very first question on courses without ANY of the above gets the demo Genreport
             let visual = null
             if (q.screenshot) {
               visual = <img src={q.screenshot} alt="" className="test-q-screenshot" />
             } else if (q.screenshotNote) {
-              visual = <div className="test-q-screenshot-placeholder">📷 Screenshot folgt — {q.screenshotNote}</div>
+              visual = <div className="test-q-screenshot-placeholder">📷 {L ? 'Screenshot coming' : 'Screenshot folgt'} — {q.screenshotNote}</div>
             } else if (q.image) {
               visual = q.image
             }
             return (
               <fieldset key={qi} className="test-q">
-                <legend className="test-q-legend"><span className="test-q-no">Frage {qi + 1}</span> {q.q}</legend>
+                <legend className="test-q-legend"><span className="test-q-no">{L ? 'Question' : 'Frage'} {qi + 1}</span> {q.q}</legend>
                 {visual && <div className="test-q-image">{visual}</div>}
                 <div className="test-options">
                   {q.options.map((o, oi) => (
@@ -1819,7 +1150,11 @@ function TestPage({ course, onSubmit, onBack }) {
         </div>
 
         <div className="test-submit">
-          <button className="btn-primary big" onClick={submit}>Test abschließen ({Object.keys(answers).length}/{course.questions.length} beantwortet)</button>
+          <button className="btn-primary big" onClick={submit}>
+            {L
+              ? `Finish test (${Object.keys(answers).length}/${course.questions.length} answered)`
+              : `Test abschließen (${Object.keys(answers).length}/${course.questions.length} beantwortet)`}
+          </button>
         </div>
       </div>
     </div>
@@ -1828,10 +1163,12 @@ function TestPage({ course, onSubmit, onBack }) {
 
 /* ===================== TEST RESULT ===================== */
 function TestResultPage({ course, score, passed, navigate, onBack }) {
+  const lang = useLang()
+  const L = lang === 'en'
   return (
     <div className="test-result">
       <div className="course-landing-bar">
-        <button className="btn-back" onClick={onBack}><Icon.ChevronLeft /> Zurück zur Kursübersicht</button>
+        <button className="btn-back" onClick={onBack}><Icon.ChevronLeft /> {L ? 'Back to course overview' : 'Zurück zur Kursübersicht'}</button>
       </div>
 
       <div className="tr-card">
@@ -1847,23 +1184,27 @@ function TestResultPage({ course, score, passed, navigate, onBack }) {
         </div>
 
         <h1 className={`tr-h ${passed ? 'pass' : 'fail'}`}>
-          {passed ? 'Bestanden!' : 'Leider nicht bestanden'}
+          {passed ? (L ? 'Passed!' : 'Bestanden!') : (L ? 'Unfortunately not passed' : 'Leider nicht bestanden')}
         </h1>
         <p className="tr-msg">
           {passed
-            ? `Du hast den Test zu „${course.topic}" mit ${score}% erfolgreich bestanden. Das Modul ist ab sofort als „Zertifiziert" markiert.`
-            : `Du hast ${score}% korrekte Antworten erreicht. Zum Bestehen sind mindestens 80% erforderlich. Schau dir den Kurs noch einmal an und versuche es erneut.`}
+            ? (L
+                ? `You passed the "${course.topic}" test with ${score}%. The module is now marked as "Certified".`
+                : `Du hast den Test zu „${course.topic}" mit ${score}% erfolgreich bestanden. Das Modul ist ab sofort als „Zertifiziert" markiert.`)
+            : (L
+                ? `You achieved ${score}% correct answers. At least 80% is required to pass. Review the course once more and try again.`
+                : `Du hast ${score}% korrekte Antworten erreicht. Zum Bestehen sind mindestens 80% erforderlich. Schau dir den Kurs noch einmal an und versuche es erneut.`)}
         </p>
 
         <div className="tr-actions">
           {passed
             ? (<>
-                <button className="btn-primary big" onClick={onBack}>Zur Kursübersicht</button>
-                <button className="btn-ghost big" onClick={() => navigate({ name: 'home' })}>Alle Kurse</button>
+                <button className="btn-primary big" onClick={onBack}>{L ? 'To course overview' : 'Zur Kursübersicht'}</button>
+                <button className="btn-ghost big" onClick={() => navigate({ name: 'home' })}>{L ? 'All courses' : 'Alle Kurse'}</button>
               </>)
             : (<>
-                <button className="btn-primary big" onClick={() => navigate({ name: 'test', courseId: course.id })}>Erneut versuchen</button>
-                <button className="btn-ghost big" onClick={() => navigate({ name: 'course-content', courseId: course.id })}>Kurs nochmal ansehen</button>
+                <button className="btn-primary big" onClick={() => navigate({ name: 'test', courseId: course.id })}>{L ? 'Try again' : 'Erneut versuchen'}</button>
+                <button className="btn-ghost big" onClick={() => navigate({ name: 'course-content', courseId: course.id })}>{L ? 'Review course' : 'Kurs nochmal ansehen'}</button>
               </>)}
         </div>
       </div>
@@ -1880,6 +1221,9 @@ function Signature() {
 
 const formatDateDE = (d = new Date()) =>
   d.toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' })
+const formatDateEN = (d = new Date()) =>
+  d.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })
+const formatDate = (lang, d) => lang === 'en' ? formatDateEN(d) : formatDateDE(d)
 
 /* Novogenia logo — uses /novogenia-logo.png if dropped in /public, otherwise inline SVG fallback */
 function NovogeniaLogo({ className = '' }) {
@@ -1940,16 +1284,20 @@ function FauxQR({ size = 88 }) {
 }
 
 function CertificatePage({ name, courses, isSample, onBack }) {
-  const dateStr = formatDateDE(isSample ? new Date(2026, 4, 5) : new Date())
+  const lang = useLang()
+  const t = useT()
+  const L = lang === 'en'
+  const fallbackName = L ? 'Jane Doe' : 'Maria Mustermann'
+  const dateStr = formatDate(lang, isSample ? new Date(2026, 4, 5) : new Date())
   const [downloading, setDownloading] = useState(false)
 
   const downloadPdf = async () => {
     setDownloading(true)
     try {
-      await downloadCertificate({ name: name || 'Maria Mustermann', courses, dateStr })
+      await downloadCertificate({ name: name || fallbackName, courses, dateStr, lang })
     } catch (err) {
       console.error('PDF generation failed', err)
-      alert('PDF konnte nicht erstellt werden. Bitte erneut versuchen.')
+      alert(L ? 'Failed to generate the PDF. Please try again.' : 'PDF konnte nicht erstellt werden. Bitte erneut versuchen.')
     } finally {
       setDownloading(false)
     }
@@ -1958,11 +1306,11 @@ function CertificatePage({ name, courses, isSample, onBack }) {
   return (
     <div className="cert-view">
       <div className="cert-toolbar">
-        <button className="btn-ghost" onClick={onBack}><Icon.ChevronLeft /> Zurück</button>
+        <button className="btn-ghost" onClick={onBack}><Icon.ChevronLeft /> {L ? 'Back' : 'Zurück'}</button>
         <div className="cert-toolbar-spacer" />
-        {isSample && <span className="sample-badge">BEISPIEL</span>}
+        {isSample && <span className="sample-badge">{L ? 'EXAMPLE' : 'BEISPIEL'}</span>}
         <button className="btn-primary" onClick={downloadPdf} disabled={downloading}>
-          <Icon.Download /> {downloading ? 'Wird erstellt...' : 'Als PDF herunterladen'}
+          <Icon.Download /> {downloading ? (L ? 'Generating...' : 'Wird erstellt...') : (L ? 'Download as PDF' : 'Als PDF herunterladen')}
         </button>
       </div>
 
@@ -1973,17 +1321,16 @@ function CertificatePage({ name, courses, isSample, onBack }) {
           <CertTemplateBg />
 
           <div className="cert-content">
-            {/* Title block: NOVOGENIA (wine, Medium 26pt) + GENETIK COACH (black, Bold 48pt) */}
             <p className="cert-novo">NOVOGENIA</p>
-            <p className="cert-coach">GENETIK COACH</p>
+            <p className="cert-coach">{t('cert_mini_genetik_coach')}</p>
 
             {/* Recipient block */}
-            <p className="cert-confirm">Dieses Zertifikat bestätigt, dass</p>
+            <p className="cert-confirm">{t('certpage_presented_to')}</p>
             <p className="cert-name">{name}</p>
 
             {/* Date sentence */}
             <p className="cert-completion-text">
-              Am <strong>{dateStr}</strong> erfolgreich die folgenden Schulungsmodule absolviert und bestanden hat:
+              {t('certpage_completed_on')} <strong>{dateStr}</strong>{t('certpage_completed_suffix')}
             </p>
 
             {/* Module list — SemiBold category + Light topic */}
@@ -2005,7 +1352,7 @@ function CertificatePage({ name, courses, isSample, onBack }) {
 
           {/* "Dr. Daniel Wallerstorfer" is already baked into the template; we only add the role line */}
           <div className="cert-sig-block">
-            <div className="cert-sig-role">CEO von Novogenia</div>
+            <div className="cert-sig-role">{L ? 'CEO of Novogenia' : 'CEO von Novogenia'}</div>
           </div>
         </div>
       </div>
@@ -2014,36 +1361,125 @@ function CertificatePage({ name, courses, isSample, onBack }) {
 }
 
 /* ===================== APP ===================== */
-// Apply any stored course overrides ONCE at module-load time so every
-// downstream consumer sees the edited values from the very first render.
-admin.applyCourseOverrides(COURSES)
+
+/* User-state persistence
+   ----------------------
+   The per-course progress (watched / testPassed / testScore / …) is keyed
+   by the COURSE'S STABLE UID — never by the human-readable slug. That way
+   renaming a slug in data.js does NOT lose user completion data.
+
+   Migration: legacy state (keyed by slug) is detected on first load and
+   automatically migrated to uid-keying via the current COURSES lookup. */
+const STATE_KEY = 'novoacademy_user_state'
+
+const loadUserState = () => {
+  const fresh = buildInitialState()
+  try {
+    const raw = localStorage.getItem(STATE_KEY)
+    if (!raw) return fresh
+    const stored = JSON.parse(raw)
+    // Build slug→uid map to detect+migrate legacy keys
+    const slugToUid = {}
+    for (const c of COURSES) if (c.uid) slugToUid[c.id] = c.uid
+    const merged = { ...fresh }
+    for (const [k, v] of Object.entries(stored)) {
+      // If the key matches an existing uid, use as-is.
+      // If it matches a legacy slug, migrate to that course's uid.
+      const targetKey = (k in fresh) ? k : (slugToUid[k] || null)
+      if (targetKey) merged[targetKey] = { ...merged[targetKey], ...v }
+    }
+    return merged
+  } catch {
+    return fresh
+  }
+}
+
+const saveUserState = (state) => {
+  try { localStorage.setItem(STATE_KEY, JSON.stringify(state)) } catch {}
+}
+
+const LANG_KEY = 'novoacademy_lang'
+const LANG_CHOSEN_KEY = 'novoacademy_lang_chosen'   // marker so we know lang-pick was done
+const loadLang = () => {
+  try { return localStorage.getItem(LANG_KEY) || 'de' } catch { return 'de' }
+}
+const hasChosenLang = () => {
+  try { return localStorage.getItem(LANG_CHOSEN_KEY) === '1' } catch { return false }
+}
 
 export default function App() {
+  // ---- Outer flow ----
+  // Phase: 'lang-pick' (first visit) → 'landing' (intro) → 'auth' (signup/login) → 'app' (logged-in academy)
+  const [langChosen, setLangChosen] = useState(hasChosenLang)
+  const [session, setSession] = useState(() => getCurrentSession())
+  const [outerRoute, setOuterRoute] = useState(null) // null = derived from phase; otherwise 'landing'|'auth-signup'|'auth-login'
+  const [authBusy, setAuthBusy] = useState(false)
+
+  // Subscribe to auth changes (Supabase session + mock session)
+  useEffect(() => {
+    const unsub = onAuthChange((s) => setSession(s))
+    return unsub
+  }, [])
+
+  // ---- Inner academy state ----
   const [route, setRoute] = useState({ name: 'home' })
-  const [courseState, setCourseState] = useState(buildInitialState)
+  const [courseState, setCourseState] = useState({})
   const [certName, setCertName] = useState('')
   const [lastTestResult, setLastTestResult] = useState(null)
-  // Re-apply overrides on each admin change (e.g. when the editor saves).
-  // The applyCourseOverrides mutates the COURSES array in place; the state
-  // bump below is just to force re-render of consumers that already hold
-  // references to course objects.
-  const [, setOverrideRev] = useState(0)
+  const [lang, setLangState] = useState(loadLang)
+
+  const setLang = (newLang) => {
+    setLangState(newLang)
+    try {
+      localStorage.setItem(LANG_KEY, newLang)
+      localStorage.setItem(LANG_CHOSEN_KEY, '1')
+    } catch {}
+    setLangChosen(true)
+  }
+  useEffect(() => { try { localStorage.setItem(LANG_KEY, lang) } catch {} }, [lang])
+
+  // Load per-user progress when session becomes available
   useEffect(() => {
-    const onChange = () => {
-      admin.applyCourseOverrides(COURSES)
-      setOverrideRev(r => r + 1)
+    if (!session?.user?.id) {
+      setCourseState({})
+      return
     }
-    window.addEventListener('novoacademy-admin-change', onChange)
-    return () => window.removeEventListener('novoacademy-admin-change', onChange)
-  }, [])
+    let cancelled = false
+    ;(async () => {
+      const remote = await loadProgress(session.user.id)
+      if (cancelled) return
+      // Merge with initial state defaults
+      const fresh = buildInitialState()
+      const merged = { ...fresh }
+      for (const [k, v] of Object.entries(remote || {})) {
+        merged[k] = { ...merged[k], ...v }
+      }
+      setCourseState(merged)
+      setCertName(session.profile?.name || '')
+    })()
+    return () => { cancelled = true }
+  }, [session?.user?.id])
+
+  // Persist progress whenever it changes (per-user)
+  useEffect(() => {
+    if (!session?.user?.id) return
+    if (Object.keys(courseState).length === 0) return
+    saveProgress(session.user.id, courseState)
+  }, [courseState, session?.user?.id])
 
   const navigate = (r) => {
     window.scrollTo(0, 0)
     setRoute(r)
   }
 
-  const markCompleted = (id) => setCourseState(s => ({ ...s, [id]: { ...s[id], watched: true } }))
-  const recordTest = (id, score, passed) => setCourseState(s => ({ ...s, [id]: { ...s[id], testScore: score, testPassed: passed || s[id].testPassed } }))
+  const markCompleted = (course) => {
+    const k = courseKey(course)
+    setCourseState(s => ({ ...s, [k]: { ...s[k], watched: true } }))
+  }
+  const recordTest = (course, score, passed) => {
+    const k = courseKey(course)
+    setCourseState(s => ({ ...s, [k]: { ...s[k], testScore: score, testPassed: passed || s[k]?.testPassed } }))
+  }
 
   const courseById = (id) => COURSES.find(c => c.id === id)
 
@@ -2051,88 +1487,388 @@ export default function App() {
     COURSES.filter(c => isCertified(c, courseState)).map(c => `${c.category}: ${c.topic}`),
   [courseState])
 
-  if (route.name === 'course-landing') {
+  const sampleName = lang === 'en' ? 'Jane Doe' : 'Maria Mustermann'
+
+  /* ===== Decide which top-level screen to render ===== */
+  let page
+
+  if (!langChosen) {
+    page = <LangPickPage onPick={(l) => setLang(l)} />
+  } else if (!session) {
+    // Not logged in — show landing or auth
+    const mode = outerRoute === 'auth-signup' ? 'signup'
+              : outerRoute === 'auth-login'  ? 'login'
+              : 'landing'
+    if (mode === 'landing') {
+      page = (
+        <LandingPage
+          lang={lang}
+          setLang={setLang}
+          onSignUp={() => setOuterRoute('auth-signup')}
+          onLogIn={() => setOuterRoute('auth-login')}
+        />
+      )
+    } else {
+      page = (
+        <AuthPage
+          mode={mode}
+          lang={lang}
+          setLang={setLang}
+          busy={authBusy}
+          setBusy={setAuthBusy}
+          onSwitchMode={() => setOuterRoute(mode === 'signup' ? 'auth-login' : 'auth-signup')}
+          onBackToLanding={() => setOuterRoute('landing')}
+        />
+      )
+    }
+  } else if (route.name === 'course-landing') {
     const course = courseById(route.courseId)
-    return <CourseLandingPage course={course} state={courseState[course.id]} navigate={navigate} onBack={() => navigate({ name: 'home' })} />
-  }
-  if (route.name === 'course-content') {
+    page = <CourseLandingPage course={course} state={courseState[courseKey(course)] || {}} navigate={navigate} onBack={() => navigate({ name: 'home' })} />
+  } else if (route.name === 'course-content') {
     const course = courseById(route.courseId)
     if (course.contentType === 'faq') {
-      return <FaqPage course={course} state={courseState[course.id]}
-        onComplete={() => { markCompleted(course.id); navigate({ name: 'course-landing', courseId: course.id }) }}
+      page = <FaqPage course={course} state={courseState[courseKey(course)] || {}}
+        onComplete={() => { markCompleted(course); navigate({ name: 'course-landing', courseId: course.id }) }}
         onBack={() => navigate({ name: 'course-landing', courseId: course.id })} />
+    } else {
+      page = <CourseContentPage course={course} state={courseState[courseKey(course)] || {}}
+        onComplete={() => { markCompleted(course); navigate({ name: 'course-landing', courseId: course.id }) }}
+        onStartTest={() => navigate({ name: 'test', courseId: course.id })}
+        onBack={() => navigate({ name: 'course-landing', courseId: course.id })}
+        navigate={navigate} />
     }
-    return <CourseContentPage course={course} state={courseState[course.id]}
-      onComplete={() => { markCompleted(course.id); navigate({ name: 'course-landing', courseId: course.id }) }}
-      onStartTest={() => navigate({ name: 'test', courseId: course.id })}
-      onBack={() => navigate({ name: 'course-landing', courseId: course.id })}
-      navigate={navigate} />
-  }
-  if (route.name === 'test') {
+  } else if (route.name === 'test') {
     const course = courseById(route.courseId)
-    return <TestPage course={course}
+    page = <TestPage course={course}
       onSubmit={({ score, passed }) => {
-        recordTest(course.id, score, passed)
+        recordTest(course, score, passed)
         setLastTestResult({ courseId: course.id, score, passed })
         navigate({ name: 'test-result', courseId: course.id })
       }}
       onBack={() => navigate({ name: 'course-landing', courseId: course.id })} />
-  }
-  if (route.name === 'test-result') {
+  } else if (route.name === 'test-result') {
     const course = courseById(route.courseId)
-    return <TestResultPage course={course} score={lastTestResult?.score || 0} passed={lastTestResult?.passed || false}
+    page = <TestResultPage course={course} score={lastTestResult?.score || 0} passed={lastTestResult?.passed || false}
       navigate={navigate} onBack={() => navigate({ name: 'course-landing', courseId: course.id })} />
-  }
-  if (route.name === 'certificate') {
-    return <CertificatePage name={route.isSample ? 'Maria Mustermann' : certName}
-      courses={route.isSample ? SAMPLE_COURSE_LIST : certifiedCourses}
+  } else if (route.name === 'certificate') {
+    page = <CertificatePage name={route.isSample ? sampleName : certName}
+      courses={route.isSample ? getSampleCourseList(lang) : certifiedCourses}
       isSample={route.isSample} onBack={() => navigate({ name: 'home' })} />
-  }
-
-  if (route.name === 'admin') {
-    return (
-      <div className="app">
-        <Sidebar />
+  } else {
+    page = (
+      <div className="app no-sidebar">
         <main className="main">
-          <TopBar navigate={navigate} />
-          <AdminPage onBack={() => navigate({ name: 'home' })} />
+          <TopBar lang={lang} setLang={setLang} session={session} />
+          <HomePage
+            courseState={courseState}
+            navigate={navigate}
+            certName={certName}
+            setCertName={setCertName}
+            completedCertifiableCount={certifiedCourses.length}
+            certifiedTitles={certifiedCourses}
+            lang={lang}
+          />
         </main>
       </div>
     )
   }
 
-  return (
-    <div className="app">
-      <Sidebar />
-      <main className="main">
-        <TopBar navigate={navigate} />
-        <HomePage
-          courseState={courseState}
-          navigate={navigate}
-          certName={certName}
-          setCertName={setCertName}
-          completedCertifiableCount={certifiedCourses.length}
-          certifiedTitles={certifiedCourses}
-        />
-      </main>
-    </div>
-  )
+  return <LangContext.Provider value={lang}>{page}</LangContext.Provider>
 }
 
-/* ===================== TOP BAR (with admin gear) ===================== */
-function TopBar({ navigate }) {
+/* ===================== TOP BAR ===================== */
+function TopBar({ lang, setLang, session }) {
+  const t = useT()
+  const [menuOpen, setMenuOpen] = useState(false)
+  const menuRef = useRef(null)
+
+  useEffect(() => {
+    if (!menuOpen) return
+    const close = (e) => { if (menuRef.current && !menuRef.current.contains(e.target)) setMenuOpen(false) }
+    document.addEventListener('mousedown', close)
+    return () => document.removeEventListener('mousedown', close)
+  }, [menuOpen])
+
   return (
     <div className="topbar">
       <div className="page-title">
         <h1 className="page-title-logo"><span className="pt-novo">NOVO</span><span className="pt-academy">ACADEMY</span></h1>
       </div>
-      <button
-        className="topbar-admin"
-        title="Admin — Kurse verwalten"
-        onClick={() => navigate({ name: 'admin' })}
-      >
-        <Icon.Gear />
-      </button>
+      <div className="topbar-actions">
+        {lang && setLang && (
+          <div className="lang-switcher" title="Language / Sprache">
+            <button
+              className={`lang-btn${lang === 'de' ? ' is-active' : ''}`}
+              onClick={() => setLang('de')}
+            >DE</button>
+            <button
+              className={`lang-btn${lang === 'en' ? ' is-active' : ''}`}
+              onClick={() => setLang('en')}
+            >EN</button>
+          </div>
+        )}
+        {session && (
+          <div className="user-menu" ref={menuRef}>
+            <button className="user-menu-btn" onClick={() => setMenuOpen(o => !o)} aria-haspopup="true" aria-expanded={menuOpen}>
+              <span className="user-menu-avatar">{(session.profile?.name || session.user?.email || '?').charAt(0).toUpperCase()}</span>
+              <span className="user-menu-name">{session.profile?.name || session.user?.email}</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            {menuOpen && (
+              <div className="user-menu-pop" role="menu">
+                <div className="user-menu-pop-label">{t('user_signed_in_as')}</div>
+                <div className="user-menu-pop-email">{session.user?.email}</div>
+                <button className="user-menu-pop-action" onClick={() => { setMenuOpen(false); signOut() }}>
+                  {t('user_logout')}
+                </button>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
     </div>
+  )
+}
+
+/* ===================== LANGUAGE PICKER (first visit) ===================== */
+function LangPickPage({ onPick }) {
+  return (
+    <div className="langpick-page">
+      <div className="langpick-card">
+        <div className="langpick-logo">
+          <span className="pt-novo">NOVO</span><span className="pt-academy">ACADEMY</span>
+        </div>
+        <h2 className="langpick-title">Choose your language · Sprache wählen</h2>
+        <p className="langpick-sub">You can change this later. · Du kannst dies später ändern.</p>
+        <div className="langpick-options">
+          <button className="langpick-option" onClick={() => onPick('de')}>
+            <span className="langpick-flag" aria-hidden="true">🇩🇪</span>
+            <span className="langpick-label">Deutsch</span>
+          </button>
+          <button className="langpick-option" onClick={() => onPick('en')}>
+            <span className="langpick-flag" aria-hidden="true">🇬🇧</span>
+            <span className="langpick-label">English</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ===================== LANDING PAGE (logged-out intro) ===================== */
+function LandingPage({ lang, setLang, onSignUp, onLogIn }) {
+  const t = useT()
+  return (
+    <div className="landing-page">
+      <header className="landing-header">
+        <div className="landing-header-inner">
+          <div className="landing-logo">
+            <span className="pt-novo">NOVO</span><span className="pt-academy">ACADEMY</span>
+          </div>
+          <div className="landing-header-right">
+            <div className="lang-switcher" title="Language / Sprache">
+              <button className={`lang-btn${lang === 'de' ? ' is-active' : ''}`} onClick={() => setLang('de')}>DE</button>
+              <button className={`lang-btn${lang === 'en' ? ' is-active' : ''}`} onClick={() => setLang('en')}>EN</button>
+            </div>
+            <button className="btn-ghost landing-login-btn" onClick={onLogIn}>{t('landing_cta_login')}</button>
+          </div>
+        </div>
+      </header>
+
+      <section className="landing-hero">
+        <div className="landing-hero-inner">
+          <h1 className="landing-hero-title">{t('landing_hero_title')}</h1>
+          <p className="landing-hero-sub">{t('landing_hero_sub')}</p>
+          <div className="landing-hero-cta">
+            <button className="btn-primary big landing-signup-btn" onClick={onSignUp}>{t('landing_cta_signup')}</button>
+          </div>
+        </div>
+      </section>
+
+      <section className="landing-features">
+        <div className="landing-features-grid">
+          <article className="landing-feature">
+            <div className="landing-feature-ico"><Icon.Cap /></div>
+            <h3>{t('landing_feature_videos_t')}</h3>
+            <p>{t('landing_feature_videos_d')}</p>
+          </article>
+          <article className="landing-feature">
+            <div className="landing-feature-ico"><Icon.CertIcon /></div>
+            <h3>{t('landing_feature_certs_t')}</h3>
+            <p>{t('landing_feature_certs_d')}</p>
+          </article>
+          <article className="landing-feature">
+            <div className="landing-feature-ico"><Icon.Check /></div>
+            <h3>{t('landing_feature_progress_t')}</h3>
+            <p>{t('landing_feature_progress_d')}</p>
+          </article>
+          <article className="landing-feature">
+            <div className="landing-feature-ico"><Icon.Play /></div>
+            <h3>{t('landing_feature_pace_t')}</h3>
+            <p>{t('landing_feature_pace_d')}</p>
+          </article>
+        </div>
+      </section>
+
+      <section className="landing-who">
+        <div className="landing-who-inner">
+          <h2 className="landing-who-title">{t('landing_who_title')}</h2>
+          <ul className="landing-who-list">
+            <li>{t('landing_who_resellers')}</li>
+            <li>{t('landing_who_pros')}</li>
+            <li>{t('landing_who_curious')}</li>
+          </ul>
+        </div>
+      </section>
+
+      <section className="landing-final-cta">
+        <h2>{t('landing_hero_title')}</h2>
+        <button className="btn-primary big landing-signup-btn" onClick={onSignUp}>{t('landing_cta_signup')}</button>
+      </section>
+
+      <footer className="landing-footer">
+        <span>© Novogenia GmbH</span>
+      </footer>
+    </div>
+  )
+}
+
+/* ===================== AUTH PAGE (signup / login) ===================== */
+function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLanding }) {
+  const t = useT()
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [name, setName] = useState('')
+  const [errorKey, setErrorKey] = useState(null)
+
+  const isSignup = mode === 'signup'
+
+  const submit = async (e) => {
+    e?.preventDefault?.()
+    setErrorKey(null)
+    setBusy(true)
+    try {
+      const fn = isSignup ? signUpWithEmail : signInWithEmail
+      const args = isSignup ? { email, password, name } : { email, password }
+      const { error } = await fn(args)
+      if (error) {
+        const map = { invalid: 'auth_error_invalid', taken: 'auth_error_taken', weak: 'auth_error_weak' }
+        setErrorKey(map[error] || 'auth_error_invalid')
+      }
+      // On success, onAuthChange will swap us into the app
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  const google = async () => {
+    setErrorKey(null)
+    setBusy(true)
+    try {
+      const { error } = await signInWithGoogle()
+      if (error) setErrorKey('auth_error_invalid')
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  return (
+    <div className="auth-page">
+      <header className="landing-header">
+        <div className="landing-header-inner">
+          <button className="auth-back" onClick={onBackToLanding} aria-label="Back">
+            <Icon.ChevronLeft />
+          </button>
+          <div className="landing-logo" onClick={onBackToLanding} style={{ cursor: 'pointer' }}>
+            <span className="pt-novo">NOVO</span><span className="pt-academy">ACADEMY</span>
+          </div>
+          <div className="landing-header-right">
+            <div className="lang-switcher" title="Language / Sprache">
+              <button className={`lang-btn${lang === 'de' ? ' is-active' : ''}`} onClick={() => setLang('de')}>DE</button>
+              <button className={`lang-btn${lang === 'en' ? ' is-active' : ''}`} onClick={() => setLang('en')}>EN</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div className="auth-card-wrap">
+        <div className="auth-card">
+          <h1 className="auth-title">{isSignup ? t('auth_signup_title') : t('auth_login_title')}</h1>
+          <p className="auth-sub">{isSignup ? t('auth_signup_sub') : t('auth_login_sub')}</p>
+
+          <button className="auth-google" onClick={google} disabled={busy}>
+            <GoogleIcon /> <span>{t('auth_google')}</span>
+          </button>
+
+          <div className="auth-divider"><span>{t('auth_or_continue_with')}</span></div>
+
+          <form className="auth-form" onSubmit={submit}>
+            {isSignup && (
+              <label className="auth-field">
+                <span className="auth-label">{t('auth_name_label')}</span>
+                <input
+                  type="text"
+                  value={name}
+                  onChange={e => setName(e.target.value)}
+                  placeholder={t('auth_name_placeholder')}
+                  autoComplete="name"
+                />
+                <span className="auth-hint">{t('auth_name_hint')}</span>
+              </label>
+            )}
+            <label className="auth-field">
+              <span className="auth-label">{t('auth_email_label')}</span>
+              <input
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                placeholder={t('auth_email_placeholder')}
+                autoComplete="email"
+                required
+              />
+            </label>
+            <label className="auth-field">
+              <span className="auth-label">{t('auth_password_label')}</span>
+              <input
+                type="password"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                placeholder={t('auth_password_placeholder')}
+                autoComplete={isSignup ? 'new-password' : 'current-password'}
+                required
+                minLength={isSignup ? 8 : undefined}
+              />
+            </label>
+
+            {errorKey && <div className="auth-error">{t(errorKey)}</div>}
+
+            <button type="submit" className="btn-primary big auth-submit" disabled={busy}>
+              {busy ? t('auth_loading') : (isSignup ? t('auth_submit_signup') : t('auth_submit_login'))}
+            </button>
+          </form>
+
+          <button className="auth-switch" onClick={onSwitchMode} disabled={busy}>
+            {isSignup ? t('auth_switch_to_login') : t('auth_switch_to_signup')}
+          </button>
+
+          {!isUsingRealSupabase() && (
+            <div className="auth-local-notice">
+              <Icon.Info /> Local-only mode: accounts live in this browser. Configure Supabase to sync across devices.
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function GoogleIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+      <path fill="#FBBC05" d="M5.84 14.1c-.22-.66-.35-1.36-.35-2.1s.13-1.44.35-2.1V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.83z"/>
+      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.83C6.71 7.31 9.14 5.38 12 5.38z"/>
+    </svg>
   )
 }

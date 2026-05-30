@@ -72,6 +72,8 @@ export const COURSES = [
   /* ======== Weight Management ======== */
   {
     id: 'wm-sci',
+    uid: '305a1d78-abe6-4239-b428-c16005d85162',
+    lang: 'de',
     category: 'Die Gen-Diät',
     topic: 'Wissenschaftliche Basis',
     contentType: 'course',
@@ -108,7 +110,7 @@ export const COURSES = [
         title: 'NovoAcademy Demo Bericht - Ernährungsplan',
         size: '113 MB',
         type: 'pdf',
-        url: '/course-materials/gene-diet/01-wissenschaftliche-basis/course/DEMO_NUTRITION_PLAN.pdf',
+        url: '/course-materials/nutrition/Demo_NovoDaily_Nutrition_Plan.pdf',
       },
       {
         title: 'NovoAcademy Demo Bericht - Gen-Diät Analysebericht',
@@ -245,6 +247,8 @@ export const COURSES = [
   },
   {
     id: 'wm-report',
+    uid: '384a976d-bcbb-4f86-b280-d2ca1d740a38',
+    lang: 'de',
     category: 'Die Gen-Diät',
     topic: 'Beratungsschulung',
     contentType: 'course',
@@ -293,7 +297,7 @@ export const COURSES = [
         title: 'NovoAcademy Demo Bericht - Ernährungsplan',
         size: '113 MB',
         type: 'pdf',
-        url: '/course-materials/gene-diet/01-wissenschaftliche-basis/course/DEMO_NUTRITION_PLAN.pdf',
+        url: '/course-materials/nutrition/Demo_NovoDaily_Nutrition_Plan.pdf',
       },
       {
         title: 'NovoAcademy Demo Bericht - Gen-Diät Analysebericht',
@@ -479,6 +483,8 @@ export const COURSES = [
        Marken-neutrale Sprache — generische Begriffe statt Produktnamen
        (Gen-Diät statt Weight Sensor, Kalorienblocker statt Shape). */
     id: 'wm-faq',
+    uid: '7930fb0f-4a6d-451b-8d74-e46a663ce71b',
+    lang: 'de',
     category: 'Die Gen-Diät',
     topic: 'Häufige Fragen',
     contentType: 'faq',
@@ -598,6 +604,8 @@ export const COURSES = [
   /* ======== Lifestyle DNA — Wissenschaftliche Basis Kurse + FAQs ======== */
   {
     id: 'nut-faq',
+    uid: '150ed184-ab90-4963-b2b1-611791a031d0',
+    lang: 'de',
     category: 'Gesund ernähren nach den Genen',
     topic: 'Häufige Fragen',
     contentType: 'faq',
@@ -691,6 +699,8 @@ export const COURSES = [
 
   {
     id: 'nut-sci',
+    uid: 'f4672f05-a7e1-4d97-8d61-003f19227a9b',
+    lang: 'de',
     category: 'Gesund ernähren nach den Genen',
     topic: 'Wissenschaftliche Basis',
     contentType: 'course',
@@ -889,6 +899,8 @@ export const COURSES = [
   /* ===== Gesund ernähren — Beratungsschulung ===== */
   {
     id: 'nut-report',
+    uid: 'da894277-598c-49f9-9677-60dcc4517e45',
+    lang: 'de',
     category: 'Gesund ernähren nach den Genen',
     topic: 'Beratungsschulung',
     contentType: 'course',
@@ -952,6 +964,8 @@ export const COURSES = [
 
   {
     id: 'pg-faq',
+    uid: '03accd4d-255f-4208-8d99-fb162f618bfc',
+    lang: 'de',
     category: 'Sportliche Leistung',
     topic: 'Häufige Fragen',
     contentType: 'faq',
@@ -1032,6 +1046,8 @@ export const COURSES = [
 
   {
     id: 'pg-sci',
+    uid: '030ea826-ba9d-4f0f-8a70-10559db73654',
+    lang: 'de',
     category: 'Sportliche Leistung',
     topic: 'Wissenschaftliche Basis',
     contentType: 'course',
@@ -1177,42 +1193,99 @@ export const COURSES = [
   /* ===== Entgiftung — Wissenschaftliche Basis ===== */
   {
     id: 'tx-sci',
+    uid: '43dad729-b5fe-451e-a40a-7657948075e9',
+    lang: 'de',
     category: 'Entgiftung',
     topic: 'Wissenschaftliche Basis',
-    contentType: 'supplementary',
-    videos: [],
-    description: 'Schulungsfolien zur genetischen Entgiftung — als PowerPoint zum Selbststudium.',
+    contentType: 'course',
+    description: 'Wie Gene die individuelle Entgiftungsfähigkeit bestimmen — von Verkohltem über Chemikalien bis Alkohol und Schwermetalle.',
     longDescription:
-      'Die offiziellen Novogenia-Schulungsfolien zum Thema genetische Entgiftung. Aus dem Master-Foliensatz extrahiert, Animationen erhalten. Geeignet zum Selbststudium und für eigene Präsentationen vor Kunden.',
+      'In dieser Schulung erklärt Dr. Daniel Wallerstorfer die genetischen Grundlagen der Entgiftung. Welche Gene neutralisieren krebserregende Stoffe aus Verbranntem und Geräuchertem? Wie schützen Glutathion-S-Transferasen vor Chemikalien? Welche Rolle spielt Selen, und warum reagiert nicht jeder Mensch gleich auf Alkohol? Du lernst die wichtigsten Detox-Gene kennen und wie sich daraus konkrete Lebensstil-Empfehlungen ableiten lassen.',
     bullets: [
-      'Entgiftung von Verbranntem und Chemikalien',
-      'Alterungsschutz vor oxidativem Stress',
-      'Selenversorgung & Schwermetalle',
-      'Alkohol- und Drogen-Abbau',
+      'Entgiftung von Verbranntem (CYP1A1, NAT2)',
+      'Chemikalien-Entgiftung & Glutathion-S-Transferasen (GST)',
+      'Antioxidativer Schutz und Selenversorgung',
+      'Alkohol- und Acetaldehyd-Abbau (ADH, ALDH2)',
     ],
     thumbnail: T(27),
-    introQuestionsHeader: 'Die Schulungsfolien decken folgende Themen ab:',
+    youtubeId: '3AvZMAtALlQ',
+    introQuestionsHeader: 'In dieser Schulung bekommst du Antworten auf folgende Fragen:',
     introQuestions: [
       'Welche Gene steuern die Entgiftung verbrannter Stoffe (Verkohltes, Geräuchertes)?',
       'Wie wirken Glutathion-S-Transferasen bei der Chemikalien-Entgiftung?',
       'Welche Rolle spielt Selen für den Schutz vor oxidativem Stress?',
       'Wie unterscheidet sich der genetische Alkohol-Abbau bei verschiedenen Menschen?',
     ],
-    articleSections: [
+    postVideoText:
+      'Mit diesem wissenschaftlichen Hintergrund kannst du den Entgiftungs-Bericht fundiert mit deinen Kunden besprechen und individuelle Schutzstrategien aus den genetischen Ergebnissen ableiten.',
+    questions: [
       {
-        title: 'Schulungsfolien zum Download',
-        paragraphs: [
-          'Diese Schulungsfolien stammen aus dem zentralen Novogenia-Foliensatz „All Slides to use". Sie enthalten die wissenschaftlichen Grundlagen zur genetischen Entgiftung: relevante Gene, biochemische Pfade, Studienlage und Beratungs-Beispiele. Animationen sind erhalten.',
-          'Lade die PowerPoint herunter und gehe sie im eigenen Tempo durch. Du kannst die Folien auch für eigene Kunden-Präsentationen verwenden.',
+        q: 'Welche Genfamilie ist zentral für die Entgiftung von Chemikalien und Schwermetallen?',
+        options: [
+          'GST (Glutathion-S-Transferasen)',
+          'MTHFR (Folsäure-Aktivierung)',
+          'LCT (Laktase)',
+          'CYP1A2 (Koffein-Abbau)',
         ],
+        correct: 0,
+      },
+      {
+        q: 'Bei Verbranntem und Geräuchertem entstehen krebserregende PAK (polyzyklische aromatische Kohlenwasserstoffe). Welche Aussage zur Entgiftung ist korrekt?',
+        options: [
+          'PAK können vom Körper nicht abgebaut werden',
+          'Die Entgiftung dieser Stoffe ist genetisch sehr unterschiedlich — Menschen mit langsamen oder ungünstigen Varianten haben ein deutlich erhöhtes Krebsrisiko bei häufigem Konsum von Verkohltem',
+          'Alle Menschen entgiften PAK gleich schnell',
+          'PAK werden nur über die Haut ausgeschieden',
+        ],
+        correct: 1,
+      },
+      {
+        q: 'Eine Kundin hat einen genetischen GST-Defekt (Glutathion-S-Transferase-Mangel). Was bedeutet das?',
+        options: [
+          'Sie kann besser entgiften als der Durchschnitt',
+          'Ihre Fähigkeit, Chemikalien aus der Umwelt (Pestizide, Lösungsmittel, Zigarettenrauch) zu neutralisieren, ist reduziert — sie sollte Belastungen aktiver vermeiden und antioxidative Nährstoffe stärker zuführen',
+          'Der Defekt hat keinen praktischen Effekt',
+          'Sie sollte mehr Koffein konsumieren',
+        ],
+        correct: 1,
+      },
+      {
+        q: 'Welche Rolle spielt Selen im antioxidativen Schutzsystem?',
+        options: [
+          'Es bindet Schwermetalle direkt im Blut',
+          'Es ist nur ein kosmetisches Spurenelement ohne klare Funktion',
+          'Selen ist essenzieller Baustein der Glutathion-Peroxidase (GPX), eines der wichtigsten antioxidativen Enzyme — bei Selen-Mangel funktioniert dieses Schutzsystem schlechter, oxidativer Stress steigt',
+          'Selen ist für die Knochengesundheit zuständig',
+        ],
+        correct: 2,
+      },
+      {
+        q: 'Warum verträgt nicht jeder Mensch gleich viel Alkohol?',
+        options: [
+          'Der einzige Faktor ist das Körpergewicht',
+          'Die Gene ADH (Alkohol-Abbau zu Acetaldehyd) und ALDH2 (Acetaldehyd-Abbau zu Essigsäure) sind genetisch sehr unterschiedlich. Bei ALDH2-Defekt — z. B. häufig in asiatischen Populationen — sammelt sich das giftige Acetaldehyd an: Flush, Übelkeit, deutlich erhöhtes Krebsrisiko bei chronischem Konsum',
+          'Frauen und Männer entgiften Alkohol exakt gleich',
+          'Alkohol wird von allen Menschen über die Atmung abgebaut',
+        ],
+        correct: 1,
+      },
+      {
+        q: 'Eine Kundin hat mehrere „rote Bereiche" im Entgiftungs-Bericht. Welche Beratungs-Empfehlung passt am besten?',
+        options: [
+          'Veranlagung ignorieren — die Entgiftung läuft autonom',
+          'Sie soll komplett auf Ernährung verzichten, bis sich die Werte normalisieren',
+          'Die genetische Belastung lässt sich nicht vollständig korrigieren, aber gezielt ausgleichen: Vermeidung der spezifischen Belastungen (z. B. weniger Verkohltes, sauberes Wohn-Umfeld), antioxidative Ernährung (Vitamin C/E, Selen, Glutathion-Vorstufen), keine Raucher-Exposition, regelmäßige Sport-Routine zur Schweißausscheidung',
+          'Sofort einen Arzt aufsuchen — die Veranlagung ist krankheitswertig',
+        ],
+        correct: 2,
       },
     ],
     documents: [
       {
         title: 'NovoAcademy Folien - Entgiftung',
         size: '78 MB',
-        type: 'pptx',        thumbnail: '/thumbnails/pptx-template.jpg',
-
+        type: 'pptx',
+        thumbnail: '/thumbnails/pptx-template.jpg',
         url: '/course-materials/detox/Schulungsfolien_Detox.pptx',
       },
       {
@@ -1246,12 +1319,14 @@ export const COURSES = [
         url: '/course-materials/scientific-reviews/Selenium_Review.pdf',
       },
     ],
-    hasDownload: true, hasText: true,
-    initialWatched: false,
+    hasDownload: true, hasText: false,
+    initialWatched: false, initialTestPassed: false,
   },
   /* ===== Entgiftung — Beratungsschulung ===== */
   {
     id: 'tx-report',
+    uid: 'f2494fc0-d69d-4a22-bc6e-d9fb99d5e473',
+    lang: 'de',
     category: 'Entgiftung',
     topic: 'Beratungsschulung',
     contentType: 'course',
@@ -1295,6 +1370,8 @@ export const COURSES = [
   },
   {
     id: 'bo-faq',
+    uid: 'f2ba580f-942d-4a4f-84ab-dc61cfe027f6',
+    lang: 'de',
     category: 'Burnout und Stress',
     topic: 'Häufige Fragen',
     contentType: 'faq',
@@ -1367,6 +1444,8 @@ export const COURSES = [
 
   {
     id: 'bo-sci',
+    uid: '0f3b2d11-d7d3-47be-a3a0-8fa72991e73f',
+    lang: 'de',
     category: 'Burnout und Stress',
     topic: 'Wissenschaftliche Basis',
     contentType: 'course',
@@ -1492,6 +1571,8 @@ export const COURSES = [
   /* ===== Burnout — Beratungsschulung ===== */
   {
     id: 'bo-report',
+    uid: 'cb2ded2b-7a1c-4332-b28e-9ab96403de4d',
+    lang: 'de',
     category: 'Burnout und Stress',
     topic: 'Beratungsschulung',
     contentType: 'course',
@@ -1590,6 +1671,8 @@ export const COURSES = [
 
   {
     id: 'ba-faq',
+    uid: '417ba06d-e11e-40f6-bc7f-a3ca6d4c33ad',
+    lang: 'de',
     category: 'Biologisches Alter',
     topic: 'Häufige Fragen',
     contentType: 'faq',
@@ -1666,6 +1749,8 @@ export const COURSES = [
 
   {
     id: 'ba-sci',
+    uid: 'f0987228-9829-4df7-b8bd-51335850764c',
+    lang: 'de',
     category: 'Biologisches Alter',
     topic: 'Wissenschaftliche Basis',
     contentType: 'course',
@@ -1807,6 +1892,8 @@ export const COURSES = [
   /* ===== Biologisches Alter — Beratungsschulung ===== */
   {
     id: 'ba-report',
+    uid: '88e7c0cf-7139-4d82-838d-a607ccd91cdf',
+    lang: 'de',
     category: 'Biologisches Alter',
     topic: 'Beratungsschulung',
     contentType: 'course',
@@ -1906,6 +1993,8 @@ export const COURSES = [
   /* ======== Personalisierte Nahrungsergänzung ======== */
   {
     id: 'supp-sci',
+    uid: 'ef2af81c-9528-42d3-8083-81de9404fa6c',
+    lang: 'de',
     category: 'Personalisierte Nahrungsergänzung',
     topic: 'Wissenschaftliche Basis',
     contentType: 'course',
@@ -2012,6 +2101,8 @@ export const COURSES = [
   /* ===== Personalisierte Nahrungsergänzung — Häufige Fragen ===== */
   {
     id: 'supp-faq',
+    uid: 'a55bf41d-d7b1-4cca-912d-e7c956b81b02',
+    lang: 'de',
     category: 'Personalisierte Nahrungsergänzung',
     topic: 'Häufige Fragen',
     contentType: 'faq',
@@ -2101,42 +2192,99 @@ export const COURSES = [
   /* ======== Beauty ======== */
   {
     id: 'beauty-sci',
+    uid: 'a1a21370-ea81-4236-bc2b-14db8dbd32ec',
+    lang: 'de',
     category: 'Gesunde Haut und Aussehen',
     topic: 'Wissenschaftliche Basis',
-    contentType: 'supplementary',
-    videos: [],
-    description: 'Schulungsfolien zur genetisch fundierten Hautanalyse — als PowerPoint zum Selbststudium.',
+    contentType: 'course',
+    description: 'Wie Gene Hautalterung, Faltenbildung, UV-Empfindlichkeit und Hautfeuchtigkeit mitbestimmen — wissenschaftlich erklärt.',
     longDescription:
-      'Die offiziellen Novogenia-Schulungsfolien zur genetischen Hautanalyse (DNAbeauty Control). Aus dem Master-Foliensatz extrahiert, Animationen erhalten. Wie Hautalterung, Faltenbildung, UV-Schutz, Kollagenabbau und Hautfeuchtigkeit genetisch reguliert werden.',
+      'In dieser Schulung erklärt Dr. Daniel Wallerstorfer die genetischen Grundlagen der DNAbeauty Control-Analyse. Welche Gene steuern den Kollagenabbau? Warum brennt die Haut bei manchen Menschen schneller? Wie hängt die Hautfeuchtigkeit mit Filaggrin und anderen Genen zusammen? Und was lässt sich aus diesen Informationen für eine wirklich personalisierte Hautpflege ableiten?',
     bullets: [
-      'Genetische Hautalterung & Kollagenabbau',
-      'UV-Empfindlichkeit und Pigmentierung',
-      'Hautfeuchtigkeit & Barriere-Funktion',
-      'Entzündungsneigung der Haut',
+      'Genetische Hautalterung & Kollagenabbau (MMP1)',
+      'UV-Empfindlichkeit und Pigmentierung (MC1R)',
+      'Hautfeuchtigkeit & Barriere-Funktion (FLG)',
+      'Antioxidative Schutzsysteme der Haut (SOD, CAT, GPX)',
     ],
     thumbnail: T(1),
-    introQuestionsHeader: 'Die Schulungsfolien decken folgende Themen ab:',
+    youtubeId: '8RVq0Qp4r64',
+    introQuestionsHeader: 'In dieser Schulung bekommst du Antworten auf folgende Fragen:',
     introQuestions: [
       'Welche Gene steuern den Kollagenabbau und damit die Faltenbildung?',
       'Wie unterscheidet sich die genetische UV-Empfindlichkeit zwischen Menschen?',
       'Welche Rolle spielen Antioxidantien-Gene bei der Hautalterung?',
       'Wie hängt die genetische Hautfeuchtigkeit mit der Pflegeroutine zusammen?',
     ],
-    articleSections: [
+    postVideoText:
+      'Mit diesem wissenschaftlichen Hintergrund kannst du den Beauty-Bericht fundiert mit deinen Kunden besprechen und individuelle Pflegestrategien aus den genetischen Ergebnissen ableiten.',
+    questions: [
       {
-        title: 'Schulungsfolien zum Download',
-        paragraphs: [
-          'Diese Schulungsfolien stammen aus dem zentralen Novogenia-Foliensatz „All Slides to use". Sie erklären die wissenschaftlichen Grundlagen der genetischen Hautanalyse (DNAbeauty Control). Animationen sind erhalten.',
-          'Lade die PowerPoint herunter und gehe sie im eigenen Tempo durch. Du kannst die Folien auch für eigene Kunden-Präsentationen verwenden.',
+        q: 'Welches Enzym bzw. Gen ist zentral für den Abbau von Kollagen in der Haut und damit für die Faltenbildung verantwortlich?',
+        options: [
+          'MTHFR — Folsäure-Aktivierung',
+          'MMP1 — Matrix-Metalloproteinase 1 (baut Kollagen ab)',
+          'CYP1A2 — Koffein-Abbau',
+          'LCT — Laktase-Persistenz',
         ],
+        correct: 1,
+      },
+      {
+        q: 'Eine Kundin hat eine sehr aktive Variante des Kollagenabbau-Gens MMP1. Was bedeutet das für ihre Hautpflege?',
+        options: [
+          'Sie braucht keine Anti-Aging-Maßnahmen, ihre Haut schützt sich selbst',
+          'Sie hat ein erhöhtes Risiko für frühzeitige Faltenbildung — Anti-Aging-Maßnahmen (Antioxidantien, UV-Schutz, Kollagen-Booster, kein Rauchen) sind hier besonders wichtig',
+          'Die Variante wirkt sich nur auf die Haarfarbe aus',
+          'Sie sollte mehr Kohlenhydrate essen',
+        ],
+        correct: 1,
+      },
+      {
+        q: 'Welche Aussage zur genetischen UV-Empfindlichkeit (z. B. MC1R) ist korrekt?',
+        options: [
+          'Genvarianten beeinflussen die UV-Empfindlichkeit nicht — entscheidend ist nur der Hauttyp',
+          'Träger ungünstiger Varianten bekommen schneller Sonnenbrand und haben ein höheres Risiko für UV-bedingte Hautalterung und Hautkrebs — strikter UV-Schutz ist umso wichtiger',
+          'Bei genetisch hoher UV-Empfindlichkeit sollte man die Sonne komplett meiden, auch im Schatten',
+          'Sonnencreme wirkt nur bei Menschen mit „normalen" Genen',
+        ],
+        correct: 1,
+      },
+      {
+        q: 'Warum sind antioxidative Gene wie SOD2, CAT und GPX für die Hautalterung wichtig?',
+        options: [
+          'Sie produzieren freie Radikale',
+          'Sie schützen vor oxidativem Stress, der DNA-Schäden in Hautzellen verursacht — bei genetischer Schwäche dieser Schutzsysteme altert die Haut messbar schneller, Antioxidantien (Vitamin C, E, Polyphenole) werden umso wichtiger',
+          'Sie haben nur Einfluss auf das Immunsystem, nicht auf die Haut',
+          'Sie sorgen für die Pigmentierung',
+        ],
+        correct: 1,
+      },
+      {
+        q: 'Welche Empfehlung passt am besten zu einer Kundin mit genetisch reduzierter Hautfeuchtigkeit (z. B. ungünstige FLG-Filaggrin-Varianten)?',
+        options: [
+          'Häufig heiß duschen und stark seifige Reiniger verwenden',
+          'Verstärkte Anwendung feuchtigkeits­bindender und barriere­stärkender Pflege (Hyaluronsäure, Ceramide, Glycerin), milde Reiniger, austrocknende Stoffe meiden',
+          'Komplett auf jede Pflege verzichten — die Haut regelt das selbst',
+          'Nur einmal pro Woche Wasser an die Haut lassen',
+        ],
+        correct: 1,
+      },
+      {
+        q: 'Was unterscheidet die genetische Hautanalyse von einer rein kosmetischen Beratung im Drogerieregal?',
+        options: [
+          'Sie ist kostenloser',
+          'Sie identifiziert dauerhafte genetische Schwachstellen der Haut, statt nur den aktuellen Zustand zu beurteilen — Pflege- und Schutzstrategien können langfristig und gezielt eingesetzt werden, statt reaktiv auf sichtbare Probleme zu reagieren',
+          'Sie ersetzt jede ärztliche Hautuntersuchung',
+          'Sie ist nur für junge Menschen sinnvoll',
+        ],
+        correct: 1,
       },
     ],
     documents: [
       {
         title: 'NovoAcademy Folien - Gesunde Haut und Aussehen',
         size: '114 MB',
-        type: 'pptx',        thumbnail: '/thumbnails/pptx-template.jpg',
-
+        type: 'pptx',
+        thumbnail: '/thumbnails/pptx-template.jpg',
         url: '/course-materials/beauty/Schulungsfolien_Beauty.pptx',
       },
       {
@@ -2152,13 +2300,106 @@ export const COURSES = [
         url: '/course-materials/scientific-reviews/Telomeres_Biological_Age_Review.pdf',
       },
     ],
-    hasDownload: true, hasText: true,
+    hasDownload: true, hasText: false,
+    initialWatched: false, initialTestPassed: false,
+  },
+
+  /* ===== Beauty — Häufige Fragen ===== */
+  {
+    id: 'beauty-faq',
+    uid: '0a1843e2-14f1-410b-8529-296b401b0950',
+    lang: 'de',
+    category: 'Gesunde Haut und Aussehen',
+    topic: 'Häufige Fragen',
+    contentType: 'faq',
+    description: 'Antworten auf typische Kundenfragen zur genetisch fundierten Hautanalyse (DNAbeauty Control).',
+    longDescription:
+      'Eine Sammlung der wichtigsten Kundenfragen rund um die genetische Hautanalyse: was sie wirklich aussagt, welche Gene betrachtet werden, wie sich daraus praktische Pflegeempfehlungen ergeben und welche Erwartungen realistisch sind. Mit ausklappbarer Antwort zum Selbsttest.',
+    bullets: [
+      'Was DNAbeauty Control wirklich aussagt — und was nicht',
+      'Wie sich genetische Hautanalyse von der Kosmetik-Beratung unterscheidet',
+      'Welche Gene wir betrachten (MMP1, MC1R, FLG, …)',
+      'Wie praktische Pflegeempfehlungen aussehen',
+    ],
+    thumbnail: '/thumbnails/beauty-faq-cover.jpg',
+    faqGroups: [
+      {
+        title: 'Grundlagen — Was die genetische Hautanalyse leistet',
+        items: [
+          {
+            q: 'Was ist die genetische Hautanalyse (DNAbeauty Control)?',
+            a: 'Eine Analyse deiner Gene mit Fokus auf hautrelevante Bereiche: Kollagenabbau, UV-Empfindlichkeit, Pigmentierung, Hautfeuchtigkeit, antioxidativer Schutz und Entzündungsneigung. Aus deinem DNA-Datensatz werden über 20 hautrelevante Genvarianten bewertet und in praktische Pflege- und Schutzempfehlungen übersetzt.',
+          },
+          {
+            q: 'Was unterscheidet sie von einer Hautanalyse beim Kosmetiker?',
+            a: 'Kosmetische Hautanalysen messen den aktuellen Zustand deiner Haut — Feuchtigkeit, Talg, Pigmentierung etc. — und reagieren darauf. Die genetische Hautanalyse zeigt dir dagegen, welche Eigenschaften und Schwachstellen DAUERHAFT in deinen Genen angelegt sind. Du kannst gezielt vorbeugen, statt erst zu reagieren, wenn Probleme sichtbar werden.',
+          },
+          {
+            q: 'Wie viele Gene werden in der Analyse berücksichtigt?',
+            a: 'Über 20 hautrelevante Gen-Varianten. Die wichtigsten Bereiche: MMP1 (Kollagenabbau, Faltenbildung), MC1R (UV-Empfindlichkeit, Pigmentierung), FLG (Filaggrin, Hautfeuchtigkeit/Barriere), SOD2/CAT/GPX (antioxidativer Schutz), Entzündungs-Gene wie IL6, TNF-α.',
+          },
+          {
+            q: 'Wie lange ist mein Ergebnis gültig?',
+            a: 'Deine Gene ändern sich nicht im Lauf des Lebens — daher bleiben die Kern-Ergebnisse dauerhaft gültig. Was sich verfeinert: die Auswertung selbst, weil laufend neue wissenschaftliche Erkenntnisse einfließen. Eine Wiederholung des Tests ist nicht nötig, sondern nur ein Update der Auswertung.',
+          },
+        ],
+      },
+      {
+        title: 'Genetik & Hautalterung — verstehen, was die Ergebnisse bedeuten',
+        items: [
+          {
+            q: 'Was bedeutet eine „aktive" MMP1-Variante?',
+            a: 'MMP1 (Matrix-Metalloproteinase 1) baut Kollagen in der Haut ab. Eine genetisch sehr aktive Variante führt zu schnellerem Kollagenabbau — die Haut verliert früher an Spannkraft, Falten entstehen schneller. Gegenmaßnahmen: konsequenter UV-Schutz, Antioxidantien, kein Rauchen, ggf. Retinoide oder peptidbasierte Pflege.',
+          },
+          {
+            q: 'Was sagt mein MC1R-Gen über UV-Empfindlichkeit aus?',
+            a: 'MC1R steuert die Produktion von Eumelanin (dunkles Pigment, schützt vor UV) versus Phäomelanin (rötliches Pigment, erzeugt bei UV-Belastung freie Radikale). Ungünstige Varianten: schneller Sonnenbrand, höheres Risiko für UV-Schäden und Hautkrebs — striktere Sonnencreme-Disziplin nötig.',
+          },
+          {
+            q: 'Warum ist FLG (Filaggrin) für meine Hautpflege wichtig?',
+            a: 'FLG produziert Filaggrin, ein Protein, das die natürliche Hautbarriere zusammenhält und Feuchtigkeit bindet. Bei genetisch reduzierter FLG-Aktivität ist die Hautbarriere schwächer — Feuchtigkeit geht schneller verloren, Reizstoffe dringen leichter ein. Empfehlung: barriere­stärkende Pflege (Ceramide, Cholesterol, freie Fettsäuren), milde Reiniger, keine austrocknenden Tenside.',
+          },
+          {
+            q: 'Wirkt sich das alles wirklich messbar auf mein Aussehen aus?',
+            a: 'Ja, aber nicht von heute auf morgen. Genetische Schwachstellen summieren sich über Jahre. Zwei Menschen gleichen Alters können sich biologisch um 10-15 Jahre unterscheiden — abhängig davon, wie gut sie ihre genetischen Schwachstellen mit Lebensstil ausgleichen.',
+          },
+        ],
+      },
+      {
+        title: 'Praktische Empfehlungen & Erwartungen',
+        items: [
+          {
+            q: 'Wie schnell merke ich eine Wirkung der personalisierten Pflege?',
+            a: 'Manche Effekte zeigen sich in Wochen (Feuchtigkeit, Glow, Hautirritation), andere erst nach Monaten bis Jahren (Faltenbildung, Pigmentierung, Hautstruktur). Die personalisierte Pflege ist keine schnelle Reparatur, sondern eine langfristige Schutzstrategie.',
+          },
+          {
+            q: 'Brauche ich teure Cremes?',
+            a: 'Nicht zwingend. Wichtig sind die richtigen Wirkstoffe für deine genetische Veranlagung — und die gibt es in jeder Preisklasse. Was zählt: die Wirkstoff-Konzentration, die Formulierung und die Konsistenz der Anwendung. Eine günstige Vitamin-C-Lösung kann besser wirken als eine teure Creme ohne aktive Wirkstoffe.',
+          },
+          {
+            q: 'Ist mein Lebensstil wichtiger als meine Gene?',
+            a: 'Beides wirkt zusammen. Gene legen das Potenzial und die Schwachstellen fest — Lebensstil entscheidet, wie weit du diese Schwachstellen ausgleichst oder verstärkst. Faustregel: bei genetisch ungünstiger Veranlagung ist konsequenter Lebensstil noch wichtiger als bei „glücklichen Genen".',
+          },
+        ],
+      },
+    ],
+    documents: [
+      {
+        title: 'NovoAcademy FAQ PDF - Gesunde Haut und Aussehen',
+        size: '121 KB',
+        type: 'pdf',
+        url: '/course-materials/beauty/Novogenia_FAQ_Gesunde_Haut.pdf',
+      },
+    ],
+    hasDownload: true, hasText: false,
     initialWatched: false,
   },
 
   /* ======== Weitere Analysen ======== */
   {
     id: 'pharma-sci',
+    uid: '0a68b1da-1704-4e8a-b9c9-201447417cfc',
+    lang: 'de',
     category: 'Medikamentenunverträglichkeit',
     topic: 'Wissenschaftliche Basis',
     contentType: 'supplementary',
@@ -2217,6 +2458,8 @@ export const COURSES = [
   /* ======== Rechtssicheres Werben ======== */
   {
     id: 'legal-basics',
+    uid: '2b3df589-ab71-4fe1-8ec2-26abbdae27a5',
+    lang: 'de',
     category: 'Rechtlich sicher werben mit Produkten',
     topic: 'Werberichtlinie für Novogenia-Produkte',
     contentType: 'training',
@@ -2451,11 +2694,75 @@ export const COURSES = [
   },
 ]
 
+/* Merge English courses (from data.en.js) into the main COURSES array.
+   They carry `lang: 'en'`; German entries carry `lang: 'de'`. The active
+   language is selected by the user via the language switcher and filtered
+   in App.jsx. */
+import { COURSES_EN, MAIN_CATEGORIES_EN, SECTION_PRODUCT_LABELS_EN } from './data.en.js'
+COURSES.push(...COURSES_EN)
+
+/* English fallback generic questions — used when an English course doesn't
+   define its own (so the test page doesn't show German fragments). */
+const GENERIC_QUESTIONS_EN = [
+  {
+    q: 'Which statement about genetic variants (SNPs) is correct?',
+    options: [
+      'SNPs are rare mutations that occur in only <0.1% of the population.',
+      'SNPs are common single-letter DNA variations between people.',
+      'SNPs only affect eye colour.',
+      'SNPs are not inherited.',
+    ],
+    correct: 1,
+  },
+  {
+    q: 'What role do genes play in personalised consultation?',
+    options: [
+      'They predict the future with absolute certainty.',
+      'They reveal innate predispositions — strengths and weaknesses — that allow recommendations to be individualised.',
+      'They make all general advice unnecessary.',
+      'They have no practical relevance.',
+    ],
+    correct: 1,
+  },
+  {
+    q: 'Which sentence best describes epigenetics?',
+    options: [
+      'A method that erases genes permanently.',
+      'The control layer above the genes — lifestyle and environment can switch gene activity on or off without changing the DNA letters.',
+      'The science of identical twins.',
+      'A new way of cloning.',
+    ],
+    correct: 1,
+  },
+  {
+    q: 'Why is a slow caffeine breaker (CYP1A2 defect) at higher cardiovascular risk from coffee?',
+    options: [
+      'Caffeine stays active longer and prolongs blood-pressure peaks; the protective polyphenols still help — decaf preserves the benefit.',
+      'Coffee directly destroys arteries in slow breakers.',
+      'Slow breakers are immune to caffeine.',
+      'The statement is false; coffee always lowers blood pressure.',
+    ],
+    correct: 0,
+  },
+  {
+    q: 'Which client benefits the most from personalised supplementation?',
+    options: [
+      'Only top athletes.',
+      'Anyone whose lifestyle, sex, age, or genetic make-up differs from the "average person" the standard pills are designed for — i.e. almost everyone.',
+      'Only senior citizens.',
+      'Only people with diagnosed deficiencies.',
+    ],
+    correct: 1,
+  },
+]
+
 /* For each course, fill in defaults only where not explicitly set on the course.
    Placeholder courses are skipped — they intentionally have minimal data. */
 COURSES.forEach(c => {
   if (c.contentType === 'placeholder') return
-  if (c.contentType !== 'supplementary' && c.contentType !== 'faq' && !c.questions) c.questions = GENERIC_QUESTIONS
+  if (c.contentType !== 'supplementary' && c.contentType !== 'faq' && !c.questions) {
+    c.questions = c.lang === 'en' ? GENERIC_QUESTIONS_EN : GENERIC_QUESTIONS
+  }
   if (!c.videos) c.videos = GENERIC_VIDEOS
   if (!c.documents) c.documents = GENERIC_DOCS
 })
@@ -2519,6 +2826,10 @@ export const MAIN_CATEGORIES = [
 export const isCertifiable = (course) =>
   course.contentType !== 'supplementary' && course.contentType !== 'faq'
 
+/* Stable per-course key for user-state tracking.
+   We always prefer `uid` (immutable). Falls back to `id` only for legacy data. */
+export const courseKey = (course) => course?.uid || course?.id
+
 /* Content tags shown under the course description.
    Returns an ordered array of tag descriptors: { label, className } */
 export const getContentTags = (course) => {
@@ -2538,8 +2849,8 @@ export const getContentTags = (course) => {
   // Demo PDF — any document with "Demo" or "Bericht" in title
   const hasDemo = docs.some(d => /\bdemo\b/i.test(d.title || '') || /\bbericht\b/i.test(d.title || ''))
   if (hasDemo) tags.push({ label: 'Demo PDF', className: 'tag-demo' })
-  // Science PDF — any "Review:" / "Studie" / "Wissenschaftliche Quelle" document
-  const hasScience = docs.some(d => /^review\b|wissenschaftlich|studie/i.test(d.title || ''))
+  // Science PDF — Reviews, Studien, "Science PDF" im Titel (neue Naming-Konvention)
+  const hasScience = docs.some(d => /(^|\s)(review|studie|wissenschaftlich)\b|\bscience pdf\b/i.test(d.title || ''))
   if (hasScience) tags.push({ label: 'Science PDF', className: 'tag-science' })
   // FAQ PDF — any document with "FAQ" in title
   const hasFaq = docs.some(d => /\bfaq\b/i.test(d.title || ''))
@@ -2557,15 +2868,19 @@ export const getContentTags = (course) => {
 
 export const isCertified = (course, state) => {
   if (!isCertifiable(course)) return false
-  const s = state[course.id]
+  // State is keyed by the stable uid (immutable per-course identifier).
+  // Falls back to id-keyed entries from legacy state if no uid match is found.
+  const s = state[course.uid] || state[course.id]
   return Boolean(s?.watched && s?.testPassed)
 }
 
-/* Build initial state from course definitions */
+/* Build initial state from course definitions.
+   State is keyed by `uid` (stable per-course identifier) so renaming the
+   human-readable `id` does NOT lose user progress. */
 export const buildInitialState = () => {
   const state = {}
   for (const c of COURSES) {
-    state[c.id] = {
+    state[c.uid] = {
       watched: c.initialWatched || false,
       progress: c.initialProgress || 0,
       testPassed: c.initialTestPassed || false,
@@ -2604,36 +2919,42 @@ const sortBySectionConvention = (items) =>
     return (CONTENT_TYPE_ORDER[a.contentType] ?? 5) - (CONTENT_TYPE_ORDER[b.contentType] ?? 5)
   })
 
-export const groupForDisplay = () => {
+export const groupForDisplay = (lang = 'de') => {
+  const mainCategoriesForLang = lang === 'en' ? MAIN_CATEGORIES_EN : MAIN_CATEGORIES
+  const sectionLabelsForLang  = lang === 'en' ? SECTION_PRODUCT_LABELS_EN : SECTION_PRODUCT_LABELS
+
   const byCategory = new Map()
   for (const c of COURSES) {
+    // Filter by language. Courses without lang are treated as 'de' (legacy).
+    const courseLang = c.lang || 'de'
+    if (courseLang !== lang) continue
     if (!byCategory.has(c.category)) byCategory.set(c.category, [])
     byCategory.get(c.category).push(c)
   }
   const mains = []
   const usedCategories = new Set()
-  for (const main of MAIN_CATEGORIES) {
+  for (const main of mainCategoriesForLang) {
     const sections = []
     for (const cat of main.sections) {
       const items = sortBySectionConvention(byCategory.get(cat) || [])
       sections.push({
         category: cat,
-        label: SECTION_PRODUCT_LABELS[cat] || '',
+        label: sectionLabelsForLang[cat] || '',
         items,
       })
       usedCategories.add(cat)
     }
     mains.push({ mainCategory: main.title, sections })
   }
-  // Any leftover categories not part of MAIN_CATEGORIES → fallback "Sonstiges"
+  // Any leftover categories not part of MAIN_CATEGORIES → fallback "Sonstiges"/"Other"
   const leftover = []
   for (const [cat, items] of byCategory) {
     if (!usedCategories.has(cat)) {
-      leftover.push({ category: cat, label: SECTION_PRODUCT_LABELS[cat] || '', items: sortBySectionConvention(items) })
+      leftover.push({ category: cat, label: sectionLabelsForLang[cat] || '', items: sortBySectionConvention(items) })
     }
   }
   if (leftover.length > 0) {
-    mains.push({ mainCategory: 'Sonstiges', sections: leftover })
+    mains.push({ mainCategory: lang === 'en' ? 'Other' : 'Sonstiges', sections: leftover })
   }
   return mains
 }
@@ -2694,8 +3015,9 @@ export const CATEGORY_CONTENT = {
 
 /* ============ HOME-SEITE: BONUS-VIDEOSEKTION ============
    Letzte Sektion auf der Home-Seite — kursvorschau-große YouTube-Tiles.
-   Kein Kurs, keine Zertifizierung — reine Inspirations-Inhalte. */
-export const HOME_VIDEO_SECTION = {
+   Kein Kurs, keine Zertifizierung — reine Inspirations-Inhalte.
+   Sprach-spezifisch: DE = "Der Weg zum ewigen Leben", EN = Novogenia Tour. */
+const HOME_VIDEO_DE = {
   category: 'Weitere relevante Inhalte',
   subtitle: '„Der WEG zum EWIGEN LEBEN?" — Longevity und der Fortschritt der Wissenschaft.',
   videos: [
@@ -2708,6 +3030,226 @@ export const HOME_VIDEO_SECTION = {
     },
   ],
 }
+const HOME_VIDEO_EN = {
+  category: 'Further Relevant Content',
+  subtitle: 'See the technology behind the world\'s most advanced personalized products.',
+  videos: [
+    {
+      youtubeId: 'yADG8aygIOI',
+      title: 'Novogenia Tour — See the technology behind the world\'s most advanced personalized products',
+    },
+  ],
+}
+export const HOME_VIDEO_SECTION = HOME_VIDEO_DE          // default for legacy imports
+export const getHomeVideoSection = (lang = 'de') => lang === 'en' ? HOME_VIDEO_EN : HOME_VIDEO_DE
+
+/* ============ HOME-SEITE: TOP-WELCOME-VIDEOS ============
+   Zwei nebeneinander stehende Video-Tiles oben auf der Home-Seite.
+   DE: Einleitung NOVO ACADEMY + Firmen-Tour (Dr. Wallerstorfer auf Deutsch).
+   EN: Welcome to Novogenia + Company Tour (Daniel auf Englisch). */
+const HOME_TOP_VIDEOS_DE = [
+  {
+    youtubeId: '71EHqtv3NOA',
+    title: 'Einleitung zur NOVO ACADEMY',
+    sub: 'Wer ist Novogenia und was kann man in diesem Schulungsportal erwarten?',
+  },
+  {
+    youtubeId: 'CFtFwezScLs',
+    title: 'TOUR durch das UNTERNEHMEN',
+    sub: 'Lass dir von Dr. Wallerstorfer zeigen, wie Genanalysen durchgeführt werden, wie personalisierte Nahrungsergänzung und Kosmetik produziert werden kann und wir von Probe und Rohstoffen zu fertigen Produkten kommen.',
+    coverImage: '/thumbnails/firmentour-cover.jpg',
+  },
+]
+const HOME_TOP_VIDEOS_EN = [
+  {
+    youtubeId: 'rDQBNTWt82Y',
+    title: 'Welcome to NOVO ACADEMY',
+    sub: 'Who is Novogenia and what to expect from this training portal — an introduction to the world of personalized genetics.',
+  },
+  {
+    youtubeId: 'N9aEz_WAe1I',
+    title: 'TOUR through the COMPANY',
+    sub: 'Daniel Wallerstorfer guides you through Novogenia — see how genetic analyses are performed, how personalized supplements and cosmetics are produced, and how we go from sample and raw materials to finished products.',
+  },
+]
+export const getHomeTopVideos = (lang = 'de') => lang === 'en' ? HOME_TOP_VIDEOS_EN : HOME_TOP_VIDEOS_DE
+
+/* ============ I18N STRINGS ============
+   Alle UI-Texte, die nicht aus den Kursdaten kommen. */
+const UI = {
+  // ---- Home page ----
+  home_courses_section_title: { de: 'DEINE ONLINE KURSE',         en: 'YOUR ONLINE COURSES' },
+  home_courses_section_sub:   { de: 'Wähle ein Modul aus den folgenden Themen und beginne dein Training.',
+                                en: 'Pick a module from the topics below and start your training.' },
+  home_progress_of:           { de: 'von',                        en: 'of' },
+  home_progress_label:        { de: 'verfügbaren Modulen absolviert',
+                                en: 'available modules completed' },
+
+  // ---- Certificate CTA ----
+  cert_cta_title:             { de: 'Zertifikat erstellen',        en: 'Generate your certificate' },
+  cert_cta_intro_a:           { de: 'Bestätige deinen Lernerfolg mit dem offiziellen ',
+                                en: 'Confirm your learning progress with the official ' },
+  cert_cta_intro_b:           { de: '-Zertifikat. Es enthält alle ',
+                                en: ' certificate. It includes all of the ' },
+  cert_cta_intro_c:           { de: ' abgeschlossenen und mit Test bestandenen Module deines Kontos und wird mit der Unterschrift von Dr. Daniel Wallerstorfer ausgestellt.',
+                                en: ' modules in your account that you have completed and passed the test for, and is issued with the signature of Dr. Daniel Wallerstorfer.' },
+  cert_cta_name_label:        { de: 'Name auf dem Zertifikat',     en: 'Name on the certificate' },
+  cert_cta_name_placeholder:  { de: 'z. B. Maria Mustermann',      en: 'e.g. Jane Doe' },
+  cert_cta_generate:          { de: 'Zertifikat generieren →',     en: 'Generate certificate →' },
+  cert_cta_sample:            { de: 'Beispiel ansehen',            en: 'View example' },
+  cert_cta_empty_hint:        { de: 'Du hast noch keine Kurse zertifiziert. Sieh dir ein Beispielzertifikat an.',
+                                en: 'You haven\'t certified any courses yet. Take a look at the example certificate.' },
+  cert_cta_name_placeholder_seal: { de: 'Dein Name hier',          en: 'Your name here' },
+
+  // ---- Certificate mini ----
+  cert_mini_presented:        { de: 'Dieses Zertifikat bestätigt, dass',
+                                en: 'This certificate confirms that' },
+  cert_mini_genetik_coach:    { de: 'GENETIK COACH',               en: 'GENETICS COACH' },
+
+  // ---- Course landing / content ----
+  cl_back:                    { de: 'Zurück zur Akademie',         en: 'Back to the academy' },
+  cl_tag_course:              { de: 'Kurs',                        en: 'Course' },
+  cl_tag_training:            { de: 'Training',                    en: 'Training' },
+  cl_tag_faq:                 { de: 'FAQ-Sammlung',                en: 'FAQ Collection' },
+  cl_tag_supplementary:       { de: 'Zusatzmaterial',              en: 'Supplementary Material' },
+  cl_certifiable_yes:         { de: 'Zertifizierbar — bestehst du den Test, fließt dieses Modul in dein Zertifikat ein.',
+                                en: 'Certifiable — pass the test and this module is added to your certificate.' },
+  cl_certifiable_no:          { de: 'Reines Zusatzmaterial — wird nicht im Zertifikat ausgewiesen.',
+                                en: 'Supplementary material only — not listed on the certificate.' },
+  cl_certified_done:          { de: '✓ Du hast dieses Modul bereits zertifiziert abgeschlossen.',
+                                en: '✓ You have already completed this module with certification.' },
+  cl_bullets_h_prefix:        { de: 'Was dieser ',                 en: 'What this ' },
+  cl_bullets_h_suffix:        { de: ' dir vermittelt',             en: ' teaches you' },
+  cl_start_course:            { de: 'Kurs starten',                en: 'Start course' },
+  cl_start_training:          { de: 'Training starten',            en: 'Start training' },
+  cl_open_faq:                { de: 'FAQ-Sammlung öffnen',         en: 'Open FAQ collection' },
+  cl_open_material:           { de: 'Zusatzmaterial öffnen',       en: 'Open supplementary material' },
+  cl_review:                  { de: 'Modul nochmal ansehen',       en: 'Review module again' },
+
+  // ---- Course content page ----
+  cc_back:                    { de: 'Zurück zur Übersicht',        en: 'Back to overview' },
+  cc_video_optional:          { de: 'Optional ansehen — die Reihenfolge ist nicht zwingend.',
+                                en: 'Optional viewing — order is not strict.' },
+  cc_complete_module:         { de: 'Modul abschließen',           en: 'Complete module' },
+  cc_complete_module_sub:     { de: 'Markiere das Modul als angesehen.',
+                                en: 'Mark the module as watched.' },
+  cc_start_test:              { de: 'Test beginnen',               en: 'Start the test' },
+  cc_start_test_sub:          { de: 'Stelle dein Wissen unter Beweis und sichere dein Zertifikat',
+                                en: 'Prove your knowledge and secure your certificate' },
+  cc_videos_h:                { de: 'Lektion',                     en: 'Lesson' },
+  cc_materials_h:             { de: 'Materialien & Downloads',     en: 'Materials & Downloads' },
+  cc_articles_h:              { de: 'Lese-Material',               en: 'Reading material' },
+  cc_faq_h:                   { de: 'Häufige Fragen',              en: 'Frequently Asked Questions' },
+
+  // ---- Test page ----
+  test_title_prefix:          { de: 'Test:',                       en: 'Test:' },
+  test_q_label:               { de: 'Frage',                       en: 'Question' },
+  test_back:                  { de: 'Zurück zum Kurs',             en: 'Back to course' },
+  test_submit_a:              { de: 'Test abschließen (',          en: 'Finish test (' },
+  test_submit_b:              { de: ' beantwortet)',               en: ' answered)' },
+  test_intro:                 { de: 'Beantworte alle Fragen und schließe das Modul mit deinem Wissen ab.',
+                                en: 'Answer all questions and finish the module with your knowledge.' },
+  test_result_pass_title:     { de: 'Bestanden! 🎉',               en: 'Passed! 🎉' },
+  test_result_fail_title:     { de: 'Nicht bestanden',             en: 'Not passed' },
+  test_score_label:           { de: 'Deine Punkte:',               en: 'Your score:' },
+  test_pass_threshold:        { de: 'Mindestens 70 % zum Bestehen.',
+                                en: 'At least 70% to pass.' },
+  test_retry:                 { de: 'Erneut versuchen',            en: 'Try again' },
+  test_review_course:         { de: 'Kurs nochmal ansehen',        en: 'Review course again' },
+  test_back_home:             { de: 'Zurück zur Akademie',         en: 'Back to the academy' },
+
+  // ---- Certificate page ----
+  certpage_back:              { de: 'Zurück',                       en: 'Back' },
+  certpage_download:          { de: 'PDF herunterladen',            en: 'Download PDF' },
+  certpage_print:             { de: 'Drucken',                       en: 'Print' },
+  certpage_completed_on:      { de: 'Am',                            en: 'On' },
+  certpage_completed_suffix:  { de: ' erfolgreich die folgenden Schulungsmodule absolviert und bestanden hat:',
+                                en: ' successfully completed and passed the following training modules:' },
+  certpage_presented_to:      { de: 'Dieses Zertifikat bestätigt, dass',
+                                en: 'This certificate confirms that' },
+
+  // ---- Sidebar (kept DE — internal partner platform; nicht Teil der EN-Akademie) ----
+
+  // ---- Brand notice ----
+  brand_notice_title:         { de: 'WICHTIG ZU WISSEN',           en: 'IMPORTANT TO KNOW' },
+  brand_notice_text:          { de: 'Die Analyseprogramme gibt es unter verschiedenen Marken und in verschiedenen Ausführungen, also kann es sein, dass die Designs und Covers der in den Materialien gezeigten Berichte nicht 1:1 mit den eigenen Designs zusammenpassen. Diese Schulungen sind aber markenübergreifend gültig.',
+                                en: 'The analysis programs come under various brands and in different versions, so the designs and covers of the reports shown in the materials may not match your own designs 1:1. These trainings are still valid across all brands.' },
+
+  // ---- Misc ----
+  misc_loading:               { de: 'Lade…',                       en: 'Loading…' },
+  misc_other:                 { de: 'Sonstiges',                   en: 'Other' },
+
+  // ---- Language picker (first visit) ----
+  langpick_title:             { de: 'Sprache wählen',              en: 'Choose your language' },
+  langpick_sub:               { de: 'Diese Auswahl kannst du später jederzeit ändern.',
+                                en: 'You can change this later at any time.' },
+
+  // ---- Landing page ----
+  landing_hero_title:         { de: 'Werde Genetics Coach',         en: 'Become a Genetics Coach' },
+  landing_hero_sub:           { de: 'Die offizielle Schulungsplattform von Novogenia. Lerne in deinem Tempo, schließe Module mit Tests ab und erhalte dein offizielles Zertifikat als Novogenia Genetics Coach.',
+                                en: 'The official Novogenia training platform. Learn at your own pace, complete modules with tests, and earn your official Novogenia Genetics Coach certificate.' },
+  landing_cta_signup:         { de: 'Kostenlos starten',            en: 'Get started for free' },
+  landing_cta_login:          { de: 'Schon registriert? Anmelden',  en: 'Already registered? Sign in' },
+
+  landing_feature_videos_t:   { de: '22 Online-Kurse',              en: '22 online courses' },
+  landing_feature_videos_d:   { de: 'Von Dr. Daniel Wallerstorfer höchstpersönlich unterrichtet — Wissenschaft, Beratung und FAQs zu allen Novogenia-Analysen.',
+                                en: 'Taught by Dr. Daniel Wallerstorfer himself — science, consultation and FAQs covering every Novogenia analysis.' },
+  landing_feature_certs_t:    { de: 'Echtes Zertifikat',            en: 'Real certificate' },
+  landing_feature_certs_d:    { de: 'Bestehe die Module mit Tests und erhalte dein personalisiertes Genetics-Coach-Zertifikat als PDF.',
+                                en: 'Pass the module tests and download your personalised Genetics-Coach certificate as a PDF.' },
+  landing_feature_progress_t: { de: 'Fortschritt überall',          en: 'Progress across devices' },
+  landing_feature_progress_d: { de: 'Dein Lernfortschritt wird in deinem Konto gespeichert — geräteübergreifend, jederzeit verfügbar.',
+                                en: 'Your progress is saved to your account — available everywhere, on every device.' },
+  landing_feature_pace_t:     { de: 'In deinem Tempo',              en: 'At your own pace' },
+  landing_feature_pace_d:     { de: 'Beginne wann du willst, pausiere, mach weiter. Kein Stress, kein Zeitdruck.',
+                                en: 'Start whenever you want, pause, continue. No stress, no deadlines.' },
+
+  landing_who_title:          { de: 'Für wen ist die Akademie?',    en: 'Who is the academy for?' },
+  landing_who_resellers:      { de: 'Partner und Reseller, die Novogenia-Analysen anbieten und ihre Kunden professionell beraten möchten.',
+                                en: 'Partners and resellers who offer Novogenia analyses and want to consult their clients with confidence.' },
+  landing_who_pros:           { de: 'Ernährungsberater, Coaches, Apotheker und Mediziner, die ihre Beratung um genetische Aspekte erweitern wollen.',
+                                en: 'Nutritionists, coaches, pharmacists and physicians who want to add a genetic dimension to their practice.' },
+  landing_who_curious:        { de: 'Alle, die verstehen wollen, wie Gene unsere Gesundheit, Ernährung, Leistung und Schönheit beeinflussen.',
+                                en: 'Anyone who wants to understand how genes shape our health, nutrition, performance and beauty.' },
+
+  // ---- Auth (signup / login) ----
+  auth_signup_title:          { de: 'Konto erstellen',              en: 'Create your account' },
+  auth_login_title:           { de: 'Anmelden',                     en: 'Sign in' },
+  auth_signup_sub:            { de: 'Email und Passwort — fertig. Du bist in 10 Sekunden drin.',
+                                en: 'Email and password — that\'s it. You\'re in within 10 seconds.' },
+  auth_login_sub:             { de: 'Willkommen zurück. Setze dort fort, wo du aufgehört hast.',
+                                en: 'Welcome back. Pick up where you left off.' },
+  auth_email_label:           { de: 'Email',                        en: 'Email' },
+  auth_email_placeholder:     { de: 'deine@email.com',              en: 'you@email.com' },
+  auth_password_label:        { de: 'Passwort',                     en: 'Password' },
+  auth_password_placeholder:  { de: 'Mindestens 8 Zeichen',         en: 'At least 8 characters' },
+  auth_name_label:            { de: 'Dein Name',                    en: 'Your name' },
+  auth_name_placeholder:      { de: 'z. B. Maria Mustermann',       en: 'e.g. Jane Doe' },
+  auth_name_hint:             { de: 'Wird auf deinem Zertifikat angezeigt.',
+                                en: 'Will appear on your certificate.' },
+  auth_submit_signup:         { de: 'Konto erstellen →',            en: 'Create account →' },
+  auth_submit_login:          { de: 'Anmelden →',                   en: 'Sign in →' },
+  auth_or_continue_with:      { de: 'oder weiter mit',              en: 'or continue with' },
+  auth_google:                { de: 'Mit Google fortfahren',        en: 'Continue with Google' },
+  auth_switch_to_login:       { de: 'Schon registriert? Anmelden',  en: 'Already registered? Sign in' },
+  auth_switch_to_signup:      { de: 'Neu hier? Konto erstellen',    en: 'New here? Create an account' },
+  auth_error_invalid:         { de: 'Email oder Passwort ungültig.', en: 'Invalid email or password.' },
+  auth_error_taken:           { de: 'Diese Email ist bereits registriert. Bitte melde dich an.',
+                                en: 'This email is already registered. Please sign in instead.' },
+  auth_error_weak:            { de: 'Passwort zu kurz (mindestens 8 Zeichen).',
+                                en: 'Password too short (at least 8 characters).' },
+  auth_loading:               { de: 'Bitte warten…',                en: 'Please wait…' },
+
+  // ---- App: logout / user menu ----
+  user_signed_in_as:          { de: 'Angemeldet als',               en: 'Signed in as' },
+  user_logout:                { de: 'Abmelden',                     en: 'Sign out' },
+}
+
+export const t = (lang, key) => {
+  const entry = UI[key]
+  if (!entry) return key
+  return entry[lang] ?? entry.de ?? key
+}
 
 /* Sample course list for the SAMPLE certificate */
 export const SAMPLE_COURSE_LIST = [
@@ -2718,3 +3260,12 @@ export const SAMPLE_COURSE_LIST = [
   'Grundlagen der Genetik: Vererbung',
   'Grundlagen der Genetik: Epigenetik — Lebensstil prägt Gene',
 ]
+export const SAMPLE_COURSE_LIST_EN = [
+  'Genetics Basics: What is DNA?',
+  'Genetics Basics: Genes, Chromosomes & Genome',
+  'Genetics Basics: How a DNA Analysis Works',
+  'Genetics Basics: SNPs Explained',
+  'Genetics Basics: Heredity',
+  'Genetics Basics: Epigenetics — Lifestyle Shapes Genes',
+]
+export const getSampleCourseList = (lang = 'de') => lang === 'en' ? SAMPLE_COURSE_LIST_EN : SAMPLE_COURSE_LIST
