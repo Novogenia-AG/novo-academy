@@ -576,7 +576,7 @@ function CertificateCTA({ name, onNameChange, onGenerate, onShowSample, complete
         <div className="cert-form">
           <label className="cert-input-wrap">
             <span>{t('cert_cta_name_label')}</span>
-            <input type="text" value={name} onChange={e => onNameChange(e.target.value)} placeholder={t('cert_cta_name_placeholder')} />
+            <input type="text" value={name} onChange={e => onNameChange(e.target.value.slice(0, 80))} placeholder={t('cert_cta_name_placeholder')} maxLength={80} />
           </label>
           <div className="cert-actions">
             <button className="btn-primary" onClick={onGenerate} disabled={!name.trim() || completedCount === 0}>
@@ -852,7 +852,7 @@ function FaqPage({ course, state, onComplete, onBack }) {
                 const ext = (d.type || '').toUpperCase() || 'PDF'
                 const Wrapper = d.url ? 'a' : 'div'
                 const wrapProps = d.url
-                  ? { href: d.url, download: '', target: '_blank', rel: 'noopener' }
+                  ? { href: d.url, download: '', target: '_blank', rel: 'noopener noreferrer' }
                   : { onClick: (e) => e.preventDefault() }
                 return (
                   <Wrapper key={i} className="cc-doc" {...wrapProps}>
@@ -1021,7 +1021,7 @@ function CourseContentPage({ course, state, onComplete, onBack, onStartTest }) {
                 const ext = (d.type || '').toUpperCase() || 'PDF'
                 const Wrapper = d.url ? 'a' : 'div'
                 const wrapProps = d.url
-                  ? { href: d.url, download: '', target: '_blank', rel: 'noopener' }
+                  ? { href: d.url, download: '', target: '_blank', rel: 'noopener noreferrer' }
                   : { onClick: (e) => e.preventDefault() }
                 return (
                   <Wrapper key={i} className="cc-doc" {...wrapProps}>
@@ -1905,7 +1905,7 @@ function ImpressumPage({ onBack }) {
       <section className="legal-section">
         <h2>{t('impressum_contact')}</h2>
         <p>
-          E-Mail: <a href="mailto:service@novogenia.com">service@novogenia.com</a>
+          E-Mail: <a href="mailto:service@novogenia.com" rel="noopener noreferrer">service@novogenia.com</a>
         </p>
       </section>
 
@@ -1951,7 +1951,7 @@ function DatenschutzPage({ onBack, onCookieSettings }) {
         <p>
           Novogenia GmbH<br />
           Strass 19, 5301 Eugendorf, {L ? 'Austria' : 'Österreich'}<br />
-          E-Mail: <a href="mailto:datenschutz@novogenia.com">datenschutz@novogenia.com</a>
+          E-Mail: <a href="mailto:datenschutz@novogenia.com" rel="noopener noreferrer">datenschutz@novogenia.com</a>
         </p>
       </section>
 
@@ -2491,9 +2491,10 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLa
                 <input
                   type="text"
                   value={name}
-                  onChange={e => setName(e.target.value)}
+                  onChange={e => setName(e.target.value.slice(0, 80))}
                   placeholder={t('auth_name_placeholder')}
                   autoComplete="name"
+                  maxLength={80}
                 />
                 <span className="auth-hint">{t('auth_name_hint')}</span>
               </label>
@@ -2503,9 +2504,10 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLa
               <input
                 type="email"
                 value={email}
-                onChange={e => setEmail(e.target.value)}
+                onChange={e => setEmail(e.target.value.slice(0, 254))}
                 placeholder={t('auth_email_placeholder')}
                 autoComplete="email"
+                maxLength={254}
                 required
               />
             </label>
@@ -2514,10 +2516,11 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLa
               <input
                 type="password"
                 value={password}
-                onChange={e => setPassword(e.target.value)}
+                onChange={e => setPassword(e.target.value.slice(0, 128))}
                 placeholder={t('auth_password_placeholder')}
                 autoComplete={isSignup ? 'new-password' : 'current-password'}
                 required
+                maxLength={128}
                 minLength={isSignup ? 8 : undefined}
               />
             </label>

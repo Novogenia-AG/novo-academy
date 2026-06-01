@@ -12,5 +12,17 @@ export default defineConfig({
   server: {
     port: 5181,
     strictPort: true,
+    // Restrict dev server to localhost only — mitigates esbuild GHSA-67mh-4wv8-2f99
+    // (cross-origin requests to the dev server via DNS rebinding).
+    host: 'localhost',
+    // Disable permissive CORS on dev server
+    cors: false,
+    headers: {
+      'X-Frame-Options': 'SAMEORIGIN',
+      'X-Content-Type-Options': 'nosniff',
+      'Referrer-Policy': 'strict-origin-when-cross-origin',
+      'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), payment=(), usb=()',
+      'X-XSS-Protection': '1; mode=block',
+    },
   },
 })

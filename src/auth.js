@@ -21,6 +21,56 @@ const SB_URL  = import.meta.env.VITE_SUPABASE_URL  || ''
 const SB_ANON = import.meta.env.VITE_SUPABASE_ANON_KEY || ''
 const USE_REAL = Boolean(SB_URL && SB_ANON)
 
+/* ===== CLIENT-SIDE RATE LIMITER =====
+   Limits sign-in + sign-up to MAX_ATTEMPTS per WINDOW_MS per browser.
+   Stored in localStorage so it survives page reloads.
+   (Server-side rate limiting is handled by Supabase; this is an
+    extra UX layer to give clearer feedback early.) */
+const RATE_KEY = 'nova-auth-attempts'
+const MAX_ATTEMPTS = 5
+const WINDOW_MS = 15 * 60 * 1000 // 15 minutes
+
+function _rateLimitCheck() {
+  try {
+    const raw = localStorage.getItem(RATE_KEY)
+    const rec = raw ? JSON.parse(raw) : { count: 0, since: Date.now() }
+    if (Date.now() - rec.since > WINDOW_MS) {
+      // Window expired — reset
+      localStorage.setItem(RATE_KEY, JSON.stringify({ count: 1, since: Date.now() }))
+      return null
+    }
+    if (rec.count >= MAX_ATTEMPTS) {
+      const waitMin = Math.ceil((WINDOW_MS - (Date.now() - rec.since)) / 60000)
+      return `Too many attempts. Please wait ${waitMin} minute${waitMin === 1 ? '' : 's'}.`
+    }
+    localStorage.setItem(RATE_KEY, JSON.stringify({ count: rec.count + 1, since: rec.since }))
+    return null
+  } catch { return null }
+}
+
+/* Input validation helpers */
+const MAX_EMAIL_LEN = 254
+const MAX_PASSWORD_LEN = 128
+const MAX_NAME_LEN = 80
+
+function _validateAuthInput({ email, password, name }) {
+  if (!email || typeof email !== 'string' || email.length > MAX_EMAIL_LEN)
+    return 'Invalid email address.'
+  if (!email.includes('@'))
+    return 'Invalid email address.'
+  if (password !== undefined) {
+    if (!password || typeof password !== 'string')
+      return 'Password is required.'
+    if (password.length < 8)
+      return 'Password must be at least 8 characters.'
+    if (password.length > MAX_PASSWORD_LEN)
+      return 'Password is too long.'
+  }
+  if (name !== undefined && name && name.length > MAX_NAME_LEN)
+    return 'Name is too long.'
+  return null
+}
+
 let supabase = null
 if (USE_REAL) {
   try {
@@ -115,6 +165,10 @@ export const onAuthChange = (cb) => {
 }
 
 export const signUpWithEmail = async ({ email, password, name }) => {
+  const validErr = _validateAuthInput({ email, password, name })
+  if (validErr) return { error: validErr }
+  const rateErr = _rateLimitCheck()
+  if (rateErr) return { error: rateErr }
   if (!email || !password) return { error: 'invalid' }
   if (password.length < 8) return { error: 'weak' }
 
@@ -145,6 +199,10 @@ export const signUpWithEmail = async ({ email, password, name }) => {
 }
 
 export const signInWithEmail = async ({ email, password }) => {
+  const validErr = _validateAuthInput({ email, password })
+  if (validErr) return { error: validErr }
+  const rateErr = _rateLimitCheck()
+  if (rateErr) return { error: rateErr }
   if (!email || !password) return { error: 'invalid' }
 
   if (USE_REAL && supabase) {
