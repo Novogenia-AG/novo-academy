@@ -1419,11 +1419,6 @@ export default function App() {
   const [consent, setConsent] = useCookieConsent()
   const showBanner = consent === null
 
-  // Set <html lang> attribute for screen readers
-  useEffect(() => {
-    document.documentElement.lang = lang === 'en' ? 'en' : 'de'
-  }, [lang])
-
   // Subscribe to auth changes (Supabase session + mock session)
   useEffect(() => {
     const unsub = onAuthChange((s) => setSession(s))
@@ -1459,6 +1454,11 @@ export default function App() {
     updateMyLang(newLang).catch(() => {})
   }
   useEffect(() => { try { localStorage.setItem(LANG_KEY, lang) } catch {} }, [lang])
+
+  // Set <html lang> attribute for screen readers (must come after `lang` is declared)
+  useEffect(() => {
+    document.documentElement.lang = lang === 'en' ? 'en' : 'de'
+  }, [lang])
 
   // Track whether the remote load has finished — guard writes until then
   // so we don't overwrite local edits made before load resolves,
