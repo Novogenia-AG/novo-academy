@@ -4,6 +4,33 @@
 
 ---
 
+## ⚠️ GRUNDREGELN — VERBINDLICH FÜR ALLE (Mensch & KI)
+
+**Dies ist ein LIVE-System mit echten, registrierten Nutzern.** Jede dieser Regeln gilt ohne Ausnahme. Im Zweifel: **nichts tun und nachfragen.**
+
+1. **Keine Datenschutz- oder Security-Risiken öffnen.**
+   - Keine Nutzerdaten (E-Mails, Namen, Fortschritt) leaken, in Logs/URLs/Query-Strings schreiben oder an externe Endpunkte senden.
+   - Der **`service_role`-Key** gehört NIEMALS ins Frontend, ins Repo oder in diese Datei. Nur der **Anon-Key** ins Frontend.
+   - **RLS-Policies** nie lockern oder deaktivieren. Keine Tabelle/keinen Endpunkt öffentlich lesbar machen.
+   - Keine Secrets committen (`.env*` bleibt in `.gitignore`).
+
+2. **Die Funktion bestehender Nutzer NIEMALS zerstören.**
+   - Keine Änderung darf dazu führen, dass registrierte Nutzer ihren **Login, ihre Kurse, ihren Fortschritt oder ihre Zertifikate** verlieren.
+   - **Kein Hard-Delete** von `auth.users` / `profiles` / `user_progress` — ausschließlich Soft-Delete (`deleted_at`).
+   - **`uid` (Kurs-UUID) und `course_uid` NIE ändern** — daran hängt der gespeicherte Fortschritt. Ändern = Nutzer verlieren ihre Kurse.
+   - Keine Breaking-Changes am Supabase-Schema ohne abwärtskompatible Migration. Auth-Flow (Email + Google) nie brechen.
+
+3. **Nichts Unfertiges live stellen.**
+   - Ein Push auf `main` = **sofortiger Live-Deploy**. Auf `main` kommt nur **fertiges, getestetes** (vorher lokal `npm run build`).
+   - **Einzige Ausnahme: Videos.** Fehlende Videos sind ok — sie zeigen automatisch „VIDEO COMING SOON". Platzhalter erlaubt.
+   - Alles andere Unfertige → **eigener Branch + Pull Request**, niemals direkt auf `main`.
+
+4. **Diese `CLAUDE.md` ist Pflicht-Doku — laufend aktuell halten.**
+   - Nach JEDER bedeutenden Änderung sofort aktualisieren: Changelog (Abschnitt 15) + betroffene Abschnitte. Neue Regeln/Konventionen ebenfalls hier eintragen.
+   - Eine Änderung pushen, ohne `CLAUDE.md` zu aktualisieren, verstößt gegen die Grundregeln.
+
+---
+
 ## 1. Projektübersicht
 
 **NOVO ACADEMY** ist die offizielle Trainingsplattform von Novogenia GmbH.  
@@ -12,9 +39,10 @@
 - Nutzer können sich registrieren, Kurse absolvieren, Tests bestehen und ein **Zertifikat als PDF** herunterladen
 - Admin-Panel für Nutzerverwaltung und Statistiken
 
-**Live-URL:** https://novogenia.github.io/novo-academy/  
-**GitHub-Repo:** https://github.com/novogenia/novo-academy  
-**Lokaler Dev-Server:** http://localhost:5181/ (Port fix in vite.config.js)
+**Live-URL:** https://academy.novopilot.com  (Custom Domain via GitHub Pages, „Enforce HTTPS" aktiv)
+**GitHub-Repo:** https://github.com/Novogenia-AG/novo-academy  (Org-Repo; das alte `Novogenia/novo-academy` leitet per HTTP 301 weiter → `git push origin main` funktioniert weiterhin und triggert den Deploy)
+**Lokaler Dev-Server:** http://localhost:5181/ (Port fix in vite.config.js; Dev-Base ist `/`)
+**Production-Base:** `/` (Root, weil Custom Domain — gesetzt über `VITE_BASE_PATH=/` im Deploy-Workflow; NICHT mehr `/novo-academy/`)
 
 ---
 
@@ -184,7 +212,7 @@ Die App läuft unter `/novo-academy/` (nicht Root). Alle Assets brauchen dieses 
 ### Englische Kurse (`src/data.en.js`)
 22 Kurse, spiegelbildlich zu DE, mit `lang: 'en'` und eigenen UUIDs.
 
-### Videos — Aktueller Stand (Stand: Juni 2026)
+### Videos — Aktueller Stand (Stand: 2026-06-03)
 
 **Vorhandene EN-Videos:**
 
@@ -194,18 +222,24 @@ Die App läuft unter `/novo-academy/` (nicht Root). Alle Assets brauchen dieses 
 | Eat Healthy by Your Genes: Scientific Basis | pRU2p2Banno |
 | Athletic Performance: Scientific Basis | cdsMJEPUv5A |
 | Detoxification: Scientific Basis | DbRx4Kjqkes |
-| Biological Age: Scientific Basis | udTodouyDsA |
 | Healthy Skin & Appearance: Scientific Basis | IgNeWJ6tTng |
+| Personalized Supplementation: Scientific Basis (`supp-sci-en`) | TIHnA7J6EP4 *(2026-06-02 ergänzt)* |
+| Drug Intolerance / Pharmacogenetics: Scientific Basis (`pharma-sci-en`) | SgzAZyUIx-0 *(2026-06-02 ergänzt)* |
 | Gene-Diet Consultation Training | 12 Segmente (siehe data.en.js) |
 | Nutrition Consultation Training | 22 Segmente (siehe data.en.js) |
 | Detox Consultation Training | 4 Segmente (aus Nutrition-Serie) |
 
-**Fehlende EN-Videos (noch nicht aufgenommen):**
+**Fehlende EN-Videos (noch nicht aufgenommen → zeigen „VIDEO COMING SOON"):**
+- Biological Age: Scientific Basis (`ba-sci-en`) — *falsches Video `udTodouyDsA` am 2026-06-02 entfernt, wartet auf richtiges*
 - Burnout & Stress: Scientific Basis (`bo-sci-en`)
 - Burnout & Stress: Consultation Training (`bo-report-en`)
 - Biological Age: Consultation Training (`ba-report-en`)
-- Personalized Supplementation: Scientific Basis (`supp-sci-en`) — falsches Video entfernt, wartet auf richtiges
-- Drug Intolerance / Pharmacogenetics: Scientific Basis (`pharma-sci-en`)
+
+### Long-Form-Quellvideos (für Heygen-Übersetzung)
+Die englischen Analyseberatungs-Videos (4K) liegen lokal in zwei Ordnern (OneDrive, NICHT im Repo):
+- Quelle: `…\SOME DANIEL - Dokumente\General\A - VIDEO AND REEL FOLDER\LONG FORM ENG\`
+- Heygen-Eingang: `…\EXTERNAL MATERIAL - Dokumente\General\LONG FORM VIDEOS ENG\`
+(34 Teile: Weight Management 1–11+36, Nutrition 12–33; Download via `yt-dlp` aus dem „10X Health"-Channel.)
 
 ---
 
@@ -244,15 +278,18 @@ git push origin main
 ```
 
 ### GitHub Pages Einstellungen
-- Repo: `https://github.com/novogenia/novo-academy`
+- Repo: `https://github.com/Novogenia-AG/novo-academy` (PUBLIC — Org auf Free-Plan)
 - Branch: `gh-pages` (wird von Actions verwaltet)
-- Base URL: `/novo-academy/` (konfiguriert in `vite.config.js`)
+- **Custom Domain:** `academy.novopilot.com` (in `public/CNAME`; DNS-CNAME → `novogenia-ag.github.io`; „Enforce HTTPS" aktiv)
+- **Base URL:** `/` (Root, wegen Custom Domain) — Deploy setzt `VITE_BASE_PATH=/`
+- ⚠️ **Cache-Falle:** GitHub Pages liefert `index.html` mit `max-age=600`. Nach einem Deploy zeigt ein zwischengespeicherter Browser bis zu 10 Min eine **weiße Seite** (alte index.html referenziert ein gelöschtes JS-Bundle → 404). Lösung für Tester: Hard-Reload (`Strg+Shift+R`).
 
 ---
 
 ## 11. Bekannte offene Punkte / TODOs
 
 ### Hoch-Priorität
+- [ ] **9 große Download-Dateien (>100 MB) liefern live 404** — sie sind gitignored (GitHub lehnt >100 MB ab) und fehlen im CI-Build. Liste siehe `.gitignore` („Large assets"). Fix: nach **Supabase Storage** (oder R2) hochladen, öffentlich machen, Links in `data.js`/`data.en.js` umstellen. **Achtung:** Diese Dateien liegen NICHT im Repo, nur im lokalen OneDrive-Ordner.
 - [ ] Fehlende EN-Videos aufnehmen (siehe Abschnitt 8)
 - [ ] EN-Version der Werberichtlinie PDF (aktuell zeigt `legal-basics-en` keine Downloads)
 
@@ -303,7 +340,7 @@ git push origin main
 - Region: eu-central-1 (Frankfurt)
 - Auth-Anbieter: Email/Passwort + Google OAuth
 - Google OAuth Callback: `https://whjxtrrztfzhjqtsyqqf.supabase.co/auth/v1/callback`
-- Site URL: `https://novogenia.github.io/novo-academy/`
+- Site URL: `https://academy.novopilot.com` (in Supabase Auth → URL Configuration; Redirect-URLs ebenfalls)
 
 ---
 
@@ -311,7 +348,8 @@ git push origin main
 
 - Google Cloud Console Projekt: `novo-academy-497920`
 - OAuth-Client konfiguriert für: `https://whjxtrrztfzhjqtsyqqf.supabase.co/auth/v1/callback`
-- Redirect URLs in Supabase: `https://novogenia.github.io/novo-academy/`
+- Redirect URLs in Supabase: `https://academy.novopilot.com`
+- OAuth-Consent-Screen „App name" = **NOVO ACADEMY** (In Produktion) → neue Nutzer sehen „Bei NOVO ACADEMY anmelden", nicht mehr die Supabase-URL
 
 ---
 
@@ -319,6 +357,15 @@ git push origin main
 
 | Datum | Änderung |
 |---|---|
+| 2026-06-03 | **SOP „Schulungen anlegen"** ergänzt (Abschnitt 18): Video → YouTube-Transkript → MC-Fragen aus Transkript, aktiv nach Zusatzmaterial fragen, Modulstruktur (Wissenschaft → Beratung → FAQ), Material-Fallback Englisch, Test-Fragen an übersetztes Video anpassen (keine 1:1-Übersetzung) |
+| 2026-06-03 | **Verbindliche Grundregeln** ergänzt (siehe ganz oben): Live-System-Schutz — keine Datenschutz/Security-Risiken, Funktion bestehender Nutzer nie zerstören, nichts Unfertiges live (außer Videos), CLAUDE.md-Pflicht. Gilt für neue Mitarbeiter. |
+| 2026-06-03 | 34 englische Analyseberatungs-Videos (4K) via yt-dlp heruntergeladen → `LONG FORM ENG` + Kopie nach `EXTERNAL MATERIAL\…\LONG FORM VIDEOS ENG` (Heygen-Quellen) |
+| 2026-06-03 | **Zurück/Vorwärts-Navigation** via History API (Browser-/Handy-Zurück funktioniert im SPA-Router) |
+| 2026-06-03 | **Fix: weiße Seite am Handy** — `.app.no-sidebar { flex-direction: column }`. `.app` war flex-`row`, der `<footer>` als Flex-Geschwister verdrängte `<main>` auf 0px Breite. (Ausgelöst durch das `overflow-x:hidden` aus dem Responsive-Pass.) |
+| 2026-06-03 | **Responsive Mobile-Pass** (styles.css): Swipe-Kacheln, ausgeblendete Scroll-Buttons, getrimmte Paddings/Typo, 4K-Zertifikat skaliert, 16px-Inputs gegen iOS-Zoom |
+| 2026-06-02 | EN-Videos: Supplements (`TIHnA7J6EP4`) + Pharmacogenetics (`SgzAZyUIx-0`) ergänzt; Biological Age falsches Video (`udTodouyDsA`) entfernt → Platzhalter |
+| 2026-06-02 | **Custom Domain** `academy.novopilot.com` + „Enforce HTTPS"; **Repo-Migration** `Novogenia` → Org `Novogenia-AG`; `VITE_BASE_PATH=/` (Base von `/novo-academy/` auf `/`) |
+| 2026-06-02 | **TDZ-Bugfix** (weiße Seite): ein `useEffect` referenzierte `lang` vor dessen `const`-Deklaration → „Cannot access 'lang' before initialization". `useEffect` hinter die Deklaration verschoben |
 | 2026-06-01 | `prettyNameFromEmail()` + `bestDisplayName()` — Namen aus E-Mail werden kapitalisiert für Zertifikat-Vorschlag |
 | 2026-06-01 | Admin: Soft-Delete / Undelete, Rename, Admin-Promote, Progress-Reset (User-Actions-Menü) |
 | 2026-06-01 | Multi-Page Zertifikat: >16 Kurse splitten auf mehrere PDF-Seiten |
@@ -342,3 +389,86 @@ Bitte halte **diese Datei aktuell** nach jeder bedeutenden Änderung:
 - Deployment-Änderungen → Abschnitt 10
 
 Ziel: Wer diese Datei liest + Zugriff auf den Ordner hat, kann sofort auf jedem Computer weiterarbeiten — ohne diese Konversation zu kennen.
+
+---
+
+## 17. Onboarding für neue Mitarbeiter / weitere Computer
+
+> **Wichtigste Regel:** Der **Code** kommt aus **GitHub**, NICHT aus dem geteilten OneDrive-Ordner.
+> OneDrive + `.git` + `node_modules` führt zu Sync-Konflikten und kaputten Builds. Der OneDrive-Ordner
+> ist nur für die großen **Medien-Assets** (Videos, Master-Dateien) sinnvoll, die nicht im Repo liegen.
+
+### Voraussetzungen (auf dem neuen Rechner installieren)
+- **Git** — https://git-scm.com
+- **Node.js LTS** (v20+; getestet mit v24) + npm — https://nodejs.org
+- **Claude Code** (CLI) — damit diese `CLAUDE.md` automatisch gelesen wird
+- Ein **GitHub-Account**
+
+### Was der Repo-Owner (Daniel) einmalig tun muss
+1. **GitHub-Zugriff geben:** github.com/Novogenia-AG/novo-academy → *Settings → Collaborators* (bzw. Org *People → Teams*) → den Kollegen mit **Write**-Rolle einladen. (Repo ist public, also *lesen/klonen* geht ohne Einladung — zum **Pushen** braucht er Write.)
+2. **`.env.local` sicher übermitteln** (NICHT über Git/öffentlich): die zwei Zeilen aus Abschnitt 5. Der Anon-Key ist public-by-design, aber sauber ist es, ihn direkt zu schicken (z.B. 1Password/Teams-DM).
+3. *(Optional)* Den OneDrive-Medienordner (`SOME DANIEL` / `EXTERNAL MATERIAL`) für die Videos teilen — nur falls der Kollege an den Long-Form-Videos arbeitet.
+4. *(Optional, nur bei DB-Arbeit)* Supabase-Projekt-Zugriff einladen (supabase.com/dashboard → Project → *Team*). Für reine Frontend-Arbeit nicht nötig.
+
+### Was der Kollege zum Vorbereiten tut
+```bash
+# 1. Repo an einen LOKALEN Ort klonen (NICHT in einen OneDrive-Ordner!)
+git clone https://github.com/Novogenia-AG/novo-academy.git
+cd novo-academy
+
+# 2. .env.local anlegen (Inhalt von Daniel, siehe Abschnitt 5)
+#    Windows PowerShell: New-Item .env.local ; dann Inhalt einfügen
+
+# 3. Abhängigkeiten installieren
+npm install
+
+# 4. Dev-Server starten
+npm run dev        # → http://localhost:5181/
+
+# 5. Änderung committen + deployen (löst automatisch den Live-Deploy aus)
+git add .
+git commit -m "feat: beschreibung"
+git push origin main
+```
+Ohne `.env.local` läuft die App im **Mock-Modus** (localStorage statt Supabase) — gut zum UI-Entwickeln, aber ohne echte Logins/Daten.
+
+### Wichtige Regeln für die Zusammenarbeit
+- **Diese `CLAUDE.md` nach jeder bedeutenden Änderung aktualisieren** (Changelog Abschnitt 15).
+- **`.env.local` niemals committen** (steht in `.gitignore`).
+- **`service_role`-Key niemals ins Frontend / Repo.**
+- Auf `main` pushen = sofortiger Live-Deploy. Für größere Experimente einen **Branch** nutzen und per Pull Request mergen.
+- Vor dem Pushen lokal `npm run build` laufen lassen (fängt Build-Fehler ab, bevor der Deploy rot wird).
+
+---
+
+## 18. Schulungen anlegen — Standard-Ablauf (SOP)
+
+**Wenn ein neues Schulungsvideo + Thema geliefert wird, läuft IMMER genau dieser Ablauf ab.**
+Ziel: konsistente, korrekt strukturierte Kurse — auf jedem Computer, in jeder Sprache, ohne Rückfragen zur Struktur.
+
+### A. Pro Video (geliefert wird: Video-Link + Thema + Sprache)
+1. **Video einbetten wie gewohnt** — `youtubeId` (Einzelvideo) bzw. `videoSegments[]` (Mehrteiler) in das passende Kurs-Objekt der Sprachdatei (`data.js` = DE, `data.en.js` = EN, weitere Sprachen analog).
+2. **Transkript von YouTube holen** — das Transkript/die Untertitel des gelieferten Videos sind die **inhaltliche Quelle der Wahrheit** (z. B. `yt-dlp --write-auto-subs --write-subs --sub-langs <lang> --skip-download <url>`). Kein Transkript verfügbar → nachfragen.
+3. **Multiple-Choice-Test aus dem Transkript erstellen** — im Stil der bestehenden Tests: **5–7 Fragen**, je 4 Optionen, genau eine korrekt (`questions[]` mit `q` / `options` / `correct`). Die Fragen müssen den **tatsächlichen Video-Inhalt** prüfen, nicht Allgemeinwissen.
+4. **Aktiv nach Zusatzmaterial fragen** — den Lieferanten um Dokumente bitten (Folien-PPTX, Demo-Berichte, Science-PDFs) für `documents[]`. (Große Dateien >100 MB → nicht ins Repo, separates Hosting, siehe Asset-Regeln.)
+
+### B. Kursstruktur pro Thema (die „Form" der Schulung)
+Jedes Thema bekommt — soweit Material vorhanden — diese Module, immer in dieser Reihenfolge:
+
+| Modul | `contentType` | Wann |
+|---|---|---|
+| **Wissenschaftliche Basis** | `course` (Einzelvideo + Test) | **immer** |
+| **Beratungsschulung** | `course` (`videoSegments[]` + ggf. Test) | **wenn verfügbar** |
+| **Häufige Fragen (FAQ)** | `faq` (Accordion) | **wenn verfügbar** |
+
+### C. Mehrsprachigkeit (wichtig für künftige Sprach-Videos)
+- Jede Sprache hat **eigene Kurs-Objekte** mit eigenen `uid`s und `lang`-Feld.
+- **Material-Fallback:** Solange es für eine Sprache **keine eigenen Materialien** (Dokumente/Demo-Berichte) gibt → die **englischen Materialien** verwenden (Englisch ist der Fallback, nicht Deutsch). Sobald sprach-eigene Materialien geliefert werden → ersetzen.
+- **Test-Fragen bei übersetzten / lip-synced Videos:** Die Fragen werden aus dem Transkript der **jeweiligen Sprachversion** generiert und an deren **tatsächlichen Inhalt angepasst** — **KEINE 1:1-Übersetzung** der Original-Fragen. (Übersetzte Videos weichen inhaltlich oft leicht ab; die Fragen müssen zum tatsächlich gesprochenen Video passen.)
+- Fehlt ein Video in einer Sprache → `youtubeId` weglassen → zeigt automatisch „VIDEO COMING SOON".
+
+### D. Abschluss jeder neuen Schulung
+- `uid` neu & eindeutig (nie wiederverwenden); `initialWatched: false`, `initialTestPassed: false`.
+- Assets über die bestehenden Pfad-Helfer referenzieren.
+- **`CLAUDE.md` aktualisieren** (Abschnitt 8 Video-Stand + Changelog Abschnitt 15).
+- Lokal `npm run build` testen → dann committen/pushen (Unfertiges nur per Branch + PR — siehe Grundregeln).
