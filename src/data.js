@@ -497,7 +497,7 @@ export const COURSES = [
       'Gen-Diät-Programm, Lebensmittelbewertung, Kalorienblocker & wissenschaftliche Belege',
       'Komplette FAQ-Sammlung als PDF zum Download',
     ],
-    thumbnail: T(5),
+    thumbnail: '/thumbnails/wm-faq-cover.jpg',
     faqGroups: [
       {
         title: 'Was ist die Gen-Diät?',
@@ -618,7 +618,7 @@ export const COURSES = [
       'Koffein, Folsäure, Bluttest vs. Gentest',
       'Hintergrund zur Lebensmittelbewertung',
     ],
-    thumbnail: T(7),
+    thumbnail: '/thumbnails/nut-faq-cover.jpg',
     faqGroups: [
       {
         title: 'Allgemeines zur Ernährungsgenetik',
@@ -978,7 +978,7 @@ export const COURSES = [
       'Regeneration und Ernährung',
       'Trainingssteuerung nach Genotyp',
     ],
-    thumbnail: T(11),
+    thumbnail: '/thumbnails/pg-faq-cover.jpg',
     faqGroups: [
       {
         title: 'Talent & Genetik im Sport',
@@ -1384,7 +1384,7 @@ export const COURSES = [
       'Welche Lebensstil-Maßnahmen wirklich helfen',
       'Wann ist genetisch bedingte Anfälligkeit ein Problem?',
     ],
-    thumbnail: T(15),
+    thumbnail: '/thumbnails/bo-faq-cover.jpg',
     faqGroups: [
       {
         title: 'Genetik & Stress',
@@ -2116,7 +2116,7 @@ export const COURSES = [
       'Wie passt sich die Dosis an den genetischen Bedarf an?',
       'Was kostet die personalisierte Supplementierung im Vergleich?',
     ],
-    thumbnail: T(15),
+    thumbnail: '/thumbnails/supp-faq-cover.jpg',
     faqGroups: [
       {
         title: 'Grundlagen — Warum personalisiert?',
