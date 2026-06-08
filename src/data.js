@@ -2206,7 +2206,7 @@ export const COURSES = [
       'Antioxidative Schutzsysteme der Haut (SOD, CAT, GPX)',
     ],
     thumbnail: T(1),
-    youtubeId: '8RVq0Qp4r64',
+    youtubeId: '5A5XoWH7XKk', // "BEAUTY. Die 9 Faktoren des Alterns" (30:31, public). Vorher 8RVq0Qp4r64 = vom Kanal gelöscht → Modul war live kaputt (2026-06-08 gefixt)
     introQuestionsHeader: 'In dieser Schulung bekommst du Antworten auf folgende Fragen:',
     introQuestions: [
       'Welche Gene steuern den Kollagenabbau und damit die Faltenbildung?',
