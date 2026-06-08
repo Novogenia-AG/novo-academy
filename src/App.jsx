@@ -1616,10 +1616,10 @@ export default function App() {
         />
       )
     }
-  } else if (route.name === 'course-landing') {
+  } else if (route.name === 'course-landing' && courseById(route.courseId)) {
     const course = courseById(route.courseId)
     page = <CourseLandingPage course={course} state={courseState[courseKey(course)] || {}} navigate={navigate} onBack={() => navigate({ name: 'home' })} />
-  } else if (route.name === 'course-content') {
+  } else if (route.name === 'course-content' && courseById(route.courseId)) {
     const course = courseById(route.courseId)
     if (course.contentType === 'faq') {
       page = <FaqPage course={course} state={courseState[courseKey(course)] || {}}
@@ -1632,7 +1632,7 @@ export default function App() {
         onBack={() => navigate({ name: 'course-landing', courseId: course.id })}
         navigate={navigate} />
     }
-  } else if (route.name === 'test') {
+  } else if (route.name === 'test' && courseById(route.courseId)) {
     const course = courseById(route.courseId)
     page = <TestPage course={course}
       onSubmit={({ score, passed }) => {
@@ -1641,7 +1641,7 @@ export default function App() {
         navigate({ name: 'test-result', courseId: course.id })
       }}
       onBack={() => navigate({ name: 'course-landing', courseId: course.id })} />
-  } else if (route.name === 'test-result') {
+  } else if (route.name === 'test-result' && courseById(route.courseId)) {
     const course = courseById(route.courseId)
     page = <TestResultPage course={course} score={lastTestResult?.score || 0} passed={lastTestResult?.passed || false}
       navigate={navigate} onBack={() => navigate({ name: 'course-landing', courseId: course.id })} />
