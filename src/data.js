@@ -2008,9 +2008,7 @@ export const COURSES = [
       'Bioverfügbarkeit von Vitaminen und Mineralien',
     ],
     thumbnail: T(15),
-    /* Kein youtubeId: die bisherige ID (n9pkNybj1LU) war das FALSCHE Video
-       ("GESUND oder UNGESUND?" aus der Ernährung). Zeigt "VIDEO COMING SOON",
-       bis das richtige deutsche Supplements-Video vorliegt. */
+    youtubeId: 'WV2pfawe6zI', // DE Supplements-Schnitt aus "Gesund oder ungesund?" (13:23–Ende), public hochgeladen 2026-06
     coverImage: '/thumbnails/supp-sci-cover.jpg',
     introQuestionsHeader: 'In dieser Schulung bekommst du Antworten auf folgende Fragen:',
     introQuestions: [
@@ -3202,8 +3200,8 @@ const UI = {
   landing_feature_videos_d:   { de: 'Von Dr. Daniel Wallerstorfer höchstpersönlich unterrichtet — Wissenschaft, Beratung und FAQs zu allen Novogenia-Analysen.',
                                 en: 'Taught by Dr. Daniel Wallerstorfer himself — science, consultation and FAQs covering every Novogenia analysis.' },
   landing_feature_certs_t:    { de: 'Echtes Zertifikat',            en: 'Real certificate' },
-  landing_feature_certs_d:    { de: 'Bestehe die Module mit Tests und erhalte dein personalisiertes Genetics-Coach-Zertifikat als PDF.',
-                                en: 'Pass the module tests and download your personalised Genetics-Coach certificate as a PDF.' },
+  landing_feature_certs_d:    { de: 'Bestehe die Module mit Tests und erhalte dein personalisiertes Genetik-Coach-Zertifikat als PDF.',
+                                en: 'Pass the module tests and download your personalised Genetics Coach certificate as a PDF.' },
   landing_feature_progress_t: { de: 'Fortschritt überall',          en: 'Progress across devices' },
   landing_feature_progress_d: { de: 'Dein Lernfortschritt wird in deinem Konto gespeichert — geräteübergreifend, jederzeit verfügbar.',
                                 en: 'Your progress is saved to your account — available everywhere, on every device.' },
