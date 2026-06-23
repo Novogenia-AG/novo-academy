@@ -1,28 +1,39 @@
 :root {
-  --wine: #6B1F47;
-  --wine-dark: #551736;
-  --wine-light: #8A2A5C;
-  --wine-soft: #F5E7EE;
-  --wine-softer: #FBF6F9;
-  --gold: #C9A77E;
-  --lime: #DBDB22;       /* Brand secondary — Novogenia lime */
-  --lime-dark: #B5B51E;  /* Darker shade for hover/border */
-  --gold-soft: #F1E5D2;
+  /* ===== Novogenia nd-native brand palette (official) ===== */
+  --wine: #5E0047;          /* plum — primary brand */
+  --wine-dark: #400031;     /* plum-deep — hover / dark areas */
+  --wine-light: #7A1A60;
+  --wine-soft: #F4E8EF;     /* soft plum wash */
+  --wine-softer: #FBF6F9;   /* bg-soft */
+  --gold: #E8B23A;          /* nd gold accent */
+  --lime: #DDDD12;          /* nd acid-green highlight */
+  --lime-dark: #B8B80E;
+  --gold-soft: #FBEFD6;
   --green: #18A455;
   --green-soft: #DCF1E0;
-  --active-bg: #EFE0E8;
+  --active-bg: #F4E8EF;
   --bg: #FFFFFF;
+  --bg-soft: #FBF6F9;       /* plum-tinted cream sections */
+  --bg-warm: #FFF8EF;
   --panel: #FFFFFF;
-  --text: #1A1A1A;
-  --text-soft: #2C2C2C;
-  --muted: #6E6E6E;
-  --muted-2: #9A9A9A;
-  --line: #E6E6E6;
-  --line-soft: #F0F0F0;
-  --row-bg: #FAFAFA;
-  --badge-bg: #B61E58;
+  --text: #1A1418;          /* ink */
+  --text-soft: #3A323A;
+  --muted: #5C525A;         /* ink-soft */
+  --muted-2: #9A8F96;
+  --line: #ECE0E8;          /* plum-tinted hairline */
+  --line-soft: #F5EDF2;
+  --row-bg: #FBF6F9;
+  --badge-bg: #5E0047;
 
-  --tag-video-bg: #6B1F47;
+  /* ===== Radii + plum shadows (nd-native) ===== */
+  --radius: 22px;
+  --radius-sm: 14px;
+  --radius-pill: 999px;
+  --shadow-sm: 0 2px 14px rgba(94,0,71,0.06);
+  --shadow-md: 0 18px 50px -16px rgba(94,0,71,0.20);
+  --shadow-lg: 0 32px 80px -20px rgba(94,0,71,0.28);
+
+  --tag-video-bg: #5E0047;
   --tag-video-fg: #ffffff;
   --tag-test-bg: #FFE9CC;
   --tag-test-fg: #8C5400;
@@ -446,13 +457,13 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   overflow: hidden;
   background: #1a1a1a;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s cubic-bezier(.16,1,.3,1), box-shadow 0.25s;
 }
-.tile:hover .thumb { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,0.14); }
+.tile:hover .thumb { transform: translateY(-5px); box-shadow: var(--shadow-md); }
 
 /* ============ PLACEHOLDER TILE — COMING SOON ============ */
 .tile.is-placeholder {
@@ -545,7 +556,7 @@ a { color: inherit; text-decoration: none; }
 .content-tags.is-lg .tag { font-size: 12px; padding: 5px 12px; letter-spacing: 0.5px; }
 
 /* ============ COURSE LANDING PAGE ============ */
-.course-landing { background: #FAFAFA; min-height: 100vh; padding-bottom: 60px; }
+.course-landing { background: var(--bg-soft); min-height: 100vh; padding-bottom: 60px; }
 .course-landing-bar { padding: 22px 36px 0; }
 .btn-back {
   display: inline-flex; align-items: center; gap: 4px;
@@ -554,7 +565,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--text);
   font-weight: 600; font-size: 13.5px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: var(--radius-pill);
   transition: background 0.15s, border-color 0.15s;
 }
 .btn-back:hover { background: var(--wine-soft); border-color: var(--wine-soft); color: var(--wine); }
@@ -565,8 +576,8 @@ a { color: inherit; text-decoration: none; }
   max-width: 880px;          /* match the text content below */
   height: 320px;
   overflow: hidden;
-  border-radius: 14px;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
 }
 .course-hero-img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .course-hero-shade {
@@ -633,34 +644,36 @@ a { color: inherit; text-decoration: none; }
   border-top: 1px solid var(--line);
 }
 .btn-primary {
-  padding: 11px 20px;
+  padding: 12px 24px;
   background: var(--wine);
   color: #fff;
-  border-radius: 10px;
+  border-radius: var(--radius-pill);
   font-weight: 700; font-size: 14px;
   display: inline-flex; align-items: center; gap: 8px;
-  transition: transform 0.12s, background 0.15s, box-shadow 0.15s;
+  box-shadow: 0 6px 16px rgba(94,0,71,0.22);
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
 }
-.btn-primary:hover { background: var(--wine-dark); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(107,31,71,0.25); }
+.btn-primary:hover { background: var(--wine-dark); transform: translateY(-1px); box-shadow: 0 10px 22px rgba(94,0,71,0.30); }
 .btn-primary:disabled { background: #C9C2C7; cursor: not-allowed; transform: none; box-shadow: none; }
-.btn-primary.big { padding: 14px 26px; font-size: 15px; border-radius: 12px; }
+.btn-primary.big { padding: 16px 32px; font-size: 15.5px; border-radius: var(--radius-pill); }
 
 .btn-ghost {
-  padding: 11px 20px;
+  padding: 12px 24px;
   background: transparent;
   color: var(--wine);
-  border: 1.5px solid var(--wine);
-  border-radius: 10px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-pill);
   font-weight: 700; font-size: 14px;
+  transition: background 0.2s, border-color 0.2s;
 }
-.btn-ghost:hover { background: var(--wine-soft); }
-.btn-ghost.big { padding: 13px 24px; font-size: 15px; border-radius: 12px; }
+.btn-ghost:hover { background: var(--wine-soft); border-color: var(--wine); }
+.btn-ghost.big { padding: 15px 30px; font-size: 15px; border-radius: var(--radius-pill); }
 
 .course-test-wrap { display: inline-flex; align-items: center; gap: 14px; flex-wrap: wrap; }
 .test-completed { color: var(--green); font-weight: 600; font-size: 13.5px; }
 
 /* ============ COURSE CONTENT PAGE ============ */
-.course-content-page { background: #FAFAFA; min-height: 100vh; padding-bottom: 60px; }
+.course-content-page { background: var(--bg-soft); min-height: 100vh; padding-bottom: 60px; }
 .cc-wrap { max-width: 920px; margin: 22px auto 0; padding: 0 36px; }
 .cc-title { margin: 0; font-family: "Montserrat", sans-serif; font-size: 34px; font-weight: 800; letter-spacing: -0.6px; line-height: 1.15; color: var(--text); }
 

@@ -2698,7 +2698,16 @@ export const COURSES = [
    language is selected by the user via the language switcher and filtered
    in App.jsx. */
 import { COURSES_EN, MAIN_CATEGORIES_EN, SECTION_PRODUCT_LABELS_EN } from './data.en.js'
+import { COURSES_CZ, MAIN_CATEGORIES_CZ, SECTION_PRODUCT_LABELS_CZ } from './data.cz.js'
+import { COURSES_IT, MAIN_CATEGORIES_IT, SECTION_PRODUCT_LABELS_IT } from './data.it.js'
+import { COURSES_FR, MAIN_CATEGORIES_FR, SECTION_PRODUCT_LABELS_FR } from './data.fr.js'
+import { COURSES_PT, MAIN_CATEGORIES_PT, SECTION_PRODUCT_LABELS_PT } from './data.pt.js'
+import { UI_EXTRA } from './ui-extra.js'
 COURSES.push(...COURSES_EN)
+COURSES.push(...COURSES_CZ)
+COURSES.push(...COURSES_IT)
+COURSES.push(...COURSES_FR)
+COURSES.push(...COURSES_PT)
 
 /* English fallback generic questions — used when an English course doesn't
    define its own (so the test page doesn't show German fragments). */
@@ -2923,15 +2932,21 @@ const sortBySectionConvention = (items) =>
     return (CONTENT_TYPE_ORDER[a.contentType] ?? 5) - (CONTENT_TYPE_ORDER[b.contentType] ?? 5)
   })
 
+const MAIN_CATS_BY_LANG = { en: MAIN_CATEGORIES_EN, cz: MAIN_CATEGORIES_CZ, it: MAIN_CATEGORIES_IT, fr: MAIN_CATEGORIES_FR, pt: MAIN_CATEGORIES_PT }
+const SEC_LABELS_BY_LANG = { en: SECTION_PRODUCT_LABELS_EN, cz: SECTION_PRODUCT_LABELS_CZ, it: SECTION_PRODUCT_LABELS_IT, fr: SECTION_PRODUCT_LABELS_FR, pt: SECTION_PRODUCT_LABELS_PT }
 export const groupForDisplay = (lang = 'de') => {
-  const mainCategoriesForLang = lang === 'en' ? MAIN_CATEGORIES_EN : MAIN_CATEGORIES
-  const sectionLabelsForLang  = lang === 'en' ? SECTION_PRODUCT_LABELS_EN : SECTION_PRODUCT_LABELS
+  const mainCategoriesForLang = MAIN_CATS_BY_LANG[lang] || MAIN_CATEGORIES
+  const sectionLabelsForLang  = SEC_LABELS_BY_LANG[lang] || SECTION_PRODUCT_LABELS
 
   const byCategory = new Map()
   for (const c of COURSES) {
     // Filter by language. Courses without lang are treated as 'de' (legacy).
     const courseLang = c.lang || 'de'
     if (courseLang !== lang) continue
+    // Hide trainings that have no video yet (would show "VIDEO COMING SOON").
+    // FAQ + supplementary courses carry no video by design and stay visible.
+    if (c.contentType !== 'faq' && c.contentType !== 'supplementary' &&
+        !c.youtubeId && !(c.videoSegments && c.videoSegments.length)) continue
     if (!byCategory.has(c.category)) byCategory.set(c.category, [])
     byCategory.get(c.category).push(c)
   }
@@ -2940,20 +2955,17 @@ export const groupForDisplay = (lang = 'de') => {
   for (const main of mainCategoriesForLang) {
     const sections = []
     for (const cat of main.sections) {
-      const items = sortBySectionConvention(byCategory.get(cat) || [])
-      sections.push({
-        category: cat,
-        label: sectionLabelsForLang[cat] || '',
-        items,
-      })
       usedCategories.add(cat)
+      const items = sortBySectionConvention(byCategory.get(cat) || [])
+      if (items.length === 0) continue   // skip empty category sections
+      sections.push({ category: cat, label: sectionLabelsForLang[cat] || '', items })
     }
-    mains.push({ mainCategory: main.title, sections })
+    if (sections.length > 0) mains.push({ mainCategory: main.title, sections })
   }
   // Any leftover categories not part of MAIN_CATEGORIES → fallback "Sonstiges"/"Other"
   const leftover = []
   for (const [cat, items] of byCategory) {
-    if (!usedCategories.has(cat)) {
+    if (!usedCategories.has(cat) && items.length > 0) {
       leftover.push({ category: cat, label: sectionLabelsForLang[cat] || '', items: sortBySectionConvention(items) })
     }
   }
@@ -3045,7 +3057,25 @@ const HOME_VIDEO_EN = {
   ],
 }
 export const HOME_VIDEO_SECTION = HOME_VIDEO_DE          // default for legacy imports
-export const getHomeVideoSection = (lang = 'de') => lang === 'en' ? HOME_VIDEO_EN : HOME_VIDEO_DE
+const HOME_VIDEO_CZ = {
+  category: 'Další relevantní obsah',
+  subtitle: 'Podívej se na technologii za nejpokročilejšími personalizovanými produkty na světě.',
+  videos: [{ youtubeId: 'yADG8aygIOI', title: 'Prohlídka Novogenie — technologie za nejpokročilejšími personalizovanými produkty na světě' }],
+}
+const HOME_VIDEO_FR = {
+  category: 'Autres contenus pertinents',
+  subtitle: 'Découvre la technologie derrière les produits personnalisés les plus avancés au monde.',
+  videos: [{ youtubeId: 'yADG8aygIOI', title: 'Visite de Novogenia — la technologie derrière les produits personnalisés les plus avancés au monde' }],
+}
+const HOME_VIDEO_PT = {
+  category: 'Outros conteúdos relevantes',
+  subtitle: 'Vê a tecnologia por trás dos produtos personalizados mais avançados do mundo.',
+  videos: [{ youtubeId: 'yADG8aygIOI', title: 'Visita à Novogenia — a tecnologia por trás dos produtos personalizados mais avançados do mundo' }],
+}
+// cz/fr/pt: no lip-sync version of the bonus/longevity video yet → hidden (empty videos).
+const HOME_VIDEO_BY_LANG = { de: HOME_VIDEO_DE, en: HOME_VIDEO_EN, cz: { videos: [] }, fr: { videos: [] }, pt: { videos: [] } }
+export const getHomeVideoSection = (lang = 'de') => HOME_VIDEO_BY_LANG[lang] || HOME_VIDEO_EN
+void [HOME_VIDEO_CZ, HOME_VIDEO_FR, HOME_VIDEO_PT]   // referenced (ready for lip-sync bonus videos)
 
 /* ============ HOME-SEITE: TOP-WELCOME-VIDEOS ============
    Zwei nebeneinander stehende Video-Tiles oben auf der Home-Seite.
@@ -3076,7 +3106,24 @@ const HOME_TOP_VIDEOS_EN = [
     sub: 'Daniel Wallerstorfer guides you through Novogenia — see how genetic analyses are performed, how personalized supplements and cosmetics are produced, and how we go from sample and raw materials to finished products.',
   },
 ]
-export const getHomeTopVideos = (lang = 'de') => lang === 'en' ? HOME_TOP_VIDEOS_EN : HOME_TOP_VIDEOS_DE
+const HOME_TOP_VIDEOS_CZ = [
+  { youtubeId: 'rDQBNTWt82Y', title: 'Vítejte v NOVO ACADEMY', sub: 'Kdo je Novogenia a co můžeš od tohoto vzdělávacího portálu očekávat — úvod do světa personalizované genetiky.' },
+  { youtubeId: 'N9aEz_WAe1I', title: 'PROHLÍDKA SPOLEČNOSTI', sub: 'Daniel Wallerstorfer tě provede Novogenií — uvidíš, jak probíhají genetické analýzy, jak se vyrábějí personalizované doplňky stravy a kosmetika a jak se ze vzorku a surovin stávají hotové produkty.' },
+]
+const HOME_TOP_VIDEOS_FR = [
+  { youtubeId: 'rDQBNTWt82Y', title: 'Bienvenue à NOVO ACADEMY', sub: 'Qui est Novogenia et à quoi t\'attendre sur ce portail de formation — une introduction au monde de la génétique personnalisée.' },
+  { youtubeId: 'N9aEz_WAe1I', title: 'VISITE de l\'ENTREPRISE', sub: 'Daniel Wallerstorfer te fait visiter Novogenia — découvre comment sont réalisées les analyses génétiques, comment sont produits les compléments et cosmétiques personnalisés, et comment on passe de l\'échantillon et des matières premières aux produits finis.' },
+]
+const HOME_TOP_VIDEOS_PT = [
+  { youtubeId: 'rDQBNTWt82Y', title: 'Bem-vindo à NOVO ACADEMY', sub: 'Quem é a Novogenia e o que esperar deste portal de formação — uma introdução ao mundo da genética personalizada.' },
+  { youtubeId: 'N9aEz_WAe1I', title: 'VISITA à EMPRESA', sub: 'Daniel Wallerstorfer guia-te pela Novogenia — vê como são feitas as análises genéticas, como são produzidos os suplementos e cosméticos personalizados, e como passamos da amostra e matérias-primas aos produtos acabados.' },
+]
+// cz/fr/pt: intro/welcome videos have NO lip-sync version yet → hidden (no English fallback).
+// The translated card texts above (HOME_TOP_VIDEOS_CZ/FR/PT) are kept ready: once the
+// lip-sync intro videos are uploaded, set those entries' youtubeId and point the map back.
+const HOME_TOP_VIDEOS_BY_LANG = { de: HOME_TOP_VIDEOS_DE, en: HOME_TOP_VIDEOS_EN, cz: [], fr: [], pt: [] }
+export const getHomeTopVideos = (lang = 'de') => HOME_TOP_VIDEOS_BY_LANG[lang] || HOME_TOP_VIDEOS_EN
+void [HOME_TOP_VIDEOS_CZ, HOME_TOP_VIDEOS_FR, HOME_TOP_VIDEOS_PT]   // referenced (ready for lip-sync intros)
 
 /* ============ I18N STRINGS ============
    Alle UI-Texte, die nicht aus den Kursdaten kommen. */
@@ -3332,6 +3379,8 @@ const UI = {
 export const t = (lang, key) => {
   const entry = UI[key]
   if (!entry) return key
+  const ex = UI_EXTRA[lang]
+  if (ex && ex[key] != null) return ex[key]
   return entry[lang] ?? entry.de ?? key
 }
 
@@ -3352,7 +3401,7 @@ export const SAMPLE_COURSE_LIST_EN = [
   'Genetics Basics: Heredity',
   'Genetics Basics: Epigenetics — Lifestyle Shapes Genes',
 ]
-export const getSampleCourseList = (lang = 'de') => lang === 'en' ? SAMPLE_COURSE_LIST_EN : SAMPLE_COURSE_LIST
+export const getSampleCourseList = (lang = 'de') => lang === 'de' ? SAMPLE_COURSE_LIST : SAMPLE_COURSE_LIST_EN
 
 /* ============================================================
    ASSET PATH PREFIXING (production safe)

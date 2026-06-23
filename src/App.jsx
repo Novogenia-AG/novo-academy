@@ -2,6 +2,7 @@ import React, { useState, useMemo, useRef, useEffect, useContext, createContext 
 import { downloadCertificate } from './generateCert.js'
 import CertTemplateBg from './CertTemplateBg.jsx'
 import PdfThumb from './PdfThumb.jsx'
+import SupportBotLauncher from './SupportBotLauncher.jsx'
 import { COURSES, isCertifiable, isCertified, buildInitialState, groupForDisplay, SAMPLE_COURSE_LIST, CATEGORY_CONTENT, HOME_VIDEO_SECTION, getHomeVideoSection, getHomeTopVideos, getContentTags, courseKey, t as tBase, getSampleCourseList, assetUrl, bestDisplayName } from './data.js'
 import {
   getCurrentSession, onAuthChange, signUpWithEmail, signInWithEmail,
@@ -19,6 +20,321 @@ const useLang = () => useContext(LangContext)
 const useT = () => {
   const lang = useLang()
   return (key) => tBase(lang, key)
+}
+
+/* ===================== INLINE I18N =====================
+   Some user-facing strings were originally written as inline
+   `lang === 'en' ? <EN> : <DE>` ternaries. That left the four extra
+   languages (it, cz, fr, pt) falling back to German. This table holds the
+   it/cz/fr/pt translations, keyed by the EXACT English string (placeholders
+   like ${...} kept verbatim), and `LX()` selects the right language. */
+const INLINE_I18N = {
+  it: {
+    'Previous': 'Precedente',
+    'Next': 'Successivo',
+    'Jane Doe': 'Mario Rossi',
+    'Play': 'Riproduci',
+    '▶ Playback (demo)': '▶ Riproduzione (demo)',
+    'Back to course overview': 'Torna alla panoramica del corso',
+    'Click a question to reveal the answer — perfect for self-testing.': 'Clicca su una domanda per scoprire la risposta — perfetto per l’autovalutazione.',
+    'Complete FAQ collection as PDF': 'Raccolta FAQ completa in PDF',
+    'Download the entire collection as a Novogenia/Novodaily-branded PDF — perfect as a reference for consultation sessions or for printing.': 'Scarica l’intera raccolta come PDF con marchio Novogenia/Novodaily — ideale come riferimento per i colloqui di consulenza o per la stampa.',
+    'You have already gone through this FAQ collection.': 'Hai già consultato questa raccolta di FAQ.',
+    'When you have gone through all questions, you can mark the module as viewed.': 'Quando hai esaminato tutte le domande, puoi contrassegnare il modulo come visualizzato.',
+    'Complete module': 'Completa il modulo',
+    'Mark the FAQ collection as viewed': 'Contrassegna la raccolta di FAQ come consultata',
+    'CERTIFIABLE COURSE': 'CORSO CERTIFICABILE',
+    'SAFE': 'SICURO',
+    'CRITICAL': 'CRITICO',
+    'WITH DISCLAIMER': 'CON AVVERTENZA',
+    'IMPORTANT': 'IMPORTANTE',
+    'VIDEO COMING SOON': 'VIDEO IN PREPARAZIONE',
+    'A dedicated English video for this module has not been recorded yet. The training content and test below remain fully functional — the video segment will be added as soon as the recording is available.': 'Un video dedicato a questo modulo è ancora in preparazione. I contenuti e il test qui sotto funzionano già perfettamente — il blocco video verrà aggiunto non appena la registrazione sarà disponibile.',
+    'Documents to take with you': 'Documenti da portare con te',
+    'You have already successfully completed this module.': 'Hai già completato con successo questo modulo.',
+    'When you have watched all relevant content, complete the module and take your test.': 'Quando hai visto tutti i contenuti rilevanti, completa il modulo e svolgi il test.',
+    'Complete training': 'Completa la formazione',
+    'Mark this module as successfully completed': 'Contrassegna questo modulo come completato con successo',
+    'Start the test': 'Inizia il test',
+    'Prove your knowledge and secure your certificate': 'Dimostra le tue conoscenze e ottieni il tuo certificato',
+    'Test': 'Test',
+    'Screenshot coming': 'Screenshot in arrivo',
+    'Question': 'Domanda',
+    'Passed!': 'Superato!',
+    'Unfortunately not passed': 'Purtroppo non superato',
+    'To course overview': 'Alla panoramica del corso',
+    'All courses': 'Tutti i corsi',
+    'Try again': 'Riprova',
+    'Review course': 'Rivedi il corso',
+    'Failed to generate the PDF. Please try again.': 'Impossibile generare il PDF. Riprova.',
+    'You haven\'t answered all questions. Submit anyway?': 'Non hai risposto a tutte le domande. Inviare comunque?',
+    'Back': 'Indietro',
+    'EXAMPLE': 'ESEMPIO',
+    'Generating...': 'Generazione in corso...',
+    'Download as PDF': 'Scarica come PDF',
+    'CEO of Novogenia': 'CEO di Novogenia',
+    'Skip to content': 'Vai al contenuto',
+    'Official training platform': 'Piattaforma di formazione ufficiale',
+    'Austria': 'Austria',
+    'Regional Court Salzburg': 'Tribunale regionale di Salisburgo',
+    'Federal Ministry for Social Affairs, Health, Care and Consumer Protection': 'Ministero federale per gli Affari sociali, la Salute, l’Assistenza e la Tutela dei consumatori',
+    'Austrian Trade Regulations 1994 (GewO), Genetic Technology Act (GTG), accessible via RIS Austria (ris.bka.gv.at).': 'Regolamento austriaco sulle attività commerciali 1994 (GewO), Legge sulla tecnologia genetica (GTG), consultabili tramite RIS Austria (ris.bka.gv.at).',
+    'Responsible Party': 'Titolare del trattamento',
+    'What data we process': 'Quali dati trattiamo',
+    'When you create an account, we store your e-mail address, your chosen display name, your language preference, and your course progress (which videos you watched and which tests you passed). This data is stored in Supabase (eu-central-1, Frankfurt, Germany) and processed exclusively for operating NOVO ACADEMY.': 'Quando crei un account, memorizziamo il tuo indirizzo e-mail, il nome visualizzato scelto, la tua preferenza linguistica e i tuoi progressi nei corsi (quali video hai guardato e quali test hai superato). Questi dati sono archiviati in Supabase (eu-central-1, Francoforte, Germania) e trattati esclusivamente per il funzionamento di NOVO ACADEMY.',
+    'Legal basis': 'Base giuridica',
+    'Processing is based on your consent (Art. 6(1)(a) GDPR) when you register, and on contract performance (Art. 6(1)(b) GDPR) for providing the academy service.': 'Il trattamento si basa sul tuo consenso (art. 6, par. 1, lett. a, GDPR) al momento della registrazione e sull’esecuzione del contratto (art. 6, par. 1, lett. b, GDPR) per la fornitura del servizio dell’accademia.',
+    'Cookies': 'Cookie',
+    'NOVO ACADEMY uses session cookies that are technically necessary for the login function (Supabase Auth). If you consent to optional cookies, embedded YouTube videos load additional cookies from Google/YouTube. You can withdraw your consent at any time.': 'NOVO ACADEMY utilizza cookie di sessione tecnicamente necessari per la funzione di login (Supabase Auth). Se acconsenti ai cookie facoltativi, i video di YouTube incorporati caricano ulteriori cookie da Google/YouTube. Puoi revocare il tuo consenso in qualsiasi momento.',
+    'Third-party services': 'Fornitori terzi',
+    'Auth & database (eu-central-1 Frankfurt, Germany). Privacy policy: supabase.com/privacy': 'Autenticazione e database (eu-central-1 Francoforte, Germania). Informativa sulla privacy: supabase.com/privacy',
+    'Video embedding (only with your consent). Privacy policy: policies.google.com/privacy': 'Incorporamento video (solo con il tuo consenso). Informativa sulla privacy: policies.google.com/privacy',
+    'Your rights': 'I tuoi diritti',
+    'You have the right to access, correct, delete, or export your data, and to lodge a complaint with the Austrian Data Protection Authority (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienna, dsb.gv.at).': 'Hai il diritto di accedere ai tuoi dati, di rettificarli, cancellarli o esportarli, nonché di presentare reclamo all’Autorità austriaca per la protezione dei dati (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienna, dsb.gv.at).',
+    'To exercise your rights, contact: datenschutz@novogenia.com': 'Per esercitare i tuoi diritti, contatta: datenschutz@novogenia.com',
+    'Local-only mode: accounts live in this browser. Configure Supabase to sync across devices.': 'Modalità solo locale: gli account esistono solo in questo browser. Configura Supabase per sincronizzare tra più dispositivi.',
+  },
+  cz: {
+    'Previous': 'Předchozí',
+    'Next': 'Další',
+    'Jane Doe': 'Jan Novák',
+    'Play': 'Přehrát',
+    '▶ Playback (demo)': '▶ Přehrávání (demo)',
+    'Back to course overview': 'Zpět na přehled kurzu',
+    'Click a question to reveal the answer — perfect for self-testing.': 'Klikni na otázku a zobraz odpověď — ideální pro vlastní testování.',
+    'Complete FAQ collection as PDF': 'Kompletní sbírka FAQ v PDF',
+    'Download the entire collection as a Novogenia/Novodaily-branded PDF — perfect as a reference for consultation sessions or for printing.': 'Stáhni si celou sbírku jako PDF se značkou Novogenia/Novodaily — ideální jako příručka pro konzultace nebo k vytištění.',
+    'You have already gone through this FAQ collection.': 'Tuto sbírku FAQ jsi již prošel.',
+    'When you have gone through all questions, you can mark the module as viewed.': 'Až projdeš všechny otázky, můžeš modul označit jako zhlédnutý.',
+    'Complete module': 'Dokončit modul',
+    'Mark the FAQ collection as viewed': 'Označ sbírku FAQ jako prohlédnutou',
+    'CERTIFIABLE COURSE': 'CERTIFIKOVATELNÝ KURZ',
+    'SAFE': 'BEZPEČNÉ',
+    'CRITICAL': 'KRITICKÉ',
+    'WITH DISCLAIMER': 'S UPOZORNĚNÍM',
+    'IMPORTANT': 'DŮLEŽITÉ',
+    'VIDEO COMING SOON': 'VIDEO SE PŘIPRAVUJE',
+    'A dedicated English video for this module has not been recorded yet. The training content and test below remain fully functional — the video segment will be added as soon as the recording is available.': 'Odpovídající video k tomuto modulu se zatím připravuje. Obsah a test níže již plně fungují — videoblok bude doplněn, jakmile bude nahrávka k dispozici.',
+    'Documents to take with you': 'Dokumenty s sebou',
+    'You have already successfully completed this module.': 'Tento modul jsi již úspěšně dokončil.',
+    'When you have watched all relevant content, complete the module and take your test.': 'Až si prohlédneš všechen relevantní obsah, dokonči modul a absolvuj svůj test.',
+    'Complete training': 'Dokončit školení',
+    'Mark this module as successfully completed': 'Označ tento modul jako úspěšně dokončený',
+    'Start the test': 'Zahájit test',
+    'Prove your knowledge and secure your certificate': 'Prokaž své znalosti a získej svůj certifikát',
+    'Test': 'Test',
+    'Screenshot coming': 'Snímek obrazovky bude doplněn',
+    'Question': 'Otázka',
+    'Passed!': 'Splněno!',
+    'Unfortunately not passed': 'Bohužel nesplněno',
+    'To course overview': 'Na přehled kurzu',
+    'All courses': 'Všechny kurzy',
+    'Try again': 'Zkusit znovu',
+    'Review course': 'Znovu si projít kurz',
+    'Failed to generate the PDF. Please try again.': 'PDF se nepodařilo vytvořit. Zkus to prosím znovu.',
+    'You haven\'t answered all questions. Submit anyway?': 'Neodpověděl jsi na všechny otázky. Přesto odeslat?',
+    'Back': 'Zpět',
+    'EXAMPLE': 'PŘÍKLAD',
+    'Generating...': 'Vytváří se...',
+    'Download as PDF': 'Stáhnout jako PDF',
+    'CEO of Novogenia': 'Generální ředitel Novogenia',
+    'Skip to content': 'Přejít na obsah',
+    'Official training platform': 'Oficiální školicí platforma',
+    'Austria': 'Rakousko',
+    'Regional Court Salzburg': 'Zemský soud Salcburk',
+    'Federal Ministry for Social Affairs, Health, Care and Consumer Protection': 'Spolkové ministerstvo pro sociální věci, zdraví, péči a ochranu spotřebitele',
+    'Austrian Trade Regulations 1994 (GewO), Genetic Technology Act (GTG), accessible via RIS Austria (ris.bka.gv.at).': 'Rakouský živnostenský řád 1994 (GewO), zákon o genové technologii (GTG), dostupné přes RIS Austria (ris.bka.gv.at).',
+    'Responsible Party': 'Správce',
+    'What data we process': 'Jaké údaje zpracováváme',
+    'When you create an account, we store your e-mail address, your chosen display name, your language preference, and your course progress (which videos you watched and which tests you passed). This data is stored in Supabase (eu-central-1, Frankfurt, Germany) and processed exclusively for operating NOVO ACADEMY.': 'Při vytvoření účtu ukládáme tvou e-mailovou adresu, zvolené zobrazované jméno, jazykové nastavení a tvůj pokrok v kurzech (která videa jsi zhlédl a které testy jsi splnil). Tyto údaje jsou uloženy v Supabase (eu-central-1, Frankfurt, Německo) a zpracovávány výhradně za účelem provozu NOVO ACADEMY.',
+    'Legal basis': 'Právní základ',
+    'Processing is based on your consent (Art. 6(1)(a) GDPR) when you register, and on contract performance (Art. 6(1)(b) GDPR) for providing the academy service.': 'Zpracování probíhá na základě tvého souhlasu (čl. 6 odst. 1 písm. a) GDPR) při registraci a za účelem plnění smlouvy (čl. 6 odst. 1 písm. b) GDPR) pro poskytování služby akademie.',
+    'Cookies': 'Cookies',
+    'NOVO ACADEMY uses session cookies that are technically necessary for the login function (Supabase Auth). If you consent to optional cookies, embedded YouTube videos load additional cookies from Google/YouTube. You can withdraw your consent at any time.': 'NOVO ACADEMY používá relační cookies, které jsou technicky nezbytné pro funkci přihlášení (Supabase Auth). Pokud souhlasíš s volitelnými cookies, vložená videa z YouTube načítají další cookies od Google/YouTube. Svůj souhlas můžeš kdykoli odvolat.',
+    'Third-party services': 'Poskytovatelé třetích stran',
+    'Auth & database (eu-central-1 Frankfurt, Germany). Privacy policy: supabase.com/privacy': 'Autentizace a databáze (eu-central-1 Frankfurt, Německo). Ochrana osobních údajů: supabase.com/privacy',
+    'Video embedding (only with your consent). Privacy policy: policies.google.com/privacy': 'Vkládání videa (pouze s tvým souhlasem). Ochrana osobních údajů: policies.google.com/privacy',
+    'Your rights': 'Tvá práva',
+    'You have the right to access, correct, delete, or export your data, and to lodge a complaint with the Austrian Data Protection Authority (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienna, dsb.gv.at).': 'Máš právo na přístup, opravu, výmaz nebo přenositelnost svých údajů a právo podat stížnost u rakouského úřadu pro ochranu osobních údajů (Datenschutzbehörde, Barichgasse 40–42, 1030 Vídeň, dsb.gv.at).',
+    'To exercise your rights, contact: datenschutz@novogenia.com': 'K uplatnění svých práv se obrať na: datenschutz@novogenia.com',
+    'Local-only mode: accounts live in this browser. Configure Supabase to sync across devices.': 'Pouze lokální režim: účty existují jen v tomto prohlížeči. Nakonfiguruj Supabase pro synchronizaci mezi zařízeními.',
+  },
+  fr: {
+    'Previous': 'Précédent',
+    'Next': 'Suivant',
+    'Jane Doe': 'Marie Dupont',
+    'Play': 'Lecture',
+    '▶ Playback (demo)': '▶ Lecture (démo)',
+    'Back to course overview': 'Retour à l’aperçu du cours',
+    'Click a question to reveal the answer — perfect for self-testing.': 'Clique sur une question pour afficher la réponse — parfait pour t’auto-évaluer.',
+    'Complete FAQ collection as PDF': 'Collection complète de FAQ en PDF',
+    'Download the entire collection as a Novogenia/Novodaily-branded PDF — perfect as a reference for consultation sessions or for printing.': 'Télécharge l’intégralité de la collection sous forme de PDF aux couleurs de Novogenia/Novodaily — idéal comme référence pour les entretiens de conseil ou pour l’impression.',
+    'You have already gone through this FAQ collection.': 'Tu as déjà parcouru cette collection de FAQ.',
+    'When you have gone through all questions, you can mark the module as viewed.': 'Lorsque tu as parcouru toutes les questions, tu peux marquer le module comme consulté.',
+    'Complete module': 'Terminer le module',
+    'Mark the FAQ collection as viewed': 'Marquer la collection de FAQ comme consultée',
+    'CERTIFIABLE COURSE': 'COURS CERTIFIABLE',
+    'SAFE': 'SÛR',
+    'CRITICAL': 'CRITIQUE',
+    'WITH DISCLAIMER': 'AVEC AVERTISSEMENT',
+    'IMPORTANT': 'IMPORTANT',
+    'VIDEO COMING SOON': 'VIDÉO EN PRÉPARATION',
+    'A dedicated English video for this module has not been recorded yet. The training content and test below remain fully functional — the video segment will be added as soon as the recording is available.': 'Une vidéo dédiée à ce module est encore en préparation. Le contenu et le test ci-dessous sont déjà pleinement fonctionnels — le bloc vidéo sera ajouté dès que l’enregistrement sera disponible.',
+    'Documents to take with you': 'Documents à emporter',
+    'You have already successfully completed this module.': 'Tu as déjà terminé ce module avec succès.',
+    'When you have watched all relevant content, complete the module and take your test.': 'Lorsque tu as visionné tout le contenu pertinent, termine le module et passe ton test.',
+    'Complete training': 'Terminer la formation',
+    'Mark this module as successfully completed': 'Marquer ce module comme terminé avec succès',
+    'Start the test': 'Commencer le test',
+    'Prove your knowledge and secure your certificate': 'Prouve tes connaissances et obtiens ton certificat',
+    'Test': 'Test',
+    'Screenshot coming': 'Capture d’écran à venir',
+    'Question': 'Question',
+    'Passed!': 'Réussi !',
+    'Unfortunately not passed': 'Malheureusement non réussi',
+    'To course overview': 'Vers l’aperçu du cours',
+    'All courses': 'Tous les cours',
+    'Try again': 'Réessayer',
+    'Review course': 'Revoir le cours',
+    'Failed to generate the PDF. Please try again.': 'Impossible de générer le PDF. Réessaie.',
+    'You haven\'t answered all questions. Submit anyway?': 'Tu n’as pas répondu à toutes les questions. Soumettre quand même ?',
+    'Back': 'Retour',
+    'EXAMPLE': 'EXEMPLE',
+    'Generating...': 'Génération en cours...',
+    'Download as PDF': 'Télécharger en PDF',
+    'CEO of Novogenia': 'PDG de Novogenia',
+    'Skip to content': 'Aller au contenu',
+    'Official training platform': 'Plateforme de formation officielle',
+    'Austria': 'Autriche',
+    'Regional Court Salzburg': 'Tribunal régional de Salzbourg',
+    'Federal Ministry for Social Affairs, Health, Care and Consumer Protection': 'Ministère fédéral des Affaires sociales, de la Santé, des Soins et de la Protection des consommateurs',
+    'Austrian Trade Regulations 1994 (GewO), Genetic Technology Act (GTG), accessible via RIS Austria (ris.bka.gv.at).': 'Code autrichien des activités commerciales 1994 (GewO), loi sur la technologie génétique (GTG), consultables via RIS Austria (ris.bka.gv.at).',
+    'Responsible Party': 'Responsable du traitement',
+    'What data we process': 'Quelles données nous traitons',
+    'When you create an account, we store your e-mail address, your chosen display name, your language preference, and your course progress (which videos you watched and which tests you passed). This data is stored in Supabase (eu-central-1, Frankfurt, Germany) and processed exclusively for operating NOVO ACADEMY.': 'Lorsque tu crées un compte, nous enregistrons ton adresse e-mail, le nom d’affichage que tu as choisi, ta préférence linguistique et ta progression dans les cours (quelles vidéos tu as regardées et quels tests tu as réussis). Ces données sont stockées dans Supabase (eu-central-1, Francfort, Allemagne) et traitées exclusivement pour l’exploitation de NOVO ACADEMY.',
+    'Legal basis': 'Base juridique',
+    'Processing is based on your consent (Art. 6(1)(a) GDPR) when you register, and on contract performance (Art. 6(1)(b) GDPR) for providing the academy service.': 'Le traitement repose sur ton consentement (art. 6, par. 1, point a, RGPD) lors de l’inscription, ainsi que sur l’exécution du contrat (art. 6, par. 1, point b, RGPD) pour la fourniture du service de l’académie.',
+    'Cookies': 'Cookies',
+    'NOVO ACADEMY uses session cookies that are technically necessary for the login function (Supabase Auth). If you consent to optional cookies, embedded YouTube videos load additional cookies from Google/YouTube. You can withdraw your consent at any time.': 'NOVO ACADEMY utilise des cookies de session techniquement nécessaires à la fonction de connexion (Supabase Auth). Si tu acceptes les cookies facultatifs, les vidéos YouTube intégrées chargent des cookies supplémentaires de Google/YouTube. Tu peux retirer ton consentement à tout moment.',
+    'Third-party services': 'Prestataires tiers',
+    'Auth & database (eu-central-1 Frankfurt, Germany). Privacy policy: supabase.com/privacy': 'Authentification et base de données (eu-central-1 Francfort, Allemagne). Politique de confidentialité : supabase.com/privacy',
+    'Video embedding (only with your consent). Privacy policy: policies.google.com/privacy': 'Intégration vidéo (uniquement avec ton consentement). Politique de confidentialité : policies.google.com/privacy',
+    'Your rights': 'Tes droits',
+    'You have the right to access, correct, delete, or export your data, and to lodge a complaint with the Austrian Data Protection Authority (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienna, dsb.gv.at).': 'Tu as le droit d’accéder à tes données, de les rectifier, de les supprimer ou de les exporter, ainsi que de déposer une réclamation auprès de l’autorité autrichienne de protection des données (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienne, dsb.gv.at).',
+    'To exercise your rights, contact: datenschutz@novogenia.com': 'Pour exercer tes droits, contacte : datenschutz@novogenia.com',
+    'Local-only mode: accounts live in this browser. Configure Supabase to sync across devices.': 'Mode local uniquement : les comptes existent seulement dans ce navigateur. Configure Supabase pour synchroniser entre les appareils.',
+  },
+  pt: {
+    'Previous': 'Anterior',
+    'Next': 'Seguinte',
+    'Jane Doe': 'Maria Silva',
+    'Play': 'Reproduzir',
+    '▶ Playback (demo)': '▶ Reprodução (demo)',
+    'Back to course overview': 'Voltar à visão geral do curso',
+    'Click a question to reveal the answer — perfect for self-testing.': 'Clica numa pergunta para revelar a resposta — perfeito para autoavaliação.',
+    'Complete FAQ collection as PDF': 'Coleção completa de FAQ em PDF',
+    'Download the entire collection as a Novogenia/Novodaily-branded PDF — perfect as a reference for consultation sessions or for printing.': 'Descarrega toda a coleção como PDF com a marca Novogenia/Novodaily — ideal como referência para sessões de aconselhamento ou para impressão.',
+    'You have already gone through this FAQ collection.': 'Já consultaste esta coleção de FAQ.',
+    'When you have gone through all questions, you can mark the module as viewed.': 'Depois de teres percorrido todas as perguntas, podes marcar o módulo como visto.',
+    'Complete module': 'Concluir módulo',
+    'Mark the FAQ collection as viewed': 'Marcar a coleção de FAQ como consultada',
+    'CERTIFIABLE COURSE': 'CURSO CERTIFICÁVEL',
+    'SAFE': 'SEGURO',
+    'CRITICAL': 'CRÍTICO',
+    'WITH DISCLAIMER': 'COM AVISO',
+    'IMPORTANT': 'IMPORTANTE',
+    'VIDEO COMING SOON': 'VÍDEO EM PREPARAÇÃO',
+    'A dedicated English video for this module has not been recorded yet. The training content and test below remain fully functional — the video segment will be added as soon as the recording is available.': 'Um vídeo dedicado a este módulo ainda está em preparação. Os conteúdos e o teste abaixo já funcionam totalmente — o bloco de vídeo será adicionado assim que a gravação estiver disponível.',
+    'Documents to take with you': 'Documentos para levar contigo',
+    'You have already successfully completed this module.': 'Já concluíste este módulo com sucesso.',
+    'When you have watched all relevant content, complete the module and take your test.': 'Depois de teres visto todos os conteúdos relevantes, conclui o módulo e realiza o teu teste.',
+    'Complete training': 'Concluir a formação',
+    'Mark this module as successfully completed': 'Marcar este módulo como concluído com sucesso',
+    'Start the test': 'Iniciar o teste',
+    'Prove your knowledge and secure your certificate': 'Demonstra os teus conhecimentos e garante o teu certificado',
+    'Test': 'Teste',
+    'Screenshot coming': 'Captura de ecrã em breve',
+    'Question': 'Pergunta',
+    'Passed!': 'Aprovado!',
+    'Unfortunately not passed': 'Infelizmente não aprovado',
+    'To course overview': 'Para a visão geral do curso',
+    'All courses': 'Todos os cursos',
+    'Try again': 'Tentar novamente',
+    'Review course': 'Rever o curso',
+    'Failed to generate the PDF. Please try again.': 'Não foi possível gerar o PDF. Tenta novamente.',
+    'You haven\'t answered all questions. Submit anyway?': 'Não respondeste a todas as perguntas. Enviar mesmo assim?',
+    'Back': 'Voltar',
+    'EXAMPLE': 'EXEMPLO',
+    'Generating...': 'A gerar...',
+    'Download as PDF': 'Descarregar como PDF',
+    'CEO of Novogenia': 'CEO da Novogenia',
+    'Skip to content': 'Saltar para o conteúdo',
+    'Official training platform': 'Plataforma de formação oficial',
+    'Austria': 'Áustria',
+    'Regional Court Salzburg': 'Tribunal Regional de Salzburgo',
+    'Federal Ministry for Social Affairs, Health, Care and Consumer Protection': 'Ministério Federal dos Assuntos Sociais, Saúde, Cuidados e Proteção do Consumidor',
+    'Austrian Trade Regulations 1994 (GewO), Genetic Technology Act (GTG), accessible via RIS Austria (ris.bka.gv.at).': 'Regulamento austríaco das atividades comerciais 1994 (GewO), Lei da Tecnologia Genética (GTG), acessíveis através do RIS Austria (ris.bka.gv.at).',
+    'Responsible Party': 'Responsável pelo tratamento',
+    'What data we process': 'Que dados tratamos',
+    'When you create an account, we store your e-mail address, your chosen display name, your language preference, and your course progress (which videos you watched and which tests you passed). This data is stored in Supabase (eu-central-1, Frankfurt, Germany) and processed exclusively for operating NOVO ACADEMY.': 'Quando crias uma conta, guardamos o teu endereço de e-mail, o nome de apresentação escolhido, a tua preferência de idioma e o teu progresso nos cursos (que vídeos viste e que testes aprovaste). Estes dados são armazenados na Supabase (eu-central-1, Frankfurt, Alemanha) e tratados exclusivamente para o funcionamento da NOVO ACADEMY.',
+    'Legal basis': 'Base jurídica',
+    'Processing is based on your consent (Art. 6(1)(a) GDPR) when you register, and on contract performance (Art. 6(1)(b) GDPR) for providing the academy service.': 'O tratamento baseia-se no teu consentimento (art. 6.º, n.º 1, alínea a), do RGPD) no momento do registo e na execução do contrato (art. 6.º, n.º 1, alínea b), do RGPD) para a prestação do serviço da academia.',
+    'Cookies': 'Cookies',
+    'NOVO ACADEMY uses session cookies that are technically necessary for the login function (Supabase Auth). If you consent to optional cookies, embedded YouTube videos load additional cookies from Google/YouTube. You can withdraw your consent at any time.': 'A NOVO ACADEMY utiliza cookies de sessão tecnicamente necessários para a função de início de sessão (Supabase Auth). Se consentires nos cookies opcionais, os vídeos do YouTube incorporados carregam cookies adicionais da Google/YouTube. Podes retirar o teu consentimento a qualquer momento.',
+    'Third-party services': 'Fornecedores terceiros',
+    'Auth & database (eu-central-1 Frankfurt, Germany). Privacy policy: supabase.com/privacy': 'Autenticação e base de dados (eu-central-1 Frankfurt, Alemanha). Política de privacidade: supabase.com/privacy',
+    'Video embedding (only with your consent). Privacy policy: policies.google.com/privacy': 'Incorporação de vídeo (apenas com o teu consentimento). Política de privacidade: policies.google.com/privacy',
+    'Your rights': 'Os teus direitos',
+    'You have the right to access, correct, delete, or export your data, and to lodge a complaint with the Austrian Data Protection Authority (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienna, dsb.gv.at).': 'Tens o direito de aceder, corrigir, eliminar ou exportar os teus dados e de apresentar reclamação junto da Autoridade Austríaca de Proteção de Dados (Datenschutzbehörde, Barichgasse 40–42, 1030 Viena, dsb.gv.at).',
+    'To exercise your rights, contact: datenschutz@novogenia.com': 'Para exercer os teus direitos, contacta: datenschutz@novogenia.com',
+    'Local-only mode: accounts live in this browser. Configure Supabase to sync across devices.': 'Modo apenas local: as contas existem apenas neste navegador. Configura a Supabase para sincronizar entre dispositivos.',
+  },
+}
+
+/* Templated strings (with ${...} placeholders) — kept separate only for
+   readability; merged into INLINE_I18N below so LX resolves them too. */
+const INLINE_I18N_TEMPLATES = {
+  it: {
+    '✓ Test passed (${score}%)': '✓ Test superato (${score}%)',
+    'Finish test (${answered}/${total} answered)': 'Termina il test (${answered}/${total} risposte)',
+    'You passed the "${topic}" test with ${score}%. Once the training is also completed, the module counts as certified.': 'Hai superato il test su “${topic}” con il ${score}%. Una volta completata anche la formazione, il modulo è considerato certificato.',
+    'You achieved ${score}% correct answers. At least 80% is required to pass. Review the course once more and try again.': 'Hai ottenuto il ${score}% di risposte corrette. Per superare il test è richiesto almeno l’80%. Rivedi il corso ancora una volta e riprova.',
+  },
+  cz: {
+    '✓ Test passed (${score}%)': '✓ Test úspěšně složen (${score}%)',
+    'Finish test (${answered}/${total} answered)': 'Dokončit test (${answered}/${total} zodpovězeno)',
+    'You passed the "${topic}" test with ${score}%. Once the training is also completed, the module counts as certified.': 'Splnil jsi test na téma „${topic}“ s ${score} %. Jakmile dokončíš i školení, modul se považuje za certifikovaný.',
+    'You achieved ${score}% correct answers. At least 80% is required to pass. Review the course once more and try again.': 'Dosáhl jsi ${score} % správných odpovědí. Ke splnění je potřeba alespoň 80 %. Projdi si kurz ještě jednou a zkus to znovu.',
+  },
+  fr: {
+    '✓ Test passed (${score}%)': '✓ Test réussi (${score}%)',
+    'Finish test (${answered}/${total} answered)': 'Terminer le test (${answered}/${total} répondu)',
+    'You passed the "${topic}" test with ${score}%. Once the training is also completed, the module counts as certified.': 'Tu as réussi le test sur « ${topic} » avec ${score} %. Une fois la formation également terminée, le module est considéré comme certifié.',
+    'You achieved ${score}% correct answers. At least 80% is required to pass. Review the course once more and try again.': 'Tu as obtenu ${score} % de réponses correctes. Au moins 80 % sont requis pour réussir. Revois le cours une fois de plus et réessaie.',
+  },
+  pt: {
+    '✓ Test passed (${score}%)': '✓ Teste aprovado (${score}%)',
+    'Finish test (${answered}/${total} answered)': 'Concluir teste (${answered}/${total} respondidas)',
+    'You passed the "${topic}" test with ${score}%. Once the training is also completed, the module counts as certified.': 'Aprovaste no teste sobre “${topic}” com ${score}%. Assim que a formação também estiver concluída, o módulo é considerado certificado.',
+    'You achieved ${score}% correct answers. At least 80% is required to pass. Review the course once more and try again.': 'Obtiveste ${score}% de respostas corretas. Para aprovação são necessários pelo menos 80%. Revê o curso mais uma vez e tenta novamente.',
+  },
+}
+/* Pick a language for an inline string. de -> de, en -> en, else translated
+   (fallback to en when no translation exists). The English string is the key. */
+const LX = (lang, en, de) => lang === 'de' ? de : lang === 'en' ? en : (INLINE_I18N[lang]?.[en] ?? en)
+
+/* Templated variant. `key` is the literal English template (with ${name}
+   placeholders kept verbatim) used to look up the it/cz/fr/pt template in
+   INLINE_I18N_TEMPLATES; `en`/`de` are the already-interpolated strings for
+   those two languages; `vars` maps placeholder name -> replacement value.
+   de -> de, en -> en, else translated template with vars substituted
+   (fallback to the en string). */
+const LXP = (lang, key, en, de, vars = {}) => {
+  if (lang === 'de') return de
+  if (lang === 'en') return en
+  const tpl = INLINE_I18N_TEMPLATES[lang]?.[key]
+  if (!tpl) return en
+  return tpl.replace(/\$\{(\w+)\}/g, (m, name) => (name in vars ? vars[name] : m))
 }
 
 /* ===================== ICONS ===================== */
@@ -100,7 +416,7 @@ function Seal({ certified, certifiable, size = 'normal' }) {
 
   const color = certified ? '#3FA85C' : '#D5D5D5'
   const colorDark = certified ? '#2F8546' : '#BFBFBF'
-  const sealText = lang === 'en' ? 'CERTIFIED' : 'ZERTIFIZIERT'
+  const sealText = ({ en: 'CERTIFIED', de: 'ZERTIFIZIERT', it: 'CERTIFICATO', cz: 'CERTIFIKOVÁNO', fr: 'CERTIFIÉ', pt: 'CERTIFICADO' }[lang]) || 'ZERTIFIZIERT'
 
   // Serrated outer edge (path)
   const N = 32
@@ -274,7 +590,7 @@ function CategoryRow({ category, label, items, courseState, navigate }) {
 
       <div className="row-wrap">
         {canLeft && (
-          <button className="scroll-btn left" onClick={() => scroll(-1)} aria-label={lang === 'en' ? 'Previous' : 'Zurück'}>
+          <button className="scroll-btn left" onClick={() => scroll(-1)} aria-label={LX(lang, 'Previous', 'Zurück')}>
             <Icon.ArrowLeft />
           </button>
         )}
@@ -285,7 +601,7 @@ function CategoryRow({ category, label, items, courseState, navigate }) {
           ))}
         </div>
         {canRight && (
-          <button className="scroll-btn right" onClick={() => scroll(1)} aria-label={lang === 'en' ? 'Next' : 'Weiter'}>
+          <button className="scroll-btn right" onClick={() => scroll(1)} aria-label={LX(lang, 'Next', 'Weiter')}>
             <Icon.ArrowRight />
           </button>
         )}
@@ -444,7 +760,8 @@ function HomePage({ courseState, navigate, certName, setCertName, completedCerti
   // Progress counts only CERTIFIABLE modules (exclude FAQ + supplementary +
   // placeholders) so that 100% is actually reachable. FAQ/supplementary modules
   // have no test/completion, so including them made the max stuck at ~68%.
-  const realCourses = COURSES.filter(c => isCertifiable(c) && c.contentType !== 'placeholder' && (c.lang || 'de') === lang)
+  const realCourses = COURSES.filter(c => isCertifiable(c) && c.contentType !== 'placeholder' && (c.lang || 'de') === lang
+    && (!!c.youtubeId || (Array.isArray(c.videoSegments) && c.videoSegments.length > 0)))
   const totalModules = realCourses.length
   const completedModules = realCourses.filter(c => courseState[courseKey(c)]?.watched).length
   const pct = totalModules > 0 ? Math.round((completedModules / totalModules) * 100) : 0
@@ -456,14 +773,16 @@ function HomePage({ courseState, navigate, certName, setCertName, completedCerti
     <div className="content">
       {/* Two introduction videos side-by-side, each ~2 tile widths.
           Title + description sit underneath each video. */}
-      <div className="home-top-row">
-        {topVideos.map((v, i) => (
-          <div key={i} className="welcome-block">
-            <WelcomePlayer youtubeId={v.youtubeId} coverImage={v.coverImage} />
-            <WelcomeText title={v.title} sub={v.sub} />
-          </div>
-        ))}
-      </div>
+      {topVideos.length > 0 && (
+        <div className="home-top-row">
+          {topVideos.map((v, i) => (
+            <div key={i} className="welcome-block">
+              <WelcomePlayer youtubeId={v.youtubeId} coverImage={v.coverImage} />
+              <WelcomeText title={v.title} sub={v.sub} />
+            </div>
+          ))}
+        </div>
+      )}
 
       {/* Clear demarcation: course section starts here */}
       <div className="courses-section-header">
@@ -540,7 +859,7 @@ function HomePage({ courseState, navigate, certName, setCertName, completedCerti
 /* ===================== MINI CERTIFICATE PREVIEW (new portrait Genoacademy-style) ===================== */
 function CertificateMini({ name }) {
   const t = useT()
-  const displayName = name ?? (useLang() === 'en' ? 'Jane Doe' : 'Maria Mustermann')
+  const displayName = name ?? LX(useLang(), 'Jane Doe', 'Maria Mustermann')
   return (
     <div className="cert-mini">
       <div className="cert-mini-paper">
@@ -615,16 +934,21 @@ function CourseLandingPage({ course, state, navigate, onBack }) {
     : t('cl_tag_supplementary')
 
   const startLabel = course.contentType === 'faq'
-    ? (state.watched ? (lang === 'en' ? 'Re-open FAQ collection' : 'FAQ-Sammlung erneut öffnen') : t('cl_open_faq'))
-    : (state.watched ? (lang === 'en' ? 'Re-watch course' : 'Kurs erneut ansehen') : t('cl_start_course'))
+    ? (state.watched ? (({ en: 'Re-open FAQ collection', de: 'FAQ-Sammlung erneut öffnen', it: 'Riapri raccolta FAQ', cz: 'Znovu otevřít FAQ', fr: 'Rouvrir la collection FAQ', pt: 'Reabrir coleção de FAQ' }[lang]) || 'FAQ-Sammlung erneut öffnen') : t('cl_open_faq'))
+    : (state.watched ? (({ en: 'Re-watch course', de: 'Kurs erneut ansehen', it: 'Rivedi il corso', cz: 'Znovu přehrát kurz', fr: 'Revoir le cours', pt: 'Rever o curso' }[lang]) || 'Kurs erneut ansehen') : t('cl_start_course'))
 
   const testLabel = state.testPassed
-    ? (lang === 'en' ? 'Retake test' : 'Test wiederholen')
-    : (lang === 'en' ? 'Start test' : 'Test starten')
+    ? (({ en: 'Retake test', de: 'Test wiederholen', it: 'Ripeti il test', cz: 'Opakovat test', fr: 'Repasser le test', pt: 'Refazer o teste' }[lang]) || 'Test wiederholen')
+    : (({ en: 'Start test', de: 'Test starten', it: 'Inizia il test', cz: 'Spustit test', fr: 'Commencer le test', pt: 'Iniciar o teste' }[lang]) || 'Test starten')
 
-  const testDoneLabel = lang === 'en'
-    ? `✓ Test passed (${state.testScore}%)`
-    : `✓ Test erfolgreich abgeschlossen (${state.testScore}%)`
+  const testDoneLabel = ({
+    en: `✓ Test passed (${state.testScore}%)`,
+    de: `✓ Test erfolgreich abgeschlossen (${state.testScore}%)`,
+    it: `✓ Test superato (${state.testScore}%)`,
+    cz: `✓ Test úspěšně složen (${state.testScore}%)`,
+    fr: `✓ Test réussi (${state.testScore}%)`,
+    pt: `✓ Teste aprovado (${state.testScore}%)`,
+  }[lang]) || `✓ Test erfolgreich abgeschlossen (${state.testScore}%)`
 
   return (
     <div className="course-landing">
@@ -688,11 +1012,11 @@ function VideoBlock({ video, course }) {
       <div className="vid-frame" onClick={() => setPlaying(true)}>
         <img src={course.thumbnail} alt="" className="vid-thumb" />
         {!playing && (
-          <button className="vid-play" aria-label={lang === 'en' ? 'Play' : 'Abspielen'}>
+          <button className="vid-play" aria-label={LX(lang, 'Play', 'Abspielen')}>
             <Icon.Play />
           </button>
         )}
-        {playing && <div className="vid-fake-playing">{lang === 'en' ? '▶ Playback (demo)' : '▶ Wiedergabe (Demo)'}</div>}
+        {playing && <div className="vid-fake-playing">{LX(lang, '▶ Playback (demo)', '▶ Wiedergabe (Demo)')}</div>}
         <span className="vid-duration">{video.duration}</span>
       </div>
       <div className="vid-meta">
@@ -740,11 +1064,11 @@ function FullVideo({ course, youtubeId, title }) {
                  }
                }} />
           {!playing && (
-            <button className="cc-video-play" aria-label={lang === 'en' ? 'Play' : 'Abspielen'}>
+            <button className="cc-video-play" aria-label={LX(lang, 'Play', 'Abspielen')}>
               <Icon.Play />
             </button>
           )}
-          {playing && !yt && <div className="cc-video-fake">{lang === 'en' ? '▶ Playback (demo)' : '▶ Wiedergabe (Demo)'}</div>}
+          {playing && !yt && <div className="cc-video-fake">{LX(lang, '▶ Playback (demo)', '▶ Wiedergabe (Demo)')}</div>}
           {!yt && v?.duration && <span className="cc-video-duration">{v.duration}</span>}
         </>
       )}
@@ -813,11 +1137,10 @@ function RelatedVideoTile({ youtubeId, title, coverImage = null }) {
 function FaqPage({ course, state, onComplete, onBack }) {
   const [expandedAll, setExpandedAll] = useState(false)
   const lang = useLang()
-  const L = lang === 'en'
   return (
     <div className="course-content-page faq-page">
       <div className="course-landing-bar">
-        <button className="btn-back" onClick={onBack}><Icon.ChevronLeft /> {L ? 'Back to course overview' : 'Zurück zur Kursübersicht'}</button>
+        <button className="btn-back" onClick={onBack}><Icon.ChevronLeft /> {LX(lang, 'Back to course overview', 'Zurück zur Kursübersicht')}</button>
       </div>
 
       <div className="cc-wrap">
@@ -828,7 +1151,7 @@ function FaqPage({ course, state, onComplete, onBack }) {
         <p className="cc-paragraph">{course.longDescription}</p>
 
         <div className="faq-toolbar">
-          <span className="faq-hint">{L ? 'Click a question to reveal the answer — perfect for self-testing.' : 'Klicke auf eine Frage, um die Antwort einzublenden — perfekt zum Selbsttest.'}</span>
+          <span className="faq-hint">{LX(lang, 'Click a question to reveal the answer — perfect for self-testing.', 'Klicke auf eine Frage, um die Antwort einzublenden — perfekt zum Selbsttest.')}</span>
         </div>
 
         {course.faqGroups?.map((group, gi) => (
@@ -844,11 +1167,11 @@ function FaqPage({ course, state, onComplete, onBack }) {
 
         {course.hasDownload && course.documents?.length > 0 && (
           <>
-            <h2 className="cc-h">{L ? 'Complete FAQ collection as PDF' : 'Komplette FAQ-Sammlung als PDF'}</h2>
+            <h2 className="cc-h">{LX(lang, 'Complete FAQ collection as PDF', 'Komplette FAQ-Sammlung als PDF')}</h2>
             <p className="cc-paragraph">
-              {L
-                ? 'Download the entire collection as a Novogenia/Novodaily-branded PDF — perfect as a reference for consultation sessions or for printing.'
-                : 'Lade die gesamte Sammlung als Novogenia/Novodaily-gebrandetes PDF herunter — ideal als Nachschlagewerk für Beratungsgespräche oder zum Ausdrucken.'}
+              {LX(lang,
+                'Download the entire collection as a Novogenia/Novodaily-branded PDF — perfect as a reference for consultation sessions or for printing.',
+                'Lade die gesamte Sammlung als Novogenia/Novodaily-gebrandetes PDF herunter — ideal als Nachschlagewerk für Beratungsgespräche oder zum Ausdrucken.')}
             </p>
             <div className="cc-docs">
               {course.documents.map((d, i) => {
@@ -878,14 +1201,14 @@ function FaqPage({ course, state, onComplete, onBack }) {
 
         <div className="cc-complete">
           {state.watched
-            ? <p className="cc-already">{L ? 'You have already gone through this FAQ collection.' : 'Du hast diese FAQ-Sammlung bereits durchgesehen.'}</p>
-            : <p className="cc-prompt">{L ? 'When you have gone through all questions, you can mark the module as viewed.' : 'Wenn du alle Fragen durchgegangen bist, kannst du das Modul als angesehen markieren.'}</p>}
+            ? <p className="cc-already">{LX(lang, 'You have already gone through this FAQ collection.', 'Du hast diese FAQ-Sammlung bereits durchgesehen.')}</p>
+            : <p className="cc-prompt">{LX(lang, 'When you have gone through all questions, you can mark the module as viewed.', 'Wenn du alle Fragen durchgegangen bist, kannst du das Modul als angesehen markieren.')}</p>}
           <div className="cc-actions-row">
             <button className="cc-action-btn" onClick={onComplete}>
               <span className="cc-action-icon"><Icon.Cap /></span>
               <span className="cc-action-text">
-                <span className="cc-action-title">{L ? 'Complete module' : 'Modul abschließen'}</span>
-                <span className="cc-action-sub">{L ? 'Mark the FAQ collection as viewed' : 'Markiere die FAQ-Sammlung als durchgesehen'}</span>
+                <span className="cc-action-title">{LX(lang, 'Complete module', 'Modul abschließen')}</span>
+                <span className="cc-action-sub">{LX(lang, 'Mark the FAQ collection as viewed', 'Markiere die FAQ-Sammlung als durchgesehen')}</span>
               </span>
             </button>
           </div>
@@ -897,7 +1220,6 @@ function FaqPage({ course, state, onComplete, onBack }) {
 
 function CourseContentPage({ course, state, onComplete, onBack, onStartTest }) {
   const lang = useLang()
-  const L = lang === 'en'
   // CATEGORY_CONTENT is only keyed for German categories. For EN courses
   // (which always use introText/introQuestions), this lookup returns {} and is unused.
   const content = CATEGORY_CONTENT[course.category] || {}
@@ -907,7 +1229,7 @@ function CourseContentPage({ course, state, onComplete, onBack, onStartTest }) {
   return (
     <div className="course-content-page">
       <div className="course-landing-bar">
-        <button className="btn-back" onClick={onBack}><Icon.ChevronLeft /> {L ? 'Back to course overview' : 'Zurück zur Kursübersicht'}</button>
+        <button className="btn-back" onClick={onBack}><Icon.ChevronLeft /> {LX(lang, 'Back to course overview', 'Zurück zur Kursübersicht')}</button>
       </div>
 
       <div className="cc-wrap">
@@ -916,7 +1238,7 @@ function CourseContentPage({ course, state, onComplete, onBack, onStartTest }) {
           {certifiable && (
             <div className="cc-cert-badge">
               <Seal certified={false} certifiable={true} />
-              <span className="cc-cert-label">{L ? 'CERTIFIABLE COURSE' : 'ZERTIFIZIERBARER KURS'}</span>
+              <span className="cc-cert-label">{LX(lang, 'CERTIFIABLE COURSE', 'ZERTIFIZIERBARER KURS')}</span>
             </div>
           )}
         </div>
@@ -949,16 +1271,15 @@ function CourseContentPage({ course, state, onComplete, onBack, onStartTest }) {
             const callout = sec.callout
               ? (typeof sec.callout === 'string' ? { text: sec.callout, tone: 'neutral' } : sec.callout)
               : null
-            const calloutLabel = callout && (L
-              ? (callout.tone === 'safe' ? 'SAFE'
+            const calloutLabelEn = callout && (callout.tone === 'safe' ? 'SAFE'
                 : callout.tone === 'critical' ? 'CRITICAL'
                 : callout.tone === 'caveat' ? 'WITH DISCLAIMER'
                 : 'IMPORTANT')
-              : (callout.tone === 'safe' ? 'SICHER'
+            const calloutLabelDe = callout && (callout.tone === 'safe' ? 'SICHER'
                 : callout.tone === 'critical' ? 'KRITISCH'
                 : callout.tone === 'caveat' ? 'MIT DISCLAIMER'
                 : 'WICHTIG')
-            )
+            const calloutLabel = callout && LX(lang, calloutLabelEn, calloutLabelDe)
             return (
             <section key={i} className="cc-article-section">
               {sec.title && <h2 className="cc-h">{sec.title}</h2>}
@@ -998,11 +1319,11 @@ function CourseContentPage({ course, state, onComplete, onBack, onStartTest }) {
           <aside className="brand-notice">
             <div className="brand-notice-icon"><Icon.Info /></div>
             <div className="brand-notice-body">
-              <div className="brand-notice-title">{L ? 'VIDEO COMING SOON' : 'VIDEO IN VORBEREITUNG'}</div>
+              <div className="brand-notice-title">{LX(lang, 'VIDEO COMING SOON', 'VIDEO IN VORBEREITUNG')}</div>
               <p className="brand-notice-text">
-                {L
-                  ? 'A dedicated English video for this module has not been recorded yet. The training content and test below remain fully functional — the video segment will be added as soon as the recording is available.'
-                  : 'Ein passendes Video für dieses Modul ist noch in Vorbereitung. Die Inhalte und der Test funktionieren bereits vollständig — der Video-Block wird ergänzt, sobald die Aufnahme verfügbar ist.'}
+                {LX(lang,
+                  'A dedicated English video for this module has not been recorded yet. The training content and test below remain fully functional — the video segment will be added as soon as the recording is available.',
+                  'Ein passendes Video für dieses Modul ist noch in Vorbereitung. Die Inhalte und der Test funktionieren bereits vollständig — der Video-Block wird ergänzt, sobald die Aufnahme verfügbar ist.')}
               </p>
             </div>
           </aside>
@@ -1017,7 +1338,7 @@ function CourseContentPage({ course, state, onComplete, onBack, onStartTest }) {
 
         {course.hasDownload && (
           <>
-            <h2 className="cc-h">{L ? 'Documents to take with you' : 'Dokumente zum Mitnehmen'}</h2>
+            <h2 className="cc-h">{LX(lang, 'Documents to take with you', 'Dokumente zum Mitnehmen')}</h2>
             {course.brandNoticeAboveDownloads && <BrandNotice />}
             <div className="cc-docs">
               {course.documents.map((d, i) => {
@@ -1047,22 +1368,22 @@ function CourseContentPage({ course, state, onComplete, onBack, onStartTest }) {
 
         <div className="cc-complete">
           {state.watched
-            ? <p className="cc-already">{L ? 'You have already successfully completed this module.' : 'Du hast dieses Modul bereits erfolgreich abgeschlossen.'}</p>
-            : <p className="cc-prompt">{L ? 'When you have watched all relevant content, complete the module and take your test.' : 'Wenn du alle relevanten Inhalte angesehen hast, schließe das Modul ab und lege deinen Test ab.'}</p>}
+            ? <p className="cc-already">{LX(lang, 'You have already successfully completed this module.', 'Du hast dieses Modul bereits erfolgreich abgeschlossen.')}</p>
+            : <p className="cc-prompt">{LX(lang, 'When you have watched all relevant content, complete the module and take your test.', 'Wenn du alle relevanten Inhalte angesehen hast, schließe das Modul ab und lege deinen Test ab.')}</p>}
           <div className="cc-actions-row">
             <button className="cc-action-btn" onClick={onComplete}>
               <span className="cc-action-icon"><Icon.Cap /></span>
               <span className="cc-action-text">
-                <span className="cc-action-title">{L ? 'Complete training' : 'Training abschließen'}</span>
-                <span className="cc-action-sub">{L ? 'Mark this module as successfully completed' : 'Markiere dieses Modul als erfolgreich abgeschlossen'}</span>
+                <span className="cc-action-title">{LX(lang, 'Complete training', 'Training abschließen')}</span>
+                <span className="cc-action-sub">{LX(lang, 'Mark this module as successfully completed', 'Markiere dieses Modul als erfolgreich abgeschlossen')}</span>
               </span>
             </button>
             {isCertifiable(course) && onStartTest && (
               <button className="cc-action-btn cc-action-btn-alt" onClick={onStartTest}>
                 <span className="cc-action-icon"><Icon.Quiz /></span>
                 <span className="cc-action-text">
-                  <span className="cc-action-title">{L ? 'Start the test' : 'Test beginnen'}</span>
-                  <span className="cc-action-sub">{L ? 'Prove your knowledge and secure your certificate' : 'Stelle dein Wissen unter Beweis und sichere dein Zertifikat'}</span>
+                  <span className="cc-action-title">{LX(lang, 'Start the test', 'Test beginnen')}</span>
+                  <span className="cc-action-sub">{LX(lang, 'Prove your knowledge and secure your certificate', 'Stelle dein Wissen unter Beweis und sichere dein Zertifikat')}</span>
                 </span>
               </button>
             )}
@@ -1091,13 +1412,12 @@ function GenReportDemo({ title = 'Fettempfindlichkeit hoch', position = 20, text
 function TestPage({ course, onSubmit, onBack }) {
   const [answers, setAnswers] = useState({})
   const lang = useLang()
-  const L = lang === 'en'
 
   const submit = () => {
     if (Object.keys(answers).length < course.questions.length) {
-      if (!confirm(L
-        ? 'You haven\'t answered all questions. Submit anyway?'
-        : 'Du hast nicht alle Fragen beantwortet. Trotzdem abgeben?')) return
+      if (!confirm(LX(lang,
+        'You haven\'t answered all questions. Submit anyway?',
+        'Du hast nicht alle Fragen beantwortet. Trotzdem abgeben?'))) return
     }
     let correct = 0
     course.questions.forEach((q, i) => {
@@ -1111,15 +1431,20 @@ function TestPage({ course, onSubmit, onBack }) {
   return (
     <div className="test-page">
       <div className="course-landing-bar">
-        <button className="btn-back" onClick={onBack}><Icon.ChevronLeft /> {L ? 'Back to course overview' : 'Zurück zur Kursübersicht'}</button>
+        <button className="btn-back" onClick={onBack}><Icon.ChevronLeft /> {LX(lang, 'Back to course overview', 'Zurück zur Kursübersicht')}</button>
       </div>
 
       <div className="cc-wrap">
-        <h1 className="cc-title">{L ? 'Test' : 'Test'}: {course.category}: {course.topic}</h1>
+        <h1 className="cc-title">{LX(lang, 'Test', 'Test')}: {course.category}: {course.topic}</h1>
         <p className="cc-sub">
-          {L ? (
-            <>Answer all questions in a single attempt. Pass threshold: <strong>80&nbsp;% correct answers</strong>. After submission you will only receive the overall result (no per-question breakdown).</>
-          ) : (
+          {({
+            en: <>Answer all questions in a single attempt. Pass threshold: <strong>80&nbsp;% correct answers</strong>. After submission you will only receive the overall result (no per-question breakdown).</>,
+            de: <>Beantworte alle Fragen in einem Durchgang. Bestehensgrenze: <strong>80&nbsp;% korrekte Antworten</strong>. Du erhältst nach Abgabe nur das Gesamtergebnis (keine Einzelauflösung).</>,
+            it: <>Rispondi a tutte le domande in un unico tentativo. Soglia di superamento: <strong>80&nbsp;% di risposte corrette</strong>. Dopo l’invio riceverai solo il risultato complessivo (nessun dettaglio per domanda).</>,
+            cz: <>Odpověz na všechny otázky v jednom pokusu. Hranice úspěšnosti: <strong>80&nbsp;% správných odpovědí</strong>. Po odeslání obdržíš pouze celkový výsledek (bez rozpisu po otázkách).</>,
+            fr: <>Réponds à toutes les questions en une seule fois. Seuil de réussite : <strong>80&nbsp;% de réponses correctes</strong>. Après l’envoi, tu ne recevras que le résultat global (aucun détail par question).</>,
+            pt: <>Responde a todas as perguntas numa única tentativa. Limiar de aprovação: <strong>80&nbsp;% de respostas corretas</strong>. Após o envio, receberás apenas o resultado global (sem detalhe por pergunta).</>,
+          }[lang]) || (
             <>Beantworte alle Fragen in einem Durchgang. Bestehensgrenze: <strong>80&nbsp;% korrekte Antworten</strong>. Du erhältst nach Abgabe nur das Gesamtergebnis (keine Einzelauflösung).</>
           )}
         </p>
@@ -1130,13 +1455,13 @@ function TestPage({ course, onSubmit, onBack }) {
             if (q.screenshot) {
               visual = <img src={q.screenshot} alt="" className="test-q-screenshot" />
             } else if (q.screenshotNote) {
-              visual = <div className="test-q-screenshot-placeholder">📷 {L ? 'Screenshot coming' : 'Screenshot folgt'} — {q.screenshotNote}</div>
+              visual = <div className="test-q-screenshot-placeholder">📷 {LX(lang, 'Screenshot coming', 'Screenshot folgt')} — {q.screenshotNote}</div>
             } else if (q.image) {
               visual = q.image
             }
             return (
               <fieldset key={qi} className="test-q">
-                <legend className="test-q-legend"><span className="test-q-no">{L ? 'Question' : 'Frage'} {qi + 1}</span> {q.q}</legend>
+                <legend className="test-q-legend"><span className="test-q-no">{LX(lang, 'Question', 'Frage')} {qi + 1}</span> {q.q}</legend>
                 {visual && <div className="test-q-image">{visual}</div>}
                 <div className="test-options">
                   {q.options.map((o, oi) => (
@@ -1155,9 +1480,10 @@ function TestPage({ course, onSubmit, onBack }) {
 
         <div className="test-submit">
           <button className="btn-primary big" onClick={submit}>
-            {L
-              ? `Finish test (${Object.keys(answers).length}/${course.questions.length} answered)`
-              : `Test abschließen (${Object.keys(answers).length}/${course.questions.length} beantwortet)`}
+            {LXP(lang, 'Finish test (${answered}/${total} answered)',
+              `Finish test (${Object.keys(answers).length}/${course.questions.length} answered)`,
+              `Test abschließen (${Object.keys(answers).length}/${course.questions.length} beantwortet)`,
+              { answered: Object.keys(answers).length, total: course.questions.length })}
           </button>
         </div>
       </div>
@@ -1168,11 +1494,10 @@ function TestPage({ course, onSubmit, onBack }) {
 /* ===================== TEST RESULT ===================== */
 function TestResultPage({ course, score, passed, navigate, onBack }) {
   const lang = useLang()
-  const L = lang === 'en'
   return (
     <div className="test-result">
       <div className="course-landing-bar">
-        <button className="btn-back" onClick={onBack}><Icon.ChevronLeft /> {L ? 'Back to course overview' : 'Zurück zur Kursübersicht'}</button>
+        <button className="btn-back" onClick={onBack}><Icon.ChevronLeft /> {LX(lang, 'Back to course overview', 'Zurück zur Kursübersicht')}</button>
       </div>
 
       <div className="tr-card">
@@ -1188,27 +1513,29 @@ function TestResultPage({ course, score, passed, navigate, onBack }) {
         </div>
 
         <h1 className={`tr-h ${passed ? 'pass' : 'fail'}`}>
-          {passed ? (L ? 'Passed!' : 'Bestanden!') : (L ? 'Unfortunately not passed' : 'Leider nicht bestanden')}
+          {passed ? LX(lang, 'Passed!', 'Bestanden!') : LX(lang, 'Unfortunately not passed', 'Leider nicht bestanden')}
         </h1>
         <p className="tr-msg">
           {passed
-            ? (L
-                ? `You passed the "${course.topic}" test with ${score}%. Once the training is also completed, the module counts as certified.`
-                : `Du hast den Test zu „${course.topic}" mit ${score}% bestanden. Sobald auch das Training abgeschlossen ist, gilt das Modul als zertifiziert.`)
-            : (L
-                ? `You achieved ${score}% correct answers. At least 80% is required to pass. Review the course once more and try again.`
-                : `Du hast ${score}% korrekte Antworten erreicht. Zum Bestehen sind mindestens 80% erforderlich. Schau dir den Kurs noch einmal an und versuche es erneut.`)}
+            ? LXP(lang, 'You passed the "${topic}" test with ${score}%. Once the training is also completed, the module counts as certified.',
+                `You passed the "${course.topic}" test with ${score}%. Once the training is also completed, the module counts as certified.`,
+                `Du hast den Test zu „${course.topic}" mit ${score}% bestanden. Sobald auch das Training abgeschlossen ist, gilt das Modul als zertifiziert.`,
+                { topic: course.topic, score })
+            : LXP(lang, 'You achieved ${score}% correct answers. At least 80% is required to pass. Review the course once more and try again.',
+                `You achieved ${score}% correct answers. At least 80% is required to pass. Review the course once more and try again.`,
+                `Du hast ${score}% korrekte Antworten erreicht. Zum Bestehen sind mindestens 80% erforderlich. Schau dir den Kurs noch einmal an und versuche es erneut.`,
+                { score })}
         </p>
 
         <div className="tr-actions">
           {passed
             ? (<>
-                <button className="btn-primary big" onClick={onBack}>{L ? 'To course overview' : 'Zur Kursübersicht'}</button>
-                <button className="btn-ghost big" onClick={() => navigate({ name: 'home' })}>{L ? 'All courses' : 'Alle Kurse'}</button>
+                <button className="btn-primary big" onClick={onBack}>{LX(lang, 'To course overview', 'Zur Kursübersicht')}</button>
+                <button className="btn-ghost big" onClick={() => navigate({ name: 'home' })}>{LX(lang, 'All courses', 'Alle Kurse')}</button>
               </>)
             : (<>
-                <button className="btn-primary big" onClick={() => navigate({ name: 'test', courseId: course.id })}>{L ? 'Try again' : 'Erneut versuchen'}</button>
-                <button className="btn-ghost big" onClick={() => navigate({ name: 'course-content', courseId: course.id })}>{L ? 'Review course' : 'Kurs nochmal ansehen'}</button>
+                <button className="btn-primary big" onClick={() => navigate({ name: 'test', courseId: course.id })}>{LX(lang, 'Try again', 'Erneut versuchen')}</button>
+                <button className="btn-ghost big" onClick={() => navigate({ name: 'course-content', courseId: course.id })}>{LX(lang, 'Review course', 'Kurs nochmal ansehen')}</button>
               </>)}
         </div>
       </div>
@@ -1290,8 +1617,7 @@ function FauxQR({ size = 88 }) {
 function CertificatePage({ name, courses, isSample, onBack }) {
   const lang = useLang()
   const t = useT()
-  const L = lang === 'en'
-  const fallbackName = L ? 'Jane Doe' : 'Maria Mustermann'
+  const fallbackName = LX(lang, 'Jane Doe', 'Maria Mustermann')
   const dateStr = formatDate(lang, isSample ? new Date(2026, 4, 5) : new Date())
   const [downloading, setDownloading] = useState(false)
 
@@ -1301,7 +1627,7 @@ function CertificatePage({ name, courses, isSample, onBack }) {
       await downloadCertificate({ name: name || fallbackName, courses, dateStr, lang })
     } catch (err) {
       console.error('PDF generation failed', err)
-      alert(L ? 'Failed to generate the PDF. Please try again.' : 'PDF konnte nicht erstellt werden. Bitte erneut versuchen.')
+      alert(LX(lang, 'Failed to generate the PDF. Please try again.', 'PDF konnte nicht erstellt werden. Bitte erneut versuchen.'))
     } finally {
       setDownloading(false)
     }
@@ -1310,11 +1636,11 @@ function CertificatePage({ name, courses, isSample, onBack }) {
   return (
     <div className="cert-view">
       <div className="cert-toolbar">
-        <button className="btn-ghost" onClick={onBack}><Icon.ChevronLeft /> {L ? 'Back' : 'Zurück'}</button>
+        <button className="btn-ghost" onClick={onBack}><Icon.ChevronLeft /> {LX(lang, 'Back', 'Zurück')}</button>
         <div className="cert-toolbar-spacer" />
-        {isSample && <span className="sample-badge">{L ? 'EXAMPLE' : 'BEISPIEL'}</span>}
+        {isSample && <span className="sample-badge">{LX(lang, 'EXAMPLE', 'BEISPIEL')}</span>}
         <button className="btn-primary" onClick={downloadPdf} disabled={downloading}>
-          <Icon.Download /> {downloading ? (L ? 'Generating...' : 'Wird erstellt...') : (L ? 'Download as PDF' : 'Als PDF herunterladen')}
+          <Icon.Download /> {downloading ? LX(lang, 'Generating...', 'Wird erstellt...') : LX(lang, 'Download as PDF', 'Als PDF herunterladen')}
         </button>
       </div>
 
@@ -1356,7 +1682,7 @@ function CertificatePage({ name, courses, isSample, onBack }) {
 
           {/* "Dr. Daniel Wallerstorfer" is already baked into the template; we only add the role line */}
           <div className="cert-sig-block">
-            <div className="cert-sig-role">{L ? 'CEO of Novogenia' : 'CEO von Novogenia'}</div>
+            <div className="cert-sig-role">{LX(lang, 'CEO of Novogenia', 'CEO von Novogenia')}</div>
           </div>
         </div>
       </div>
@@ -1460,7 +1786,7 @@ export default function App() {
 
   // Set <html lang> attribute for screen readers (must come after `lang` is declared)
   useEffect(() => {
-    document.documentElement.lang = lang === 'en' ? 'en' : 'de'
+    document.documentElement.lang = ['de', 'en', 'it', 'cz', 'fr', 'pt'].includes(lang) ? lang : 'de'
   }, [lang])
 
   // Track whether the remote load has finished — guard writes until then
@@ -1561,7 +1887,7 @@ export default function App() {
     COURSES.filter(c => isCertified(c, courseState)).map(c => `${c.category}: ${c.topic}`),
   [courseState])
 
-  const sampleName = lang === 'en' ? 'Jane Doe' : 'Maria Mustermann'
+  const sampleName = LX(lang, 'Jane Doe', 'Maria Mustermann')
 
   /* ===== Decide which top-level screen to render ===== */
   let page
@@ -1684,7 +2010,7 @@ export default function App() {
   return (
     <LangContext.Provider value={lang}>
       <a className="skip-to-content" href="#main-content">
-        {lang === 'en' ? 'Skip to content' : 'Zum Inhalt springen'}
+        {LX(lang, 'Skip to content', 'Zum Inhalt springen')}
       </a>
       {page}
       {showBanner && (
@@ -1694,6 +2020,7 @@ export default function App() {
           onOpenPrivacy={() => setOuterRoute('datenschutz')}
         />
       )}
+      <SupportBotLauncher lang={lang} />
     </LangContext.Provider>
   )
 }
@@ -1728,6 +2055,18 @@ function TopBar({ lang, setLang, session, profile, navigate }) {
               className={`lang-btn${lang === 'en' ? ' is-active' : ''}`}
               onClick={() => setLang('en')}
             >EN</button>
+            <button
+              className={`lang-btn${lang === 'cz' ? ' is-active' : ''}`}
+              onClick={() => setLang('cz')}
+            >CZ</button>
+            <button
+              className={`lang-btn${lang === 'fr' ? ' is-active' : ''}`}
+              onClick={() => setLang('fr')}
+            >FR</button>
+            <button
+              className={`lang-btn${lang === 'pt' ? ' is-active' : ''}`}
+              onClick={() => setLang('pt')}
+            >PT</button>
           </div>
         )}
         {isAdmin && navigate && (
@@ -1785,6 +2124,18 @@ function LangPickPage({ onPick }) {
             <span className="langpick-flag" aria-hidden="true">🇬🇧</span>
             <span className="langpick-label">English</span>
           </button>
+          <button className="langpick-option" onClick={() => onPick('cz')}>
+            <span className="langpick-flag" aria-hidden="true">🇨🇿</span>
+            <span className="langpick-label">Čeština</span>
+          </button>
+          <button className="langpick-option" onClick={() => onPick('fr')}>
+            <span className="langpick-flag" aria-hidden="true">🇫🇷</span>
+            <span className="langpick-label">Français</span>
+          </button>
+          <button className="langpick-option" onClick={() => onPick('pt')}>
+            <span className="langpick-flag" aria-hidden="true">🇵🇹</span>
+            <span className="langpick-label">Português</span>
+          </button>
         </div>
       </div>
     </div>
@@ -1805,6 +2156,9 @@ function LandingPage({ lang, setLang, onSignUp, onLogIn, onImpressum, onDatensch
             <div className="lang-switcher" title="Language / Sprache">
               <button className={`lang-btn${lang === 'de' ? ' is-active' : ''}`} onClick={() => setLang('de')}>DE</button>
               <button className={`lang-btn${lang === 'en' ? ' is-active' : ''}`} onClick={() => setLang('en')}>EN</button>
+              <button className={`lang-btn${lang === 'cz' ? ' is-active' : ''}`} onClick={() => setLang('cz')}>CZ</button>
+              <button className={`lang-btn${lang === 'fr' ? ' is-active' : ''}`} onClick={() => setLang('fr')}>FR</button>
+              <button className={`lang-btn${lang === 'pt' ? ' is-active' : ''}`} onClick={() => setLang('pt')}>PT</button>
             </div>
             <button className="btn-ghost landing-login-btn" onClick={onLogIn}>{t('landing_cta_login')}</button>
           </div>
@@ -1813,7 +2167,8 @@ function LandingPage({ lang, setLang, onSignUp, onLogIn, onImpressum, onDatensch
 
       <section className="landing-hero">
         <div className="landing-hero-inner">
-          <h1 className="landing-hero-title">{t('landing_hero_title')}</h1>
+          <span className="nd-eyebrow"><span className="nd-eyebrow-dot" aria-hidden="true" />{LX(lang, 'Official training platform', 'Offizielle Schulungsplattform')}</span>
+          <h1 className="landing-hero-title nd-grad-head">{t('landing_hero_title')}</h1>
           <p className="landing-hero-sub">{t('landing_hero_sub')}</p>
           <div className="landing-hero-cta">
             <button className="btn-primary big landing-signup-btn" onClick={onSignUp}>{t('landing_cta_signup')}</button>
@@ -1893,7 +2248,6 @@ function LegalFooter({ onImpressum, onDatenschutz, onCookieSettings }) {
 function ImpressumPage({ onBack }) {
   const t = useT()
   const lang = useLang()
-  const L = lang === 'en'
   return (
     <div className="legal-page content">
       <button className="btn-back" onClick={onBack}>{t('footer_back')}</button>
@@ -1905,7 +2259,7 @@ function ImpressumPage({ onBack }) {
           Novogenia GmbH<br />
           Strass 19<br />
           5301 Eugendorf<br />
-          {L ? 'Austria' : 'Österreich'}
+          {LX(lang, 'Austria', 'Österreich')}
         </p>
       </section>
 
@@ -1916,7 +2270,7 @@ function ImpressumPage({ onBack }) {
 
       <section className="legal-section">
         <h2>{t('impressum_register')}</h2>
-        <p>FN 531162 x · {L ? 'Regional Court Salzburg' : 'Landesgericht Salzburg'}</p>
+        <p>FN 531162 x · {LX(lang, 'Regional Court Salzburg', 'Landesgericht Salzburg')}</p>
       </section>
 
       <section className="legal-section">
@@ -1936,16 +2290,16 @@ function ImpressumPage({ onBack }) {
         <p>
           Bezirkshauptmannschaft Salzburg-Umgebung<br />
           Karl-Wurmb-Straße 17, 5020 Salzburg<br />
-          {L ? 'Federal Ministry for Social Affairs, Health, Care and Consumer Protection' : 'Bundesministerium für Soziales, Gesundheit, Pflege und Konsumentenschutz'}
+          {LX(lang, 'Federal Ministry for Social Affairs, Health, Care and Consumer Protection', 'Bundesministerium für Soziales, Gesundheit, Pflege und Konsumentenschutz')}
         </p>
       </section>
 
       <section className="legal-section">
         <h2>{t('impressum_applicable_law')}</h2>
         <p>
-          {L
-            ? 'Austrian Trade Regulations 1994 (GewO), Genetic Technology Act (GTG), accessible via RIS Austria (ris.bka.gv.at).'
-            : 'Gewerbeordnung 1994, Gentechnikgesetz (GTG), abrufbar über RIS Austria (ris.bka.gv.at).'}
+          {LX(lang,
+            'Austrian Trade Regulations 1994 (GewO), Genetic Technology Act (GTG), accessible via RIS Austria (ris.bka.gv.at).',
+            'Gewerbeordnung 1994, Gentechnikgesetz (GTG), abrufbar über RIS Austria (ris.bka.gv.at).')}
         </p>
       </section>
 
@@ -1962,40 +2316,39 @@ function DatenschutzPage({ onBack, onCookieSettings }) {
   const t = useT()
   const lang = useLang()
   const [consent] = useCookieConsent()
-  const L = lang === 'en'
   return (
     <div className="legal-page content">
       <button className="btn-back" onClick={onBack}>{t('footer_back')}</button>
       <h1 className="legal-page-title">{t('datenschutz_title')}</h1>
 
       <section className="legal-section">
-        <h2>{L ? 'Responsible Party' : 'Verantwortlicher'}</h2>
+        <h2>{LX(lang, 'Responsible Party', 'Verantwortlicher')}</h2>
         <p>
           Novogenia GmbH<br />
-          Strass 19, 5301 Eugendorf, {L ? 'Austria' : 'Österreich'}<br />
+          Strass 19, 5301 Eugendorf, {LX(lang, 'Austria', 'Österreich')}<br />
           E-Mail: <a href="mailto:datenschutz@novogenia.com" rel="noopener noreferrer">datenschutz@novogenia.com</a>
         </p>
       </section>
 
       <section className="legal-section">
-        <h2>{L ? 'What data we process' : 'Welche Daten wir verarbeiten'}</h2>
-        <p>{L
-          ? 'When you create an account, we store your e-mail address, your chosen display name, your language preference, and your course progress (which videos you watched and which tests you passed). This data is stored in Supabase (eu-central-1, Frankfurt, Germany) and processed exclusively for operating NOVO ACADEMY.'
-          : 'Bei Kontoerstellung speichern wir Ihre E-Mail-Adresse, Ihren gewählten Anzeigenamen, Ihre Spracheinstellung und Ihren Kursfortschritt (welche Videos gesehen, welche Tests bestanden). Diese Daten werden in Supabase (eu-central-1, Frankfurt) gespeichert und ausschließlich zum Betrieb von NOVO ACADEMY verarbeitet.'}</p>
+        <h2>{LX(lang, 'What data we process', 'Welche Daten wir verarbeiten')}</h2>
+        <p>{LX(lang,
+          'When you create an account, we store your e-mail address, your chosen display name, your language preference, and your course progress (which videos you watched and which tests you passed). This data is stored in Supabase (eu-central-1, Frankfurt, Germany) and processed exclusively for operating NOVO ACADEMY.',
+          'Bei Kontoerstellung speichern wir Ihre E-Mail-Adresse, Ihren gewählten Anzeigenamen, Ihre Spracheinstellung und Ihren Kursfortschritt (welche Videos gesehen, welche Tests bestanden). Diese Daten werden in Supabase (eu-central-1, Frankfurt) gespeichert und ausschließlich zum Betrieb von NOVO ACADEMY verarbeitet.')}</p>
       </section>
 
       <section className="legal-section">
-        <h2>{L ? 'Legal basis' : 'Rechtsgrundlage'}</h2>
-        <p>{L
-          ? 'Processing is based on your consent (Art. 6(1)(a) GDPR) when you register, and on contract performance (Art. 6(1)(b) GDPR) for providing the academy service.'
-          : 'Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) bei der Registrierung sowie zur Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO) für die Erbringung des Akademie-Dienstes.'}</p>
+        <h2>{LX(lang, 'Legal basis', 'Rechtsgrundlage')}</h2>
+        <p>{LX(lang,
+          'Processing is based on your consent (Art. 6(1)(a) GDPR) when you register, and on contract performance (Art. 6(1)(b) GDPR) for providing the academy service.',
+          'Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) bei der Registrierung sowie zur Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO) für die Erbringung des Akademie-Dienstes.')}</p>
       </section>
 
       <section className="legal-section">
-        <h2>{L ? 'Cookies' : 'Cookies'}</h2>
-        <p>{L
-          ? 'NOVO ACADEMY uses session cookies that are technically necessary for the login function (Supabase Auth). If you consent to optional cookies, embedded YouTube videos load additional cookies from Google/YouTube. You can withdraw your consent at any time.'
-          : 'NOVO ACADEMY verwendet Session-Cookies, die technisch notwendig für die Login-Funktion sind (Supabase Auth). Wenn Sie optionalen Cookies zustimmen, laden eingebettete YouTube-Videos zusätzlich Cookies von Google/YouTube. Ihre Einwilligung können Sie jederzeit widerrufen.'}</p>
+        <h2>{LX(lang, 'Cookies', 'Cookies')}</h2>
+        <p>{LX(lang,
+          'NOVO ACADEMY uses session cookies that are technically necessary for the login function (Supabase Auth). If you consent to optional cookies, embedded YouTube videos load additional cookies from Google/YouTube. You can withdraw your consent at any time.',
+          'NOVO ACADEMY verwendet Session-Cookies, die technisch notwendig für die Login-Funktion sind (Supabase Auth). Wenn Sie optionalen Cookies zustimmen, laden eingebettete YouTube-Videos zusätzlich Cookies von Google/YouTube. Ihre Einwilligung können Sie jederzeit widerrufen.')}</p>
         <button className="btn-secondary legal-cookie-btn" onClick={onCookieSettings}>
           {consent === 'all'
             ? t('cookie_revoke')
@@ -2004,21 +2357,21 @@ function DatenschutzPage({ onBack, onCookieSettings }) {
       </section>
 
       <section className="legal-section">
-        <h2>{L ? 'Third-party services' : 'Drittanbieter'}</h2>
+        <h2>{LX(lang, 'Third-party services', 'Drittanbieter')}</h2>
         <ul className="legal-list">
-          <li><strong>Supabase</strong> — {L ? 'Auth & database (eu-central-1 Frankfurt, Germany). Privacy policy: supabase.com/privacy' : 'Auth & Datenbank (eu-central-1 Frankfurt). Datenschutz: supabase.com/privacy'}</li>
-          <li><strong>YouTube / Google</strong> — {L ? 'Video embedding (only with your consent). Privacy policy: policies.google.com/privacy' : 'Video-Einbettung (nur mit Ihrer Einwilligung). Datenschutz: policies.google.com/privacy'}</li>
+          <li><strong>Supabase</strong> — {LX(lang, 'Auth & database (eu-central-1 Frankfurt, Germany). Privacy policy: supabase.com/privacy', 'Auth & Datenbank (eu-central-1 Frankfurt). Datenschutz: supabase.com/privacy')}</li>
+          <li><strong>YouTube / Google</strong> — {LX(lang, 'Video embedding (only with your consent). Privacy policy: policies.google.com/privacy', 'Video-Einbettung (nur mit Ihrer Einwilligung). Datenschutz: policies.google.com/privacy')}</li>
         </ul>
       </section>
 
       <section className="legal-section">
-        <h2>{L ? 'Your rights' : 'Ihre Rechte'}</h2>
-        <p>{L
-          ? 'You have the right to access, correct, delete, or export your data, and to lodge a complaint with the Austrian Data Protection Authority (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienna, dsb.gv.at).'
-          : 'Sie haben das Recht auf Auskunft, Berichtigung, Löschung oder Datenübertragbarkeit sowie das Recht, Beschwerde bei der österreichischen Datenschutzbehörde einzulegen (Barichgasse 40–42, 1030 Wien, dsb.gv.at).'}</p>
-        <p>{L
-          ? 'To exercise your rights, contact: datenschutz@novogenia.com'
-          : 'Zur Ausübung Ihrer Rechte wenden Sie sich an: datenschutz@novogenia.com'}</p>
+        <h2>{LX(lang, 'Your rights', 'Ihre Rechte')}</h2>
+        <p>{LX(lang,
+          'You have the right to access, correct, delete, or export your data, and to lodge a complaint with the Austrian Data Protection Authority (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienna, dsb.gv.at).',
+          'Sie haben das Recht auf Auskunft, Berichtigung, Löschung oder Datenübertragbarkeit sowie das Recht, Beschwerde bei der österreichischen Datenschutzbehörde einzulegen (Barichgasse 40–42, 1030 Wien, dsb.gv.at).')}</p>
+        <p>{LX(lang,
+          'To exercise your rights, contact: datenschutz@novogenia.com',
+          'Zur Ausübung Ihrer Rechte wenden Sie sich an: datenschutz@novogenia.com')}</p>
       </section>
     </div>
   )
@@ -2490,6 +2843,9 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLa
             <div className="lang-switcher" title="Language / Sprache">
               <button className={`lang-btn${lang === 'de' ? ' is-active' : ''}`} onClick={() => setLang('de')}>DE</button>
               <button className={`lang-btn${lang === 'en' ? ' is-active' : ''}`} onClick={() => setLang('en')}>EN</button>
+              <button className={`lang-btn${lang === 'cz' ? ' is-active' : ''}`} onClick={() => setLang('cz')}>CZ</button>
+              <button className={`lang-btn${lang === 'fr' ? ' is-active' : ''}`} onClick={() => setLang('fr')}>FR</button>
+              <button className={`lang-btn${lang === 'pt' ? ' is-active' : ''}`} onClick={() => setLang('pt')}>PT</button>
             </div>
           </div>
         </div>
@@ -2560,9 +2916,9 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLa
 
           {!isUsingRealSupabase() && (
             <div className="auth-local-notice">
-              <Icon.Info /> {lang === 'en'
-                ? 'Local-only mode: accounts live in this browser. Configure Supabase to sync across devices.'
-                : 'Lokaler Modus: Konten existieren nur in diesem Browser. Konfiguriere Supabase, um geräteübergreifend zu synchronisieren.'}
+              <Icon.Info /> {LX(lang,
+                'Local-only mode: accounts live in this browser. Configure Supabase to sync across devices.',
+                'Lokaler Modus: Konten existieren nur in diesem Browser. Konfiguriere Supabase, um geräteübergreifend zu synchronisieren.')}
             </div>
           )}
         </div>

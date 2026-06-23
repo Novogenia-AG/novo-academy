@@ -69,7 +69,9 @@ const MAX_MODULES_PER_PAGE = 16
 
 /** Draw a single certificate page (header + module slice + footer). */
 function drawCertPage(page, { name, dateStr, lang, courses, fonts, pageIndex, totalPages }) {
-  const L = lang === 'en'
+  // de -> German certificate; en/it/cz -> English (safe: embedded cert fonts
+  // may lack Czech diacritic glyphs, and English beats German for it/cz).
+  const L = lang !== 'de'
   const draw = (text, { x, y, size, font, color = COLOR_BLACK, maxWidth, lineHeight }) => {
     page.drawText(text, { x, y, size, font, color, maxWidth, lineHeight })
   }
