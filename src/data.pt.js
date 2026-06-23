@@ -40,7 +40,13 @@ const VIDEOS = {
  "ofA7l21tMvQ": "rbJyD_8k8e4",
  "Y9lSzTXj72c": "NZ6hUUgBHRg",
  "q8RNXZE5t5A": "pMcnz39X6Ws",
- "DbRx4Kjqkes": "ymTukGdHT5M"
+ "DbRx4Kjqkes": "ymTukGdHT5M",
+ "p02EmbTNRqE": "tjlTXmK3YvQ",
+ "pRU2p2Banno": "guJPu_J8hyk",
+ "cdsMJEPUv5A": "QetjNe2Jcbs",
+ "TIHnA7J6EP4": "qIEX36YR0Us",
+ "IgNeWJ6tTng": "pAO4YhedaOo",
+ "SgzAZyUIx-0": "467LEKpABQA"
 }
 const CAT = {
  "The Gene-Diet": "A Gene-Dieta",
