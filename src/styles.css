@@ -1923,16 +1923,14 @@ a { color: inherit; text-decoration: none; }
   margin: 0 auto;
   padding: 0 32px;
   display: flex; align-items: center; justify-content: space-between;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 10px 20px;
   min-height: 56px;
   position: relative;
 }
-/* Logo absolutely centered in the header bar regardless of left/right items */
+/* Logo on the left; lang switcher + login sit on the right (flex space-between).
+   (Was absolutely centered — collided with the wider 5-language nav group.) */
 .landing-logo {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
   font-size: 36px;
@@ -1940,7 +1938,7 @@ a { color: inherit; text-decoration: none; }
   line-height: 1;
   display: flex; align-items: center;
   white-space: nowrap;
-  pointer-events: auto;
+  flex: 0 0 auto;
 }
 .landing-logo .pt-novo { color: var(--wine); }
 .landing-logo .pt-academy { color: var(--text); margin-left: 6px; }
