@@ -2067,6 +2067,10 @@ function TopBar({ lang, setLang, session, profile, navigate }) {
               className={`lang-btn${lang === 'pt' ? ' is-active' : ''}`}
               onClick={() => setLang('pt')}
             >PT</button>
+            <button
+              className={`lang-btn${lang === 'it' ? ' is-active' : ''}`}
+              onClick={() => setLang('it')}
+            >IT</button>
           </div>
         )}
         {isAdmin && navigate && (
@@ -2136,6 +2140,10 @@ function LangPickPage({ onPick }) {
             <span className="langpick-flag" aria-hidden="true">🇵🇹</span>
             <span className="langpick-label">Português</span>
           </button>
+          <button className="langpick-option" onClick={() => onPick('it')}>
+            <span className="langpick-flag" aria-hidden="true">🇮🇹</span>
+            <span className="langpick-label">Italiano</span>
+          </button>
         </div>
       </div>
     </div>
@@ -2159,6 +2167,7 @@ function LandingPage({ lang, setLang, onSignUp, onLogIn, onImpressum, onDatensch
               <button className={`lang-btn${lang === 'cz' ? ' is-active' : ''}`} onClick={() => setLang('cz')}>CZ</button>
               <button className={`lang-btn${lang === 'fr' ? ' is-active' : ''}`} onClick={() => setLang('fr')}>FR</button>
               <button className={`lang-btn${lang === 'pt' ? ' is-active' : ''}`} onClick={() => setLang('pt')}>PT</button>
+              <button className={`lang-btn${lang === 'it' ? ' is-active' : ''}`} onClick={() => setLang('it')}>IT</button>
             </div>
             <button className="btn-ghost landing-login-btn" onClick={onLogIn}>{t('landing_cta_login')}</button>
           </div>
