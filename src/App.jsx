@@ -289,6 +289,71 @@ const INLINE_I18N = {
     'To exercise your rights, contact: datenschutz@novogenia.com': 'Para exercer os teus direitos, contacta: datenschutz@novogenia.com',
     'Local-only mode: accounts live in this browser. Configure Supabase to sync across devices.': 'Modo apenas local: as contas existem apenas neste navegador. Configura a Supabase para sincronizar entre dispositivos.',
   },
+  nl: {
+   "Previous": "Vorige",
+   "Next": "Volgende",
+   "Jane Doe": "Jan Jansen",
+   "Play": "Afspelen",
+   "▶ Playback (demo)": "▶ Afspelen (demo)",
+   "Back to course overview": "Terug naar cursusoverzicht",
+   "Click a question to reveal the answer — perfect for self-testing.": "Klik op een vraag om het antwoord te tonen — perfect om jezelf te testen.",
+   "Complete FAQ collection as PDF": "Volledige FAQ-verzameling als pdf",
+   "Download the entire collection as a Novogenia/Novodaily-branded PDF — perfect as a reference for consultation sessions or for printing.": "Download de volledige verzameling als pdf met Novogenia/Novodaily-huisstijl — ideaal als naslagwerk voor adviesgesprekken of om af te drukken.",
+   "You have already gone through this FAQ collection.": "Je hebt deze FAQ-verzameling al doorgenomen.",
+   "When you have gone through all questions, you can mark the module as viewed.": "Wanneer je alle vragen hebt doorgenomen, kun je de module als bekeken markeren.",
+   "Complete module": "Module afronden",
+   "Mark the FAQ collection as viewed": "Markeer de FAQ-verzameling als bekeken",
+   "CERTIFIABLE COURSE": "CERTIFICEERBARE CURSUS",
+   "SAFE": "VEILIG",
+   "CRITICAL": "KRITIEK",
+   "WITH DISCLAIMER": "MET DISCLAIMER",
+   "IMPORTANT": "BELANGRIJK",
+   "VIDEO COMING SOON": "VIDEO IN VOORBEREIDING",
+   "A dedicated English video for this module has not been recorded yet. The training content and test below remain fully functional — the video segment will be added as soon as the recording is available.": "Een speciale video voor deze module is nog in voorbereiding. De inhoud en de test hieronder werken al perfect — het videoblok wordt toegevoegd zodra de opname beschikbaar is.",
+   "Documents to take with you": "Documenten om mee te nemen",
+   "You have already successfully completed this module.": "Je hebt deze module al met succes afgerond.",
+   "When you have watched all relevant content, complete the module and take your test.": "Wanneer je alle relevante inhoud hebt bekeken, rond je de module af en maak je je test.",
+   "Complete training": "Training afronden",
+   "Mark this module as successfully completed": "Markeer deze module als met succes afgerond",
+   "Start the test": "Start de test",
+   "Prove your knowledge and secure your certificate": "Bewijs je kennis en behaal je certificaat",
+   "Test": "Test",
+   "Screenshot coming": "Screenshot volgt",
+   "Question": "Vraag",
+   "Passed!": "Geslaagd!",
+   "Unfortunately not passed": "Helaas niet geslaagd",
+   "To course overview": "Naar cursusoverzicht",
+   "All courses": "Alle cursussen",
+   "Try again": "Opnieuw proberen",
+   "Review course": "Cursus herbekijken",
+   "Failed to generate the PDF. Please try again.": "Kan de pdf niet genereren. Probeer het opnieuw.",
+   "You haven't answered all questions. Submit anyway?": "Je hebt niet alle vragen beantwoord. Toch verzenden?",
+   "Back": "Terug",
+   "EXAMPLE": "VOORBEELD",
+   "Generating...": "Bezig met genereren...",
+   "Download as PDF": "Downloaden als pdf",
+   "CEO of Novogenia": "CEO van Novogenia",
+   "Skip to content": "Ga naar inhoud",
+   "Official training platform": "Officieel trainingsplatform",
+   "Austria": "Oostenrijk",
+   "Regional Court Salzburg": "Regionale rechtbank Salzburg",
+   "Federal Ministry for Social Affairs, Health, Care and Consumer Protection": "Federaal Ministerie voor Sociale Zaken, Gezondheid, Zorg en Consumentenbescherming",
+   "Austrian Trade Regulations 1994 (GewO), Genetic Technology Act (GTG), accessible via RIS Austria (ris.bka.gv.at).": "Oostenrijkse Bedrijfsregeling 1994 (GewO), Wet op de gentechnologie (GTG), raadpleegbaar via RIS Austria (ris.bka.gv.at).",
+   "Responsible Party": "Verwerkingsverantwoordelijke",
+   "What data we process": "Welke gegevens we verwerken",
+   "When you create an account, we store your e-mail address, your chosen display name, your language preference, and your course progress (which videos you watched and which tests you passed). This data is stored in Supabase (eu-central-1, Frankfurt, Germany) and processed exclusively for operating NOVO ACADEMY.": "Wanneer je een account aanmaakt, slaan we je e-mailadres, de door jou gekozen weergavenaam, je taalvoorkeur en je cursusvoortgang op (welke video's je hebt bekeken en welke tests je hebt gehaald). Deze gegevens worden opgeslagen in Supabase (eu-central-1, Frankfurt, Duitsland) en uitsluitend verwerkt voor de werking van NOVO ACADEMY.",
+   "Legal basis": "Rechtsgrondslag",
+   "Processing is based on your consent (Art. 6(1)(a) GDPR) when you register, and on contract performance (Art. 6(1)(b) GDPR) for providing the academy service.": "De verwerking is gebaseerd op je toestemming (art. 6, lid 1, onder a, AVG) bij je registratie en op de uitvoering van de overeenkomst (art. 6, lid 1, onder b, AVG) voor het leveren van de academiedienst.",
+   "Cookies": "Cookies",
+   "NOVO ACADEMY uses session cookies that are technically necessary for the login function (Supabase Auth). If you consent to optional cookies, embedded YouTube videos load additional cookies from Google/YouTube. You can withdraw your consent at any time.": "NOVO ACADEMY gebruikt sessiecookies die technisch noodzakelijk zijn voor de inlogfunctie (Supabase Auth). Als je toestemming geeft voor optionele cookies, laden ingesloten YouTube-video's extra cookies van Google/YouTube. Je kunt je toestemming op elk moment intrekken.",
+   "Third-party services": "Diensten van derden",
+   "Auth & database (eu-central-1 Frankfurt, Germany). Privacy policy: supabase.com/privacy": "Authenticatie en database (eu-central-1 Frankfurt, Duitsland). Privacybeleid: supabase.com/privacy",
+   "Video embedding (only with your consent). Privacy policy: policies.google.com/privacy": "Insluiten van video's (alleen met je toestemming). Privacybeleid: policies.google.com/privacy",
+   "Your rights": "Je rechten",
+   "You have the right to access, correct, delete, or export your data, and to lodge a complaint with the Austrian Data Protection Authority (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienna, dsb.gv.at).": "Je hebt het recht om je gegevens in te zien, te corrigeren, te wissen of te exporteren, en om een klacht in te dienen bij de Oostenrijkse gegevensbeschermingsautoriteit (Datenschutzbehörde, Barichgasse 40–42, 1030 Wenen, dsb.gv.at).",
+   "To exercise your rights, contact: datenschutz@novogenia.com": "Om je rechten uit te oefenen, neem contact op met: datenschutz@novogenia.com",
+   "Local-only mode: accounts live in this browser. Configure Supabase to sync across devices.": "Alleen-lokaal-modus: accounts bestaan alleen in deze browser. Configureer Supabase om te synchroniseren tussen apparaten.",
+  },
 }
 
 /* Templated strings (with ${...} placeholders) — kept separate only for
@@ -317,6 +382,12 @@ const INLINE_I18N_TEMPLATES = {
     'Finish test (${answered}/${total} answered)': 'Concluir teste (${answered}/${total} respondidas)',
     'You passed the "${topic}" test with ${score}%. Once the training is also completed, the module counts as certified.': 'Aprovaste no teste sobre “${topic}” com ${score}%. Assim que a formação também estiver concluída, o módulo é considerado certificado.',
     'You achieved ${score}% correct answers. At least 80% is required to pass. Review the course once more and try again.': 'Obtiveste ${score}% de respostas corretas. Para aprovação são necessários pelo menos 80%. Revê o curso mais uma vez e tenta novamente.',
+  },
+  nl: {
+   "✓ Test passed (${score}%)": "✓ Test geslaagd (${score}%)",
+   "Finish test (${answered}/${total} answered)": "Test afronden (${answered}/${total} beantwoord)",
+   "You passed the \"${topic}\" test with ${score}%. Once the training is also completed, the module counts as certified.": "Je bent geslaagd voor de test over \"${topic}\" met ${score}%. Zodra ook de training is afgerond, geldt de module als gecertificeerd.",
+   "You achieved ${score}% correct answers. At least 80% is required to pass. Review the course once more and try again.": "Je hebt ${score}% correcte antwoorden behaald. Om te slagen is minstens 80% vereist. Bekijk de cursus nog een keer en probeer het opnieuw.",
   },
 }
 /* Pick a language for an inline string. de -> de, en -> en, else translated
@@ -1786,7 +1857,7 @@ export default function App() {
 
   // Set <html lang> attribute for screen readers (must come after `lang` is declared)
   useEffect(() => {
-    document.documentElement.lang = ['de', 'en', 'it', 'cz', 'fr', 'pt'].includes(lang) ? lang : 'de'
+    document.documentElement.lang = ['de', 'en', 'it', 'cz', 'fr', 'pt', 'nl'].includes(lang) ? lang : 'de'
   }, [lang])
 
   // Track whether the remote load has finished — guard writes until then
@@ -2071,6 +2142,10 @@ function TopBar({ lang, setLang, session, profile, navigate }) {
               className={`lang-btn${lang === 'it' ? ' is-active' : ''}`}
               onClick={() => setLang('it')}
             >IT</button>
+            <button
+              className={`lang-btn${lang === 'nl' ? ' is-active' : ''}`}
+              onClick={() => setLang('nl')}
+            >NL</button>
           </div>
         )}
         {isAdmin && navigate && (
@@ -2144,6 +2219,10 @@ function LangPickPage({ onPick }) {
             <span className="langpick-flag" aria-hidden="true">🇮🇹</span>
             <span className="langpick-label">Italiano</span>
           </button>
+          <button className="langpick-option" onClick={() => onPick('nl')}>
+            <span className="langpick-flag" aria-hidden="true">🇳🇱</span>
+            <span className="langpick-label">Nederlands</span>
+          </button>
         </div>
       </div>
     </div>
@@ -2168,6 +2247,7 @@ function LandingPage({ lang, setLang, onSignUp, onLogIn, onImpressum, onDatensch
               <button className={`lang-btn${lang === 'fr' ? ' is-active' : ''}`} onClick={() => setLang('fr')}>FR</button>
               <button className={`lang-btn${lang === 'pt' ? ' is-active' : ''}`} onClick={() => setLang('pt')}>PT</button>
               <button className={`lang-btn${lang === 'it' ? ' is-active' : ''}`} onClick={() => setLang('it')}>IT</button>
+              <button className={`lang-btn${lang === 'nl' ? ' is-active' : ''}`} onClick={() => setLang('nl')}>NL</button>
             </div>
             <button className="btn-ghost landing-login-btn" onClick={onLogIn}>{t('landing_cta_login')}</button>
           </div>

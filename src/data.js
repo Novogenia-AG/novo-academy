@@ -2702,12 +2702,14 @@ import { COURSES_CZ, MAIN_CATEGORIES_CZ, SECTION_PRODUCT_LABELS_CZ } from './dat
 import { COURSES_IT, MAIN_CATEGORIES_IT, SECTION_PRODUCT_LABELS_IT } from './data.it.js'
 import { COURSES_FR, MAIN_CATEGORIES_FR, SECTION_PRODUCT_LABELS_FR } from './data.fr.js'
 import { COURSES_PT, MAIN_CATEGORIES_PT, SECTION_PRODUCT_LABELS_PT } from './data.pt.js'
+import { COURSES_NL, MAIN_CATEGORIES_NL, SECTION_PRODUCT_LABELS_NL } from './data.nl.js'
 import { UI_EXTRA } from './ui-extra.js'
 COURSES.push(...COURSES_EN)
 COURSES.push(...COURSES_CZ)
 COURSES.push(...COURSES_IT)
 COURSES.push(...COURSES_FR)
 COURSES.push(...COURSES_PT)
+COURSES.push(...COURSES_NL)
 
 /* English fallback generic questions — used when an English course doesn't
    define its own (so the test page doesn't show German fragments). */
@@ -2932,8 +2934,8 @@ const sortBySectionConvention = (items) =>
     return (CONTENT_TYPE_ORDER[a.contentType] ?? 5) - (CONTENT_TYPE_ORDER[b.contentType] ?? 5)
   })
 
-const MAIN_CATS_BY_LANG = { en: MAIN_CATEGORIES_EN, cz: MAIN_CATEGORIES_CZ, it: MAIN_CATEGORIES_IT, fr: MAIN_CATEGORIES_FR, pt: MAIN_CATEGORIES_PT }
-const SEC_LABELS_BY_LANG = { en: SECTION_PRODUCT_LABELS_EN, cz: SECTION_PRODUCT_LABELS_CZ, it: SECTION_PRODUCT_LABELS_IT, fr: SECTION_PRODUCT_LABELS_FR, pt: SECTION_PRODUCT_LABELS_PT }
+const MAIN_CATS_BY_LANG = { en: MAIN_CATEGORIES_EN, cz: MAIN_CATEGORIES_CZ, it: MAIN_CATEGORIES_IT, fr: MAIN_CATEGORIES_FR, pt: MAIN_CATEGORIES_PT, nl: MAIN_CATEGORIES_NL }
+const SEC_LABELS_BY_LANG = { en: SECTION_PRODUCT_LABELS_EN, cz: SECTION_PRODUCT_LABELS_CZ, it: SECTION_PRODUCT_LABELS_IT, fr: SECTION_PRODUCT_LABELS_FR, pt: SECTION_PRODUCT_LABELS_PT, nl: SECTION_PRODUCT_LABELS_NL }
 export const groupForDisplay = (lang = 'de') => {
   const mainCategoriesForLang = MAIN_CATS_BY_LANG[lang] || MAIN_CATEGORIES
   const sectionLabelsForLang  = SEC_LABELS_BY_LANG[lang] || SECTION_PRODUCT_LABELS
