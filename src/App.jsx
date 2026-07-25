@@ -1,7 +1,14 @@
-import React, { useState, useMemo, useRef, useEffect, useContext, createContext } from 'react'
-import { downloadCertificate } from './generateCert.js'
-import CertTemplateBg from './CertTemplateBg.jsx'
-import PdfThumb from './PdfThumb.jsx'
+import React, { useState, useMemo, useRef, useEffect, useContext, createContext, lazy, Suspense } from 'react'
+/* Heavy PDF libs (pdf-lib ~400 kB, pdfjs ~350 kB) are NOT part of the main bundle.
+   generateCert.js is imported dynamically inside the download handler; the two
+   canvas components are React.lazy so pdfjs only loads when a PDF is actually
+   rendered (cert preview / document thumbnails). Both render nothing while
+   loading, which matches their existing "no preview" fallback. */
+const CertTemplateBg = lazy(() => import('./CertTemplateBg.jsx'))
+const PdfThumbLazy = lazy(() => import('./PdfThumb.jsx'))
+const PdfThumb = (props) => (
+  <Suspense fallback={null}><PdfThumbLazy {...props} /></Suspense>
+)
 import SupportBotLauncher from './SupportBotLauncher.jsx'
 import { COURSES, isCertifiable, isCertified, buildInitialState, groupForDisplay, SAMPLE_COURSE_LIST, CATEGORY_CONTENT, HOME_VIDEO_SECTION, getHomeVideoSection, getHomeTopVideos, getContentTags, courseKey, t as tBase, getSampleCourseList, assetUrl, bestDisplayName } from './data.js'
 import {
@@ -1695,6 +1702,8 @@ function CertificatePage({ name, courses, isSample, onBack }) {
   const downloadPdf = async () => {
     setDownloading(true)
     try {
+      // pdf-lib + fontkit load on demand (keeps them out of the initial bundle)
+      const { downloadCertificate } = await import('./generateCert.js')
       await downloadCertificate({ name: name || fallbackName, courses, dateStr, lang })
     } catch (err) {
       console.error('PDF generation failed', err)
@@ -1718,8 +1727,9 @@ function CertificatePage({ name, courses, isSample, onBack }) {
       <div className="cert-canvas">
         <div className="certificate" id="certificate-print">
           {/* The on-screen certificate now uses the actual PDF as background.
-              Logo, signature, wine wedge — all baked into cert-template.pdf. */}
-          <CertTemplateBg />
+              Logo, signature, wine wedge — all baked into cert-template.pdf.
+              Lazy: pdfjs loads only when the certificate is actually opened. */}
+          <Suspense fallback={null}><CertTemplateBg /></Suspense>
 
           <div className="cert-content">
             <p className="cert-novo">NOVOGENIA</p>
