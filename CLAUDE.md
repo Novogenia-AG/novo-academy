@@ -484,3 +484,112 @@ Jedes Thema bekommt — soweit Material vorhanden — diese Module, immer in die
 - Assets über die bestehenden Pfad-Helfer referenzieren.
 - **`CLAUDE.md` aktualisieren** (Abschnitt 8 Video-Stand + Changelog Abschnitt 15).
 - Lokal `npm run build` testen → dann committen/pushen (Unfertiges nur per Branch + PR — siehe Grundregeln).
+
+---
+
+## 19. AKTUELLER ARBEITSSTAND (Handover, Stand 2026-07-31)
+
+> **Diese Session lief auf Daniels Laptop. Wenn du auf einem NEUEN Rechner startest: zuerst
+> Abschnitt 17 (Onboarding) durcharbeiten, dann diesen Abschnitt.** Alles hier ist Ist-Zustand,
+> keine Planung.
+
+### 19.1 Was fertig ist (aber noch NICHT gepusht)
+
+Auf `main` liegen **3 lokale Commits, die noch nicht auf GitHub sind**:
+
+| Commit | Inhalt |
+|---|---|
+| `b239a6e` | Merge der 4 neuen Sprachen auf `main` |
+| `70c5236` | Performance: Initial-Load −69 % (1.006 → 310 kB gzip) |
+| `e37ca9f` | RO/ES/SR/AR: Übersetzung + Arabisch-RTL |
+
+Alles ist lokal gebaut und verifiziert (`npm ci` + `npm run build` grün, Browser-Test:
+11 Sprachen im Picker, Arabisch `dir=rtl`, Konsole fehlerfrei).
+
+**⚠️ BLOCKER PUSH:** `git push origin main` scheitert mit **HTTP 403**:
+`Permission to Novogenia-AG/novo-academy.git denied to evolutionnext696-prog`.
+Das im Windows-Credential-Manager gespeicherte GitHub-Konto hat **kein Schreibrecht**
+auf das Org-Repo. Lösung: dem Konto Write-Rechte geben, mit einem berechtigten Konto
+anmelden, oder einen PAT (Scope `repo`) verwenden. **Erst prüfen, ob die Commits
+inzwischen doch gepusht wurden** (`git log origin/main --oneline -3`), bevor du etwas neu machst.
+
+### 19.2 Sprachen — echter Stand
+
+| Sprache | Text/UI | Videos | Sichtbare Kurse |
+|---|---|---|---|
+| DE, EN, CZ, IT, FR, PT, NL | ✅ live | ✅ vollständig | 17–21 von 22 |
+| **AR** (RTL) | ✅ fertig | 41/41 gedubbt, **0 auf YouTube öffentlich** | **7 von 22** |
+| **RO** | ✅ fertig | 40/41 gedubbt, nicht hochgeladen | **7 von 22** |
+| **ES** (neutral) | ✅ fertig | 7/41 gedubbt (alle Wissenschafts-Basis) | **7 von 22** |
+| **SR** (Latein) | ✅ fertig | 0 gedubbt (Credits fehlen) | **7 von 22** |
+
+**Warum nur 7 von 22:** `groupForDisplay()` in `data.js` blendet jeden Kurs ohne Video aus
+(FAQ/Zusatz-Kurse bleiben sichtbar). Die `VIDEOS`-Maps in `data.{ar,ro,es,sr}.js` sind noch
+**leer** — sie füllen sich **nicht** automatisch, die YouTube-IDs müssen eingetragen werden.
+
+Textqualität von RO/ES/SR wurde geprüft (je 694 Felder gegen EN): 0 untranslated Reste,
+0 verlorene Gen-/Markennamen, keine verschobenen `correct`-Indizes.
+
+### 19.3 Video-Pipeline — wo alles liegt
+
+**Fertige Dubs (88 Videos, 22,4 GB) — nur lokal auf Daniels Laptop, NICHT im Repo:**
+```
+C:\dev\YOUTUBE_UPLOAD\01_ARABISCH    41 Videos, 9,6 GB
+C:\dev\YOUTUBE_UPLOAD\02_RUMAENISCH  40 Videos, 8,3 GB
+C:\dev\YOUTUBE_UPLOAD\03_SPANISCH     7 Videos, 4,5 GB
+```
+Jeder Ordner enthält `_MAPPING.csv` (Titel → EN-Quellvideo → HeyGen-Job-ID) und
+`_ANLEITUNG.txt`. **Die Dateinamen sind exakt die YouTube-Titel** — darüber läuft später
+die Zuordnung. Auf einem anderen Rechner sind diese Dateien nicht vorhanden; die Dubs
+liegen aber weiterhin auf HeyGen und lassen sich per Job-ID neu herunterladen.
+
+**Pipeline-Skripte:** `C:\dev\lang_pipeline\` (bewusst außerhalb des Repos)
+| Skript | Zweck |
+|---|---|
+| `submit_lang.mjs <code> "<HeyGen-Sprache>"` | alle 41 Dubs starten (mit Credit-Cost-Guard) |
+| `submit_selected.mjs <code> "<Sprache>"` | nur die Einheiten aus `partial_plan.json` (Teil-Budget) |
+| `plan_partial.mjs <budget>` | rechnet aus, welche **ganzen** Kurseinheiten ins Budget passen |
+| `poll_lang.mjs <code>` | pollt bis fertig, schreibt Status + URL in `<code>_jobs.json` |
+| `download_lang.mjs <code> <dir>` | lädt fertige Dubs (frische URL je Datei, curl, resumable) |
+| `add_folder_docs.mjs <code> <dir> <Label>` | erzeugt `_MAPPING.csv` + `_ANLEITUNG.txt` |
+| `match_and_inject.mjs <code> <repo>` | **der letzte Schritt** (siehe 19.4) |
+
+**HeyGen-Wissen (gemessen, nicht geschätzt):**
+- Video-Translate akzeptiert **YouTube-URLs direkt** — kein Download der Quellvideos nötig.
+- **120 API-Credits pro Videominute** (Lip-Sync). Eine komplette Sprache = 292 Min ≈ **35.000 Credits**.
+- Der API-Key zieht aus dem **`api`-Topf**, nicht aus `regular` — beim Nachkaufen darauf achten.
+- Die öffentliche Preisseite nennt „5 Credits/Minute" — das sind **Web-Plan-Credits**, andere Einheit (Faktor 24).
+- Endpoint `v2/video_translate` ist Legacy, funktioniert aber zuverlässig; `v3/video-translations` wird zuerst versucht.
+- Output-URLs sind **signiert und laufen ab** → vor jedem Download frisch über die Job-ID holen.
+- Restguthaben zuletzt: **~8.000 Credits**. Für ES-Beratungsschulungen (34 Videos) + SR fehlen **~50.500**.
+- **Der API-Key steht NICHT in diesem Repo** (öffentlich!) — bei Daniel erfragen.
+
+### 19.4 Der nächste konkrete Schritt
+
+**Blocker: die 30 bereits hochgeladenen arabischen Videos sind auf YouTube „Entwurf".**
+Entwürfe sind nicht einbettbar → die Academy kann sie nicht abspielen.
+
+1. Daniel: restliche 11 AR-Videos hochladen + **alle auf „Öffentlich"** setzen
+   (Studio → Inhalte → Filter → Sichtbarkeit → Entwurf → alle markieren →
+   Bearbeiten → Sichtbarkeit → Öffentlich; Zielgruppe „kein Inhalt für Kinder").
+2. Kanal-Videos als `yt_uploaded.json` sammeln (Array aus `{id,title}`).
+3. `node match_and_inject.mjs ar C:/dev/novo-academy` →
+   matcht über die Titel (YouTube entfernt Klammern, wird normalisiert),
+   **prüft jedes Video per oEmbed auf Einbettbarkeit** und schreibt die IDs in `data.ar.js`.
+   Bricht bewusst ab, wenn ein Video nicht einbettbar ist.
+4. `npm run build` → Browser-Test → committen → pushen.
+5. Dasselbe für RO, dann ES.
+
+**Warum die oEmbed-Prüfung Pflicht ist:** Genau daran ist hier schon einmal eine ganze
+Sprache gescheitert (114 Videos hatten Embedding deaktiviert, siehe Changelog 2026-06-23).
+
+### 19.5 Fallen, die in dieser Session Zeit gekostet haben
+
+- **`npm ci` bricht hart ab**, wenn `package.json` und `package-lock.json` auseinanderlaufen
+  → nach jedem Dependency-Eingriff Lockfile regenerieren und lokal `npm ci` testen.
+- **Der Build fängt keine Laufzeitfehler.** Ein Generator hatte den `const CAT`-Block
+  zerstört; `npm run build` war grün, die App zeigte aber eine weiße Seite. Immer zusätzlich
+  im Browser `import('/src/data.js')` prüfen.
+- **YouTube-Titel:** Klammern werden beim Upload entfernt (`(AR)` → ` AR`) — beim Matchen normalisieren.
+- **Node liegt hier nicht im PATH:** `C:\Users\DanielWallerstorfer\AppData\Local\Programs\node`.
+- **Der OneDrive-Ordner `academy-redesign` ist VERALTET** (kein Git, ohne NL/IT). Code kommt aus `C:\dev\novo-academy`.
