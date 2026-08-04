@@ -357,6 +357,7 @@ git push origin main
 
 | Datum | Änderung |
 |---|---|
+| 2026-08-04 | **🚀 GEPUSHT & DEPLOYT: die 4 Sprachen-Commits vom alten Laptop (403-Blocker gelöst).** Die auf Daniels altem Laptop gestrandeten Commits (`e37ca9f`/`70c5236`/`b239a6e`/`3b4965a`) per `git bundle` über OneDrive (`NOVO ACADEMY\VIDEO_PIPELINE\unpushed.bundle`) auf den neuen Rechner transferiert, dort erneut verifiziert (`npm ci` grün, Build grün mit Chunk-Split 307 kB gzip initial, Browser-Test: 11 Sprachen im Picker, AR `dir=rtl` ↔ RO `dir=ltr`, alle 11 `data.*.js` importieren fehlerfrei) und mit berechtigtem Konto gepusht → GitHub-Actions-Deploy auf `3b4965a`. **Neuer Arbeitsrechner eingerichtet:** Repo `C:\dev\novo-academy`, Node v24.19.0 (ZIP) in `C:\dev\tools\node` + User-PATH, `.env.local` angelegt. Nächster Schritt bleibt §19.4 (AR-YouTube-Videos veröffentlichen → IDs injizieren). |
 | 2026-07-31 | **🌍 LIVE: RO, ES, SR, AR freigeschaltet (11 Sprachen) — Videos folgen nach.** Feature-Branch `feature/languages-ro-es-sr-ar` auf `main` gemergt (Konflikt nur in dieser Datei; `App.jsx` auto-merge sauber: Perf-Änderungen und Sprach-Änderungen liegen in verschiedenen Bereichen). Damit sind Plattform-Übersetzung (Kurse, Tests, 168 UI-Keys, Landing/Legal-Inline-Strings) und **Arabisch-RTL** live. **⚠️ Bewusst mit unvollständigem Katalog live gestellt (Anweisung Daniel):** die `VIDEOS`-Maps sind noch leer → `groupForDisplay` blendet alle Video-Kurse aus, die 4 neuen Sprachen zeigen aktuell **7 von 22 Kursen** (nur FAQ/Zusatz). Sie füllen sich **nicht** automatisch — die YouTube-IDs müssen nach dem Veröffentlichen eingetragen werden. **Dub-Stand (HeyGen, fertig produziert):** AR 41/41, RO 40/41, ES 7/41 (alle 7 Wissenschafts-Basis-Kurse) = 88 Videos / 22,4 GB, liegen upload-fertig benannt in `C:\dev\YOUTUBE_UPLOAD\{01_ARABISCH,02_RUMAENISCH,03_SPANISCH}` (je mit `_MAPPING.csv` + `_ANLEITUNG.txt`). **Blocker:** 30 arabische Videos sind auf YouTube nur **Entwurf** → nicht einbettbar. Nach dem Veröffentlichen: `C:\dev\lang_pipeline\match_and_inject.mjs <code>` matcht die Videos über den Titel, **verifiziert jedes per oEmbed** und schreibt die IDs in `data.<code>.js` (bricht ab, wenn ein Video nicht einbettbar ist). Restguthaben ~8.000 Credits; für ES-Beratungsschulungen + SR fehlen ~50.500. Messwert für Kalkulationen: **120 API-Credits pro Videominute**. |
 | 2026-07-25 | **⚡ Performance-Optimierung + Voll-QA (keine Inhaltsänderung).** Das Initial-Bundle war ein einziger 2.674 kB-Chunk (**1.006 kB gzip**), den jeder Besucher vor dem ersten Frame lud. **Ergebnis: 310 kB übertragenes JS beim ersten Laden = −69 %** (im Browser gemessen, DOMContentLoaded 243 ms). Maßnahmen: (1) `generateCert.js` (pdf-lib + fontkit) wird jetzt **dynamisch im Download-Handler** importiert; (2) `CertTemplateBg.jsx` + `PdfThumb.jsx` sind **`React.lazy`** (pdfjs lädt erst, wenn ein PDF wirklich gerendert wird) — `PdfThumb` ist in einen `Suspense fallback={null}`-Wrapper gekapselt, was exakt dem bisherigen „keine Vorschau"-Verhalten entspricht; (3) `manualChunks` in `vite.config.js` trennt `react` + `supabase` vom App-Chunk → Content-Updates invalidieren den Vendor-Cache nicht mehr; (4) **3 tote Dependencies entfernt** (`jspdf`, `html2canvas`, `@fontsource/montserrat` — waren nirgends importiert) + **Lockfile regeneriert** (⚠️ CI nutzt `npm ci`, das bei Drift zwischen package.json und package-lock **hart fehlschlägt** — lokal mit `npm ci` verifiziert, 88 Pakete); (5) `index.html`: **Caveat-Font entfernt** (wurde geladen, aber in keinem Stylesheet referenziert), `meta description` (SEO) + `preconnect` zu Supabase ergänzt. **Verifiziert im Browser gegen den Production-Build:** Zertifikat-Vorschau (Canvas 1190×1683), PDF-Download (Chunk lädt on demand, 0 Fehler), Dokument-Thumbnails (echte PDF-Seiten gerendert), Mobile 375 px ohne horizontalen Overflow, Konsole fehlerfrei. **QA:** 154 Kurse × 7 Sprachen → **0 Datendefekte** (keine doppelten uids, jeder zertifizierbare Kurs hat einen validen Test, 46/46 Dokumente vorhanden), i18n-Parität 168 Keys × 5 Blöcke, **alle 289 YouTube-Videos einbettbar**. Lazy-Chunks (nur bei Bedarf): `generateCert` 1.150 kB, `pdf.worker` 457 kB. |
 | 2026-07-22 | **➕ 4 neue Sprachen text-fertig: RO, ES, SR (Serbokroatisch, Latein), AR (Arabisch, RTL)** — datengetrieben nach Kundenzahlen der Bestellländer priorisiert. Neue `data.{ro,es,sr,ar}.js` (transformieren `COURSES_EN` wie die bestehenden: übersetzte Texte inkl. **aller Tests**, Dokumente bleiben Englisch). Übersetzung via Multi-Agent-Workflow (32 Agents Kursinhalt + 4 Agents Landing/Legal-Inline-Strings); Struktur-Validierung 0 Probleme (keine verschobenen `correct`-Indizes). `ui-extra.js`: je 168 UI-Keys ergänzt (jetzt 9 Blöcke). `App.jsx`: Sprachumschalter (alle 4 Blöcke) auf `.map()` refaktoriert + RO/ES/SR/AR; `INLINE_I18N` + `INLINE_I18N_TEMPLATES` um 4 Sprachen erweitert (63+4 Keys); Inline-Siegel/Button-Objekte ergänzt. **Arabisch RTL:** `document.documentElement.dir = lang==='ar' ? 'rtl' : 'ltr'` (App.jsx useEffect); Browser-verifiziert (Landing, Registrierung, Dashboard-Kurskarten, Siegel „معتمد" — alles `dir=rtl`, sauber übersetzt). Build grün (404 Module), Audit 0 Defekte (242 Kurse). **⚠️ VIDEOS-Maps sind LEER** → Video-Kurse werden von `groupForDisplay` ausgeblendet, d.h. die 4 Sprachen zeigen bis zu den Dubs fast nichts → **NICHT auf `main`/live** (Feature-Branch). **OFFEN (Phase 2):** 40 EN-Quellvideos je Sprache = **160 HeyGen-Lipsync-Dubs + YouTube-Uploads** → IDs in die `VIDEOS`-Maps → dann Sprache live. Regen-Tooling war einmalig (nicht im Repo). |
@@ -487,31 +488,22 @@ Jedes Thema bekommt — soweit Material vorhanden — diese Module, immer in die
 
 ---
 
-## 19. AKTUELLER ARBEITSSTAND (Handover, Stand 2026-07-31)
+## 19. AKTUELLER ARBEITSSTAND (Handover, Stand 2026-08-04)
 
-> **Diese Session lief auf Daniels Laptop. Wenn du auf einem NEUEN Rechner startest: zuerst
-> Abschnitt 17 (Onboarding) durcharbeiten, dann diesen Abschnitt.** Alles hier ist Ist-Zustand,
-> keine Planung.
+> **Arbeitsrechner ist jetzt Daniels neuer Rechner** (Repo: `C:\dev\novo-academy`,
+> Node v24.19.0 ZIP-Install in `C:\dev\tools\node`, im User-PATH). Wenn du auf einem
+> weiteren NEUEN Rechner startest: zuerst Abschnitt 17 (Onboarding), dann diesen Abschnitt.
+> Alles hier ist Ist-Zustand, keine Planung.
 
-### 19.1 Was fertig ist (aber noch NICHT gepusht)
+### 19.1 Sprach-Rollout RO/ES/SR/AR — GEPUSHT & LIVE (2026-08-04)
 
-Auf `main` liegen **3 lokale Commits, die noch nicht auf GitHub sind**:
-
-| Commit | Inhalt |
-|---|---|
-| `b239a6e` | Merge der 4 neuen Sprachen auf `main` |
-| `70c5236` | Performance: Initial-Load −69 % (1.006 → 310 kB gzip) |
-| `e37ca9f` | RO/ES/SR/AR: Übersetzung + Arabisch-RTL |
-
-Alles ist lokal gebaut und verifiziert (`npm ci` + `npm run build` grün, Browser-Test:
-11 Sprachen im Picker, Arabisch `dir=rtl`, Konsole fehlerfrei).
-
-**⚠️ BLOCKER PUSH:** `git push origin main` scheitert mit **HTTP 403**:
-`Permission to Novogenia-AG/novo-academy.git denied to evolutionnext696-prog`.
-Das im Windows-Credential-Manager gespeicherte GitHub-Konto hat **kein Schreibrecht**
-auf das Org-Repo. Lösung: dem Konto Write-Rechte geben, mit einem berechtigten Konto
-anmelden, oder einen PAT (Scope `repo`) verwenden. **Erst prüfen, ob die Commits
-inzwischen doch gepusht wurden** (`git log origin/main --oneline -3`), bevor du etwas neu machst.
+Die 4 Commits (`e37ca9f` Übersetzungen + Arabisch-RTL, `70c5236` Perf −69 % Initial-Load,
+`b239a6e` Merge, `3b4965a` Doku) sind auf GitHub und deployt. Der frühere **403-Push-Blocker**
+(Konto `evolutionnext696-prog` ohne Write-Recht) wurde umgangen: Commits per `git bundle`
+über OneDrive (`NOVO ACADEMY\VIDEO_PIPELINE\unpushed.bundle`) vom alten Laptop transferiert
+und vom neuen Rechner mit berechtigtem Konto gepusht. Vor dem Push auf dem neuen Rechner
+erneut verifiziert: `npm ci` + `npm run build` grün, Browser-Test 11 Sprachen im Picker,
+Arabisch `dir=rtl` / Rumänisch `dir=ltr`, alle 11 `data.*.js` importieren fehlerfrei.
 
 ### 19.2 Sprachen — echter Stand
 
@@ -591,5 +583,5 @@ Sprache gescheitert (114 Videos hatten Embedding deaktiviert, siehe Changelog 20
   zerstört; `npm run build` war grün, die App zeigte aber eine weiße Seite. Immer zusätzlich
   im Browser `import('/src/data.js')` prüfen.
 - **YouTube-Titel:** Klammern werden beim Upload entfernt (`(AR)` → ` AR`) — beim Matchen normalisieren.
-- **Node liegt hier nicht im PATH:** `C:\Users\DanielWallerstorfer\AppData\Local\Programs\node`.
+- **Node-Pfade sind rechnerabhängig:** alter Laptop `C:\Users\DanielWallerstorfer\AppData\Local\Programs\node`, neuer Rechner `C:\dev\tools\node` (User-PATH gesetzt; frische Shells ggf. mit `$env:Path`-Prefix).
 - **Der OneDrive-Ordner `academy-redesign` ist VERALTET** (kein Git, ohne NL/IT). Code kommt aus `C:\dev\novo-academy`.
