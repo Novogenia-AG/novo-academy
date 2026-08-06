@@ -45,12 +45,13 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
+        # ACHTUNG bei Deploy-Timeouts ("Timeout reached, aborting!"):
+        # Der `timeout`-Parameter hilft NICHT — die Action deckelt ihn hart auf
+        # 600000 ms (10 Min) und meldet dann nur "timeout set to the maximum".
+        # Ursache ist die Artefaktgroesse: ~182 MB, davon ~162 MB in sieben
+        # Dateien unter public/course-materials (u.a. Schulungsfolien_
+        # Pharmacogenetics.pptx 47 MB, Demo_Performance_Sensor.pdf 36 MB).
+        # Dauerhafte Loesung: diese Dateien wie die acht bereits ausgelagerten
+        # ins GitHub-Release "course-materials" (oder Supabase Storage)
+        # verschieben und in data.js auf die absolute URL umstellen.
         uses: actions/deploy-pages@v4
-        with:
-          # Das Artefakt ist ~182 MB (grosse Demo-Berichte und Schulungsfolien
-          # unter public/course-materials). Der Standard-Timeout von 10 Minuten
-          # reicht dafuer nicht zuverlaessig — zwei Deploys sind am 2026-08-06
-          # mit "Timeout reached, aborting!" gescheitert, obwohl der Build lief.
-          # Dauerhafte Loesung waere, die grossen Dateien nach Supabase Storage
-          # auszulagern (offenes TODO in CLAUDE.md Abschnitt 11).
-          timeout: 1800000   # 30 Minuten in Millisekunden
