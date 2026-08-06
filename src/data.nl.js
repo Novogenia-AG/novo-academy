@@ -1332,6 +1332,637 @@ const TXT = {
  }
 }
 
+const FAQTX = {
+ "wm-report-en": {
+  "videoSegmentTitles": [
+   "Inleiding",
+   "Gewichtsanalyse — voedingstype",
+   "Gewichtsanalyse — bewegings- en calorietype",
+   "De wetenschappelijke tabellen begrijpen",
+   "Gewichtsanalyse — verlies van spiermassa",
+   "Gewichtsanalyse — honger en verzadiging",
+   "Gewichtsanalyse — vetverdeling",
+   "Gewichtsanalyse — jojo-effect",
+   "Gewichtsanalyse — voedingslijst",
+   "Gewichtsanalyse — systeem van de voedingsmiddelen",
+   "Gewichtsanalyse — bewegingstabellen",
+   "Slotopmerkingen"
+  ]
+ },
+ "wm-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Wat is het Gen-Dieet?",
+    "items": [
+     {
+      "q": "Wat is het Gen-Dieet precies?",
+      "a": "Het Gen-Dieet is een gepersonaliseerd afslank- en voedingsprogramma op basis van een analyse van je genen. In plaats van een standaard dieetplan krijg je een individueel advies, omdat jouw stofwisseling genetisch anders reageert dan die van anderen — op vet, koolhydraten, lichaamsbeweging en zelfs honger."
+     },
+     {
+      "q": "Wat krijg ik precies?",
+      "a": "Je ontvangt een individueel rapport met je optimale verhouding van vet, koolhydraten en eiwit; een gepersonaliseerde voedingslijst met meer dan 1.500 voedingsmiddelen; een dagmenu voor 4 weken; een receptenboek; en concrete sport- en bewegingsaanbevelingen die bij je genetische profiel passen."
+     },
+     {
+      "q": "Hoe lang blijven mijn aanbevelingen geldig?",
+      "a": "Je genen veranderen je hele leven niet, dus de genetische resultaten blijven permanent geldig. De beoordeling wordt echter voortdurend verfijnd op basis van nieuw onderzoek — sinds de start van het programma zijn er ruim 770 verbeteringen doorgevoerd."
+     },
+     {
+      "q": "Moet ik de test regelmatig herhalen?",
+      "a": "Nee. Genen blijven je leven lang hetzelfde — een al geanalyseerd gen levert altijd hetzelfde resultaat op. Wat wél steeds beter wordt, is de beoordeling zelf, omdat nieuwe wetenschappelijke inzichten voortdurend worden verwerkt."
+     }
+    ]
+   },
+   {
+    "title": "Hoe werkt de genetische analyse?",
+    "items": [
+     {
+      "q": "Hoe werkt het Gen-Dieet-programma?",
+      "a": "Uit je genetische dataset worden de varianten geselecteerd die relevant zijn voor gewichtsbeheersing. Daaruit berekenen we: hoe gevoelig is je lichaam voor vet en koolhydraten? Hoe effectief is lichaamsbeweging voor jou? Hoe effectief is caloriebeperking? Heb je aanleg voor het jojo-effect, spierverlies of buikvet? Uit deze resultaten volgen je optimale macroverdeling en een individueel voedingsplan."
+     },
+     {
+      "q": "Draait afvallen niet gewoon om een calorietekort?",
+      "a": "Niet alleen. Studies laten zien dat mensen genetisch heel verschillend reageren op vet en koolhydraten — sommigen komen bij een calorieoverschot nauwelijks aan, anderen komen bij dezelfde calorieën veel sterker aan. Ook de effectiviteit van lichaamsbeweging varieert genetisch met een factor 3."
+     },
+     {
+      "q": "Zijn er 7 verschillende voedingstypen?",
+      "a": "Ja: vetverbrander (hoger vetaandeel), mengtype I-V (verschillende gemengde verdelingen) en koolhydraatverbrander (hoger koolhydraataandeel). In combinatie met individuele factoren zoals het basaalmetabolisme, de effectiviteit van lichaamsbeweging en de aanleg voor het jojo-effect zijn er ruim 6.500 mogelijke genetische profielen."
+     },
+     {
+      "q": "Vanaf welke leeftijd is het programma geschikt voor kinderen?",
+      "a": "Het programma is in principe ook toepasbaar op kinderen, maar zonder calorieberekeningen, streefgewichtadvies, dagmenu's of receptenboek — die zijn voor groeiende kinderen niet zinvol. Voor kinderen onder de 14 jaar is het receptenboek geblokkeerd."
+     }
+    ]
+   },
+   {
+    "title": "Calorie Blocker",
+    "items": [
+     {
+      "q": "Wat is de Calorie Blocker?",
+      "a": "De Calorie Blocker is een gepersonaliseerd afslankproduct in de vorm van microtransporter-pellets. Het bevat een individuele verhouding van vet- en koolhydraatblokkers, afgestemd op je DNA-analyse. In combinatie met een verminderde calorie- en vetinname ondersteunt het aantoonbaar het gewichtsverlies — in combinatie met een evenwichtige voeding en leefstijl helpt het je gewicht te behouden."
+     },
+     {
+      "q": "Hoe neem ik de Calorie Blocker in?",
+      "a": "Dagelijks vóór de lunch en vóór het avondeten met een grote slok water. De pellets moeten heel worden doorgeslikt en niet gekauwd."
+     },
+     {
+      "q": "Wat zijn de werkzame stoffen?",
+      "a": "De vetblokker is Opuntia ficus-indica (OFI) — de vezel van de vijgcactus. Deze plantaardige vezel vormt in het maag-darmkanaal een gelachtige matrix die voedingsvet bindt en de opname ervan vermindert. De koolhydraatblokker is Phaseolamine (uit witte bonen), dat alfa-amylase remt. Beide zijn volledig plantaardig."
+     },
+     {
+      "q": "Is de Calorie Blocker veganistisch/vegetarisch?",
+      "a": "Ja. Zowel de vetblokker (Opuntia ficus-indica) als de koolhydraatblokker (Phaseolamine uit witte bonen) is puur plantaardig. De Calorie Blocker is geschikt voor vegetariërs en veganisten, glutenvrij, lactosevrij en vrij van kunstmatige kleurstoffen."
+     }
+    ]
+   }
+  ]
+ },
+ "nut-report-en": {
+  "videoSegmentTitles": [
+   "Voedingsanalyse — inleiding",
+   "Cafeïne en koffie",
+   "Omega 3",
+   "Foliumzuur",
+   "Homocysteïne",
+   "Co-enzym Q10",
+   "Ontgifting — kankerverwekkende stoffen",
+   "Ontgifting — chemicaliën en zware metalen",
+   "Vrije radicalen",
+   "Seleen",
+   "Zout en bloeddruk",
+   "Vitamine D (deel 1)",
+   "Vitamine D (deel 2)",
+   "Lactose en calcium",
+   "Ontstekingen",
+   "LDL-cholesterol",
+   "Triglyceriden",
+   "IJzer",
+   "Methylering",
+   "Afsluiting — laatste deel",
+   "Het principe van de beoordeling van voedingsmiddelen",
+   "Voedingslijst"
+  ]
+ },
+ "nut-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Basis — genen en voeding",
+    "items": [
+     {
+      "q": "Waarom pakt hetzelfde voedingsmiddel bij mensen verschillend uit?",
+      "a": "Omdat we voedingsstoffen genetisch verschillend verwerken. Het MTHFR-gen bepaalt bijvoorbeeld of je lichaam foliumzuur kan activeren tot de bioactieve vorm. Het CYP1A2-gen bepaalt hoe snel je cafeïne afbreekt. Zulke varianten veranderen hoe een voedingsstof in JOUW lichaam werkt."
+     },
+     {
+      "q": "Hoeveel genen betrekt de voedingsanalyse erbij?",
+      "a": "Ongeveer 60 voedingsrelevante genvarianten. Daaronder: MTHFR (folaatactivatie), CYP1A2 (cafeïneafbraak), ACE (zout/bloeddruk), VDR (vitamine D-receptor), HFE (ijzeropname), LCT (lactasepersistentie) en genen van de antioxidatieve afweer (SOD, CAT, GPX)."
+     },
+     {
+      "q": "Kan de analyse mij vertellen of ik koffie moet drinken?",
+      "a": "Indirect wel. Het CYP1A2-gen laat zien of je cafeïne snel (Warrior) of langzaam afbreekt. Wie langzaam afbreekt, loopt door cafeïne een hoger cardiovasculair risico — koffie kun je dan beter vermijden of vervangen door cafeïnevrije koffie, zodat je de voordelen van de polyfenolen behoudt."
+     },
+     {
+      "q": "Vervangt de analyse een arts of een diëtist?",
+      "a": "Nee. Ze is een aanvullend hulpmiddel bij beslissingen, gebaseerd op stabiele genetische gegevens. Acute klachten, ziekten of speciale diëten horen altijd thuis bij een arts of een erkende diëtist."
+     }
+    ]
+   },
+   {
+    "title": "Belangrijke genonderwerpen",
+    "items": [
+     {
+      "q": "Wat betekent een MTHFR-defect voor mij?",
+      "a": "MTHFR activeert foliumzuur tot methylfolaat, de vorm die je lichaam daadwerkelijk kan gebruiken. Bij een defect kun je veel foliumzuur via een gewoon supplement innemen en toch een functioneel tekort hebben. Overstappen op methylfolaat lost het probleem op."
+     },
+     {
+      "q": "Ik heb een HFE-variant — is ijzersuppletie gevaarlijk voor mij?",
+      "a": "Dat kan. Sommige HFE-varianten leiden over decennia tot ijzerstapeling — je lichaam neemt te veel ijzer op uit de voeding en slaat het op in lever, hart en gewrichten. IJzersupplementen zou je alleen moeten nemen als een bloedtest een echt tekort aantoont."
+     },
+     {
+      "q": "Zoutgevoeligheid (ACE) — betekent dat dat ik zout helemaal moet laten staan?",
+      "a": "Niet helemaal. Het betekent dat je bloeddruk sterker op zout reageert dan gemiddeld. Zout verminderen is bij jou een bijzonder krachtige hefboom — veel meer dan bij mensen die niet gevoelig zijn."
+     }
+    ]
+   },
+   {
+    "title": "Praktische vragen",
+    "items": [
+     {
+      "q": "Moet ik stoppen met mijn lievelingseten als het als ongunstig wordt beoordeeld?",
+      "a": "Nee. Het rapport is een leidraad voor de lange termijn. Af en toe genieten is prima. Het doel is balans over weken en maanden, geen perfectie op één enkele dag."
+     },
+     {
+      "q": "Hoe snel merk ik effect?",
+      "a": "Dat hangt af van wat je verandert. Bij cafeïnegevoeligheid voel je binnen enkele dagen verschil. Een overstap bij foliumzuur wordt na 2-3 maanden zichtbaar in de bloedwaarden. Langetermijnadviezen zoals minder zout of minder verzadigd vet hebben 6-12 maanden nodig om zich te vertalen in meetbare cardiovasculaire voordelen."
+     },
+     {
+      "q": "Ligt de lijst met aanbevelingen definitief vast?",
+      "a": "Nee. De aanbevelingen zijn afgeleid van de huidige wetenschappelijke consensus. Naarmate het onderzoek vordert, wordt het rapport periodiek bijgewerkt, zonder extra kosten."
+     }
+    ]
+   }
+  ]
+ },
+ "pg-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Talent en genetica in de sport",
+    "items": [
+     {
+      "q": "Hoe groot is de invloed van genen op atletische prestaties?",
+      "a": "Schattingen variëren tussen 30 en 70%, afhankelijk van de discipline. Talent (sprintvezels, VO2max-potentieel, stabiliteit van het bindweefsel) is overwegend genetisch bepaald; ook de trainingsrespons zelf — hoe sterk het lichaam op een prikkel reageert — varieert genetisch met een factor 2 tot 3."
+     },
+     {
+      "q": "Wat is het verschil tussen spiervolume en spierkracht?",
+      "a": "Volume betekent meer massa (het doel van een bodybuilder) — trainen met 6-12 herhalingen. Kracht betekent meer prestatie bij minder massa — trainen met 1-6 herhalingen bij zware belasting. Beide trainingsdoelen vragen om verschillende strategieën en verschillende rustpauzes."
+     },
+     {
+      "q": "Kan ik een succesvolle atleet worden met “slechte” genen?",
+      "a": "Ja. Genetica bepaalt het talent, maar training, consistentie en de juiste strategie maken het doorslaggevende verschil. Als je je genetische zwakke punten kent, kun je ze compenseren (bijv. antioxidantrijke voeding, langere rust, een zorgvuldige warming-up)."
+     }
+    ]
+   },
+   {
+    "title": "Blessurerisico en herstel",
+    "items": [
+     {
+      "q": "Mijn rapport toont ongunstige bindweefselgenen (COL5A1, MMP3). Wat moet ik doen?",
+      "a": "Train met extra zorg: een grondige warming-up, minder explosieve belasting totdat je lichaam zich heeft aangepast, langer herstel tussen intensieve sessies en een goede inname van eiwit en vitamine C om de collageensynthese te ondersteunen. Vermijd plotselinge sprongen in het trainingsvolume."
+     },
+     {
+      "q": "Waarom raadt het rapport mij antioxidanten aan?",
+      "a": "Intensieve inspanning produceert grote hoeveelheden vrije radicalen. Als je antioxidantgenen (SOD2, CAT, GPX) zwak zijn, verloopt het herstel trager en stapelen micro-ontstekingen zich op. Vitamine C, vitamine E, polyfenolen en seleen ondersteunen deze afweersystemen rechtstreeks."
+     },
+     {
+      "q": "Wat is een “deload” en hoe vaak moet ik die inlassen?",
+      "a": "Een deload is een week met mildere training (bijv. de eerste sessie op de helft van het gewicht, de tweede op twee derde). Die geeft het lichaam hersteltijd voor reparatie en een mentale reset. Meestal ongeveer om de 5 weken, afhankelijk van je genetische herstelvermogen en je stressaanleg."
+     }
+    ]
+   },
+   {
+    "title": "Voeding voor sporters",
+    "items": [
+     {
+      "q": "Hoe verhoudt het sportrapport zich tot het voedingsrapport?",
+      "a": "Ze vullen elkaar aan. Het sportrapport laat je prestatieprofiel, blessurerisico en herstel zien. Het voedingsrapport vertelt je welke brandstofmix (vet/koolhydraten/eiwit) en welke supplementen dat profiel ondersteunen."
+     },
+     {
+      "q": "Moet ik eiwitpoeder nemen?",
+      "a": "Niet per se. Als je 1,6-2,0 g eiwit per kg lichaamsgewicht via echte voeding binnenkrijgt en goed herstelt tussen de sessies, heb je geen poeder nodig. Lukt het je niet om die hoeveelheden te halen, dan kan een zuiver eiwitpoeder de inname vereenvoudigen."
+     }
+    ]
+   }
+  ]
+ },
+ "tx-report-en": {
+  "videoSegmentTitles": [
+   "Ontgifting — kankerverwekkende stoffen",
+   "Ontgifting — chemicaliën en zware metalen",
+   "Vrije radicalen (oxidatieve stress)",
+   "Seleen"
+  ]
+ },
+ "bo-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Genetische basis van stress",
+    "items": [
+     {
+      "q": "Wat is het COMT-gen en waarom is het belangrijk?",
+      "a": "COMT (catechol-O-methyltransferase) breekt dopamine, adrenaline en noradrenaline af in de prefrontale cortex. Een veelvoorkomende variant (Val158Met) bepaalt hoe snel die afbraak verloopt — met een factor 3-4 verschil tussen de snelle en de trage variant. Dat regelt hoe lang een stressignaal in het systeem blijft."
+     },
+     {
+      "q": "Wat is het verschil tussen Warrior en Worrier?",
+      "a": "Warrior (Val/Val): dopamine wordt snel afgebroken — beter bestand tegen acute stress, presteert onder druk. Worrier (Met/Met): dopamine wordt langzaam afgebroken — sterk in concentratie in het dagelijks leven, maar kwetsbaar voor chronische stress. Ongeveer 50% is een mengtype."
+     },
+     {
+      "q": "En hoe zit het met BDNF?",
+      "a": "BDNF (Brain-Derived Neurotrophic Factor) ondersteunt de groei en de veerkracht van zenuwcellen. De Met-variant (Val66Met) vermindert de afgifte van BDNF; dragers herstellen langzamer van stress en zijn bij chronische belasting kwetsbaarder voor depressie. BDNF kun je verhogen door beweging, slaap, leren en intermittent fasting."
+     }
+    ]
+   },
+   {
+    "title": "Praktisch advies",
+    "items": [
+     {
+      "q": "Ik ben een Worrier — ben ik gedoemd om een burn-out te krijgen?",
+      "a": "Nee. De trage COMT-variant verhoogt je gevoeligheid, niet je lot. Als je de aanleg kent, kun je vroeg handelen: duidelijke herstelroutines, slaap als prioriteit, ademhalingsoefeningen of meditatie, en niet veel stressfactoren tegelijk opstapelen. Over de jaren voorkomt dat dat je systeem in chronische overbelasting terechtkomt."
+     },
+     {
+      "q": "Ik ben een Warrior — moet ik me dan toch zorgen maken over burn-out?",
+      "a": "Je acute risico is lager, maar herstel blijft belangrijk. Een gevoel van “stressvrij” kan in rustige periodes onderprikkeling maskeren. Plan structuur in voor concentratiefases en bescherm je slaap."
+     },
+     {
+      "q": "Wat helpt iedereen, ongeacht het genotype?",
+      "a": "Slaap (7-9 uur), regelmatige beweging (vooral duurtraining — die verhoogt BDNF en reguleert cortisol), sociaal contact, zingeving in je werk en het vermijden van misbruik van stimulerende middelen (alcohol, overmatig cafeïne)."
+     }
+    ]
+   },
+   {
+    "title": "Wat je met het resultaat doet",
+    "items": [
+     {
+      "q": "Er staat een “rode zone” in mijn rapport. Moet ik me zorgen maken?",
+      "a": "Nee. Een rode zone markeert een verhoogd risico op één specifiek gebied, geen diagnose. Het is een uitnodiging om vroeg te handelen — precies het tegenovergestelde van een fatalistisch oordeel."
+     },
+     {
+      "q": "Waar vind ik concrete aanbevelingen voor mijn genotype?",
+      "a": "In het burn-outrapport — dat bevat gedetailleerde aanbevelingen over meditatie, voeding, beweging, slaaphygiëne en copingstrategieën, afgestemd op je individuele COMT-profiel en de overige beoordeelde factoren."
+     }
+    ]
+   }
+  ]
+ },
+ "ba-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Basis — telomeren en veroudering",
+    "items": [
+     {
+      "q": "Wat zijn telomeren en waarom zijn ze belangrijk voor veroudering?",
+      "a": "Telomeren zijn beschermkapjes aan het uiteinde van elk chromosoom — ze bevatten zelf geen genen, maar voorkomen dat genen bij celdelingen verloren gaan. Bij elke celdeling breekt er een stukje telomeer af. Na 50-70 delingen zijn ze opgebruikt; de cel gaat in een soort slaapstand (senescentie) en hoopt zich als “oude cel” op in het lichaam."
+     },
+     {
+      "q": "Wat is het verschil tussen chronologische en biologische leeftijd?",
+      "a": "Chronologische leeftijd is je levenstijd in jaren — vast en onveranderlijk. Biologische leeftijd laat zien hoe “oud” je cellen werkelijk zijn. Twee mensen met dezelfde chronologische leeftijd kunnen door genetische aanleg en leefstijl tot 20 jaar in biologische leeftijd van elkaar verschillen."
+     },
+     {
+      "q": "Wat doet telomerase?",
+      "a": "Telomerase is een enzym dat telomeren kan herstellen en weer kan opbouwen. De activiteit ervan is deels genetisch bepaald — mensen met een sterke telomeraseactiviteit behouden hun telomeren beter; bij een verminderde activiteit verkorten de telomeren sneller, vooral bij oxidatieve stress."
+     },
+     {
+      "q": "Welke genen worden in de analyse beoordeeld?",
+      "a": "Vooral telomerase en verwante genen (TERT, BICD1, PPARG) die het onderhoud van de telomeren aansturen. Ze laten zien hoe goed je lichaam telomeren kan herstellen en behouden — een ruwe inschatting van je genetische anti-agingcapaciteit."
+     }
+    ]
+   },
+   {
+    "title": "Wat leefstijl doet",
+    "items": [
+     {
+      "q": "Werkt het mediterrane dieet voor iedereen?",
+      "a": "Verrassend genoeg niet. Studies tonen aan dat het de telomeren alleen verlengt bij mensen met een specifieke genvariant — bij anderen is er geen meetbaar effect op de telomeerlengte. Een duidelijk bewijs dat hetzelfde leefstijladvies niet bij iedereen hetzelfde werkt."
+     },
+     {
+      "q": "Welke voedingsstoffen ondersteunen de telomeren?",
+      "a": "Vitamine D3, Omega-3, Vitamine E, Resveratrol en Ginkgo. Als het genetische beschermingssysteem zwak is, kunnen deze voedingsstoffen gericht worden ingezet om de verkorting van de telomeren te vertragen."
+     },
+     {
+      "q": "Kan ik vrije radicalen beïnvloeden?",
+      "a": "Ja — antioxidanten uit voeding (Vitamine C, Vitamine E, polyfenolen uit bessen, thee enz.) neutraliseren vrije radicalen voordat die cellen beschadigen. Bij een genetisch verzwakte antioxidatieve afweer is een antioxidantrijk dieet extra belangrijk."
+     }
+    ]
+   },
+   {
+    "title": "Invloed en verwachtingen",
+    "items": [
+     {
+      "q": "Hoe snel zie ik resultaat van anti-agingmaatregelen?",
+      "a": "Effecten op de telomeren verlopen traag — maanden tot jaren. Sommige tussenliggende markers (oxidatieve stress, ontstekingen, bloedvetprofiel) verschuiven al binnen enkele weken. Het sterkste effect van leefstijl op de biologische leeftijd stapelt zich op over decennia."
+     },
+     {
+      "q": "Wat heb ik in de praktijk aan deze kennis?",
+      "a": "Je weet of je genetisch neigt naar snellere of tragere celveroudering — en kunt bewust handelen. Bij een ongunstige aanleg richt je je op: een antioxidantrijk dieet, gerichte supplementen (D3, Omega-3, Resveratrol), regelmatige maar niet overmatige beweging, goede slaap en stressvermindering."
+     }
+    ]
+   }
+  ]
+ },
+ "supp-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Basis — waarom gepersonaliseerd?",
+    "items": [
+     {
+      "q": "Waarom heb ik überhaupt gepersonaliseerde suppletie nodig?",
+      "a": "Omdat jouw lichaam sommige voedingsstoffen genetisch beter of slechter benut dan dat van een ander — en omdat je leefstijl (beweging, slaap, stress, voeding) je individuele behoefte daarnaast mede bepaalt. Standaardpillen gaan uit van de “gemiddelde mens” en dekken veel individuele behoeften daardoor te weinig of juist te ruim af."
+     },
+     {
+      "q": "Wat is het verschil met standaardmultivitamines uit de drogisterij?",
+      "a": "Drie hoofdpunten: (1) de selectie van de voedingsstoffen en hun dosering is afgestemd op jouw genen; (2) de afgifte is getimed (bijv. Slow-Release Vitamine C) om de bloedwaarden constant te houden; (3) concurrerende voedingsstoffen zoals Calcium en Zink worden ruimtelijk en in de tijd gescheiden afgegeven, zodat ze elkaar niet blokkeren."
+     },
+     {
+      "q": "Hoeveel genen betrekt de analyse erbij?",
+      "a": "Meer dan 60 voedingsstofrelevante genvarianten — waaronder genen van het vitaminemetabolisme (folaat-MTHFR, vit. D-VDR, vit. B12-FUT2), genen voor de opname van mineralen (ijzer-HFE, calcium-LCT) en antioxidatieve afweersystemen (GST, SOD, CAT)."
+     }
+    ]
+   },
+   {
+    "title": "Microtransportertechnologie",
+    "items": [
+     {
+      "q": "Wat zijn microtransporters?",
+      "a": "Microtransporters zijn minuscule pellets van enkele millimeters, die elk afzonderlijke voedingsstoffen in specifieke beschermlagen meedragen. Elke microtransporter “opent” op een ander tijdstip en op een andere plek in het maag-darmkanaal — zo kunnen zelfs voedingsstoffen die elkaar normaal beconcurreren samen worden ingenomen en toch apart worden opgenomen."
+     },
+     {
+      "q": "Waarom wordt Vitamine C als slow-release afgegeven?",
+      "a": "Vitamine C heeft een zeer korte biologische halfwaardetijd (~30 minuten). Eén hoge dosis wordt grotendeels ongebruikt uitgescheiden. Slow-Release in de microtransporters bootst de natuurlijke, continue inname via voeding gedurende de dag na en houdt de bloedwaarden stabiel — fysiologisch veel zinvoller."
+     },
+     {
+      "q": "Hoe werkt dat met Calcium en Zink, die elkaar blokkeren?",
+      "a": "Calcium en Zink concurreren om dezelfde transporters in de darm — neem je ze samen in, dan krijg je van beide minder binnen. In de microtransportertechnologie wordt Zink direct in de bovenste dunne darm afgegeven en Calcium uren later in het diepere darmsegment. Ze worden tegelijk ingenomen, maar op verschillende plaatsen en tijdstippen afgegeven — geen concurrentie."
+     }
+    ]
+   },
+   {
+    "title": "Praktische vragen",
+    "items": [
+     {
+      "q": "Moet ik de pillen op vaste tijden innemen?",
+      "a": "We raden een vast moment op de dag aan (bijv. bij het ontbijt) om de bloedwaarden stabiel te houden. Je hoeft niet op de minuut te letten — een globale routine is voldoende. Het belangrijkste is dat je ze überhaupt regelmatig inneemt."
+     },
+     {
+      "q": "Hoe snel merk ik effect?",
+      "a": "Dat verschilt per voedingsstof. Sommige effecten (bijv. meer energie door B-vitamines) merk je binnen dagen tot weken; andere (bijv. de botstofwisseling bij Vitamine D) ontwikkelen zich over maanden. Gepersonaliseerde suppletie is geen snelwerkend medicijn — ze corrigeert tekorten aan voedingsstoffen op de lange termijn."
+     },
+     {
+      "q": "Heb ik suppletie voor altijd nodig?",
+      "a": "Voor genetisch bepaalde zwaktes in de stofwisseling wel, want die aanleg blijft je hele leven bestaan. Behoeften die door je leefstijl worden bepaald (bijv. een hogere behoefte bij stress, sport of ziekte) kunnen veranderen. De analyse laat je ook zien waar je genetica een blijvend verhoogde behoefte veroorzaakt en waar een aanpassing van je leefstijl alleen al volstaat."
+     },
+     {
+      "q": "Kan ik suppletie combineren met medicijnen?",
+      "a": "In het algemeen wel — alle voedingsstoffen worden gedoseerd in hoeveelheden die ook in voeding voorkomen. Bij een chronische ziekte of langdurig medicijngebruik bespreek je dit het beste met je arts, omdat afzonderlijke voedingsstoffen (bijv. Vitamine K, ijzer) een wisselwerking kunnen hebben met bepaalde medicijnen."
+     },
+     {
+      "q": "Hoe verhouden de kosten van gepersonaliseerde suppletie zich tot multivitamines uit de drogisterij?",
+      "a": "Duidelijk meer per dag — doorgaans 3-5× de prijs van de goedkoopste drogisterijproducten. Daarvoor krijg je een genetisch afgestemde samenstelling die waarschijnlijk daadwerkelijk wordt opgenomen in plaats van grotendeels ongebruikt te worden uitgescheiden. De vergelijking “per mg vitamine” is misleidend; “per mg die daadwerkelijk het bloed bereikt” zegt veel meer."
+     }
+    ]
+   }
+  ]
+ },
+ "beauty-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Basis — wat de genetische huidanalyse doet",
+    "items": [
+     {
+      "q": "Wat is de genetische huidanalyse (DNAbeauty Control)?",
+      "a": "Een analyse van je genen met de focus op huidrelevante gebieden: collageenafbraak, uv-gevoeligheid, pigmentatie, vochtbalans van de huid, antioxidatieve afweer en neiging tot ontstekingen. Uit je DNA-dataset worden ruim 20 huidrelevante genvarianten beoordeeld en vertaald naar praktische verzorgings- en beschermingsaanbevelingen."
+     },
+     {
+      "q": "Wat is het verschil met een cosmetische huidanalyse?",
+      "a": "Cosmetische huidanalyses meten de actuele toestand van je huid — vochtgehalte, talg, pigmentatie enz. — en spelen daarop in. De genetische huidanalyse laat je zien welke eigenschappen en zwakke punten BLIJVEND in je genen verankerd liggen. Je kunt proactief voorkomen in plaats van reactief behandelen wanneer de problemen zichtbaar worden."
+     },
+     {
+      "q": "Hoeveel genen worden er geanalyseerd?",
+      "a": "Meer dan 20 huidrelevante genvarianten. Belangrijkste gebieden: MMP1 (collageenafbraak, rimpels), MC1R (uv-gevoeligheid, pigmentatie), FLG (filaggrine, vochtbalans en barrièrefunctie van de huid), SOD2/CAT/GPX (antioxidatieve afweer) en ontstekingsgenen zoals IL6 en TNF-α."
+     },
+     {
+      "q": "Hoe lang blijft mijn resultaat geldig?",
+      "a": "Je genen veranderen je hele leven niet — de kernresultaten blijven dus permanent geldig. Wat wél verfijnd wordt: de beoordeling zelf, doordat nieuw onderzoek voortdurend wordt verwerkt."
+     }
+    ]
+   },
+   {
+    "title": "Genetica en huidveroudering — het resultaat begrijpen",
+    "items": [
+     {
+      "q": "Wat betekent een “actieve” MMP1-variant?",
+      "a": "MMP1 (Matrix-metalloproteïnase 1) breekt collageen in de huid af. Een genetisch zeer actieve variant leidt tot een snellere collageenafbraak — de huid verliest eerder stevigheid en rimpels ontstaan sneller. Tegenmaatregelen: consequente uv-bescherming, antioxidanten, niet roken, retinoïden of verzorging op basis van peptiden."
+     },
+     {
+      "q": "Wat vertelt MC1R mij over mijn uv-gevoeligheid?",
+      "a": "MC1R stuurt de aanmaak van eumelanine (donker pigment, beschermt tegen uv) versus feomelanine (roodachtig pigment, dat onder uv vrije radicalen vormt). Ongunstige varianten: sneller verbranden, een hoger risico op uv-schade en huidkanker — een strengere discipline met zonnebrandcrème is dan nodig."
+     },
+     {
+      "q": "Waarom is FLG (filaggrine) belangrijk voor mijn huidverzorging?",
+      "a": "FLG maakt filaggrine aan, een eiwit dat de natuurlijke huidbarrière bij elkaar houdt en vocht bindt. Bij een genetisch verminderde FLG-activiteit is de huidbarrière zwakker — vocht gaat sneller verloren en irriterende stoffen dringen makkelijker binnen. Aanbeveling: barrièreversterkende verzorging (ceramiden, cholesterol, vrije vetzuren), milde reinigers en geen uitdrogende oppervlakteactieve stoffen."
+     },
+     {
+      "q": "Heeft dit echt een meetbaar effect op mijn uiterlijk?",
+      "a": "Ja, maar niet van de ene op de andere dag. Genetische zwaktes stapelen zich over jaren op. Twee mensen van dezelfde leeftijd kunnen biologisch 10-15 jaar van elkaar verschillen — afhankelijk van hoe goed ze hun genetische zwakke punten met hun leefstijl compenseren."
+     }
+    ]
+   },
+   {
+    "title": "Praktische aanbevelingen en verwachtingen",
+    "items": [
+     {
+      "q": "Hoe snel merk ik effect van gepersonaliseerde verzorging?",
+      "a": "Sommige effecten zie je binnen enkele weken (vochtbalans, glow, irritatie), andere pas na maanden tot jaren (rimpelvorming, pigmentatie, huidstructuur). Gepersonaliseerde verzorging is geen quick fix, maar een beschermingsstrategie voor de lange termijn."
+     },
+     {
+      "q": "Heb ik dure crèmes nodig?",
+      "a": "Niet per se. Wat telt, zijn de juiste ingrediënten voor jouw genetische aanleg — en die bestaan in elke prijsklasse. Doorslaggevend zijn: de concentratie van de werkzame stoffen, de formulering en de consequentie waarmee je ze gebruikt. Een betaalbaar Vitamine C-serum kan een dure crème zonder werkzame stoffen overtreffen."
+     },
+     {
+      "q": "Is mijn leefstijl belangrijker dan mijn genen?",
+      "a": "Ze werken samen. Genen bepalen het potentieel en de zwakke punten — je leefstijl bepaalt in hoeverre je die zwakke punten compenseert of juist versterkt. Vuistregel: bij een genetisch ongunstige aanleg wordt een consequente leefstijl nog belangrijker dan bij “gelukkige genen”."
+     }
+    ]
+   }
+  ]
+ },
+ "legal-basics-en": {
+  "articleSections": [
+   {
+    "title": "Reclame maken voor Novogenia-producten",
+    "paragraphs": [
+     "Novogenia loopt voorop in wat wetenschappelijk mogelijk is en biedt zowel gevestigde analysemethoden zoals bloedtesten als geavanceerde mogelijkheden zoals genanalyses en gepersonaliseerde producten. Omdat we in de gezondheidssector actief zijn, gelden er strikte regels voor reclameclaims waaraan je je moet houden. Vooral in Duitsland bestaan er verenigingen die aanmaningsbrieven versturen: zij speuren naar onduidelijke of misleidende uitspraken en sturen daarvoor een aanmaning.",
+     "Wij zijn er stellig van overtuigd dat onze aanbevelingen werken en dat ze de meest actuele stand van de wetenschap weerspiegelen. Helaas zijn wat een product kan en wat je in reclame mag beweren soms twee verschillende dingen."
+    ]
+   },
+   {
+    "title": "Reclame maken met bloedtesten",
+    "paragraphs": [
+     "Bloedtesten zijn goed ingeburgerd en kennen slechts geringe reclamebeperkingen. De onderstaande uitspraken zijn allemaal niet-kritiek."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "“Wij testen bloed.”"
+     },
+     {
+      "tone": "safe",
+      "text": "“Wij stellen tekorten vast.”"
+     },
+     {
+      "tone": "safe",
+      "text": "“Wij geven aanbevelingen voor micronutriënten en voeding.”"
+     },
+     {
+      "tone": "safe",
+      "text": "“Wij personaliseren supplementen op basis van het resultaat.”"
+     },
+     {
+      "tone": "safe",
+      "text": "Symptomen van een tekort (bijv. vermoeidheid door ijzertekort) — het beste met een bronvermelding (bijv. van een medische beroepsvereniging)."
+     },
+     {
+      "tone": "safe",
+      "text": "Testimonial: “Ik was vaak moe, de test bracht een ijzertekort aan het licht en dat heeft me geholpen” — toegestaan."
+     }
+    ]
+   },
+   {
+    "title": "Reclame maken met gentesten",
+    "paragraphs": [
+     "DNA-analyses zijn nog niet in elke artsenpraktijk een standaardmethode. Verenigingen die aanmaningsbrieven versturen, bekijken technologieën die door de meerderheid van de deskundigen nog niet als standaard worden beschouwd, bijzonder kritisch. DNA-analyse staat daarom onder speciale aandacht.",
+     "Vanuit het oogpunt van zo'n vereniging bestaat een DNA-analyse uit twee onderdelen: de wetenschappelijk gevalideerde analyse van de genetische eigenschappen (niet-kritiek) en het handelingsprogramma dat daaruit wordt afgeleid (kritiek)."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "Het bepalen van de genetische eigenschappen — onderbouwd door de actuele wetenschap."
+     },
+     {
+      "tone": "critical",
+      "text": "Concrete aanbevelingen voor voeding, sport of supplementen die uit de genen worden afgeleid — zonder specifieke gerandomiseerde studies naar precies die aanbeveling."
+     }
+    ],
+    "callout": {
+     "tone": "safe",
+     "text": "Voorbeeld: “De gentest toont aan dat foliumzuur bij jou niet werkzaam is” — toegestaan (onderbouwd door studies)."
+    }
+   },
+   {
+    "title": "De veilige variant — uitsluitend genetische eigenschappen",
+    "paragraphs": [
+     "De veilige variant beperkt zich tot uitspraken over de vastgestelde genetische eigenschappen — zonder daaruit concrete handelingsaanbevelingen af te leiden. Alle onderstaande formuleringen zijn vanuit het oogpunt van aanmaningsbrieven niet-kritiek."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "“Wij analyseren je genen en stellen vast of je makkelijker aankomt van vet of van koolhydraten.”"
+     },
+     {
+      "tone": "safe",
+      "text": "“Je komt te weten of je sterker reageert op lichaamsbeweging of op caloriebeperking.”"
+     },
+     {
+      "tone": "safe",
+      "text": "“Je komt te weten of je lichaam foliumzuur effectief kan activeren.”"
+     },
+     {
+      "tone": "safe",
+      "text": "“Je komt te weten welke talenten je lichaam in de wedstrijdsport heeft en hoe goed je spieren op krachttraining reageren.”"
+     }
+    ]
+   },
+   {
+    "title": "De gedurfdere variant — aanbevelingen met een disclaimer",
+    "paragraphs": [
+     "In deze variant wordt de test geadverteerd zoals hierboven — maar worden handelingsaanbevelingen gecommuniceerd als logische conclusies, niet als wetenschappelijk bevestigde beloften. Met een disclaimer. Let op: verenigingen die aanmaningsbrieven versturen, accepteren disclaimers niet altijd."
+    ],
+    "bullets": [
+     {
+      "tone": "caveat",
+      "text": "“Wij analyseren je genen en stellen vast of je makkelijker aankomt van vet of van koolhydraten. Op basis daarvan leiden we logische conclusies en voedingsplannen af om dat inzicht te benutten.*”"
+     },
+     {
+      "tone": "caveat",
+      "text": "“Je komt te weten of je lichaam foliumzuur kan activeren. Op basis daarvan bevelen we alternatieve micronutriënten aan om in plaats daarvan in te nemen.*”"
+     },
+     {
+      "tone": "critical",
+      "text": "TEGENVOORBEELD: “Neem methylfolaat in plaats van foliumzuur” — kritiek zonder disclaimer, omdat er geen gerandomiseerde studie bestaat naar precies deze specifieke aanbeveling."
+     }
+    ],
+    "callout": {
+     "tone": "caveat",
+     "text": "* Toelichting bij de disclaimer: de genetische eigenschappen zijn wetenschappelijk bevestigd. De daaruit afgeleide aanpassingen van de dosering van micronutriënten of van de voedingsaanbevelingen bereiken voor veel effecten nog niet het niveau van de gouden standaard (gerandomiseerde, placebogecontroleerde studies) en moeten als experimenteel worden opgevat."
+    }
+   },
+   {
+    "title": "Reclame maken voor gepersonaliseerde suppletie",
+    "paragraphs": [
+     "De Europese Unie heeft een duidelijk regelgevend kader opgesteld voor claims over de werking van supplementen — de “Health Claims”. Die leggen precies vast welke effecten je per werkzame stof mag adverteren.",
+     "Hoeveel wetenschap een effect ook onderbouwt, je mag het pas in reclame gebruiken zodra de betreffende Health Claim door EFSA is goedgekeurd. Houd je aan de uitgebreide lijst met toegestane claims."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "Personalisatie op basis van levensstijl en bloedwaarden — onproblematisch."
+     },
+     {
+      "tone": "caveat",
+      "text": "Personalisatie op basis van genetische analyse — alleen met een disclaimer (zie “gedurfdere variant”)."
+     },
+     {
+      "tone": "safe",
+      "text": "Voorbeeld van een Health Claim: “Draagt bij aan een normale huid” (bij zink), “Draagt bij aan een normaal immuunsysteem”."
+     },
+     {
+      "tone": "safe",
+      "text": "Voorbeeld van een testimonial: “Ik neem het omdat ik een droge huid heb” — in combinatie met de Health Claim voor zink — toegestaan."
+     },
+     {
+      "tone": "critical",
+      "text": "NIET toegestaan: elke claim waarvan de Health Claim niet door EFSA is goedgekeurd (bijv. “geneest jouw ziekte”)."
+     }
+    ]
+   },
+   {
+    "title": "Klantbeoordelingen en testimonials",
+    "paragraphs": [
+     "Als je een systeem voor klantbeoordelingen aanbiedt (bijv. op je website), kun je niet sturen of een klant ontoelaatbare uitspraken doet (bijv. “Product X heeft mij genezen”). Dat is in principe toegestaan, maar je moet er zorgvuldig mee omgaan."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "Op je eigen modereerbare systeem: label uitspraken duidelijk als meningen van klanten en geef aan dat je ze niet onderschrijft."
+     },
+     {
+      "tone": "safe",
+      "text": "Uitspraken die in strijd zijn met de Health Claims-verordening kun je het beste verwijderen."
+     },
+     {
+      "tone": "safe",
+      "text": "Bij een volledig onjuiste beoordeling: voeg een corrigerende reactie namens het bedrijf toe."
+     },
+     {
+      "tone": "caveat",
+      "text": "Op externe, niet-modereerbare systemen: geef ze duidelijk aan en promoot onjuiste uitspraken nooit selectief."
+     },
+     {
+      "tone": "critical",
+      "text": "Onjuiste uitspraken actief promoten of uitlichten — ook wanneer het om meningen van klanten gaat."
+     }
+    ]
+   }
+  ]
+ }
+}
+/* END FAQTX */
 const clone = (o) => JSON.parse(JSON.stringify(o))
 const vid = (id) => (id && VIDEOS[id]) ? VIDEOS[id] : null
 
@@ -1350,9 +1981,16 @@ export const COURSES_NL = COURSES_EN.map((en) => {
     if (tx.introQuestions) c.introQuestions = tx.introQuestions
     if (Array.isArray(tx.questions) && tx.questions.length) c.questions = tx.questions
   }
+  /* FAQ/Artikel/Segment-Titel */
+  const ftx = FAQTX[en.id]
+  if (ftx) {
+    if (ftx.faqGroups) c.faqGroups = clone(ftx.faqGroups)
+    if (ftx.articleSections) c.articleSections = clone(ftx.articleSections)
+  }
   if (en.youtubeId) { const v = vid(en.youtubeId); if (v) c.youtubeId = v; else delete c.youtubeId }
   if (en.videoSegments && en.videoSegments.length) {
-    c.videoSegments = en.videoSegments.map(s => { const v = vid(s.youtubeId); return v ? { ...clone(s), youtubeId: v } : null }).filter(Boolean)
+    const segTitles = (FAQTX[en.id] || {}).videoSegmentTitles || []
+    c.videoSegments = en.videoSegments.map((s, i) => { const v = vid(s.youtubeId); return v ? { ...clone(s), youtubeId: v, title: segTitles[i] || s.title } : null }).filter(Boolean)
     if (!c.videoSegments.length) delete c.videoSegments
   }
   return c

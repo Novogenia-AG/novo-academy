@@ -1284,6 +1284,637 @@ const TXT = {
   ]
  }
 }
+const FAQTX = {
+ "wm-report-en": {
+  "videoSegmentTitles": [
+   "Uvod",
+   "Analiza težine — nutritivni tip",
+   "Analiza težine — tip vježbanja i kalorija",
+   "Razumijevanje naučnih tabela",
+   "Analiza težine — gubitak mišićne mase",
+   "Analiza težine — glad i sitost",
+   "Analiza težine — raspodjela masti",
+   "Analiza težine — jo-jo efekat",
+   "Analiza težine — lista namirnica",
+   "Analiza težine — sistem ocjenjivanja namirnica",
+   "Analiza težine — tabele vježbanja",
+   "Završne napomene"
+  ]
+ },
+ "wm-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Šta je Gen-dijeta?",
+    "items": [
+     {
+      "q": "Šta je tačno Gen-dijeta?",
+      "a": "Gen-dijeta je personalizovan program mršavljenja i ishrane zasnovan na analizi tvojih gena. Umjesto standardnog plana ishrane dobijaš individualnu preporuku, jer tvoj metabolizam genetski reaguje drugačije nego kod drugih — na masti, ugljikohidrate, vježbanje, pa čak i na glad."
+     },
+     {
+      "q": "Šta zapravo dobijam?",
+      "a": "Dobijaš individualni izvještaj sa svojim optimalnim odnosom masti, ugljikohidrata i proteina; personalizovanu listu namirnica sa preko 1.500 namirnica; 4-sedmični dnevni plan obroka; knjigu recepata; i konkretne preporuke za vježbanje i kretanje koje odgovaraju tvom genetskom profilu."
+     },
+     {
+      "q": "Koliko dugo važe moje preporuke?",
+      "a": "Tvoji geni se ne mijenjaju tokom života, pa genetski rezultati ostaju trajno važeći. Sama procjena se, međutim, kontinuirano usavršava na osnovu novih istraživanja — od pokretanja programa ugrađeno je preko 770 poboljšanja."
+     },
+     {
+      "q": "Moram li redovno ponavljati test?",
+      "a": "Ne. Geni ostaju isti cijeli život — već analiziran gen uvijek daje isti rezultat. Ono što se stalno poboljšava jeste sama procjena, jer se novi naučni nalazi kontinuirano ugrađuju."
+     }
+    ]
+   },
+   {
+    "title": "Kako funkcioniše genetska analiza?",
+    "items": [
+     {
+      "q": "Kako funkcioniše program Gen-dijete?",
+      "a": "Iz tvog genetskog skupa podataka biraju se varijante relevantne za kontrolu težine. Iz njih računamo: koliko je tvoje tijelo osjetljivo na masti i ugljikohidrate? Koliko je vježbanje djelotvorno za tebe? Koliko je djelotvorno smanjenje kalorija? Imaš li sklonost ka jo-jo efektu, gubitku mišića ili masnoći na stomaku? Iz ovih rezultata proizlazi tvoja optimalna raspodjela makronutrijenata i individualni plan ishrane."
+     },
+     {
+      "q": "Zar mršavljenje nije samo pitanje kalorijskog deficita?",
+      "a": "Ne samo. Studije pokazuju da ljudi genetski vrlo različito reaguju na masti i ugljikohidrate — neki se pri kalorijskom višku jedva ugoje, dok se drugi pri istom broju kalorija ugoje mnogo više. I djelotvornost vježbanja genetski varira za faktor 3."
+     },
+     {
+      "q": "Postoji li 7 različitih nutritivnih tipova?",
+      "a": "Da: iskorištavač masti (veći udio masti), mješoviti tip I-V (različite mješovite raspodjele) i iskorištavač ugljikohidrata (veći udio ugljikohidrata). U kombinaciji sa individualnim faktorima poput bazalnog metabolizma, djelotvornosti vježbanja i sklonosti jo-jo efektu, postoji preko 6.500 mogućih genetskih profila."
+     },
+     {
+      "q": "Od kog uzrasta je program pogodan za djecu?",
+      "a": "Program je u načelu primjenjiv i kod djece, ali bez izračuna kalorija, preporuka ciljane težine, dnevnih jelovnika i knjige recepata — oni za djecu u razvoju nemaju smisla. Knjiga recepata je zaključana za djecu mlađu od 14 godina."
+     }
+    ]
+   },
+   {
+    "title": "Calorie Blocker",
+    "items": [
+     {
+      "q": "Šta je Calorie Blocker?",
+      "a": "Calorie Blocker je personalizovan proizvod za mršavljenje u obliku Microtransporter peleta. Sadrži individualni odnos blokatora masti i ugljikohidrata prilagođen tvojoj DNK analizi. U kombinaciji sa smanjenim unosom kalorija i masti dokazano podržava mršavljenje — u kombinaciji sa uravnoteženom ishranom i načinom života pomaže u održavanju težine."
+     },
+     {
+      "q": "Kako se uzima Calorie Blocker?",
+      "a": "Svakodnevno prije ručka i večere, sa velikim gutljajem vode. Pelete treba progutati cijele, ne žvakati ih."
+     },
+     {
+      "q": "Koje su aktivne supstance?",
+      "a": "Blokator masti je Opuntia ficus-indica (OFI) — vlakno kaktusa opuncije. To biljno vlakno u probavnom traktu stvara matricu nalik gelu koja veže masti iz hrane i smanjuje njihovu apsorpciju. Blokator ugljikohidrata je fazolamin (iz bijelog graha) koji inhibira alfa-amilazu. Oba su potpuno biljnog porijekla."
+     },
+     {
+      "q": "Da li je Calorie Blocker veganski/vegetarijanski?",
+      "a": "Da. I blokator masti (Opuntia ficus-indica) i blokator ugljikohidrata (fazolamin iz bijelog graha) su čisto biljnog porijekla. Calorie Blocker je pogodan za vegetarijance i vegane, bez glutena, bez laktoze i bez vještačkih boja."
+     }
+    ]
+   }
+  ]
+ },
+ "nut-report-en": {
+  "videoSegmentTitles": [
+   "Analiza ishrane — uvod",
+   "Kofein i kafa",
+   "Omega 3",
+   "Folna kiselina",
+   "Homocistein",
+   "Koenzim Q10",
+   "Detoksikacija — kancerogene materije",
+   "Detoksikacija — hemikalije i teški metali",
+   "Slobodni radikali",
+   "Selen",
+   "So i krvni pritisak",
+   "Vitamin D (1. dio)",
+   "Vitamin D (2. dio)",
+   "Laktoza i kalcij",
+   "Upala",
+   "LDL holesterol",
+   "Trigliceridi",
+   "Željezo",
+   "Metilacija",
+   "Zaključak — posljednji dio",
+   "Princip ocjenjivanja namirnica",
+   "Lista namirnica"
+  ]
+ },
+ "nut-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Osnove — geni i ishrana",
+    "items": [
+     {
+      "q": "Zašto ista hrana različito djeluje na ljude?",
+      "a": "Zato što nutrijente metabolišemo genetski različito. Gen MTHFR, na primjer, određuje može li tvoje tijelo aktivirati folnu kiselinu u bioaktivni oblik. Gen CYP1A2 određuje koliko brzo razgrađuješ kofein. Takve varijante mijenjaju kako nutrijent djeluje u TVOM tijelu."
+     },
+     {
+      "q": "Koliko gena razmatra analiza ishrane?",
+      "a": "Oko 60 genskih varijanti relevantnih za ishranu. Među njima: MTHFR (aktivacija folata), CYP1A2 (razgradnja kofeina), ACE (so/krvni pritisak), VDR (receptor za vitamin D), HFE (unos željeza), LCT (perzistencija laktaze) i geni antioksidativne odbrane (SOD, CAT, GPX)."
+     },
+     {
+      "q": "Može li mi analiza reći treba li da pijem kafu?",
+      "a": "Posredno da. Gen CYP1A2 pokazuje razgrađuješ li kofein brzo (Warrior) ili sporo. Spori razgrađivači nose veći kardiovaskularni rizik od kofeina — kafu je bolje izbjegavati ili je zamijeniti kafom bez kofeina, kako bi se zadržale koristi polifenola."
+     },
+     {
+      "q": "Zamjenjuje li analiza ljekara ili nutricionistu?",
+      "a": "Ne. Ona je dodatna pomoć pri odlučivanju, zasnovana na stabilnim genetskim podacima. Akutni simptomi, bolesti ili posebne dijete uvijek pripadaju u ruke ljekara ili diplomiranog nutricioniste."
+     }
+    ]
+   },
+   {
+    "title": "Ključne genske teme",
+    "items": [
+     {
+      "q": "Šta za mene znači MTHFR defekt?",
+      "a": "MTHFR aktivira folnu kiselinu u metilfolat, oblik koji tvoje tijelo zaista može koristiti. Uz defekt možeš uzimati mnogo folne kiseline u običnom dodatku i i dalje imati funkcionalni manjak. Prelazak na metilfolat rješava taj problem."
+     },
+     {
+      "q": "Imam HFE varijantu — je li suplementacija željezom opasna za mene?",
+      "a": "Može biti. Neke HFE varijante decenijama izazivaju preopterećenje željezom — tvoje tijelo apsorbira previše željeza iz hrane i skladišti ga u jetri, srcu i zglobovima. Suplemente željeza treba uzimati samo ako krvni nalaz pokaže stvarni manjak."
+     },
+     {
+      "q": "Osjetljivost na so (ACE) — znači li to da moram odustati od soli?",
+      "a": "Ne potpuno. To znači da tvoj krvni pritisak snažnije reaguje na so nego kod prosjeka. Smanjenje soli je u tvom slučaju moćna poluga — mnogo više nego kod osoba koje nisu osjetljive."
+     }
+    ]
+   },
+   {
+    "title": "Praktična pitanja",
+    "items": [
+     {
+      "q": "Trebam li prestati jesti omiljene namirnice ako su ocijenjene nepovoljno?",
+      "a": "Ne. Izvještaj je dugoročni vodič. Povremena konzumacija je u redu. Cilj je ravnoteža tokom sedmica i mjeseci, a ne savršenstvo u jednom danu."
+     },
+     {
+      "q": "Koliko brzo ću primijetiti učinak?",
+      "a": "Zavisi od toga šta mijenjaš. Osjetljivost na kofein osjetiš već za nekoliko dana. Prelazak na drugi oblik folne kiseline vidi se na krvnim markerima za 2-3 mjeseca. Dugoročne preporuke poput smanjenja soli ili zasićenih masti trebaju 6-12 mjeseci da se pretvore u mjerljivu korist za srce i krvne sudove."
+     },
+     {
+      "q": "Je li lista preporuka uklesana u kamen?",
+      "a": "Ne. Preporuke su izvedene iz aktuelnog naučnog konsenzusa. Kako istraživanja napreduju, izvještaj se periodično ažurira, bez dodatnih troškova."
+     }
+    ]
+   }
+  ]
+ },
+ "pg-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Talenat i genetika u sportu",
+    "items": [
+     {
+      "q": "Koliko je velik uticaj gena na sportsku sposobnost?",
+      "a": "Procjene se kreću između 30 i 70%, ovisno o disciplini. Talenat (sprinterska mišićna vlakna, potencijal za VO2max, stabilnost vezivnog tkiva) pretežno je genetski određen; i sama reakcija na trening — koliko snažno tijelo reaguje na podražaj — genetski varira za faktor 2 do 3."
+     },
+     {
+      "q": "Koja je razlika između mišićnog volumena i mišićne snage?",
+      "a": "Volumen znači više mase (cilj bodibildera) — trening sa 6-12 ponavljanja. Snaga znači veći učinak uz manje mase — trening sa 1-6 ponavljanja pri velikim opterećenjima. Oba ciljna pravca treninga zahtijevaju različite strategije i različite pauze za odmor."
+     },
+     {
+      "q": "Mogu li postati uspješan sportista sa „lošim“ genima?",
+      "a": "Da. Genetika određuje talenat, ali trening, dosljednost i prava strategija čine odlučujuću razliku. Poznavanje svojih genetskih slabih tačaka omogućava ti da ih kompenzuješ (npr. ishranom bogatom antioksidansima, dužim odmorom, pažljivim zagrijavanjem)."
+     }
+    ]
+   },
+   {
+    "title": "Rizik od povreda i regeneracija",
+    "items": [
+     {
+      "q": "Moj izvještaj pokazuje nepovoljne gene vezivnog tkiva (COL5A1, MMP3). Šta da radim?",
+      "a": "Treniraj sa posebnim oprezom: temeljito zagrijavanje, manje eksplozivnih opterećenja dok se tijelo ne prilagodi, duži oporavak između intenzivnih treninga i dobar unos proteina i vitamina C kao podrška sintezi kolagena. Izbjegavaj nagle skokove u obimu treninga."
+     },
+     {
+      "q": "Zašto mi izvještaj preporučuje antioksidanse?",
+      "a": "Intenzivno vježbanje stvara velike količine slobodnih radikala. Ako su tvoji antioksidativni geni (SOD2, CAT, GPX) slabi, oporavak je sporiji, a mikroupale se nakupljaju. Vitamin C, vitamin E, polifenoli i selen direktno podržavaju te odbrambene sisteme."
+     },
+     {
+      "q": "Šta je „deload“ i koliko često ga treba raditi?",
+      "a": "Deload je sedmica blažeg treninga (npr. prvi trening sa polovinom težine, drugi sa dvije trećine). Tijelu daje vrijeme za popravku i psihološki reset. Tipično svakih ~5 sedmica, ovisno o tvojoj genetskoj regeneraciji i predispoziciji za stres."
+     }
+    ]
+   },
+   {
+    "title": "Ishrana za sportiste",
+    "items": [
+     {
+      "q": "Kako je sportski izvještaj povezan sa izvještajem o ishrani?",
+      "a": "Oni se dopunjuju. Sportski izvještaj pokazuje tvoj profil sposobnosti, rizik od povreda i regeneraciju. Izvještaj o ishrani govori ti koja mješavina goriva (masti/ugljikohidrati/proteini) i koji suplementi podržavaju taj profil."
+     },
+     {
+      "q": "Treba li da uzimam proteinski prah?",
+      "a": "Ne nužno. Ako pravom hranom pokrivaš 1,6-2,0 g proteina po kilogramu tjelesne težine i dobro se oporavljaš između treninga, prah nije potreban. Ako ti je teško dostići te brojke, kvalitetan proteinski prah može olakšati unos."
+     }
+    ]
+   }
+  ]
+ },
+ "tx-report-en": {
+  "videoSegmentTitles": [
+   "Detoksikacija — kancerogene materije",
+   "Detoksikacija — hemikalije i teški metali",
+   "Slobodni radikali (oksidativni stres)",
+   "Selen"
+  ]
+ },
+ "bo-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Genetska osnova stresa",
+    "items": [
+     {
+      "q": "Šta je gen COMT i zašto je važan?",
+      "a": "COMT (katehol-O-metiltransferaza) razgrađuje dopamin, adrenalin i noradrenalin u prefrontalnom korteksu. Česta varijanta (Val158Met) određuje koliko brzo se ta razgradnja odvija — za faktor 3-4 između brze i spore varijante. Time se reguliše koliko dugo signal stresa ostaje u sistemu."
+     },
+     {
+      "q": "Koja je razlika između Warrior i Worrier?",
+      "a": "Warrior (Val/Val): dopamin se brzo razgrađuje — otporniji na akutni stres, daje vrhunski učinak pod pritiskom. Worrier (Met/Met): dopamin se razgrađuje sporo — jaka koncentracija u svakodnevici, ali ranjivost na hronični stres. Oko 50% ljudi je mješoviti tip."
+     },
+     {
+      "q": "Šta je sa BDNF?",
+      "a": "BDNF (Brain-Derived Neurotrophic Factor) podržava rast neurona i otpornost. Met-varijanta (Val66Met) smanjuje lučenje BDNF-a; nosioci se sporije oporavljaju od stresa i ranjiviji su na depresiju pod hroničnim opterećenjem. BDNF se može podići vježbanjem, snom, učenjem i povremenim postom."
+     }
+    ]
+   },
+   {
+    "title": "Praktični savjeti",
+    "items": [
+     {
+      "q": "Ja sam Worrier — jesam li osuđen na burnout?",
+      "a": "Ne. Spora COMT varijanta povećava osjetljivost, a ne sudbinu. Poznavanje predispozicije omogućava ti da djeluješ rano: jasne rutine oporavka, prioritet sna, disanje ili meditacija, izbjegavanje gomilanja mnogih stresora odjednom. Tokom godina to sprječava da sistem uđe u hronično preopterećenje."
+     },
+     {
+      "q": "Ja sam Warrior — moram li ipak brinuti o burnoutu?",
+      "a": "Akutni rizik je manji, ali oporavak je i dalje važan. Osjećaj „bez stresa“ može prikriti nedovoljnu stimulaciju u mirnim fazama. Planiraj strukturu za faze koncentracije i čuvaj san."
+     },
+     {
+      "q": "Šta pomaže svima, bez obzira na genotip?",
+      "a": "San (7-9 h), redovno kretanje (posebno izdržljivost — podiže BDNF i reguliše kortizol), društveni kontakti, smisao u poslu i izbjegavanje zloupotrebe stimulansa (alkohol, prekomjeran kofein)."
+     }
+    ]
+   },
+   {
+    "title": "Šta učiniti s rezultatom",
+    "items": [
+     {
+      "q": "U mom izvještaju se pojavila „crvena zona“. Trebam li se brinuti?",
+      "a": "Ne. Crvena zona označava povišen rizik u jednom određenom području, a ne dijagnozu. To je poziv da djeluješ rano — upravo suprotno od fatalističke presude."
+     },
+     {
+      "q": "Gdje pronalazim konkretne preporuke za svoj genotip?",
+      "a": "U izvještaju o burnoutu — on sadrži detaljne preporuke o meditaciji, ishrani, kretanju, higijeni sna i strategijama suočavanja, prilagođene tvom individualnom COMT profilu i ostalim procijenjenim faktorima."
+     }
+    ]
+   }
+  ]
+ },
+ "ba-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Osnove — telomeri i starenje",
+    "items": [
+     {
+      "q": "Što su telomeri i zašto su važni za starenje?",
+      "a": "Telomeri su zaštitne kapice na kraju svakog kromosoma — sami ne sadrže gene, ali štite gene od gubitka tijekom staničnih dioba. Sa svakom staničnom diobom odlomi se mali komadić telomera. Nakon 50-70 dioba oni su potrošeni; stanica prelazi u stanje mirovanja (senescencija) i nakuplja se u tijelu kao „stara stanica“."
+     },
+     {
+      "q": "Koja je razlika između kronološke i biološke dobi?",
+      "a": "Kronološka dob je tvoje životno vrijeme u godinama — fiksno i nepromjenjivo. Biološka dob pokazuje koliko su tvoje stanice zaista „stare“. Dvije osobe iste kronološke dobi mogu se u biološkoj dobi razlikovati i do 20 godina, ovisno o genetskoj predispoziciji i načinu života."
+     },
+     {
+      "q": "Što radi telomeraza?",
+      "a": "Telomeraza je enzim koji može popraviti i ponovno izgraditi telomere. Njezina aktivnost dijelom je genetski određena — ljudi s jakom aktivnošću telomeraze bolje čuvaju telomere; kod onih sa smanjenom aktivnošću telomeri se brže skraćuju, osobito pod oksidativnim stresom."
+     },
+     {
+      "q": "Koji se geni procjenjuju u analizi?",
+      "a": "Prije svega telomeraza i srodni geni (TERT, BICD1, PPARG) koji upravljaju održavanjem telomera. Oni pokazuju koliko dobro tvoje tijelo može popraviti i očuvati telomere — gruba procjena tvog genetskog anti-aging kapaciteta."
+     }
+    ]
+   },
+   {
+    "title": "Što čini način života",
+    "items": [
+     {
+      "q": "Djeluje li mediteranska prehrana za sve?",
+      "a": "Iznenađujuće — ne. Istraživanja pokazuju da produžuje telomere samo kod ljudi s određenom genskom varijantom; kod ostalih nema mjerljivog učinka na duljinu telomera. Jasan dokaz da isti savjet o načinu života ne djeluje jednako kod svake osobe."
+     },
+     {
+      "q": "Koji nutrijenti podržavaju telomere?",
+      "a": "Vitamin D3, Omega-3, vitamin E, resveratrol i ginko. Kada je genetska zaštita slaba, ovi se nutrijenti mogu ciljano koristiti za usporavanje skraćivanja telomera."
+     },
+     {
+      "q": "Mogu li utjecati na slobodne radikale?",
+      "a": "Da — antioksidansi u hrani (vitamin C, vitamin E, polifenoli iz bobičastog voća, čaja i sl.) neutraliziraju slobodne radikale prije nego što oštete stanice. Kod genetski oslabljene antioksidativne obrane prehrana bogata antioksidansima posebno je važna."
+     }
+    ]
+   },
+   {
+    "title": "Utjecaj i očekivanja",
+    "items": [
+     {
+      "q": "Koliko brzo ću vidjeti rezultate anti-aging mjera?",
+      "a": "Učinci na telomere su spori — mjeseci do godina. Neki međumarkeri (oksidativni stres, upala, profil krvnih masnoća) mijenjaju se u roku od nekoliko sedmica. Najjači učinak načina života na biološku dob zbraja se tijekom desetljeća."
+     },
+     {
+      "q": "Kakvu praktičnu korist mi to znanje donosi?",
+      "a": "Znaš naginješ li genetski bržem ili sporijem starenju stanica — i možeš djelovati svjesno. Kod nepovoljne predispozicije fokusiraj se na: prehranu bogatu antioksidansima, ciljane suplemente (D3, Omega-3, resveratrol), redovitu ali ne pretjeranu tjelovježbu, dobar san i smanjenje stresa."
+     }
+    ]
+   }
+  ]
+ },
+ "supp-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Osnove — zašto personalizirano?",
+    "items": [
+     {
+      "q": "Zašto mi je uopšte potrebna personalizirana suplementacija?",
+      "a": "Zato što tvoje tijelo genetski neke nutrijente iskorištava bolje ili lošije od druge osobe — i zato što tvoj način života (kretanje, san, stres, ishrana) dodatno oblikuje tvoju individualnu potrebu. Standardne pilule polaze od „prosječne osobe“ i zato mnoge individualne potrebe pokrivaju ili premalo ili previše."
+     },
+     {
+      "q": "Koja je razlika u odnosu na standardne multivitamine iz drogerije?",
+      "a": "Tri glavne tačke: (1) izbor nutrijenata i njihovo doziranje prilagođeni su tvojim genima; (2) oslobađanje je vremenski usklađeno (npr. Slow-Release vitamin C) kako bi nivoi u krvi ostali konstantni; (3) nutrijenti koji se međusobno takmiče, poput kalcija i cinka, oslobađaju se prostorno i vremenski odvojeno kako se ne bi blokirali."
+     },
+     {
+      "q": "Koliko gena razmatra analiza?",
+      "a": "Preko 60 genskih varijanti relevantnih za nutrijente — među njima geni metabolizma vitamina (folat-MTHFR, vitamin D-VDR, vitamin B12-FUT2), geni apsorpcije minerala (željezo-HFE, kalcij-LCT) i antioksidativni odbrambeni sistemi (GST, SOD, CAT)."
+     }
+    ]
+   },
+   {
+    "title": "Microtransporter tehnologija",
+    "items": [
+     {
+      "q": "Šta su Microtransporteri?",
+      "a": "Microtransporteri su sićušne pelete veličine milimetra, od kojih svaka nosi pojedinačne nutrijente u posebnim zaštitnim omotačima. Svaki Microtransporter „oslobađa“ svoj sadržaj u drugo vrijeme i na drugom mjestu u probavnom traktu — tako se čak i nutrijenti koji se inače takmiče mogu uzeti zajedno, a apsorbirati odvojeno."
+     },
+     {
+      "q": "Zašto se vitamin C oslobađa kao slow-release?",
+      "a": "Vitamin C ima vrlo kratko biološko poluvrijeme (~30 minuta). Jedna visoka doza se najvećim dijelom neiskorištena izluči. Slow-Release u Microtransporterima oponaša prirodan, kontinuiran unos iz hrane tokom dana i održava nivoe u krvi stabilnima — fiziološki mnogo smislenije."
+     },
+     {
+      "q": "Kako to funkcioniše sa kalcijem i cinkom koji se međusobno blokiraju?",
+      "a": "Kalcij i cink se takmiče za iste transportere u crijevu — kada se uzmu zajedno, apsorbira se manje i jednog i drugog. U Microtransporter tehnologiji cink se odmah oslobađa u gornjem dijelu tankog crijeva, a kalcij satima kasnije u dubljem dijelu crijeva. Oba se uzimaju odjednom, ali se oslobađaju na različitim mjestima i u različito vrijeme — bez konkurencije."
+     }
+    ]
+   },
+   {
+    "title": "Praktična pitanja",
+    "items": [
+     {
+      "q": "Moram li uzimati pilule u tačno određeno vrijeme?",
+      "a": "Preporučujemo ustaljeno doba dana (npr. uz doručak) kako bi nivoi u krvi ostali stabilni. Ne moraš gledati na minutu — dovoljna je okvirna rutina. Najvažnije je da ih uopšte uzimaš redovno."
+     },
+     {
+      "q": "Koliko brzo ću primijetiti učinak?",
+      "a": "Zavisi od nutrijenta. Neki učinci (npr. bolja energija uz vitamine B grupe) javljaju se za nekoliko dana do sedmica; drugi (npr. metabolizam kostiju uz vitamin D) razvijaju se mjesecima. Personalizirana suplementacija nije brzodjelujući lijek — ona ispravlja dugoročne praznine u opskrbi nutrijentima."
+     },
+     {
+      "q": "Treba li mi suplementacija zauvijek?",
+      "a": "Kod genetski uzrokovanih slabosti metabolizma da, jer predispozicija traje cijeli život. Potrebe uslovljene načinom života (npr. povećana potreba tokom stresa, vježbanja, bolesti) mogu se mijenjati. Analiza ti također pokazuje gdje tvoja genetika stvara trajno povišenu potrebu, a gdje je dovoljna sama prilagodba načina života."
+     },
+     {
+      "q": "Mogu li kombinovati suplementaciju s lijekovima?",
+      "a": "Načelno da — svi nutrijenti su dozirani u količinama tipičnim za hranu. Kod hronične bolesti ili dugotrajne terapije lijekovima to bi trebalo dogovoriti sa svojim ljekarom, jer pojedini nutrijenti (npr. vitamin K, željezo) mogu stupiti u interakciju s određenim lijekovima."
+     },
+     {
+      "q": "Kako se cijena personalizirane suplementacije odnosi prema multivitaminima iz drogerije?",
+      "a": "Znatno je viša po danu — tipično 3-5× više od najjeftinijih drogerijskih proizvoda. Zauzvrat dobijaš genetski prilagođen sastav koji se vjerovatno zaista i apsorbira, umjesto da se najvećim dijelom neiskorišten izluči. Poređenje „po miligramu vitamina“ je varljivo; „po miligramu koji zaista dođe do krvi“ je smislenije."
+     }
+    ]
+   }
+  ]
+ },
+ "beauty-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Osnove — šta radi genetska analiza kože",
+    "items": [
+     {
+      "q": "Šta je genetska analiza kože (DNAbeauty Control)?",
+      "a": "Analiza tvojih gena s fokusom na područja relevantna za kožu: razgradnja kolagena, UV osjetljivost, pigmentacija, hidratacija kože, antioksidativna odbrana i sklonost upalama. Iz tvog DNK skupa podataka procjenjuje se preko 20 genskih varijanti relevantnih za kožu i prevodi u praktične preporuke za njegu i zaštitu."
+     },
+     {
+      "q": "Koja je razlika u odnosu na kozmetičku analizu kože?",
+      "a": "Kozmetičke analize kože mjere trenutno stanje tvoje kože — hidrataciju, sebum, pigmentaciju itd. — i reaguju na njega. Genetska analiza kože pokazuje ti koja su svojstva i slabosti TRAJNO usidreni u tvojim genima. Možeš proaktivno sprječavati umjesto da reaktivno liječiš kada problemi već postanu vidljivi."
+     },
+     {
+      "q": "Koliko se gena analizira?",
+      "a": "Preko 20 genskih varijanti relevantnih za kožu. Glavna područja: MMP1 (razgradnja kolagena, bore), MC1R (UV osjetljivost, pigmentacija), FLG (filagrin, hidratacija kože / barijera), SOD2/CAT/GPX (antioksidativna odbrana), geni upale poput IL6 i TNF-α."
+     },
+     {
+      "q": "Koliko dugo važi moj rezultat?",
+      "a": "Tvoji geni se ne mijenjaju tokom života — pa ključni rezultati ostaju trajno važeći. Ono što se dorađuje jeste sama procjena, jer se nova istraživanja kontinuirano ugrađuju."
+     }
+    ]
+   },
+   {
+    "title": "Genetika i starenje kože — razumijevanje rezultata",
+    "items": [
+     {
+      "q": "Šta znači „aktivna“ MMP1 varijanta?",
+      "a": "MMP1 (matriks metaloproteinaza 1) razgrađuje kolagen u koži. Genetski vrlo aktivna varijanta vodi ka bržoj razgradnji kolagena — koža ranije gubi čvrstoću, bore nastaju brže. Protumjere: dosljedna UV zaštita, antioksidansi, nepušenje, retinoidi ili njega na bazi peptida."
+     },
+     {
+      "q": "Šta mi MC1R govori o UV osjetljivosti?",
+      "a": "MC1R kontroliše proizvodnju eumelanina (tamni pigment, štiti od UV zračenja) naspram feomelanina (crvenkasti pigment, koji pod UV zračenjem stvara slobodne radikale). Nepovoljne varijante: brže izgaranje na suncu, veći rizik od UV oštećenja i raka kože — potrebna je stroža disciplina u zaštiti od sunca."
+     },
+     {
+      "q": "Zašto je FLG (filagrin) važan za moju njegu kože?",
+      "a": "FLG proizvodi filagrin, protein koji drži prirodnu kožnu barijeru na okupu i veže vlagu. Kod genetski smanjene aktivnosti FLG kožna barijera je slabija — vlaga se brže gubi, a iritansi lakše prodiru. Preporuka: njega koja jača barijeru (ceramidi, holesterol, slobodne masne kiseline), blaga sredstva za čišćenje, bez isušujućih tenzida."
+     },
+     {
+      "q": "Utiče li to zaista mjerljivo na moj izgled?",
+      "a": "Da, ali ne preko noći. Genetske slabosti se zbrajaju tokom godina. Dvije osobe iste dobi mogu se biološki razlikovati za 10-15 godina — ovisno o tome koliko dobro načinom života kompenzuju genetske slabe tačke."
+     }
+    ]
+   },
+   {
+    "title": "Praktične preporuke i očekivanja",
+    "items": [
+     {
+      "q": "Koliko brzo ću primijetiti učinak personalizirane njege?",
+      "a": "Neki učinci javljaju se za nekoliko sedmica (hidratacija, sjaj, iritacije), drugi tek nakon mjeseci do godina (nastanak bora, pigmentacija, struktura kože). Personalizirana njega nije brzo rješenje, nego dugoročna strategija zaštite."
+     },
+     {
+      "q": "Trebaju li mi skupe kreme?",
+      "a": "Ne nužno. Važni su pravi sastojci za tvoju genetsku predispoziciju — a oni postoje u svakom cjenovnom rangu. Ono što se računa: koncentracija aktivnih sastojaka, formulacija i dosljednost primjene. Pristupačan serum sa vitaminom C može nadmašiti skupu kremu bez aktivnih sastojaka."
+     },
+     {
+      "q": "Je li moj način života važniji od mojih gena?",
+      "a": "Oboje djeluje zajedno. Geni postavljaju potencijal i slabe tačke — način života odlučuje koliko te slabe tačke kompenzuješ ili pojačavaš. Pravilo palca: kod genetski nepovoljne predispozicije dosljedan način života postaje još važniji nego kod „sretnih gena“."
+     }
+    ]
+   }
+  ]
+ },
+ "legal-basics-en": {
+  "articleSections": [
+   {
+    "title": "Oglašavanje Novogenia proizvoda",
+    "paragraphs": [
+     "Novogenia je na samom vrhu naučnih mogućnosti i nudi etablirane analitičke postupke poput krvnih testova, ali i napredne mogućnosti poput genskih analiza i personalizovanih proizvoda. Budući da poslujemo u zdravstvenom sektoru, postoje stroga pravila za reklamne tvrdnje kojih se moramo pridržavati. Naročito u Njemačkoj postoje udruženja za opomene koja traže nejasne ili obmanjujuće izjave i izdaju opomene.",
+     "Čvrsto smo uvjereni da su naše preporuke djelotvorne i da uzimaju u obzir najnapredniji nivo nauke. Nažalost, ono što proizvod može učiniti i ono što se smije tvrditi u oglašavanju ponekad su dvije različite stvari."
+    ]
+   },
+   {
+    "title": "Oglašavanje krvnim testovima",
+    "paragraphs": [
+     "Krvni testovi su dobro etablirani i podliježu tek manjim ograničenjima u oglašavanju. Sve izjave navedene ispod su nekritične."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "„Testiramo krv.“"
+     },
+     {
+      "tone": "safe",
+      "text": "„Dijagnostikujemo manjkove.“"
+     },
+     {
+      "tone": "safe",
+      "text": "„Dajemo preporuke za mikronutrijente i ishranu.“"
+     },
+     {
+      "tone": "safe",
+      "text": "„Na osnovu rezultata personalizujemo suplemente.“"
+     },
+     {
+      "tone": "safe",
+      "text": "Simptomi manjka (npr. umor zbog nedostatka željeza) — najbolje uz navođenje izvora (npr. ljekarskog udruženja)."
+     },
+     {
+      "tone": "safe",
+      "text": "Preporuka kupca: „Često sam bio umoran, test je otkrio nedostatak željeza i to mi je pomoglo“ — dozvoljeno."
+     }
+    ]
+   },
+   {
+    "title": "Oglašavanje genskim testovima",
+    "paragraphs": [
+     "DNK analize još nisu standardna metoda u svakoj ljekarskoj ordinaciji. Udruženja za opomene kritički ispituju tehnologije koje većina stručnjaka još ne smatra standardnom praksom. DNK analiza je zbog toga pod posebnim nadzorom.",
+     "Sa stanovišta udruženja za opomene, DNK analiza ima dvije komponente: naučno validiranu analizu genetskih osobina (nekritično) i program djelovanja koji se iz nje izvodi (kritično)."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "Utvrđivanje genetskih osobina — potkrijepljeno aktuelnom naukom."
+     },
+     {
+      "tone": "critical",
+      "text": "Konkretne preporuke za ishranu, vježbanje ili suplemente izvedene iz gena — bez specifičnih randomizovanih studija upravo o toj preporuci."
+     }
+    ],
+    "callout": {
+     "tone": "safe",
+     "text": "Primjer: „Genski test dokazuje da je folna kiselina za tebe nedjelotvorna“ — dozvoljeno (potkrijepljeno studijama)."
+    }
+   },
+   {
+    "title": "Sigurna varijanta — samo genetske osobine",
+    "paragraphs": [
+     "Sigurna varijanta se ograničava na izjave o utvrđenim genetskim osobinama — bez izvođenja konkretnih preporuka za djelovanje. Sve formulacije navedene ispod su nekritične sa stanovišta udruženja za opomene."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "„Analiziramo tvoje gene i utvrđujemo da li se lakše debljaš od masti ili od ugljikohidrata.“"
+     },
+     {
+      "tone": "safe",
+      "text": "„Saznaješ reaguješ li više na vježbanje ili na smanjenje kalorija.“"
+     },
+     {
+      "tone": "safe",
+      "text": "„Saznaješ može li tvoje tijelo učinkovito aktivirati folnu kiselinu.“"
+     },
+     {
+      "tone": "safe",
+      "text": "„Saznaješ koje talente tvoje tijelo ima u takmičarskom sportu i koliko dobro tvoji mišići reaguju na trening sa opterećenjem.“"
+     }
+    ]
+   },
+   {
+    "title": "Hrabrija varijanta — preporuke uz ogradu",
+    "paragraphs": [
+     "U ovoj varijanti test se oglašava kao gore — ali se preporuke za djelovanje prenose kao logični zaključci, a ne kao naučno potvrđena obećanja. Uz ogradu. Napomena: udruženja za opomene ne prihvataju uvijek ograde."
+    ],
+    "bullets": [
+     {
+      "tone": "caveat",
+      "text": "„Analiziramo tvoje gene i utvrđujemo da li se lakše debljaš od masti ili od ugljikohidrata. Na osnovu toga izvodimo logične zaključke i planove ishrane kako bi taj uvid mogao iskoristiti.*“"
+     },
+     {
+      "tone": "caveat",
+      "text": "„Saznaješ može li tvoje tijelo aktivirati folnu kiselinu. Na osnovu toga preporučujemo alternativne mikronutrijente koje možeš uzimati umjesto nje.*“"
+     },
+     {
+      "tone": "critical",
+      "text": "PROTUPRIMJER: „Uzimaj metilfolat umjesto folne kiseline“ — kritično bez ograde, jer ne postoji randomizovana studija upravo o toj konkretnoj preporuci."
+     }
+    ],
+    "callout": {
+     "tone": "caveat",
+     "text": "* Napomena uz ogradu: Genetske osobine su naučno potvrđene. Iz njih izvedene prilagodbe doziranja mikronutrijenata ili preporuka za ishranu za mnoge učinke još nisu na nivou zlatnog standarda (randomizovane, placebom kontrolisane studije) i treba ih shvatiti kao eksperimentalne."
+    }
+   },
+   {
+    "title": "Oglašavanje personalizirane suplementacije",
+    "paragraphs": [
+     "Evropska unija je uspostavila jasan regulatorni okvir za tvrdnje o učinku suplemenata — takozvane „Health Claims“. One tačno definišu koji se učinci smiju oglašavati za svaku aktivnu supstancu.",
+     "Bez obzira na to koliko nauke stoji iza nekog učinka, nije ga dozvoljeno promovisati u oglašavanju dok EFSA ne odobri odgovarajući Health Claim. Drži se opsežne liste dozvoljenih tvrdnji."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "Personalizacija na osnovu životnog stila i krvnih vrijednosti — bez problema."
+     },
+     {
+      "tone": "caveat",
+      "text": "Personalizacija na osnovu genetske analize — samo uz ogradu (vidi „hrabriju varijantu“)."
+     },
+     {
+      "tone": "safe",
+      "text": "Primjer zdravstvene tvrdnje: „Doprinosi normalnom stanju kože“ (uz cink), „Doprinosi normalnom radu imunološkog sistema“."
+     },
+     {
+      "tone": "safe",
+      "text": "Primjer preporuke kupca: „Uzimam to jer imam suhu kožu“ — u kombinaciji sa Health Claim za cink — dozvoljeno."
+     },
+     {
+      "tone": "critical",
+      "text": "NIJE dozvoljeno: svaka tvrdnja čiji Health Claim EFSA nije odobrila (npr. „liječi vašu bolest“)."
+     }
+    ]
+   },
+   {
+    "title": "Recenzije i preporuke kupaca",
+    "paragraphs": [
+     "Ako nudiš sistem za recenzije kupaca (npr. na svojoj web stranici), ne možeš kontrolisati hoće li kupac iznijeti nedozvoljenu izjavu (npr. „Proizvod X me je izliječio“). To je u načelu dozvoljeno, ali se s tim mora pažljivo postupati."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "Na vlastitom sistemu koji dozvoljava moderaciju: jasno označi izjave kao mišljenja kupaca i naznači da ih ne prisvajaš kao svoja."
+     },
+     {
+      "tone": "safe",
+      "text": "Izjave koje krše Uredbu o zdravstvenim tvrdnjama (Health Claims) treba obrisati."
+     },
+     {
+      "tone": "safe",
+      "text": "Kod izrazito pogrešne ocjene: dodaj korektivni odgovor firme."
+     },
+     {
+      "tone": "caveat",
+      "text": "Na eksternim sistemima koji ne dozvoljavaju moderaciju: jasno ih deklariši i nikada selektivno ne promoviši netačne izjave."
+     },
+     {
+      "tone": "critical",
+      "text": "Aktivno promovisanje ili isticanje netačnih izjava — čak i kada su to glasovi kupaca."
+     }
+    ]
+   }
+  ]
+ }
+}
+/* END FAQTX */
 const clone = (o) => JSON.parse(JSON.stringify(o))
 const vid = (id) => (id && VIDEOS[id]) ? VIDEOS[id] : null
 
@@ -1302,9 +1933,16 @@ export const COURSES_SR = COURSES_EN.map((en) => {
     if (tx.introQuestions) c.introQuestions = tx.introQuestions
     if (Array.isArray(tx.questions) && tx.questions.length) c.questions = tx.questions
   }
+  /* FAQ/Artikel/Segment-Titel */
+  const ftx = FAQTX[en.id]
+  if (ftx) {
+    if (ftx.faqGroups) c.faqGroups = clone(ftx.faqGroups)
+    if (ftx.articleSections) c.articleSections = clone(ftx.articleSections)
+  }
   if (en.youtubeId) { const v = vid(en.youtubeId); if (v) c.youtubeId = v; else delete c.youtubeId }
   if (en.videoSegments && en.videoSegments.length) {
-    c.videoSegments = en.videoSegments.map(s => { const v = vid(s.youtubeId); return v ? { ...clone(s), youtubeId: v } : null }).filter(Boolean)
+    const segTitles = (FAQTX[en.id] || {}).videoSegmentTitles || []
+    c.videoSegments = en.videoSegments.map((s, i) => { const v = vid(s.youtubeId); return v ? { ...clone(s), youtubeId: v, title: segTitles[i] || s.title } : null }).filter(Boolean)
     if (!c.videoSegments.length) delete c.videoSegments
   }
   return c

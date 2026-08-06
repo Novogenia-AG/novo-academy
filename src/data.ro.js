@@ -1284,6 +1284,637 @@ const TXT = {
   ]
  }
 }
+const FAQTX = {
+ "wm-report-en": {
+  "videoSegmentTitles": [
+   "Introducere",
+   "Analiza greutății — tipul nutrițional",
+   "Analiza greutății — tipul de efort fizic și de calorii",
+   "Înțelegerea tabelelor științifice",
+   "Analiza greutății — pierderea masei musculare",
+   "Analiza greutății — foame și sațietate",
+   "Analiza greutății — distribuția grăsimii",
+   "Analiza greutății — efectul Yo-Yo",
+   "Analiza greutății — lista de alimente",
+   "Analiza greutății — sistemul de unități alimentare",
+   "Analiza greutății — tabelele de efort fizic",
+   "Considerații finale"
+  ]
+ },
+ "wm-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Ce este Dieta Genetică?",
+    "items": [
+     {
+      "q": "Ce este mai exact Dieta Genetică?",
+      "a": "Dieta Genetică este un program personalizat de slăbire și de nutriție, bazat pe analiza genelor tale. În loc de un plan de dietă standard, primești o recomandare individuală, pentru că metabolismul tău reacționează genetic diferit față de al altora — la grăsimi, la carbohidrați, la efort fizic și chiar la senzația de foame."
+     },
+     {
+      "q": "Ce primesc concret?",
+      "a": "Primești un raport individual cu raportul optim dintre grăsimi, carbohidrați și proteine; o listă de alimente personalizată cu peste 1.500 de alimente; un plan alimentar zilnic pentru 4 săptămâni; o carte de rețete; precum și recomandări concrete de efort fizic și de mișcare, potrivite profilului tău genetic."
+     },
+     {
+      "q": "Cât timp sunt valabile recomandările mele?",
+      "a": "Genele tale nu se schimbă pe parcursul vieții, așa că rezultatele genetice rămân valabile permanent. Evaluarea, în schimb, este rafinată continuu pe baza noilor cercetări — de la lansarea programului au fost integrate peste 770 de îmbunătățiri."
+     },
+     {
+      "q": "Trebuie să repet testul cu regularitate?",
+      "a": "Nu. Genele rămân aceleași toată viața — o genă deja analizată dă întotdeauna același rezultat. Ceea ce se îmbunătățește constant este evaluarea în sine, pentru că noile descoperiri științifice sunt integrate permanent."
+     }
+    ]
+   },
+   {
+    "title": "Cum funcționează analiza genetică?",
+    "items": [
+     {
+      "q": "Cum funcționează programul Dietei Genetice?",
+      "a": "Din setul tău de date genetice sunt selectate variantele relevante pentru controlul greutății. Pe baza lor calculăm: cât de sensibil este corpul tău la grăsimi și la carbohidrați? Cât de eficient este efortul fizic pentru tine? Cât de eficientă este reducerea caloriilor? Ai tendința spre efectul Yo-Yo, spre pierderea masei musculare sau spre grăsimea abdominală? Din aceste rezultate se conturează distribuția optimă a macronutrienților și un plan nutrițional individual."
+     },
+     {
+      "q": "Slăbitul nu ține pur și simplu de deficitul caloric?",
+      "a": "Nu doar. Studiile arată că oamenii reacționează genetic foarte diferit la grăsimi și la carbohidrați — unii aproape că nu se îngrașă la un surplus caloric, alții se îngrașă mult mai mult la aceleași calorii. Și eficiența efortului fizic variază genetic de până la 3 ori."
+     },
+     {
+      "q": "Există 7 tipuri nutriționale diferite?",
+      "a": "Da: tipul care valorifică grăsimile (proporție mai mare de grăsimi), tipurile mixte I-V (distribuții mixte diferite) și tipul care valorifică carbohidrații (proporție mai mare de carbohidrați). Combinate cu factori individuali precum metabolismul bazal, eficiența efortului fizic și tendința spre efectul Yo-Yo, rezultă peste 6.500 de profiluri genetice posibile."
+     },
+     {
+      "q": "De la ce vârstă este programul potrivit pentru copii?",
+      "a": "Programul poate fi aplicat, în principiu, și copiilor, însă fără calcule calorice, fără recomandări de greutate-țintă, fără meniuri zilnice și fără carte de rețete — acestea nu sunt utile pentru copiii aflați în creștere. Cartea de rețete este blocată pentru copiii sub 14 ani."
+     }
+    ]
+   },
+   {
+    "title": "Calorie Blocker",
+    "items": [
+     {
+      "q": "Ce este Calorie Blocker?",
+      "a": "Calorie Blocker este un produs personalizat pentru slăbire, sub formă de peleți Microtransporter. Conține un raport individual de blocatori de grăsimi și de carbohidrați, adaptat analizei tale ADN. Combinat cu un aport redus de calorii și de grăsimi, sprijină demonstrabil pierderea în greutate — iar împreună cu o alimentație echilibrată și un stil de viață sănătos ajută la menținerea greutății."
+     },
+     {
+      "q": "Cum se administrează Calorie Blocker?",
+      "a": "Zilnic, înainte de prânz și de cină, cu o înghițitură mare de apă. Peleții trebuie înghițiți întregi, nu mestecați."
+     },
+     {
+      "q": "Care sunt substanțele active?",
+      "a": "Blocatorul de grăsimi este Opuntia ficus-indica (OFI) — fibra cactusului de smochin indian. Această fibră vegetală formează în tractul digestiv o matrice asemănătoare unui gel, care leagă grăsimile alimentare și le reduce absorbția. Blocatorul de carbohidrați este faseolamina (din fasole albă), care inhibă alfa-amilaza. Ambele sunt complet vegetale."
+     },
+     {
+      "q": "Calorie Blocker este vegan/vegetarian?",
+      "a": "Da. Atât blocatorul de grăsimi (Opuntia ficus-indica), cât și blocatorul de carbohidrați (faseolamina din fasole albă) sunt pur vegetale. Calorie Blocker este potrivit pentru vegetarieni și vegani, fără gluten, fără lactoză și fără coloranți artificiali."
+     }
+    ]
+   }
+  ]
+ },
+ "nut-report-en": {
+  "videoSegmentTitles": [
+   "Analiza nutrițională — introducere",
+   "Cafeina și cafeaua",
+   "Omega 3",
+   "Acidul folic",
+   "Homocisteina",
+   "Coenzima Q10",
+   "Detoxifiere — substanțe cancerigene",
+   "Detoxifiere — substanțe chimice și metale grele",
+   "Radicali liberi",
+   "Seleniu",
+   "Sarea și tensiunea arterială",
+   "Vitamina D (partea 1)",
+   "Vitamina D (partea 2)",
+   "Lactoza și calciul",
+   "Inflamația",
+   "Colesterolul LDL",
+   "Trigliceridele",
+   "Fierul",
+   "Metilarea",
+   "Încheiere — ultima parte",
+   "Principiul evaluării alimentelor",
+   "Lista de alimente"
+  ]
+ },
+ "nut-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Noțiuni de bază — gene și nutriție",
+    "items": [
+     {
+      "q": "De ce același aliment are efecte diferite la persoane diferite?",
+      "a": "Pentru că metabolizăm nutrienții genetic diferit. Gena MTHFR, de exemplu, determină dacă organismul tău poate activa acidul folic transformându-l în forma bioactivă. Gena CYP1A2 stabilește cât de repede descompui cafeina. Astfel de variante schimbă modul în care un nutrient acționează în corpul TĂU."
+     },
+     {
+      "q": "Câte gene ia în considerare analiza nutrițională?",
+      "a": "Aproximativ 60 de variante genetice relevante pentru nutriție. Printre ele: MTHFR (activarea folatului), CYP1A2 (descompunerea cafeinei), ACE (sare/tensiune arterială), VDR (receptorul de vitamina D), HFE (absorbția fierului), LCT (persistența lactazei) și genele apărării antioxidante (SOD, CAT, GPX)."
+     },
+     {
+      "q": "Îmi poate spune analiza dacă ar trebui să beau cafea?",
+      "a": "Indirect, da. Gena CYP1A2 arată dacă descompui cafeina rapid (Warrior) sau lent. Cei care o descompun lent au un risc cardiovascular mai mare din cauza cafeinei — pentru ei este mai bine să evite cafeaua sau să o înlocuiască cu una decofeinizată, ca să păstreze beneficiile polifenolilor."
+     },
+     {
+      "q": "Analiza înlocuiește medicul sau nutriționistul?",
+      "a": "Nu. Este un ajutor suplimentar de decizie, bazat pe date genetice stabile. Simptomele acute, bolile sau dietele speciale rămân întotdeauna în grija unui medic sau a unui dietetician autorizat."
+     }
+    ]
+   },
+   {
+    "title": "Teme genetice cheie",
+    "items": [
+     {
+      "q": "Ce înseamnă pentru mine un defect MTHFR?",
+      "a": "MTHFR activează acidul folic transformându-l în metilfolat, forma pe care corpul tău o poate folosi cu adevărat. În cazul unui defect, poți lua mult acid folic dintr-un supliment obișnuit și totuși să ai un deficit funcțional. Trecerea la metilfolat rezolvă problema."
+     },
+     {
+      "q": "Am o variantă HFE — este periculoasă pentru mine suplimentarea cu fier?",
+      "a": "Poate fi. Unele variante HFE duc, de-a lungul deceniilor, la o supraîncărcare cu fier — corpul tău absoarbe prea mult fier din alimente și îl depozitează în ficat, inimă și articulații. Suplimentele de fier ar trebui luate doar dacă analizele de sânge arată un deficit real."
+     },
+     {
+      "q": "Sensibilitatea la sare (ACE) — înseamnă că trebuie să renunț la sare?",
+      "a": "Nu complet. Înseamnă că tensiunea ta arterială reacționează mai puternic la sare decât în medie. Reducerea sării este, în cazul tău, o pârghie foarte puternică — mult mai puternică decât la persoanele nesensibile."
+     }
+    ]
+   },
+   {
+    "title": "Întrebări practice",
+    "items": [
+     {
+      "q": "Ar trebui să renunț la alimentele mele preferate dacă sunt evaluate ca nefavorabile?",
+      "a": "Nu. Raportul este un ghid pe termen lung. Consumul ocazional este în regulă. Scopul este echilibrul de-a lungul săptămânilor și al lunilor, nu perfecțiunea într-o singură zi."
+     },
+     {
+      "q": "Cât de repede voi observa un efect?",
+      "a": "Depinde de ceea ce schimbi. Sensibilitatea la cafeină se simte diferit în câteva zile. Trecerea la altă formă de acid folic se vede în 2-3 luni în markerii sanguini. Recomandările pe termen lung, precum reducerea sării sau a grăsimilor saturate, au nevoie de 6-12 luni pentru a se traduce în beneficii cardiovasculare măsurabile."
+     },
+     {
+      "q": "Lista de recomandări este bătută în cuie?",
+      "a": "Nu. Recomandările sunt derivate din consensul științific actual. Pe măsură ce cercetarea avansează, raportul este actualizat periodic, fără costuri suplimentare."
+     }
+    ]
+   }
+  ]
+ },
+ "pg-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Talent și genetică în sport",
+    "items": [
+     {
+      "q": "Cât de mare este influența genelor asupra performanței sportive?",
+      "a": "Estimările variază între 30 și 70%, în funcție de disciplină. Talentul (fibrele de sprint, potențialul VO2max, stabilitatea țesutului conjunctiv) este determinat preponderent genetic; iar răspunsul la antrenament în sine — cât de puternic reacționează corpul la un stimul — variază de asemenea genetic de 2 până la 3 ori."
+     },
+     {
+      "q": "Care este diferența dintre volumul muscular și forța musculară?",
+      "a": "Volumul înseamnă mai multă masă (obiectivul culturistului) — antrenament cu 6-12 repetări. Forța înseamnă mai multă performanță cu mai puțină masă — antrenament cu 1-6 repetări la sarcini mari. Cele două obiective de antrenament necesită strategii diferite și pauze diferite."
+     },
+     {
+      "q": "Pot deveni un sportiv de succes cu gene „proaste”?",
+      "a": "Da. Genetica determină talentul, dar antrenamentul, consecvența și strategia potrivită fac diferența decisivă. Dacă îți cunoști punctele slabe genetice, le poți compensa (de ex. alimentație bogată în antioxidanți, pauze mai lungi, încălzire atentă)."
+     }
+    ]
+   },
+   {
+    "title": "Riscul de accidentare și regenerarea",
+    "items": [
+     {
+      "q": "Raportul meu arată gene nefavorabile ale țesutului conjunctiv (COL5A1, MMP3). Ce ar trebui să fac?",
+      "a": "Antrenează-te cu grijă suplimentară: încălzire temeinică, mai puține solicitări explozive până la adaptare, recuperare mai lungă între sesiunile intense și un aport bun de proteine și vitamina C, pentru a susține sinteza colagenului. Evită creșterile bruște de volum."
+     },
+     {
+      "q": "De ce îmi recomandă raportul antioxidanți?",
+      "a": "Efortul intens generează cantități mari de radicali liberi. Dacă genele tale antioxidante (SOD2, CAT, GPX) sunt slabe, regenerarea este mai lentă și se acumulează micro-inflamații. Vitaminele C și E, polifenolii și seleniul susțin direct aceste sisteme de apărare."
+     },
+     {
+      "q": "Ce este un „deload” și cât de des ar trebui să îl fac?",
+      "a": "Un deload este o săptămână de antrenament mai blând (de ex. prima sesiune cu jumătate din greutate, a doua cu două treimi). Îi oferă corpului timp de recuperare pentru reparație și un reset psihologic. De regulă la fiecare ~5 săptămâni, în funcție de regenerarea ta genetică și de predispoziția la stres."
+     }
+    ]
+   },
+   {
+    "title": "Nutriție pentru sportivi",
+    "items": [
+     {
+      "q": "Cum se leagă raportul sportiv de raportul nutrițional?",
+      "a": "Se completează reciproc. Raportul sportiv îți arată profilul de performanță, riscul de accidentare și regenerarea. Raportul nutrițional îți spune ce combustibil (grăsimi/carbohidrați/proteine) și ce suplimente susțin acest profil."
+     },
+     {
+      "q": "Ar trebui să iau pudră proteică?",
+      "a": "Nu neapărat. Dacă îți acoperi cele 1,6-2,0 g de proteine pe kilogram de greutate corporală din alimente reale și te recuperezi bine între sesiuni, nu ai nevoie de pudră. Dacă îți este greu să atingi aceste valori, o pudră proteică de calitate poate simplifica aportul."
+     }
+    ]
+   }
+  ]
+ },
+ "tx-report-en": {
+  "videoSegmentTitles": [
+   "Detoxifiere — substanțe cancerigene",
+   "Detoxifiere — substanțe chimice și metale grele",
+   "Radicali liberi (stres oxidativ)",
+   "Seleniu"
+  ]
+ },
+ "bo-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Bazele genetice ale stresului",
+    "items": [
+     {
+      "q": "Ce este gena COMT și de ce este importantă?",
+      "a": "COMT (catecol-O-metiltransferaza) descompune dopamina, adrenalina și noradrenalina în cortexul prefrontal. O variantă frecventă (Val158Met) determină cât de repede are loc această descompunere — cu un factor de 3-4 între varianta rapidă și cea lentă. Astfel se reglează cât timp rămâne un semnal de stres în sistem."
+     },
+     {
+      "q": "Care este diferența dintre Warrior și Worrier?",
+      "a": "Warrior (Val/Val): dopamina este descompusă rapid — rezistență mai mare la stresul acut, performanță sub presiune. Worrier (Met/Met): dopamina este descompusă lent — concentrare puternică în viața de zi cu zi, dar vulnerabilitate la stresul cronic. Aproximativ 50% dintre oameni sunt tip mixt."
+     },
+     {
+      "q": "Dar BDNF?",
+      "a": "BDNF (Brain-Derived Neurotrophic Factor) susține creșterea neuronilor și reziliența. Varianta Met (Val66Met) reduce secreția de BDNF; purtătorii se recuperează mai lent după stres și sunt mai vulnerabili la depresie în caz de solicitare cronică. BDNF poate fi crescut prin exercițiu fizic, somn, învățare și post intermitent."
+     }
+    ]
+   },
+   {
+    "title": "Sfaturi practice",
+    "items": [
+     {
+      "q": "Sunt Worrier — sunt condamnat la burnout?",
+      "a": "Nu. Varianta lentă a COMT crește sensibilitatea, nu este un destin. Dacă îți cunoști predispoziția, poți acționa din timp: rutine clare de recuperare, somnul ca prioritate, respirație sau meditație, evitarea acumulării mai multor factori de stres în același timp. De-a lungul anilor, asta împiedică sistemul să ajungă la o suprasolicitare cronică."
+     },
+     {
+      "q": "Sunt Warrior — trebuie totuși să-mi fac griji în privința burnout-ului?",
+      "a": "Riscul acut este mai mic, dar recuperarea rămâne importantă. Senzația de „lipsă a stresului” poate masca o sub-stimulare în perioadele liniștite. Planifică structură pentru fazele de concentrare și protejează-ți somnul."
+     },
+     {
+      "q": "Ce ajută pe toată lumea, indiferent de genotip?",
+      "a": "Somnul (7-9 h), mișcarea regulată (în special anduranța — crește BDNF și reglează cortizolul), contactul social, sensul în muncă și evitarea abuzului de stimulente (alcool, cafeină în exces)."
+     }
+    ]
+   },
+   {
+    "title": "Ce faci cu rezultatul",
+    "items": [
+     {
+      "q": "În raportul meu a apărut o „zonă roșie”. Ar trebui să-mi fac griji?",
+      "a": "Nu. O zonă roșie marchează un risc crescut într-un domeniu anume, nu un diagnostic. Este o invitație de a acționa din timp — exact opusul unui verdict fatalist."
+     },
+     {
+      "q": "Unde găsesc recomandări concrete pentru genotipul meu?",
+      "a": "În raportul de burnout — acesta conține recomandări detaliate privind meditația, alimentația, mișcarea, igiena somnului și strategiile de gestionare a stresului, adaptate profilului tău individual COMT și celorlalți factori evaluați."
+     }
+    ]
+   }
+  ]
+ },
+ "ba-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Noțiuni de bază — telomeri și îmbătrânire",
+    "items": [
+     {
+      "q": "Ce sunt telomerii și de ce sunt importanți pentru îmbătrânire?",
+      "a": "Telomerii sunt capete protectoare aflate la extremitatea fiecărui cromozom — ei nu conțin gene, dar protejează genele împotriva pierderii în timpul diviziunilor celulare. La fiecare diviziune celulară se desprinde o mică parte din telomer. După 50-70 de diviziuni, telomerii sunt consumați; celula intră într-un fel de somn (senescență) și se acumulează în organism ca „celulă îmbătrânită”."
+     },
+     {
+      "q": "Care este diferența dintre vârsta cronologică și cea biologică?",
+      "a": "Vârsta cronologică este timpul trăit, în ani — fix și neschimbabil. Vârsta biologică arată cât de „bătrâne” sunt de fapt celulele tale. Două persoane cu aceeași vârstă cronologică pot avea vârste biologice care diferă cu până la 20 de ani, din cauza predispoziției genetice și a stilului de viață."
+     },
+     {
+      "q": "Ce face telomeraza?",
+      "a": "Telomeraza este o enzimă care poate repara / reconstrui telomerii. Activitatea ei este parțial genetică — persoanele cu o activitate puternică a telomerazei își păstrează mai bine telomerii; la cele cu activitate redusă, telomerii se scurtează mai repede, mai ales sub stres oxidativ."
+     },
+     {
+      "q": "Ce gene sunt evaluate în analiză?",
+      "a": "În principal telomeraza și genele înrudite (TERT, BICD1, PPARG), care controlează menținerea telomerilor. Ele arată cât de bine poate organismul tău să repare / să păstreze telomerii — o estimare aproximativă a capacității tale genetice anti-îmbătrânire."
+     }
+    ]
+   },
+   {
+    "title": "Ce face stilul de viață",
+    "items": [
+     {
+      "q": "Dieta mediteraneană funcționează pentru toată lumea?",
+      "a": "Surprinzător, nu. Studiile arată că ea extinde telomerii doar la persoanele cu o anumită variantă genetică — la ceilalți nu se observă niciun efect măsurabil asupra lungimii telomerilor. O demonstrație clară că același sfat privind stilul de viață nu funcționează la fel pentru fiecare persoană."
+     },
+     {
+      "q": "Ce nutrienți susțin telomerii?",
+      "a": "Vitamina D3, Omega-3, vitamina E, resveratrolul și ginkgo. Când sistemul genetic de protecție este slab, acești nutrienți pot fi folosiți în mod deliberat pentru a încetini scurtarea telomerilor."
+     },
+     {
+      "q": "Pot influența radicalii liberi?",
+      "a": "Da — antioxidanții din alimente (vitamina C, E, polifenolii din fructe de pădure, ceai etc.) neutralizează radicalii liberi înainte ca aceștia să deterioreze celulele. În cazul unei apărări antioxidante slăbite genetic, o alimentație bogată în antioxidanți este deosebit de importantă."
+     }
+    ]
+   },
+   {
+    "title": "Influență și așteptări",
+    "items": [
+     {
+      "q": "Cât de repede voi vedea rezultate în urma măsurilor anti-îmbătrânire?",
+      "a": "Efectele asupra telomerilor sunt lente — de la luni la ani. Unii markeri intermediari (stresul oxidativ, inflamația, profilul lipidic sanguin) se modifică în câteva săptămâni. Cel mai puternic impact al stilului de viață asupra vârstei biologice se acumulează de-a lungul deceniilor."
+     },
+     {
+      "q": "Ce folos practic îmi aduce această cunoaștere?",
+      "a": "Știi dacă genetic ai tendința spre o îmbătrânire celulară mai rapidă sau mai lentă — și poți acționa în mod deliberat. În cazul unei predispoziții nefavorabile, concentrează-te pe: alimentație bogată în antioxidanți, suplimente țintite (D3, Omega-3, resveratrol), exercițiu fizic regulat, dar nu excesiv, somn bun și reducerea stresului."
+     }
+    ]
+   }
+  ]
+ },
+ "supp-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Noțiuni de bază — de ce personalizat?",
+    "items": [
+     {
+      "q": "De ce am nevoie, de fapt, de o suplimentare personalizată?",
+      "a": "Pentru că organismul tău valorifică genetic unii nutrienți mai bine sau mai slab decât al altei persoane — și pentru că stilul tău de viață (efort fizic, somn, stres, alimentație) îți modelează în plus necesarul individual. Pastilele standard pornesc de la „omul mediu” și, de aceea, acoperă multe nevoi individuale fie prea puțin, fie prea mult."
+     },
+     {
+      "q": "Care este diferența față de multivitaminele standard din drogherie?",
+      "a": "Trei aspecte principale: (1) selecția nutrienților și dozajul lor sunt adaptate genelor tale; (2) eliberarea este temporizată (de ex. vitamina C cu Slow-Release), pentru a menține constante nivelurile sanguine; (3) nutrienții concurenți, precum calciul și zincul, sunt eliberați separat în spațiu și în timp, ca să nu se blocheze reciproc."
+     },
+     {
+      "q": "Câte gene ia în considerare analiza?",
+      "a": "Peste 60 de variante genetice relevante pentru nutrienți — printre care gene ale metabolismului vitaminelor (folat-MTHFR, vitamina D-VDR, vitamina B12-FUT2), gene ale absorbției mineralelor (fier-HFE, calciu-LCT) și sisteme de apărare antioxidantă (GST, SOD, CAT)."
+     }
+    ]
+   },
+   {
+    "title": "Tehnologia Microtransporter",
+    "items": [
+     {
+      "q": "Ce sunt peleții Microtransporter?",
+      "a": "Microtransporter sunt peleți minusculi, de ordinul milimetrilor, fiecare purtând nutrienți individuali în învelișuri protectoare specifice. Fiecare Microtransporter „eliberează” conținutul într-un alt moment și într-un alt loc din tractul digestiv — astfel încât chiar și nutrienți care în mod normal concurează pot fi luați împreună, dar absorbiți separat."
+     },
+     {
+      "q": "De ce este vitamina C eliberată în regim Slow-Release?",
+      "a": "Vitamina C are un timp de înjumătățire biologic foarte scurt (~30 de minute). O singură doză mare este în mare parte eliminată nefolosită. Slow-Release-ul din peleții Microtransporter imită aportul natural și continuu din alimente, pe parcursul zilei, și menține stabile nivelurile sanguine — fiziologic, mult mai logic."
+     },
+     {
+      "q": "Cum funcționează în cazul calciului și al zincului, care se blochează reciproc?",
+      "a": "Calciul și zincul concurează pentru aceiași transportori intestinali — luate împreună, se absoarbe mai puțin din amândouă. În tehnologia Microtransporter, zincul este eliberat imediat în intestinul subțire superior, iar calciul câteva ore mai târziu, în segmentul intestinal mai profund. Ambele se iau deodată, dar sunt eliberate în locuri și în momente diferite — fără concurență."
+     }
+    ]
+   },
+   {
+    "title": "Întrebări practice",
+    "items": [
+     {
+      "q": "Trebuie să iau pastilele la ore fixe?",
+      "a": "Recomandăm un moment constant al zilei (de ex. la micul dejun), pentru a menține stabile nivelurile sanguine. Nu trebuie să te uiți la minut — o rutină aproximativă este suficientă. Cel mai important este să le iei cu regularitate."
+     },
+     {
+      "q": "Cât de repede voi observa un efect?",
+      "a": "Depinde de nutrient. Unele efecte (de ex. mai multă energie cu vitaminele B) apar în câteva zile până la câteva săptămâni; altele (de ex. metabolismul osos cu vitamina D) se dezvoltă de-a lungul lunilor. Suplimentarea personalizată nu este un medicament cu acțiune rapidă — ea corectează deficite de nutrienți pe termen lung."
+     },
+     {
+      "q": "Am nevoie de suplimentare pentru totdeauna?",
+      "a": "În cazul slăbiciunilor metabolice cauzate genetic, da, pentru că predispoziția durează toată viața. Necesarul determinat de stilul de viață (de ex. nevoia crescută în perioade de stres, de efort fizic sau de boală) se poate schimba. Analiza îți arată și unde genetica ta produce un necesar permanent crescut și unde este suficientă doar o ajustare a stilului de viață."
+     },
+     {
+      "q": "Pot combina suplimentarea cu medicamente?",
+      "a": "În general, da — toți nutrienții sunt dozați în cantități tipice pentru alimente. În caz de boală cronică sau de tratament medicamentos de lungă durată, ar trebui să discuți acest lucru cu medicul tău, pentru că anumiți nutrienți (de ex. vitamina K, fierul) pot interacționa cu unele medicamente."
+     },
+     {
+      "q": "Cum se compară costul variantei personalizate cu cel al multivitaminelor din drogherie?",
+      "a": "Semnificativ mai mare pe zi — de regulă de 3-5× față de cele mai ieftine produse din drogherie. În schimb primești o compoziție adaptată genetic, care probabil chiar se absoarbe, în loc să fie eliminată în mare parte nefolosită. Comparația „per mg de vitamină” este înșelătoare; „per mg care ajunge efectiv în sânge” este mult mai relevantă."
+     }
+    ]
+   }
+  ]
+ },
+ "beauty-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Noțiuni de bază — ce face analiza genetică a pielii",
+    "items": [
+     {
+      "q": "Ce este analiza genetică a pielii (DNAbeauty Control)?",
+      "a": "O analiză a genelor tale concentrată pe domeniile relevante pentru piele: degradarea colagenului, sensibilitatea la UV, pigmentarea, hidratarea pielii, apărarea antioxidantă și tendința la inflamație. Din setul tău de date ADN sunt evaluate peste 20 de variante genetice relevante pentru piele și transformate în recomandări practice de îngrijire și de protecție."
+     },
+     {
+      "q": "Care este diferența față de o analiză cosmetică a pielii?",
+      "a": "Analizele cosmetice ale pielii măsoară starea actuală a pielii tale — hidratare, sebum, pigmentare etc. — și reacționează la ea. Analiza genetică a pielii îți arată ce proprietăți și ce puncte slabe sunt ancorate PERMANENT în genele tale. Poți preveni proactiv, în loc să tratezi reactiv, atunci când problemele devin vizibile."
+     },
+     {
+      "q": "Câte gene sunt analizate?",
+      "a": "Peste 20 de variante genetice relevante pentru piele. Domeniile principale: MMP1 (degradarea colagenului, riduri), MC1R (sensibilitatea la UV, pigmentare), FLG (filagrina, hidratarea / bariera pielii), SOD2/CAT/GPX (apărarea antioxidantă), gene ale inflamației precum IL6 și TNF-α."
+     },
+     {
+      "q": "Cât timp este valabil rezultatul meu?",
+      "a": "Genele tale nu se schimbă pe parcursul vieții — așa că rezultatele de bază rămân valabile permanent. Ce se rafinează este evaluarea în sine, pe măsură ce noile cercetări sunt integrate continuu."
+     }
+    ]
+   },
+   {
+    "title": "Genetică și îmbătrânirea pielii — înțelegerea rezultatului",
+    "items": [
+     {
+      "q": "Ce înseamnă o variantă MMP1 „activă”?",
+      "a": "MMP1 (matrix-metaloproteinaza 1) descompune colagenul din piele. O variantă foarte activă genetic duce la o degradare mai rapidă a colagenului — pielea își pierde fermitatea mai devreme, iar ridurile se formează mai repede. Contramăsuri: protecție UV consecventă, antioxidanți, fără fumat, retinoizi sau îngrijire pe bază de peptide."
+     },
+     {
+      "q": "Ce îmi spune MC1R despre sensibilitatea la UV?",
+      "a": "MC1R controlează producția de eumelanină (pigment închis, care protejează împotriva UV) față de cea de feomelanină (pigment roșiatic, care generează radicali liberi sub acțiunea UV). Variantele nefavorabile: arsuri solare mai rapide, risc mai mare de leziuni UV și de cancer de piele — este necesară o disciplină mai strictă a protecției solare."
+     },
+     {
+      "q": "De ce este FLG (filagrina) importantă pentru îngrijirea pielii mele?",
+      "a": "FLG produce filagrina, o proteină care ține unită bariera naturală a pielii și leagă umiditatea. Cu o activitate FLG redusă genetic, bariera cutanată este mai slabă — umiditatea se pierde mai repede, iar substanțele iritante pătrund mai ușor. Recomandare: îngrijire care întărește bariera (ceramide, colesterol, acizi grași liberi), produse de curățare blânde, fără surfactanți care usucă pielea."
+     },
+     {
+      "q": "Chiar îmi influențează asta aspectul în mod măsurabil?",
+      "a": "Da, dar nu peste noapte. Punctele slabe genetice se acumulează de-a lungul anilor. Două persoane de aceeași vârstă pot diferi biologic cu 10-15 ani — în funcție de cât de bine își compensează prin stilul de viață punctele slabe genetice."
+     }
+    ]
+   },
+   {
+    "title": "Recomandări practice și așteptări",
+    "items": [
+     {
+      "q": "Cât de repede voi observa un efect al îngrijirii personalizate?",
+      "a": "Unele efecte apar în câteva săptămâni (hidratare, strălucire, iritații), altele abia după luni sau ani (formarea ridurilor, pigmentarea, structura pielii). Îngrijirea personalizată nu este o soluție rapidă, ci o strategie de protecție pe termen lung."
+     },
+     {
+      "q": "Am nevoie de creme scumpe?",
+      "a": "Nu neapărat. Contează ingredientele potrivite pentru predispoziția ta genetică — iar acestea există la orice nivel de preț. Ce contează: concentrația substanțelor active, formularea și consecvența aplicării. Un ser cu vitamina C accesibil ca preț poate depăși o cremă scumpă lipsită de substanțe active."
+     },
+     {
+      "q": "Stilul meu de viață este mai important decât genele mele?",
+      "a": "Ambele lucrează împreună. Genele stabilesc potențialul și punctele slabe — stilul de viață decide cât de mult compensezi sau amplifici acele puncte slabe. Regulă generală: în cazul unei predispoziții genetice nefavorabile, un stil de viață consecvent devine și mai important decât în cazul unor „gene norocoase”."
+     }
+    ]
+   }
+  ]
+ },
+ "legal-basics-en": {
+  "articleSections": [
+   {
+    "title": "Publicitatea pentru produsele Novogenia",
+    "paragraphs": [
+     "Novogenia se află în avangarda posibilităților științifice și oferă atât proceduri de analiză consacrate, precum testele de sânge, cât și posibilități avansate, precum analizele genetice și produsele personalizate. Deoarece activăm în domeniul sănătății, există reguli stricte pentru afirmațiile publicitare, care trebuie respectate. În special în Germania există asociații de scrisori de avertizare care caută afirmații neclare sau înșelătoare și emit avertismente.",
+     "Suntem ferm convinși că recomandările noastre sunt eficiente și că iau în considerare cel mai avansat stadiu al științei. Din păcate, ceea ce poate face un produs și ceea ce ai voie să afirmi în publicitate sunt uneori lucruri diferite."
+    ]
+   },
+   {
+    "title": "Publicitatea cu teste de sânge",
+    "paragraphs": [
+     "Testele de sânge sunt bine consacrate și supuse doar unor restricții publicitare minore. Afirmațiile de mai jos sunt toate necritice."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "„Testăm sângele.”"
+     },
+     {
+      "tone": "safe",
+      "text": "„Diagnosticăm deficiențele.”"
+     },
+     {
+      "tone": "safe",
+      "text": "„Oferim recomandări de micronutrienți și de nutriție.”"
+     },
+     {
+      "tone": "safe",
+      "text": "„Personalizăm suplimentele pe baza rezultatului.”"
+     },
+     {
+      "tone": "safe",
+      "text": "Simptomele unei deficiențe (de ex. oboseala cauzată de deficitul de fier) — cel mai bine cu citarea unei surse (de ex. o asociație medicală)."
+     },
+     {
+      "tone": "safe",
+      "text": "Mărturie: „Eram deseori obosit, testul a identificat un deficit de fier, iar asta m-a ajutat” — permis."
+     }
+    ]
+   },
+   {
+    "title": "Publicitatea cu teste genetice",
+    "paragraphs": [
+     "Analizele ADN nu sunt încă o metodă standard în orice cabinet medical. Asociațiile de scrisori de avertizare examinează critic tehnologiile care nu sunt încă recunoscute ca practică standard de majoritatea experților. Analiza ADN se află, prin urmare, sub o observație specială.",
+     "Din perspectiva asociației de scrisori de avertizare, o analiză ADN are două componente: analiza validată științific a proprietăților genetice (necritică) și programul de acțiune derivat din aceasta (critic)."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "Determinarea proprietăților genetice — susținută de știința actuală."
+     },
+     {
+      "tone": "critical",
+      "text": "Recomandările concrete de nutriție, de efort fizic sau de suplimente derivate din gene — fără studii randomizate specifice pentru exact acea recomandare."
+     }
+    ],
+    "callout": {
+     "tone": "safe",
+     "text": "Exemplu: „Testul genetic dovedește că acidul folic este ineficient pentru tine” — permis (susținut de studii)."
+    }
+   },
+   {
+    "title": "Varianta sigură — doar proprietățile genetice",
+    "paragraphs": [
+     "Varianta sigură se concentrează pe afirmații limitate la proprietățile genetice determinate — fără a deriva recomandări concrete de acțiune. Toate formulările de mai jos sunt necritice din perspectiva scrisorilor de avertizare."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "„Îți analizăm genele și determinăm dacă te îngrași mai ușor de la grăsimi sau de la carbohidrați.”"
+     },
+     {
+      "tone": "safe",
+      "text": "„Afli dacă răspunzi mai bine la efort fizic sau la reducerea caloriilor.”"
+     },
+     {
+      "tone": "safe",
+      "text": "„Afli dacă organismul tău poate activa eficient acidul folic.”"
+     },
+     {
+      "tone": "safe",
+      "text": "„Afli ce talente are corpul tău în sportul de performanță și cât de bine răspund mușchii tăi la antrenamentul de forță.”"
+     }
+    ]
+   },
+   {
+    "title": "Varianta mai îndrăzneață — recomandări însoțite de un disclaimer",
+    "paragraphs": [
+     "În această variantă, testul este promovat ca mai sus — dar recomandările de acțiune sunt comunicate ca niște concluzii logice, nu ca promisiuni confirmate științific. Cu un disclaimer. Atenție: asociațiile de scrisori de avertizare nu acceptă întotdeauna disclaimerele."
+    ],
+    "bullets": [
+     {
+      "tone": "caveat",
+      "text": "„Îți analizăm genele și determinăm dacă te îngrași mai ușor de la grăsimi sau de la carbohidrați. Pe această bază derivăm concluzii logice și planuri nutriționale pentru a folosi această informație.*”"
+     },
+     {
+      "tone": "caveat",
+      "text": "„Afli dacă organismul tău poate activa acidul folic. Pe această bază îți recomandăm micronutrienți alternativi pe care să îi iei în schimb.*”"
+     },
+     {
+      "tone": "critical",
+      "text": "CONTRAEXEMPLU: „Ia metilfolat în loc de acid folic” — critic fără disclaimer, pentru că nu există niciun studiu randomizat pentru exact această recomandare specifică."
+     }
+    ],
+    "callout": {
+     "tone": "caveat",
+     "text": "* Notă privind disclaimerul: Proprietățile genetice sunt confirmate științific. Ajustările derivate ale dozajului de micronutrienți sau ale recomandărilor nutriționale nu ating încă, pentru multe efecte, nivelul standardului de aur (studii randomizate, controlate cu placebo) și trebuie înțelese ca fiind experimentale."
+    }
+   },
+   {
+    "title": "Publicitatea pentru suplimentarea personalizată",
+    "paragraphs": [
+     "Uniunea Europeană a stabilit un cadru de reglementare clar pentru afirmațiile privind efectul suplimentelor — așa-numitele „Health Claims”. Acestea definesc exact ce efecte pot fi promovate pentru fiecare substanță activă.",
+     "Indiferent cât de multă știință susține un efect, nu ai voie să îl promovezi în publicitate până când Health Claim-ul nu a fost aprobat de EFSA. Rămâi la lista extinsă a afirmațiilor permise."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "Personalizarea pe baza stilului de viață și a valorilor sanguine — fără probleme."
+     },
+     {
+      "tone": "caveat",
+      "text": "Personalizarea pe baza analizei genetice — doar cu un disclaimer (vezi „varianta mai îndrăzneață”)."
+     },
+     {
+      "tone": "safe",
+      "text": "Exemplu de health claim: „Contribuie la menținerea sănătății pielii” (cu zinc), „Contribuie la funcționarea normală a sistemului imunitar”."
+     },
+     {
+      "tone": "safe",
+      "text": "Exemplu de mărturie: „Îl iau pentru că am pielea uscată” — combinat cu Health Claim-ul pentru zinc — permis."
+     },
+     {
+      "tone": "critical",
+      "text": "NU este permisă: nicio afirmație al cărei Health Claim nu a fost aprobat de EFSA (de ex. „îți vindecă boala”)."
+     }
+    ]
+   },
+   {
+    "title": "Recenziile și mărturiile clienților",
+    "paragraphs": [
+     "Dacă oferi un sistem de recenzii pentru clienți (de ex. pe site-ul tău), nu poți controla dacă un client face afirmații nepermise (de ex. „Produsul X m-a vindecat”). Acest lucru este permis, în principiu, dar trebuie gestionat cu atenție."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "Pe propriul sistem, moderabil: etichetează clar afirmațiile ca opinii ale clienților și menționează că nu ți le însușești."
+     },
+     {
+      "tone": "safe",
+      "text": "Afirmațiile care încalcă Regulamentul privind Health Claims ar trebui șterse."
+     },
+     {
+      "tone": "safe",
+      "text": "În cazul unei recenzii masiv greșite: adaugă un răspuns corectiv din partea companiei."
+     },
+     {
+      "tone": "caveat",
+      "text": "Pe sistemele externe, nemoderabile: declară-le clar și nu promova niciodată selectiv afirmații false."
+     },
+     {
+      "tone": "critical",
+      "text": "Promovarea sau evidențierea activă a afirmațiilor false — chiar și atunci când sunt voci ale clienților."
+     }
+    ]
+   }
+  ]
+ }
+}
+/* END FAQTX */
 const clone = (o) => JSON.parse(JSON.stringify(o))
 const vid = (id) => (id && VIDEOS[id]) ? VIDEOS[id] : null
 
@@ -1302,9 +1933,16 @@ export const COURSES_RO = COURSES_EN.map((en) => {
     if (tx.introQuestions) c.introQuestions = tx.introQuestions
     if (Array.isArray(tx.questions) && tx.questions.length) c.questions = tx.questions
   }
+  /* FAQ/Artikel/Segment-Titel */
+  const ftx = FAQTX[en.id]
+  if (ftx) {
+    if (ftx.faqGroups) c.faqGroups = clone(ftx.faqGroups)
+    if (ftx.articleSections) c.articleSections = clone(ftx.articleSections)
+  }
   if (en.youtubeId) { const v = vid(en.youtubeId); if (v) c.youtubeId = v; else delete c.youtubeId }
   if (en.videoSegments && en.videoSegments.length) {
-    c.videoSegments = en.videoSegments.map(s => { const v = vid(s.youtubeId); return v ? { ...clone(s), youtubeId: v } : null }).filter(Boolean)
+    const segTitles = (FAQTX[en.id] || {}).videoSegmentTitles || []
+    c.videoSegments = en.videoSegments.map((s, i) => { const v = vid(s.youtubeId); return v ? { ...clone(s), youtubeId: v, title: segTitles[i] || s.title } : null }).filter(Boolean)
     if (!c.videoSegments.length) delete c.videoSegments
   }
   return c

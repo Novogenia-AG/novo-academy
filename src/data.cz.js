@@ -1325,6 +1325,637 @@ const TXT = {
  }
 }
 
+const FAQTX = {
+ "wm-report-en": {
+  "videoSegmentTitles": [
+   "Úvod",
+   "Analýza hmotnosti — nutriční typ",
+   "Analýza hmotnosti — pohybový a kalorický typ",
+   "Jak číst vědecké tabulky",
+   "Analýza hmotnosti — ztráta svalové hmoty",
+   "Analýza hmotnosti — hlad a sytost",
+   "Analýza hmotnosti — rozložení tuku",
+   "Analýza hmotnosti — jo-jo efekt",
+   "Analýza hmotnosti — seznam potravin",
+   "Analýza hmotnosti — systém potravinových položek",
+   "Analýza hmotnosti — tabulky pohybových aktivit",
+   "Závěrečné poznámky"
+  ]
+ },
+ "wm-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Co je Genová dieta?",
+    "items": [
+     {
+      "q": "Co přesně je Genová dieta?",
+      "a": "Genová dieta je personalizovaný program hubnutí a výživy založený na analýze tvých genů. Místo standardního dietního plánu dostaneš individuální doporučení — protože tvůj metabolismus reaguje geneticky jinak než metabolismus druhých: na tuky, na sacharidy, na pohyb i na hlad."
+     },
+     {
+      "q": "Co vlastně dostanu?",
+      "a": "Dostaneš individuální zprávu s optimálním poměrem tuků, sacharidů a bílkovin, personalizovaný seznam potravin s více než 1 500 položkami, čtyřtýdenní denní jídelníček, knihu receptů a konkrétní doporučení pro sport a pohyb, která odpovídají tvému genetickému profilu."
+     },
+     {
+      "q": "Jak dlouho platí má doporučení?",
+      "a": "Tvé geny se během života nemění, takže genetické výsledky zůstávají trvale platné. Samotné vyhodnocení se ale díky novým výzkumům průběžně zpřesňuje — od spuštění programu do něj bylo zapracováno přes 770 vylepšení."
+     },
+     {
+      "q": "Musím test pravidelně opakovat?",
+      "a": "Ne. Geny zůstávají celý život stejné — jednou analyzovaný gen vždy vrátí stejný výsledek. Co se neustále zlepšuje, je samotné vyhodnocení, do kterého se průběžně zapracovávají nové vědecké poznatky."
+     }
+    ]
+   },
+   {
+    "title": "Jak funguje genetická analýza?",
+    "items": [
+     {
+      "q": "Jak program Genové diety funguje?",
+      "a": "Z tvých genetických dat se vyberou varianty relevantní pro regulaci hmotnosti. Z nich pak vypočítáme: jak citlivé je tvé tělo na tuky a na sacharidy? Jak účinný je u tebe pohyb? Jak účinné je omezení kalorií? Máš sklon k jo-jo efektu, ke ztrátě svalové hmoty nebo k břišnímu tuku? Z těchto výsledků vzejde tvé optimální rozložení makroživin a individuální výživový plán."
+     },
+     {
+      "q": "Nejde při hubnutí prostě jen o kalorický deficit?",
+      "a": "Nejen. Studie ukazují, že lidé reagují geneticky velmi rozdílně na tuky a na sacharidy — někdo při kalorickém přebytku téměř nepřibere, jiný ze stejného množství kalorií přibere výrazně víc. I účinnost pohybu se geneticky liší až trojnásobně."
+     },
+     {
+      "q": "Existuje 7 různých nutričních typů?",
+      "a": "Ano: typ využívající tuky (vyšší podíl tuků), smíšený typ I–V (různá smíšená rozložení) a typ využívající sacharidy (vyšší podíl sacharidů). V kombinaci s individuálními faktory, jako je bazální metabolismus, účinnost pohybu a sklon k jo-jo efektu, vzniká přes 6 500 možných genetických profilů."
+     },
+     {
+      "q": "Od jakého věku je program vhodný pro děti?",
+      "a": "Program je v zásadě použitelný i u dětí, ale bez výpočtu kalorií, doporučení cílové hmotnosti, denních jídelníčků a knihy receptů — u rostoucích dětí totiž nedávají smysl. Kniha receptů je pro děti mladší 14 let zablokovaná."
+     }
+    ]
+   },
+   {
+    "title": "Blokátor kalorií",
+    "items": [
+     {
+      "q": "Co je Blokátor kalorií?",
+      "a": "Blokátor kalorií je personalizovaný produkt pro hubnutí ve formě pelet mikrotransportérů. Obsahuje individuální poměr blokátorů tuků a sacharidů, sestavený podle tvé DNA analýzy. Ve spojení se sníženým příjmem kalorií a tuků prokazatelně podporuje hubnutí — ve spojení s vyváženou stravou a životním stylem pomáhá udržet hmotnost."
+     },
+     {
+      "q": "Jak se Blokátor kalorií užívá?",
+      "a": "Denně před obědem a před večeří s velkým douškem vody. Pelety se polykají celé, nežvýkají se."
+     },
+     {
+      "q": "Jaké jsou účinné látky?",
+      "a": "Blokátorem tuků je Opuntia ficus-indica (OFI) — vláknina z opuncie. Tato rostlinná vláknina vytváří v trávicím traktu gelovitou matrici, která váže tuky z potravy a snižuje jejich vstřebávání. Blokátorem sacharidů je fazeolamin (z bílých fazolí), který inhibuje alfa-amylázu. Obojí je čistě rostlinného původu."
+     },
+     {
+      "q": "Je Blokátor kalorií veganský/vegetariánský?",
+      "a": "Ano. Blokátor tuků (Opuntia ficus-indica) i blokátor sacharidů (fazeolamin z bílých fazolí) jsou čistě rostlinného původu. Blokátor kalorií je vhodný pro vegetariány i vegany, je bez lepku, bez laktózy a bez umělých barviv."
+     }
+    ]
+   }
+  ]
+ },
+ "nut-report-en": {
+  "videoSegmentTitles": [
+   "Výživová analýza — úvod",
+   "Kofein a káva",
+   "Omega 3",
+   "Kyselina listová",
+   "Homocystein",
+   "Koenzym Q10",
+   "Detoxikace — karcinogeny",
+   "Detoxikace — chemikálie a těžké kovy",
+   "Volné radikály",
+   "Selen",
+   "Sůl a krevní tlak",
+   "Vitamin D (část 1)",
+   "Vitamin D (část 2)",
+   "Laktóza a vápník",
+   "Záněty",
+   "LDL cholesterol",
+   "Triglyceridy",
+   "Železo",
+   "Metylace",
+   "Závěr — poslední část",
+   "Princip hodnocení potravin",
+   "Seznam potravin"
+  ]
+ },
+ "nut-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Základy — geny a výživa",
+    "items": [
+     {
+      "q": "Proč působí stejná potravina na různé lidi různě?",
+      "a": "Protože živiny metabolizujeme geneticky odlišně. Gen MTHFR například určuje, zda tvé tělo dokáže aktivovat kyselinu listovou na bioaktivní formu. Gen CYP1A2 určuje, jak rychle odbouráváš kofein. Takové varianty mění, jak živina působí právě v TVÉM těle."
+     },
+     {
+      "q": "Kolik genů výživová analýza zohledňuje?",
+      "a": "Asi 60 genových variant relevantních pro výživu. Mimo jiné: MTHFR (aktivace folátu), CYP1A2 (odbourávání kofeinu), ACE (sůl / krevní tlak), VDR (receptor pro vitamin D), HFE (vstřebávání železa), LCT (perzistence laktázy) a geny antioxidační obrany (SOD, CAT, GPX)."
+     },
+     {
+      "q": "Řekne mi analýza, jestli mám pít kávu?",
+      "a": "Nepřímo ano. Gen CYP1A2 ukazuje, zda odbouráváš kofein rychle (Warrior), nebo pomalu. Pomalí odbourávači nesou kvůli kofeinu vyšší kardiovaskulární riziko — kávě je lepší se vyhnout, nebo ji nahradit bezkofeinovou variantou, aby zůstal zachován přínos polyfenolů."
+     },
+     {
+      "q": "Nahrazuje analýza lékaře nebo nutričního terapeuta?",
+      "a": "Ne. Je to doplňková pomůcka pro rozhodování, založená na stabilních genetických datech. Akutní obtíže, nemoci nebo speciální diety vždy patří do rukou lékaře nebo kvalifikovaného nutričního terapeuta."
+     }
+    ]
+   },
+   {
+    "title": "Klíčová genová témata",
+    "items": [
+     {
+      "q": "Co pro mě znamená defekt MTHFR?",
+      "a": "MTHFR aktivuje kyselinu listovou na metylfolát — formu, kterou tvé tělo dokáže skutečně využít. Při defektu můžeš užívat běžný doplněk s velkým množstvím kyseliny listové a přesto mít funkční nedostatek. Přechod na metylfolát tento problém řeší."
+     },
+     {
+      "q": "Mám variantu HFE — je pro mě suplementace železa nebezpečná?",
+      "a": "Může být. Některé varianty HFE vedou během desetiletí k přetížení železem — tělo ho z potravy vstřebává příliš mnoho a ukládá ho v játrech, srdci a kloubech. Doplňky se železem proto užívej jen tehdy, když krevní testy prokáží skutečný nedostatek."
+     },
+     {
+      "q": "Citlivost na sůl (ACE) — znamená to, že se musím soli vzdát?",
+      "a": "Ne úplně. Znamená to, že tvůj krevní tlak reaguje na sůl silněji než průměr. Omezení soli je ve tvém případě mimořádně účinná páka — mnohem víc než u lidí, kteří citliví nejsou."
+     }
+    ]
+   },
+   {
+    "title": "Praktické otázky",
+    "items": [
+     {
+      "q": "Mám přestat jíst své oblíbené potraviny, když jsou hodnocené nepříznivě?",
+      "a": "Ne. Zpráva je dlouhodobým vodítkem. Občasná konzumace je v pořádku. Cílem je rovnováha v horizontu týdnů a měsíců, nikoli dokonalost v jednom jediném dni."
+     },
+     {
+      "q": "Jak rychle pocítím účinek?",
+      "a": "Záleží na tom, co změníš. Citlivost na kofein pocítíš jinak už během několika dní. Přechod u kyseliny listové se na krevních markerech projeví za 2–3 měsíce. Dlouhodobá doporučení, jako je omezení soli nebo nasycených tuků, se do měřitelného kardiovaskulárního přínosu promítnou za 6–12 měsíců."
+     },
+     {
+      "q": "Je seznam doporučení neměnný?",
+      "a": "Ne. Doporučení vycházejí z aktuálního vědeckého konsenzu. Jak výzkum postupuje, zpráva se pravidelně aktualizuje — bez jakýchkoli dalších nákladů."
+     }
+    ]
+   }
+  ]
+ },
+ "pg-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Talent a genetika ve sportu",
+    "items": [
+     {
+      "q": "Jak velký vliv mají geny na sportovní výkonnost?",
+      "a": "Odhady se podle disciplíny pohybují mezi 30 a 70 %. Talent (rychlá svalová vlákna, potenciál VO2max, stabilita pojivové tkáně) je převážně geneticky daný; i samotná reakce na trénink — jak silně tělo odpovídá na podnět — se geneticky liší 2 až 3krát."
+     },
+     {
+      "q": "Jaký je rozdíl mezi objemem svalů a svalovou silou?",
+      "a": "Objem znamená více hmoty (cíl kulturisty) — trénink v rozsahu 6–12 opakování. Síla znamená vyšší výkon při menší hmotě — trénink v rozsahu 1–6 opakování s vysokou zátěží. Oba tréninkové cíle vyžadují jinou strategii a jiné pauzy na zotavení."
+     },
+     {
+      "q": "Můžu se stát úspěšným sportovcem i se „špatnými“ geny?",
+      "a": "Ano. Genetika určuje talent, ale rozhodující rozdíl dělá trénink, důslednost a správná strategie. Když znáš svá genetická slabá místa, můžeš je vyrovnat (např. stravou bohatou na antioxidanty, delšími pauzami na zotavení, pečlivým rozcvičením)."
+     }
+    ]
+   },
+   {
+    "title": "Riziko zranění a regenerace",
+    "items": [
+     {
+      "q": "Má zpráva ukazuje nepříznivé geny pojivové tkáně (COL5A1, MMP3). Co mám dělat?",
+      "a": "Trénuj se zvýšenou opatrností: důkladné rozcvičení, méně výbušné zátěže, dokud se tělo neadaptuje, delší zotavení mezi intenzivními jednotkami a dostatečný příjem bílkovin a vitaminu C na podporu syntézy kolagenu. Vyhýbej se náhlým skokům v objemu tréninku."
+     },
+     {
+      "q": "Proč mi zpráva doporučuje antioxidanty?",
+      "a": "Intenzivní pohyb produkuje velké množství volných radikálů. Pokud jsou tvé antioxidační geny (SOD2, CAT, GPX) slabé, regenerace je pomalejší a hromadí se mikrozáněty. Vitamin C, vitamin E, polyfenoly a selen tyto obranné systémy přímo podporují."
+     },
+     {
+      "q": "Co je „deload“ a jak často ho mám zařazovat?",
+      "a": "Deload je týden mírnějšího tréninku (např. první jednotka na poloviční zátěž, druhá na dvě třetiny). Dává tělu čas na opravné procesy a na psychický reset. Obvykle zhruba každých 5 týdnů — podle tvé genetické schopnosti regenerace a predispozice ke stresu."
+     }
+    ]
+   },
+   {
+    "title": "Výživa pro sportovce",
+    "items": [
+     {
+      "q": "Jak spolu souvisí sportovní zpráva a výživová zpráva?",
+      "a": "Doplňují se. Sportovní zpráva ukazuje tvůj výkonnostní profil, riziko zranění a regeneraci. Výživová zpráva ti říká, jaká palivová směs (tuky/sacharidy/bílkoviny) a jaké doplňky stravy tento profil podpoří."
+     },
+     {
+      "q": "Mám užívat proteinový prášek?",
+      "a": "Nutně ne. Pokud pokryješ 1,6–2,0 g bílkovin na kilogram tělesné hmotnosti běžnou stravou a mezi tréninky se dobře zotavíš, žádný prášek nepotřebuješ. Pokud se ti tato čísla naplnit nedaří, může kvalitní proteinový prášek příjem zjednodušit."
+     }
+    ]
+   }
+  ]
+ },
+ "tx-report-en": {
+  "videoSegmentTitles": [
+   "Detoxikace — karcinogeny",
+   "Detoxikace — chemikálie a těžké kovy",
+   "Volné radikály (oxidační stres)",
+   "Selen"
+  ]
+ },
+ "bo-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Genetický základ stresu",
+    "items": [
+     {
+      "q": "Co je gen COMT a proč je důležitý?",
+      "a": "COMT (katechol-O-metyltransferáza) odbourává v prefrontální kůře dopamin, adrenalin a noradrenalin. Běžná varianta (Val158Met) určuje, jak rychle toto odbourávání probíhá — mezi rychlou a pomalou variantou je rozdíl 3–4násobný. Tím se reguluje, jak dlouho zůstane stresový signál v systému."
+     },
+     {
+      "q": "Jaký je rozdíl mezi typem Warrior a Worrier?",
+      "a": "Warrior (Val/Val): dopamin se odbourává rychle — vyšší odolnost vůči akutnímu stresu, výkon pod tlakem. Worrier (Met/Met): dopamin se odbourává pomalu — silná koncentrace v běžném dni, ale zranitelnost vůči chronickému stresu. Zhruba 50 % lidí patří ke smíšenému typu."
+     },
+     {
+      "q": "A co BDNF?",
+      "a": "BDNF (Brain-Derived Neurotrophic Factor) podporuje růst neuronů a odolnost. Varianta Met (Val66Met) snižuje vylučování BDNF; její nositelé se ze stresu zotavují pomaleji a jsou při chronické zátěži zranitelnější vůči depresi. BDNF lze zvýšit pohybem, spánkem, učením a přerušovaným půstem."
+     }
+    ]
+   },
+   {
+    "title": "Praktická doporučení",
+    "items": [
+     {
+      "q": "Jsem typ Worrier — jsem odsouzený k vyhoření?",
+      "a": "Ne. Pomalá varianta COMT zvyšuje citlivost, nikoli osud. Když predispozici znáš, můžeš jednat včas: jasné rutiny na zotavení, spánek jako priorita, dechová cvičení nebo meditace, vyhýbání se hromadění mnoha zdrojů stresu najednou. V horizontu let to zabrání tomu, aby se systém dostal do chronického přetížení."
+     },
+     {
+      "q": "Jsem typ Warrior — musím se přesto vyhoření obávat?",
+      "a": "Akutní riziko je nižší, ale zotavení je důležité i tak. Pocit „bez stresu“ může v klidnějších obdobích zakrývat nedostatečnou stimulaci. Naplánuj si strukturu pro fáze soustředění a chraň si spánek."
+     },
+     {
+      "q": "Co pomáhá všem, bez ohledu na genotyp?",
+      "a": "Spánek (7–9 h), pravidelný pohyb (zejména vytrvalostní — zvyšuje BDNF a reguluje kortizol), sociální kontakt, smysluplná práce a vyhýbání se nadužívání stimulantů (alkohol, nadměrný kofein)."
+     }
+    ]
+   },
+   {
+    "title": "Co s výsledkem dělat",
+    "items": [
+     {
+      "q": "Ve zprávě se mi objevila „červená zóna“. Mám se znepokojovat?",
+      "a": "Ne. Červená zóna označuje zvýšené riziko v jedné konkrétní oblasti, nikoli diagnózu. Je to pobídka jednat včas — přesný opak fatalistického verdiktu."
+     },
+     {
+      "q": "Kde najdu konkrétní doporučení pro svůj genotyp?",
+      "a": "Ve zprávě o vyhoření — obsahuje podrobná doporučení k meditaci, výživě, pohybu, spánkové hygieně a strategiím zvládání stresu, přizpůsobená tvému individuálnímu profilu COMT a dalším vyhodnoceným faktorům."
+     }
+    ]
+   }
+  ]
+ },
+ "ba-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Základy — telomery a stárnutí",
+    "items": [
+     {
+      "q": "Co jsou telomery a proč jsou pro stárnutí důležité?",
+      "a": "Telomery jsou ochranné čepičky na konci každého chromozomu — samy neobsahují žádné geny, ale chrání geny před ztrátou při buněčném dělení. S každým buněčným dělením se malý kousek telomery odlomí. Po 50–70 děleních jsou spotřebované; buňka přejde do jakéhosi spánkového režimu (senescence) a hromadí se v těle jako „stará buňka“."
+     },
+     {
+      "q": "Jaký je rozdíl mezi chronologickým a biologickým věkem?",
+      "a": "Chronologický věk je doba tvého života v letech — pevně daná a neměnná. Biologický věk ukazuje, jak „staré“ jsou tvé buňky ve skutečnosti. Dva lidé se stejným chronologickým věkem se mohou biologickým věkem lišit až o 20 let — podle genetické predispozice a životního stylu."
+     },
+     {
+      "q": "Co dělá telomeráza?",
+      "a": "Telomeráza je enzym, který dokáže telomery opravovat a znovu prodlužovat. Její aktivita je zčásti geneticky daná — lidé se silnou aktivitou telomerázy si telomery zachovávají lépe; u lidí se sníženou aktivitou se telomery zkracují rychleji, zejména při oxidačním stresu."
+     },
+     {
+      "q": "Které geny se v analýze vyhodnocují?",
+      "a": "Především telomerázu a s ní související geny (TERT, BICD1, PPARG), které řídí udržování telomer. Ukazují, jak dobře dokáže tvé tělo telomery opravovat a zachovávat — jde o hrubý odhad tvé genetické anti-aging kapacity."
+     }
+    ]
+   },
+   {
+    "title": "Co dokáže životní styl",
+    "items": [
+     {
+      "q": "Funguje středomořská strava u každého?",
+      "a": "Překvapivě ne. Studie ukazují, že telomery prodlužuje pouze u lidí s konkrétní genovou variantou — u ostatních se na délce telomer žádný měřitelný účinek neprojeví. Jasný důkaz toho, že stejné doporučení ohledně životního stylu nefunguje u každého stejně."
+     },
+     {
+      "q": "Které živiny telomery podporují?",
+      "a": "Vitamin D3, omega-3, vitamin E, resveratrol a ginkgo. Když je genetický ochranný systém slabý, lze tyto živiny cíleně využít ke zpomalení zkracování telomer."
+     },
+     {
+      "q": "Můžu volné radikály ovlivnit?",
+      "a": "Ano — antioxidanty v potravě (vitamin C, vitamin E, polyfenoly z bobulovin, čaje atd.) neutralizují volné radikály dřív, než poškodí buňky. Při geneticky oslabené antioxidační obraně je strava bohatá na antioxidanty obzvlášť důležitá."
+     }
+    ]
+   },
+   {
+    "title": "Vliv a očekávání",
+    "items": [
+     {
+      "q": "Jak rychle uvidím výsledky anti-aging opatření?",
+      "a": "Účinky na telomery jsou pomalé — měsíce až roky. Některé mezistupňové markery (oxidační stres, záněty, lipidový profil krve) se posunou během několika týdnů. Nejsilnější dopad životního stylu na biologický věk se sčítá v horizontu desetiletí."
+     },
+     {
+      "q": "Jaký praktický užitek mi tato znalost přináší?",
+      "a": "Víš, zda geneticky inklinuješ k rychlejšímu, nebo pomalejšímu stárnutí buněk — a můžeš jednat cíleně. Při nepříznivé predispozici se zaměř na: stravu bohatou na antioxidanty, cílené doplňky stravy (D3, omega-3, resveratrol), pravidelný, ale ne nadměrný pohyb, kvalitní spánek a snižování stresu."
+     }
+    ]
+   }
+  ]
+ },
+ "supp-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Základy — proč personalizovaně?",
+    "items": [
+     {
+      "q": "Proč vlastně potřebuji personalizovanou suplementaci?",
+      "a": "Protože tvé tělo některé živiny geneticky využívá lépe nebo hůře než tělo někoho jiného — a protože tvou individuální potřebu navíc utváří životní styl (pohyb, spánek, stres, strava). Standardní tablety počítají s „průměrným člověkem“, a proto mnohé individuální potřeby pokrývají buď příliš málo, nebo příliš."
+     },
+     {
+      "q": "V čem se liší od běžných multivitaminů z drogerie?",
+      "a": "Ve třech hlavních bodech: (1) výběr živin a jejich dávkování je přizpůsoben tvým genům; (2) uvolňování je načasované (např. vitamin C s postupným uvolňováním, Slow-Release), aby hladiny v krvi zůstaly konstantní; (3) konkurující si živiny, jako je vápník a zinek, se uvolňují odděleně v prostoru i v čase, takže se vzájemně neblokují."
+     },
+     {
+      "q": "Kolik genů analýza zohledňuje?",
+      "a": "Přes 60 genových variant relevantních pro živiny — mezi nimi geny metabolismu vitaminů (folát – MTHFR, vitamin D – VDR, vitamin B12 – FUT2), geny vstřebávání minerálů (železo – HFE, vápník – LCT) a antioxidační obranné systémy (GST, SOD, CAT)."
+     }
+    ]
+   },
+   {
+    "title": "Technologie mikrotransportérů",
+    "items": [
+     {
+      "q": "Co jsou mikrotransportéry?",
+      "a": "Mikrotransportéry jsou drobné pelety milimetrové velikosti, z nichž každá nese jednotlivé živiny ve specifických ochranných obalech. Každý mikrotransportér se „otevře“ v jiném čase a na jiném místě trávicího traktu — díky tomu lze i běžně si konkurující živiny užívat společně, ale vstřebávat odděleně."
+     },
+     {
+      "q": "Proč se vitamin C uvolňuje postupně (Slow-Release)?",
+      "a": "Vitamin C má velmi krátký biologický poločas (asi 30 minut). Jednorázová vysoká dávka se z velké části nevyužitá vyloučí. Postupné uvolňování (Slow-Release) v mikrotransportérech napodobuje přirozený, plynulý příjem z potravy během dne a udržuje stabilní hladiny v krvi — fyziologicky je to mnohem smysluplnější."
+     },
+     {
+      "q": "Jak to funguje u vápníku a zinku, které se vzájemně blokují?",
+      "a": "Vápník a zinek soutěží o stejné střevní transportéry — při současném užití se vstřebá méně obou. V technologii mikrotransportérů se zinek uvolní okamžitě v horní části tenkého střeva, vápník až o několik hodin později v hlubším úseku střeva. Užívají se najednou, ale uvolňují se na jiných místech a v jiném čase — žádná konkurence."
+     }
+    ]
+   },
+   {
+    "title": "Praktické otázky",
+    "items": [
+     {
+      "q": "Musím tablety užívat v pevně daných časech?",
+      "a": "Doporučujeme stálou denní dobu (např. k snídani), aby hladiny v krvi zůstaly stabilní. Nemusíš hlídat minuty — stačí přibližná rutina. Nejdůležitější je užívat je vůbec pravidelně."
+     },
+     {
+      "q": "Jak rychle pocítím účinek?",
+      "a": "Liší se to podle živiny. Některé účinky (např. lepší energie u vitaminů skupiny B) se dostaví během dní až týdnů; jiné (např. kostní metabolismus u vitaminu D) se rozvíjejí měsíce. Personalizovaná suplementace není rychle působící lék — vyrovnává dlouhodobé mezery v příjmu živin."
+     },
+     {
+      "q": "Budu suplementaci potřebovat navždy?",
+      "a": "U geneticky podmíněných metabolických slabin ano, protože predispozice trvá celý život. Potřeby dané životním stylem (např. vyšší potřeba při stresu, sportu, nemoci) se mohou měnit. Analýza ti zároveň ukáže, kde tvá genetika vytváří trvale zvýšenou potřebu a kde stačí samotná úprava životního stylu."
+     },
+     {
+      "q": "Můžu suplementaci kombinovat s léky?",
+      "a": "Obecně ano — všechny živiny jsou dávkovány v množstvích běžných v potravě. Při chronickém onemocnění nebo dlouhodobé medikaci to prober se svým lékařem, protože jednotlivé živiny (např. vitamin K, železo) mohou s některými léky interagovat."
+     },
+     {
+      "q": "Jak vychází cena personalizované suplementace ve srovnání s multivitaminy z drogerie?",
+      "a": "Na den výrazně dráž — obvykle 3–5× více než nejlevnější drogeriové produkty. Na oplátku dostaneš geneticky přizpůsobené složení, které se pravděpodobně skutečně vstřebá, místo aby se z velké části nevyužité vyloučilo. Srovnání „na miligram vitaminu“ je zavádějící; smysluplnější je „na miligram, který se opravdu dostane do krve“."
+     }
+    ]
+   }
+  ]
+ },
+ "beauty-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Základy — co genetická analýza pleti dokáže",
+    "items": [
+     {
+      "q": "Co je genetická analýza pleti (DNAbeauty Control)?",
+      "a": "Analýza tvých genů zaměřená na oblasti významné pro pleť: odbourávání kolagenu, citlivost na UV, pigmentace, hydratace pleti, antioxidační obrana a sklon k zánětům. Z tvých DNA dat se vyhodnotí přes 20 genových variant významných pro pleť a převedou se do praktických doporučení pro péči a ochranu."
+     },
+     {
+      "q": "V čem se liší od kosmetické analýzy pleti?",
+      "a": "Kosmetické analýzy měří aktuální stav pleti — hydrataci, maz, pigmentaci atd. — a reagují na něj. Genetická analýza pleti ti ukáže, které vlastnosti a slabiny jsou TRVALE zakotvené ve tvých genech. Můžeš tak jednat preventivně a s předstihem, místo reaktivního řešení až ve chvíli, kdy jsou problémy vidět."
+     },
+     {
+      "q": "Kolik genů se analyzuje?",
+      "a": "Přes 20 genových variant významných pro pleť. Hlavní oblasti: MMP1 (odbourávání kolagenu, vrásky), MC1R (citlivost na UV, pigmentace), FLG (filagrin, hydratace a bariéra pleti), SOD2/CAT/GPX (antioxidační obrana) a zánětlivé geny jako IL6 a TNF-α."
+     },
+     {
+      "q": "Jak dlouho je můj výsledek platný?",
+      "a": "Tvé geny se během života nemění — základní výsledky proto zůstávají trvale platné. Co se zpřesňuje, je samotné vyhodnocení, do kterého se průběžně zapracovávají nové výzkumy."
+     }
+    ]
+   },
+   {
+    "title": "Genetika a stárnutí pleti — jak porozumět výsledku",
+    "items": [
+     {
+      "q": "Co znamená „aktivní“ varianta MMP1?",
+      "a": "MMP1 (matrixová metaloproteináza 1) odbourává v pleti kolagen. Geneticky vysoce aktivní varianta vede k rychlejšímu odbourávání kolagenu — pleť dříve ztrácí pevnost a vrásky se tvoří rychleji. Protiopatření: důsledná UV ochrana, antioxidanty, nekouřit, péče s retinoidy nebo peptidy."
+     },
+     {
+      "q": "Co mi MC1R prozradí o citlivosti na UV?",
+      "a": "MC1R řídí tvorbu eumelaninu (tmavý pigment, chrání před UV) oproti feomelaninu (načervenalý pigment, který pod UV zářením vytváří volné radikály). Nepříznivé varianty: rychlejší spálení, vyšší riziko poškození UV zářením a rakoviny kůže — je potřeba přísnější disciplína při používání opalovacího krému."
+     },
+     {
+      "q": "Proč je FLG (filagrin) důležitý pro moji péči o pleť?",
+      "a": "FLG kóduje filagrin, bílkovinu, která drží pohromadě přirozenou kožní bariéru a váže vlhkost. Při geneticky snížené aktivitě FLG je kožní bariéra slabší — vlhkost se ztrácí rychleji a dráždivé látky snáze pronikají dovnitř. Doporučení: péče posilující bariéru (ceramidy, cholesterol, volné mastné kyseliny), jemné čisticí přípravky, žádné vysušující tenzidy."
+     },
+     {
+      "q": "Ovlivňuje to opravdu měřitelně můj vzhled?",
+      "a": "Ano, ale ne ze dne na den. Genetické slabiny se sčítají v průběhu let. Dva stejně staří lidé se mohou biologicky lišit o 10–15 let — podle toho, jak dobře svá genetická slabá místa vyrovnávají životním stylem."
+     }
+    ]
+   },
+   {
+    "title": "Praktická doporučení a očekávání",
+    "items": [
+     {
+      "q": "Jak rychle pocítím účinek personalizované péče?",
+      "a": "Některé účinky se projeví během týdnů (hydratace, jas pleti, podráždění), jiné až po měsících či letech (tvorba vrásek, pigmentace, struktura pleti). Personalizovaná péče není rychlé řešení, ale dlouhodobá ochranná strategie."
+     },
+     {
+      "q": "Potřebuji drahé krémy?",
+      "a": "Nutně ne. Rozhoduje, zda přípravek obsahuje správné složky pro tvou genetickou predispozici — a ty se najdou v každé cenové kategorii. Záleží na koncentraci účinných látek, na receptuře a na důslednosti používání. Dostupné sérum s vitaminem C může překonat drahý krém bez účinných látek."
+     },
+     {
+      "q": "Je můj životní styl důležitější než mé geny?",
+      "a": "Obojí působí společně. Geny určují potenciál a slabá místa — životní styl rozhoduje o tom, nakolik tato slabá místa vyrovnáš, nebo naopak zesílíš. Pravidlo palce: při geneticky nepříznivé predispozici je důsledný životní styl ještě důležitější než u „šťastných genů“."
+     }
+    ]
+   }
+  ]
+ },
+ "legal-basics-en": {
+  "articleSections": [
+   {
+    "title": "Reklama na produkty Novogenia",
+    "paragraphs": [
+     "Novogenia se pohybuje na hranici vědeckých možností a nabízí jak zavedené analytické postupy, jako jsou krevní testy, tak i pokročilé možnosti, jako jsou genové analýzy a personalizované produkty. Protože působíme ve zdravotní oblasti, platí pro reklamní tvrzení přísná pravidla, která je nutné dodržovat. Zejména v Německu působí sdružení pro výzvy k zdržení se jednání, která vyhledávají nejasná nebo zavádějící tvrzení a rozesílají za ně výzvy.",
+     "Jsme pevně přesvědčeni, že naše doporučení fungují a zohledňují nejpokročilejší stav vědy. Bohužel to, co produkt dokáže, a to, co se o něm smí tvrdit v reklamě, jsou někdy dvě různé věci."
+    ]
+   },
+   {
+    "title": "Reklama s krevními testy",
+    "paragraphs": [
+     "Krevní testy jsou dobře zavedené a podléhají jen mírným reklamním omezením. Všechna níže uvedená tvrzení jsou bezproblémová."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "„Testujeme krev.“"
+     },
+     {
+      "tone": "safe",
+      "text": "„Diagnostikujeme nedostatky.“"
+     },
+     {
+      "tone": "safe",
+      "text": "„Dáváme doporučení k mikroživinám a výživě.“"
+     },
+     {
+      "tone": "safe",
+      "text": "„Na základě výsledku personalizujeme doplňky stravy.“"
+     },
+     {
+      "tone": "safe",
+      "text": "Příznaky nedostatku (např. únava při nedostatku železa) — nejlépe s uvedením zdroje (např. odborné lékařské společnosti)."
+     },
+     {
+      "tone": "safe",
+      "text": "Reference: „Býval jsem často unavený, test odhalil nedostatek železa a pomohlo mi to“ — povoleno."
+     }
+    ]
+   },
+   {
+    "title": "Reklama s genovými testy",
+    "paragraphs": [
+     "DNA analýzy zatím nejsou standardní metodou v každé lékařské ordinaci. Sdružení pro výzvy k zdržení se jednání kriticky prověřují technologie, které většina odborníků dosud nepovažuje za standardní postup. DNA analýza je proto pod zvláštním dohledem.",
+     "Z pohledu sdružení pro výzvy k zdržení se jednání má DNA analýza dvě složky: vědecky ověřenou analýzu genetických vlastností (bezproblémová) a z ní odvozený program jednání (rizikový)."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "Stanovení genetických vlastností — podložené aktuální vědou."
+     },
+     {
+      "tone": "critical",
+      "text": "Konkrétní doporučení k výživě, sportu nebo doplňkům stravy odvozená z genů — bez specifických randomizovaných studií právě k tomuto doporučení."
+     }
+    ],
+    "callout": {
+     "tone": "safe",
+     "text": "Příklad: „Genový test dokazuje, že kyselina listová je pro tebe neúčinná“ — povoleno (podloženo studiemi)."
+    }
+   },
+   {
+    "title": "Bezpečná varianta — pouze genetické vlastnosti",
+    "paragraphs": [
+     "Bezpečná varianta se soustředí na tvrzení omezená na zjištěné genetické vlastnosti — bez odvozování konkrétních doporučení k jednání. Všechny níže uvedené formulace jsou z pohledu výzev k zdržení se jednání bezproblémové."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "„Analyzujeme tvé geny a zjistíme, zda snáze přibíráš z tuků, nebo ze sacharidů.“"
+     },
+     {
+      "tone": "safe",
+      "text": "„Zjistíš, zda u tebe víc zabírá pohyb, nebo omezení kalorií.“"
+     },
+     {
+      "tone": "safe",
+      "text": "„Dozvíš se, zda tvé tělo dokáže kyselinu listovou účinně aktivovat.“"
+     },
+     {
+      "tone": "safe",
+      "text": "„Dozvíš se, jaké talenty má tvé tělo ve výkonnostním sportu a jak dobře tvé svaly reagují na silový trénink.“"
+     }
+    ]
+   },
+   {
+    "title": "Odvážnější varianta — doporučení s upozorněním",
+    "paragraphs": [
+     "V této variantě se test inzeruje stejně jako výše — doporučení k jednání se ale komunikují jako logické závěry, nikoli jako vědecky potvrzené sliby. S upozorněním. Pozor: sdružení pro výzvy k zdržení se jednání upozornění (disclaimery) neuznávají vždy."
+    ],
+    "bullets": [
+     {
+      "tone": "caveat",
+      "text": "„Analyzujeme tvé geny a zjistíme, zda snáze přibíráš z tuků, nebo ze sacharidů. Na tomto základě odvozujeme logické závěry a výživové plány, které tento poznatek využívají.*“"
+     },
+     {
+      "tone": "caveat",
+      "text": "„Dozvíš se, zda tvé tělo dokáže aktivovat kyselinu listovou. Na tomto základě ti doporučíme alternativní mikroživiny, které můžeš užívat místo ní.*“"
+     },
+     {
+      "tone": "critical",
+      "text": "PROTIPŘÍKLAD: „Užívej metylfolát místo kyseliny listové“ — bez upozornění rizikové, protože k tomuto konkrétnímu doporučení neexistuje žádná randomizovaná studie."
+     }
+    ],
+    "callout": {
+     "tone": "caveat",
+     "text": "* Upozornění: Genetické vlastnosti jsou vědecky potvrzené. Z nich odvozené úpravy dávkování mikroživin nebo výživová doporučení zatím u mnoha účinků nedosahují úrovně zlatého standardu (randomizované, placebem kontrolované studie) a je třeba je chápat jako experimentální."
+    }
+   },
+   {
+    "title": "Reklama na personalizovanou suplementaci",
+    "paragraphs": [
+     "Evropská unie zavedla pro tvrzení o účincích doplňků stravy jasný regulatorní rámec — zdravotní tvrzení („Health Claims“). Ta přesně definují, které účinky je možné u jednotlivých účinných látek inzerovat.",
+     "Bez ohledu na to, jak silně je účinek vědecky podložen, není dovoleno ho v reklamě propagovat, dokud příslušné zdravotní tvrzení (Health Claim) neschválí EFSA. Drž se rozsáhlého seznamu povolených tvrzení."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "Personalizace na základě životního stylu a krevních hodnot — bezproblémová."
+     },
+     {
+      "tone": "caveat",
+      "text": "Personalizace na základě genetické analýzy — jen s upozorněním (viz „odvážnější varianta“)."
+     },
+     {
+      "tone": "safe",
+      "text": "Příklad zdravotního tvrzení: „Přispívá k udržení normálního stavu pokožky“ (u zinku), „Přispívá k normální funkci imunitního systému“."
+     },
+     {
+      "tone": "safe",
+      "text": "Příklad reference: „Užívám to, protože mám suchou pokožku“ — v kombinaci se zdravotním tvrzením pro zinek — povoleno."
+     },
+     {
+      "tone": "critical",
+      "text": "NEPOVOLENO: jakékoli tvrzení, jehož zdravotní tvrzení (Health Claim) neschválila EFSA (např. „vyléčí tvou nemoc“)."
+     }
+    ]
+   },
+   {
+    "title": "Recenze zákazníků a reference",
+    "paragraphs": [
+     "Pokud nabízíš systém zákaznických recenzí (např. na svém webu), nemůžeš ovlivnit, zda zákazník uvede nepřípustné tvrzení (např. „Produkt X mě vyléčil“). To je v zásadě povolené, ale je třeba s tím zacházet opatrně."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "Ve vlastním systému, který lze moderovat: jasně označ tvrzení jako názory zákazníků a uveď, že se s nimi neztotožňuješ."
+     },
+     {
+      "tone": "safe",
+      "text": "Tvrzení, která porušují nařízení o zdravotních tvrzeních (Health Claims), je vhodné smazat."
+     },
+     {
+      "tone": "safe",
+      "text": "U zásadně nesprávného hodnocení: připoj korektivní odpověď firmy."
+     },
+     {
+      "tone": "caveat",
+      "text": "U externích systémů, které nelze moderovat: jasně je označ a nikdy cíleně nepropaguj nepravdivá tvrzení."
+     },
+     {
+      "tone": "critical",
+      "text": "Aktivní propagace nebo zvýrazňování nepravdivých tvrzení — i když jde o hlasy zákazníků."
+     }
+    ]
+   }
+  ]
+ }
+}
+/* END FAQTX */
 const clone = (o) => JSON.parse(JSON.stringify(o))
 const vid = (id) => (id && VIDEOS[id]) ? VIDEOS[id] : null
 
@@ -1343,9 +1974,16 @@ export const COURSES_CZ = COURSES_EN.map((en) => {
     if (tx.introQuestions) c.introQuestions = tx.introQuestions
     if (Array.isArray(tx.questions) && tx.questions.length) c.questions = tx.questions
   }
+  /* FAQ/Artikel/Segment-Titel */
+  const ftx = FAQTX[en.id]
+  if (ftx) {
+    if (ftx.faqGroups) c.faqGroups = clone(ftx.faqGroups)
+    if (ftx.articleSections) c.articleSections = clone(ftx.articleSections)
+  }
   if (en.youtubeId) { const v = vid(en.youtubeId); if (v) c.youtubeId = v; else delete c.youtubeId }
   if (en.videoSegments && en.videoSegments.length) {
-    c.videoSegments = en.videoSegments.map(s => { const v = vid(s.youtubeId); return v ? { ...clone(s), youtubeId: v } : null }).filter(Boolean)
+    const segTitles = (FAQTX[en.id] || {}).videoSegmentTitles || []
+    c.videoSegments = en.videoSegments.map((s, i) => { const v = vid(s.youtubeId); return v ? { ...clone(s), youtubeId: v, title: segTitles[i] || s.title } : null }).filter(Boolean)
     if (!c.videoSegments.length) delete c.videoSegments
   }
   return c

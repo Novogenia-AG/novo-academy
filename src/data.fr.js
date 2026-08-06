@@ -1325,6 +1325,637 @@ const TXT = {
  }
 }
 
+const FAQTX = {
+ "wm-report-en": {
+  "videoSegmentTitles": [
+   "Introduction",
+   "Analyse du poids — Type nutritionnel",
+   "Analyse du poids — Type d'exercice et de calories",
+   "Comprendre les tableaux scientifiques",
+   "Analyse du poids — Perte de masse musculaire",
+   "Analyse du poids — Faim et satiété",
+   "Analyse du poids — Répartition des graisses",
+   "Analyse du poids — Effet yo-yo",
+   "Analyse du poids — Liste d'aliments",
+   "Analyse du poids — Système de classement des aliments",
+   "Analyse du poids — Tableaux d'exercice",
+   "Remarques finales"
+  ]
+ },
+ "wm-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Qu'est-ce que la Gène-Diète ?",
+    "items": [
+     {
+      "q": "Qu'est-ce que la Gène-Diète exactement ?",
+      "a": "La Gène-Diète est un programme personnalisé de perte de poids et de nutrition fondé sur l'analyse de tes gènes. Au lieu d'un plan alimentaire standard, tu reçois une recommandation individuelle, car ton métabolisme réagit génétiquement différemment de celui des autres — aux graisses, aux glucides, à l'exercice et même à la faim."
+     },
+     {
+      "q": "Qu'est-ce que je reçois concrètement ?",
+      "a": "Tu reçois un rapport individuel indiquant ton rapport optimal entre graisses, glucides et protéines ; une liste d'aliments personnalisée comprenant plus de 1 500 aliments ; un menu quotidien sur 4 semaines ; un livre de recettes ; ainsi que des recommandations concrètes d'exercice et d'activité physique adaptées à ton profil génétique."
+     },
+     {
+      "q": "Combien de temps mes recommandations restent-elles valables ?",
+      "a": "Tes gènes ne changent pas au cours de ta vie, les résultats génétiques restent donc valables en permanence. L'évaluation, en revanche, est continuellement affinée sur la base de nouvelles recherches — plus de 770 améliorations ont été intégrées depuis le lancement du programme."
+     },
+     {
+      "q": "Dois-je refaire le test régulièrement ?",
+      "a": "Non. Les gènes restent les mêmes toute la vie — un gène déjà analysé donne toujours le même résultat. Ce qui continue de s'améliorer, c'est l'évaluation elle-même, puisque les nouvelles découvertes scientifiques y sont intégrées en permanence."
+     }
+    ]
+   },
+   {
+    "title": "Comment fonctionne l'analyse génétique ?",
+    "items": [
+     {
+      "q": "Comment fonctionne le programme Gène-Diète ?",
+      "a": "À partir de ton jeu de données génétiques, les variantes pertinentes pour la gestion du poids sont sélectionnées. Nous en déduisons : à quel point ton corps est-il sensible aux graisses et aux glucides ? Quelle est l'efficacité de l'exercice pour toi ? Quelle est l'efficacité d'une réduction des calories ? As-tu tendance à l'effet yo-yo, à la perte musculaire ou à la graisse abdominale ? De ces résultats découlent ta répartition optimale des macronutriments et un plan alimentaire individuel."
+     },
+     {
+      "q": "Perdre du poids, n'est-ce pas simplement une question de déficit calorique ?",
+      "a": "Pas uniquement. Les études montrent que les personnes réagissent génétiquement de manière très différente aux graisses et aux glucides — certaines ne prennent presque pas de poids en cas de surplus calorique, d'autres en prennent beaucoup plus avec les mêmes calories. L'efficacité de l'exercice varie elle aussi génétiquement d'un facteur 3."
+     },
+     {
+      "q": "Existe-t-il 7 types nutritionnels différents ?",
+      "a": "Oui : utilisateur de graisses (part de graisses plus élevée), type mixte I-V (différentes répartitions mixtes) et utilisateur de glucides (part de glucides plus élevée). Combinés à des facteurs individuels comme le métabolisme de base, l'efficacité de l'exercice et la tendance à l'effet yo-yo, cela donne plus de 6 500 profils génétiques possibles."
+     },
+     {
+      "q": "À partir de quel âge le programme convient-il aux enfants ?",
+      "a": "Le programme est en principe applicable aussi aux enfants, mais sans calcul des calories, sans recommandation de poids cible, sans menu quotidien ni livre de recettes — ces éléments n'ont pas de sens pour des enfants en croissance. Le livre de recettes est bloqué pour les enfants de moins de 14 ans."
+     }
+    ]
+   },
+   {
+    "title": "Calorie Blocker",
+    "items": [
+     {
+      "q": "Qu'est-ce que le Calorie Blocker ?",
+      "a": "Le Calorie Blocker est un produit personnalisé de perte de poids se présentant sous forme de pellets microtransporteurs. Il contient un rapport individuel de bloqueurs de graisses et de glucides adapté à ton analyse ADN. Associé à un apport réduit en calories et en graisses, il soutient de façon démontrée la perte de poids — combiné à une alimentation et à un mode de vie équilibrés, il aide à maintenir le poids."
+     },
+     {
+      "q": "Comment prendre le Calorie Blocker ?",
+      "a": "Chaque jour avant le déjeuner et le dîner, avec une grande gorgée d'eau. Les pellets doivent être avalés entiers, sans être mâchés."
+     },
+     {
+      "q": "Quels sont les principes actifs ?",
+      "a": "Le bloqueur de graisses est l'Opuntia ficus-indica (OFI) — la fibre du figuier de Barbarie. Cette fibre végétale forme dans le tube digestif une matrice de type gel qui lie les graisses alimentaires et réduit leur absorption. Le bloqueur de glucides est le Phaseolamin (issu du haricot blanc), qui inhibe l'alpha-amylase. Les deux sont entièrement d'origine végétale."
+     },
+     {
+      "q": "Le Calorie Blocker est-il végétalien / végétarien ?",
+      "a": "Oui. Le bloqueur de graisses (Opuntia ficus-indica) comme le bloqueur de glucides (Phaseolamin issu du haricot blanc) sont purement d'origine végétale. Le Calorie Blocker convient aux végétariens et aux végétaliens, il est sans gluten, sans lactose et sans colorants artificiels."
+     }
+    ]
+   }
+  ]
+ },
+ "nut-report-en": {
+  "videoSegmentTitles": [
+   "Analyse nutritionnelle — Introduction",
+   "Caféine et café",
+   "Oméga 3",
+   "Acide folique",
+   "Homocystéine",
+   "Coenzyme Q10",
+   "Détoxification — Substances cancérigènes",
+   "Détoxification — Produits chimiques et métaux lourds",
+   "Radicaux libres",
+   "Sélénium",
+   "Sel et tension artérielle",
+   "Vitamine D (partie 1)",
+   "Vitamine D (partie 2)",
+   "Lactose et calcium",
+   "Inflammation",
+   "Cholestérol LDL",
+   "Triglycérides",
+   "Fer",
+   "Méthylation",
+   "Conclusion — Dernière partie",
+   "Principe de l'évaluation des aliments",
+   "Liste d'aliments"
+  ]
+ },
+ "nut-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Bases — Gènes et nutrition",
+    "items": [
+     {
+      "q": "Pourquoi le même aliment agit-il différemment selon les personnes ?",
+      "a": "Parce que nous métabolisons les nutriments différemment sur le plan génétique. Le gène MTHFR, par exemple, détermine si ton corps peut activer l'acide folique en sa forme bioactive. Le gène CYP1A2 détermine la vitesse à laquelle tu dégrades la caféine. De telles variantes modifient la façon dont un nutriment agit dans TON corps."
+     },
+     {
+      "q": "Combien de gènes l'analyse nutritionnelle prend-elle en compte ?",
+      "a": "Environ 60 variantes génétiques pertinentes pour la nutrition. Parmi elles : MTHFR (activation des folates), CYP1A2 (dégradation de la caféine), ACE (sel / tension artérielle), VDR (récepteur de la vitamine D), HFE (absorption du fer), LCT (persistance de la lactase) et les gènes de la défense antioxydante (SOD, CAT, GPX)."
+     },
+     {
+      "q": "L'analyse peut-elle me dire si je devrais boire du café ?",
+      "a": "Indirectement, oui. Le gène CYP1A2 montre si tu dégrades la caféine rapidement (Warrior) ou lentement. Les métaboliseurs lents présentent un risque cardiovasculaire accru lié à la caféine — mieux vaut éviter le café ou le remplacer par du décaféiné pour profiter des bienfaits des polyphénols."
+     },
+     {
+      "q": "L'analyse remplace-t-elle un médecin ou un nutritionniste ?",
+      "a": "Non. C'est une aide à la décision supplémentaire, fondée sur des données génétiques stables. Les symptômes aigus, les maladies ou les régimes particuliers relèvent toujours d'un médecin ou d'un diététicien diplômé."
+     }
+    ]
+   },
+   {
+    "title": "Principaux thèmes génétiques",
+    "items": [
+     {
+      "q": "Que signifie un déficit MTHFR pour moi ?",
+      "a": "MTHFR active l'acide folique en méthylfolate, la forme que ton corps peut réellement utiliser. En cas de déficit, tu peux prendre beaucoup d'acide folique sous forme de complément ordinaire et présenter malgré tout une carence fonctionnelle. Passer au méthylfolate résout le problème."
+     },
+     {
+      "q": "J'ai une variante HFE — la supplémentation en fer est-elle dangereuse pour moi ?",
+      "a": "Elle peut l'être. Certaines variantes HFE entraînent une surcharge en fer au fil des décennies — ton corps en absorbe trop à partir de l'alimentation et le stocke dans le foie, le cœur et les articulations. Les compléments de fer ne devraient être pris que si une analyse sanguine met en évidence une véritable carence."
+     },
+     {
+      "q": "Sensibilité au sel (ACE) — cela signifie-t-il que je dois renoncer au sel ?",
+      "a": "Pas totalement. Cela signifie que ta tension artérielle réagit plus fortement au sel que la moyenne. Réduire le sel est un levier puissant dans ton cas — bien plus que pour les personnes non sensibles."
+     }
+    ]
+   },
+   {
+    "title": "Questions pratiques",
+    "items": [
+     {
+      "q": "Dois-je arrêter de manger mes aliments préférés s'ils sont évalués comme défavorables ?",
+      "a": "Non. Le rapport est un guide à long terme. Une consommation occasionnelle ne pose pas de problème. L'objectif est l'équilibre sur des semaines et des mois, pas la perfection sur une seule journée."
+     },
+     {
+      "q": "Au bout de combien de temps vais-je remarquer un effet ?",
+      "a": "Cela dépend de ce que tu changes. La sensibilité à la caféine se ressent différemment en quelques jours. Le passage au méthylfolate se voit sur les marqueurs sanguins en 2 à 3 mois. Les recommandations de long terme comme la réduction du sel ou des graisses saturées mettent 6 à 12 mois à se traduire par des bénéfices cardiovasculaires mesurables."
+     },
+     {
+      "q": "La liste de recommandations est-elle gravée dans le marbre ?",
+      "a": "Non. Les recommandations découlent du consensus scientifique actuel. À mesure que la recherche progresse, le rapport est mis à jour périodiquement, sans coût supplémentaire."
+     }
+    ]
+   }
+  ]
+ },
+ "pg-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Talent et génétique dans le sport",
+    "items": [
+     {
+      "q": "Quelle est l'influence des gènes sur la performance sportive ?",
+      "a": "Les estimations varient entre 30 et 70 %, selon la discipline. Le talent (fibres de sprint, potentiel de VO2max, stabilité du tissu conjonctif) est majoritairement déterminé génétiquement ; la réponse à l'entraînement elle-même — l'intensité avec laquelle le corps réagit à un stimulus — varie également d'un facteur 2 à 3 sur le plan génétique."
+     },
+     {
+      "q": "Quelle est la différence entre volume musculaire et force musculaire ?",
+      "a": "Le volume signifie plus de masse (objectif du bodybuilder) — entraînement avec 6 à 12 répétitions. La force signifie plus de performance avec moins de masse — entraînement avec 1 à 6 répétitions à charges lourdes. Ces deux objectifs d'entraînement exigent des stratégies différentes et des temps de repos différents."
+     },
+     {
+      "q": "Puis-je devenir un athlète performant avec de « mauvais » gènes ?",
+      "a": "Oui. La génétique détermine le talent, mais l'entraînement, la régularité et la bonne stratégie font la différence décisive. Connaître tes points faibles génétiques te permet de les compenser (p. ex. alimentation riche en antioxydants, récupération plus longue, échauffement soigneux)."
+     }
+    ]
+   },
+   {
+    "title": "Risque de blessure et récupération",
+    "items": [
+     {
+      "q": "Mon rapport indique des gènes du tissu conjonctif défavorables (COL5A1, MMP3). Que dois-je faire ?",
+      "a": "Entraîne-toi avec une prudence accrue : échauffement complet, charges moins explosives jusqu'à l'adaptation, récupération plus longue entre les séances intenses, et un bon apport en protéines et en vitamine C pour soutenir la synthèse du collagène. Évite les augmentations brutales de volume."
+     },
+     {
+      "q": "Pourquoi le rapport me recommande-t-il des antioxydants ?",
+      "a": "L'exercice intense génère de grandes quantités de radicaux libres. Si tes gènes antioxydants (SOD2, CAT, GPX) sont faibles, la récupération est plus lente et une micro-inflammation s'accumule. Les vitamines C et E, les polyphénols et le sélénium soutiennent directement ces systèmes de défense."
+     },
+     {
+      "q": "Qu'est-ce qu'un « deload » et à quelle fréquence en faire ?",
+      "a": "Un deload est une semaine d'entraînement allégé (p. ex. première séance à la moitié de la charge, deuxième aux deux tiers). Il donne au corps le temps de récupérer pour la réparation et un reset psychologique. En général toutes les 5 semaines environ, selon ta capacité génétique de récupération et ta prédisposition au stress."
+     }
+    ]
+   },
+   {
+    "title": "Nutrition pour les sportifs",
+    "items": [
+     {
+      "q": "Quel est le lien entre le rapport sportif et le rapport de nutrition ?",
+      "a": "Ils se complètent. Le rapport sportif montre ton profil de performance, ton risque de blessure et ta récupération. Le rapport de nutrition t'indique quel mélange de carburant (graisses / glucides / protéines) et quels compléments soutiennent ce profil."
+     },
+     {
+      "q": "Dois-je prendre de la poudre de protéines ?",
+      "a": "Pas nécessairement. Si tu couvres 1,6 à 2,0 g de protéines par kg de poids corporel avec de vrais aliments et que tu récupères bien entre les séances, aucune poudre n'est nécessaire. Si tu peines à atteindre ces valeurs, une poudre de protéines de qualité peut simplifier l'apport."
+     }
+    ]
+   }
+  ]
+ },
+ "tx-report-en": {
+  "videoSegmentTitles": [
+   "Détoxification — Substances cancérigènes",
+   "Détoxification — Produits chimiques et métaux lourds",
+   "Radicaux libres (stress oxydatif)",
+   "Sélénium"
+  ]
+ },
+ "bo-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Bases génétiques du stress",
+    "items": [
+     {
+      "q": "Qu'est-ce que le gène COMT et pourquoi est-il important ?",
+      "a": "COMT (catéchol-O-méthyltransférase) dégrade la dopamine, l'adrénaline et la noradrénaline dans le cortex préfrontal. Une variante fréquente (Val158Met) détermine la vitesse de cette dégradation — d'un facteur 3 à 4 entre les variantes rapides et lentes. Cela règle la durée pendant laquelle un signal de stress reste dans le système."
+     },
+     {
+      "q": "Quelle est la différence entre Warrior et Worrier ?",
+      "a": "Warrior (Val/Val) : la dopamine est dégradée rapidement — plus de résistance au stress aigu, performance sous pression. Worrier (Met/Met) : la dopamine est dégradée lentement — forte concentration au quotidien, mais vulnérabilité au stress chronique. Environ 50 % des personnes sont de type mixte."
+     },
+     {
+      "q": "Et qu'en est-il du BDNF ?",
+      "a": "Le BDNF (Brain-Derived Neurotrophic Factor) soutient la croissance des neurones et la résilience. La variante Met (Val66Met) réduit la sécrétion de BDNF ; les porteurs récupèrent plus lentement du stress et sont plus vulnérables à la dépression en cas de charge chronique. Le BDNF peut être augmenté par l'exercice, le sommeil, l'apprentissage et le jeûne intermittent."
+     }
+    ]
+   },
+   {
+    "title": "Conseils pratiques",
+    "items": [
+     {
+      "q": "Je suis un Worrier — suis-je condamné au burnout ?",
+      "a": "Non. La variante COMT lente augmente la sensibilité, ce n'est pas une fatalité. Connaître la prédisposition te permet d'agir tôt : routines de récupération claires, priorité au sommeil, respiration ou méditation, éviter d'accumuler plusieurs facteurs de stress en même temps. Au fil des années, cela évite que le système ne bascule dans une surcharge chronique."
+     },
+     {
+      "q": "Je suis un Warrior — dois-je quand même me préoccuper du burnout ?",
+      "a": "Le risque aigu est plus faible, mais la récupération compte toujours. Un sentiment d'« absence de stress » peut masquer une sous-stimulation dans les périodes calmes. Prévois une structure pour les phases de concentration et protège ton sommeil."
+     },
+     {
+      "q": "Qu'est-ce qui aide tout le monde, quel que soit le génotype ?",
+      "a": "Le sommeil (7-9 h), l'activité physique régulière (surtout l'endurance — elle augmente le BDNF et régule le cortisol), les contacts sociaux, le sens au travail, et éviter l'abus de stimulants (alcool, caféine excessive)."
+     }
+    ]
+   },
+   {
+    "title": "Que faire du résultat",
+    "items": [
+     {
+      "q": "Une « zone rouge » est apparue dans mon rapport. Dois-je m'inquiéter ?",
+      "a": "Non. Une zone rouge signale un risque accru dans un domaine précis, ce n'est pas un diagnostic. C'est une invitation à agir tôt — exactement l'inverse d'un verdict fataliste."
+     },
+     {
+      "q": "Où trouver des recommandations concrètes pour mon génotype ?",
+      "a": "Dans le rapport de burnout — il contient des recommandations détaillées sur la méditation, la nutrition, l'activité physique, l'hygiène du sommeil et les stratégies d'adaptation, adaptées à ton profil COMT individuel et aux autres facteurs évalués."
+     }
+    ]
+   }
+  ]
+ },
+ "ba-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Bases — Télomères et vieillissement",
+    "items": [
+     {
+      "q": "Que sont les télomères et pourquoi sont-ils importants pour le vieillissement ?",
+      "a": "Les télomères sont des capuchons protecteurs situés à l'extrémité de chaque chromosome — ils ne contiennent eux-mêmes aucun gène, mais protègent les gènes contre la perte lors des divisions cellulaires. À chaque division cellulaire, un petit morceau de télomère est perdu. Après 50 à 70 divisions, ils sont épuisés ; la cellule entre dans une sorte de veille (sénescence) et s'accumule dans l'organisme en tant que « cellule âgée »."
+     },
+     {
+      "q": "Quelle est la différence entre âge chronologique et âge biologique ?",
+      "a": "L'âge chronologique correspond au temps vécu en années — fixe et immuable. L'âge biologique indique à quel point tes cellules sont réellement « âgées ». Deux personnes du même âge chronologique peuvent présenter des âges biologiques séparés par jusqu'à 20 ans, selon leur prédisposition génétique et leur mode de vie."
+     },
+     {
+      "q": "Que fait la télomérase ?",
+      "a": "La télomérase est une enzyme capable de réparer et de reconstruire les télomères. Son activité est en partie génétique — les personnes dont l'activité de télomérase est forte préservent mieux leurs télomères ; celles dont l'activité est réduite voient leurs télomères se raccourcir plus vite, en particulier sous stress oxydatif."
+     },
+     {
+      "q": "Quels gènes sont évalués dans l'analyse ?",
+      "a": "Principalement la télomérase et les gènes associés (TERT, BICD1, PPARG) qui contrôlent le maintien des télomères. Ils montrent dans quelle mesure ton corps peut réparer et préserver ses télomères — une estimation approximative de ta capacité anti-âge génétique."
+     }
+    ]
+   },
+   {
+    "title": "Ce que fait le mode de vie",
+    "items": [
+     {
+      "q": "Le régime méditerranéen fonctionne-t-il pour tout le monde ?",
+      "a": "Étonnamment non. Les études montrent qu'il allonge les télomères uniquement chez les personnes porteuses d'une variante génétique spécifique — les autres ne constatent aucun effet mesurable sur la longueur des télomères. Une démonstration claire que le même conseil de mode de vie ne fonctionne pas de la même façon chez chaque individu."
+     },
+     {
+      "q": "Quels nutriments soutiennent les télomères ?",
+      "a": "La vitamine D3, les oméga-3, la vitamine E, le resvératrol et le ginkgo. Lorsque le système de protection génétique est faible, ces nutriments peuvent être utilisés de manière ciblée pour ralentir le raccourcissement des télomères."
+     },
+     {
+      "q": "Puis-je influencer les radicaux libres ?",
+      "a": "Oui — les antioxydants présents dans l'alimentation (vitamines C et E, polyphénols des baies, du thé, etc.) neutralisent les radicaux libres avant qu'ils n'endommagent les cellules. En cas de défenses antioxydantes génétiquement affaiblies, une alimentation riche en antioxydants est particulièrement importante."
+     }
+    ]
+   },
+   {
+    "title": "Influence et attentes",
+    "items": [
+     {
+      "q": "À quelle vitesse verrai-je les résultats des mesures anti-âge ?",
+      "a": "Les effets sur les télomères sont lents — de quelques mois à quelques années. Certains marqueurs intermédiaires (stress oxydatif, inflammation, profil lipidique sanguin) évoluent en quelques semaines. L'impact le plus fort du mode de vie sur l'âge biologique se cumule sur des décennies."
+     },
+     {
+      "q": "Quelle utilité pratique ces connaissances m'apportent-elles ?",
+      "a": "Tu sais si tu tends génétiquement vers un vieillissement cellulaire plus rapide ou plus lent — et tu peux agir en conséquence. En cas de prédisposition défavorable, concentre-toi sur : une alimentation riche en antioxydants, des compléments ciblés (D3, oméga-3, resvératrol), un exercice régulier mais non excessif, un bon sommeil et la réduction du stress."
+     }
+    ]
+   }
+  ]
+ },
+ "supp-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Bases — Pourquoi personnalisée ?",
+    "items": [
+     {
+      "q": "Pourquoi ai-je besoin d'une supplémentation personnalisée ?",
+      "a": "Parce que ton corps utilise génétiquement certains nutriments mieux ou moins bien qu'une autre personne — et parce que ton mode de vie (activité physique, sommeil, stress, alimentation) façonne en plus ton besoin individuel. Les pilules standard partent de la « personne moyenne » et couvrent donc de nombreux besoins individuels soit trop peu, soit trop."
+     },
+     {
+      "q": "Quelle est la différence avec les multivitamines standard de la parapharmacie ?",
+      "a": "Trois points principaux : (1) la sélection des nutriments et leur dosage sont adaptés à tes gènes ; (2) la libération est chronométrée (p. ex. vitamine C Slow-Release) afin de maintenir des taux sanguins constants ; (3) les nutriments concurrents comme le calcium et le zinc sont libérés de manière séparée dans l'espace et le temps, de sorte qu'ils ne se bloquent pas mutuellement."
+     },
+     {
+      "q": "Combien de gènes l'analyse prend-elle en compte ?",
+      "a": "Plus de 60 variantes génétiques pertinentes pour les nutriments — dont les gènes du métabolisme des vitamines (folates-MTHFR, vitamine D-VDR, vitamine B12-FUT2), les gènes de l'absorption des minéraux (fer-HFE, calcium-LCT) et les systèmes de défense antioxydants (GST, SOD, CAT)."
+     }
+    ]
+   },
+   {
+    "title": "Technologie des microtransporteurs",
+    "items": [
+     {
+      "q": "Que sont les microtransporteurs ?",
+      "a": "Les microtransporteurs sont de minuscules pellets de l'ordre du millimètre, chacun transportant des nutriments individuels dans des enveloppes protectrices spécifiques. Chaque microtransporteur « libère » son contenu à un moment différent et à un endroit différent du tube digestif — ainsi, même des nutriments normalement concurrents peuvent être pris ensemble tout en étant absorbés séparément."
+     },
+     {
+      "q": "Pourquoi la vitamine C est-elle libérée en Slow-Release ?",
+      "a": "La vitamine C a une demi-vie biologique très courte (environ 30 minutes). Une dose unique élevée est en grande partie éliminée sans être utilisée. Le Slow-Release dans les microtransporteurs reproduit l'apport naturel et continu par l'alimentation tout au long de la journée et maintient des taux sanguins stables — c'est bien plus pertinent sur le plan physiologique."
+     },
+     {
+      "q": "Comment cela fonctionne-t-il avec le calcium et le zinc, qui se bloquent mutuellement ?",
+      "a": "Le calcium et le zinc entrent en concurrence pour les mêmes transporteurs intestinaux — les prendre ensemble en fournit moins des deux. Dans la technologie des microtransporteurs, le zinc est libéré immédiatement dans l'intestin grêle supérieur, le calcium des heures plus tard dans le segment intestinal plus profond. Les deux sont pris en même temps, mais libérés à des endroits et à des moments différents — aucune concurrence."
+     }
+    ]
+   },
+   {
+    "title": "Questions pratiques",
+    "items": [
+     {
+      "q": "Dois-je prendre les pilules à des heures fixes ?",
+      "a": "Nous recommandons un moment de la journée constant (p. ex. au petit-déjeuner) afin de maintenir des taux sanguins stables. Tu n'as pas besoin de surveiller la minute près — une routine approximative suffit. Le plus important est de les prendre régulièrement."
+     },
+     {
+      "q": "Au bout de combien de temps vais-je remarquer un effet ?",
+      "a": "Cela varie selon le nutriment. Certains effets (p. ex. une meilleure énergie avec les vitamines B) apparaissent en quelques jours à quelques semaines ; d'autres (p. ex. le métabolisme osseux avec la vitamine D) se développent sur plusieurs mois. La supplémentation personnalisée n'est pas un médicament à action rapide — elle corrige des déficits nutritionnels de long terme."
+     },
+     {
+      "q": "Ai-je besoin d'une supplémentation à vie ?",
+      "a": "Pour les faiblesses métaboliques d'origine génétique, oui, car la prédisposition dure toute la vie. Les besoins liés au mode de vie (p. ex. besoin accru en période de stress, d'activité physique ou de maladie) peuvent évoluer. L'analyse te montre aussi où ta génétique crée un besoin durablement accru et où un simple ajustement du mode de vie suffit."
+     },
+     {
+      "q": "Puis-je associer la supplémentation à des médicaments ?",
+      "a": "En général oui — tous les nutriments sont dosés à des quantités habituelles dans l'alimentation. En cas de maladie chronique ou de traitement au long cours, tu devrais en discuter avec ton médecin, car certains nutriments (p. ex. la vitamine K, le fer) peuvent interagir avec certains médicaments."
+     },
+     {
+      "q": "Quel est le coût de la version personnalisée par rapport aux multivitamines de parapharmacie ?",
+      "a": "Nettement plus élevé par jour — typiquement 3 à 5 fois le prix des produits les moins chers en parapharmacie. En contrepartie, tu obtiens une composition adaptée à ta génétique, qui a de bonnes chances d'être réellement absorbée au lieu d'être en grande partie éliminée sans être utilisée. La comparaison « par mg de vitamine » est trompeuse ; « par mg qui atteint réellement le sang » est bien plus pertinente."
+     }
+    ]
+   }
+  ]
+ },
+ "beauty-faq-en": {
+  "faqGroups": [
+   {
+    "title": "Bases — Ce que fait l'analyse génétique de la peau",
+    "items": [
+     {
+      "q": "Qu'est-ce que l'analyse génétique de la peau (DNAbeauty Control) ?",
+      "a": "Une analyse de tes gènes centrée sur les domaines pertinents pour la peau : dégradation du collagène, sensibilité aux UV, pigmentation, hydratation de la peau, défense antioxydante et tendance à l'inflammation. À partir de ton jeu de données ADN, plus de 20 variantes génétiques pertinentes pour la peau sont évaluées et traduites en recommandations pratiques de soin et de protection."
+     },
+     {
+      "q": "Quelle est la différence avec une analyse cosmétique de la peau ?",
+      "a": "Les analyses cosmétiques mesurent l'état actuel de ta peau — hydratation, sébum, pigmentation, etc. — et y réagissent. L'analyse génétique de la peau te montre quelles propriétés et quelles faiblesses sont ancrées de manière PERMANENTE dans tes gènes. Tu peux prévenir de façon proactive, au lieu de traiter de façon réactive lorsque les problèmes deviennent visibles."
+     },
+     {
+      "q": "Combien de gènes sont analysés ?",
+      "a": "Plus de 20 variantes génétiques pertinentes pour la peau. Domaines principaux : MMP1 (dégradation du collagène, rides), MC1R (sensibilité aux UV, pigmentation), FLG (filaggrine, hydratation / barrière cutanée), SOD2/CAT/GPX (défense antioxydante), et des gènes de l'inflammation comme IL6 et TNF-α."
+     },
+     {
+      "q": "Combien de temps mon résultat reste-t-il valable ?",
+      "a": "Tes gènes ne changent pas au cours de la vie — les résultats fondamentaux restent donc valables en permanence. Ce qui s'affine, c'est l'évaluation elle-même, à mesure que de nouvelles recherches y sont intégrées."
+     }
+    ]
+   },
+   {
+    "title": "Génétique et vieillissement cutané — Comprendre le résultat",
+    "items": [
+     {
+      "q": "Que signifie une variante MMP1 « active » ?",
+      "a": "MMP1 (Matrix Métalloprotéinase 1) dégrade le collagène de la peau. Une variante génétiquement très active entraîne une dégradation plus rapide du collagène — la peau perd sa fermeté plus tôt, les rides se forment plus vite. Contre-mesures : protection UV constante, antioxydants, pas de tabac, soins à base de rétinoïdes ou de peptides."
+     },
+     {
+      "q": "Que m'indique MC1R sur ma sensibilité aux UV ?",
+      "a": "MC1R contrôle la production d'eumélanine (pigment foncé, protecteur contre les UV) par rapport à la phéomélanine (pigment rougeâtre, qui génère des radicaux libres sous l'effet des UV). Variantes défavorables : coups de soleil plus rapides, risque accru de dommages liés aux UV et de cancer de la peau — une discipline plus stricte en matière de protection solaire est nécessaire."
+     },
+     {
+      "q": "Pourquoi FLG (filaggrine) est-il important pour mes soins de la peau ?",
+      "a": "FLG produit la filaggrine, une protéine qui maintient la cohésion de la barrière cutanée naturelle et retient l'hydratation. En cas d'activité FLG génétiquement réduite, la barrière cutanée est plus faible — l'hydratation est perdue plus vite, les irritants pénètrent plus facilement. Recommandation : soins renforçant la barrière (céramides, cholestérol, acides gras libres), nettoyants doux, pas de tensioactifs desséchants."
+     },
+     {
+      "q": "Cela affecte-t-il vraiment mon apparence de manière mesurable ?",
+      "a": "Oui, mais pas du jour au lendemain. Les faiblesses génétiques se cumulent au fil des années. Deux personnes du même âge peuvent différer biologiquement de 10 à 15 ans — selon la manière dont elles compensent leurs points faibles génétiques par leur mode de vie."
+     }
+    ]
+   },
+   {
+    "title": "Recommandations pratiques et attentes",
+    "items": [
+     {
+      "q": "À quelle vitesse vais-je remarquer un effet des soins personnalisés ?",
+      "a": "Certains effets apparaissent en quelques semaines (hydratation, éclat, irritations), d'autres seulement après des mois, voire des années (formation des rides, pigmentation, structure de la peau). Les soins personnalisés ne sont pas une solution miracle, mais une stratégie de protection à long terme."
+     },
+     {
+      "q": "Ai-je besoin de crèmes coûteuses ?",
+      "a": "Pas nécessairement. Ce qui compte, ce sont les bons ingrédients pour ta prédisposition génétique — et ils existent à tous les prix. Les éléments décisifs : la concentration en principes actifs, la formulation et la régularité de l'application. Un sérum à la vitamine C abordable peut surpasser une crème coûteuse dépourvue de principes actifs."
+     },
+     {
+      "q": "Mon mode de vie est-il plus important que mes gènes ?",
+      "a": "Les deux agissent ensemble. Les gènes fixent le potentiel et les points faibles — le mode de vie décide dans quelle mesure tu compenses ou amplifies ces points faibles. Règle générale : en cas de prédisposition génétique défavorable, un mode de vie constant devient encore plus important qu'avec des « gènes chanceux »."
+     }
+    ]
+   }
+  ]
+ },
+ "legal-basics-en": {
+  "articleSections": [
+   {
+    "title": "Faire de la publicité pour les produits Novogenia",
+    "paragraphs": [
+     "Novogenia se situe à la pointe des possibilités scientifiques et propose des procédés d'analyse établis comme les analyses sanguines, mais aussi des possibilités avancées comme les analyses génétiques et les produits personnalisés. Comme nous évoluons dans le domaine de la santé, des règles strictes encadrent les allégations publicitaires et doivent être respectées. En Allemagne en particulier, il existe des associations de mise en demeure qui recherchent les déclarations imprécises ou trompeuses et envoient des mises en demeure.",
+     "Nous sommes fermement convaincus que nos recommandations sont efficaces et tiennent compte de l'état le plus avancé de la science. Malheureusement, ce qu'un produit peut faire et ce que l'on est autorisé à affirmer dans la publicité sont parfois deux choses différentes."
+    ]
+   },
+   {
+    "title": "Faire de la publicité avec les analyses sanguines",
+    "paragraphs": [
+     "Les analyses sanguines sont bien établies et ne font l'objet que de restrictions publicitaires mineures. Les déclarations ci-dessous sont toutes non critiques."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "« Nous analysons le sang. »"
+     },
+     {
+      "tone": "safe",
+      "text": "« Nous diagnostiquons les carences. »"
+     },
+     {
+      "tone": "safe",
+      "text": "« Nous donnons des recommandations en micronutriments et en nutrition. »"
+     },
+     {
+      "tone": "safe",
+      "text": "« Nous personnalisons les compléments en fonction du résultat. »"
+     },
+     {
+      "tone": "safe",
+      "text": "Les symptômes d'une carence (p. ex. la fatigue due à une carence en fer) — de préférence avec l'indication d'une source (p. ex. une société médicale)."
+     },
+     {
+      "tone": "safe",
+      "text": "Témoignage : « J'étais souvent fatigué, le test a identifié une carence en fer, et cela m'a aidé » — autorisé."
+     }
+    ]
+   },
+   {
+    "title": "Faire de la publicité avec les tests génétiques",
+    "paragraphs": [
+     "Les analyses ADN ne sont pas encore une méthode standard dans tous les cabinets médicaux. Les associations de mise en demeure examinent d'un œil critique les technologies qui ne sont pas encore considérées comme une pratique courante par la majorité des experts. L'analyse ADN fait donc l'objet d'une observation particulière.",
+     "Du point de vue de l'association de mise en demeure, une analyse ADN comporte deux composantes : l'analyse scientifiquement validée des caractéristiques génétiques (non critique) et le programme d'action qui en est déduit (critique)."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "La détermination des caractéristiques génétiques — étayée par la science actuelle."
+     },
+     {
+      "tone": "critical",
+      "text": "Des recommandations concrètes de nutrition, d'exercice ou de compléments déduites des gènes — sans essais randomisés spécifiques portant précisément sur cette recommandation."
+     }
+    ],
+    "callout": {
+     "tone": "safe",
+     "text": "Exemple : « Le test génétique prouve que l'acide folique est inefficace chez vous » — autorisé (étayé par des études)."
+    }
+   },
+   {
+    "title": "La variante sûre — uniquement les caractéristiques génétiques",
+    "paragraphs": [
+     "La variante sûre se concentre sur des déclarations limitées aux caractéristiques génétiques déterminées — sans en déduire de recommandations d'action concrètes. Toutes les formulations ci-dessous sont non critiques du point de vue des mises en demeure."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "« Nous analysons vos gènes et déterminons si vous prenez plus facilement du poids avec les graisses ou avec les glucides. »"
+     },
+     {
+      "tone": "safe",
+      "text": "« Vous découvrez si vous réagissez davantage à l'exercice ou à la réduction des calories. »"
+     },
+     {
+      "tone": "safe",
+      "text": "« Vous apprenez si votre corps peut activer efficacement l'acide folique. »"
+     },
+     {
+      "tone": "safe",
+      "text": "« Vous apprenez quels talents votre corps possède en sport de compétition et à quel point vos muscles répondent à l'entraînement en résistance. »"
+     }
+    ]
+   },
+   {
+    "title": "La variante plus audacieuse — des recommandations avec un disclaimer",
+    "paragraphs": [
+     "Dans cette variante, le test est présenté comme ci-dessus — mais les recommandations d'action sont communiquées comme des conclusions logiques, et non comme des promesses scientifiquement confirmées. Avec un disclaimer. Attention : les associations de mise en demeure n'acceptent pas toujours les disclaimers."
+    ],
+    "bullets": [
+     {
+      "tone": "caveat",
+      "text": "« Nous analysons vos gènes et déterminons si vous prenez plus facilement du poids avec les graisses ou avec les glucides. Sur cette base, nous en déduisons des conclusions logiques et des plans alimentaires permettant d'exploiter cette information.* »"
+     },
+     {
+      "tone": "caveat",
+      "text": "« Vous apprenez si votre corps peut activer l'acide folique. Sur cette base, nous recommandons des micronutriments alternatifs à prendre à la place.* »"
+     },
+     {
+      "tone": "critical",
+      "text": "CONTRE-EXEMPLE : « Prenez du méthylfolate au lieu de l'acide folique » — critique sans disclaimer, car il n'existe aucun essai randomisé portant précisément sur cette recommandation."
+     }
+    ],
+    "callout": {
+     "tone": "caveat",
+     "text": "* Note de disclaimer : les caractéristiques génétiques sont scientifiquement confirmées. Les adaptations qui en sont déduites pour le dosage des micronutriments ou les recommandations alimentaires n'atteignent pas encore, pour de nombreux effets, le niveau du gold standard (essais randomisés contrôlés contre placebo) et doivent être considérées comme expérimentales."
+    }
+   },
+   {
+    "title": "Faire de la publicité pour la supplémentation personnalisée",
+    "paragraphs": [
+     "L'Union européenne a mis en place un cadre réglementaire clair pour les allégations relatives à l'effet des compléments — les « Health Claims ». Celles-ci définissent précisément quels effets peuvent être mis en avant pour chaque principe actif.",
+     "Quel que soit le niveau de preuve scientifique d'un effet, il n'est pas permis de le promouvoir dans la publicité tant que le Health Claim n'a pas été approuvé par l'EFSA. Tiens-t'en à la longue liste des allégations autorisées."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "La personnalisation basée sur le mode de vie et les valeurs sanguines — sans problème."
+     },
+     {
+      "tone": "caveat",
+      "text": "La personnalisation basée sur l'analyse génétique — uniquement avec un disclaimer (voir « la variante plus audacieuse »)."
+     },
+     {
+      "tone": "safe",
+      "text": "Exemple de health claim : « Contribue au maintien d'une peau normale » (avec le zinc), « Contribue au fonctionnement normal du système immunitaire »."
+     },
+     {
+      "tone": "safe",
+      "text": "Exemple de témoignage : « Je le prends parce que j'ai la peau sèche » — associé au Health Claim du zinc — autorisé."
+     },
+     {
+      "tone": "critical",
+      "text": "NON autorisé : toute allégation dont le Health Claim n'a pas été approuvé par l'EFSA (p. ex. « guérit votre maladie »)."
+     }
+    ]
+   },
+   {
+    "title": "Avis clients et témoignages",
+    "paragraphs": [
+     "Si tu proposes un système d'avis clients (p. ex. sur ton site web), tu ne peux pas contrôler si un client formule des déclarations non autorisées (p. ex. « le produit X m'a guéri »). C'est autorisé sur le principe, mais cela doit être géré avec soin."
+    ],
+    "bullets": [
+     {
+      "tone": "safe",
+      "text": "Sur ton propre système modérable : indique clairement que les déclarations sont des opinions de clients et que tu ne les fais pas tiennes."
+     },
+     {
+      "tone": "safe",
+      "text": "Les déclarations qui enfreignent le règlement sur les allégations de santé doivent être supprimées."
+     },
+     {
+      "tone": "safe",
+      "text": "Pour un avis massivement erroné : ajoute une réponse corrective de l'entreprise."
+     },
+     {
+      "tone": "caveat",
+      "text": "Sur des systèmes externes non modérables : déclare-les clairement et ne mets jamais en avant de manière sélective des déclarations erronées."
+     },
+     {
+      "tone": "critical",
+      "text": "Promouvoir ou mettre en avant activement des déclarations erronées — même lorsqu'il s'agit de voix de clients."
+     }
+    ]
+   }
+  ]
+ }
+}
+/* END FAQTX */
 const clone = (o) => JSON.parse(JSON.stringify(o))
 const vid = (id) => (id && VIDEOS[id]) ? VIDEOS[id] : null
 
@@ -1343,9 +1974,16 @@ export const COURSES_FR = COURSES_EN.map((en) => {
     if (tx.introQuestions) c.introQuestions = tx.introQuestions
     if (Array.isArray(tx.questions) && tx.questions.length) c.questions = tx.questions
   }
+  /* FAQ/Artikel/Segment-Titel */
+  const ftx = FAQTX[en.id]
+  if (ftx) {
+    if (ftx.faqGroups) c.faqGroups = clone(ftx.faqGroups)
+    if (ftx.articleSections) c.articleSections = clone(ftx.articleSections)
+  }
   if (en.youtubeId) { const v = vid(en.youtubeId); if (v) c.youtubeId = v; else delete c.youtubeId }
   if (en.videoSegments && en.videoSegments.length) {
-    c.videoSegments = en.videoSegments.map(s => { const v = vid(s.youtubeId); return v ? { ...clone(s), youtubeId: v } : null }).filter(Boolean)
+    const segTitles = (FAQTX[en.id] || {}).videoSegmentTitles || []
+    c.videoSegments = en.videoSegments.map((s, i) => { const v = vid(s.youtubeId); return v ? { ...clone(s), youtubeId: v, title: segTitles[i] || s.title } : null }).filter(Boolean)
     if (!c.videoSegments.length) delete c.videoSegments
   }
   return c
