@@ -2954,8 +2954,11 @@ export const groupForDisplay = (lang = 'de') => {
     const courseLang = c.lang || 'de'
     if (courseLang !== lang) continue
     // Hide trainings that have no video yet (would show "VIDEO COMING SOON").
-    // FAQ + supplementary courses carry no video by design and stay visible.
+    // FAQ + supplementary courses carry no video by design and stay visible —
+    // ebenso reine Artikelkurse (z.B. die Werberichtlinie): die haben
+    // articleSections statt Video und sind vollständig nutzbar.
     if (c.contentType !== 'faq' && c.contentType !== 'supplementary' &&
+        !(c.articleSections && c.articleSections.length) &&
         !c.youtubeId && !(c.videoSegments && c.videoSegments.length)) continue
     if (!byCategory.has(c.category)) byCategory.set(c.category, [])
     byCategory.get(c.category).push(c)
@@ -3297,6 +3300,8 @@ const UI = {
   auth_switch_to_login:       { de: 'Schon registriert? Anmelden',  en: 'Already registered? Sign in' },
   auth_switch_to_signup:      { de: 'Neu hier? Konto erstellen',    en: 'New here? Create an account' },
   auth_error_invalid:         { de: 'Email oder Passwort ungültig.', en: 'Invalid email or password.' },
+  auth_error_rate_limited:    { de: 'Zu viele Anmeldeversuche. Bitte warte ein paar Minuten und versuche es erneut.',
+                                en: 'Too many sign-in attempts. Please wait a few minutes and try again.' },
   auth_error_taken:           { de: 'Diese Email ist bereits registriert. Bitte melde dich an.',
                                 en: 'This email is already registered. Please sign in instead.' },
   auth_error_weak:            { de: 'Passwort zu kurz (mindestens 8 Zeichen).',

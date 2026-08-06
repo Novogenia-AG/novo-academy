@@ -41,11 +41,19 @@ function _rateLimitCheck() {
     }
     if (rec.count >= MAX_ATTEMPTS) {
       const waitMin = Math.ceil((WINDOW_MS - (Date.now() - rec.since)) / 60000)
-      return `Too many attempts. Please wait ${waitMin} minute${waitMin === 1 ? '' : 's'}.`
+      // Strukturierter Code statt englischem Satz — die UI übersetzt ihn.
+      return { code: 'rate_limited', minutes: waitMin }
     }
     localStorage.setItem(RATE_KEY, JSON.stringify({ count: rec.count + 1, since: rec.since }))
     return null
   } catch { return null }
+}
+
+/* Nach einer erfolgreichen Anmeldung den Zähler leeren. Ohne das sperrte sich
+   ein Nutzer nach 5 Anmeldungen in 15 Minuten selbst aus — auch nach lauter
+   ERFOLGREICHEN Anmeldungen, denn gezählt wurde jeder Versuch. */
+function _rateLimitReset() {
+  try { localStorage.removeItem(RATE_KEY) } catch {}
 }
 
 /* Input validation helpers */
@@ -208,6 +216,7 @@ export const signInWithEmail = async ({ email, password }) => {
   if (USE_REAL && supabase) {
     const { data, error } = await supabase.auth.signInWithPassword({ email, password })
     if (error) return { error: 'invalid' }
+    _rateLimitReset()
     return {}
   }
 
@@ -215,6 +224,7 @@ export const signInWithEmail = async ({ email, password }) => {
   const users = _loadMockUsers()
   const u = users[email]
   if (!u || u.password !== password) return { error: 'invalid' }
+  _rateLimitReset()
   _cachedSession = { user: { id: u.id, email: u.email }, profile: { name: u.name } }
   _saveMockSession(_cachedSession)
   _emit()
@@ -259,7 +269,10 @@ export const loadProgress = async (userId) => {
       .from('user_progress')
       .select('course_uid, watched, test_passed, test_score')
       .eq('user_id', userId)
-    if (error || !data) return {}
+    // null (nicht {}) signalisiert dem Aufrufer einen FEHLGESCHLAGENEN Load.
+    // {} würde "Nutzer hat noch keinen Fortschritt" bedeuten — der Aufrufer
+    // würde daraufhin einen Nullzustand speichern und echten Fortschritt löschen.
+    if (error || !data) return null
     const out = {}
     for (const row of data) {
       out[row.course_uid] = {
@@ -273,17 +286,26 @@ export const loadProgress = async (userId) => {
   return _loadMockProgress(userId)
 }
 
+/** Nur Kurse mit echtem Fortschritt schreiben. Ein Nullzustand (nie gesehen,
+ *  kein Test) ist identisch mit "keine Zeile" — 242 Leerzeilen pro Seitenaufruf
+ *  zu schreiben macht updated_at als Aktivitätssignal wertlos und erzeugt
+ *  unnötige Schreiblast. */
+const _hasProgress = (v) =>
+  !!v?.watched || !!v?.testPassed || Number(v?.testScore || 0) > 0
+
 export const saveProgress = async (userId, state) => {
   if (!userId) return
   if (USE_REAL && supabase) {
-    const rows = Object.entries(state).map(([course_uid, v]) => ({
-      user_id: userId,
-      course_uid,
-      watched: !!v?.watched,
-      test_passed: !!v?.testPassed,
-      test_score: Number(v?.testScore || 0),
-      updated_at: new Date().toISOString(),
-    }))
+    const rows = Object.entries(state)
+      .filter(([, v]) => _hasProgress(v))
+      .map(([course_uid, v]) => ({
+        user_id: userId,
+        course_uid,
+        watched: !!v?.watched,
+        test_passed: !!v?.testPassed,
+        test_score: Number(v?.testScore || 0),
+        updated_at: new Date().toISOString(),
+      }))
     if (rows.length === 0) return
     await supabase.from('user_progress').upsert(rows, { onConflict: 'user_id,course_uid' })
     return
@@ -414,10 +436,11 @@ export const adminSetUserCourseState = async (userId, courseUid, action) => {
 export const adminSetIsAdmin = async (userId, isAdmin) => {
   if (!userId) return { error: 'missing user id' }
   if (USE_REAL && supabase) {
-    const { error } = await supabase
-      .from('profiles')
-      .update({ is_admin: !!isAdmin })
-      .eq('id', userId)
+    // is_admin ist für Clients nicht schreibbar (Spalten-Grant entzogen).
+    // Die Rechteprüfung passiert serverseitig in der Funktion.
+    const { error } = await supabase.rpc('admin_set_is_admin', {
+      target_id: userId, make_admin: !!isAdmin,
+    })
     if (error) return { error: error.message }
     return {}
   }
@@ -465,18 +488,15 @@ export const adminResetAllProgress = async (userId) => {
 }
 
 /** Admin: soft-delete a user (set deleted_at). The auth.users row stays, but
- *  the profile is hidden from the admin list. Reversible via undelete. */
+ *  the profile is hidden from the admin list. Reversible via undelete —
+ *  der Fortschritt bleibt dabei erhalten (CLAUDE.md Grundregel 2). */
 export const adminSoftDeleteUser = async (userId) => {
   if (!userId) return { error: 'missing user id' }
   if (USE_REAL && supabase) {
-    // Also reset is_admin so a soft-deleted admin can't accidentally edit
-    const { error } = await supabase
-      .from('profiles')
-      .update({ deleted_at: new Date().toISOString(), is_admin: false })
-      .eq('id', userId)
+    // deleted_at/is_admin sind für Clients nicht schreibbar — serverseitige
+    // Funktion prüft die Adminrechte und setzt beides.
+    const { error } = await supabase.rpc('admin_soft_delete_user', { target_id: userId })
     if (error) return { error: error.message }
-    // Also remove their progress
-    await supabase.from('user_progress').delete().eq('user_id', userId)
     return {}
   }
   // Mock: remove from users
@@ -493,10 +513,7 @@ export const adminSoftDeleteUser = async (userId) => {
 export const adminUndeleteUser = async (userId) => {
   if (!userId) return { error: 'missing user id' }
   if (USE_REAL && supabase) {
-    const { error } = await supabase
-      .from('profiles')
-      .update({ deleted_at: null })
-      .eq('id', userId)
+    const { error } = await supabase.rpc('admin_undelete_user', { target_id: userId })
     if (error) return { error: error.message }
     return {}
   }

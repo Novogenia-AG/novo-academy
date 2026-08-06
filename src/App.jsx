@@ -980,8 +980,23 @@ function CategoryRow({ category, label, items, courseState, navigate }) {
    null/undefined = not yet decided → banner is shown */
 const COOKIE_KEY = 'nova-cookie-consent'
 function useCookieConsent() {
-  const [consent, setConsentState] = useState(() => localStorage.getItem(COOKIE_KEY))
-  const setConsent = (val) => { localStorage.setItem(COOKIE_KEY, val); setConsentState(val) }
+  const read = () => {
+    try {
+      const v = localStorage.getItem(COOKIE_KEY)
+      // Alles außer den zwei gültigen Werten gilt als "noch nicht entschieden".
+      // Fängt auch den Altbestand ab, bei dem der String "null" gespeichert
+      // wurde — sonst bliebe das Banner für immer weg und kein Video liefe.
+      return (v === 'all' || v === 'necessary') ? v : null
+    } catch { return null }
+  }
+  const [consent, setConsentState] = useState(read)
+  const setConsent = (val) => {
+    try {
+      if (val === 'all' || val === 'necessary') localStorage.setItem(COOKIE_KEY, val)
+      else localStorage.removeItem(COOKIE_KEY)   // NICHT setItem(key, null) — das speichert "null"
+    } catch {}
+    setConsentState((val === 'all' || val === 'necessary') ? val : null)
+  }
   return [consent, setConsent]
 }
 
@@ -1811,8 +1826,13 @@ function TestPage({ course, onSubmit, onBack }) {
             cz: <>Odpověz na všechny otázky v jednom pokusu. Hranice úspěšnosti: <strong>80&nbsp;% správných odpovědí</strong>. Po odeslání obdržíš pouze celkový výsledek (bez rozpisu po otázkách).</>,
             fr: <>Réponds à toutes les questions en une seule fois. Seuil de réussite : <strong>80&nbsp;% de réponses correctes</strong>. Après l’envoi, tu ne recevras que le résultat global (aucun détail par question).</>,
             pt: <>Responde a todas as perguntas numa única tentativa. Limiar de aprovação: <strong>80&nbsp;% de respostas corretas</strong>. Após o envio, receberás apenas o resultado global (sem detalhe por pergunta).</>,
+            nl: <>Beantwoord alle vragen in één keer. Slaaggrens: <strong>80&nbsp;% correcte antwoorden</strong>. Na het inleveren krijg je alleen de totaaluitslag (geen uitwerking per vraag).</>,
+            ro: <>Răspunde la toate întrebările într-o singură încercare. Prag de promovare: <strong>80&nbsp;% răspunsuri corecte</strong>. După trimitere vei primi doar rezultatul general (fără detalii pe întrebări).</>,
+            es: <>Responde todas las preguntas en un solo intento. Umbral de aprobación: <strong>80&nbsp;% de respuestas correctas</strong>. Tras el envío solo recibirás el resultado global (sin desglose por pregunta).</>,
+            sr: <>Odgovori na sva pitanja u jednom pokušaju. Prag za prolaz: <strong>80&nbsp;% tačnih odgovora</strong>. Nakon slanja dobijaš samo ukupan rezultat (bez pregleda po pitanju).</>,
+            ar: <>أجب عن جميع الأسئلة في محاولة واحدة. حد النجاح: <strong>80&nbsp;% من الإجابات الصحيحة</strong>. بعد الإرسال ستحصل على النتيجة الإجمالية فقط (بدون تفصيل لكل سؤال).</>,
           }[lang]) || (
-            <>Beantworte alle Fragen in einem Durchgang. Bestehensgrenze: <strong>80&nbsp;% korrekte Antworten</strong>. Du erhältst nach Abgabe nur das Gesamtergebnis (keine Einzelauflösung).</>
+            <>Answer all questions in a single attempt. Pass threshold: <strong>80&nbsp;% correct answers</strong>. After submission you will only receive the overall result (no per-question breakdown).</>
           )}
         </p>
 
@@ -1921,7 +1941,20 @@ const formatDateDE = (d = new Date()) =>
   d.toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' })
 const formatDateEN = (d = new Date()) =>
   d.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })
-const formatDate = (lang, d) => lang === 'en' ? formatDateEN(d) : formatDateDE(d)
+/* Das Zertifikat setzt den Fließtext für alles außer 'de' auf Englisch
+   (generateCert.js). Ein deutsch formatiertes Datum in einem englischen Satz
+   passte also für 9 von 11 Sprachen nicht — jede Sprache bekommt ihr Format. */
+const DATE_LOCALE = {
+  de: 'de-DE', en: 'en-US', cz: 'cs-CZ', fr: 'fr-FR', pt: 'pt-PT', it: 'it-IT',
+  nl: 'nl-NL', ro: 'ro-RO', es: 'es-ES', sr: 'sr-Latn-RS', ar: 'ar',
+}
+const formatDate = (lang, d = new Date()) => {
+  if (lang === 'de') return formatDateDE(d)
+  try {
+    return d.toLocaleDateString(DATE_LOCALE[lang] || 'en-US',
+      { day: 'numeric', month: 'long', year: 'numeric' })
+  } catch { return formatDateEN(d) }
+}
 
 /* Novogenia logo — uses /novogenia-logo.png if dropped in /public, otherwise inline SVG fallback */
 function NovogeniaLogo({ className = '' }) {
@@ -2165,6 +2198,9 @@ export default function App() {
   // and so we don't immediately upsert the just-loaded data.
   const progressLoadedRef = useRef(false)
   const saveTimerRef = useRef(null)
+  // true, wenn der letzte Ladeversuch fehlgeschlagen ist — dann bleibt das
+  // Speichern gesperrt, damit kein Nullzustand den echten Fortschritt ersetzt.
+  const [progressLoadFailed, setProgressLoadFailed] = useState(false)
 
   // Load per-user progress when session becomes available
   useEffect(() => {
@@ -2178,6 +2214,15 @@ export default function App() {
     ;(async () => {
       const remote = await loadProgress(session.user.id)
       if (cancelled) return
+      // null = der Load ist FEHLGESCHLAGEN (Netzwerk, 5xx, abgelaufenes Token).
+      // Dann darf der Speicher-Effekt NICHT freigegeben werden, sonst würde er
+      // den leeren Startzustand zurückschreiben und echten Fortschritt löschen.
+      if (remote === null) {
+        console.warn('Fortschritt konnte nicht geladen werden — Speichern bleibt gesperrt.')
+        setProgressLoadFailed(true)
+        return
+      }
+      setProgressLoadFailed(false)
       // Merge initial defaults with remote, then preserve any local edits
       // made BEFORE the load finished (e.g. user marked a course complete fast)
       const fresh = buildInitialState()
@@ -2209,15 +2254,29 @@ export default function App() {
   useEffect(() => {
     if (!session?.user?.id) return
     if (!progressLoadedRef.current) return
+    if (progressLoadFailed) return          // fehlgeschlagener Load: nie zurückschreiben
     if (Object.keys(courseState).length === 0) return
     if (saveTimerRef.current) clearTimeout(saveTimerRef.current)
+    const uid = session.user.id
+    const snapshot = courseState
     saveTimerRef.current = setTimeout(() => {
-      saveProgress(session.user.id, courseState)
+      saveTimerRef.current = null
+      saveProgress(uid, snapshot)
     }, 800)
+    // Wird die Seite verlassen, bevor der Debounce abgelaufen ist, ginge die
+    // letzte Aktion sonst verloren — deshalb vorher sofort schreiben.
+    const flush = () => {
+      if (!saveTimerRef.current) return
+      clearTimeout(saveTimerRef.current)
+      saveTimerRef.current = null
+      saveProgress(uid, snapshot)
+    }
+    window.addEventListener('pagehide', flush)
     return () => {
+      window.removeEventListener('pagehide', flush)
       if (saveTimerRef.current) clearTimeout(saveTimerRef.current)
     }
-  }, [courseState, session?.user?.id])
+  }, [courseState, session?.user?.id, progressLoadFailed])
 
   // Browser / phone Back-button support: mirror in-app navigation into the
   // History API so Back and Forward move between app screens instead of leaving
@@ -2254,9 +2313,13 @@ export default function App() {
 
   const courseById = (id) => COURSES.find(c => c.id === id)
 
+  // Nur Kurse der AKTUELLEN Sprache — sonst zählt der Zertifikats-Hinweis
+  // Module aller 11 Sprachen mit und das PDF listet deutsche Titel auf einem
+  // arabischen Zertifikat. Der Fortschrittsbalken filtert bereits so.
   const certifiedCourses = useMemo(() =>
-    COURSES.filter(c => isCertified(c, courseState)).map(c => `${c.category}: ${c.topic}`),
-  [courseState])
+    COURSES.filter(c => (c.lang || 'de') === lang && isCertified(c, courseState))
+           .map(c => `${c.category}: ${c.topic}`),
+  [courseState, lang])
 
   const sampleName = LX(lang, 'Jane Doe', 'Maria Mustermann')
 
@@ -3163,8 +3226,15 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLa
       const args = isSignup ? { email, password, name } : { email, password }
       const { error } = await fn(args)
       if (error) {
-        const map = { invalid: 'auth_error_invalid', taken: 'auth_error_taken', weak: 'auth_error_weak' }
-        setErrorKey(map[error] || 'auth_error_invalid')
+        // Die Sperre kommt als Objekt {code:'rate_limited', minutes} — vorher
+        // fiel sie in den Default und wurde als "Passwort ungültig" angezeigt,
+        // auch bei korrektem Passwort.
+        if (error && error.code === 'rate_limited') {
+          setErrorKey('auth_error_rate_limited')
+        } else {
+          const map = { invalid: 'auth_error_invalid', taken: 'auth_error_taken', weak: 'auth_error_weak' }
+          setErrorKey(map[error] || 'auth_error_invalid')
+        }
       }
       // On success, onAuthChange will swap us into the app
     } finally {
@@ -3195,11 +3265,10 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLa
           </div>
           <div className="landing-header-right">
             <div className="lang-switcher" title="Language / Sprache">
-              <button className={`lang-btn${lang === 'de' ? ' is-active' : ''}`} onClick={() => setLang('de')}>DE</button>
-              <button className={`lang-btn${lang === 'en' ? ' is-active' : ''}`} onClick={() => setLang('en')}>EN</button>
-              <button className={`lang-btn${lang === 'cz' ? ' is-active' : ''}`} onClick={() => setLang('cz')}>CZ</button>
-              <button className={`lang-btn${lang === 'fr' ? ' is-active' : ''}`} onClick={() => setLang('fr')}>FR</button>
-              <button className={`lang-btn${lang === 'pt' ? ' is-active' : ''}`} onClick={() => setLang('pt')}>PT</button>
+              {['de','en','cz','fr','pt','it','nl','ro','es','sr','ar'].map(l => (
+                <button key={l} className={`lang-btn${lang === l ? ' is-active' : ''}`}
+                        onClick={() => setLang(l)}>{l.toUpperCase()}</button>
+              ))}
             </div>
           </div>
         </div>

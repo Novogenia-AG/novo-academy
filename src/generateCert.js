@@ -24,6 +24,12 @@ const FONT_URLS = {
   medium:   `${_BASE}/fonts/Montserrat-Medium.ttf`,
   semibold: `${_BASE}/fonts/Montserrat-SemiBold.ttf`,
   bold:     `${_BASE}/fonts/Montserrat-Bold.ttf`,
+  /* Montserrat enthält KEINE arabischen Zeichen — ein arabischer Name wurde
+     dadurch als Reihe leerer Kästchen (.notdef) gedruckt, ohne Fehlermeldung,
+     während die HTML-Vorschau dank System-Schrift korrekt aussah.
+     Noto Naskh Arabic deckt Arabisch inkl. Verbindungsformen UND Latein ab. */
+  arabic:     `${_BASE}/fonts/NotoNaskhArabic-Regular.ttf`,
+  arabicBold: `${_BASE}/fonts/NotoNaskhArabic-SemiBold.ttf`,
 }
 const CERT_TEMPLATE_URL = `${_BASE}/cert-template.pdf`
 const fontBytesCache = {}
@@ -35,9 +41,19 @@ async function loadFontBytes(weight) {
   return fontBytesCache[weight]
 }
 
-async function loadFonts(pdfDoc) {
+async function loadFonts(pdfDoc, lang) {
   try {
     pdfDoc.registerFontkit(fontkit)
+    // Arabisch braucht durchgehend eine Schrift mit arabischen Glyphen —
+    // Noto Naskh deckt auch Latein ab, also ist ein Mischen nicht nötig.
+    if (lang === 'ar') {
+      const [reg, semi] = await Promise.all(
+        ['arabic', 'arabicBold'].map(w =>
+          loadFontBytes(w).then(b => pdfDoc.embedFont(b, { subset: true }))
+        )
+      )
+      return { light: reg, regular: reg, medium: reg, semibold: semi, bold: semi }
+    }
     const [light, regular, medium, semibold, bold] = await Promise.all(
       ['light', 'regular', 'medium', 'semibold', 'bold'].map(w =>
         loadFontBytes(w).then(b => pdfDoc.embedFont(b, { subset: true }))
@@ -160,7 +176,7 @@ export async function generateCertificatePdf({ name, courses, dateStr, lang = 'd
   // template-level features the most reliably)
   if (chunks.length <= 1) {
     const pdfDoc = await PDFDocument.load(templateBytes)
-    const fonts = await loadFonts(pdfDoc)
+    const fonts = await loadFonts(pdfDoc, lang)
     drawCertPage(pdfDoc.getPages()[0], {
       name, dateStr, lang,
       courses: chunks[0] || [],
@@ -174,7 +190,7 @@ export async function generateCertificatePdf({ name, courses, dateStr, lang = 'd
   // Multi-page path: build a fresh PDFDocument, copy the template's page once
   // per chunk, then draw the chunk content on top.
   const pdfDoc = await PDFDocument.create()
-  const fonts = await loadFonts(pdfDoc)
+  const fonts = await loadFonts(pdfDoc, lang)
   const templateDoc = await PDFDocument.load(templateBytes)
   for (let pi = 0; pi < chunks.length; pi++) {
     const [copied] = await pdfDoc.copyPages(templateDoc, [0])

@@ -2651,6 +2651,11 @@ html { -webkit-text-size-adjust: 100%; }
   .topbar .page-title-logo { font-size: 26px; }
   .topbar-actions { gap: 8px; flex-wrap: wrap; }
 
+  /* Die Sprachleiste selbst ist ein einzelnes, nicht umbrechendes Flex-Item.
+     Bei 11 Sprachen ragte sie bis 529px hinaus — RO/ES/SR/AR lagen außerhalb
+     des Viewports und waren wegen `overflow-x: hidden` unerreichbar. */
+  .lang-switcher { flex-wrap: wrap; justify-content: center; max-width: 100%; }
+
   /* Content gutters */
   .content { padding: 12px 16px 56px; }
 
@@ -2802,7 +2807,7 @@ html { -webkit-text-size-adjust: 100%; }
   .landing-header { padding: 12px 0; }
   .landing-header-inner { padding: 0 12px; gap: 6px 8px; flex-wrap: wrap; }
   .landing-logo { position: static; transform: none; font-size: 19px; }
-  .landing-header-right { gap: 6px; }
+  .landing-header-right { gap: 6px; flex-wrap: wrap; justify-content: flex-end; max-width: 100%; }
   .landing-header .lang-btn { padding: 5px 9px; }
   .landing-login-btn { padding: 7px 11px; font-size: 12px; }
 

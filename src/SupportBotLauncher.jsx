@@ -12,7 +12,12 @@ const CHAT_URL = 'https://novogenia-support-bot.live.chatbot.twoxten.at/chat'
 
 export default function SupportBotLauncher({ lang = 'de' }) {
   const winRef = useRef(null)
-  const label = lang === 'en' ? 'Chat with us' : 'Frag uns!'
+  const label = {
+    de: 'Frag uns!',      en: 'Chat with us',   cz: 'Zeptej se nás!',
+    fr: 'Écris-nous !',   pt: 'Fala connosco!', it: 'Scrivici!',
+    nl: 'Vraag het ons!', ro: 'Întreabă-ne!',   es: '¡Pregúntanos!',
+    sr: 'Pitaj nas!',     ar: 'اسألنا!',
+  }[lang] || 'Chat with us'
 
   const openChat = () => {
     // Re-focus an already-open chat window instead of opening a new one.
@@ -25,7 +30,13 @@ export default function SupportBotLauncher({ lang = 'de' }) {
     const features = `width=${w},height=${h},left=${left},top=${top},resizable=yes,scrollbars=yes`
     let win = null
     try { win = window.open(CHAT_URL, 'novogeniaSupport', features) } catch (_) { /* noop */ }
-    if (!win) { window.open(CHAT_URL, '_blank'); return } // popup blocked -> new tab
+    if (!win) {
+      // Popup blockiert -> neuer Tab. noopener kappt window.opener (Tabnabbing).
+      window.open(CHAT_URL, '_blank', 'noopener,noreferrer')
+      return
+    }
+    // Referenz auf uns kappen, das Handle bleibt zum Fokussieren nutzbar.
+    try { win.opener = null } catch (_) { /* cross-origin */ }
     winRef.current = win
     try { win.focus() } catch (_) { /* noop */ }
   }

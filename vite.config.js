@@ -6,6 +6,20 @@ import react from '@vitejs/plugin-react'
 // For local dev (npm run dev) we always serve from "/".
 const basePath = process.env.VITE_BASE_PATH || '/'
 
+/* SICHERHEITSGURT: Ohne Supabase-Keys fällt die App still auf die
+   localStorage-Mock-Auth zurück — getMyProfile() liefert dort is_admin: true
+   für JEDEN. Würde ein Deploy-Secret umbenannt, rotiert oder gelöscht, liefe
+   der Build grün durch und veröffentlichte eine Seite ohne echte Anmeldung,
+   die jedem Besucher das Admin-Panel zeigt. Im CI deshalb hart abbrechen.
+   Lokale Builds ohne .env.local bleiben erlaubt (Mock-Modus ist zum
+   Entwickeln gedacht, siehe CLAUDE.md Abschnitt 3). */
+if (process.env.CI && !process.env.VITE_SUPABASE_URL) {
+  throw new Error(
+    'VITE_SUPABASE_URL fehlt im CI-Build. Ohne Supabase-Keys würde die App mit ' +
+    'Mock-Auth deployen und jedem Besucher Adminrechte geben. Repository-Secrets prüfen.'
+  )
+}
+
 export default defineConfig({
   base: basePath,
   plugins: [react()],
