@@ -3131,7 +3131,8 @@ const HOME_TOP_VIDEOS_PT = [
 // cz/fr/pt: intro/welcome videos have NO lip-sync version yet → hidden (no English fallback).
 // The translated card texts above (HOME_TOP_VIDEOS_CZ/FR/PT) are kept ready: once the
 // lip-sync intro videos are uploaded, set those entries' youtubeId and point the map back.
-const HOME_TOP_VIDEOS_BY_LANG = { de: HOME_TOP_VIDEOS_DE, en: HOME_TOP_VIDEOS_EN, cz: [], fr: [], pt: [] }
+// it/nl/ro/es/sr/ar ebenfalls [] — sonst greift der EN-Fallback und zeigt englische Intro-Karten
+const HOME_TOP_VIDEOS_BY_LANG = { de: HOME_TOP_VIDEOS_DE, en: HOME_TOP_VIDEOS_EN, cz: [], fr: [], pt: [], it: [], nl: [], ro: [], es: [], sr: [], ar: [] }
 export const getHomeTopVideos = (lang = 'de') => HOME_TOP_VIDEOS_BY_LANG[lang] || HOME_TOP_VIDEOS_EN
 void [HOME_TOP_VIDEOS_CZ, HOME_TOP_VIDEOS_FR, HOME_TOP_VIDEOS_PT]   // referenced (ready for lip-sync intros)
 
