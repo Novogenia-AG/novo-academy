@@ -46,3 +46,11 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # Das Artefakt ist ~182 MB (grosse Demo-Berichte und Schulungsfolien
+          # unter public/course-materials). Der Standard-Timeout von 10 Minuten
+          # reicht dafuer nicht zuverlaessig — zwei Deploys sind am 2026-08-06
+          # mit "Timeout reached, aborting!" gescheitert, obwohl der Build lief.
+          # Dauerhafte Loesung waere, die grossen Dateien nach Supabase Storage
+          # auszulagern (offenes TODO in CLAUDE.md Abschnitt 11).
+          timeout: 1800000   # 30 Minuten in Millisekunden
