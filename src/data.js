@@ -958,6 +958,68 @@ export const COURSES = [
         url: '/course-materials/shared/Demo_NovoDaily_Lifestyle.pdf',
       },
     ],
+    questions: [
+      {
+        q: 'Ein Kunde baut Koffein genetisch langsam ab (CYP1A2-Defekt) und fragt, ob er Kaffee komplett streichen muss. Was antwortest du?',
+        options: [
+          'Ja, Kaffee ist ab sofort in jeder Form verboten',
+          'Entkoffeinierter Kaffee ist eine gute Alternative — die schützenden Polyphenole bleiben erhalten, ohne die verlängerte Koffein-Belastung',
+          'Fünf Tassen täglich trinken, damit sich eine Toleranz aufbaut',
+          'Nur schwarzer Tee ist erlaubt, alles andere nicht',
+        ],
+        correct: 1,
+      },
+      {
+        q: 'Wie erklärst du einem Kunden mit VDR-Variante die Vitamin-D-Empfehlung?',
+        options: [
+          'Vitamin D wirkt bei allen Menschen gleich, die Variante spielt keine Rolle',
+          'Die VDR-Variante verändert, wie stark die Zellen auf vorhandenes Vitamin D ansprechen — auch bei „normalem" Blutwert kann die Wirkung schwächer ausfallen',
+          'Vitamin D sollte er wegen der Variante lieber ganz meiden',
+          'Nur Sonnenlicht hilft ihm, Präparate wirken bei ihm nicht',
+        ],
+        correct: 1,
+      },
+      {
+        q: 'Welche Ernährungsempfehlung passt zu einem Kunden mit HFE-Defekt (Risiko für Eisenüberladung)?',
+        options: [
+          'Die Eisenzufuhr erhöhen, er braucht mehr davon',
+          'Die Eisenlast senken: weniger rotes Fleisch, keine eisenangereicherten Präparate ohne nachgewiesenen Mangel — überschüssiges Eisen lagert sich über Jahre in Leber, Herz und Gelenken ab',
+          'Vorsorglich täglich ein Eisenpräparat einnehmen',
+          'Nichts ändern, der Körper reguliert das von allein',
+        ],
+        correct: 1,
+      },
+      {
+        q: 'Eine Kundin mit MTHFR-Variante nimmt ein normales Folsäure-Präparat. Was rätst du ihr?',
+        options: [
+          'Weiter wie bisher, die Variante ändert nichts an der Wirkung',
+          'Auf Methylfolat umsteigen — die bereits aktivierte Form. Bei einem MTHFR-Defekt wird gewöhnliche Folsäure schlecht aktiviert, der Blutspiegel kann trotzdem normal aussehen',
+          'Folsäure vollständig absetzen',
+          'Die Dosis der normalen Folsäure einfach verdoppeln',
+        ],
+        correct: 1,
+      },
+      {
+        q: 'Wie ordnest du die Salz-Empfehlung bei einem salzsensitiven Kunden (ACE-Variante) ein?',
+        options: [
+          'Salz spielt keine Rolle, die Empfehlung ist für alle gleich',
+          'Salzsensitivität ist genetisch bedingt: Bei dieser Variante hebt Salz den Blutdruck messbar stärker an als im Durchschnitt — Salz zu reduzieren ist bei ihm ein besonders wirksamer Hebel',
+          'Er sollte zusätzlich salzen, das stabilisiert den Blutdruck',
+          'Nur Zucker vermeiden, Salz ist unkritisch',
+        ],
+        correct: 1,
+      },
+      {
+        q: 'Ein Kunde ist enttäuscht, weil ein Lieblingsgericht in seiner Lebensmittelliste ungünstig bewertet ist. Wie gehst du damit um?',
+        options: [
+          'Ihm sagen, dass er dieses Gericht nie wieder essen darf',
+          'Erklären, dass die Liste eine langfristige Orientierung ist — gelegentlicher Genuss ist unproblematisch, entscheidend ist die Balance über Wochen und Monate, nicht Perfektion an einem Tag',
+          'Die Bewertung als Messfehler abtun',
+          'Ihm empfehlen, den Bericht zu ignorieren',
+        ],
+        correct: 1,
+      },
+    ],
     hasDownload: true, hasText: false,
     initialWatched: false, initialTestPassed: false,
   },
@@ -1363,6 +1425,68 @@ export const COURSES = [
         size: '20 MB',
         type: 'pdf',
         url: '/course-materials/shared/Demo_NovoDaily_Lifestyle.pdf',
+      },
+    ],
+    questions: [
+      {
+        q: 'Ein Kunde grillt gern scharf angebratenes Fleisch. Sein Entgiftungs-Bericht zeigt einen langsamen Abbau polyzyklischer aromatischer Kohlenwasserstoffe (PAK). Was empfiehlst du?',
+        options: [
+          'Kein Problem, er kann so viel Verbranntes essen wie er möchte',
+          'Verbranntes, stark Angeröstetes und Geräuchertes reduzieren, schonendere Garmethoden bevorzugen und die Mahlzeiten mit antioxidantienreichem Gemüse kombinieren',
+          'Komplett auf Rohkost umstellen',
+          'Mehr Verbranntes essen, damit sich das Enzym trainiert',
+        ],
+        correct: 1,
+      },
+      {
+        q: 'Bei einem Kunden ist die GPX-Aktivität reduziert (selenabhängige antioxidative Abwehr). Was passt am besten?',
+        options: [
+          'Die Selenzufuhr komplett ignorieren',
+          'Gezielte Selenversorgung im physiologischen Bereich (etwa 50–100 µg pro Tag, z. B. als Selenomethionin) plus antioxidantienreiche Ernährung',
+          'Hochdosiertes Selen mit 500 µg und mehr pro Tag',
+          'Nur Vitamin C geben, Selen ist überflüssig',
+        ],
+        correct: 1,
+      },
+      {
+        q: 'Wie erklärst du eine „rote Zone" im Kapitel zur Chemikalien-Entgiftung (GST-Defekt)?',
+        options: [
+          'Der Kunde ist gegen alle Chemikalien allergisch',
+          'Sein Körper neutralisiert Umweltchemikalien weniger effizient als der Durchschnitt — sinnvoll sind praktische Maßnahmen zur Verringerung der Belastung und eine gute antioxidative Versorgung. Es ist ein Hinweis, keine Diagnose',
+          'Es handelt sich um einen Laborfehler',
+          'Er sollte vorsichtshalber alle Lebensmittel meiden',
+        ],
+        correct: 1,
+      },
+      {
+        q: 'Ein Kunde zeigt einen ALDH2-Defekt. Was ist der zentrale Punkt im Beratungsgespräch?',
+        options: [
+          'Mehr Alkohol trinken, damit sich der Körper anpasst',
+          'Acetaldehyd — ein bekanntes Karzinogen — reichert sich an. Schon regelmäßiger moderater Alkoholkonsum erhöht das Langzeitrisiko deutlich',
+          'Der Befund ist ohne praktische Bedeutung',
+          'Nur Zucker meiden, Alkohol ist unkritisch',
+        ],
+        correct: 1,
+      },
+      {
+        q: 'Wie rahmst du den Entgiftungs-Bericht insgesamt für den Kunden ein?',
+        options: [
+          'Als Urteil — die Gene bestimmen sein Schicksal',
+          'Als Landkarte — der Bericht zeigt, wo das System schwächer ist, sodass sich Belastungen gezielt senken und die antioxidative Versorgung gezielt stärken lassen',
+          'Als belanglos, weil Entgiftung ohnehin von allein läuft',
+          'Als medizinische Diagnose, die sofort behandelt werden muss',
+        ],
+        correct: 1,
+      },
+      {
+        q: 'Warum ist die antioxidative Versorgung bei genetisch geschwächter Radikalabwehr besonders wichtig?',
+        options: [
+          'Weil Antioxidantien den Gendefekt selbst reparieren',
+          'Weil freie Radikale bei schwächerer körpereigener Abwehr länger wirken können — Antioxidantien aus der Nahrung fangen sie ab, bevor sie Zellen schädigen',
+          'Weil sie den Bedarf an Schlaf ersetzen',
+          'Weil sie den Alkoholabbau beschleunigen',
+        ],
+        correct: 1,
       },
     ],
     hasDownload: true, hasText: false,
