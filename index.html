@@ -35,15 +35,9 @@
          Solange die Seite auf GitHub Pages liegt, ist das Frame-Busting unten
          der einzige wirksame Schutz. Bei einem Wechsel auf Cloudflare Pages /
          Netlify stattdessen echte Header setzen und dies hier entfernen. -->
-    <script>
-      // Wird die Seite fremd eingebettet, aus dem Rahmen ausbrechen.
-      try {
-        if (window.top !== window.self) window.top.location = window.self.location.href
-      } catch (e) {
-        // Cross-Origin-Zugriff verweigert = wir stecken in einem fremden Rahmen
-        document.documentElement.style.display = 'none'
-      }
-    </script>
+    <!-- Das Frame-Busting steht in src/main.jsx, NICHT hier als Inline-Skript:
+         die CSP erlaubt nur `script-src 'self' blob:`, ein Inline-Skript wuerde
+         blockiert (im Browser verifiziert). -->
     <!-- Limit referrer leakage (als <meta name> gültig) -->
     <meta name="referrer" content="strict-origin-when-cross-origin" />
 

@@ -2903,7 +2903,15 @@ const GENERIC_QUESTIONS_EN = [
 COURSES.forEach(c => {
   if (c.contentType === 'placeholder') return
   if (c.contentType !== 'supplementary' && c.contentType !== 'faq' && !c.questions) {
-    c.questions = c.lang === 'en' ? GENERIC_QUESTIONS_EN : GENERIC_QUESTIONS
+    /* Frueher wurde hier still GENERIC_QUESTIONS zugewiesen — ein Prototyp-Test
+       ohne Bezug zum Kursinhalt. Zwei deutsche Kurse (nut-report, tx-report)
+       zertifizierten dadurch jahrelang mit fachfremden Fragen, ohne dass es
+       jemandem auffiel. Statt still einzuspringen jetzt laut warnen: der Kurs
+       bleibt ohne Test (und damit nicht bestehbar), der Fehler ist sichtbar. */
+    console.warn(
+      `[data] Kurs "${c.id}" (${c.lang || 'de'}) ist zertifizierbar, hat aber keinen Test. ` +
+      `Bitte einen kursspezifischen questions-Block ergaenzen.`
+    )
   }
   if (!c.videos) c.videos = GENERIC_VIDEOS
   if (!c.documents) c.documents = GENERIC_DOCS
