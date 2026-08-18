@@ -2243,7 +2243,7 @@ export default function App() {
   const [langChosen, setLangChosen] = useState(hasChosenLang)
   const [session, setSession] = useState(() => getCurrentSession())
   const [profile, setProfile] = useState(null)
-  const [outerRoute, setOuterRoute] = useState(null) // null = derived from phase; otherwise 'landing'|'auth-signup'|'auth-login'|'impressum'|'datenschutz'
+  const [outerRoute, setOuterRoute] = useState(null) // null = derived from phase; otherwise 'landing'|'auth-signup'|'auth-login'|'impressum'|'datenschutz'|'barrierefreiheit'
   const [authBusy, setAuthBusy] = useState(false)
   /* Einzige Quelle der Wahrheit für die Cookie-Zustimmung; wird unten per
      CookieContext an alle Player und die Datenschutzseite verteilt. */
@@ -3066,6 +3066,9 @@ function AdminPage({ onBack, eigeneId }) {
   const [users, setUsers] = useState(null) // null = loading, [] = loaded
   const [error, setError] = useState(null)
   const [showDeleted, setShowDeleted] = useState(false)
+  /* Fehler aus einer Admin-Aktion (Rechte, letzter Admin, fehlende Migration).
+     Getrennt vom Ladefehler, damit beide nebeneinander sichtbar sein koennen. */
+  const [aktionsFehler, setAktionsFehler] = useState(null)
 
   const reload = async () => {
     try {
@@ -3100,11 +3103,12 @@ function AdminPage({ onBack, eigeneId }) {
 
       {users === null && <p className="admin-loading">{t('admin_loading')}</p>}
       {error && <p className="auth-error" role="alert">{error}</p>}
+      {aktionsFehler && <p className="auth-error" role="alert">{aktionsFehler}</p>}
       {users && users.length === 0 && !error && <p className="admin-loading">{t('admin_no_users')}</p>}
 
       {users && users.length > 0 && tab === 'dashboard' && <AdminDashboard users={users} />}
       {users && users.length > 0 && tab === 'users' && (
-        <AdminUserList users={users} onChanged={reload} eigeneId={eigeneId} />
+        <AdminUserList users={users} onChanged={reload} eigeneId={eigeneId} onError={setAktionsFehler} />
       )}
     </div>
   )
@@ -3229,7 +3233,7 @@ function GrowthSparkline({ buckets }) {
 }
 
 /* ----- User list with per-course toggles ----- */
-function AdminUserList({ users, onChanged, eigeneId }) {
+function AdminUserList({ users, onChanged, eigeneId, onError }) {
   const t = useT()
   const [query, setQuery] = useState('')
   const [expandedId, setExpandedId] = useState(null)
@@ -3310,7 +3314,7 @@ function AdminUserList({ users, onChanged, eigeneId }) {
                         <button className="btn-ghost admin-expand-btn" onClick={() => setExpandedId(isOpen ? null : u.id)}>
                           {isOpen ? t('admin_user_collapse') : t('admin_user_expand')}
                         </button>
-                        <AdminUserActionsMenu user={u} onChanged={onChanged} eigeneId={eigeneId} />
+                        <AdminUserActionsMenu user={u} onChanged={onChanged} eigeneId={eigeneId} onError={onError} />
                       </div>
                     </td>
                   </tr>
@@ -3393,7 +3397,7 @@ function AdminUserCourses({ user, onSet, busyKey }) {
 }
 
 /* ----- Per-user actions menu (promote/demote, rename, reset, delete) ----- */
-function AdminUserActionsMenu({ user, onChanged, eigeneId }) {
+function AdminUserActionsMenu({ user, onChanged, eigeneId, onError }) {
   const lang = useLang()
   const t = useT()
   const [open, setOpen] = useState(false)
@@ -3417,9 +3421,18 @@ function AdminUserActionsMenu({ user, onChanged, eigeneId }) {
     }
   }, [open])
 
+  /* Die Rueckgaben aus auth.js tragen { error }. Vorher wurden sie verworfen:
+     eine abgelehnte Admin-Aktion (fehlende Berechtigung, letzter Admin, nicht
+     ausgefuehrte Migration) sah exakt wie ein Erfolg aus. */
   const wrap = async (fn) => {
     setBusy(true)
-    try { await fn() } finally { setBusy(false); setOpen(false); onChanged && onChanged() }
+    try {
+      const res = await fn()
+      if (res?.error) { onError?.(String(res.error)); return }
+      onError?.(null)
+    } catch (e) {
+      onError?.(e?.message || String(e))
+    } finally { setBusy(false); setOpen(false); onChanged && onChanged() }
   }
 
   const togglePromote = () => wrap(() => adminSetIsAdmin(user.id, !user.is_admin))

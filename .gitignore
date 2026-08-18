@@ -25,8 +25,10 @@ All Slides to  use.pptx
 *.docx
 
 # ===== Large assets (>100 MB, GitHub will reject) =====
-# These need to be deployed separately (Netlify drag-drop, R2, etc).
-# Keep them locally; they're loaded into the build's dist/ folder via vite.
+# Diese Dateien liegen NICHT im Repo, sondern im GitHub-Release "course-materials";
+# src/data.js verlinkt sie ueber absolute URLs. Sie werden NICHT in den Build
+# uebernommen — im CI-Checkout existieren sie gar nicht. Lokale Kopien liegen
+# nur im OneDrive-Ordner.
 public/course-materials/beauty/Schulungsfolien_Beauty.pptx
 public/course-materials/detox/Schulungsfolien_Detox.pptx
 public/course-materials/gene-diet/01-wissenschaftliche-basis/course/DEMO_NUTRITION_PLAN.pdf

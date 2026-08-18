@@ -7,21 +7,28 @@
     <meta name="description" content="Die offizielle Schulungsplattform von Novogenia. Lerne genetische Beratung in deinem Tempo, schließe Module mit Tests ab und erhalte dein Zertifikat als Genetik Coach." />
 
     <!-- ===== SECURITY HEADERS (meta fallback for GitHub Pages static hosting) ===== -->
-    <!-- Content-Security-Policy: allowlist every source the app needs -->
+    <!-- Content-Security-Policy: allowlist every source the app needs.
+         connect-src nennt bewusst den KONKRETEN Supabase-Host statt *.supabase.co:
+         die Wildcard haette jedes fremde Supabase-Projekt als Ziel erlaubt und damit
+         den Zweck der Direktive (Exfiltration begrenzen) aufgehoben.
+         script-src ohne blob: — blob:-Skripte sind ein klassischer Umweg um die CSP;
+         der PDF-Worker braucht nur worker-src blob:, nicht script-src.
+         *.githubusercontent.com deckt objects/raw/release-assets zugleich ab; der Host
+         fuer Release-Anhaenge hat sich bereits einmal umbenannt, wodurch die PDF-
+         Vorschau der ausgelagerten Dokumente still blockiert wurde. -->
     <meta http-equiv="Content-Security-Policy" content="
       default-src 'none';
-      script-src  'self' blob:;
+      script-src  'self';
       style-src   'self' 'unsafe-inline' https://fonts.googleapis.com;
       font-src    'self' https://fonts.gstatic.com;
       img-src     'self' data: blob: https://img.youtube.com https://i.ytimg.com;
       connect-src 'self'
-                  https://*.supabase.co
-                  wss://*.supabase.co
+                  https://whjxtrrztfzhjqtsyqqf.supabase.co
+                  wss://whjxtrrztfzhjqtsyqqf.supabase.co
                   https://fonts.googleapis.com
                   https://fonts.gstatic.com
                   https://github.com
-                  https://objects.githubusercontent.com
-                  https://raw.githubusercontent.com;
+                  https://*.githubusercontent.com;
       frame-src   https://www.youtube.com https://www.youtube-nocookie.com;
       worker-src  'self' blob:;
       object-src  'none';

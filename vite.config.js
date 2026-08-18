@@ -44,7 +44,10 @@ export default defineConfig({
     },
     // Main chunk is content-heavy (course data for all languages); the warning
     // is informational — raise the threshold so real regressions stand out.
-    chunkSizeWarningLimit: 900,
+    /* Lag unter dem tatsaechlichen Chunk und feuerte damit bei JEDEM Build —
+       eine Warnung, die immer erscheint, verdeckt echte Regressionen.
+       Wert knapp ueber dem Ist-Stand, damit sie wieder etwas bedeutet. */
+    chunkSizeWarningLimit: 1400,
   },
   server: {
     port: 5181,
