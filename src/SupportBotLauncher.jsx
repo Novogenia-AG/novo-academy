@@ -55,10 +55,16 @@ export default function SupportBotLauncher({ lang = 'de' }) {
 
   return (
     <div className="ndc-launcher">
-      <span className="ndc-label">
-        {label}
+      {/* Der KI-Hinweis steht bewusst NICHT in .ndc-label: die Sprechblase ist
+          opacity:0 und erscheint erst bei :hover. Auf Touch-Geräten gibt es kein
+          Hover, am Desktop käme sie frühestens im Moment des Klicks — beides
+          verfehlt "spätestens zum Zeitpunkt der ersten Interaktion" (Art. 50
+          Abs. 1 KI-VO). Der Hinweis ist deshalb ein eigenes, dauerhaft
+          sichtbares Geschwisterelement. */}
+      <div className="ndc-stack">
+        <span className="ndc-label">{label}</span>
         <span className="ndc-ai-hint">{aiHinweis}</span>
-      </span>
+      </div>
       <button type="button" className="ndc-fab" aria-label={`${label} — ${aiHinweis}`} onClick={openChat}>
         <svg className="ndc-ic-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor"
              strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

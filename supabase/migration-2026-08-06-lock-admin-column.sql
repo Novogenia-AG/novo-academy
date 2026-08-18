@@ -17,8 +17,23 @@
 -- ---------------------------------------------------------------------
 alter table public.profiles add column if not exists deleted_at timestamptz;
 
--- RLS auf user_progress war im Schema nie aktiviert (nur die Policies)
+-- RLS auf user_progress war im Schema nie aktiviert (nur die Policies).
+-- Achtung: RLS ohne passende Policy sperrt ALLES. Die Eigen-Zeilen-Policies
+-- deshalb hier idempotent mitliefern, damit die Migration auch auf einer
+-- Datenbank funktioniert, in der sie nie angelegt wurden.
 alter table public.user_progress enable row level security;
+
+drop policy if exists "users read own progress" on public.user_progress;
+create policy "users read own progress" on public.user_progress
+  for select using (auth.uid() = user_id);
+
+drop policy if exists "users write own progress" on public.user_progress;
+create policy "users write own progress" on public.user_progress
+  for insert with check (auth.uid() = user_id);
+
+drop policy if exists "users update own progress" on public.user_progress;
+create policy "users update own progress" on public.user_progress
+  for update using (auth.uid() = user_id) with check (auth.uid() = user_id);
 
 -- ---------------------------------------------------------------------
 -- 1) Spaltenrechte: Nutzer dürfen nur noch ihre eigenen harmlosen Felder
@@ -70,6 +85,20 @@ begin
   if not public.is_admin() then
     raise exception 'not authorised';
   end if;
+  -- Selbstlöschung sperren: sonst entzieht sich ein Admin mit einem Klick die
+  -- eigenen Rechte (die Funktion setzt is_admin=false gleich mit).
+  if target_id = auth.uid() then
+    raise exception 'cannot delete yourself';
+  end if;
+  -- Denselben Letzter-Admin-Schutz wie in admin_set_is_admin: ohne ihn führt
+  -- das Löschen des letzten Admins in eine dauerhafte Aussperrung. Zurück ginge
+  -- es nicht — admin_undelete_user und admin_set_is_admin verlangen beide
+  -- is_admin(), und is_admin/deleted_at sind für jeden Client per Spaltenrecht
+  -- unschreibbar. Reparatur wäre nur noch direkt im SQL-Editor möglich.
+  if (select is_admin from public.profiles where id = target_id)
+     and (select count(*) from public.profiles where is_admin = true and deleted_at is null) <= 1 then
+    raise exception 'cannot delete the last admin';
+  end if;
   -- Bewusst KEIN Löschen von user_progress: der Fortschritt muss eine
   -- Wiederherstellung überleben (CLAUDE.md Grundregel 2).
   update public.profiles
@@ -92,9 +121,12 @@ begin
 end;
 $$;
 
-revoke execute on function public.admin_set_is_admin(uuid, boolean)  from anon;
-revoke execute on function public.admin_soft_delete_user(uuid)       from anon;
-revoke execute on function public.admin_undelete_user(uuid)          from anon;
+-- from anon allein genuegt NICHT: Funktionen tragen per Default ein
+-- EXECUTE-Recht fuer PUBLIC, das die Rolle anon erbt. Erst der Entzug von
+-- PUBLIC schliesst den anonymen Aufruf wirklich aus.
+revoke execute on function public.admin_set_is_admin(uuid, boolean)  from public, anon;
+revoke execute on function public.admin_soft_delete_user(uuid)       from public, anon;
+revoke execute on function public.admin_undelete_user(uuid)          from public, anon;
 grant  execute on function public.admin_set_is_admin(uuid, boolean)  to authenticated;
 grant  execute on function public.admin_soft_delete_user(uuid)       to authenticated;
 grant  execute on function public.admin_undelete_user(uuid)          to authenticated;

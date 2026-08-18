@@ -13,9 +13,15 @@ const basePath = process.env.VITE_BASE_PATH || '/'
    die jedem Besucher das Admin-Panel zeigt. Im CI deshalb hart abbrechen.
    Lokale Builds ohne .env.local bleiben erlaubt (Mock-Modus ist zum
    Entwickeln gedacht, siehe CLAUDE.md Abschnitt 3). */
-if (process.env.CI && !process.env.VITE_SUPABASE_URL) {
+/* Beide Werte prüfen: auth.js schaltet über `Boolean(URL && ANON)` auf den
+   echten Client um. Ein Guard nur auf die URL ließ den Fall durch, dass allein
+   der Anon-Key fehlt — der Build lief grün und lieferte trotzdem Mock-Auth aus
+   (nachgestellt: CI=1 mit gesetzter URL und leerem Key ergab ein Bundle mit
+   `is_admin:!0`). */
+const fehlend = ['VITE_SUPABASE_URL', 'VITE_SUPABASE_ANON_KEY'].filter(k => !process.env[k])
+if (process.env.CI && fehlend.length) {
   throw new Error(
-    'VITE_SUPABASE_URL fehlt im CI-Build. Ohne Supabase-Keys würde die App mit ' +
+    `${fehlend.join(' und ')} fehlt im CI-Build. Ohne beide Supabase-Werte würde die App mit ` +
     'Mock-Auth deployen und jedem Besucher Adminrechte geben. Repository-Secrets prüfen.'
   )
 }

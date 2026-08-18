@@ -29,6 +29,16 @@ const useT = () => {
   return (key) => tBase(lang, key)
 }
 
+/* Der eigentliche Inhaltsbereich einer Ansicht — zugleich Sprungziel des
+   Skip-Links und die einzige main-Landmarke der Seite.
+   Er MUSS je Ansicht unterhalb der Kopfzeile stehen: liegt er darüber, führt
+   der Skip-Link direkt wieder in die Navigation (WCAG 2.4.1 verfehlt), und
+   Kopf- und Fußbereich verlieren ihre banner-/contentinfo-Rolle, weil <header>
+   und <footer> innerhalb von <main> nur noch generische Container sind. */
+function Inhalt({ children }) {
+  return <main id="main-content" tabIndex={-1} className="skip-target">{children}</main>
+}
+
 /* ===================== INLINE I18N =====================
    Some user-facing strings were originally written as inline
    `lang === 'en' ? <EN> : <DE>` ternaries. That left the four extra
@@ -988,7 +998,20 @@ function CategoryRow({ category, label, items, courseState, navigate }) {
                  consent placeholder instead of loading)
    null/undefined = not yet decided → banner is shown */
 const COOKIE_KEY = 'nova-cookie-consent'
+const CookieContext = createContext(null)
+/* Die Zustimmung darf es nur EINMAL geben. Vorher hielt jeder Aufrufer des
+   Hooks einen eigenen useState, der localStorage nur beim Mounten las:
+   klickte man im Banner "Alle akzeptieren", blieb ein bereits gemounteter
+   Player auf seinem alten null stehen und spielte nichts ab. Umgekehrt lief
+   ein offenes Video nach dem Widerruf weiter. Jetzt liegt der Zustand im
+   App-Body und wird über den Context verteilt. */
 function useCookieConsent() {
+  const ausContext = useContext(CookieContext)
+  if (ausContext) return ausContext
+  // Fallback nur für Komponenten außerhalb des Providers (Tests, Storybook).
+  return useCookieConsentState()
+}
+function useCookieConsentState() {
   const read = () => {
     try {
       const v = localStorage.getItem(COOKIE_KEY)
@@ -1006,7 +1029,9 @@ function useCookieConsent() {
     } catch {}
     setConsentState((val === 'all' || val === 'necessary') ? val : null)
   }
-  return [consent, setConsent]
+  // Stabile Referenz, damit der Context nicht bei jedem App-Render alle
+  // Consumer neu rendert.
+  return useMemo(() => [consent, setConsent], [consent])
 }
 
 function CookieBanner({ onAccept, onNecessary, onOpenPrivacy }) {
@@ -2187,7 +2212,10 @@ export default function App() {
   const [profile, setProfile] = useState(null)
   const [outerRoute, setOuterRoute] = useState(null) // null = derived from phase; otherwise 'landing'|'auth-signup'|'auth-login'|'impressum'|'datenschutz'
   const [authBusy, setAuthBusy] = useState(false)
-  const [consent, setConsent] = useCookieConsent()
+  /* Einzige Quelle der Wahrheit für die Cookie-Zustimmung; wird unten per
+     CookieContext an alle Player und die Datenschutzseite verteilt. */
+  const cookieConsent = useCookieConsentState()
+  const [consent, setConsent] = cookieConsent
   const showBanner = consent === null
 
   // Subscribe to auth changes (Supabase session + mock session)
@@ -2395,6 +2423,10 @@ export default function App() {
 
   /* ===== Decide which top-level screen to render ===== */
   let page
+  /* true, wenn der Zweig seine main-Landmarke selbst setzt — nämlich dann,
+     wenn er eine eigene Kopfzeile mitbringt und das Sprungziel dahinter liegen
+     muss. Sonst legt die Hülle unten das <main> um die ganze Ansicht. */
+  let inhaltEingebettet = false
 
   const legalFooterProps = {
     onImpressum:       () => geheZu('impressum'),
@@ -2404,23 +2436,26 @@ export default function App() {
   }
 
   if (outerRoute === 'impressum') {
+    inhaltEingebettet = true
     page = (
       <div className="legal-page-wrap">
-        <ImpressumPage onBack={() => geheZu(null)} />
+        <Inhalt><ImpressumPage onBack={() => geheZu(null)} /></Inhalt>
         <LegalFooter {...legalFooterProps} />
       </div>
     )
   } else if (outerRoute === 'datenschutz') {
+    inhaltEingebettet = true
     page = (
       <div className="legal-page-wrap">
-        <DatenschutzPage onBack={() => geheZu(null)} onCookieSettings={() => setConsent(null)} />
+        <Inhalt><DatenschutzPage onBack={() => geheZu(null)} onCookieSettings={() => setConsent(null)} /></Inhalt>
         <LegalFooter {...legalFooterProps} />
       </div>
     )
   } else if (outerRoute === 'barrierefreiheit') {
+    inhaltEingebettet = true
     page = (
       <div className="legal-page-wrap">
-        <BarrierefreiheitPage onBack={() => geheZu(null)} />
+        <Inhalt><BarrierefreiheitPage onBack={() => geheZu(null)} /></Inhalt>
         <LegalFooter {...legalFooterProps} />
       </div>
     )
@@ -2432,6 +2467,7 @@ export default function App() {
               : outerRoute === 'auth-login'  ? 'login'
               : 'landing'
     if (mode === 'landing') {
+      inhaltEingebettet = true
       page = (
         <LandingPage
           lang={lang}
@@ -2445,6 +2481,7 @@ export default function App() {
         />
       )
     } else {
+      inhaltEingebettet = true
       page = (
         <AuthPage
           mode={mode}
@@ -2491,21 +2528,23 @@ export default function App() {
       courses={route.isSample ? getSampleCourseList(lang) : certifiedCourses}
       isSample={route.isSample} onBack={() => navigate({ name: 'home' })} />
   } else if (route.name === 'admin' && profile?.is_admin) {
+    inhaltEingebettet = true
     page = (
       <div className="app no-sidebar">
         <div className="main">
           <TopBar lang={lang} setLang={setLang} session={session} profile={profile} navigate={navigate} />
-          <AdminPage onBack={() => navigate({ name: 'home' })} />
+          <Inhalt><AdminPage onBack={() => navigate({ name: 'home' })} eigeneId={session?.user?.id} /></Inhalt>
         </div>
         <LegalFooter {...legalFooterProps} />
       </div>
     )
   } else {
+    inhaltEingebettet = true
     page = (
       <div className="app no-sidebar">
         <div className="main">
           <TopBar lang={lang} setLang={setLang} session={session} profile={profile} navigate={navigate} />
-          <HomePage
+          <Inhalt><HomePage
             courseState={courseState}
             navigate={navigate}
             certName={certName}
@@ -2513,7 +2552,7 @@ export default function App() {
             completedCertifiableCount={certifiedCourses.length}
             certifiedTitles={certifiedCourses}
             lang={lang}
-          />
+          /></Inhalt>
         </div>
         <LegalFooter {...legalFooterProps} />
       </div>
@@ -2522,14 +2561,18 @@ export default function App() {
 
   return (
     <LangContext.Provider value={lang}>
+      <CookieContext.Provider value={cookieConsent}>
       <a className="skip-to-content" href="#main-content">
         {LX(lang, 'Skip to content', 'Zum Inhalt springen')}
       </a>
-      {/* Sprungziel für den Skip-Link. Vorher lag die id auf dem <main> der
-          eingeloggten Ansicht — auf Landing, Login, Impressum und Datenschutz
-          gab es sie damit gar nicht, der Skip-Link führte ins Leere (WCAG 2.4.1).
-          tabIndex={-1} ist nötig, damit der Fokus wirklich dorthin wandert. */}
-      <main id="main-content" tabIndex={-1} className="skip-target">{page}</main>
+      {/* Sprungziel des Skip-Links ist immer die main-Landmarke der Ansicht.
+          Zweige mit eigener Kopfzeile setzen sie selbst — dort MUSS sie hinter
+          der Navigation liegen, sonst springt der Skip-Link mitten hinein.
+          Alle anderen Ansichten bringen keine Kopfzeile mit; für sie ist die
+          ganze Ansicht der Inhalt. Kopf- und Fußbereich bleiben in beiden
+          Fällen außerhalb von <main> und behalten damit ihre banner- bzw.
+          contentinfo-Rolle. */}
+      {inhaltEingebettet ? page : <Inhalt>{page}</Inhalt>}
       {showBanner && (
         <CookieBanner
           onAccept={() => setConsent('all')}
@@ -2538,6 +2581,7 @@ export default function App() {
         />
       )}
       <SupportBotLauncher lang={lang} />
+      </CookieContext.Provider>
     </LangContext.Provider>
   )
 }
@@ -2665,6 +2709,7 @@ function LandingPage({ lang, setLang, onSignUp, onLogIn, onImpressum, onDatensch
         </div>
       </header>
 
+      <main id="main-content" tabIndex={-1} className="skip-target">
       <section className="landing-hero">
         <div className="landing-hero-inner">
           <span className="nd-eyebrow"><span className="nd-eyebrow-dot" aria-hidden="true" />{LX(lang, 'Official training platform', 'Offizielle Schulungsplattform')}</span>
@@ -2716,6 +2761,7 @@ function LandingPage({ lang, setLang, onSignUp, onLogIn, onImpressum, onDatensch
         <h2>{t('landing_hero_title')}</h2>
         <button className="btn-primary big landing-signup-btn" onClick={onSignUp}>{t('landing_cta_signup')}</button>
       </section>
+      </main>
 
       <footer className="landing-footer">
         <LegalFooter
@@ -2948,7 +2994,7 @@ function DatenschutzPage({ onBack, onCookieSettings }) {
    Visible only to users with `profiles.is_admin = true`. Two tabs:
    – Dashboard: total / new / active / certified user stats + language split + growth sparkline
    – Users: searchable list with expandable per-course toggles */
-function AdminPage({ onBack }) {
+function AdminPage({ onBack, eigeneId }) {
   const t = useT()
   const lang = useLang()
   const [tab, setTab] = useState('dashboard')
@@ -2993,7 +3039,7 @@ function AdminPage({ onBack }) {
 
       {users && users.length > 0 && tab === 'dashboard' && <AdminDashboard users={users} />}
       {users && users.length > 0 && tab === 'users' && (
-        <AdminUserList users={users} onChanged={reload} />
+        <AdminUserList users={users} onChanged={reload} eigeneId={eigeneId} />
       )}
     </div>
   )
@@ -3118,7 +3164,7 @@ function GrowthSparkline({ buckets }) {
 }
 
 /* ----- User list with per-course toggles ----- */
-function AdminUserList({ users, onChanged }) {
+function AdminUserList({ users, onChanged, eigeneId }) {
   const t = useT()
   const [query, setQuery] = useState('')
   const [expandedId, setExpandedId] = useState(null)
@@ -3195,7 +3241,7 @@ function AdminUserList({ users, onChanged }) {
                         <button className="btn-ghost admin-expand-btn" onClick={() => setExpandedId(isOpen ? null : u.id)}>
                           {isOpen ? t('admin_user_collapse') : t('admin_user_expand')}
                         </button>
-                        <AdminUserActionsMenu user={u} onChanged={onChanged} />
+                        <AdminUserActionsMenu user={u} onChanged={onChanged} eigeneId={eigeneId} />
                       </div>
                     </td>
                   </tr>
@@ -3278,7 +3324,7 @@ function AdminUserCourses({ user, onSet, busyKey }) {
 }
 
 /* ----- Per-user actions menu (promote/demote, rename, reset, delete) ----- */
-function AdminUserActionsMenu({ user, onChanged }) {
+function AdminUserActionsMenu({ user, onChanged, eigeneId }) {
   const lang = useLang()
   const t = useT()
   const [open, setOpen] = useState(false)
@@ -3318,6 +3364,7 @@ function AdminUserActionsMenu({ user, onChanged }) {
   const undelete = () => wrap(() => adminUndeleteUser(user.id))
 
   const isDeleted = Boolean(user.deleted_at)
+  const istSelbst = Boolean(eigeneId) && user.id === eigeneId
 
   return (
     <div className="admin-actions-menu" ref={ref}>
@@ -3337,19 +3384,30 @@ function AdminUserActionsMenu({ user, onChanged }) {
             </button>
           ) : (
             <>
-              <button className="admin-actions-item" onClick={togglePromote} disabled={busy}>
-                {user.is_admin ? '↓ ' + t('admin_action_demote') : '↑ ' + t('admin_action_promote')}
-              </button>
+              {/* Auf der eigenen Zeile keine Selbst-Entrechtung anbieten: Demote
+                  und Löschen setzen beide is_admin=false. Wäre man der letzte
+                  Admin, gäbe es danach keinen Weg zurück über die App — die
+                  Datenbank lehnt beides inzwischen ebenfalls ab, aber ein
+                  Menüpunkt, der nur eine Fehlermeldung erzeugt, hilft niemandem. */}
+              {!istSelbst && (
+                <button className="admin-actions-item" onClick={togglePromote} disabled={busy}>
+                  {user.is_admin ? '↓ ' + t('admin_action_demote') : '↑ ' + t('admin_action_promote')}
+                </button>
+              )}
               <button className="admin-actions-item" onClick={rename} disabled={busy}>
                 ✎ {t('admin_action_rename')}
               </button>
               <button className="admin-actions-item" onClick={resetAll} disabled={busy}>
                 ↻ {t('admin_action_reset_all')}
               </button>
-              <div className="admin-actions-sep" />
-              <button className="admin-actions-item is-danger" onClick={softDelete} disabled={busy}>
-                ✕ {t('admin_action_delete')}
-              </button>
+              {!istSelbst && (
+                <>
+                  <div className="admin-actions-sep" />
+                  <button className="admin-actions-item is-danger" onClick={softDelete} disabled={busy}>
+                    ✕ {t('admin_action_delete')}
+                  </button>
+                </>
+              )}
             </>
           )}
         </div>
@@ -3425,6 +3483,7 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLa
         </div>
       </header>
 
+      <main id="main-content" tabIndex={-1} className="skip-target">
       <div className="auth-card-wrap">
         <div className="auth-card">
           <h1 className="auth-title">{isSignup ? t('auth_signup_title') : t('auth_login_title')}</h1>
@@ -3497,6 +3556,7 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLa
           )}
         </div>
       </div>
+      </main>
     </div>
   )
 }
