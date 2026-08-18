@@ -466,10 +466,16 @@ export const adminSetIsAdmin = async (userId, isAdmin) => {
 /** Admin: rename a user (update profile.name). */
 export const adminUpdateUserName = async (userId, name) => {
   if (!userId || !name) return { error: 'missing args' }
+  /* Dieselbe Prüfung wie im Registrierungspfad. Vorher ging von hier jeder
+     beliebige Wert direkt in die Datenbank — auch ein 50-kB-String oder ein
+     Objekt, das PostgREST dann als JSON schreibt. */
+  const sauber = String(name).replace(/\s+/g, ' ').trim()
+  if (!sauber) return { error: 'missing args' }
+  if (sauber.length > MAX_NAME_LEN) return { error: 'Name is too long.' }
   if (USE_REAL && supabase) {
     const { error } = await supabase
       .from('profiles')
-      .update({ name })
+      .update({ name: sauber })
       .eq('id', userId)
     if (error) return { error: error.message }
     return {}

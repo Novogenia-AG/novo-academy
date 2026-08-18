@@ -949,7 +949,11 @@ const TAG_CLASS = {
 /* Inline content-tag row — shows which materials the course offers. */
 function ContentTags({ course, size = 'sm' }) {
   const lang = useLang()
-  const tags = getContentTags(course, lang)
+  /* getContentTags nimmt KEIN lang-Argument — der frühere zweite Parameter
+     täuschte eine Übersetzung vor, die nie stattfand. Die Etiketten sind
+     Formatbezeichnungen (VIDEO, PowerPoint, PDF) und bleiben bewusst
+     unübersetzt, wie die Produktnamen an anderer Stelle auch. */
+  const tags = getContentTags(course)
   if (!tags.length) return null
   return (
     <div className={`content-tags is-${size}`}>
@@ -2725,7 +2729,10 @@ function LangPickPage({ onPick }) {
         <div className="langpick-logo">
           <span className="pt-novo">NOVO</span><span className="pt-academy">ACADEMY</span>
         </div>
-        <h2 className="langpick-title">Choose your language · Sprache wählen</h2>
+        {/* h1, nicht h2: das ist die erste Seite der Anwendung und hatte bisher
+            gar keine Hauptüberschrift (WCAG 1.3.1 / 2.4.6). Bewusst zweisprachig —
+            an dieser Stelle ist die Sprache des Nutzers noch unbekannt. */}
+        <h1 className="langpick-title">Choose your language · Sprache wählen</h1>
         <p className="langpick-sub">You can change this later. · Du kannst dies später ändern.</p>
         <div className="langpick-options">
           {[
@@ -3288,7 +3295,10 @@ function AdminUserList({ users, onChanged, eigeneId, onError }) {
               return (
                 <React.Fragment key={u.id}>
                   <tr className={u.is_admin ? 'is-admin-row' : ''}>
-                    <td>
+                    {/* data-label: auf schmalen Geraeten blendet das Media-Query die
+                        Kopfzeile aus. Ohne diese Beschriftung standen dort nackte
+                        Werte ohne jede Zuordnung (WCAG 1.3.1). */}
+                    <td data-label={t('admin_users_col_user')}>
                       <div className="admin-user-cell">
                         <span className="user-menu-avatar admin-user-avatar">
                           {(bestDisplayName(u.name, u.email) || '?').charAt(0).toUpperCase()}
@@ -3302,14 +3312,14 @@ function AdminUserList({ users, onChanged, eigeneId, onError }) {
                         </div>
                       </div>
                     </td>
-                    <td className="admin-user-meta">{u.created_at ? new Date(u.created_at).toLocaleDateString() : '—'}</td>
-                    <td className="admin-user-meta">{(u.lang || 'de').toUpperCase()}</td>
-                    <td className="admin-user-meta">
+                    <td className="admin-user-meta" data-label={t('admin_users_col_signup')}>{u.created_at ? new Date(u.created_at).toLocaleDateString() : '—'}</td>
+                    <td className="admin-user-meta" data-label={t('admin_users_col_lang')}>{(u.lang || 'de').toUpperCase()}</td>
+                    <td className="admin-user-meta" data-label={t('admin_users_col_progress')}>
                       <span title={t('admin_users_col_progress')}>{watched}× watched</span>
                       {' · '}
                       <span style={{ color: 'var(--wine)' }}>{certified}× cert</span>
                     </td>
-                    <td>
+                    <td data-label={t('admin_users_col_actions')}>
                       <div className="admin-row-actions">
                         <button className="btn-ghost admin-expand-btn" onClick={() => setExpandedId(isOpen ? null : u.id)}>
                           {isOpen ? t('admin_user_collapse') : t('admin_user_expand')}

@@ -2417,6 +2417,15 @@ a { color: inherit; text-decoration: none; }
   .admin-table, .admin-table tbody, .admin-table tr, .admin-table td { display: block; }
   .admin-table tr { border: 1px solid var(--border, #ece7ea); border-radius: 10px; margin-bottom: 12px; padding: 12px; }
   .admin-table td { border: 0; padding: 6px 0; }
+  /* thead ist hier ausgeblendet — ohne diese Beschriftung stuenden in der
+     Karte nur nackte Werte ohne Zuordnung (WCAG 1.3.1). */
+  .admin-table td[data-label]::before {
+    content: attr(data-label) ": ";
+    font-weight: 700;
+    color: var(--muted);
+  }
+  /* Die Nutzerzelle traegt Name und Mail schon sichtbar in sich. */
+  .admin-table td:first-child::before { content: none; }
   .admin-courses-row td { padding: 12px 0 0; }
   .admin-course-row { flex-direction: column; align-items: flex-start; }
   .admin-course-actions { width: 100%; }
