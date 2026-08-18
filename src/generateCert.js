@@ -8,6 +8,7 @@
  */
 import { PDFDocument, rgb, StandardFonts } from 'pdf-lib'
 import fontkit from '@pdf-lib/fontkit'
+import { t as tBase } from './data.js'
 
 const A4_W = 595.28
 const A4_H = 841.89
@@ -17,7 +18,10 @@ const COLOR_BLACK = rgb(0.10, 0.10, 0.10)
 
 /* Load all five Montserrat weights once; cache the bytes for re-use.
    BASE_URL handles the GitHub Pages subpath (e.g. /novo-academy/) */
-const _BASE = (import.meta.env.BASE_URL || '/').replace(/\/$/, '')
+/* Optionaler Zugriff: import.meta.env gibt es nur im Vite-Build. So lässt sich
+   das Modul auch in reinem Node laden — davon lebt die Prüfung, die das
+   Zertifikat außerhalb des Browsers in allen Sprachen erzeugt. */
+const _BASE = (import.meta.env?.BASE_URL || '/').replace(/\/$/, '')
 const FONT_URLS = {
   light:    `${_BASE}/fonts/Montserrat-Light.ttf`,
   regular:  `${_BASE}/fonts/Montserrat-Regular.ttf`,
@@ -85,41 +89,68 @@ const MAX_MODULES_PER_PAGE = 16
 
 /** Draw a single certificate page (header + module slice + footer). */
 function drawCertPage(page, { name, dateStr, lang, courses, fonts, pageIndex, totalPages }) {
-  // de -> German certificate; en/it/cz -> English (safe: embedded cert fonts
-  // may lack Czech diacritic glyphs, and English beats German for it/cz).
-  const L = lang !== 'de'
+  /* Bis 18.08.2026 kannte das PDF nur zwei Zustände: Deutsch, oder Englisch für
+     alle zehn anderen Sprachen. Begründet war das unter anderem damit, die
+     eingebetteten Schriften könnten tschechische Diakritika vermissen lassen —
+     das ist nachgemessen falsch: Montserrat deckt mit 2.747 Glyphen sämtliche
+     lateinischen Sonderzeichen der elf Sprachen ab (Arabisch übernimmt Noto
+     Naskh, siehe loadFonts). Die Texte kommen jetzt aus derselben Tabelle wie
+     die Bildschirm-Vorschau — die beiden liefen vorher auseinander. */
+  const t = (key) => tBase(lang, key)
+
+  /* Satzspiegel: linker Rand 52.5, symmetrisch zum rechten Blattrand. */
+  const RAND_L = 52.5
+  const RAND_R = A4_W - RAND_L
+  const SATZBREITE = RAND_R - RAND_L
+
   const draw = (text, { x, y, size, font, color = COLOR_BLACK, maxWidth, lineHeight }) => {
     page.drawText(text, { x, y, size, font, color, maxWidth, lineHeight })
+  }
+
+  /* Zeichnet Text und verkleinert ihn, falls er über den Satzspiegel liefe.
+     Vorher gab es keinerlei Begrenzung: ein langer Doppelname ragte über den
+     rechten Blattrand hinaus, ein langer Modultitel bis an die Blattkante. */
+  const drawPassend = (text, { x, y, size, font, color = COLOR_BLACK, minSize = 8 }) => {
+    let s = size
+    const platz = RAND_R - x
+    while (s > minSize && font.widthOfTextAtSize(text, s) > platz) s -= 0.25
+    draw(text, { x, y, size: s, font, color })
+    return s
   }
 
   // 1) NOVOGENIA — wine, Medium, 26pt
   draw('NOVOGENIA', { x: 52.5, y: 665, size: 26, font: fonts.medium, color: COLOR_WINE })
 
-  // 2) GENETIK COACH / GENETICS COACH — black, Bold, 48pt
-  draw(L ? 'GENETICS COACH' : 'GENETIK COACH', {
-    x: 52.5, y: 617.5, size: 48, font: fonts.bold, color: COLOR_BLACK,
+  // 2) Haupttitel — black, Bold, 48pt; schrumpft, wenn die Übersetzung länger ist
+  //    (z. B. ro "COACH DE GENETICĂ")
+  drawPassend(t('cert_mini_genetik_coach'), {
+    x: RAND_L, y: 617.5, size: 48, font: fonts.bold, color: COLOR_BLACK, minSize: 26,
   })
 
-  // 3) "Dieses Zertifikat bestätigt, dass" — black, SemiBold, 9.7pt
-  draw(L ? 'This certificate confirms that' : 'Dieses Zertifikat bestätigt, dass', {
-    x: 52.5, y: 578, size: 9.7, font: fonts.semibold, color: COLOR_BLACK,
+  // 3) Bestätigungszeile — black, SemiBold, 9.7pt
+  draw(t('certpage_presented_to'), {
+    x: RAND_L, y: 578, size: 9.7, font: fonts.semibold, color: COLOR_BLACK,
   })
 
-  // 4) Recipient name — wine, Medium, 24pt
-  draw(name || (L ? 'Jane Doe' : 'Maria Mustermann'), {
-    x: 52.5, y: 549, size: 24, font: fonts.medium, color: COLOR_WINE,
+  // 4) Empfängername — wine, Medium, 24pt, schrumpfend statt überlaufend
+  drawPassend(name || t('cert_cta_name_placeholder'), {
+    x: RAND_L, y: 549, size: 24, font: fonts.medium, color: COLOR_WINE, minSize: 13,
   })
 
   // 5) Date sentence — drawn as parts so date is bold and rest is regular
-  const datePrefix = L ? 'On ' : 'Am '
-  const dateSuffix = (totalPages > 1
-    ? (L
-        ? ` successfully completed and passed the following training modules (page ${pageIndex + 1} of ${totalPages}):`
-        : ` erfolgreich die folgenden Schulungsmodule absolviert und bestanden hat (Seite ${pageIndex + 1} von ${totalPages}):`)
-    : (L
-        ? ' successfully completed and passed the following training modules:'
-        : ' erfolgreich die folgenden Schulungsmodule absolviert und bestanden hat:'))
-  let dx = 52.5
+  const datePrefix = t('certpage_completed_on') + ' '
+  /* Der Seitenzähler gehört VOR den Doppelpunkt. Alle elf Übersetzungen des
+     Suffix enden auf ':', also einmal abtrennen, Zähler einsetzen, wieder anfügen. */
+  let dateSuffix = t('certpage_completed_suffix')
+  if (totalPages > 1) {
+    const zaehler = t('cert_page_counter')
+      .replace('{n}', String(pageIndex + 1))
+      .replace('{total}', String(totalPages))
+    dateSuffix = dateSuffix.endsWith(':')
+      ? dateSuffix.slice(0, -1) + zaehler + ':'
+      : dateSuffix + zaehler
+  }
+  let dx = RAND_L
   const dy = 516
   const dsize = 9.7
   draw(datePrefix, { x: dx, y: dy, size: dsize, font: fonts.regular, color: COLOR_BLACK })
@@ -148,14 +179,18 @@ function drawCertPage(page, { name, dateStr, lang, courses, fonts, pageIndex, to
     draw(catText, { x: CAT_X, y, size: modSize, font: fonts.semibold, color: COLOR_BLACK })
     if (topic) {
       const catWidth = fonts.semibold.widthOfTextAtSize(catText, modSize)
-      draw(` ${topic}`, { x: CAT_X + catWidth, y, size: modSize, font: fonts.light, color: COLOR_BLACK })
+      /* Ohne Begrenzung lief ein langer Modultitel bis an die Blattkante —
+         besonders in den Sprachen mit längeren Zusammensetzungen. */
+      drawPassend(` ${topic}`, {
+        x: CAT_X + catWidth, y, size: modSize, font: fonts.light, color: COLOR_BLACK, minSize: 7,
+      })
     }
     y -= lineGap
   }
 
-  // 7) "CEO von Novogenia" / "CEO of Novogenia" — small, Regular
-  draw(L ? 'CEO of Novogenia' : 'CEO von Novogenia', {
-    x: 78.7, y: 77, size: 10.5, font: fonts.regular, color: COLOR_BLACK,
+  // 7) Rollenzeile unter der Unterschrift — small, Regular
+  drawPassend(t('cert_ceo_role'), {
+    x: 78.7, y: 77, size: 10.5, font: fonts.regular, color: COLOR_BLACK, minSize: 8,
   })
 }
 
@@ -213,8 +248,11 @@ export async function downloadCertificate({ name, courses, dateStr, lang = 'de' 
   const url = URL.createObjectURL(blob)
   const link = document.createElement('a')
   link.href = url
-  const filenamePrefix = lang === 'en' ? 'NovoAcademy_Certificate' : 'NovoAcademy_Zertifikat'
-  const fallback = lang === 'en' ? 'Example' : 'Beispiel'
+  /* Der Dateiname pruefte auf lang === 'en', der PDF-Text dagegen auf lang !== 'de'.
+     Ein tschechisches Zertifikat bekam dadurch englischen Text in einer Datei mit
+     deutschem Namen. Jetzt haengen beide an derselben Sprache. */
+  const filenamePrefix = lang === 'de' ? 'NovoAcademy_Zertifikat' : 'NovoAcademy_Certificate'
+  const fallback = lang === 'de' ? 'Beispiel' : 'Example'
   // Sanitise: only keep ASCII alphanumerics, dot, underscore, hyphen — protects
   // against path traversal / null bytes / invalid filename chars across OSes.
   const safeName = (name || fallback)

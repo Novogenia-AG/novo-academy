@@ -3310,6 +3310,11 @@ export const UI = {
   // ---- Certificate mini ----
   cert_mini_presented:        { de: 'Dieses Zertifikat bestätigt, dass',
                                 en: 'This certificate confirms that' },
+  // Rollenzeile unter der Unterschrift. Lag bisher nur als INLINE_I18N-Eintrag
+  // in App.jsx und war deshalb aus generateCert.js nicht erreichbar.
+  cert_ceo_role:              { de: 'CEO von Novogenia',            en: 'CEO of Novogenia' },
+  // Seitenzähler für mehrseitige Zertifikate. {n} und {total} werden ersetzt.
+  cert_page_counter:          { de: ' (Seite {n} von {total})',     en: ' (page {n} of {total})' },
   cert_mini_genetik_coach:    { de: 'GENETIK COACH',               en: 'GENETICS COACH' },
 
   // ---- Course landing / content ----
