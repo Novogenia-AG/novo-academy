@@ -1063,6 +1063,31 @@ function ytUnmuteOnLoad(e) {
 
 /* ===================== WELCOME VIDEO ===================== */
 /* Pass `youtubeId` to embed an actual YouTube video; otherwise shows a click-to-play thumbnail */
+/* ===================== KI-KENNZEICHNUNG =====================
+   Art. 50 Abs. 4 KI-VO (VO (EU) 2024/1689), verbindlich seit 02.08.2026.
+   Alle Sprachfassungen außer de/en sind HeyGen-Lipsync-Dubs: Stimme UND
+   Lippenbewegungen einer real existierenden Person werden KI-erzeugt. Das
+   erfüllt die Deepfake-Definition (Art. 3 Nr. 60) und ist offenzulegen.
+   de/en sind echte Aufnahmen — dort wäre ein Hinweis eine Falschangabe.
+
+   Der Hinweis steht bewusst als sichtbarer Text NEBEN dem Player (nicht im
+   iframe, nicht als Bild): Art. 50 Abs. 5 verlangt, dass die Offenlegung
+   spätestens bei der ersten Exposition klar, unterscheidbar und barrierefrei
+   wahrnehmbar ist — also auch vor dem Abspielen und für Screenreader. */
+const AI_DUB_LANGS = ['cz', 'fr', 'pt', 'it', 'nl', 'ro', 'es', 'sr', 'ar']
+
+function AiDubNotice() {
+  const lang = useLang()
+  const t = useT()
+  if (!AI_DUB_LANGS.includes(lang)) return null
+  return (
+    <p className="ai-dub-notice">
+      <span className="ai-dub-badge">{t('ai_dub_badge')}</span>
+      {t('ai_dub_notice')}
+    </p>
+  )
+}
+
 function WelcomePlayer({ youtubeId = null, coverImage = null }) {
   const [playing, setPlaying] = useState(false)
   const [consent, setConsent] = useCookieConsent()
@@ -1419,7 +1444,8 @@ function FullVideo({ course, youtubeId, title }) {
   const stillSrc = explicitCover
     || (yt ? `https://img.youtube.com/vi/${yt}/maxresdefault.jpg` : course.thumbnail)
   return (
-    <div className="cc-video-full" onClick={() => !playing && consent === 'all' && setPlaying(true)}>
+    <>
+      <div className="cc-video-full" onClick={() => !playing && consent === 'all' && setPlaying(true)}>
       {playing && yt && consent === 'all' ? (
         <iframe
           className="cc-video-iframe"
@@ -1454,7 +1480,9 @@ function FullVideo({ course, youtubeId, title }) {
           {!yt && v?.duration && <span className="cc-video-duration">{v.duration}</span>}
         </>
       )}
-    </div>
+      </div>
+      {yt && <AiDubNotice />}
+    </>
   )
 }
 
@@ -2189,7 +2217,14 @@ export default function App() {
 
   // Set <html lang> + text direction (RTL for Arabic) — must come after `lang` is declared
   useEffect(() => {
-    document.documentElement.lang = ['de', 'en', 'it', 'cz', 'fr', 'pt', 'nl', 'ro', 'es', 'sr', 'ar'].includes(lang) ? lang : 'de'
+    /* Unsere internen Kürzel sind nicht durchgehend gültige BCP-47-Sprachtags:
+       'cz' ist der Ländercode für Tschechien, die SPRACHE ist 'cs'. Screenreader
+       wählen anhand dieses Attributs die Aussprache — ein falscher Code führt zu
+       unverständlicher Vorlesestimme (WCAG 3.1.1). 'sr' wird zusätzlich auf die
+       lateinische Schriftvariante festgelegt, weil unsere Texte Latein sind. */
+    const BCP47 = { cz: 'cs', sr: 'sr-Latn' }
+    const gueltig = ['de', 'en', 'it', 'cz', 'fr', 'pt', 'nl', 'ro', 'es', 'sr', 'ar'].includes(lang) ? lang : 'de'
+    document.documentElement.lang = BCP47[gueltig] || gueltig
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr'
   }, [lang])
 
@@ -2286,6 +2321,15 @@ export default function App() {
     window.scrollTo(0, 0)
     try { window.history.pushState({ __novoRoute: r }, '') } catch {}
     setRoute(r)
+    /* In einer Single-Page-App wechselt der Inhalt, ohne dass der Fokus mitgeht:
+       Screenreader- und Tastaturnutzer stehen danach unsichtbar auf der alten
+       Seite und müssten sich erneut durch die gesamte Navigation tabben. Den
+       Fokus deshalb auf den Inhaltsbereich setzen — dort liest der Screenreader
+       die neue Überschrift vor. (WCAG 2.4.3) */
+    requestAnimationFrame(() => {
+      const ziel = document.getElementById('main-content')
+      if (ziel) { try { ziel.focus({ preventScroll: true }) } catch {} }
+    })
   }
 
   const routeRef = useRef(route)
@@ -2327,9 +2371,10 @@ export default function App() {
   let page
 
   const legalFooterProps = {
-    onImpressum:     () => setOuterRoute('impressum'),
-    onDatenschutz:   () => setOuterRoute('datenschutz'),
-    onCookieSettings:() => setConsent(null),
+    onImpressum:       () => setOuterRoute('impressum'),
+    onDatenschutz:     () => setOuterRoute('datenschutz'),
+    onBarrierefreiheit:() => setOuterRoute('barrierefreiheit'),
+    onCookieSettings:  () => setConsent(null),
   }
 
   if (outerRoute === 'impressum') {
@@ -2343,6 +2388,13 @@ export default function App() {
     page = (
       <div className="legal-page-wrap">
         <DatenschutzPage onBack={() => setOuterRoute(null)} onCookieSettings={() => setConsent(null)} />
+        <LegalFooter {...legalFooterProps} />
+      </div>
+    )
+  } else if (outerRoute === 'barrierefreiheit') {
+    page = (
+      <div className="legal-page-wrap">
+        <BarrierefreiheitPage onBack={() => setOuterRoute(null)} />
         <LegalFooter {...legalFooterProps} />
       </div>
     )
@@ -2362,6 +2414,7 @@ export default function App() {
           onLogIn={() => setOuterRoute('auth-login')}
           onImpressum={legalFooterProps.onImpressum}
           onDatenschutz={legalFooterProps.onDatenschutz}
+          onBarrierefreiheit={legalFooterProps.onBarrierefreiheit}
           onCookieSettings={legalFooterProps.onCookieSettings}
         />
       )
@@ -2414,17 +2467,17 @@ export default function App() {
   } else if (route.name === 'admin' && profile?.is_admin) {
     page = (
       <div className="app no-sidebar">
-        <main className="main" id="main-content">
+        <div className="main">
           <TopBar lang={lang} setLang={setLang} session={session} profile={profile} navigate={navigate} />
           <AdminPage onBack={() => navigate({ name: 'home' })} />
-        </main>
+        </div>
         <LegalFooter {...legalFooterProps} />
       </div>
     )
   } else {
     page = (
       <div className="app no-sidebar">
-        <main className="main" id="main-content">
+        <div className="main">
           <TopBar lang={lang} setLang={setLang} session={session} profile={profile} navigate={navigate} />
           <HomePage
             courseState={courseState}
@@ -2435,7 +2488,7 @@ export default function App() {
             certifiedTitles={certifiedCourses}
             lang={lang}
           />
-        </main>
+        </div>
         <LegalFooter {...legalFooterProps} />
       </div>
     )
@@ -2446,7 +2499,11 @@ export default function App() {
       <a className="skip-to-content" href="#main-content">
         {LX(lang, 'Skip to content', 'Zum Inhalt springen')}
       </a>
-      {page}
+      {/* Sprungziel für den Skip-Link. Vorher lag die id auf dem <main> der
+          eingeloggten Ansicht — auf Landing, Login, Impressum und Datenschutz
+          gab es sie damit gar nicht, der Skip-Link führte ins Leere (WCAG 2.4.1).
+          tabIndex={-1} ist nötig, damit der Fokus wirklich dorthin wandert. */}
+      <main id="main-content" tabIndex={-1} className="skip-target">{page}</main>
       {showBanner && (
         <CookieBanner
           onAccept={() => setConsent('all')}
@@ -2562,7 +2619,7 @@ function LangPickPage({ onPick }) {
 }
 
 /* ===================== LANDING PAGE (logged-out intro) ===================== */
-function LandingPage({ lang, setLang, onSignUp, onLogIn, onImpressum, onDatenschutz, onCookieSettings }) {
+function LandingPage({ lang, setLang, onSignUp, onLogIn, onImpressum, onDatenschutz, onBarrierefreiheit, onCookieSettings }) {
   const t = useT()
   return (
     <div className="landing-page">
@@ -2638,6 +2695,7 @@ function LandingPage({ lang, setLang, onSignUp, onLogIn, onImpressum, onDatensch
         <LegalFooter
           onImpressum={onImpressum}
           onDatenschutz={onDatenschutz}
+          onBarrierefreiheit={onBarrierefreiheit}
           onCookieSettings={onCookieSettings}
         />
       </footer>
@@ -2646,7 +2704,7 @@ function LandingPage({ lang, setLang, onSignUp, onLogIn, onImpressum, onDatensch
 }
 
 /* ===================== LEGAL FOOTER ===================== */
-function LegalFooter({ onImpressum, onDatenschutz, onCookieSettings }) {
+function LegalFooter({ onImpressum, onDatenschutz, onCookieSettings, onBarrierefreiheit }) {
   const t = useT()
   return (
     <footer className="legal-footer">
@@ -2655,6 +2713,8 @@ function LegalFooter({ onImpressum, onDatenschutz, onCookieSettings }) {
       <button className="legal-footer-link" onClick={onImpressum}>{t('footer_impressum')}</button>
       <span className="legal-footer-sep">·</span>
       <button className="legal-footer-link" onClick={onDatenschutz}>{t('footer_datenschutz')}</button>
+      <span className="legal-footer-sep">·</span>
+      <button className="legal-footer-link" onClick={onBarrierefreiheit}>{t('footer_a11y')}</button>
       <span className="legal-footer-sep">·</span>
       <button className="legal-footer-link" onClick={onCookieSettings}>{t('cookie_settings')}</button>
     </footer>
@@ -2729,6 +2789,70 @@ function ImpressumPage({ onBack }) {
 }
 
 /* ===================== DATENSCHUTZ PAGE ===================== */
+/* ===================== BARRIEREFREIHEITSERKLÄRUNG =====================
+   Konformitätsinformation nach § 14 Abs. 2 BaFG. Das Gesetz verlangt eine
+   Kontaktstelle "in schriftlicher und mündlicher Form" — daher E-Mail UND
+   Telefonnummer. Bekannte Einschränkungen werden bewusst offen benannt;
+   "teilweise vereinbar" mit ehrlicher Mängelliste ist zulässig, eine
+   pauschale Konformitätsbehauptung wäre riskant. */
+function BarrierefreiheitPage({ onBack }) {
+  const t = useT()
+  return (
+    <div className="legal-page content">
+      <button className="btn-back" onClick={onBack}>{t('footer_back')}</button>
+      <h1 className="legal-page-title">{t('a11y_title')}</h1>
+
+      <section className="legal-section">
+        <p>{t('a11y_intro')}</p>
+      </section>
+
+      <section className="legal-section">
+        <h2>{t('a11y_standard_h')}</h2>
+        <p>{t('a11y_standard_t')}</p>
+      </section>
+
+      <section className="legal-section">
+        <h2>{t('a11y_state_h')}</h2>
+        <p>{t('a11y_state_t')}</p>
+      </section>
+
+      <section className="legal-section">
+        <h2>{t('a11y_known_h')}</h2>
+        <ul>
+          <li>{t('a11y_known_1')}</li>
+          <li>{t('a11y_known_2')}</li>
+        </ul>
+      </section>
+
+      <section className="legal-section">
+        <h2>{t('a11y_feedback_h')}</h2>
+        <p>{t('a11y_feedback_t')}</p>
+        <p>
+          Novogenia GmbH<br />
+          Strass 19, 5301 Eugendorf, Österreich<br />
+          <a href="mailto:service@novogenia.com">service@novogenia.com</a><br />
+          <a href="tel:+43662262102">+43 662 262 102</a>
+        </p>
+      </section>
+
+      <section className="legal-section">
+        <h2>{t('a11y_enforce_h')}</h2>
+        <p>{t('a11y_enforce_t')}</p>
+        <p>
+          Sozialministeriumservice<br />
+          <a href="https://www.sozialministeriumservice.at" target="_blank" rel="noopener noreferrer">
+            www.sozialministeriumservice.at
+          </a>
+        </p>
+      </section>
+
+      <section className="legal-section">
+        <p className="legal-meta">{t('a11y_updated')}</p>
+      </section>
+    </div>
+  )
+}
+
 function DatenschutzPage({ onBack, onCookieSettings }) {
   const t = useT()
   const lang = useLang()
@@ -2838,7 +2962,7 @@ function AdminPage({ onBack }) {
       </div>
 
       {users === null && <p className="admin-loading">{t('admin_loading')}</p>}
-      {error && <p className="auth-error">{error}</p>}
+      {error && <p className="auth-error" role="alert">{error}</p>}
       {users && users.length === 0 && !error && <p className="admin-loading">{t('admin_no_users')}</p>}
 
       {users && users.length > 0 && tab === 'dashboard' && <AdminDashboard users={users} />}
@@ -3326,7 +3450,7 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLa
               />
             </label>
 
-            {errorKey && <div className="auth-error">{t(errorKey)}</div>}
+            {errorKey && <div className="auth-error" role="alert">{t(errorKey)}</div>}
 
             <button type="submit" className="btn-primary big auth-submit" disabled={busy}>
               {busy ? t('auth_loading') : (isSignup ? t('auth_submit_signup') : t('auth_submit_login'))}

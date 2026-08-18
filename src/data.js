@@ -3503,6 +3503,14 @@ const UI = {
   cookie_revoke:              { de: 'Einwilligung widerrufen',        en: 'Revoke consent' },
 
   // ---- Footer / Legal ----
+  /* KI-Kennzeichnung nach Art. 50 Abs. 4 KI-VO (VO (EU) 2024/1689), Pflicht seit 02.08.2026.
+     Die Sprachfassungen außer de/en sind HeyGen-Lipsync-Dubs: Stimme und Lippenbewegungen
+     einer REALEN Person werden KI-erzeugt — das ist ein Deepfake im Sinne von Art. 3 Nr. 60
+     und muss offengelegt werden. de/en sind echte Aufnahmen und werden NICHT gekennzeichnet. */
+  ai_dub_notice:              { de: 'KI-Hinweis: In dieser Sprachfassung wurden Stimme und Lippenbewegungen von Dr. Daniel Wallerstorfer mit künstlicher Intelligenz erzeugt. Die Originalaufnahme und der fachliche Inhalt stammen von ihm.',
+                                en: 'AI disclosure: In this language version, Dr. Daniel Wallerstorfer’s voice and lip movements were generated using artificial intelligence. The original recording and the expert content are his.' },
+  ai_dub_badge:               { de: 'KI-synchronisiert',              en: 'AI-dubbed' },
+  ai_bot_notice:              { de: 'Sie chatten mit einem KI-Assistenten.', en: 'You are chatting with an AI assistant.' },
   footer_impressum:           { de: 'Impressum',                      en: 'Legal Notice' },
   footer_datenschutz:         { de: 'Datenschutz',                    en: 'Privacy Policy' },
   footer_back:                { de: '← Zurück',                       en: '← Back' },
@@ -3514,6 +3522,33 @@ const UI = {
   impressum_register:         { de: 'Firmenbuch',                     en: 'Commercial Register' },
   impressum_uidde:            { de: 'UID',                            en: 'VAT ID' },
   impressum_authority:        { de: 'Aufsichtsbehörde',               en: 'Regulatory Authority' },
+
+  /* Barrierefreiheitserklärung — Konformitätsinformation nach § 14 Abs. 2
+     Barrierefreiheitsgesetz (BaFG, Umsetzung der Richtlinie (EU) 2019/882).
+     Verlangt u.a. eine Kontaktstelle in schriftlicher UND mündlicher Form. */
+  footer_a11y:                { de: 'Barrierefreiheit',               en: 'Accessibility' },
+  a11y_title:                 { de: 'Erklärung zur Barrierefreiheit', en: 'Accessibility Statement' },
+  a11y_intro:                 { de: 'Die Novogenia GmbH ist bemüht, die NOVO ACADEMY im Einklang mit dem österreichischen Barrierefreiheitsgesetz (BaFG) und der Richtlinie (EU) 2019/882 barrierefrei zugänglich zu machen.',
+                                en: 'Novogenia GmbH strives to make NOVO ACADEMY accessible in accordance with the Austrian Accessibility Act (BaFG) and Directive (EU) 2019/882.' },
+  a11y_standard_h:            { de: 'Angewandter Standard',           en: 'Standard applied' },
+  a11y_standard_t:            { de: 'Maßstab ist die harmonisierte Norm EN 301 549, die auf die Web Content Accessibility Guidelines (WCAG) 2.1 Stufe AA verweist. Neue Entwicklungen orientieren sich bereits an WCAG 2.2 AA.',
+                                en: 'The benchmark is the harmonised standard EN 301 549, which references the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA. New development already follows WCAG 2.2 AA.' },
+  a11y_state_h:               { de: 'Stand der Vereinbarkeit',        en: 'Conformance status' },
+  a11y_state_t:               { de: 'Teilweise vereinbar. Die Plattform erfüllt die Anforderungen weitgehend; die unten genannten Punkte sind noch offen.',
+                                en: 'Partially conformant. The platform largely meets the requirements; the items listed below are still outstanding.' },
+  a11y_known_h:               { de: 'Bekannte Einschränkungen',       en: 'Known limitations' },
+  a11y_known_1:               { de: 'Die Schulungsvideos verfügen derzeit nur über automatisch erzeugte Untertitel von YouTube. Manuell geprüfte Untertitel werden schrittweise ergänzt; neue Sprachfassungen erhalten sie vor Veröffentlichung.',
+                                en: 'The training videos currently only have automatically generated YouTube captions. Manually reviewed captions are being added step by step; new language versions receive them before release.' },
+  a11y_known_2:               { de: 'Die als Download angebotenen PDF-Unterlagen sind noch nicht durchgängig getaggt und daher mit Screenreadern eingeschränkt nutzbar.',
+                                en: 'The PDF documents offered for download are not yet consistently tagged and are therefore of limited use with screen readers.' },
+  a11y_feedback_h:            { de: 'Barriere melden — Kontaktstelle', en: 'Report a barrier — contact point' },
+  a11y_feedback_t:            { de: 'Sie können Barrieren melden oder Inhalte in barrierefreier Form anfordern. Wir antworten in der Regel innerhalb von zehn Arbeitstagen.',
+                                en: 'You can report barriers or request content in an accessible format. We usually respond within ten working days.' },
+  a11y_enforce_h:             { de: 'Wenn wir nicht weiterhelfen',    en: 'If we cannot help' },
+  a11y_enforce_t:             { de: 'Sind Sie mit unserer Antwort nicht zufrieden, können Sie sich an das Sozialministeriumservice (SMS) wenden, das die Einhaltung des Barrierefreiheitsgesetzes in Österreich überwacht.',
+                                en: 'If you are not satisfied with our response, you may contact the Austrian Social Ministry Service (Sozialministeriumservice, SMS), which monitors compliance with the Accessibility Act in Austria.' },
+  a11y_updated:               { de: 'Diese Erklärung wurde am 7. August 2026 erstellt und beruht auf einer Selbstbewertung.',
+                                en: 'This statement was created on 7 August 2026 and is based on a self-assessment.' },
   impressum_applicable_law:   { de: 'Anwendbare Rechtsvorschriften',  en: 'Applicable Regulations' },
   impressum_contact:          { de: 'Kontakt',                        en: 'Contact' },
   impressum_liability:        { de: 'Haftungshinweis',                en: 'Liability Notice' },

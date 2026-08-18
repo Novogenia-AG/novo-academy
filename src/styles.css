@@ -1357,7 +1357,24 @@ a { color: inherit; text-decoration: none; }
 }
 .test-opt:hover { border-color: var(--wine-soft); background: #FBFAFC; }
 .test-opt.is-selected { border-color: var(--wine); background: var(--wine-softer); }
-.test-opt input { display: none; }
+/* NICHT display:none — das nimmt die Radios aus dem Tab-Fluss UND aus dem
+   Accessibility-Tree. Der gesamte Test- und Zertifizierungspfad war dadurch
+   ohne Maus unbedienbar (WCAG 2.1.1 / 4.1.2, Stufe A).
+   Stattdessen visuell verstecken, aber fokussierbar lassen. */
+.test-opt input {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: 0; padding: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+/* Der Fokus liegt auf dem unsichtbaren Radio — den Rahmen sichtbar am Label
+   zeichnen, sonst wäre die Tastaturposition nicht erkennbar (WCAG 2.4.7). */
+.test-opt:has(input:focus-visible) {
+  outline: 3px solid var(--wine);
+  outline-offset: 2px;
+  border-color: var(--wine);
+}
 .test-opt-letter {
   flex-shrink: 0;
   width: 28px; height: 28px;
@@ -2819,3 +2836,44 @@ html { -webkit-text-size-adjust: 100%; }
   .cert-input-wrap input,
   .admin-search { font-size: 16px; }
 }
+
+/* ===================== KI-KENNZEICHNUNG (Art. 50 KI-VO) =====================
+   Der Hinweis muss klar erkennbar sein, darf aber den Inhalt nicht dominieren.
+   Bewusst normaler Fließtext mit ausreichendem Kontrast — kein Grau-in-Grau. */
+.ai-dub-notice {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  background: var(--wine-softer);
+  border-inline-start: 3px solid var(--wine);
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text);
+}
+.ai-dub-badge {
+  flex: 0 0 auto;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--wine);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+.ndc-ai-hint {
+  display: block;
+  font-size: 11px;
+  line-height: 1.35;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+/* Sprungziel des Skip-Links: darf keinen sichtbaren Rahmen bekommen, wenn es
+   per Skip-Link fokussiert wird (der Fokus liegt dann auf einem Container,
+   nicht auf einem Bedienelement) — der Sprung selbst bleibt wirksam. */
+.skip-target:focus { outline: none; }
