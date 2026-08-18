@@ -2014,7 +2014,7 @@ a { color: inherit; text-decoration: none; }
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 16px;
 }
-.landing-feature h3 { font-size: 17px; font-weight: 700; margin: 0 0 8px; color: var(--text); }
+.landing-feature h2 { font-size: 17px; font-weight: 700; margin: 0 0 8px; color: var(--text); }
 .landing-feature p { font-size: 14px; line-height: 1.5; color: var(--muted); margin: 0; }
 
 .landing-who { padding: 80px 32px; background: linear-gradient(180deg, #ffffff 0%, #f8f4f7 100%); }

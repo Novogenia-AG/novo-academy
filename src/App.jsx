@@ -76,6 +76,7 @@ const INLINE_I18N = {
     "Failed to generate the PDF. Please try again.": "Impossibile generare il PDF. Riprova.",
     "You haven't answered all questions. Submit anyway?": "Non hai risposto a tutte le domande. Inviare comunque?",
     "Back": "Indietro",
+    "User actions": "Azioni utente",
     "EXAMPLE": "ESEMPIO",
     "Generating...": "Generazione in corso...",
     "Download as PDF": "Scarica come PDF",
@@ -141,6 +142,7 @@ const INLINE_I18N = {
     "Failed to generate the PDF. Please try again.": "PDF se nepodařilo vytvořit. Zkus to prosím znovu.",
     "You haven't answered all questions. Submit anyway?": "Neodpověděl jsi na všechny otázky. Přesto odeslat?",
     "Back": "Zpět",
+    "User actions": "Akce uživatele",
     "EXAMPLE": "PŘÍKLAD",
     "Generating...": "Vytváří se...",
     "Download as PDF": "Stáhnout jako PDF",
@@ -206,6 +208,7 @@ const INLINE_I18N = {
     "Failed to generate the PDF. Please try again.": "Impossible de générer le PDF. Réessaie.",
     "You haven't answered all questions. Submit anyway?": "Tu n’as pas répondu à toutes les questions. Soumettre quand même ?",
     "Back": "Retour",
+    "User actions": "Actions utilisateur",
     "EXAMPLE": "EXEMPLE",
     "Generating...": "Génération en cours...",
     "Download as PDF": "Télécharger en PDF",
@@ -271,6 +274,7 @@ const INLINE_I18N = {
     "Failed to generate the PDF. Please try again.": "Não foi possível gerar o PDF. Tenta novamente.",
     "You haven't answered all questions. Submit anyway?": "Não respondeste a todas as perguntas. Enviar mesmo assim?",
     "Back": "Voltar",
+    "User actions": "Ações do utilizador",
     "EXAMPLE": "EXEMPLO",
     "Generating...": "A gerar...",
     "Download as PDF": "Descarregar como PDF",
@@ -336,6 +340,7 @@ const INLINE_I18N = {
     "Failed to generate the PDF. Please try again.": "Kan de pdf niet genereren. Probeer het opnieuw.",
     "You haven't answered all questions. Submit anyway?": "Je hebt niet alle vragen beantwoord. Toch verzenden?",
     "Back": "Terug",
+    "User actions": "Gebruikersacties",
     "EXAMPLE": "VOORBEELD",
     "Generating...": "Bezig met genereren...",
     "Download as PDF": "Downloaden als pdf",
@@ -401,6 +406,7 @@ const INLINE_I18N = {
     "Failed to generate the PDF. Please try again.": "Generarea PDF-ului a eșuat. Te rugăm să încerci din nou.",
     "You haven't answered all questions. Submit anyway?": "Nu ai răspuns la toate întrebările. Trimiți oricum?",
     "Back": "Înapoi",
+    "User actions": "Acțiuni utilizator",
     "EXAMPLE": "EXEMPLU",
     "Generating...": "Se generează...",
     "Download as PDF": "Descarcă în format PDF",
@@ -466,6 +472,7 @@ const INLINE_I18N = {
     "Failed to generate the PDF. Please try again.": "No se pudo generar el PDF. Inténtalo de nuevo.",
     "You haven't answered all questions. Submit anyway?": "No has respondido todas las preguntas. ¿Enviar de todos modos?",
     "Back": "Atrás",
+    "User actions": "Acciones de usuario",
     "EXAMPLE": "EJEMPLO",
     "Generating...": "Generando...",
     "Download as PDF": "Descargar como PDF",
@@ -531,6 +538,7 @@ const INLINE_I18N = {
     "Failed to generate the PDF. Please try again.": "Generisanje PDF-a nije uspjelo. Pokušajte ponovo.",
     "You haven't answered all questions. Submit anyway?": "Niste odgovorili na sva pitanja. Svejedno predati?",
     "Back": "Nazad",
+    "User actions": "Radnje korisnika",
     "EXAMPLE": "PRIMJER",
     "Generating...": "Generisanje...",
     "Download as PDF": "Preuzmi kao PDF",
@@ -596,6 +604,7 @@ const INLINE_I18N = {
     "Failed to generate the PDF. Please try again.": "تعذّر إنشاء ملف PDF. يرجى المحاولة مرة أخرى.",
     "You haven't answered all questions. Submit anyway?": "لم تجب على جميع الأسئلة. هل تريد الإرسال على أي حال؟",
     "Back": "رجوع",
+    "User actions": "إجراءات المستخدم",
     "EXAMPLE": "مثال",
     "Generating...": "جارٍ الإنشاء...",
     "Download as PDF": "تنزيل بصيغة PDF",
@@ -1089,6 +1098,7 @@ function AiDubNotice() {
 }
 
 function WelcomePlayer({ youtubeId = null, coverImage = null }) {
+  const lang = useLang()
   const [playing, setPlaying] = useState(false)
   const [consent, setConsent] = useCookieConsent()
   // Use explicit coverImage if provided (for videos without public YouTube thumbnails,
@@ -1131,7 +1141,7 @@ function WelcomePlayer({ youtubeId = null, coverImage = null }) {
             />
           )}
           {consent !== 'necessary' ? (
-            <button className="welcome-play" aria-label="Play video" onClick={() => setPlaying(true)}>
+            <button className="welcome-play" aria-label={LX(lang, 'Play', 'Abspielen')} onClick={() => setPlaying(true)}>
               <Icon.Play />
             </button>
           ) : (
@@ -1384,7 +1394,7 @@ function CourseLandingPage({ course, state, navigate, onBack }) {
         <p className="course-paragraph">{course.longDescription}</p>
         <ContentTags course={course} size="lg" />
 
-        <h3 className="course-bullets-h">{t('cl_bullets_h_prefix')}{tagBadge}{t('cl_bullets_h_suffix')}</h3>
+        <h2 className="course-bullets-h">{t('cl_bullets_h_prefix')}{tagBadge}{t('cl_bullets_h_suffix')}</h2>
         <ul className="course-bullets">
           {course.bullets.map((b, i) => <li key={i}>{b}</li>)}
         </ul>
@@ -1506,6 +1516,7 @@ function FaqItem({ q, a }) {
 /* Compact YouTube tile — used for "Weitere relevante Inhalte" section.
    Tile size matches a course-preview tile. Click → inline iframe playback. */
 function RelatedVideoTile({ youtubeId, title, coverImage = null }) {
+  const lang = useLang()
   const [playing, setPlaying] = useState(false)
   // Use explicit coverImage if provided (for unlisted videos whose YouTube
   // thumbnails return 404). Otherwise fall back to YouTube CDN.
@@ -1535,7 +1546,7 @@ function RelatedVideoTile({ youtubeId, title, coverImage = null }) {
                    e.target.src = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`
                  }
                }} />
-          <button className="related-video-play" aria-label="Play video">
+          <button className="related-video-play" aria-label={LX(lang, 'Play', 'Abspielen')}>
             <Icon.Play />
           </button>
         </>
@@ -2319,18 +2330,32 @@ export default function App() {
   // the route object is stashed in history.state and restored on popstate.
   const navigate = (r) => {
     window.scrollTo(0, 0)
+    fokusNachWechsel.current = true
     try { window.history.pushState({ __novoRoute: r }, '') } catch {}
     setRoute(r)
-    /* In einer Single-Page-App wechselt der Inhalt, ohne dass der Fokus mitgeht:
-       Screenreader- und Tastaturnutzer stehen danach unsichtbar auf der alten
-       Seite und müssten sich erneut durch die gesamte Navigation tabben. Den
-       Fokus deshalb auf den Inhaltsbereich setzen — dort liest der Screenreader
-       die neue Überschrift vor. (WCAG 2.4.3) */
-    requestAnimationFrame(() => {
-      const ziel = document.getElementById('main-content')
-      if (ziel) { try { ziel.focus({ preventScroll: true }) } catch {} }
-    })
   }
+
+  /* Fokus beim Seitenwechsel in den Inhaltsbereich holen (WCAG 2.4.3).
+     In einer SPA tauscht nur der Inhalt — Tastatur- und Screenreader-Nutzer
+     stünden sonst unsichtbar auf der alten Seite und müssten sich erneut durch
+     die ganze Navigation tabben.
+     Bewusst ein Effekt und kein requestAnimationFrame in navigate(): rAF lief
+     VOR Reacts Commit, fokussierte also den alten <main>-Knoten, den React
+     danach ersetzte — der Fokus fiel zurück auf <body> (im Browser gemessen).
+     Der Effekt läuft nach dem Commit und erfasst zusätzlich die Browser-
+     Zurück-Taste und die Rechtsseiten, die navigate() gar nicht durchlaufen.
+     Beim ersten Rendern wird nicht fokussiert — sonst überspränge der Einstieg
+     die Kopfzeile. */
+  const fokusNachWechsel = useRef(false)
+  const geheZu = (r) => { fokusNachWechsel.current = true; setOuterRoute(r) }
+  useEffect(() => {
+    /* Nur nach einer echten Navigation fokussieren, nicht beim Seiteneinstieg —
+       dort bliebe sonst die Kopfzeile per Tab unerreichbar (nur rückwärts). */
+    if (!fokusNachWechsel.current) return
+    fokusNachWechsel.current = false
+    const ziel = document.getElementById('main-content')
+    if (ziel) { try { ziel.focus({ preventScroll: true }) } catch {} }
+  }, [route, outerRoute])
 
   const routeRef = useRef(route)
   routeRef.current = route
@@ -2340,6 +2365,7 @@ export default function App() {
     const onPop = (e) => {
       const r = e.state && e.state.__novoRoute
       window.scrollTo(0, 0)
+      fokusNachWechsel.current = true
       setRoute(r || { name: 'home' })
     }
     window.addEventListener('popstate', onPop)
@@ -2371,30 +2397,30 @@ export default function App() {
   let page
 
   const legalFooterProps = {
-    onImpressum:       () => setOuterRoute('impressum'),
-    onDatenschutz:     () => setOuterRoute('datenschutz'),
-    onBarrierefreiheit:() => setOuterRoute('barrierefreiheit'),
+    onImpressum:       () => geheZu('impressum'),
+    onDatenschutz:     () => geheZu('datenschutz'),
+    onBarrierefreiheit:() => geheZu('barrierefreiheit'),
     onCookieSettings:  () => setConsent(null),
   }
 
   if (outerRoute === 'impressum') {
     page = (
       <div className="legal-page-wrap">
-        <ImpressumPage onBack={() => setOuterRoute(null)} />
+        <ImpressumPage onBack={() => geheZu(null)} />
         <LegalFooter {...legalFooterProps} />
       </div>
     )
   } else if (outerRoute === 'datenschutz') {
     page = (
       <div className="legal-page-wrap">
-        <DatenschutzPage onBack={() => setOuterRoute(null)} onCookieSettings={() => setConsent(null)} />
+        <DatenschutzPage onBack={() => geheZu(null)} onCookieSettings={() => setConsent(null)} />
         <LegalFooter {...legalFooterProps} />
       </div>
     )
   } else if (outerRoute === 'barrierefreiheit') {
     page = (
       <div className="legal-page-wrap">
-        <BarrierefreiheitPage onBack={() => setOuterRoute(null)} />
+        <BarrierefreiheitPage onBack={() => geheZu(null)} />
         <LegalFooter {...legalFooterProps} />
       </div>
     )
@@ -2410,8 +2436,8 @@ export default function App() {
         <LandingPage
           lang={lang}
           setLang={setLang}
-          onSignUp={() => setOuterRoute('auth-signup')}
-          onLogIn={() => setOuterRoute('auth-login')}
+          onSignUp={() => geheZu('auth-signup')}
+          onLogIn={() => geheZu('auth-login')}
           onImpressum={legalFooterProps.onImpressum}
           onDatenschutz={legalFooterProps.onDatenschutz}
           onBarrierefreiheit={legalFooterProps.onBarrierefreiheit}
@@ -2426,8 +2452,8 @@ export default function App() {
           setLang={setLang}
           busy={authBusy}
           setBusy={setAuthBusy}
-          onSwitchMode={() => setOuterRoute(mode === 'signup' ? 'auth-login' : 'auth-signup')}
-          onBackToLanding={() => setOuterRoute('landing')}
+          onSwitchMode={() => geheZu(mode === 'signup' ? 'auth-login' : 'auth-signup')}
+          onBackToLanding={() => geheZu('landing')}
         />
       )
     }
@@ -2508,7 +2534,7 @@ export default function App() {
         <CookieBanner
           onAccept={() => setConsent('all')}
           onNecessary={() => setConsent('necessary')}
-          onOpenPrivacy={() => setOuterRoute('datenschutz')}
+          onOpenPrivacy={() => geheZu('datenschutz')}
         />
       )}
       <SupportBotLauncher lang={lang} />
@@ -2654,22 +2680,22 @@ function LandingPage({ lang, setLang, onSignUp, onLogIn, onImpressum, onDatensch
         <div className="landing-features-grid">
           <article className="landing-feature">
             <div className="landing-feature-ico"><Icon.Cap /></div>
-            <h3>{t('landing_feature_videos_t')}</h3>
+            <h2>{t('landing_feature_videos_t')}</h2>
             <p>{t('landing_feature_videos_d')}</p>
           </article>
           <article className="landing-feature">
             <div className="landing-feature-ico"><Icon.CertIcon /></div>
-            <h3>{t('landing_feature_certs_t')}</h3>
+            <h2>{t('landing_feature_certs_t')}</h2>
             <p>{t('landing_feature_certs_d')}</p>
           </article>
           <article className="landing-feature">
             <div className="landing-feature-ico"><Icon.Check /></div>
-            <h3>{t('landing_feature_progress_t')}</h3>
+            <h2>{t('landing_feature_progress_t')}</h2>
             <p>{t('landing_feature_progress_d')}</p>
           </article>
           <article className="landing-feature">
             <div className="landing-feature-ico"><Icon.Play /></div>
-            <h3>{t('landing_feature_pace_t')}</h3>
+            <h2>{t('landing_feature_pace_t')}</h2>
             <p>{t('landing_feature_pace_d')}</p>
           </article>
         </div>
@@ -3253,6 +3279,7 @@ function AdminUserCourses({ user, onSet, busyKey }) {
 
 /* ----- Per-user actions menu (promote/demote, rename, reset, delete) ----- */
 function AdminUserActionsMenu({ user, onChanged }) {
+  const lang = useLang()
   const t = useT()
   const [open, setOpen] = useState(false)
   const [busy, setBusy] = useState(false)
@@ -3298,7 +3325,7 @@ function AdminUserActionsMenu({ user, onChanged }) {
         className="admin-actions-btn"
         onClick={() => setOpen(o => !o)}
         disabled={busy}
-        aria-label="User actions"
+        aria-label={LX(lang, 'User actions', 'Nutzeraktionen')}
         aria-haspopup="true"
         aria-expanded={open}
       >⋯</button>
@@ -3381,7 +3408,7 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLa
     <div className="auth-page">
       <header className="landing-header">
         <div className="landing-header-inner">
-          <button className="auth-back" onClick={onBackToLanding} aria-label="Back">
+          <button className="auth-back" onClick={onBackToLanding} aria-label={LX(lang, 'Back', 'Zurück')}>
             <Icon.ChevronLeft />
           </button>
           <div className="landing-logo" onClick={onBackToLanding} style={{ cursor: 'pointer' }}>
