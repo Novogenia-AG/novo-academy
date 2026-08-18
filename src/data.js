@@ -3218,8 +3218,17 @@ const HOME_VIDEO_PT = {
   videos: [{ youtubeId: 'yADG8aygIOI', title: 'Visita à Novogenia — a tecnologia por trás dos produtos personalizados mais avançados do mundo' }],
 }
 // cz/fr/pt: no lip-sync version of the bonus/longevity video yet → hidden (empty videos).
-const HOME_VIDEO_BY_LANG = { de: HOME_VIDEO_DE, en: HOME_VIDEO_EN, cz: { videos: [] }, fr: { videos: [] }, pt: { videos: [] } }
-export const getHomeVideoSection = (lang = 'de') => HOME_VIDEO_BY_LANG[lang] || HOME_VIDEO_EN
+const HOME_VIDEO_BY_LANG = {
+  de: HOME_VIDEO_DE, en: HOME_VIDEO_EN,
+  cz: { videos: [] }, fr: { videos: [] }, pt: { videos: [] },
+  it: { videos: [] }, nl: { videos: [] }, ro: { videos: [] },
+  es: { videos: [] }, sr: { videos: [] }, ar: { videos: [] },
+}
+/* Fallback auf LEER, nicht auf Englisch. Vorher fiel jede Sprache ohne eigenen
+   Eintrag still auf die englische Bonus-Sektion zurück — it/nl/ro/es/sr/ar
+   zeigten dadurch englische Videos mitten in der übersetzten Oberfläche.
+   Eine neue Sprache zeigt jetzt lieber nichts als das Falsche. */
+export const getHomeVideoSection = (lang = 'de') => HOME_VIDEO_BY_LANG[lang] || { videos: [] }
 void [HOME_VIDEO_CZ, HOME_VIDEO_FR, HOME_VIDEO_PT]   // referenced (ready for lip-sync bonus videos)
 
 /* ============ HOME-SEITE: TOP-WELCOME-VIDEOS ============
@@ -3432,6 +3441,10 @@ export const UI = {
   auth_switch_to_login:       { de: 'Schon registriert? Anmelden',  en: 'Already registered? Sign in' },
   auth_switch_to_signup:      { de: 'Neu hier? Konto erstellen',    en: 'New here? Create an account' },
   auth_error_invalid:         { de: 'Email oder Passwort ungültig.', en: 'Invalid email or password.' },
+  // Sichtbarer Hinweis, wenn Fortschritt nicht gespeichert werden konnte —
+  // vorher schluckte saveProgress den Fehler und der Nutzer merkte nichts.
+  progress_save_failed:       { de: 'Dein Fortschritt konnte gerade nicht gespeichert werden. Prüfe deine Verbindung — der angezeigte Stand ist noch nicht in deinem Konto.',
+                                en: 'Your progress could not be saved just now. Check your connection — what you see is not stored in your account yet.' },
   auth_error_rate_limited:    { de: 'Zu viele Anmeldeversuche. Bitte warte ein paar Minuten und versuche es erneut.',
                                 en: 'Too many sign-in attempts. Please wait a few minutes and try again.' },
   auth_error_taken:           { de: 'Diese Email ist bereits registriert. Bitte melde dich an.',

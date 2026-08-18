@@ -1570,12 +1570,16 @@ function FaqItem({ q, a }) {
 function RelatedVideoTile({ youtubeId, title, coverImage = null }) {
   const lang = useLang()
   const [playing, setPlaying] = useState(false)
+  /* Dieselbe Cookie-Schranke wie in FullVideo und WelcomePlayer: ohne sie
+     luden die verwandten Videos YouTube-Cookies, obwohl der Nutzer nur
+     "Nur notwendige" gewaehlt oder noch gar nicht entschieden hatte. */
+  const [consent, setConsent] = useCookieConsent()
   // Use explicit coverImage if provided (for unlisted videos whose YouTube
   // thumbnails return 404). Otherwise fall back to YouTube CDN.
   const stillSrc = coverImage || `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`
   return (
-    <div className="related-video-tile" onClick={() => !playing && setPlaying(true)}>
-      {playing ? (
+    <div className="related-video-tile" onClick={() => !playing && consent === 'all' && setPlaying(true)}>
+      {playing && consent === 'all' ? (
         <iframe
           className="related-video-iframe"
           src={`https://www.youtube.com/embed/${youtubeId}?${YT_EMBED_PARAMS}`}
@@ -1598,9 +1602,11 @@ function RelatedVideoTile({ youtubeId, title, coverImage = null }) {
                    e.target.src = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`
                  }
                }} />
-          <button className="related-video-play" aria-label={LX(lang, 'Play', 'Abspielen')}>
-            <Icon.Play />
-          </button>
+          {consent === 'all'
+            ? (<button className="related-video-play" aria-label={LX(lang, 'Play', 'Abspielen')}>
+                 <Icon.Play />
+               </button>)
+            : <YtConsentPlaceholder onAllow={() => setConsent('all')} />}
         </>
       )}
     </div>
@@ -2302,6 +2308,9 @@ export default function App() {
   // true, wenn der letzte Ladeversuch fehlgeschlagen ist — dann bleibt das
   // Speichern gesperrt, damit kein Nullzustand den echten Fortschritt ersetzt.
   const [progressLoadFailed, setProgressLoadFailed] = useState(false)
+  /* Letzter fehlgeschlagener Schreibversuch. Ohne diese Anzeige sah der Nutzer
+     Fortschritt, der nie in der Datenbank ankam. */
+  const [speicherFehler, setSpeicherFehler] = useState(null)
 
   // Load per-user progress when session becomes available
   useEffect(() => {
@@ -2362,7 +2371,7 @@ export default function App() {
     const snapshot = courseState
     saveTimerRef.current = setTimeout(() => {
       saveTimerRef.current = null
-      saveProgress(uid, snapshot)
+      saveProgress(uid, snapshot).then(r => setSpeicherFehler(r?.error || null))
     }, 800)
     // Wird die Seite verlassen, bevor der Debounce abgelaufen ist, ginge die
     // letzte Aktion sonst verloren — deshalb vorher sofort schreiben.
@@ -2402,7 +2411,15 @@ export default function App() {
      Beim ersten Rendern wird nicht fokussiert — sonst überspränge der Einstieg
      die Kopfzeile. */
   const fokusNachWechsel = useRef(false)
-  const geheZu = (r) => { fokusNachWechsel.current = true; setOuterRoute(r) }
+  /* Wie navigate() einen History-Eintrag schreiben. Ohne ihn verliess die
+     Zurueck-Taste auf Impressum, Datenschutz und der Barrierefreiheits-
+     erklaerung die Seite, statt in die Academy zurueckzufuehren. */
+  const geheZu = (r) => {
+    window.scrollTo(0, 0)
+    fokusNachWechsel.current = true
+    try { window.history.pushState({ __novoRoute: routeRef.current, __novoOuter: r }, '') } catch {}
+    setOuterRoute(r)
+  }
   useEffect(() => {
     /* Nur nach einer echten Navigation fokussieren, nicht beim Seiteneinstieg —
        dort bliebe sonst die Kopfzeile per Tab unerreichbar (nur rückwärts). */
@@ -2411,6 +2428,20 @@ export default function App() {
     const ziel = document.getElementById('main-content')
     if (ziel) { try { ziel.focus({ preventScroll: true }) } catch {} }
   }, [route, outerRoute])
+
+  /* WCAG 2.4.2: Der Titel blieb in der gesamten SPA "NOVO ACADEMY — Novogenia".
+     Screenreader lesen ihn bei jedem Ansichtswechsel vor, und im Verlauf sind
+     alle Eintraege ununterscheidbar. Wir leiten ihn aus der Ueberschrift der
+     Ansicht ab — so wandert er automatisch mit und ist mitübersetzt. */
+  useEffect(() => {
+    /* Direkt im Effekt, nicht in requestAnimationFrame: rAF liefe vor Reacts
+       Commit und läse noch die Überschrift der VORIGEN Ansicht. */
+    const h1 = document.querySelector('#main-content h1, h1')
+    const titel = (h1?.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 70)
+    document.title = titel && !/^NOVOACADEMY$/i.test(titel)
+      ? titel + ' — NOVO ACADEMY'
+      : 'NOVO ACADEMY — Novogenia'
+  }, [route, outerRoute, lang, session])
 
   const routeRef = useRef(route)
   routeRef.current = route
@@ -2422,6 +2453,9 @@ export default function App() {
       window.scrollTo(0, 0)
       fokusNachWechsel.current = true
       setRoute(r || { name: 'home' })
+      // Beide Router-Ebenen wiederherstellen, sonst bliebe eine Rechtsseite
+      // beim Zurueckgehen offen.
+      setOuterRoute((e.state && e.state.__novoOuter) ?? null)
     }
     window.addEventListener('popstate', onPop)
     return () => window.removeEventListener('popstate', onPop)
@@ -2599,6 +2633,9 @@ export default function App() {
           ganze Ansicht der Inhalt. Kopf- und Fußbereich bleiben in beiden
           Fällen außerhalb von <main> und behalten damit ihre banner- bzw.
           contentinfo-Rolle. */}
+      {speicherFehler && (
+        <p className="speicher-fehler" role="alert">{tBase(lang, 'progress_save_failed')}</p>
+      )}
       {inhaltEingebettet ? page : <Inhalt>{page}</Inhalt>}
       {showBanner && (
         <CookieBanner
@@ -2638,7 +2675,7 @@ function TopBar({ lang, setLang, session, profile, navigate }) {
             {['de','en','cz','fr','pt','it','nl','ro','es','sr','ar'].map(l => (
               <button
                 key={l}
-                className={`lang-btn${lang === l ? ' is-active' : ''}`}
+                className={`lang-btn${lang === l ? ' is-active' : ''}`} aria-pressed={lang === l}
                 onClick={() => setLang(l)}
               >{l.toUpperCase()}</button>
             ))}
@@ -2728,7 +2765,7 @@ function LandingPage({ lang, setLang, onSignUp, onLogIn, onImpressum, onDatensch
           <div className="landing-header-right">
             <div className="lang-switcher" title="Language / Sprache">
               {['de','en','cz','fr','pt','it','nl','ro','es','sr','ar'].map(l => (
-                <button key={l} className={`lang-btn${lang === l ? ' is-active' : ''}`} onClick={() => setLang(l)}>{l.toUpperCase()}</button>
+                <button key={l} className={`lang-btn${lang === l ? ' is-active' : ''}`} aria-pressed={lang === l} onClick={() => setLang(l)}>{l.toUpperCase()}</button>
               ))}
             </div>
             <button className="btn-ghost landing-login-btn" onClick={onLogIn}>{t('landing_cta_login')}</button>
@@ -2895,6 +2932,7 @@ function ImpressumPage({ onBack }) {
    "teilweise vereinbar" mit ehrlicher Mängelliste ist zulässig, eine
    pauschale Konformitätsbehauptung wäre riskant. */
 function BarrierefreiheitPage({ onBack }) {
+  const lang = useLang()
   const t = useT()
   return (
     <div className="legal-page content">
@@ -2928,7 +2966,7 @@ function BarrierefreiheitPage({ onBack }) {
         <p>{t('a11y_feedback_t')}</p>
         <p>
           Novogenia GmbH<br />
-          Strass 19, 5301 Eugendorf, Österreich<br />
+          Strass 19, 5301 Eugendorf, {LX(lang, 'Austria', 'Österreich')}<br />
           <a href="mailto:service@novogenia.com">service@novogenia.com</a><br />
           <a href="tel:+43662262102">+43 662 262 102</a>
         </p>
@@ -3215,8 +3253,12 @@ function AdminUserList({ users, onChanged, eigeneId }) {
 
   return (
     <div className="admin-userlist">
+      {/* Ein Platzhalter ist keine Beschriftung: er verschwindet beim Tippen und
+          wird von Screenreadern nicht zuverlässig als Name gemeldet (WCAG 3.3.2). */}
       <input
         className="admin-search"
+        type="search"
+        aria-label={t('admin_users_search')}
         placeholder={t('admin_users_search')}
         value={query}
         onChange={e => setQuery(e.target.value)}
@@ -3357,12 +3399,22 @@ function AdminUserActionsMenu({ user, onChanged, eigeneId }) {
   const [open, setOpen] = useState(false)
   const [busy, setBusy] = useState(false)
   const ref = useRef(null)
+  const knopfRef = useRef(null)
 
   useEffect(() => {
     if (!open) return
     const close = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false) }
+    /* Ein geoeffnetes Menue muss sich mit Escape schliessen lassen und den
+       Fokus zurueckgeben, sonst sitzt man ohne Maus darin fest (WCAG 2.1.2). */
+    const beiTaste = (e) => {
+      if (e.key === 'Escape') { setOpen(false); knopfRef.current?.focus() }
+    }
     document.addEventListener('mousedown', close)
-    return () => document.removeEventListener('mousedown', close)
+    document.addEventListener('keydown', beiTaste)
+    return () => {
+      document.removeEventListener('mousedown', close)
+      document.removeEventListener('keydown', beiTaste)
+    }
   }, [open])
 
   const wrap = async (fn) => {
@@ -3396,6 +3448,7 @@ function AdminUserActionsMenu({ user, onChanged, eigeneId }) {
   return (
     <div className="admin-actions-menu" ref={ref}>
       <button
+        ref={knopfRef}
         className="admin-actions-btn"
         onClick={() => setOpen(o => !o)}
         disabled={busy}
@@ -3406,7 +3459,7 @@ function AdminUserActionsMenu({ user, onChanged, eigeneId }) {
       {open && (
         <div className="admin-actions-pop" role="menu">
           {isDeleted ? (
-            <button className="admin-actions-item" onClick={undelete} disabled={busy}>
+            <button className="admin-actions-item" role="menuitem" onClick={undelete} disabled={busy}>
               ↺ Undelete
             </button>
           ) : (
@@ -3417,20 +3470,20 @@ function AdminUserActionsMenu({ user, onChanged, eigeneId }) {
                   Datenbank lehnt beides inzwischen ebenfalls ab, aber ein
                   Menüpunkt, der nur eine Fehlermeldung erzeugt, hilft niemandem. */}
               {!istSelbst && (
-                <button className="admin-actions-item" onClick={togglePromote} disabled={busy}>
+                <button className="admin-actions-item" role="menuitem" onClick={togglePromote} disabled={busy}>
                   {user.is_admin ? '↓ ' + t('admin_action_demote') : '↑ ' + t('admin_action_promote')}
                 </button>
               )}
-              <button className="admin-actions-item" onClick={rename} disabled={busy}>
+              <button className="admin-actions-item" role="menuitem" onClick={rename} disabled={busy}>
                 ✎ {t('admin_action_rename')}
               </button>
-              <button className="admin-actions-item" onClick={resetAll} disabled={busy}>
+              <button className="admin-actions-item" role="menuitem" onClick={resetAll} disabled={busy}>
                 ↻ {t('admin_action_reset_all')}
               </button>
               {!istSelbst && (
                 <>
                   <div className="admin-actions-sep" />
-                  <button className="admin-actions-item is-danger" onClick={softDelete} disabled={busy}>
+                  <button className="admin-actions-item is-danger" role="menuitem" onClick={softDelete} disabled={busy}>
                     ✕ {t('admin_action_delete')}
                   </button>
                 </>
@@ -3502,7 +3555,7 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLa
           <div className="landing-header-right">
             <div className="lang-switcher" title="Language / Sprache">
               {['de','en','cz','fr','pt','it','nl','ro','es','sr','ar'].map(l => (
-                <button key={l} className={`lang-btn${lang === l ? ' is-active' : ''}`}
+                <button key={l} className={`lang-btn${lang === l ? ' is-active' : ''}`} aria-pressed={lang === l}
                         onClick={() => setLang(l)}>{l.toUpperCase()}</button>
               ))}
             </div>

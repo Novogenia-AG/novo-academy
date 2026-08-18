@@ -306,9 +306,15 @@ export const saveProgress = async (userId, state) => {
         test_score: Number(v?.testScore || 0),
         updated_at: new Date().toISOString(),
       }))
-    if (rows.length === 0) return
-    await supabase.from('user_progress').upsert(rows, { onConflict: 'user_id,course_uid' })
-    return
+    if (rows.length === 0) return {}
+    /* Der Fehler wurde bisher verschluckt: die App zeigte weiter Fortschritt,
+       der nie in der Datenbank ankam, und beim naechsten Geraet war er weg. */
+    const { error } = await supabase.from('user_progress').upsert(rows, { onConflict: 'user_id,course_uid' })
+    if (error) {
+      console.error('[auth] saveProgress fehlgeschlagen:', error.message)
+      return { error: error.message }
+    }
+    return {}
   }
   _saveMockProgress(userId, state)
 }
@@ -368,12 +374,16 @@ export const adminLoadAllUsers = async ({ includeDeleted = false } = {}) => {
       .select('id, email, name, lang, is_admin, created_at, last_seen_at, deleted_at')
       .order('created_at', { ascending: false })
     if (!includeDeleted) pq = pq.is('deleted_at', null)
-    const [{ data: profiles }, { data: progressRows }] = await Promise.all([
+    const [{ data: profiles, error: pErr }, { data: progressRows, error: gErr }] = await Promise.all([
       pq,
       supabase
         .from('user_progress')
         .select('user_id, course_uid, watched, test_passed, test_score, updated_at'),
     ])
+    /* Ohne diese Pruefung sah eine fehlende Berechtigung wie ein leeres
+       Nutzerverzeichnis aus — der Admin haette den Fehler nie bemerkt. */
+    if (pErr) throw new Error('Profile konnten nicht geladen werden: ' + pErr.message)
+    if (gErr) throw new Error('Fortschritt konnte nicht geladen werden: ' + gErr.message)
     const progressByUser = {}
     for (const r of progressRows || []) {
       progressByUser[r.user_id] = progressByUser[r.user_id] || {}
