@@ -289,7 +289,7 @@ git push origin main
 ## 11. Bekannte offene Punkte / TODOs
 
 ### Hoch-Priorität
-- [ ] **Testauswertung serverseitig machen.** Ob ein Test bestanden ist, entscheidet heute der Browser und schreibt / direkt in . Ein manipulierter Client kann sich damit jedes Zertifikat ausstellen. Mindestens ein DB-Trigger, der  nur bei  zulaesst; sauber waere eine -RPC, die selbst auswertet.
+- [ ] **Testauswertung serverseitig machen.** Ob ein Test bestanden ist, entscheidet heute allein der Browser und schreibt `test_passed`/`test_score` direkt in `user_progress`. Ein manipulierter Client kann sich damit jedes Zertifikat ausstellen. Mindestens ein DB-Trigger, der `test_passed` nur bei `test_score >= 80` zulässt; sauber wäre eine `submit_test`-RPC, die selbst auswertet und der der Antwortschlüssel gar nicht erst im Client vorliegt.
 - [ ] **Videosprache der Dubs korrigieren.** Bei den geprueften KI-Dubs steht die Videosprache auf Englisch (USA) — auch bei tschechischen und portugiesischen Fassungen. YouTube leitet daraus die Sprache der Auto-Untertitel ab; die sind dadurch doppelt unbrauchbar. Vor dem Erzeugen von Untertiteln korrigieren.
 - [ ] **Supabase-Migration ausführen** — `supabase/migration-2026-08-06-lock-admin-column.sql` im SQL-Editor. Bis dahin kann jeder eingeloggte Nutzer `is_admin` auf sich selbst setzen, und die Admin-Knöpfe Status/Löschen/Wiederherstellen funktionieren nicht.
 - [ ] **YouTube: "verändertes oder synthetisches Material" auf allen KI-Dub-Uploads setzen** (Studio → Details → Altered content) + Offenlegungssatz in die Beschreibung. Pflicht nach Art. 50 Abs. 4 KI-VO; im Code nicht lösbar, die Videos liegen auf dem Dr.-DW-Kanal.
