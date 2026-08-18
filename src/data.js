@@ -3273,7 +3273,7 @@ void [HOME_TOP_VIDEOS_CZ, HOME_TOP_VIDEOS_FR, HOME_TOP_VIDEOS_PT]   // reference
 
 /* ============ I18N STRINGS ============
    Alle UI-Texte, die nicht aus den Kursdaten kommen. */
-const UI = {
+export const UI = {
   // ---- Home page ----
   home_courses_section_title: { de: 'DEINE ONLINE KURSE',         en: 'YOUR ONLINE COURSES' },
   home_courses_section_sub:   { de: 'Wähle ein Modul aus den folgenden Themen und beginne dein Training.',
@@ -3598,7 +3598,9 @@ export const getSampleCourseList = (lang = 'de') => lang === 'de' ? SAMPLE_COURS
    Also exported as `assetUrl(path)` for direct use in components
    (e.g. <img src={assetUrl('/signature.png')} />).
    ============================================================ */
-const BASE = (import.meta.env.BASE_URL || '/').replace(/\/$/, '')
+/* import.meta.env gibt es nur im Vite-Build. Der optionale Zugriff hält das
+   Modul auch in reinem Node importierbar — davon lebt scripts/check-i18n.mjs. */
+const BASE = (import.meta.env?.BASE_URL || '/').replace(/\/$/, '')
 export const assetUrl = (p) => (typeof p === 'string' && p.startsWith('/') ? BASE + p : p)
 
 /* ============================================================

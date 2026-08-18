@@ -10,6 +10,10 @@
   --lime-dark: #B8B80E;
   --gold-soft: #FBEFD6;
   --green: #18A455;
+  /* --green erreicht als Textfarbe nur 3,2:1 auf Weiss — unter den 4,5:1 aus
+     WCAG 1.4.3. Fuer Flaechen und Raender bleibt es, Text nimmt --green-text
+     (5,4:1 auf Weiss, 5,1:1 auf der getoenten Flaeche). */
+  --green-text: #157A3F;
   --green-soft: #DCF1E0;
   --active-bg: #F4E8EF;
   --bg: #FFFFFF;
@@ -537,6 +541,19 @@ a { color: inherit; text-decoration: none; }
 /* Tile meta */
 .tile-meta { padding: 12px 4px 0; }
 .tile-title { margin: 0 0 6px; font-size: 15px; font-weight: 700; color: var(--text); line-height: 1.3; letter-spacing: -0.1px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+/* Das eigentliche Bedienelement der Kachel sitzt im Titel, damit der h3 in der
+   Ueberschriftenstruktur erhalten bleibt. ::after zieht die Klickflaeche ueber
+   die ganze Kachel — optisch aendert sich dadurch nichts. */
+.tile-link {
+  all: unset;
+  cursor: pointer;
+  display: inline;
+  font: inherit;
+  color: inherit;
+}
+.tile-link::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+.tile:has(.tile-link:focus-visible) { outline: 3px solid var(--wine); outline-offset: 3px; border-radius: 12px; }
+.tile-link:focus-visible { outline: none; }
 .tile-desc { margin: 0 0 10px; font-size: 12.5px; color: var(--muted); line-height: 1.45; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .tile-tags { display: flex; flex-wrap: wrap; gap: 5px; }
 .tag { display: inline-flex; align-items: center; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: 0.2px; white-space: nowrap; }
@@ -621,7 +638,7 @@ a { color: inherit; text-decoration: none; }
 .type-supplementary { background: #E5E5E5; color: #555; }
 .cert-info { font-size: 13px; color: var(--text-soft); flex: 1; min-width: 240px; }
 .cert-info.muted { color: var(--muted); }
-.cert-info.success { color: var(--green); font-weight: 600; }
+.cert-info.success { color: var(--green-text); font-weight: 600; }
 
 .course-paragraph { font-size: 15.5px; line-height: 1.6; color: var(--text-soft); margin-bottom: 28px; }
 .course-bullets-h { font-size: 15px; font-weight: 700; color: var(--text); letter-spacing: -0.1px; margin: 8px 0 12px; }
@@ -672,7 +689,7 @@ a { color: inherit; text-decoration: none; }
 .btn-ghost.big { padding: 15px 30px; font-size: 15px; border-radius: var(--radius-pill); }
 
 .course-test-wrap { display: inline-flex; align-items: center; gap: 14px; flex-wrap: wrap; }
-.test-completed { color: var(--green); font-weight: 600; font-size: 13.5px; }
+.test-completed { color: var(--green-text); font-weight: 600; font-size: 13.5px; }
 
 /* ============ COURSE CONTENT PAGE ============ */
 .course-content-page { background: var(--bg-soft); min-height: 100vh; padding-bottom: 60px; }
@@ -832,7 +849,7 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
 }
 .cc-prompt { margin: 0 0 22px; font-size: 14.5px; color: var(--text-soft); }
-.cc-already { margin: 0 0 22px; font-size: 14.5px; color: var(--green); font-weight: 600; }
+.cc-already { margin: 0 0 22px; font-size: 14.5px; color: var(--green-text); font-weight: 600; }
 
 /* Big two-button action row at the bottom of a course */
 .cc-actions-row {
@@ -1410,7 +1427,7 @@ a { color: inherit; text-decoration: none; }
 }
 .tr-score-num span { font-size: 22px; font-weight: 600; color: var(--muted); margin-left: 4px; }
 .tr-h { margin: 0 0 14px; font-family: "Montserrat", sans-serif; font-size: 32px; font-weight: 800; letter-spacing: -0.5px; }
-.tr-h.pass { color: var(--green); }
+.tr-h.pass { color: var(--green-text); }
 .tr-h.fail { color: var(--badge-bg); }
 .tr-msg { font-size: 15px; line-height: 1.55; color: var(--text-soft); max-width: 480px; margin: 0 auto 26px; }
 .tr-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
@@ -1584,7 +1601,8 @@ a { color: inherit; text-decoration: none; }
   border-radius: 10px; color: #fff; font-size: 15px; font-family: inherit;
   transition: border-color 0.15s, background 0.15s;
 }
-.cert-input-wrap input::placeholder { color: rgba(255,255,255,0.35); }
+/* 0.35 ergab auf dem weinroten Grund nur 2,3:1. 0.72 bringt rund 5,9:1. */
+.cert-input-wrap input::placeholder { color: rgba(255,255,255,0.72); }
 .cert-input-wrap input:focus { outline: none; border-color: var(--gold); background: rgba(255,255,255,0.12); }
 .cert-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 

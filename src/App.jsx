@@ -795,8 +795,20 @@ function Seal({ certified, certifiable, size = 'normal' }) {
   const lang = useLang()
   if (!certifiable) return null
 
-  const color = certified ? '#3FA85C' : '#D5D5D5'
-  const colorDark = certified ? '#2F8546' : '#BFBFBF'
+  /* Vorher trug das Band in beiden Zustaenden weisse Schrift: 3,0:1 auf dem
+     Gruen und 1,5:1 auf dem Grau — beides unter den 4,5:1 aus WCAG 1.4.3.
+     Gruen abgedunkelt (5,4:1 mit Weiss), das offene Siegel bekommt dunkle
+     Schrift auf Grau (8,4:1). */
+  const color = certified ? '#1F7A3F' : '#D5D5D5'
+  const colorDark = certified ? '#175C2F' : '#BFBFBF'
+  const bandSchrift = certified ? '#fff' : '#3A323A'
+  /* WCAG 1.4.1: Zertifiziert und offen unterschieden sich bisher NUR durch
+     Gruen gegen Grau — bei Farbenblindheit und im Graustufendruck nicht
+     unterscheidbar. Das zertifizierte Siegel bekommt zusaetzlich ein Haekchen,
+     und beide Zustaende einen eigenen zugaenglichen Namen. */
+  const siegelName = certified
+    ? LX(lang, 'Certified', 'Zertifiziert')
+    : LX(lang, 'Not yet certified', 'Noch nicht zertifiziert')
   const sealText = ({ en: 'CERTIFIED', de: 'ZERTIFIZIERT', it: 'CERTIFICATO', cz: 'CERTIFIKOVÁNO', fr: 'CERTIFIÉ', pt: 'CERTIFICADO', nl: 'GECERTIFICEERD', ro: 'CERTIFICAT', es: 'CERTIFICADO', sr: 'CERTIFIKOVANO', ar: 'معتمد' }[lang]) || 'ZERTIFIZIERT'
 
   // Serrated outer edge (path)
@@ -824,7 +836,8 @@ function Seal({ certified, certifiable, size = 'normal' }) {
 
   return (
     <div className={`seal-stamp${certified ? ' is-certified' : ' is-pending'}${size === 'big' ? ' is-big' : ''}`}>
-      <svg viewBox="0 0 100 100" className="seal-stamp-svg" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 100 100" className="seal-stamp-svg" xmlns="http://www.w3.org/2000/svg"
+           role="img" aria-label={siegelName}>
         {/* Serrated outer */}
         <path d={serratedD} fill={color} />
         {/* Inner ring background (paper) */}
@@ -837,13 +850,19 @@ function Seal({ certified, certifiable, size = 'normal' }) {
         <path d={starD(62, 28)} fill={color} />
         <path d={starD(38, 72)} fill={color} />
         <path d={starD(62, 72)} fill={color} />
+        {/* Haekchen nur im zertifizierten Zustand — die Form traegt die
+            Unterscheidung mit, nicht nur die Farbe. */}
+        {certified && (
+          <path d="M43.5 71.5 L48 76 L57 66" fill="none" stroke={color}
+                strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" />
+        )}
         {/* Diagonal banner across center */}
         <g transform="rotate(-10 50 50)">
           <rect x="-4" y="42" width="108" height="16" fill={color} />
           <rect x="-4" y="42" width="108" height="1.2" fill={colorDark} />
           <rect x="-4" y="56.8" width="108" height="1.2" fill={colorDark} />
           <text x="50" y="53.5" textAnchor="middle"
-                fill="#fff"
+                fill={bandSchrift}
                 fontSize="9.5"
                 fontWeight="900"
                 fontFamily="Montserrat, sans-serif"
@@ -887,8 +906,12 @@ function Tile({ course, state, onClick }) {
   ].filter(Boolean).join(' ')
 
   return (
-    <article className={tileClass} onClick={onClick} role="button" tabIndex={0}
-             onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onClick()}>
+    /* Kein role="button" auf dem <article>: das macht saemtliche Kinder
+       praesentationell, wodurch der h3-Kurstitel aus der Ueberschriftenliste
+       verschwindet (WCAG 1.3.1). Bedienelement ist stattdessen ein echter
+       Button im Titel; .tile-link::after zieht seine Klickflaeche ueber die
+       ganze Kachel, die Optik bleibt damit unveraendert. */
+    <article className={tileClass}>
       <div className="tile-thumb-wrap">
         <div className="thumb has-img">
           <img className="thumb-img" src={course.thumbnail} alt={course.topic} loading="lazy" />
@@ -904,7 +927,11 @@ function Tile({ course, state, onClick }) {
       </div>
 
       <div className="tile-meta">
-        <h3 className="tile-title">{course.category}: {course.topic}</h3>
+        <h3 className="tile-title">
+          <button type="button" className="tile-link" onClick={onClick}>
+            {course.category}: {course.topic}
+          </button>
+        </h3>
         <p className="tile-desc">{course.description}</p>
         <ContentTags course={course} size="sm" />
       </div>
