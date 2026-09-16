@@ -6,7 +6,15 @@ import { COURSES_EN, CATEGORIES_EN, MAIN_CATEGORIES_EN, SECTION_PRODUCT_LABELS_E
   TOPIC_WB_EN, TOPIC_REPORT_EN, TOPIC_FAQ_EN } from './data.en.js'
 
 // VIDEOS: EN youtubeId -> ES lip-sync youtubeId. Empty until dubs are uploaded.
-const VIDEOS = {}
+const VIDEOS = {
+ "p02EmbTNRqE": "y3yEOVMAYBE",
+ "pRU2p2Banno": "JJgB-Gu75ic",
+ "cdsMJEPUv5A": "mbqkTgMr6qA",
+ "DbRx4Kjqkes": "8QqbpYfSfkA",
+ "TIHnA7J6EP4": "kAX-uSdG9CU",
+ "IgNeWJ6tTng": "ERvY194cnFE",
+ "SgzAZyUIx-0": "ry3DbdJvln0"
+}
 const CAT = {
  "The Gene-Diet": "La dieta genética",
  "Eat Healthy by Your Genes": "Come sano según tus genes",
