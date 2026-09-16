@@ -34,7 +34,7 @@
 ## 1. Projektübersicht
 
 **NOVO ACADEMY** ist die offizielle Trainingsplattform von Novogenia GmbH.  
-- 22 Kurse pro Sprache. **Live: 11 Sprachen** — mit allen Videos: DE (22/22 sichtbar), EN, CZ, IT, FR, PT, NL, AR (je 18/22); **freigeschaltet, aber ohne ein einziges Video** (zeigen nur 8 von 22 Kursen): RO, ES, SR. Nachweis: Abschnitt 19.2 (Bestandsaufnahme 16.09.2026). Gesamt 11 × 22 = 242 Kurs-Objekte in `COURSES`. **Arabisch läuft RTL** (`dir="rtl"`).
+- 22 Kurse pro Sprache. **Live: 11 Sprachen** — mit allen vorhandenen Videos: DE (22/22 sichtbar), EN, CZ, IT, FR, PT, NL, AR, **RO** (je 18/22); **ES** nur Wissenschafts-Basis (15/22, Beratungsschulungen fehlen); **SR ohne ein einziges Video** (8/22). Nachweis: Abschnitt 19.2 (Bestandsaufnahme 16.09.2026). Gesamt 11 × 22 = 242 Kurs-Objekte in `COURSES`. **Arabisch läuft RTL** (`dir="rtl"`).
 - Themen: Genetik-Beratung, Gewicht, Ernährung, Sport, Detox, Burnout, Biologisches Alter, Supplements, Beauty, Pharmakogenetik, Werbrecht
 - Nutzer können sich registrieren, Kurse absolvieren, Tests bestehen und ein **Zertifikat als PDF** herunterladen
 - Admin-Panel für Nutzerverwaltung und Statistiken
@@ -518,21 +518,21 @@ Arabisch `dir=rtl` / Rumänisch `dir=ltr`, alle 11 `data.*.js` importieren fehle
 
 ### 19.2 Sprachen — echter Stand
 
-**Bestandsaufnahme 16.09.2026** (per Skript über `groupForDisplay` gezählt, nicht geschätzt):
+**Bestandsaufnahme 16.09.2026, nach dem RO/ES-Upload** (per Skript über `groupForDisplay` gezählt, nicht geschätzt):
 
 | Sprache | Text/UI | Videos im Code | Sichtbare Kurse |
 |---|---|---|---|
 | DE | ✅ | Originalaufnahmen, 45 Plätze | **22 von 22** |
 | EN | ✅ | Originale, 45 Plätze / 41 Videos | **18 von 22** |
 | CZ, FR, PT, IT, NL, **AR** | ✅ | ✅ 41/41 Lip-Sync | **18 von 22** |
-| **RO** | ✅ | **0/41** — 40 Dubs auf HeyGen fertig, nicht hochgeladen; 1 Auftrag (Sportliche Leistung) offen | **8 von 22** |
-| **ES** (neutral) | ✅ | **0/41** — 7 Dubs (Wissenschafts-Basis) auf HeyGen fertig, 34 Beratungsteile nie beauftragt | **8 von 22** |
+| **RO** | ✅ | ✅ 41/41 Lip-Sync, öffentlich und eingetragen (16.09.2026) | **18 von 22** |
+| **ES** (neutral) | ✅ | **7/41** — alle Wissenschafts-Basis öffentlich und eingetragen (16.09.2026); 34 Beratungsteile nie beauftragt | **15 von 22** |
 | **SR** (Latein) | ✅ | **0/41** — nie beauftragt | **8 von 22** |
 
 - **4 Kurse fehlen außer in DE überall** (auch EN): Burnout und Biologisches Alter, je Wissenschafts-Basis + Beratungsschulung. `data.en.js` hat dafür keine Video-ID, und die Übersetzungsdateien ersetzen nur vorhandene EN-IDs → zuerst eine englische Fassung (Kandidat: `SOME DANIEL…NOVO ACADEMY CONTENT VIDEOS ENGBIO AGE en Ai.mp4`, 5,1 GB).
 - **Startseiten-Videos** (Intro, Firmentour, Bonus) gibt es nur für DE und EN.
 - **Dokumente:** Übersetzungssprachen bekommen die englischen PDFs; Demo-Berichte, PowerPoints und Werberichtlinie gibt es nur deutsch.
-- **Credits für den Rest** (120/Minute): SR 35.098, ES-Beratungsteile 15.546, RO Sportliche Leistung 5.194 (falls der offene Auftrag nicht fertig wurde) — bis zu **55.838**, dazu Burnout/Bioalter × 10 Sprachen und die Startseiten-Videos.
+- **Credits für den Rest** (alte Einheiten, 120/Minute): SR 35.098, ES-Beratungsteile 15.546 — zusammen **50.644** (≈ 844 $ bei 2 $/Minute), dazu Burnout/Bioalter × 10 Sprachen und die Startseiten-Videos. RO ist komplett.
 - **Falle:** Teilweise befüllte Beratungsschulungen wirken vollständig, weil fehlende Segmente still weggefiltert werden (`data.es.js`); der Test fragt trotzdem den ganzen Kurs ab. Beratungsschulungen nur komplett eintragen.
 
 <details><summary>Alte Tabelle (Stand 05.08.2026)</summary>
@@ -547,9 +547,9 @@ Arabisch `dir=rtl` / Rumänisch `dir=ltr`, alle 11 `data.*.js` importieren fehle
 
 </details>
 
-**Warum nur 8 von 22** (früher 7; die Werberichtlinie kam am 06.08. dazu): `groupForDisplay()` in `data.js` blendet jeden Kurs ohne Video aus
-(FAQ/Zusatz-Kurse bleiben sichtbar). Die `VIDEOS`-Maps in `data.{ar,ro,es,sr}.js` sind noch
-**leer** — sie füllen sich **nicht** automatisch, die YouTube-IDs müssen eingetragen werden.
+**Warum SR nur 8 von 22 zeigt:** `groupForDisplay()` in `data.js` blendet jeden Kurs ohne Video aus
+(FAQ/Zusatz-Kurse und die Werberichtlinie bleiben sichtbar). Die `VIDEOS`-Map in `data.sr.js` ist noch
+**leer**. Solche Maps füllen sich **nicht** automatisch, die YouTube-IDs müssen eingetragen werden (`match_and_inject.mjs`, siehe 19.4).
 
 Textqualität von RO/ES/SR wurde geprüft (je 694 Felder gegen EN): 0 untranslated Reste,
 0 verlorene Gen-/Markennamen, keine verschobenen `correct`-Indizes.
@@ -585,12 +585,12 @@ liegen aber weiterhin auf HeyGen und lassen sich per Job-ID neu herunterladen.
 - Die öffentliche Preisseite nennt „5 Credits/Minute" — das sind **Web-Plan-Credits**, andere Einheit (Faktor 24).
 - Endpoint `v2/video_translate` ist Legacy, funktioniert aber zuverlässig; `v3/video-translations` wird zuerst versucht.
 - Output-URLs sind **signiert und laufen ab** → vor jedem Download frisch über die Job-ID holen.
-- Restguthaben zuletzt: **~8.000 Credits**. Für ES-Beratungsschulungen (34 Videos) + SR fehlen **~50.500**.
+- Guthaben 16.09.2026: **134,50 $** (neues Dashboard: 1 Credit = 1 $ = 60 alte Einheiten, Übersetzung 2 $/Minute). ES-Beratungsschulungen (34 Videos) + SR kosten **≈ 844 $**. Daniel hat eine Aufladung über 800 $ vorbereitet; ob sie gekauft ist, ist nicht geprüft.
 - **Der API-Key steht NICHT in diesem Repo** (öffentlich!) — bei Daniel erfragen.
 
 ### 19.4 Der nächste konkrete Schritt
 
-**AR ist seit 05.08.2026 erledigt** (41/41 öffentlich und eingetragen). Die Schritte unten gelten unverändert für **RO (40 Dubs) und ES (7 Dubs)**. Beide liegen fertig auf HeyGen, auf diesem Rechner aber nicht als Datei → zuerst per Job-ID mit `download_lang.mjs` neu holen (API-Key bei Daniel).
+**AR (05.08.2026), RO und ES (16.09.2026) sind erledigt.** RO 41/41 und ES 7/7 sind öffentlich und eingetragen. Die Schritte unten gelten für die nächsten Sprachen (SR, ES-Beratungsschulungen). Große Dateien über YouTube Studio hochladen: Rezept, Fallen und Veröffentlichen ohne Daniels Klick stehen in der Claude-Memory „YouTube-Upload großer Dateien“.
 
 ~~Blocker: die 30 bereits hochgeladenen arabischen Videos sind auf YouTube „Entwurf".~~
 Entwürfe sind nicht einbettbar → die Academy kann sie nicht abspielen.
