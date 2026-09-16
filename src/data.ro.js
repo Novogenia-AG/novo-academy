@@ -78,11 +78,11 @@ const TXT = {
  "bo-faq-en": {
   "topic": "Întrebări frecvente",
   "description": "Răspunsuri la întrebările tipice ale clienților despre stresul genetic și predispoziția la burnout.",
-  "longDescription": "O colecție a celor mai frecvente întrebări despre analiza genetică a burnout-ului și stresului — ce înseamnă COMT și BDNF, cum diferă tipurile Warrior și Worrier și ce recomandări concrete decurg din acestea.",
+  "longDescription": "O colecție a celor mai frecvente întrebări despre analiza genetică a burnout-ului și stresului — ce face gena COMT, care sunt cele trei trăsături legate de stres prezentate în raport și ce recomandări concrete decurg din acestea.",
   "bullets": [
    "Ce este gena COMT?",
-   "Ce înseamnă Warrior vs. Worrier?",
-   "Cum este riscul de burnout genetic?",
+   "Care sunt cele trei trăsături legate de stres prezentate în raport?",
+   "Cum este determinat genetic riscul de burnout?",
    "Ce recomandări decurg din profil?"
   ]
  },
@@ -1376,7 +1376,7 @@ const TXT = {
    {
     "q": "Care sunt cele trei trăsături prezentate în secțiunea de burnout a raportului?",
     "options": [
-     "Performanța sub stres, rezistența la sentimente negative și impulsivitatea",
+     "Performanța sub stres, reziliența emoțională și impulsivitatea",
      "Calitatea somnului, sensibilitatea la cafeină și răspunsul cortizolului la stres",
      "Concentrarea, memoria și motivația",
      "Tensiunea arterială, pulsul și frecvența respiratorie"
@@ -1666,15 +1666,15 @@ const FAQTX = {
     "items": [
      {
       "q": "Ce este gena COMT și de ce este importantă?",
-      "a": "COMT (catecol-O-metiltransferaza) descompune neurotransmițătorul dopamină după ce o situație palpitantă sau stresantă s-a încheiat, astfel încât creierul să poată reveni la nivelul de bază. Dacă gena funcționează slab, dopamina este descompusă mult mai lent, iar creierul rămâne mai mult timp într-o stare de activare. Studiile descriu o variantă frecventă (Val158Met) cu o activitate enzimatică net diferită între forma rapidă și cea lentă."
+      "a": "COMT (catecol-O-metiltransferaza) descompune neurotransmițătorul dopamină după ce o situație palpitantă sau stresantă s-a încheiat, astfel încât creierul să poată reveni la nivelul de bază. Dacă gena funcționează slab, dopamina este descompusă mult mai lent: creierul rămâne mai mult timp într-o stare de activare, iar dacă apare un nou stres înainte ca creierul să fi revenit la nivelul de bază, poate ajunge la suprasolicitare. Descompunerea mai lentă are însă și avantaje — sentimentele pozitive sunt trăite mai intens, iar persoanele respective tind să fie mai curioase, dar și mai predispuse la jocuri de noroc. Studiile descriu o variantă frecventă (Val158Met) cu o activitate enzimatică net diferită între forma rapidă și cea lentă."
      },
      {
-      "q": "Care este diferența dintre Warrior și Worrier?",
-      "a": "Termenii sunt folosiți adesea pentru cele două extreme ale activității COMT. „Warrior”: dopamina este descompusă rapid — acest lucru tinde să fie asociat cu o performanță mai bună sub stres. „Worrier”: dopamina este descompusă lent — entuziasmul și sentimentele pozitive sunt trăite mai intens, dar creierului îi este greu să revină la nivelul de bază atunci când stresul revine iar și iar. La aproximativ 40% dintre oameni ambele copii ale genei funcționează bine, la aproximativ 15% ambele copii sunt defecte, iar restul de ~45% au câte o copie din fiecare fel."
+      "q": "Care sunt cele trei trăsături evaluate de analiza de burnout?",
+      "a": "Performanța sub stres (cât de bine performezi în situații stresante), reziliența emoțională (cât de puternic te apasă sentimentele negative) și impulsivitatea. Fiecare trăsătură este reprezentată pe o scală de la roșu, prin zona de mijloc, până la verde: verdele este favorabil, iar roșul înseamnă un risc mai mare de burnout."
      },
      {
-      "q": "Dar BDNF?",
-      "a": "BDNF (factorul neurotrofic derivat din creier) susține creșterea și capacitatea de adaptare a celulelor nervoase. Varianta Met (Val66Met) este asociată cu o eliberare mai redusă de BDNF dependentă de activitate; unele studii o leagă și de o vulnerabilitate mai mare la stresul cronic, însă dovezile sunt contradictorii. Exercițiul fizic regulat este asociat cu niveluri mai ridicate de BDNF."
+      "q": "Câți oameni sunt, din punct de vedere genetic, deosebit de predispuși la stres?",
+      "a": "La aproximativ 40% dintre oameni, ambele copii ale genei COMT funcționează bine: aceste persoane tind să performeze mai bine sub stres, au o reziliență emoțională mai mare și sunt mai puțin impulsive. La aproximativ 15%, ambele copii sunt defecte, cu efectul exact opus — acestea sunt persoanele care suferă cel mai mult sub stres. Restul de ~45% au o copie funcțională și una defectă."
      }
     ]
    },
@@ -1682,16 +1682,16 @@ const FAQTX = {
     "title": "Sfaturi practice",
     "items": [
      {
-      "q": "Sunt Worrier — sunt condamnat la burnout?",
+      "q": "Am ambele copii ale genei COMT defecte — sunt condamnat la burnout?",
       "a": "Nu. Un profil COMT mai puțin favorabil crește sensibilitatea la stres, dar nu este un destin. Cu cât genele sunt mai puțin favorabile, cu atât stilul de viață potrivit este mai important: meditație, un stil de viață cu stres redus, alimentație și exercițiu fizic. Dacă îți cunoști predispoziția, poți acționa din timp, înainte ca stresul să se acumuleze."
      },
      {
-      "q": "Sunt Warrior — trebuie totuși să-mi fac griji în privința burnout-ului?",
-      "a": "Riscul tău genetic este mai mic, dar nu este zero: stresul masiv și continuu își poate lăsa amprenta în timp. Fazele de recuperare și un stil de viață echilibrat rămân importante."
+      "q": "Toate cele trei trăsături sunt în zona verde — mai trebuie să mă gândesc la burnout?",
+      "a": "Pentru tine, burnout-ul nu reprezintă un pericol atât de mare — dar riscul nu este zero: stresul masiv și continuu își poate lăsa totuși amprenta în timp. Fazele de recuperare și un stil de viață echilibrat rămân importante."
      },
      {
       "q": "Ce ajută pe toată lumea, indiferent de genotip?",
-      "a": "Somnul suficient, exercițiul fizic regulat, meditația sau alte tehnici de relaxare, o alimentație echilibrată, contactul social și consumul moderat de stimulente precum alcoolul și cafeina."
+      "a": "Măsurile recomandate în raport — meditația, un stil de viață cu stres redus, o alimentație echilibrată și exercițiul fizic regulat — îi ajută pe toți să reducă stresul; ele contează însă cu atât mai mult cu cât profilul genetic este mai puțin favorabil. În plus, se recomandă frecvent somnul suficient, contactul social și consumul moderat de cafeină și alcool."
      }
     ]
    },
@@ -1700,7 +1700,7 @@ const FAQTX = {
     "items": [
      {
       "q": "În raportul meu a apărut o „zonă roșie”. Ar trebui să-mi fac griji?",
-      "a": "Nu. O zonă roșie marchează o predispoziție genetică nefavorabilă într-un domeniu anume — un risc mai mare, nu un diagnostic. Este o invitație de a acționa din timp — exact opusul unui verdict fatalist."
+      "a": "Nu este un motiv de panică, dar este un motiv să acționezi. O zonă roșie marchează o predispoziție genetică nefavorabilă într-un domeniu anume — un risc mai mare de burnout, nu un diagnostic. Cu cât mai multe dintre trăsăturile tale se află în zona roșie, cu atât este mai important să-ți adaptezi stilul de viață pentru a evita stresul. Chiar și cu rezultate în zona de mijloc, un stil de viață cu stres redus rămâne important."
      },
      {
       "q": "Unde găsesc recomandări concrete pentru genotipul meu?",
@@ -1726,15 +1726,15 @@ const FAQTX = {
      },
      {
       "q": "Care este diferența dintre vârsta cronologică și cea biologică?",
-      "a": "Vârsta cronologică este timpul trăit, în ani — fix și neschimbabil. Vârsta biologică arată cât de „bătrâne” sunt de fapt celulele tale. Două persoane cu aceeași vârstă cronologică pot avea vârste biologice care diferă cu până la 20 de ani, din cauza predispoziției genetice și a stilului de viață."
+      "a": "Vârsta cronologică este timpul trăit, în ani — fix și neschimbabil. Vârsta biologică descrie cât de „bătrâne” sunt de fapt celulele tale, iar telomerii sunt unul dintre factorii care stau la baza ei: bebelușii au telomeri lungi, persoanele de 90 de ani au telomeri scurți. Persoanele la care ambele copii ale genei telomerazei sunt defecte se nasc deja cu telomeri mai scurți — diferența de vârstă biologică poate ajunge la 20 de ani."
      },
      {
       "q": "Ce face telomeraza?",
-      "a": "Telomeraza este o enzimă care poate repara / reconstrui telomerii. Activitatea ei este parțial genetică — persoanele cu o activitate puternică a telomerazei își păstrează mai bine telomerii; la cele cu activitate redusă, telomerii se scurtează mai repede, mai ales sub stres oxidativ."
+      "a": "Gena telomerazei ajută la menținerea telomerilor. Nu poate opri sau inversa complet scurtarea lor, dar o încetinește: dacă genele funcționează bine, telomerii se scurtează mai lent odată cu înaintarea în vârstă; în cazul unui defect genetic, ei se pierd mai repede. Cât de bine funcționează această protecție este parțial determinat genetic — și exact acest lucru îl evaluează analiza."
      },
      {
       "q": "Ce gene sunt evaluate în analiză?",
-      "a": "În principal telomeraza și genele înrudite (TERT, BICD1, PPARG), care controlează menținerea telomerilor. Ele arată cât de bine poate organismul tău să repare / să păstreze telomerii — o estimare aproximativă a capacității tale genetice anti-îmbătrânire."
+      "a": "Analiza urmărește două aspecte: în primul rând, capacitatea ta genetică de a-ți menține telomerii, care depinde în principal de gena telomerazei; în al doilea rând, dacă dieta mediteraneană are vreun efect asupra telomerilor tăi, ceea ce depinde, de asemenea, de anumite variante genetice. Ea arată predispoziția ta genetică — nu cât de lungi sunt de fapt telomerii tăi."
      }
     ]
    },
@@ -1742,16 +1742,16 @@ const FAQTX = {
     "title": "Ce face stilul de viață",
     "items": [
      {
-      "q": "Dieta mediteraneană funcționează pentru toată lumea?",
-      "a": "Surprinzător, nu. Studiile arată că ea extinde telomerii doar la persoanele cu o anumită variantă genetică — la ceilalți nu se observă niciun efect măsurabil asupra lungimii telomerilor. O demonstrație clară că același sfat privind stilul de viață nu funcționează la fel pentru fiecare persoană."
+      "q": "Îi ajută dieta mediteraneană pe toți să-și mențină telomerii?",
+      "a": "Surprinzător, nu. Studiile au arătat că dieta mediteraneană contribuie la menținerea unor telomeri mai lungi doar la persoanele cu anumite variante genetice — la toți ceilalți nu are niciun efect asupra telomerilor. Raportul tău arată din ce grupă faci parte. Acest lucru se referă doar la telomeri, nu și la alte efecte ale dietei — și este un exemplu clar că același sfat privind stilul de viață nu funcționează la fel pentru toată lumea."
      },
      {
       "q": "Ce nutrienți susțin telomerii?",
-      "a": "Vitamina D3, Omega-3, vitamina E, resveratrolul și ginkgo. Când sistemul genetic de protecție este slab, acești nutrienți pot fi folosiți în mod deliberat pentru a încetini scurtarea telomerilor."
+      "a": "Vitamina D3, Omega-3, vitamina E, resveratrolul și ginkgo. Când sistemul genetic de protecție funcționează mai puțin bine, creșterea aportului acestor nutrienți — de exemplu, prin consumul mai multor alimente care îi conțin — poate ajuta la încetinirea scurtării telomerilor. Acești nutrienți nu o pot însă inversa."
      },
      {
       "q": "Pot influența radicalii liberi?",
-      "a": "Da — antioxidanții din alimente (vitamina C, E, polifenolii din fructe de pădure, ceai etc.) neutralizează radicalii liberi înainte ca aceștia să deterioreze celulele. În cazul unei apărări antioxidante slăbite genetic, o alimentație bogată în antioxidanți este deosebit de importantă."
+      "a": "Da, într-o anumită măsură. Radicalii liberi ne deteriorează continuu celulele și sunt unul dintre motivele pentru care îmbătrânim. Antioxidanții ajută la contracararea lor; se găsesc, de exemplu, în alimentele bogate în vitamina C și vitamina E sau în polifenoli, precum fructele de pădure și ceaiul. De aceea, o alimentație bogată în antioxidanți poate susține o îmbătrânire sănătoasă."
      }
     ]
    },
@@ -1760,11 +1760,11 @@ const FAQTX = {
     "items": [
      {
       "q": "Cât de repede voi vedea rezultate în urma măsurilor anti-îmbătrânire?",
-      "a": "Efectele asupra telomerilor sunt lente — de la luni la ani. Unii markeri intermediari (stresul oxidativ, inflamația, profilul lipidic sanguin) se modifică în câteva săptămâni. Cel mai puternic impact al stilului de viață asupra vârstei biologice se acumulează de-a lungul deceniilor."
+      "a": "Nu peste noapte. Măsurile recomandate nu pot face telomerii să crească la loc — ele ajută la încetinirea scurtării lor, așa că beneficiul se acumulează treptat, de-a lungul multor ani. Reține că analiza genetică arată predispoziția ta, nu lungimea actuală a telomerilor tăi; prin urmare, rezultatul analizei în sine nu se modifică prin aceste măsuri."
      },
      {
       "q": "Ce folos practic îmi aduce această cunoaștere?",
-      "a": "Știi dacă genetic ai tendința spre o îmbătrânire celulară mai rapidă sau mai lentă — și poți acționa în mod deliberat. În cazul unei predispoziții nefavorabile, concentrează-te pe: alimentație bogată în antioxidanți, suplimente țintite (D3, Omega-3, resveratrol), exercițiu fizic regulat, dar nu excesiv, somn bun și reducerea stresului."
+      "a": "Știi cât de bine îți mențin genele telomerii — și dacă dieta mediteraneană te ajută în această privință. Dacă menținerea telomerilor este afectată, poți reacționa în mod deliberat, crescând aportul de vitamina D3, Omega-3, vitamina E, resveratrol și ginkgo, de exemplu, prin alimente care conțin aceste substanțe. Un stil de viață sănătos în general, cu o alimentație bogată în antioxidanți, exercițiu fizic regulat și somn suficient, este, de asemenea, recomandabil."
      }
     ]
    }

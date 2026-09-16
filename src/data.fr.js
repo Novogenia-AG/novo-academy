@@ -775,7 +775,7 @@ const TXT = {
    {
     "q": "Quelles sont les trois caractéristiques présentées dans la partie burnout du rapport ?",
     "options": [
-     "La performance sous stress, la résistance aux sentiments négatifs et l'impulsivité",
+     "La performance sous stress, la résilience émotionnelle et l'impulsivité",
      "La qualité du sommeil, la sensibilité à la caféine et la réponse du cortisol au stress",
      "La concentration, la mémoire et la motivation",
      "La tension artérielle, la fréquence cardiaque et la fréquence respiratoire"
@@ -827,10 +827,10 @@ const TXT = {
  "bo-faq-en": {
   "topic": "Questions fréquemment posées",
   "description": "Réponses aux questions typiques des clients sur la prédisposition génétique au stress et au burnout.",
-  "longDescription": "Une collection des questions les plus fréquentes sur l'analyse génétique du burnout et du stress — ce que signifient COMT et BDNF, en quoi les types Warrior et Worrier diffèrent, et quelles recommandations concrètes en découlent.",
+  "longDescription": "Une collection des questions les plus fréquentes sur l'analyse génétique du burnout et du stress — ce que fait le gène COMT, quelles sont les trois caractéristiques de stress présentées dans le rapport, et quelles recommandations concrètes en découlent.",
   "bullets": [
    "Qu'est-ce que le gène COMT ?",
-   "Que signifie Warrior vs Worrier ?",
+   "Quelles sont les trois caractéristiques de stress présentées dans le rapport ?",
    "En quoi le risque de burnout est-il génétique ?",
    "Quelles recommandations découlent du profil ?"
   ]
@@ -1665,15 +1665,15 @@ const FAQTX = {
     "items": [
      {
       "q": "Qu'est-ce que le gène COMT et pourquoi est-il important ?",
-      "a": "COMT (catéchol-O-méthyltransférase) dégrade le neurotransmetteur dopamine une fois qu'une situation excitante ou stressante est terminée, afin que le cerveau puisse revenir à son niveau de base. Si le gène fonctionne mal, la dopamine est dégradée beaucoup plus lentement et le cerveau reste plus longtemps dans un état d'excitation. Les études décrivent une variante fréquente (Val158Met) : l'activité enzymatique diffère nettement entre sa forme rapide et sa forme lente."
+      "a": "COMT (catéchol-O-méthyltransférase) dégrade le neurotransmetteur dopamine une fois qu'une situation excitante ou stressante est terminée, afin que le cerveau puisse revenir à son niveau de base. Si le gène fonctionne mal, la dopamine est dégradée beaucoup plus lentement : le cerveau reste plus longtemps dans un état d'excitation et, si un nouveau stress survient avant qu'il ne soit revenu à son niveau de base, il peut se retrouver surchargé. Une dégradation plus lente a aussi des avantages — les sentiments positifs sont vécus plus intensément et les personnes concernées ont tendance à être plus curieuses, mais aussi plus exposées à l'addiction au jeu. Les études décrivent une variante fréquente (Val158Met) : l'activité enzymatique diffère nettement entre sa forme rapide et sa forme lente."
      },
      {
-      "q": "Quelle est la différence entre Warrior et Worrier ?",
-      "a": "Ces termes désignent souvent les deux extrêmes de l'activité de COMT. « Warrior » : la dopamine est dégradée rapidement — ce qui va plutôt de pair avec une meilleure performance sous stress. « Worrier » : la dopamine est dégradée lentement — l'excitation et les sentiments positifs sont vécus plus intensément, mais le cerveau peine à revenir à son niveau de base lorsque le stress se répète. Environ 40 % des personnes ont deux copies du gène qui fonctionnent bien, environ 15 % ont deux copies défectueuses, et les quelque 45 % restants en ont une de chaque."
+      "q": "Quelles sont les trois caractéristiques évaluées par l'analyse du burnout ?",
+      "a": "La performance sous stress (ton niveau de performance dans les situations stressantes), la résilience émotionnelle (à quel point les sentiments négatifs te pèsent) et l'impulsivité. Chaque caractéristique est représentée sur une échelle allant du rouge au vert en passant par le milieu : le vert est favorable, le rouge signale un risque de burnout plus élevé."
      },
      {
-      "q": "Et qu'en est-il du BDNF ?",
-      "a": "Le BDNF (Brain-Derived Neurotrophic Factor) soutient la croissance et la capacité d'adaptation des cellules nerveuses. La variante Met (Val66Met) est associée à une moindre libération de BDNF dépendante de l'activité ; certaines études la relient aussi à une plus grande vulnérabilité en cas de stress chronique, mais les données sont contradictoires. Une activité physique régulière est associée à des taux de BDNF plus élevés."
+      "q": "Combien de personnes sont génétiquement particulièrement sensibles au stress ?",
+      "a": "Environ 40 % des personnes ont deux copies du gène COMT qui fonctionnent bien : elles ont tendance à être plus performantes sous stress, présentent une résilience émotionnelle plus élevée et sont moins impulsives. Environ 15 % ont deux copies défectueuses, avec exactement l'effet inverse — ce sont elles qui souffrent le plus du stress. Les quelque 45 % restants ont une copie fonctionnelle et une copie défectueuse."
      }
     ]
    },
@@ -1681,16 +1681,16 @@ const FAQTX = {
     "title": "Conseils pratiques",
     "items": [
      {
-      "q": "Je suis un Worrier — suis-je condamné au burnout ?",
+      "q": "J'ai deux copies défectueuses du gène COMT — suis-je condamné au burnout ?",
       "a": "Non. Un profil COMT moins favorable augmente la sensibilité au stress, mais ce n'est pas une fatalité. Moins les gènes sont favorables, plus le bon mode de vie est important : méditation, mode de vie peu stressant, alimentation et activité physique. Connaître ta prédisposition te permet d'agir tôt, avant que le stress ne s'accumule."
      },
      {
-      "q": "Je suis un Warrior — dois-je quand même me préoccuper du burnout ?",
-      "a": "Ton risque génétique est plus faible, mais il n'est pas nul : un stress massif et continu peut malgré tout laisser des traces avec le temps. Les phases de récupération et un mode de vie équilibré restent importants."
+      "q": "Mes trois caractéristiques sont toutes en zone verte — dois-je quand même penser au burnout ?",
+      "a": "Pour toi, le burnout ne représente pas un grand danger — mais le risque n'est pas nul : un stress massif et continu peut malgré tout laisser des traces avec le temps. Les phases de récupération et un mode de vie équilibré restent importants."
      },
      {
       "q": "Qu'est-ce qui aide tout le monde, quel que soit le génotype ?",
-      "a": "Un sommeil suffisant, une activité physique régulière, la méditation ou d'autres techniques de relaxation, une alimentation équilibrée, des contacts sociaux et une consommation modérée de stimulants comme l'alcool et la caféine."
+      "a": "Les mesures recommandées dans le rapport — méditation, mode de vie peu stressant, alimentation équilibrée et activité physique régulière — aident tout le monde à réduire le stress ; elles sont simplement d'autant plus importantes que le profil génétique est moins favorable. Un sommeil suffisant, des contacts sociaux et une consommation modérée de caféine et d'alcool sont également souvent recommandés."
      }
     ]
    },
@@ -1699,7 +1699,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Une « zone rouge » est apparue dans mon rapport. Dois-je m'inquiéter ?",
-      "a": "Non. Une zone rouge signale une prédisposition génétique défavorable dans un domaine précis — un risque accru, pas un diagnostic. C'est une invitation à agir tôt — exactement l'inverse d'un verdict fataliste."
+      "a": "Ce n'est pas une raison de paniquer, mais c'est une raison d'agir. Une zone rouge signale une prédisposition génétique défavorable dans un domaine précis — un risque accru de burnout, pas un diagnostic. Plus tu as de caractéristiques en zone rouge, plus il est important d'adapter ton mode de vie afin d'éviter le stress. Même avec des résultats situés au milieu, un mode de vie peu stressant reste important."
      },
      {
       "q": "Où trouver des recommandations concrètes pour mon génotype ?",
@@ -1725,15 +1725,15 @@ const FAQTX = {
      },
      {
       "q": "Quelle est la différence entre âge chronologique et âge biologique ?",
-      "a": "L'âge chronologique correspond au temps vécu en années — fixe et immuable. L'âge biologique indique à quel point tes cellules sont réellement « âgées ». Deux personnes du même âge chronologique peuvent présenter des âges biologiques séparés par jusqu'à 20 ans, selon leur prédisposition génétique et leur mode de vie."
+      "a": "L'âge chronologique correspond au temps vécu, en années — fixe et immuable. L'âge biologique décrit à quel point tes cellules sont réellement « âgées », et les télomères comptent parmi les facteurs qui le déterminent : les bébés ont des télomères longs, les personnes de 90 ans des télomères courts. Les personnes ayant deux copies défectueuses du gène de la télomérase naissent déjà avec des télomères plus courts — la différence d'âge biologique peut atteindre 20 ans."
      },
      {
       "q": "Que fait la télomérase ?",
-      "a": "La télomérase est une enzyme capable de réparer et de reconstruire les télomères. Son activité est en partie génétique — les personnes dont l'activité de télomérase est forte préservent mieux leurs télomères ; celles dont l'activité est réduite voient leurs télomères se raccourcir plus vite, en particulier sous stress oxydatif."
+      "a": "Le gène de la télomérase aide à maintenir les télomères. Il ne peut pas arrêter ou inverser complètement leur raccourcissement, mais il le ralentit : lorsque les gènes fonctionnent bien, les télomères raccourcissent plus lentement avec l'âge ; en cas de défaut génétique, leur perte est plus rapide. L'efficacité de cette protection est en partie génétique — et c'est précisément ce qu'examine l'analyse."
      },
      {
       "q": "Quels gènes sont évalués dans l'analyse ?",
-      "a": "Principalement la télomérase et les gènes associés (TERT, BICD1, PPARG) qui contrôlent le maintien des télomères. Ils montrent dans quelle mesure ton corps peut réparer et préserver ses télomères — une estimation approximative de ta capacité anti-âge génétique."
+      "a": "L'analyse examine deux choses : d'une part, ta capacité génétique à maintenir tes télomères, qui dépend principalement du gène de la télomérase ; d'autre part, la question de savoir si un régime méditerranéen a un effet sur tes télomères, ce qui dépend également de certaines variantes génétiques. Elle montre ta prédisposition génétique — pas la longueur réelle de tes télomères."
      }
     ]
    },
@@ -1741,16 +1741,16 @@ const FAQTX = {
     "title": "Ce que fait le mode de vie",
     "items": [
      {
-      "q": "Le régime méditerranéen fonctionne-t-il pour tout le monde ?",
-      "a": "Étonnamment non. Les études montrent qu'il allonge les télomères uniquement chez les personnes porteuses d'une variante génétique spécifique — les autres ne constatent aucun effet mesurable sur la longueur des télomères. Une démonstration claire que le même conseil de mode de vie ne fonctionne pas de la même façon chez chaque individu."
+      "q": "Le régime méditerranéen aide-t-il tout le monde à maintenir ses télomères ?",
+      "a": "Étonnamment, non. Des études ont montré qu'un régime méditerranéen aide à conserver des télomères plus longs uniquement chez les personnes porteuses de certaines variantes génétiques — chez toutes les autres, il n'a aucun effet sur les télomères. Ton rapport indique à quel groupe tu appartiens. Cela concerne uniquement les télomères, pas les autres effets de ce régime — et cela illustre clairement qu'un même conseil de mode de vie ne fonctionne pas de la même façon pour tout le monde."
      },
      {
       "q": "Quels nutriments soutiennent les télomères ?",
-      "a": "La vitamine D3, les oméga-3, la vitamine E, le resvératrol et le ginkgo. Lorsque le système de protection génétique est faible, ces nutriments peuvent être utilisés de manière ciblée pour ralentir le raccourcissement des télomères."
+      "a": "La vitamine D3, les oméga-3, la vitamine E, le resvératrol et le ginkgo. Lorsque le système de protection génétique fonctionne moins bien, augmenter l'apport en ces nutriments — par exemple en mangeant davantage d'aliments qui en contiennent — peut aider à ralentir le raccourcissement des télomères. Ces nutriments ne peuvent pas l'inverser."
      },
      {
       "q": "Puis-je influencer les radicaux libres ?",
-      "a": "Oui — les antioxydants présents dans l'alimentation (vitamines C et E, polyphénols des baies, du thé, etc.) neutralisent les radicaux libres avant qu'ils n'endommagent les cellules. En cas de défenses antioxydantes génétiquement affaiblies, une alimentation riche en antioxydants est particulièrement importante."
+      "a": "Oui, dans une certaine mesure. Les radicaux libres endommagent continuellement nos cellules et sont l'une des raisons pour lesquelles nous vieillissons. Les antioxydants aident à les contrer ; on en trouve par exemple dans les aliments riches en vitamine C et en vitamine E, ou sous forme de polyphénols dans les baies et le thé. Une alimentation riche en antioxydants peut donc favoriser un vieillissement en bonne santé."
      }
     ]
    },
@@ -1759,11 +1759,11 @@ const FAQTX = {
     "items": [
      {
       "q": "À quelle vitesse verrai-je les résultats des mesures anti-âge ?",
-      "a": "Les effets sur les télomères sont lents — de quelques mois à quelques années. Certains marqueurs intermédiaires (stress oxydatif, inflammation, profil lipidique sanguin) évoluent en quelques semaines. L'impact le plus fort du mode de vie sur l'âge biologique se cumule sur des décennies."
+      "a": "Pas du jour au lendemain. Les mesures recommandées ne peuvent pas faire repousser les télomères — elles aident à ralentir leur raccourcissement, si bien que le bénéfice s'accumule progressivement au fil de nombreuses années. À noter : l'analyse génétique montre ta prédisposition, pas la longueur actuelle de tes télomères ; le résultat de l'analyse lui-même ne change donc pas sous l'effet de ces mesures."
      },
      {
       "q": "Quelle utilité pratique ces connaissances m'apportent-elles ?",
-      "a": "Tu sais si tu tends génétiquement vers un vieillissement cellulaire plus rapide ou plus lent — et tu peux agir en conséquence. En cas de prédisposition défavorable, concentre-toi sur : une alimentation riche en antioxydants, des compléments ciblés (D3, oméga-3, resvératrol), un exercice régulier mais non excessif, un bon sommeil et la réduction du stress."
+      "a": "Tu sais avec quelle efficacité tes gènes maintiennent tes télomères — et si un régime méditerranéen t'aide sur ce plan. Si le maintien des télomères est altéré, tu peux réagir de manière ciblée en augmentant l'apport en vitamine D3, oméga-3, vitamine E, resvératrol et ginkgo, par exemple grâce à des aliments qui en contiennent. Un mode de vie globalement sain, avec une alimentation riche en antioxydants, une activité physique régulière et un sommeil suffisant, est également judicieux."
      }
     ]
    }

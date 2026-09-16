@@ -778,7 +778,7 @@ const TXT = {
    {
     "q": "Que três características mostra a secção de burnout do relatório?",
     "options": [
-     "Desempenho sob stress, resistência a sentimentos negativos e impulsividade",
+     "Desempenho sob stress, resiliência emocional e impulsividade",
      "Qualidade do sono, sensibilidade à cafeína e resposta do cortisol ao stress",
      "Concentração, memória e motivação",
      "Tensão arterial, frequência cardíaca e frequência respiratória"
@@ -830,10 +830,10 @@ const TXT = {
  "bo-faq-en": {
   "topic": "Perguntas Frequentes",
   "description": "Respostas às perguntas típicas dos clientes sobre a predisposição genética ao stress e ao burnout.",
-  "longDescription": "Uma coletânea das perguntas mais comuns sobre a análise genética de burnout e stress — o que significam o COMT e o BDNF, como diferem os tipos Warrior e Worrier, e que recomendações concretas daí resultam.",
+  "longDescription": "Uma coletânea das perguntas mais comuns sobre a análise genética de burnout e stress — o que faz o gene COMT, que três características de stress o relatório mostra e que recomendações concretas daí resultam.",
   "bullets": [
    "O que é o gene COMT?",
-   "O que significa Warrior vs. Worrier?",
+   "Que três características de stress mostra o relatório?",
    "De que forma o risco de burnout é genético?",
    "Que recomendações resultam do perfil?"
   ],
@@ -1672,15 +1672,15 @@ const FAQTX = {
     "items": [
      {
       "q": "O que é o gene COMT e por que razão é importante?",
-      "a": "A COMT (catecol-O-metiltransferase) decompõe a dopamina, um mensageiro químico, depois de terminar uma situação excitante ou stressante, para que o cérebro possa regressar ao seu nível basal. Se o gene funcionar mal, a dopamina é decomposta muito mais lentamente e o cérebro permanece mais tempo num estado de excitação. Os estudos descrevem uma variante comum (Val158Met) com uma atividade enzimática claramente diferente entre a forma rápida e a lenta."
+      "a": "A COMT (catecol-O-metiltransferase) decompõe a dopamina, um mensageiro químico, depois de terminar uma situação excitante ou stressante, para que o cérebro possa regressar ao seu nível basal. Se o gene funcionar mal, a dopamina é decomposta muito mais lentamente: o cérebro permanece mais tempo num estado de excitação e, se surgir uma nova situação de stress antes de ter regressado ao nível basal, pode ficar sobrecarregado. Uma decomposição mais lenta também tem vantagens — os sentimentos positivos são vividos com mais intensidade e as pessoas tendem a ser mais curiosas, mas também mais propensas a jogos de azar. Os estudos descrevem uma variante comum (Val158Met) com uma atividade enzimática claramente diferente entre a forma rápida e a lenta."
      },
      {
-      "q": "Qual é a diferença entre Warrior e Worrier?",
-      "a": "Os termos são muitas vezes usados para designar os dois extremos da atividade da COMT. «Warrior»: a dopamina é decomposta depressa — o que tende a estar associado a um melhor desempenho sob stress. «Worrier»: a dopamina é decomposta lentamente — a excitação e os sentimentos positivos são vividos com mais intensidade, mas o cérebro tem dificuldade em regressar ao nível basal quando o stress se repete. Cerca de 40% das pessoas têm duas cópias do gene a funcionar bem, cerca de 15% têm duas cópias defeituosas e os restantes ~45% têm uma de cada."
+      "q": "Que três características avalia a análise de burnout?",
+      "a": "Desempenho sob stress (até que ponto consegues render em situações de stress), resiliência emocional (até que ponto os sentimentos negativos te pesam) e impulsividade. Cada característica é apresentada numa escala que vai do vermelho ao verde, passando por uma zona intermédia: o verde é favorável, o vermelho significa um maior risco de burnout."
      },
      {
-      "q": "E o BDNF?",
-      "a": "O BDNF (fator neurotrófico derivado do cérebro) apoia o crescimento e a capacidade de adaptação das células nervosas. A variante Met (Val66Met) está associada a uma menor libertação de BDNF dependente da atividade; alguns estudos relacionam-na também com uma maior vulnerabilidade sob stress crónico, mas os resultados não são consistentes. O exercício regular está associado a níveis de BDNF mais elevados."
+      "q": "Quantas pessoas são, por razões genéticas, especialmente propensas ao stress?",
+      "a": "Cerca de 40% das pessoas têm duas cópias do gene COMT a funcionar bem: tendem a ter um melhor desempenho sob stress, uma maior resiliência emocional e a ser menos impulsivas. Cerca de 15% têm duas cópias defeituosas, com o efeito exatamente oposto — são estas as pessoas que mais sofrem com o stress. Os restantes ~45% têm uma cópia funcional e uma cópia defeituosa."
      }
     ]
    },
@@ -1688,16 +1688,16 @@ const FAQTX = {
     "title": "Conselhos práticos",
     "items": [
      {
-      "q": "Sou um Worrier — estou condenado ao burnout?",
+      "q": "Tenho duas cópias defeituosas do gene COMT — estou condenado ao burnout?",
       "a": "Não. Um perfil COMT menos favorável aumenta a sensibilidade ao stress, mas não é um destino. Quanto menos favoráveis forem os genes, mais importante é o estilo de vida certo: meditação, um modo de vida com pouco stress, alimentação e exercício. Conhecer a tua predisposição permite-te agir cedo, antes de o stress se acumular."
      },
      {
-      "q": "Sou um Warrior — mesmo assim tenho de me preocupar com o burnout?",
-      "a": "O teu risco genético é menor, mas não é nulo: um stress massivo e contínuo pode, com o tempo, deixar marcas na mesma. As fases de recuperação e um estilo de vida equilibrado continuam a ser importantes."
+      "q": "As minhas três características estão na zona verde — mesmo assim tenho de ter o burnout em conta?",
+      "a": "Para ti, o burnout não é um perigo tão grande — mas o risco não é nulo: um stress massivo e contínuo pode, com o tempo, deixar marcas na mesma. As fases de recuperação e um estilo de vida equilibrado continuam a ser importantes."
      },
      {
       "q": "O que ajuda toda a gente, independentemente do genótipo?",
-      "a": "Sono suficiente, exercício regular, meditação ou outras técnicas de relaxamento, uma alimentação equilibrada, contacto social e moderação no consumo de estimulantes como o álcool e a cafeína."
+      "a": "As medidas recomendadas no relatório — meditação, um modo de vida com pouco stress, uma alimentação equilibrada e exercício regular — ajudam toda a gente a reduzir o stress, mas tornam-se tanto mais importantes quanto menos favorável for o perfil genético. Também se recomendam habitualmente sono suficiente, contacto social e um consumo moderado de cafeína e álcool."
      }
     ]
    },
@@ -1706,7 +1706,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Apareceu uma «zona vermelha» no meu relatório. Devo preocupar-me?",
-      "a": "Não. Uma zona vermelha assinala uma predisposição genética desfavorável numa área específica — um risco mais elevado, não um diagnóstico. É um convite a agir cedo — exatamente o contrário de um veredito fatalista."
+      "a": "Não é motivo para pânico, mas é motivo para agir. Uma zona vermelha assinala uma predisposição genética desfavorável numa área específica — um maior risco de burnout, não um diagnóstico. Quanto mais características tiveres na zona vermelha, mais importante é adaptar o teu estilo de vida para evitar o stress. Mesmo com resultados na zona intermédia, um estilo de vida com pouco stress continua a ser importante."
      },
      {
       "q": "Onde encontro recomendações concretas para o meu genótipo?",
@@ -1732,15 +1732,15 @@ const FAQTX = {
      },
      {
       "q": "Qual é a diferença entre idade cronológica e idade biológica?",
-      "a": "A idade cronológica é o teu tempo de vida em anos — fixa e imutável. A idade biológica mostra quão «velhas» estão realmente as tuas células. Duas pessoas com a mesma idade cronológica podem ter idades biológicas com até 20 anos de diferença, em função da predisposição genética e do estilo de vida."
+      "a": "A idade cronológica é o tempo que já viveste, em anos — fixa e imutável. A idade biológica descreve quão «velhas» estão realmente as tuas células, e os telómeros são um dos fatores que a determinam: os bebés têm telómeros longos, as pessoas de 90 anos têm telómeros curtos. Quem tem duas cópias defeituosas do gene da telomerase já nasce com telómeros mais curtos — a diferença de idade biológica pode chegar aos 20 anos."
      },
      {
       "q": "O que faz a telomerase?",
-      "a": "A telomerase é uma enzima capaz de reparar / reconstruir os telómeros. A sua atividade é em parte genética — quem tem uma atividade de telomerase forte preserva melhor os telómeros; quem tem uma atividade reduzida vê os telómeros encurtarem mais depressa, sobretudo sob stress oxidativo."
+      "a": "O gene da telomerase ajuda a manter os telómeros. Não consegue impedir nem reverter por completo o seu encurtamento, mas abranda-o: com genes a funcionar bem, os telómeros encurtam mais lentamente com a idade; com um defeito genético, perdem-se mais depressa. A eficácia desta proteção é em parte genética — e é isso que a análise avalia."
      },
      {
       "q": "Que genes são avaliados na análise?",
-      "a": "Sobretudo a telomerase e os genes com ela relacionados (TERT, BICD1, PPARG), que controlam a manutenção dos telómeros. Mostram até que ponto o teu corpo consegue reparar / preservar os telómeros — uma estimativa aproximada da tua capacidade genética anti-envelhecimento."
+      "a": "A análise avalia dois aspetos: primeiro, a tua capacidade genética de manter os telómeros, que depende sobretudo do gene da telomerase; segundo, se a dieta mediterrânica tem efeito nos teus telómeros, o que também depende de determinadas variantes genéticas. Mostra a tua predisposição genética — não o comprimento real dos teus telómeros."
      }
     ]
    },
@@ -1748,16 +1748,16 @@ const FAQTX = {
     "title": "O que faz o estilo de vida",
     "items": [
      {
-      "q": "A dieta mediterrânica funciona para toda a gente?",
-      "a": "Surpreendentemente, não. Os estudos mostram que ela prolonga os telómeros apenas em pessoas com uma variante genética específica — nas restantes não se observa qualquer efeito mensurável no comprimento dos telómeros. Uma demonstração clara de que o mesmo conselho de estilo de vida não funciona da mesma forma em todos os indivíduos."
+      "q": "A dieta mediterrânica ajuda toda a gente a manter os telómeros?",
+      "a": "Surpreendentemente, não. Os estudos mostraram que a dieta mediterrânica só ajuda a manter os telómeros mais longos em pessoas com determinadas variantes genéticas — nas restantes, não tem qualquer efeito nos telómeros. O teu relatório mostra a que grupo pertences. Isto refere-se apenas aos telómeros, não a outros efeitos da dieta — e é um exemplo claro de que o mesmo conselho de estilo de vida não funciona da mesma forma para toda a gente."
      },
      {
       "q": "Que nutrientes apoiam os telómeros?",
-      "a": "Vitamina D3, Ómega-3, vitamina E, resveratrol e ginkgo. Quando o sistema genético de proteção é fraco, estes nutrientes podem ser usados de forma deliberada para abrandar o encurtamento dos telómeros."
+      "a": "Vitamina D3, ómega-3, vitamina E, resveratrol e ginkgo. Quando o sistema genético de proteção funciona pior, aumentar a ingestão destes nutrientes — por exemplo, comendo mais alimentos que os contenham — pode ajudar a abrandar o encurtamento dos telómeros. No entanto, estes nutrientes não conseguem revertê-lo."
      },
      {
       "q": "Posso influenciar os radicais livres?",
-      "a": "Sim — os antioxidantes presentes nos alimentos (vitamina C, vitamina E, polifenóis dos frutos vermelhos, do chá, etc.) neutralizam os radicais livres antes que estes danifiquem as células. Quando as defesas antioxidantes estão geneticamente enfraquecidas, uma alimentação rica em antioxidantes é especialmente importante."
+      "a": "Sim, até certo ponto. Os radicais livres danificam continuamente as nossas células e são uma das razões pelas quais envelhecemos. Os antioxidantes ajudam a combater isso; encontram-se, por exemplo, em alimentos ricos em vitamina C e vitamina E ou nos polifenóis dos frutos vermelhos e do chá. Por isso, uma alimentação rica em antioxidantes pode apoiar um envelhecimento saudável."
      }
     ]
    },
@@ -1766,11 +1766,11 @@ const FAQTX = {
     "items": [
      {
       "q": "Com que rapidez vou ver resultados das medidas anti-envelhecimento?",
-      "a": "Os efeitos ao nível dos telómeros são lentos — de meses a anos. Alguns marcadores intermédios (stress oxidativo, inflamação, perfil lipídico sanguíneo) alteram-se em semanas. O maior impacto do estilo de vida sobre a idade biológica acumula-se ao longo de décadas."
+      "a": "Não de um dia para o outro. As medidas recomendadas não fazem os telómeros voltar a crescer — ajudam a abrandar o seu encurtamento, pelo que o benefício se vai acumulando gradualmente ao longo de muitos anos. Tem em conta que a análise genética mostra a tua predisposição, não o comprimento atual dos teus telómeros; por isso, o resultado da análise em si não se altera com estas medidas."
      },
      {
       "q": "Que utilidade prática tem para mim este conhecimento?",
-      "a": "Ficas a saber se tens uma tendência genética para um envelhecimento celular mais rápido ou mais lento — e podes agir de forma deliberada. Com uma predisposição desfavorável, concentra-te em: alimentação rica em antioxidantes, suplementos dirigidos (D3, Ómega-3, resveratrol), exercício regular mas não excessivo, bom sono e redução do stress."
+      "a": "Ficas a saber até que ponto os teus genes mantêm os telómeros — e se a dieta mediterrânica te ajuda neste aspeto. Se a manutenção dos teus telómeros estiver comprometida, podes reagir de forma deliberada aumentando a ingestão de vitamina D3, ómega-3, vitamina E, resveratrol e ginkgo, por exemplo através de alimentos que os contenham. Também faz sentido um estilo de vida saudável em geral, com uma alimentação rica em antioxidantes, exercício regular e sono suficiente."
      }
     ]
    }

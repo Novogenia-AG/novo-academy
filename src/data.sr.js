@@ -200,11 +200,11 @@ const TXT = {
  "bo-faq-en": {
   "topic": "Često postavljana pitanja",
   "description": "Odgovori na tipična pitanja klijenata o genetskom stresu i predispoziciji za burnout.",
-  "longDescription": "Zbirka najčešćih pitanja o genetskoj analizi burnouta i stresa — što znače COMT i BDNF, kako se razlikuju tipovi Warrior i Worrier te koje konkretne preporuke iz toga proizlaze.",
+  "longDescription": "Zbirka najčešćih pitanja o genetskoj analizi burnouta i stresa — šta radi gen COMT, koje tri osobine vezane za stres prikazuje izveštaj i koje konkretne preporuke iz toga proizlaze.",
   "bullets": [
-   "Što je gen COMT?",
-   "Što znači Warrior vs. Worrier?",
-   "Kako je rizik od burnouta genetski uvjetovan?",
+   "Šta je gen COMT?",
+   "Koje tri osobine vezane za stres prikazuje izveštaj?",
+   "Kako je rizik od burnouta genetski uslovljen?",
    "Koje preporuke proizlaze iz profila?"
   ]
  },
@@ -411,13 +411,13 @@ const TXT = {
  },
  "ba-faq-en": {
   "topic": "Često postavljana pitanja",
-  "description": "Odgovori na tipična pitanja klijenata o analizi biološke dobi.",
-  "longDescription": "Zbirka najvažnijih pitanja o analizi telomera i anti-aginga. S odgovorima koji se mogu proširiti za samostalno učenje.",
+  "description": "Odgovori na tipična pitanja klijenata o analizi biološke starosti.",
+  "longDescription": "Zbirka najvažnijih pitanja o analizi telomera i anti-agingu. Sa sklopivim odgovorima za samostalno učenje.",
   "bullets": [
-   "Što su telomeri i zašto starimo?",
-   "Kako moja genetika utječe na biološku dob?",
-   "Koji nutrijenti i mjere načina života pomažu?",
-   "Mediteranska prehrana — djeluje li za sve?"
+   "Šta su telomere i zašto starimo?",
+   "Kako moja genetika utiče na biološku starost?",
+   "Koji nutrijenti i mere u načinu života pomažu?",
+   "Mediteranska ishrana — da li deluje kod svih?"
   ]
  },
  "pharma-sci-en": {
@@ -1334,7 +1334,7 @@ const TXT = {
    {
     "q": "Koje tri osobine prikazuje deo izveštaja o burnoutu?",
     "options": [
-     "Učinak pod stresom, otpornost na negativna osećanja i impulsivnost",
+     "Učinak pod stresom, emocionalnu otpornost i impulsivnost",
      "Kvalitet sna, osetljivost na kofein i reakciju kortizola na stres",
      "Koncentraciju, pamćenje i motivaciju",
      "Krvni pritisak, puls i brzinu disanja"
@@ -1624,15 +1624,15 @@ const FAQTX = {
     "items": [
      {
       "q": "Šta je gen COMT i zašto je važan?",
-      "a": "COMT (katehol-O-metiltransferaza) razgrađuje neurotransmiter dopamin kada se uzbudljiva ili stresna situacija završi, kako bi mozak mogao da se vrati u osnovno stanje. Ako gen slabo funkcioniše, dopamin se razgrađuje mnogo sporije i mozak duže ostaje u stanju pobuđenosti. Studije opisuju čestu varijantu (Val158Met) kod koje se aktivnost enzima jasno razlikuje između brzog i sporog oblika."
+      "a": "COMT (katehol-O-metiltransferaza) razgrađuje neurotransmiter dopamin kada se uzbudljiva ili stresna situacija završi, kako bi mozak mogao da se vrati u osnovno stanje. Ako gen slabo funkcioniše, dopamin se razgrađuje mnogo sporije: mozak duže ostaje u stanju pobuđenosti, a ako novi stres naiđe pre nego što se on vrati u osnovno stanje, može da dođe do preopterećenja. Sporija razgradnja ima i dobre strane — pozitivna osećanja se doživljavaju intenzivnije i takvi ljudi su obično radoznaliji, ali i skloniji kockanju. Studije opisuju čestu varijantu (Val158Met) kod koje se aktivnost enzima jasno razlikuje između brzog i sporog oblika."
      },
      {
-      "q": "Koja je razlika između tipova Warrior i Worrier?",
-      "a": "Ovi pojmovi se često koriste za dva krajnja oblika aktivnosti enzima COMT. „Warrior“: dopamin se brzo razgrađuje — to obično ide uz bolji učinak pod stresom. „Worrier“: dopamin se sporo razgrađuje — uzbuđenje i pozitivna osećanja doživljavaju se intenzivnije, ali se mozak teško vraća u osnovno stanje kada se stres stalno ponavlja. Oko 40% ljudi ima dve kopije gena koje dobro funkcionišu, oko 15% ima dve defektne kopije, a preostalih ~45% po jednu od svake."
+      "q": "Koje tri osobine procenjuje analiza burnouta?",
+      "a": "Učinak pod stresom (koliko dobro funkcionišeš u stresnim situacijama), emocionalna otpornost (koliko te opterećuju negativna osećanja) i impulsivnost. Svaka osobina je prikazana na skali od crvene zone preko sredine do zelene: zelena je povoljna, a crvena znači veći rizik od burnouta."
      },
      {
-      "q": "Šta je sa BDNF-om?",
-      "a": "BDNF (moždani neurotrofni faktor, engl. brain-derived neurotrophic factor) podržava rast i prilagodljivost nervnih ćelija. Met-varijanta (Val66Met) povezuje se sa manjim oslobađanjem BDNF-a zavisnim od aktivnosti; neke studije je povezuju i sa većom ranjivošću pod hroničnim stresom, ali su nalazi neujednačeni. Redovna fizička aktivnost povezuje se sa višim nivoima BDNF-a."
+      "q": "Koliko je ljudi genetski posebno podložno stresu?",
+      "a": "Oko 40% ljudi ima dve kopije gena COMT koje dobro funkcionišu: oni obično imaju bolji učinak pod stresom i veću emocionalnu otpornost, a manje su impulsivni. Oko 15% ima dve defektne kopije, sa upravo suprotnim efektom — to su oni koji najviše pate pod stresom. Preostalih ~45% ima jednu funkcionalnu i jednu defektnu kopiju."
      }
     ]
    },
@@ -1640,16 +1640,16 @@ const FAQTX = {
     "title": "Praktični saveti",
     "items": [
      {
-      "q": "Ja sam Worrier — da li je burnout neizbežan za mene?",
+      "q": "Imam dve defektne kopije gena COMT — da li je burnout neizbežan za mene?",
       "a": "Ne. Nepovoljniji COMT profil povećava osetljivost na stres, ali nije sudbina. Što su geni nepovoljniji, to je pravi način života važniji: meditacija, život sa što manje stresa, ishrana i fizička aktivnost. Kada znaš svoju predispoziciju, možeš da reaguješ na vreme, pre nego što se stres nagomila."
      },
      {
-      "q": "Ja sam Warrior — da li ipak treba da brinem o burnoutu?",
-      "a": "Tvoj genetski rizik je manji, ali nije nula: snažan, neprekidan stres vremenom i dalje može da ostavi posledice. Faze oporavka i uravnotežen način života ostaju važni."
+      "q": "Kod mene su sve tri osobine u zelenoj zoni — da li ipak treba da razmišljam o burnoutu?",
+      "a": "Za tebe burnout nije tako velika opasnost — ali rizik nije nula: snažan, neprekidan stres vremenom i dalje može da ostavi posledice. Faze oporavka i uravnotežen način života ostaju važni."
      },
      {
       "q": "Šta pomaže svima, bez obzira na genotip?",
-      "a": "Dovoljno sna, redovna fizička aktivnost, meditacija ili druge tehnike opuštanja, uravnotežena ishrana, društveni kontakti i umerenost sa stimulansima kao što su alkohol i kofein."
+      "a": "Mere koje preporučuje izveštaj — meditacija, život sa malo stresa, uravnotežena ishrana i redovna fizička aktivnost — pomažu svakome da smanji stres; samo su utoliko važnije što je genetski profil nepovoljniji. Često se preporučuju i dovoljno sna, društveni kontakti i umeren unos kofeina i alkohola."
      }
     ]
    },
@@ -1658,7 +1658,7 @@ const FAQTX = {
     "items": [
      {
       "q": "U mom izveštaju se pojavila „crvena zona“. Da li treba da brinem?",
-      "a": "Ne. Crvena zona označava nepovoljnu genetsku predispoziciju u jednoj određenoj oblasti — veći rizik, a ne dijagnozu. To je poziv da reaguješ na vreme — upravo suprotno od fatalističke presude."
+      "a": "Nema razloga za paniku, ali ima razloga da nešto preduzmeš. Crvena zona označava nepovoljnu genetsku predispoziciju u jednoj određenoj oblasti — veći rizik od burnouta, a ne dijagnozu. Što je više tvojih osobina u crvenoj zoni, to je važnije da način života prilagodiš tako da izbegavaš stres. I kod rezultata u sredini život sa malo stresa ostaje važan."
      },
      {
       "q": "Gde mogu da pronađem konkretne preporuke za svoj genotip?",
@@ -1676,53 +1676,53 @@ const FAQTX = {
  "ba-faq-en": {
   "faqGroups": [
    {
-    "title": "Osnove — telomeri i starenje",
+    "title": "Osnove — telomere i starenje",
     "items": [
      {
-      "q": "Što su telomeri i zašto su važni za starenje?",
-      "a": "Telomeri su zaštitne kapice na kraju svakog kromosoma — sami ne sadrže gene, ali štite gene od gubitka tijekom staničnih dioba. Sa svakom staničnom diobom odlomi se mali komadić telomera. Nakon 50-70 dioba oni su potrošeni; stanica prelazi u stanje mirovanja (senescencija) i nakuplja se u tijelu kao „stara stanica“."
+      "q": "Šta su telomere i zašto su važne za starenje?",
+      "a": "Telomere su zaštitne kapice na kraju svakog hromozoma — same ne sadrže gene, ali štite gene od gubitka tokom deoba ćelija. Pri svakoj deobi ćelije odlomi se mali komadić telomera. Posle 50 do 70 deoba one su potrošene; ćelija prelazi u režim spavanja (senescencija), a takve „stare ćelije“ se nagomilavaju u telu."
      },
      {
-      "q": "Koja je razlika između kronološke i biološke dobi?",
-      "a": "Kronološka dob je tvoje životno vrijeme u godinama — fiksno i nepromjenjivo. Biološka dob pokazuje koliko su tvoje stanice zaista „stare“. Dvije osobe iste kronološke dobi mogu se u biološkoj dobi razlikovati i do 20 godina, ovisno o genetskoj predispoziciji i načinu života."
+      "q": "Koja je razlika između hronološke i biološke starosti?",
+      "a": "Hronološka starost je vreme proteklo od tvog rođenja, izraženo u godinama — ona je fiksna i nepromenljiva. Biološka starost opisuje koliko su tvoje ćelije zaista „stare“, a telomere su jedan od faktora koji na to utiču: bebe imaju duge telomere, a devedesetogodišnjaci kratke. Ljudi sa dve defektne kopije gena za telomerazu već se rađaju sa kraćim telomerama — razlika u biološkoj starosti može da iznosi i do 20 godina."
      },
      {
-      "q": "Što radi telomeraza?",
-      "a": "Telomeraza je enzim koji može popraviti i ponovno izgraditi telomere. Njezina aktivnost dijelom je genetski određena — ljudi s jakom aktivnošću telomeraze bolje čuvaju telomere; kod onih sa smanjenom aktivnošću telomeri se brže skraćuju, osobito pod oksidativnim stresom."
+      "q": "Šta radi telomeraza?",
+      "a": "Gen za telomerazu pomaže u održavanju telomera. Ne može potpuno da zaustavi niti da poništi njihovo skraćivanje, ali ga usporava: kada geni dobro funkcionišu, telomere se sa godinama sporije skraćuju; kod defekta gena brže se gube. Koliko dobro ova zaštita funkcioniše delimično je genetski određeno — i upravo to analiza posmatra."
      },
      {
-      "q": "Koji se geni procjenjuju u analizi?",
-      "a": "Prije svega telomeraza i srodni geni (TERT, BICD1, PPARG) koji upravljaju održavanjem telomera. Oni pokazuju koliko dobro tvoje tijelo može popraviti i očuvati telomere — gruba procjena tvog genetskog anti-aging kapaciteta."
+      "q": "Koji geni se procenjuju u analizi?",
+      "a": "Analiza posmatra dve stvari: prvo, tvoju genetsku sposobnost da održavaš telomere, koja uglavnom zavisi od gena za telomerazu; drugo, da li mediteranska ishrana utiče na tvoje telomere, što takođe zavisi od određenih genskih varijanti. Ona pokazuje tvoju genetsku predispoziciju — a ne koliko su tvoje telomere zaista duge."
      }
     ]
    },
    {
-    "title": "Što čini način života",
+    "title": "Šta postiže način života",
     "items": [
      {
-      "q": "Djeluje li mediteranska prehrana za sve?",
-      "a": "Iznenađujuće — ne. Istraživanja pokazuju da produžuje telomere samo kod ljudi s određenom genskom varijantom; kod ostalih nema mjerljivog učinka na duljinu telomera. Jasan dokaz da isti savjet o načinu života ne djeluje jednako kod svake osobe."
+      "q": "Da li mediteranska ishrana kod svih pomaže u održavanju telomera?",
+      "a": "Iznenađujuće, ne. Studije su pokazale da mediteranska ishrana pomaže da se telomere održe dužim samo kod ljudi sa određenim genskim varijantama — kod svih ostalih nema efekta na telomere. Tvoj izveštaj pokazuje kojoj grupi pripadaš. To se odnosi samo na telomere, a ne i na druge efekte ove ishrane — i ujedno je jasan primer da isti savet o načinu života ne deluje jednako kod svih."
      },
      {
       "q": "Koji nutrijenti podržavaju telomere?",
-      "a": "Vitamin D3, Omega-3, vitamin E, resveratrol i ginko. Kada je genetska zaštita slaba, ovi se nutrijenti mogu ciljano koristiti za usporavanje skraćivanja telomera."
+      "a": "Vitamin D3, omega-3, vitamin E, resveratrol i ginko. Kada genetski sistem zaštite slabije funkcioniše, veći unos ovih nutrijenata — na primer tako što jedeš više namirnica koje ih sadrže — može da pomogne da se skraćivanje telomera uspori. Ti nutrijenti ne mogu da ponište skraćivanje."
      },
      {
-      "q": "Mogu li utjecati na slobodne radikale?",
-      "a": "Da — antioksidansi u hrani (vitamin C, vitamin E, polifenoli iz bobičastog voća, čaja i sl.) neutraliziraju slobodne radikale prije nego što oštete stanice. Kod genetski oslabljene antioksidativne obrane prehrana bogata antioksidansima posebno je važna."
+      "q": "Mogu li da utičem na slobodne radikale?",
+      "a": "Da, do određene mere. Slobodni radikali neprestano oštećuju naše ćelije i jedan su od razloga zašto starimo. Antioksidansi deluju protiv toga; ima ih, na primer, u namirnicama bogatim vitaminom C i vitaminom E, a u antioksidanse spadaju i polifenoli iz bobičastog voća i čaja. Ishrana bogata antioksidansima zato može da podrži zdravo starenje."
      }
     ]
    },
    {
-    "title": "Utjecaj i očekivanja",
+    "title": "Uticaj i očekivanja",
     "items": [
      {
-      "q": "Koliko brzo ću vidjeti rezultate anti-aging mjera?",
-      "a": "Učinci na telomere su spori — mjeseci do godina. Neki međumarkeri (oksidativni stres, upala, profil krvnih masnoća) mijenjaju se u roku od nekoliko sedmica. Najjači učinak načina života na biološku dob zbraja se tijekom desetljeća."
+      "q": "Koliko brzo ću videti rezultate anti-aging mera?",
+      "a": "Ne preko noći. Preporučene mere ne mogu da vrate izgubljenu dužinu telomera — one pomažu da se njihovo skraćivanje uspori, pa se korist postepeno sabira tokom mnogo godina. Imaj u vidu da genetska analiza pokazuje tvoju predispoziciju, a ne trenutnu dužinu tvojih telomera, pa se sam rezultat analize ovim merama ne menja."
      },
      {
-      "q": "Kakvu praktičnu korist mi to znanje donosi?",
-      "a": "Znaš naginješ li genetski bržem ili sporijem starenju stanica — i možeš djelovati svjesno. Kod nepovoljne predispozicije fokusiraj se na: prehranu bogatu antioksidansima, ciljane suplemente (D3, Omega-3, resveratrol), redovitu ali ne pretjeranu tjelovježbu, dobar san i smanjenje stresa."
+      "q": "Kakvu praktičnu korist mi donosi ovo znanje?",
+      "a": "Znaš koliko dobro tvoji geni održavaju telomere — i da li ti mediteranska ishrana u tome pomaže. Ako je održavanje telomera oslabljeno, možeš ciljano da reaguješ tako što ćeš povećati unos vitamina D3, omega-3, vitamina E, resveratrola i ginka, na primer kroz namirnice koje ih sadrže. Pored toga, ima smisla i zdrav način života uopšte: ishrana bogata antioksidansima, redovna fizička aktivnost i dovoljno sna."
      }
     ]
    }

@@ -1060,7 +1060,7 @@ export const COURSES_EN = [
       {
         q: 'Which three traits does the burnout section of the report show?',
         options: [
-          'Performance under stress, resistance to negative feelings and impulsivity',
+          'Performance under stress, emotional resilience and impulsivity',
           'Sleep quality, sensitivity to caffeine and the cortisol response to stress',
           'Concentration, memory and motivation',
           'Blood pressure, heart rate and breathing rate',
@@ -1124,10 +1124,10 @@ export const COURSES_EN = [
     contentType: 'faq',
     description: 'Answers to typical client questions about genetic stress and burnout predisposition.',
     longDescription:
-      'A collection of the most common questions about the genetic burnout and stress analysis — what COMT and BDNF mean, how Warrior and Worrier types differ, and what concrete recommendations follow.',
+      'A collection of the most common questions about the genetic burnout and stress analysis — what the COMT gene does, which three stress traits the report shows, and what concrete recommendations follow.',
     bullets: [
       'What is the COMT gene?',
-      'What does Warrior vs. Worrier mean?',
+      'Which three stress traits does the report show?',
       'How is burnout risk genetic?',
       'What recommendations follow from the profile?',
     ],
@@ -1136,23 +1136,23 @@ export const COURSES_EN = [
       {
         title: 'Genetic basis of stress',
         items: [
-          { q: 'What is the COMT gene and why is it important?', a: 'COMT (catechol-O-methyltransferase) breaks down the neurotransmitter dopamine once an exciting or stressful situation is over, so the brain can return to its baseline. If the gene works poorly, dopamine is broken down much more slowly and the brain stays in an aroused state for longer. Studies describe a common variant (Val158Met) with clearly different enzyme activity between the fast and the slow form.' },
-          { q: 'What is the difference between Warrior and Worrier?', a: 'The terms are often used for the two extremes of COMT activity. “Warrior”: dopamine is broken down quickly — this tends to go with better performance under stress. “Worrier”: dopamine is broken down slowly — excitement and positive feelings are experienced more intensely, but the brain struggles to return to baseline when stress keeps recurring. About 40% of people have two well-functioning copies of the gene, about 15% have two defective copies, and the remaining ~45% have one of each.' },
-          { q: 'What about BDNF?', a: 'BDNF (brain-derived neurotrophic factor) supports the growth and adaptability of nerve cells. The Met variant (Val66Met) is associated with lower activity-dependent BDNF release; some studies also link it to greater vulnerability under chronic stress, but the evidence is mixed. Regular exercise is associated with higher BDNF levels.' },
+          { q: 'What is the COMT gene and why is it important?', a: 'COMT (catechol-O-methyltransferase) breaks down the neurotransmitter dopamine once an exciting or stressful situation is over, so the brain can return to its baseline. If the gene works poorly, dopamine is broken down much more slowly: the brain stays in an aroused state for longer, and when new stress comes along before it is back at baseline, it can become overloaded. Slower breakdown also has upsides — positive feelings are experienced more intensely and people tend to be more curious, but also more prone to gambling. Studies describe a common variant (Val158Met) with clearly different enzyme activity between the fast and the slow form.' },
+          { q: 'Which three traits does the burnout analysis evaluate?', a: 'Performance under stress (how well you perform in stressful situations), emotional resilience (how strongly negative feelings weigh on you) and impulsivity. Each trait is shown on a scale from red through the middle to green: green is favourable, red means a greater risk of burnout.' },
+          { q: 'How many people are genetically especially prone to stress?', a: 'About 40% of people have two well-functioning copies of the COMT gene: they tend to perform better under stress, have higher emotional resilience and are less impulsive. About 15% have two defective copies, with exactly the opposite effect — they are the ones who suffer most under stress. The remaining ~45% have one functioning and one defective copy.' },
         ],
       },
       {
         title: 'Practical advice',
         items: [
-          { q: 'I am a Worrier — am I doomed to burn out?', a: 'No. A less favourable COMT profile increases sensitivity to stress, but it is not destiny. The less favourable the genes, the more important the right lifestyle: meditation, a low-stress way of life, nutrition and exercise. Knowing your predisposition lets you act early, before stress builds up.' },
-          { q: 'I am a Warrior — do I still need to worry about burnout?', a: 'Your genetic risk is lower, but it is not zero: massive, continuous stress can still take its toll over time. Recovery phases and a balanced lifestyle remain important.' },
-          { q: 'What helps everyone, regardless of genotype?', a: 'Enough sleep, regular exercise, meditation or other relaxation techniques, a balanced diet, social contact and moderation with stimulants such as alcohol and caffeine.' },
+          { q: 'I have two defective copies of the COMT gene — am I doomed to burn out?', a: 'No. A less favourable COMT profile increases sensitivity to stress, but it is not destiny. The less favourable the genes, the more important the right lifestyle: meditation, a low-stress way of life, nutrition and exercise. Knowing your predisposition lets you act early, before stress builds up.' },
+          { q: 'All three traits are in the green zone — do I still need to think about burnout?', a: 'For you, burnout is not such a big danger — but the risk is not zero: massive, continuous stress can still take its toll over time. Recovery phases and a balanced lifestyle remain important.' },
+          { q: 'What helps everyone, regardless of genotype?', a: 'The measures recommended in the report — meditation, a low-stress way of life, a balanced diet and regular exercise — help everyone reduce stress; they simply matter more the less favourable the genetic profile is. Enough sleep, social contact and moderate consumption of caffeine and alcohol are also commonly recommended.' },
         ],
       },
       {
         title: 'What to do with the result',
         items: [
-          { q: 'A “red zone” came up in my report. Should I be worried?', a: 'No. A red zone marks an unfavourable genetic predisposition in one specific area — a higher risk, not a diagnosis. It is an invitation to act early — exactly the opposite of a fatalistic verdict.' },
+          { q: 'A “red zone” came up in my report. Should I be worried?', a: 'It is no reason to panic, but it is a reason to act. A red zone marks an unfavourable genetic predisposition in one specific area — a greater risk of burnout, not a diagnosis. The more of your traits are in the red zone, the more important it is to adapt your lifestyle to avoid stress. Even with results in the middle, a low-stress lifestyle remains important.' },
           { q: 'Where do I find concrete recommendations for my genotype?', a: 'In the burnout report — it contains recommendations on meditation, a low-stress lifestyle, nutrition and exercise, tailored to your genetic stress profile.' },
         ],
       },
@@ -1422,24 +1422,24 @@ export const COURSES_EN = [
         title: 'Basics — Telomeres & Aging',
         items: [
           { q: 'What are telomeres and why are they important for aging?', a: 'Telomeres are protective caps at the end of each chromosome — they contain no genes themselves, but protect genes from being lost during cell divisions. With each cell division, a small piece of telomere breaks off. After 50-70 divisions, they are used up; the cell goes into a sleep mode (senescence) and accumulates as an "old cell" in the body.' },
-          { q: 'What is the difference between chronological and biological age?', a: 'Chronological age is your life time in years — fixed and unchangeable. Biological age shows how "old" your cells actually are. Two people with the same chronological age can have biological ages up to 20 years apart due to genetic predisposition and lifestyle.' },
-          { q: 'What does telomerase do?', a: 'Telomerase is an enzyme that can repair / rebuild telomeres. Its activity is partly genetic — people with strong telomerase activity preserve telomeres better; those with reduced activity see faster telomere shortening, especially under oxidative stress.' },
-          { q: 'Which genes are evaluated in the analysis?', a: 'Mainly telomerase and related genes (TERT, BICD1, PPARG) controlling telomere maintenance. They show how well your body can repair / preserve telomeres — a rough estimate of your genetic anti-aging capacity.' },
+          { q: 'What is the difference between chronological and biological age?', a: 'Chronological age is the time you have lived, in years — fixed and unchangeable. Biological age describes how “old” your cells actually are, and telomeres are one of the factors behind it: babies have long telomeres, 90-year-olds short ones. People with two defective copies of the telomerase gene are already born with shorter telomeres — the difference in biological age can be up to 20 years.' },
+          { q: 'What does telomerase do?', a: 'The telomerase gene helps maintain the telomeres. It cannot completely stop or reverse their shortening, but it slows it down: with well-functioning genes, telomeres get shorter more slowly with age; with a gene defect, they are lost faster. How well this protection works is partly genetic — and that is what the analysis looks at.' },
+          { q: 'Which genes are evaluated in the analysis?', a: 'The analysis looks at two things: first, your genetic ability to maintain your telomeres, which depends mainly on the telomerase gene; second, whether a Mediterranean diet has an effect on your telomeres, which also depends on certain gene variants. It shows your genetic predisposition — not how long your telomeres actually are.' },
         ],
       },
       {
         title: 'What lifestyle does',
         items: [
-          { q: 'Does Mediterranean diet work for everyone?', a: 'Surprisingly no. Studies show it extends telomeres only in people with a specific gene variant — others see no measurable effect on telomere length. A clear demonstration that the same lifestyle advice does not work the same in every individual.' },
-          { q: 'Which nutrients support telomeres?', a: 'Vitamin D3, Omega-3, Vitamin E, Resveratrol, and Ginkgo. When the genetic protection system is weak, these nutrients can be used deliberately to slow telomere shortening.' },
-          { q: 'Can I influence free radicals?', a: 'Yes — antioxidants in food (Vitamin C, E, polyphenols from berries, tea, etc.) neutralise free radicals before they damage cells. In genetically weakened antioxidant defences, an antioxidant-rich diet is especially important.' },
+          { q: 'Does a Mediterranean diet help maintain telomeres in everyone?', a: 'Surprisingly, no. Studies have shown that a Mediterranean diet helps keep telomeres longer only in people with certain gene variants — in everyone else, it has no effect on the telomeres. Your report shows which group you belong to. This refers only to the telomeres, not to other effects of the diet — and it is a clear example that the same lifestyle advice does not work the same way for everyone.' },
+          { q: 'Which nutrients support telomeres?', a: 'Vitamin D3, Omega-3, Vitamin E, Resveratrol and Ginkgo. When the genetic protection system works less well, increasing these nutrients — for example by eating more foods that contain them — can help slow telomere shortening. They cannot reverse it.' },
+          { q: 'Can I influence free radicals?', a: 'Yes, to a degree. Free radicals continuously damage our cells and are one of the reasons we age. Antioxidants help counter this; they are found, for example, in foods rich in Vitamin C and Vitamin E or in polyphenols from berries and tea. An antioxidant-rich diet can therefore support healthy aging.' },
         ],
       },
       {
         title: 'Influence & expectations',
         items: [
-          { q: 'How quickly will I see results from anti-aging measures?', a: 'Telomere effects are slow — months to years. Some intermediate markers (oxidative stress, inflammation, blood lipid profile) shift in weeks. The strongest impact of lifestyle on biological age compounds over decades.' },
-          { q: 'What practical use does this knowledge give me?', a: 'You know whether you genetically lean toward faster or slower cell aging — and can act deliberately. With unfavourable predisposition, focus on: antioxidant-rich diet, targeted supplements (D3, Omega-3, Resveratrol), regular but not excessive exercise, good sleep, and stress reduction.' },
+          { q: 'How quickly will I see results from anti-aging measures?', a: 'Not overnight. The recommended measures cannot make telomeres grow back — they help slow down their shortening, so the benefit builds up gradually over many years. Note that the genetic analysis shows your predisposition, not the current length of your telomeres, so the analysis result itself does not change through these measures.' },
+          { q: 'What practical use does this knowledge give me?', a: 'You know how well your genes maintain your telomeres — and whether a Mediterranean diet helps you in this respect. If telomere maintenance is impaired, you can respond deliberately by increasing Vitamin D3, Omega-3, Vitamin E, Resveratrol and Ginkgo, for example through foods that contain them. A generally healthy lifestyle with an antioxidant-rich diet, regular exercise and enough sleep is also sensible.' },
         ],
       },
     ],

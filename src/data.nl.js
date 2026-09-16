@@ -778,7 +778,7 @@ const TXT = {
    {
     "q": "Welke drie eigenschappen toont het burn-outgedeelte van het rapport?",
     "options": [
-     "Prestaties onder stress, weerstand tegen negatieve gevoelens en impulsiviteit",
+     "Prestaties onder stress, emotionele veerkracht en impulsiviteit",
      "Slaapkwaliteit, gevoeligheid voor cafeïne en de cortisolreactie op stress",
      "Concentratie, geheugen en motivatie",
      "Bloeddruk, hartslag en ademfrequentie"
@@ -830,10 +830,10 @@ const TXT = {
  "bo-faq-en": {
   "topic": "Veelgestelde vragen",
   "description": "Antwoorden op typische vragen van cliënten over genetische stress- en burn-outaanleg.",
-  "longDescription": "Een verzameling van de meest voorkomende vragen over de genetische burn-out- en stressanalyse — wat COMT en BDNF betekenen, hoe Warrior- en Worrier-types van elkaar verschillen, en welke concrete aanbevelingen daaruit volgen.",
+  "longDescription": "Een verzameling van de meest voorkomende vragen over de genetische burn-out- en stressanalyse — wat het COMT-gen doet, welke drie stresseigenschappen het rapport laat zien, en welke concrete aanbevelingen daaruit volgen.",
   "bullets": [
    "Wat is het COMT-gen?",
-   "Wat betekent Warrior versus Worrier?",
+   "Welke drie stresseigenschappen laat het rapport zien?",
    "Hoe is burn-outrisico genetisch bepaald?",
    "Welke aanbevelingen volgen uit het profiel?"
   ],
@@ -1672,15 +1672,15 @@ const FAQTX = {
     "items": [
      {
       "q": "Wat is het COMT-gen en waarom is het belangrijk?",
-      "a": "COMT (catechol-O-methyltransferase) breekt de signaalstof dopamine af zodra een spannende of stressvolle situatie voorbij is, zodat de hersenen kunnen terugkeren naar hun basisniveau. Als het gen slecht werkt, wordt dopamine veel langzamer afgebroken en blijven de hersenen langer op scherp staan. Studies beschrijven een veelvoorkomende variant (Val158Met) met een duidelijk verschillende enzymactiviteit tussen de snelle en de trage vorm."
+      "a": "COMT (catechol-O-methyltransferase) breekt de signaalstof dopamine af zodra een spannende of stressvolle situatie voorbij is, zodat de hersenen kunnen terugkeren naar hun basisniveau. Als het gen slecht werkt, wordt dopamine veel langzamer afgebroken: de hersenen blijven langer op scherp staan, en als er nieuwe stress bijkomt voordat ze weer op hun basisniveau zijn, kunnen ze overbelast raken. Een tragere afbraak heeft ook voordelen — positieve gevoelens worden intenser beleefd en mensen zijn vaak nieuwsgieriger, maar ook vatbaarder voor gokken. Studies beschrijven een veelvoorkomende variant (Val158Met) met een duidelijk verschillende enzymactiviteit tussen de snelle en de trage vorm."
      },
      {
-      "q": "Wat is het verschil tussen Warrior en Worrier?",
-      "a": "De termen worden vaak gebruikt voor de twee uitersten van de COMT-activiteit. “Warrior”: dopamine wordt snel afgebroken — dat gaat meestal samen met betere prestaties onder stress. “Worrier”: dopamine wordt langzaam afgebroken — opwinding en positieve gevoelens worden intenser beleefd, maar de hersenen keren moeilijk terug naar hun basisniveau wanneer stress steeds terugkomt. Ongeveer 40% van de mensen heeft twee goed functionerende kopieën van het gen, ongeveer 15% heeft twee defecte kopieën en de overige ~45% heeft van elk één."
+      "q": "Welke drie eigenschappen beoordeelt de burn-outanalyse?",
+      "a": "Prestaties onder stress (hoe goed je presteert in stressvolle situaties), emotionele veerkracht (hoe zwaar negatieve gevoelens op je wegen) en impulsiviteit. Elke eigenschap wordt weergegeven op een schaal van rood via het midden tot groen: groen is gunstig, rood betekent een groter risico op een burn-out."
      },
      {
-      "q": "En hoe zit het met BDNF?",
-      "a": "BDNF (brain-derived neurotrophic factor) ondersteunt de groei en het aanpassingsvermogen van zenuwcellen. De Met-variant (Val66Met) wordt in verband gebracht met een lagere activiteitsafhankelijke afgifte van BDNF; sommige studies koppelen deze variant ook aan een grotere kwetsbaarheid bij chronische stress, maar het bewijs is niet eenduidig. Regelmatige beweging gaat samen met hogere BDNF-waarden."
+      "q": "Hoeveel mensen zijn genetisch bijzonder stressgevoelig?",
+      "a": "Ongeveer 40% van de mensen heeft twee goed functionerende kopieën van het COMT-gen: zij presteren doorgaans beter onder stress, hebben een hogere emotionele veerkracht en zijn minder impulsief. Ongeveer 15% heeft twee defecte kopieën, met precies het tegenovergestelde effect — zij hebben het meest te lijden onder stress. De overige ~45% heeft één functionerende en één defecte kopie."
      }
     ]
    },
@@ -1688,16 +1688,16 @@ const FAQTX = {
     "title": "Praktisch advies",
     "items": [
      {
-      "q": "Ik ben een Worrier — ben ik gedoemd om een burn-out te krijgen?",
+      "q": "Ik heb twee defecte kopieën van het COMT-gen — ben ik gedoemd om een burn-out te krijgen?",
       "a": "Nee. Een minder gunstig COMT-profiel verhoogt de gevoeligheid voor stress, maar het is geen lot. Hoe minder gunstig de genen, hoe belangrijker de juiste leefstijl: meditatie, een stressarme manier van leven, voeding en beweging. Als je je aanleg kent, kun je vroeg handelen, nog voordat de stress zich opstapelt."
      },
      {
-      "q": "Ik ben een Warrior — moet ik me dan toch zorgen maken over burn-out?",
-      "a": "Je genetische risico is lager, maar niet nul: zware, aanhoudende stress kan na verloop van tijd toch zijn tol eisen. Herstelfases en een evenwichtige leefstijl blijven belangrijk."
+      "q": "Alle drie de eigenschappen liggen in de groene zone — moet ik dan nog wel rekening houden met een burn-out?",
+      "a": "Een burn-out vormt voor jou niet zo'n groot gevaar — maar het risico is niet nul: zware, aanhoudende stress kan na verloop van tijd toch zijn tol eisen. Herstelfases en een evenwichtige leefstijl blijven belangrijk."
      },
      {
       "q": "Wat helpt iedereen, ongeacht het genotype?",
-      "a": "Voldoende slaap, regelmatige beweging, meditatie of andere ontspanningstechnieken, een evenwichtige voeding, sociaal contact en matig gebruik van genotmiddelen zoals alcohol en cafeïne."
+      "a": "De maatregelen die het rapport aanbeveelt — meditatie, een stressarme manier van leven, een evenwichtige voeding en regelmatige beweging — helpen iedereen om stress te verminderen; hoe minder gunstig het genetische profiel is, hoe belangrijker ze worden. Ook voldoende slaap, sociaal contact en matig gebruik van cafeïne en alcohol worden vaak aanbevolen."
      }
     ]
    },
@@ -1706,7 +1706,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Er staat een “rode zone” in mijn rapport. Moet ik me zorgen maken?",
-      "a": "Nee. Een rode zone markeert een ongunstige genetische aanleg op één specifiek gebied — een hoger risico, geen diagnose. Het is een uitnodiging om vroeg te handelen — precies het tegenovergestelde van een fatalistisch oordeel."
+      "a": "Het is geen reden tot paniek, maar wel een reden om in actie te komen. Een rode zone markeert een ongunstige genetische aanleg op één specifiek gebied — een groter risico op een burn-out, geen diagnose. Hoe meer van je eigenschappen in de rode zone liggen, hoe belangrijker het is om je leefstijl zo aan te passen dat je stress vermijdt. Ook bij resultaten in het midden blijft een stressarme leefstijl belangrijk."
      },
      {
       "q": "Waar vind ik concrete aanbevelingen voor mijn genotype?",
@@ -1732,15 +1732,15 @@ const FAQTX = {
      },
      {
       "q": "Wat is het verschil tussen chronologische en biologische leeftijd?",
-      "a": "Chronologische leeftijd is je levenstijd in jaren — vast en onveranderlijk. Biologische leeftijd laat zien hoe “oud” je cellen werkelijk zijn. Twee mensen met dezelfde chronologische leeftijd kunnen door genetische aanleg en leefstijl tot 20 jaar in biologische leeftijd van elkaar verschillen."
+      "a": "Chronologische leeftijd is de tijd die je hebt geleefd, in jaren — vast en onveranderlijk. Biologische leeftijd beschrijft hoe “oud” je cellen werkelijk zijn, en telomeren zijn een van de factoren die daarbij een rol spelen: baby's hebben lange telomeren, 90-jarigen korte. Mensen met twee defecte kopieën van het telomerasegen worden al met kortere telomeren geboren — het verschil in biologische leeftijd kan oplopen tot 20 jaar."
      },
      {
       "q": "Wat doet telomerase?",
-      "a": "Telomerase is een enzym dat telomeren kan herstellen en weer kan opbouwen. De activiteit ervan is deels genetisch bepaald — mensen met een sterke telomeraseactiviteit behouden hun telomeren beter; bij een verminderde activiteit verkorten de telomeren sneller, vooral bij oxidatieve stress."
+      "a": "Het telomerasegen helpt de telomeren in stand te houden. Het kan hun verkorting niet volledig stoppen of terugdraaien, maar wel vertragen: met goed functionerende genen worden de telomeren met de leeftijd langzamer korter; bij een gendefect gaan ze sneller verloren. Hoe goed deze bescherming werkt, is deels genetisch bepaald — en precies daar kijkt de analyse naar."
      },
      {
       "q": "Welke genen worden in de analyse beoordeeld?",
-      "a": "Vooral telomerase en verwante genen (TERT, BICD1, PPARG) die het onderhoud van de telomeren aansturen. Ze laten zien hoe goed je lichaam telomeren kan herstellen en behouden — een ruwe inschatting van je genetische anti-agingcapaciteit."
+      "a": "De analyse kijkt naar twee dingen: ten eerste naar je genetische vermogen om je telomeren in stand te houden, dat vooral afhangt van het telomerasegen; ten tweede naar de vraag of een mediterraan dieet effect heeft op je telomeren, wat eveneens van bepaalde genvarianten afhangt. De analyse laat je genetische aanleg zien — niet hoe lang je telomeren werkelijk zijn."
      }
     ]
    },
@@ -1748,16 +1748,16 @@ const FAQTX = {
     "title": "Wat leefstijl doet",
     "items": [
      {
-      "q": "Werkt het mediterrane dieet voor iedereen?",
-      "a": "Verrassend genoeg niet. Studies tonen aan dat het de telomeren alleen verlengt bij mensen met een specifieke genvariant — bij anderen is er geen meetbaar effect op de telomeerlengte. Een duidelijk bewijs dat hetzelfde leefstijladvies niet bij iedereen hetzelfde werkt."
+      "q": "Helpt een mediterraan dieet iedereen om de telomeren in stand te houden?",
+      "a": "Verrassend genoeg niet. Studies hebben aangetoond dat een mediterraan dieet alleen bij mensen met bepaalde genvarianten helpt om de telomeren langer te behouden — bij alle anderen heeft het geen effect op de telomeren. Je rapport laat zien tot welke groep je behoort. Dit geldt alleen voor de telomeren, niet voor andere effecten van het dieet — en het is een duidelijk voorbeeld dat hetzelfde leefstijladvies niet bij iedereen hetzelfde werkt."
      },
      {
       "q": "Welke voedingsstoffen ondersteunen de telomeren?",
-      "a": "Vitamine D3, Omega-3, Vitamine E, Resveratrol en Ginkgo. Als het genetische beschermingssysteem zwak is, kunnen deze voedingsstoffen gericht worden ingezet om de verkorting van de telomeren te vertragen."
+      "a": "Vitamine D3, Omega-3, Vitamine E, Resveratrol en Ginkgo. Als het genetische beschermingssysteem minder goed werkt, kan een hogere inname van deze voedingsstoffen — bijvoorbeeld door meer voedingsmiddelen te eten die ze bevatten — helpen om de verkorting van de telomeren te vertragen. Terugdraaien kunnen ze die verkorting niet."
      },
      {
       "q": "Kan ik vrije radicalen beïnvloeden?",
-      "a": "Ja — antioxidanten uit voeding (Vitamine C, Vitamine E, polyfenolen uit bessen, thee enz.) neutraliseren vrije radicalen voordat die cellen beschadigen. Bij een genetisch verzwakte antioxidatieve afweer is een antioxidantrijk dieet extra belangrijk."
+      "a": "Ja, tot op zekere hoogte. Vrije radicalen beschadigen voortdurend onze cellen en zijn een van de redenen waarom we verouderen. Antioxidanten helpen daartegen; je vindt ze bijvoorbeeld in voedingsmiddelen die rijk zijn aan Vitamine C en Vitamine E, of als polyfenolen in bessen en thee. Een antioxidantrijk dieet kan zo bijdragen aan gezond ouder worden."
      }
     ]
    },
@@ -1766,11 +1766,11 @@ const FAQTX = {
     "items": [
      {
       "q": "Hoe snel zie ik resultaat van anti-agingmaatregelen?",
-      "a": "Effecten op de telomeren verlopen traag — maanden tot jaren. Sommige tussenliggende markers (oxidatieve stress, ontstekingen, bloedvetprofiel) verschuiven al binnen enkele weken. Het sterkste effect van leefstijl op de biologische leeftijd stapelt zich op over decennia."
+      "a": "Niet van de ene dag op de andere. De aanbevolen maatregelen kunnen telomeren niet laten teruggroeien — ze helpen hun verkorting te vertragen, zodat het voordeel zich geleidelijk over vele jaren opbouwt. Let op: de genetische analyse laat je aanleg zien, niet de huidige lengte van je telomeren; het analyseresultaat zelf verandert door deze maatregelen dus niet."
      },
      {
       "q": "Wat heb ik in de praktijk aan deze kennis?",
-      "a": "Je weet of je genetisch neigt naar snellere of tragere celveroudering — en kunt bewust handelen. Bij een ongunstige aanleg richt je je op: een antioxidantrijk dieet, gerichte supplementen (D3, Omega-3, Resveratrol), regelmatige maar niet overmatige beweging, goede slaap en stressvermindering."
+      "a": "Je weet hoe goed je genen je telomeren in stand houden — en of een mediterraan dieet je daarbij helpt. Als het onderhoud van je telomeren verminderd is, kun je daar bewust op reageren door je inname van Vitamine D3, Omega-3, Vitamine E, Resveratrol en Ginkgo te verhogen, bijvoorbeeld via voedingsmiddelen die deze stoffen bevatten. Daarnaast is een algemeen gezonde leefstijl met een antioxidantrijk dieet, regelmatige beweging en voldoende slaap zinvol."
      }
     ]
    }

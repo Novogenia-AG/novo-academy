@@ -1528,7 +1528,7 @@ export const COURSES = [
         ],
       },
       {
-        title: 'Warrior vs. Worrier — der COMT-Effekt',
+        title: 'Langsamer Dopamin-Abbau — der COMT-Effekt',
         items: [
           {
             q: 'Stimmt es, dass langsame Dopamin-Verwerter auch positive Vorteile haben?',
@@ -1575,9 +1575,9 @@ export const COURSES = [
     contentType: 'course',
     description: 'Welche Gene die individuelle Stressantwort und das Burnout-Risiko steuern.',
     longDescription:
-      'Diese Schulung erklärt die wissenschaftliche Grundlage hinter der genetischen Burnout-Analyse. Du lernst, welche Variationen in Genen wie COMT, BDNF oder 5-HTT die Stressverarbeitung beeinflussen, warum manche Menschen schneller in einen Erschöpfungszustand kommen und welche Lebensstil-Maßnahmen genetisch optimiert eingesetzt werden können.',
+      'Diese Schulung erklärt die wissenschaftliche Grundlage hinter der genetischen Burnout-Analyse. Du lernst, welche drei genetischen Eigenschaften die Analyse betrachtet, wie Variationen im COMT-Gen über den Dopamin-Abbau die Stressverarbeitung beeinflussen, warum manche Menschen schneller in einen Erschöpfungszustand kommen und welche Lebensstil-Maßnahmen genetisch optimiert eingesetzt werden können.',
     bullets: [
-      'Stress-Gene (COMT, BDNF, 5-HTT) und ihre Wirkung',
+      'Das Stress-Gen COMT und seine Wirkung auf den Dopamin-Abbau',
       'Warum Menschen Stress unterschiedlich verarbeiten',
       'Genetische Risikofaktoren für Burnout',
       'Personalisierte Strategien zur Stress-Resilienz',
@@ -1588,7 +1588,7 @@ export const COURSES = [
     introQuestions: [
       'Wie unterschiedlich verarbeiten Menschen Stress?',
       'Welche Gene erhöhen das Burnout-Risiko?',
-      'Was macht den genetischen "Warrior"- vs. "Worrier"-Typ aus?',
+      'Was passiert im Gehirn, wenn das COMT-Gen Dopamin nur langsam abbaut?',
       'Welche personalisierten Empfehlungen lassen sich daraus ableiten?',
     ],
     postVideoText:
@@ -1722,61 +1722,68 @@ export const COURSES = [
     ],
     postVideoText:
       'Mit dieser Schulung kannst du den Burnout-Bericht fachlich fundiert mit deinen Kunden besprechen. Das folgende Demo-Booklet kannst du als Beispiel-Bericht für deine eigene Beratungspraxis verwenden.',
-    /* Themenbezogene Fragen zum Burnout-Beratungsgespräch — Inhalt basiert auf
-       dem Video „Burnout — Individueller Umgang mit Stress" und dem Burnout-Bericht. */
+    /* Fragen zum Burnout-Beratungsgespräch — jede Frage ist allein aus dem Video
+       „Burnout — Individueller Umgang mit Stress" (Analyseberatung Teil 33, Beispielkundin
+       Maria) beantwortbar; gegen das deutsche Transkript geprüft am 16.09.2026.
+       Reihenfolge und correct-Positionen laufen parallel zu bo-report-en (data.en.js). */
     questions: [
       {
-        q: 'Welches Gen ist zentral für die individuelle Stress-Verarbeitung und steht im Fokus der Burnout-Analyse?',
-        options: ['MTHFR', 'COMT', 'CYP1A2', 'FTO'],
-        correct: 1,
-      },
-      {
-        q: 'Was unterscheidet einen „Warrior"- von einem „Worrier"-Genotyp im Bezug auf COMT?',
+        q: 'Welches Gen steht im Fokus der Burnout-Analyse, und was beeinflusst es?',
         options: [
-          'Warrior baut Dopamin schneller ab, ist unter akutem Stress leistungsstark — Worrier baut langsamer ab, ist im Alltag konzentrationsstärker, aber anfälliger für anhaltenden Stress',
-          'Warrior und Worrier reagieren genetisch identisch, der Unterschied ist nur Erziehung',
-          'Worrier baut Dopamin schneller ab, bleibt unter Stress ruhiger',
-          'Warrior sind grundsätzlich resistenter gegen jede Form von Stress',
-        ],
-        correct: 0,
-      },
-      {
-        q: 'Was bedeutet ein „roter Bereich" in der Burnout-Auswertung für die Beratung?',
-        options: [
-          'Der Kunde hat bereits ein Burnout — er muss zum Arzt geschickt werden',
-          'Es ist ein technischer Fehler, das Ergebnis ist nicht verwertbar',
-          'Der Kunde hat in diesem Aspekt eine ungünstige genetische Veranlagung — Lebensstil-Maßnahmen sind hier besonders wichtig, weil das Risiko erhöht ist',
-          'Der Kunde sollte das genetisch belastete Thema komplett meiden',
+          'CYP1A2 — wie schnell Koffein in der Leber abgebaut wird',
+          'FTO — die Appetitregulation und das Sättigungsgefühl',
+          'COMT — die Balance bestimmter Neurotransmitter im Gehirn',
+          'MTHFR — wie der Körper Folat aktiviert',
         ],
         correct: 2,
       },
       {
-        q: 'Welche Empfehlung passt am besten zu einem Kunden mit langsamer COMT-Variante (Worrier, langsamer Dopamin-Abbau)?',
+        q: 'Welche drei Eigenschaften zeigt der Burnout-Teil des Berichts?',
         options: [
-          'Stress aktiv suchen — er macht ihn produktiver',
-          'Bewusste Erholungspausen, Meditation, gute Schlafhygiene und das Vermeiden von vielen gleichzeitigen Stressquellen — weil das Stress-Signal länger im System bleibt',
-          'Koffein deutlich erhöhen, um das Dopamin-Niveau anzuheben',
-          'Komplett auf jede Form von Belastung verzichten — auch Sport',
+          'Leistung in Stresssituationen, Widerstandsfähigkeit gegen negative Gefühle und Impulsivität',
+          'Schlafqualität, Koffeinempfindlichkeit und Cortisol-Reaktion auf Stress',
+          'Konzentration, Gedächtnis und Motivation',
+          'Blutdruck, Herzfrequenz und Atemfrequenz',
+        ],
+        correct: 0,
+      },
+      {
+        q: 'Maria hat ein funktionierendes und ein defektes COMT-Gen. Wie sieht ihr Ergebnis aus?',
+        options: [
+          'Alle drei Eigenschaften im roten Bereich — sie ist stark burnout-gefährdet',
+          'Alle drei Eigenschaften im grünen Bereich — Burnout ist für sie kein Thema',
+          'Leistung in Stresssituationen im roten Bereich, die anderen beiden Eigenschaften im grünen Bereich',
+          'Alle drei Eigenschaften in der Mitte — mäßig gut für die Stressbeständigkeit',
+        ],
+        correct: 3,
+      },
+      {
+        q: 'Menschen mit Burnout-Syndrom kombinieren oft den falschen Lebensstil mit ihrer Genetik. Wo liegen ihre Ergebnisse meistens, und was sollten sie tun?',
+        options: [
+          'Im grünen Bereich — sie müssen nur ihre Arbeitslast reduzieren',
+          'Meistens im roten Bereich — sie sollten ihren Lebensstil auf Stressvermeidung optimieren',
+          'In der Mitte — ihr Lebensstil hat kaum Einfluss',
+          'Meistens im roten Bereich — eine Änderung des Lebensstils bringt dann nichts mehr',
         ],
         correct: 1,
       },
       {
-        q: 'Wie sollte man eine ungünstige genetische Burnout-Veranlagung im Kundengespräch einordnen?',
+        q: 'Marias Ergebnisse liegen bei allen drei Eigenschaften in der Mitte. Spielt ihr Lebensstil eine Rolle?',
         options: [
-          'Als Schicksal — nichts ist zu machen, der Kunde wird ein Burnout bekommen',
-          'Als kein Schicksal, sondern erhöhtes Risiko — wer seine Stress-Empfindlichkeit kennt, kann gezielt gegensteuern (Schlaf, Meditation, Bewegung, Pausen). Die genetische Information ist ein Werkzeug, kein Urteil.',
-          'Als bedeutungslos — Gene haben keinen Einfluss auf Stress',
-          'Als sofort behandlungsbedürftige Krankheit',
+          'Ja — ein Lebensstil, der Stress vermeidet, ist auch für sie wichtig',
+          'Nein — nur Kunden im roten Bereich müssen ihren Lebensstil ändern',
+          'Nein — ein Ergebnis in der Mitte hat keine praktische Bedeutung',
+          'Erst wenn sie erste Anzeichen eines Burnouts zeigt',
         ],
-        correct: 1,
+        correct: 0,
       },
       {
-        q: 'Warum hat ein langsamer Dopamin-Abbau (Worrier) im Alltag auch Vorteile?',
+        q: 'Was bedeutet es, wenn ein Kunde bei allen drei Eigenschaften im grünen Bereich liegt?',
         options: [
-          'Er macht den Träger immun gegen alle Stresssituationen',
-          'Er führt zu konstant hoher Stressresistenz',
-          'Er bewirkt, dass Dopamin länger wirkt — diese Menschen erleben Aufregung, Freude und Belohnung intensiver, sind neugierig und probierfreudig; der Nachteil zeigt sich erst bei chronischem Stress, weil der Körper schwerer zur Ruhe kommt',
-          'Er hat keinerlei Vorteile — nur Nachteile',
+          'Burnout ist für diesen Kunden unmöglich, egal wie er lebt',
+          'Der Kunde ist besonders burnout-gefährdet',
+          'Burnout ist für diesen Kunden keine so große Gefahr',
+          'Die Analyse konnte nicht ausgewertet werden',
         ],
         correct: 2,
       },
@@ -1824,7 +1831,7 @@ export const COURSES = [
           },
           {
             q: 'Welche Gene werden in der Analyse betrachtet?',
-            a: 'Hauptsächlich Telomerase und verwandte Gene (TERT, BICD1, PPARG), die die Erhaltung der Telomerlänge steuern. Sie zeigen, wie gut dein Körper Telomere reparieren bzw. erhalten kann — eine grobe Schätzung der genetischen Anti-Aging-Kapazität.',
+            a: 'Hauptsächlich Telomerase und verwandte Gene (TERT, BICD1, PPARG), die die Erhaltung der Telomerlänge steuern. Sie zeigen, wie gut dein Körper Telomere erhalten kann — eine grobe Schätzung der genetischen Anti-Aging-Kapazität.',
           },
         ],
       },
@@ -1833,7 +1840,7 @@ export const COURSES = [
         items: [
           {
             q: 'Wirkt mediterrane Ernährung bei jedem auf die Telomere?',
-            a: 'Überraschend nein. Sie verlängert die Telomere nur bei Menschen mit einem bestimmten Gendefekt — bei anderen zeigt sie keinen messbaren Effekt auf die Telomerlänge. Eine schöne Veranschaulichung, dass dieselbe Lebensstil-Empfehlung nicht für jeden gleich wirkt.',
+            a: 'Überraschend nein. Sie hilft nur Menschen mit einem bestimmten Gendefekt, die Telomere länger zu erhalten — bei anderen zeigt sie keinen messbaren Effekt auf die Telomerlänge. Eine schöne Veranschaulichung, dass dieselbe Lebensstil-Empfehlung nicht für jeden gleich wirkt.',
           },
           {
             q: 'Welche Nährstoffe können die Telomere unterstützen?',
@@ -1880,21 +1887,21 @@ export const COURSES = [
     contentType: 'course',
     description: 'Wie das biologische Alter genetisch bestimmt und durch Lebensstil beeinflusst wird.',
     longDescription:
-      'Diese Schulung erklärt die wissenschaftliche Grundlage hinter der Bestimmung des biologischen Alters. Du erfährst, welche Gene Telomerlänge und Zellalterung beeinflussen, wie sich biologisches von chronologischem Alter unterscheidet und welche Lebensstil-Faktoren das biologische Alter messbar verändern können.',
+      'Diese Schulung erklärt die wissenschaftliche Grundlage hinter der genetischen Analyse zum biologischen Alter. Du erfährst, welche Gene Telomerlänge und Zellalterung beeinflussen, wie sich biologisches von chronologischem Alter unterscheidet und welche Nährstoffe und Lebensstil-Faktoren die Verkürzung der Telomere verlangsamen können.',
     bullets: [
       'Telomere und Zellalterung — Grundlagen',
       'Chronologisches vs. biologisches Alter',
-      'Genetische Faktoren der Alterung (TERT, BICD1 & Co.)',
-      'Anti-Aging Strategien mit messbarer Wirkung',
+      'Genetische Faktoren der Alterung: das Telomerase-Gen',
+      'Anti-Aging-Strategien: Nährstoffe und genotypabhängige mediterrane Ernährung',
     ],
     thumbnail: '/thumbnails/course-bioage.jpg',
     youtubeId: 'gwmVcvbaNgE',
     introQuestionsHeader: 'In dieser Schulung bekommst du Antworten auf folgende Fragen:',
     introQuestions: [
       'Was ist der Unterschied zwischen chronologischem und biologischem Alter?',
-      'Wie werden Telomere gemessen und was sagen sie aus?',
+      'Was sind Telomere und warum werden sie bei jeder Zellteilung kürzer?',
       'Welche Gene beeinflussen die Zellalterung?',
-      'Welche Lifestyle-Maßnahmen verändern das biologische Alter nachweislich?',
+      'Welche Nährstoffe unterstützen die Erhaltung der Telomere — und warum wirkt mediterrane Ernährung nicht bei jedem?',
     ],
     postVideoText:
       'Mit dieser Grundlage kannst du die Analyse des biologischen Alters fachlich fundiert mit deinen Kunden besprechen.',
@@ -1940,7 +1947,7 @@ export const COURSES = [
         correct: 1,
       },
       {
-        q: 'Welches Gen reguliert die Erhaltung bzw. den Wiederaufbau der Telomere?',
+        q: 'Welches Gen hilft, die Telomere zu erhalten?',
         options: ['MTHFR', 'Telomerase', 'COMT', 'FTO'],
         correct: 1,
       },
@@ -1958,7 +1965,7 @@ export const COURSES = [
         q: 'Wirkt mediterrane Ernährung bei jedem Menschen gleich auf die Telomere?',
         options: [
           'Ja — sie wirkt bei allen identisch',
-          'Nein — sie verlängert die Telomere nur bei Menschen mit einem bestimmten Gendefekt, bei anderen zeigt sie keinen Effekt',
+          'Nein — sie hilft nur Menschen mit einem bestimmten Gendefekt, die Telomere länger zu erhalten, bei anderen zeigt sie keinen Effekt',
           'Nein — sie verkürzt die Telomere bei allen Menschen',
           'Die Wirkung ist nicht untersucht',
         ],
@@ -2043,61 +2050,68 @@ export const COURSES = [
     ],
     postVideoText:
       'Mit dieser Schulung kannst du den Bericht zum biologischen Alter fachlich fundiert mit deinen Kunden besprechen. Das folgende Demo-Booklet kannst du als Beispiel-Bericht für deine eigene Beratungspraxis verwenden.',
-    /* Themenbezogene Fragen zur Bio-Age-Beratung — Inhalt basiert auf dem Video
-       „Alterungsprozess" und dem Bericht zum biologischen Alter. */
+    /* Fragen zur Bio-Age-Beratung — jede Frage ist allein aus dem Video „Alterungsprozess"
+       (Analyseberatung Teil 32, Beispielkundin Maria) beantwortbar; gegen das deutsche
+       Transkript geprüft am 16.09.2026. Reihenfolge und correct-Positionen laufen
+       parallel zu ba-report-en (data.en.js). */
     questions: [
       {
-        q: 'Was ist der Unterschied zwischen chronologischem und biologischem Alter?',
+        q: 'Die Schulung vergleicht Telomere mit den Plastikhülsen am Ende von Schnürsenkeln. Was veranschaulicht dieser Vergleich?',
         options: [
-          'Es gibt keinen — beide sind dasselbe',
-          'Chronologisches Alter ist die seit Geburt vergangene Zeit; biologisches Alter beschreibt den tatsächlichen Zustand der Zellen — beeinflusst durch Lebensstil und Genetik',
-          'Biologisches Alter ist immer höher als chronologisches Alter',
-          'Chronologisches Alter wird im Labor gemessen, biologisches geschätzt',
+          'Sie halten die beiden Hälften des Chromosoms zusammen',
+          'Sie tragen keine Gene und schützen einfach das Chromosom',
+          'Sie tragen die wichtigsten Gene des Chromosoms',
+          'Sie wachsen nach jeder Zellteilung wieder nach',
         ],
         correct: 1,
       },
       {
-        q: 'Welche zellulären Strukturen verkürzen sich bei jeder Zellteilung und sind ein zentraler Indikator des biologischen Alters?',
-        options: ['Mitochondrien', 'Ribosomen', 'Telomere', 'Zellmembranen'],
+        q: 'Warum geht eine Zelle nach etwa 50 bis 70 Teilungen in einen Schlafmodus?',
+        options: [
+          'Sie hat ihre Nährstoffreserven verbraucht und muss sich erholen',
+          'Das Immunsystem hat sie als beschädigt markiert und schaltet sie ab',
+          'Sie hat ihre maximale Größe erreicht und kann sich nicht mehr teilen',
+          'Ihre Telomere sind aufgebraucht, und Gene beginnen wegzubrechen',
+        ],
+        correct: 3,
+      },
+      {
+        q: 'Können die Gene, die die Telomere erhalten, den Telomerverlust umkehren?',
+        options: [
+          'Ja — sie bauen die Telomere wieder auf ihre ursprüngliche Länge auf',
+          'Nein — sie haben überhaupt keinen Einfluss auf die Telomerlänge',
+          'Nicht vollkommen — aber sie helfen, dass der Prozess langsamer abläuft',
+          'Nur in der Kindheit, solange der Körper noch wächst',
+        ],
         correct: 2,
       },
       {
-        q: 'Welche Aufgabe hat das Enzym Telomerase?',
+        q: 'Marias Ergebnis zur Erhaltung der Telomere liegt im mittleren Bereich. Wie ist das einzuordnen?',
         options: [
-          'Es baut Zellen ab, die zu alt sind',
-          'Es kann die Telomere reparieren bzw. wieder verlängern — und damit die Telomer-Verkürzung verlangsamen',
-          'Es produziert freie Radikale',
-          'Es transportiert Sauerstoff im Blut',
+          'Als beeinträchtigt — die Erhaltung der Telomere funktioniert bei ihr nicht so gut',
+          'Als unauffällig — es besteht kein Handlungsbedarf',
+          'Als überdurchschnittlich — ihre Telomere werden besonders gut erhalten',
+          'Als nicht eindeutig — die Analyse muss wiederholt werden',
         ],
-        correct: 1,
+        correct: 0,
       },
       {
-        q: 'Eine Kundin hat einen genetisch schwachen Telomerase-Schutz („roter Bereich"). Welche Beratungs-Empfehlung passt am besten?',
+        q: 'Hilft mediterrane Ernährung Maria dabei, ihre Telomere zu erhalten?',
         options: [
-          'Veranlagung ignorieren — die Telomere lassen sich nicht beeinflussen',
-          'Die genetische Schwäche durch Lebensstil ausgleichen: antioxidantienreiche Ernährung, gezielte Nährstoffe (D3, Omega-3, Resveratrol), regelmäßiger moderater Sport, guter Schlaf und Stressreduktion',
-          'Komplett auf Sport verzichten, weil dieser oxidativen Stress erzeugt',
-          'Sofort einen Arzt aufsuchen — die Veranlagung ist krankheitswertig',
+          'Ja — sie hilft jedem, die Telomere zu erhalten',
+          'Ja — aber nur in Kombination mit mehr Vitamin E',
+          'Nein — sie verkürzt bei den meisten Menschen die Telomere',
+          'Nein — bei ihren Genvarianten bleibt sie wirkungslos',
         ],
-        correct: 1,
+        correct: 3,
       },
       {
-        q: 'Was zeigte die Forschung zur mediterranen Ernährung im Zusammenhang mit Telomerlänge?',
+        q: 'In Marias Bericht sind Vitamin D3, Omega-3, Vitamin E, Resveratrol und Ginkgo mit grünen Pfeilen markiert. Was bedeutet das?',
         options: [
-          'Sie verlängert die Telomere bei jedem messbar',
-          'Sie wirkt nur bei Menschen mit einem bestimmten Genotyp — bei anderen zeigt sie keinen Telomer-Effekt; ein gutes Beispiel dafür, dass dieselbe Lebensstil-Empfehlung nicht für jeden gleich wirkt',
-          'Sie verkürzt die Telomere — deshalb sollte man sie meiden',
-          'Sie hat keinen messbaren Einfluss bei niemandem',
-        ],
-        correct: 1,
-      },
-      {
-        q: 'Wie sollte man eine ungünstige genetische Anti-Aging-Veranlagung im Kundengespräch einordnen?',
-        options: [
-          'Als unveränderliches Schicksal — der Kunde wird vorzeitig altern',
-          'Als bedeutungslos — Gene sind irrelevant für den Alterungsprozess',
-          'Als erhöhtes Risiko, nicht Schicksal: wer seine genetischen Schwächen kennt, kann Antioxidantien, Schlaf, Bewegung und Stressreduktion gezielter einsetzen — die Effekte summieren sich über Jahre',
-          'Als sofort behandlungsbedürftige Krankheit',
+          'Ihre Versorgung mit diesen Nährstoffen ist bereits ausreichend',
+          'Sie sollte die Zufuhr dieser Nährstoffe reduzieren',
+          'Sie sollte mehr Lebensmittel essen, die diese Nährstoffe enthalten',
+          'Sie braucht zuerst einen Bluttest für diese Nährstoffe',
         ],
         correct: 2,
       },

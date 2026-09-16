@@ -778,7 +778,7 @@ const TXT = {
    {
     "q": "Quali tre caratteristiche mostra la sezione del referto dedicata al burnout?",
     "options": [
-     "Prestazioni sotto stress, resistenza alle emozioni negative e impulsività",
+     "Prestazioni sotto stress, resilienza emotiva e impulsività",
      "Qualità del sonno, sensibilità alla caffeina e risposta del cortisolo allo stress",
      "Concentrazione, memoria e motivazione",
      "Pressione sanguigna, frequenza cardiaca e frequenza respiratoria"
@@ -830,10 +830,10 @@ const TXT = {
  "bo-faq-en": {
   "topic": "Domande frequenti",
   "description": "Risposte alle domande tipiche dei clienti sulla predisposizione genetica allo stress e al burnout.",
-  "longDescription": "Una raccolta delle domande più frequenti sull'analisi genetica del burnout e dello stress: cosa significano COMT e BDNF, come si distinguono i tipi Warrior e Worrier e quali raccomandazioni concrete ne derivano.",
+  "longDescription": "Una raccolta delle domande più frequenti sull'analisi genetica del burnout e dello stress: che cosa fa il gene COMT, quali tre caratteristiche legate allo stress mostra il referto e quali raccomandazioni concrete ne derivano.",
   "bullets": [
    "Che cos'è il gene COMT?",
-   "Cosa significa Warrior vs. Worrier?",
+   "Quali tre caratteristiche legate allo stress mostra il referto?",
    "In che senso il rischio di burnout è genetico?",
    "Quali raccomandazioni derivano dal profilo?"
   ],
@@ -1672,15 +1672,15 @@ const FAQTX = {
     "items": [
      {
       "q": "Che cos'è il gene COMT e perché è importante?",
-      "a": "Il COMT (catecol-O-metiltransferasi) degrada il neurotrasmettitore dopamina quando una situazione emozionante o stressante è finita, così il cervello può tornare al suo livello di base. Se il gene funziona male, la dopamina viene degradata molto più lentamente e il cervello resta più a lungo in uno stato di attivazione. Gli studi descrivono una variante frequente (Val158Met) con un'attività enzimatica nettamente diversa tra la forma rapida e quella lenta."
+      "a": "La COMT (catecol-O-metiltransferasi) degrada il neurotrasmettitore dopamina quando una situazione emozionante o stressante è finita, così il cervello può tornare al suo livello di base. Se il gene funziona male, la dopamina viene degradata molto più lentamente: il cervello resta più a lungo in uno stato di attivazione e, se arriva un nuovo stress prima che sia tornato al livello di base, può andare in sovraccarico. Una degradazione più lenta ha anche dei lati positivi: le emozioni positive vengono vissute in modo più intenso e si tende a essere più curiosi, ma anche più inclini al gioco d'azzardo. Gli studi descrivono una variante frequente (Val158Met) con un'attività enzimatica nettamente diversa tra la forma rapida e quella lenta."
      },
      {
-      "q": "Qual è la differenza tra Warrior e Worrier?",
-      "a": "Questi termini vengono spesso usati per i due estremi dell'attività del COMT. «Warrior»: la dopamina viene degradata rapidamente, il che tende ad accompagnarsi a migliori prestazioni sotto stress. «Worrier»: la dopamina viene degradata lentamente; entusiasmo ed emozioni positive vengono vissuti in modo più intenso, ma il cervello fatica a tornare al livello di base quando lo stress si ripresenta di continuo. Circa il 40% delle persone ha due copie ben funzionanti del gene, circa il 15% due copie difettose e il restante 45% circa una copia di ciascun tipo."
+      "q": "Quali tre caratteristiche valuta l'analisi del burnout?",
+      "a": "Le prestazioni sotto stress (quanto rendi nelle situazioni stressanti), la resilienza emotiva (quanto ti pesano le emozioni negative) e l'impulsività. Ogni caratteristica è rappresentata su una scala che va dal rosso al verde passando per la fascia intermedia: il verde è favorevole, il rosso indica un maggior rischio di burnout."
      },
      {
-      "q": "E il BDNF?",
-      "a": "Il BDNF (Brain-Derived Neurotrophic Factor) sostiene la crescita e l'adattabilità delle cellule nervose. La variante Met (Val66Met) è associata a un minor rilascio di BDNF dipendente dall'attività; alcuni studi la collegano anche a una maggiore vulnerabilità in caso di stress cronico, ma le evidenze sono contrastanti. L'attività fisica regolare è associata a livelli più elevati di BDNF."
+      "q": "Quante persone sono geneticamente particolarmente inclini allo stress?",
+      "a": "Circa il 40% delle persone ha due copie ben funzionanti del gene COMT: queste persone tendono a rendere meglio sotto stress, hanno una maggiore resilienza emotiva e sono meno impulsive. Circa il 15% ha due copie difettose, con l'effetto esattamente opposto: sono le persone che soffrono di più sotto stress. Il restante 45% circa ha una copia funzionante e una difettosa."
      }
     ]
    },
@@ -1688,16 +1688,16 @@ const FAQTX = {
     "title": "Consigli pratici",
     "items": [
      {
-      "q": "Sono un Worrier: sono condannato al burnout?",
+      "q": "Ho due copie difettose del gene COMT: il burnout è il mio destino?",
       "a": "No. Un profilo COMT meno favorevole aumenta la sensibilità allo stress, ma non è un destino. Quanto meno favorevoli sono i geni, tanto più conta lo stile di vita giusto: meditazione, una vita a basso stress, alimentazione e attività fisica. Conoscere la tua predisposizione ti permette di agire per tempo, prima che lo stress si accumuli."
      },
      {
-      "q": "Sono un Warrior: devo preoccuparmi comunque del burnout?",
-      "a": "Il tuo rischio genetico è più basso, ma non è pari a zero: uno stress massiccio e continuo può comunque lasciare il segno nel tempo. Le fasi di recupero e uno stile di vita equilibrato restano importanti."
+      "q": "Tutte e tre le caratteristiche sono nella zona verde: devo comunque pensare al burnout?",
+      "a": "Per te il burnout non è un pericolo così grande, ma il rischio non è pari a zero: uno stress massiccio e continuo può comunque lasciare il segno nel tempo. Le fasi di recupero e uno stile di vita equilibrato restano importanti."
      },
      {
       "q": "Che cosa aiuta tutti, indipendentemente dal genotipo?",
-      "a": "Un sonno sufficiente, un'attività fisica regolare, la meditazione o altre tecniche di rilassamento, un'alimentazione equilibrata, i contatti sociali e un consumo moderato di sostanze stimolanti come alcol e caffeina."
+      "a": "Le misure raccomandate nel referto (meditazione, una vita a basso stress, un'alimentazione equilibrata e un'attività fisica regolare) aiutano tutti a ridurre lo stress; semplicemente, sono tanto più importanti quanto meno favorevole è il profilo genetico. Spesso si raccomandano anche un sonno sufficiente, i contatti sociali e un consumo moderato di caffeina e alcol."
      }
     ]
    },
@@ -1706,7 +1706,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Nel mio referto è comparsa una «zona rossa». Devo preoccuparmi?",
-      "a": "No. Una zona rossa segnala una predisposizione genetica sfavorevole in un ambito specifico: un rischio più elevato, non una diagnosi. È un invito ad agire per tempo, esattamente il contrario di un verdetto fatalista."
+      "a": "Non c'è motivo di farsi prendere dal panico, ma c'è motivo di agire. Una zona rossa segnala una predisposizione genetica sfavorevole in un ambito specifico: un maggior rischio di burnout, non una diagnosi. Quante più caratteristiche si trovano nella zona rossa, tanto più è importante adattare il tuo stile di vita per evitare lo stress. Anche con risultati nella fascia intermedia, uno stile di vita a basso stress resta importante."
      },
      {
       "q": "Dove trovo raccomandazioni concrete per il mio genotipo?",
@@ -1732,15 +1732,15 @@ const FAQTX = {
      },
      {
       "q": "Qual è la differenza tra età cronologica ed età biologica?",
-      "a": "L'età cronologica è il tuo tempo di vita in anni: fissa e immodificabile. L'età biologica mostra quanto sono «vecchie» realmente le tue cellule. Due persone con la stessa età cronologica possono avere età biologiche che differiscono fino a 20 anni, per predisposizione genetica e stile di vita."
+      "a": "L'età cronologica indica quanti anni hai vissuto: è fissa e immodificabile. L'età biologica descrive quanto sono «vecchie» realmente le tue cellule, e i telomeri sono uno dei fattori che la determinano: i neonati hanno telomeri lunghi, i novantenni telomeri corti. Le persone con due copie difettose del gene della telomerasi nascono già con telomeri più corti: la differenza di età biologica può arrivare fino a 20 anni."
      },
      {
       "q": "Che cosa fa la telomerasi?",
-      "a": "La telomerasi è un enzima in grado di riparare e ricostruire i telomeri. La sua attività è in parte genetica: chi ha una telomerasi molto attiva conserva meglio i telomeri; in chi ha un'attività ridotta i telomeri si accorciano più rapidamente, soprattutto in presenza di stress ossidativo."
+      "a": "Il gene della telomerasi aiuta a mantenere i telomeri. Non può fermare del tutto né invertire il loro accorciamento, ma lo rallenta: con geni ben funzionanti i telomeri si accorciano più lentamente con l'età; in presenza di un difetto genetico si perdono più rapidamente. Quanto bene funzioni questa protezione dipende in parte dalla genetica, ed è proprio questo che l'analisi prende in esame."
      },
      {
       "q": "Quali geni vengono valutati nell'analisi?",
-      "a": "Principalmente la telomerasi e i geni correlati (TERT, BICD1, PPARG) che controllano il mantenimento dei telomeri. Mostrano quanto bene il tuo corpo è in grado di riparare e conservare i telomeri: una stima approssimativa della tua capacità anti-aging genetica."
+      "a": "L'analisi prende in esame due aspetti: in primo luogo la tua capacità genetica di mantenere i telomeri, che dipende principalmente dal gene della telomerasi; in secondo luogo se la dieta mediterranea ha un effetto sui tuoi telomeri, cosa che dipende anch'essa da determinate varianti genetiche. Mostra la tua predisposizione genetica, non la lunghezza effettiva dei tuoi telomeri."
      }
     ]
    },
@@ -1748,16 +1748,16 @@ const FAQTX = {
     "title": "Che cosa può fare lo stile di vita",
     "items": [
      {
-      "q": "La dieta mediterranea funziona per tutti?",
-      "a": "Sorprendentemente no. Gli studi mostrano che allunga i telomeri solo nelle persone portatrici di una specifica variante genetica; negli altri non si osserva alcun effetto misurabile sulla lunghezza dei telomeri. Una dimostrazione chiara del fatto che lo stesso consiglio sullo stile di vita non funziona allo stesso modo in ogni individuo."
+      "q": "La dieta mediterranea aiuta tutti a mantenere i telomeri?",
+      "a": "Sorprendentemente, no. Gli studi hanno mostrato che la dieta mediterranea aiuta a mantenere più lunghi i telomeri solo nelle persone con determinate varianti genetiche; in tutte le altre non ha alcun effetto sui telomeri. Il tuo referto mostra a quale gruppo appartieni. Questo riguarda solo i telomeri, non gli altri effetti della dieta, ed è un chiaro esempio del fatto che lo stesso consiglio sullo stile di vita non funziona allo stesso modo per tutti."
      },
      {
       "q": "Quali nutrienti sostengono i telomeri?",
-      "a": "Vitamina D3, Omega-3, vitamina E, resveratrolo e ginkgo. Quando il sistema di protezione genetico è debole, questi nutrienti possono essere impiegati in modo mirato per rallentare l'accorciamento dei telomeri."
+      "a": "Vitamina D3, Omega-3, vitamina E, resveratrolo e ginkgo. Quando il sistema di protezione genetico funziona meno bene, aumentare l'apporto di questi nutrienti, ad esempio mangiando più alimenti che li contengono, può aiutare a rallentare l'accorciamento dei telomeri. Questi nutrienti non possono però invertirlo."
      },
      {
       "q": "Posso influire sui radicali liberi?",
-      "a": "Sì: gli antiossidanti presenti negli alimenti (vitamina C, vitamina E, polifenoli di frutti di bosco, tè, ecc.) neutralizzano i radicali liberi prima che danneggino le cellule. Quando le difese antiossidanti sono geneticamente indebolite, un'alimentazione ricca di antiossidanti è particolarmente importante."
+      "a": "Sì, in una certa misura. I radicali liberi danneggiano continuamente le nostre cellule e sono uno dei motivi per cui invecchiamo. Gli antiossidanti aiutano a contrastarli; si trovano ad esempio negli alimenti ricchi di vitamina C e vitamina E o nei polifenoli dei frutti di bosco e del tè. Un'alimentazione ricca di antiossidanti può quindi favorire un invecchiamento sano."
      }
     ]
    },
@@ -1766,11 +1766,11 @@ const FAQTX = {
     "items": [
      {
       "q": "Quanto rapidamente vedrò i risultati delle misure anti-aging?",
-      "a": "Gli effetti sui telomeri sono lenti: da mesi ad anni. Alcuni marcatori intermedi (stress ossidativo, infiammazione, profilo lipidico) si spostano nel giro di settimane. L'impatto più forte dello stile di vita sull'età biologica si accumula nell'arco dei decenni."
+      "a": "Non da un giorno all'altro. Le misure raccomandate non possono far ricrescere i telomeri: aiutano a rallentarne l'accorciamento, quindi il beneficio si accumula gradualmente nel corso di molti anni. Tieni presente che l'analisi genetica mostra la tua predisposizione, non la lunghezza attuale dei tuoi telomeri: il risultato dell'analisi in sé, quindi, non cambia con queste misure."
      },
      {
       "q": "Che utilità pratica ha per me questa conoscenza?",
-      "a": "Sai se sei geneticamente incline a un invecchiamento cellulare più rapido o più lento, e puoi agire in modo mirato. In caso di predisposizione sfavorevole, concentrati su: alimentazione ricca di antiossidanti, integratori mirati (D3, Omega-3, resveratrolo), attività fisica regolare ma non eccessiva, buon sonno e riduzione dello stress."
+      "a": "Sai quanto bene i tuoi geni mantengono i telomeri e se, da questo punto di vista, la dieta mediterranea ti aiuta. Se il mantenimento dei telomeri è compromesso, puoi reagire in modo mirato aumentando l'apporto di vitamina D3, Omega-3, vitamina E, resveratrolo e ginkgo, ad esempio attraverso gli alimenti che li contengono. È inoltre sensato adottare uno stile di vita complessivamente sano, con un'alimentazione ricca di antiossidanti, attività fisica regolare e un sonno sufficiente."
      }
     ]
    }

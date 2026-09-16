@@ -775,7 +775,7 @@ const TXT = {
    {
     "q": "Které tři vlastnosti ukazuje část zprávy věnovaná vyhoření?",
     "options": [
-     "Výkon ve stresu, odolnost vůči negativním pocitům a impulzivitu",
+     "Výkon ve stresu, emoční odolnost a impulzivitu",
      "Kvalitu spánku, citlivost na kofein a reakci kortizolu na stres",
      "Koncentraci, paměť a motivaci",
      "Krevní tlak, tepovou frekvenci a dechovou frekvenci"
@@ -827,10 +827,10 @@ const TXT = {
  "bo-faq-en": {
   "topic": "Často kladené otázky",
   "description": "Odpovědi na typické otázky klientů o genetické predispozici ke stresu a vyhoření.",
-  "longDescription": "Soubor nejčastějších otázek o genetické analýze vyhoření a stresu — co znamenají COMT a BDNF, jak se liší typy Warrior a Worrier a jaká konkrétní doporučení z toho vyplývají.",
+  "longDescription": "Soubor nejčastějších otázek o genetické analýze vyhoření a stresu — co dělá gen COMT, které tři vlastnosti týkající se stresu zpráva ukazuje a jaká konkrétní doporučení z toho vyplývají.",
   "bullets": [
    "Co je gen COMT?",
-   "Co znamená Warrior oproti Worrier?",
+   "Které tři vlastnosti týkající se stresu zpráva ukazuje?",
    "Jak je riziko vyhoření genetické?",
    "Jaká doporučení z profilu vyplývají?"
   ]
@@ -1665,15 +1665,15 @@ const FAQTX = {
     "items": [
      {
       "q": "Co je gen COMT a proč je důležitý?",
-      "a": "COMT (katechol-O-metyltransferáza) odbourává signální látku dopamin, jakmile vzrušující nebo stresující situace skončí, aby se mozek mohl vrátit do výchozího stavu. Pokud gen funguje špatně, dopamin se odbourává mnohem pomaleji a mozek zůstává déle ve vzrušeném stavu. Studie popisují běžnou variantu (Val158Met), u níž se rychlá a pomalá forma zřetelně liší aktivitou enzymu."
+      "a": "COMT (katechol-O-metyltransferáza) odbourává signální látku dopamin, jakmile vzrušující nebo stresující situace skončí, aby se mozek mohl vrátit do výchozího stavu. Pokud gen funguje špatně, dopamin se odbourává mnohem pomaleji: mozek zůstává déle ve vzrušeném stavu, a když přijde nový stres dřív, než se do výchozího stavu vrátí, může dojít k přetížení. Pomalejší odbourávání má ale i své výhody — pozitivní pocity se prožívají intenzivněji a lidé bývají zvídavější, zároveň však mají větší sklon k hazardním hrám. Studie popisují běžnou variantu (Val158Met), u níž se rychlá a pomalá forma zřetelně liší aktivitou enzymu."
      },
      {
-      "q": "Jaký je rozdíl mezi typem Warrior a Worrier?",
-      "a": "Tyto pojmy se často používají pro dva krajní případy aktivity COMT. „Warrior“: dopamin se odbourává rychle — to obvykle souvisí s lepším výkonem ve stresu. „Worrier“: dopamin se odbourává pomalu — vzrušení a pozitivní pocity se prožívají intenzivněji, ale když se stres stále opakuje, mozek se jen obtížně vrací do výchozího stavu. Asi 40 % lidí má dvě dobře fungující kopie genu, asi 15 % dvě defektní kopie a zbývajících zhruba 45 % jednu funkční a jednu defektní."
+      "q": "Které tři vlastnosti analýza vyhoření vyhodnocuje?",
+      "a": "Výkon ve stresu (jak dobře podáváš výkon ve stresových situacích), emoční odolnost (jak silně tě zatěžují negativní pocity) a impulzivitu. Každá vlastnost je zobrazena na škále od červené přes střed po zelenou: zelená je příznivá, červená znamená vyšší riziko vyhoření."
      },
      {
-      "q": "A co BDNF?",
-      "a": "BDNF (mozkový neurotrofní faktor, Brain-Derived Neurotrophic Factor) podporuje růst a přizpůsobivost nervových buněk. Varianta Met (Val66Met) je spojována s nižším uvolňováním BDNF závislým na aktivitě; některé studie ji dávají do souvislosti i s vyšší zranitelností při chronickém stresu, důkazy jsou však nejednoznačné. Pravidelný pohyb je spojován s vyššími hladinami BDNF."
+      "q": "Kolik lidí je geneticky obzvlášť náchylných ke stresu?",
+      "a": "Asi 40 % lidí má dvě dobře fungující kopie genu COMT: ve stresu obvykle podávají lepší výkon, mají vyšší emoční odolnost a jsou méně impulzivní. Asi 15 % má dvě defektní kopie s přesně opačným účinkem — právě oni stresem trpí nejvíc. Zbývajících zhruba 45 % má jednu funkční a jednu defektní kopii."
      }
     ]
    },
@@ -1681,16 +1681,16 @@ const FAQTX = {
     "title": "Praktická doporučení",
     "items": [
      {
-      "q": "Jsem typ Worrier — jsem odsouzený k vyhoření?",
+      "q": "Mám dvě defektní kopie genu COMT — jsem odsouzený k vyhoření?",
       "a": "Ne. Méně příznivý profil COMT zvyšuje citlivost na stres, ale není to osud. Čím méně příznivé jsou geny, tím důležitější je správný životní styl: meditace, život s nízkou mírou stresu, výživa a pohyb. Když svou predispozici znáš, můžeš jednat včas — dřív, než se stres nahromadí."
      },
      {
-      "q": "Jsem typ Warrior — musím se přesto vyhoření obávat?",
-      "a": "Tvé genetické riziko je nižší, ale není nulové: masivní, nepřetržitý stres si přesto může časem vybrat svou daň. Fáze zotavení a vyvážený životní styl zůstávají důležité."
+      "q": "Všechny tři vlastnosti mám v zelené zóně — musím na vyhoření přesto myslet?",
+      "a": "Pro tebe vyhoření nepředstavuje tak velké nebezpečí — riziko ale není nulové: masivní, nepřetržitý stres si přesto může časem vybrat svou daň. Fáze zotavení a vyvážený životní styl zůstávají důležité."
      },
      {
       "q": "Co pomáhá všem, bez ohledu na genotyp?",
-      "a": "Dostatek spánku, pravidelný pohyb, meditace nebo jiné relaxační techniky, vyvážená strava, sociální kontakt a střídmost u stimulantů, jako jsou alkohol a kofein."
+      "a": "Opatření doporučená ve zprávě — meditace, život s nízkou mírou stresu, vyvážená strava a pravidelný pohyb — pomáhají snižovat stres každému; jsou jen o to důležitější, čím méně příznivý je genetický profil. Často se doporučuje také dostatek spánku, sociální kontakt a střídmá konzumace kofeinu a alkoholu."
      }
     ]
    },
@@ -1699,7 +1699,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Ve zprávě se mi objevila „červená zóna“. Mám si dělat starosti?",
-      "a": "Ne. Červená zóna označuje nepříznivou genetickou predispozici v jedné konkrétní oblasti — vyšší riziko, nikoli diagnózu. Je to pobídka jednat včas — přesný opak fatalistického verdiktu."
+      "a": "Důvod k panice to není, ale je to důvod jednat. Červená zóna označuje nepříznivou genetickou predispozici v jedné konkrétní oblasti — vyšší riziko vyhoření, nikoli diagnózu. Čím víc tvých vlastností leží v červené zóně, tím důležitější je přizpůsobit životní styl tak, aby předcházel stresu. I s výsledky uprostřed zůstává život s nízkou mírou stresu důležitý."
      },
      {
       "q": "Kde najdu konkrétní doporučení pro svůj genotyp?",
@@ -1725,15 +1725,15 @@ const FAQTX = {
      },
      {
       "q": "Jaký je rozdíl mezi chronologickým a biologickým věkem?",
-      "a": "Chronologický věk je doba tvého života v letech — pevně daná a neměnná. Biologický věk ukazuje, jak „staré“ jsou tvé buňky ve skutečnosti. Dva lidé se stejným chronologickým věkem se mohou biologickým věkem lišit až o 20 let — podle genetické predispozice a životního stylu."
+      "a": "Chronologický věk je počet let, které máš za sebou — pevně daný a neměnný. Biologický věk popisuje, jak „staré“ jsou tvé buňky ve skutečnosti, a telomery jsou jedním z faktorů, které za ním stojí: miminka mají dlouhé telomery, devadesátiletí lidé krátké. Lidé se dvěma defektními kopiemi genu telomerázy se rodí už s kratšími telomerami — rozdíl v biologickém věku může činit až 20 let."
      },
      {
       "q": "Co dělá telomeráza?",
-      "a": "Telomeráza je enzym, který dokáže telomery opravovat a znovu prodlužovat. Její aktivita je zčásti geneticky daná — lidé se silnou aktivitou telomerázy si telomery zachovávají lépe; u lidí se sníženou aktivitou se telomery zkracují rychleji, zejména při oxidačním stresu."
+      "a": "Gen telomerázy pomáhá telomery udržovat. Jejich zkracování nedokáže úplně zastavit ani zvrátit, ale zpomaluje ho: při dobře fungujících genech se telomery s věkem zkracují pomaleji, při genovém defektu se ztrácejí rychleji. Jak dobře tato ochrana funguje, je zčásti dáno geneticky — a právě na to se analýza zaměřuje."
      },
      {
       "q": "Které geny se v analýze vyhodnocují?",
-      "a": "Především telomerázu a s ní související geny (TERT, BICD1, PPARG), které řídí udržování telomer. Ukazují, jak dobře dokáže tvé tělo telomery opravovat a zachovávat — jde o hrubý odhad tvé genetické anti-aging kapacity."
+      "a": "Analýza se zaměřuje na dvě věci: zaprvé na tvou genetickou schopnost udržovat telomery, která závisí hlavně na genu telomerázy; zadruhé na to, zda má na tvé telomery vliv středomořská strava, což rovněž závisí na určitých genových variantách. Ukazuje tvou genetickou predispozici — ne to, jak dlouhé tvé telomery skutečně jsou."
      }
     ]
    },
@@ -1741,16 +1741,16 @@ const FAQTX = {
     "title": "Co dokáže životní styl",
     "items": [
      {
-      "q": "Funguje středomořská strava u každého?",
-      "a": "Překvapivě ne. Studie ukazují, že telomery prodlužuje pouze u lidí s konkrétní genovou variantou — u ostatních se na délce telomer žádný měřitelný účinek neprojeví. Jasný důkaz toho, že stejné doporučení ohledně životního stylu nefunguje u každého stejně."
+      "q": "Pomáhá středomořská strava udržovat telomery u každého?",
+      "a": "Překvapivě ne. Studie ukázaly, že středomořská strava pomáhá udržet telomery delší pouze u lidí s určitými genovými variantami — u všech ostatních na telomery nemá žádný účinek. Tvá zpráva ukazuje, do které skupiny patříš. Týká se to pouze telomer, nikoli jiných účinků této stravy — a je to jasný příklad toho, že stejné doporučení ohledně životního stylu nefunguje u každého stejně."
      },
      {
       "q": "Které živiny telomery podporují?",
-      "a": "Vitamin D3, omega-3, vitamin E, resveratrol a ginkgo. Když je genetický ochranný systém slabý, lze tyto živiny cíleně využít ke zpomalení zkracování telomer."
+      "a": "Vitamin D3, omega-3, vitamin E, resveratrol a ginkgo. Když genetický ochranný systém funguje hůře, může zvýšený příjem těchto živin — například tím, že budeš jíst více potravin, které je obsahují — pomoci zkracování telomer zpomalit. Zvrátit ho však tyto živiny nedokážou."
      },
      {
       "q": "Můžu volné radikály ovlivnit?",
-      "a": "Ano — antioxidanty v potravě (vitamin C, vitamin E, polyfenoly z bobulovin, čaje atd.) neutralizují volné radikály dřív, než poškodí buňky. Při geneticky oslabené antioxidační obraně je strava bohatá na antioxidanty obzvlášť důležitá."
+      "a": "Ano, do určité míry. Volné radikály neustále poškozují naše buňky a jsou jedním z důvodů, proč stárneme. Antioxidanty proti tomu pomáhají; najdeš je například v potravinách bohatých na vitamin C a vitamin E nebo v podobě polyfenolů v bobulovinách a čaji. Strava bohatá na antioxidanty proto může podpořit zdravé stárnutí."
      }
     ]
    },
@@ -1759,11 +1759,11 @@ const FAQTX = {
     "items": [
      {
       "q": "Jak rychle uvidím výsledky anti-aging opatření?",
-      "a": "Účinky na telomery jsou pomalé — měsíce až roky. Některé mezistupňové markery (oxidační stres, záněty, lipidový profil krve) se posunou během několika týdnů. Nejsilnější dopad životního stylu na biologický věk se sčítá v horizontu desetiletí."
+      "a": "Ne ze dne na den. Doporučená opatření nedokážou telomery znovu prodloužit — pomáhají zpomalit jejich zkracování, takže se přínos buduje postupně během mnoha let. Měj na paměti, že genetická analýza ukazuje tvou predispozici, ne aktuální délku tvých telomer — samotný výsledek analýzy se tedy těmito opatřeními nezmění."
      },
      {
       "q": "Jaký praktický užitek mi tato znalost přináší?",
-      "a": "Víš, zda geneticky inklinuješ k rychlejšímu, nebo pomalejšímu stárnutí buněk — a můžeš jednat cíleně. Při nepříznivé predispozici se zaměř na: stravu bohatou na antioxidanty, cílené doplňky stravy (D3, omega-3, resveratrol), pravidelný, ale ne nadměrný pohyb, kvalitní spánek a snižování stresu."
+      "a": "Víš, jak dobře tvé geny udržují telomery — a zda ti v tomto ohledu pomáhá středomořská strava. Pokud je udržování telomer oslabené, můžeš cíleně reagovat tím, že zvýšíš příjem těchto živin: vitamin D3, omega-3, vitamin E, resveratrol a ginkgo — například prostřednictvím potravin, které je obsahují. Rozumný je také celkově zdravý životní styl se stravou bohatou na antioxidanty, pravidelným pohybem a dostatkem spánku."
      }
     ]
    }
