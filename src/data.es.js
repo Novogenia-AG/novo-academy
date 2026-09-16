@@ -54,80 +54,120 @@ const TXT = {
  },
  "ba-sci-en": {
   "topic": "Base Científica",
-  "description": "Cómo se determina genéticamente la edad biológica y cómo influye en ella el estilo de vida.",
-  "longDescription": "Esta formación explica la base científica detrás de la determinación de la edad biológica. Aprenderás qué genes influyen en la longitud de los telómeros y el envejecimiento celular, en qué se diferencia la edad biológica de la edad cronológica, y qué factores del estilo de vida pueden alterar de forma medible la edad biológica.",
+  "description": "Por qué se acortan los telómeros, cómo influye el gen de la telomerasa en la edad biológica — y qué nutrientes pueden ayudar.",
+  "longDescription": "Esta formación explica la base científica del análisis de edad biológica. Aprenderás por qué los telómeros — los extremos protectores de nuestros cromosomas — se acortan con cada división celular, qué le ocurre a una célula cuando sus telómeros se han agotado, cómo influye el gen de la telomerasa en este proceso y qué nutrientes pueden apoyar el mantenimiento de los telómeros cuando los genes funcionan peor.",
   "postVideoText": "Con esta base científica, puedes hablar del análisis de edad biológica con tus clientes sobre una base sólida.",
   "introQuestionsHeader": "Esta formación responde a:",
   "bullets": [
    "Telómeros y envejecimiento celular — fundamentos",
-   "Edad cronológica frente a biológica",
-   "Factores genéticos del envejecimiento (TERT, BICD1 y Cía.)",
-   "Estrategias antienvejecimiento con efecto medible"
+   "Senescencia: cuando las células entran en modo de reposo",
+   "Factores genéticos del envejecimiento: el gen de la telomerasa",
+   "Nutrientes de apoyo y la dieta mediterránea dependiente del genotipo"
   ],
   "introQuestions": [
-   "¿Cuál es la diferencia entre edad cronológica y edad biológica?",
-   "¿Cómo se miden los telómeros y qué nos indican?",
-   "¿Qué genes influyen en el envejecimiento celular?",
-   "¿Qué medidas de estilo de vida alteran de forma demostrable la edad biológica?"
+   "¿Qué son los telómeros y por qué se acortan con cada división celular?",
+   "¿Qué le ocurre a una célula cuando sus telómeros se han agotado?",
+   "¿Qué hace el gen de la telomerasa?",
+   "¿Qué nutrientes apoyan el mantenimiento de los telómeros — y por qué la dieta mediterránea no funciona en todas las personas?"
   ],
   "questions": [
    {
-    "q": "¿Cuál es la diferencia entre edad cronológica y edad biológica?",
+    "q": "¿Qué son los telómeros?",
     "options": [
-     "No hay diferencia — son idénticas",
-     "La edad cronológica es el tiempo transcurrido desde el nacimiento; la edad biológica describe el estado celular real — influida por el estilo de vida y la genética",
-     "La edad biológica siempre es superior a la edad cronológica",
-     "La edad cronológica se mide en laboratorio, la edad biológica se estima"
+     "Genes situados al principio de cada cromosoma que controlan la división celular",
+     "Proteínas que reparan el ADN dañado",
+     "Estructuras dentro de la célula que producen energía",
+     "Extremos protectores de los cromosomas que no contienen genes"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "¿Qué les ocurre a los telómeros con cada división celular?",
+    "options": [
+     "Se alargan ligeramente cada vez",
+     "Se desprende un pequeño fragmento y se acortan",
+     "Se reconstruyen desde cero en la nueva célula",
+     "Mantienen exactamente la misma longitud"
     ],
     "correct": 1
    },
    {
-    "q": "¿Qué estructuras celulares se acortan con cada división celular y son un indicador clave de la edad biológica?",
+    "q": "¿Tras cuántas divisiones celulares, aproximadamente, se agotan los telómeros?",
     "options": [
-     "Mitocondrias",
-     "Ribosomas",
-     "Telómeros",
-     "Membranas celulares"
+     "Entre 5 y 10",
+     "Entre 20 y 30",
+     "Entre 50 y 70",
+     "Entre 500 y 700"
     ],
     "correct": 2
    },
    {
-    "q": "¿Cuál es la función de la enzima telomerasa?",
+    "q": "¿Qué le ocurre a una célula cuyos telómeros se han agotado?",
     "options": [
-     "Descompone las células que han envejecido",
-     "Puede reparar y alargar los telómeros — ralentizando su acortamiento",
-     "Produce radicales libres",
-     "Transporta oxígeno en la sangre"
+     "Entra en un modo de reposo (senescencia) y deja de cumplir su función",
+     "Sigue dividiéndose, pero más despacio",
+     "Vuelve a convertirse en una célula madre joven",
+     "El cuerpo la degrada y la elimina de inmediato"
+    ],
+    "correct": 0
+   },
+   {
+    "q": "¿Qué gen ayuda a mantener los telómeros?",
+    "options": [
+     "MTHFR",
+     "COMT",
+     "Telomerasa",
+     "FTO"
+    ],
+    "correct": 2
+   },
+   {
+    "q": "¿Qué nutrientes pueden apoyar el mantenimiento de los telómeros cuando el gen protector funciona peor?",
+    "options": [
+     "Vitamina C, zinc, selenio, hierro y magnesio",
+     "Vitamina D3, omega-3, vitamina E, resveratrol y ginkgo",
+     "Vitamina B12, ácido fólico, hierro, yodo y calcio",
+     "Cafeína, taurina, creatina, L-carnitina y té verde"
     ],
     "correct": 1
    },
    {
-    "q": "Un cliente tiene una telomerasa genéticamente débil (\"zona roja\"). ¿Cuál es la mejor recomendación en la consulta?",
+    "q": "¿Tiene la dieta mediterránea el mismo efecto sobre los telómeros en todas las personas?",
     "options": [
-     "Ignorar la predisposición — los telómeros no se pueden influir",
-     "Compensar la debilidad genética con el estilo de vida: dieta rica en antioxidantes, nutrientes específicos (D3, Omega-3, Resveratrol), ejercicio moderado y regular, buen sueño y reducción del estrés",
-     "Dejar de hacer ejercicio por completo — genera estrés oxidativo",
-     "Acudir al médico de inmediato — la variante es patológica"
+     "Sí — mantiene los telómeros más largos en todas las personas",
+     "No — acorta los telómeros en la mayoría de las personas",
+     "Su efecto sobre los telómeros nunca se ha estudiado",
+     "No — solo funciona con una variante génica concreta"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "¿Qué diferencia de edad biológica puede haber entre las personas con dos copias defectuosas y las personas con dos copias funcionales del gen de la telomerasa?",
+    "options": [
+     "Hasta 20 años",
+     "Como máximo 1 o 2 años",
+     "Como máximo 5 años",
+     "No hay ninguna diferencia medible"
+    ],
+    "correct": 0
+   },
+   {
+    "q": "¿Qué papel desempeñan los radicales libres en el envejecimiento?",
+    "options": [
+     "Protegen los extremos de los cromosomas para que no se desprendan durante la división celular",
+     "Dañan las células continuamente; los antioxidantes ayudan a contrarrestarlo",
+     "Solo influyen en personas mayores de 70 años",
+     "Reparan las células dañadas durante el sueño"
     ],
     "correct": 1
    },
    {
-    "q": "¿Qué mostró la investigación sobre la dieta mediterránea y la longitud de los telómeros?",
+    "q": "¿Cuál es la estrategia adecuada para un cliente con un defecto en el gen de la telomerasa?",
     "options": [
-     "Alarga los telómeros de forma medible en todas las personas",
-     "Solo funciona en portadores de un genotipo específico — los demás no ven ningún efecto sobre los telómeros. Un claro ejemplo de que el mismo consejo de estilo de vida no funciona igual para todos",
-     "Acorta los telómeros — debería evitarse",
-     "No tiene ningún efecto medible en nadie"
-    ],
-    "correct": 1
-   },
-   {
-    "q": "¿Cómo debería plantearse una predisposición antienvejecimiento desfavorable en la consulta?",
-    "options": [
-     "Como un destino inmutable — el cliente envejecerá prematuramente",
-     "Como algo irrelevante — los genes no importan para el envejecimiento",
-     "Como un riesgo elevado, no un destino: los clientes que conocen sus puntos débiles genéticos pueden aplicar antioxidantes, sueño, ejercicio y reducción del estrés de forma más deliberada — los efectos se acumulan a lo largo de los años",
-     "Como una enfermedad que requiere tratamiento inmediato"
+     "Ignorarlo — de todos modos, en los telómeros no se puede influir",
+     "Hacer más ejercicio — la alimentación no marca ninguna diferencia",
+     "Aumentar los nutrientes de apoyo para frenar el acortamiento de los telómeros",
+     "Pasarse a la dieta mediterránea — funciona para todo el mundo"
     ],
     "correct": 2
    }
@@ -136,70 +176,80 @@ const TXT = {
  "ba-report-en": {
   "topic": "Formación en Consultoría",
   "description": "Repasa el informe de edad biológica con tu cliente.",
-  "longDescription": "En esta formación de consultoría, el Dr. Daniel Wallerstorfer explica cómo repasar el informe genético de edad biológica y del proceso de envejecimiento con tus clientes.",
-  "postVideoText": "Con esta formación puedes hablar del informe de edad biológica sobre una base sólida con tus clientes. El folleto de demostración a continuación puede servir como informe de ejemplo para tu propia práctica de consultoría.",
+  "longDescription": "En esta formación de consultoría, el Dr. Daniel Wallerstorfer explica el proceso de envejecimiento en un lenguaje sencillo — desde los cromosomas y los telómeros hasta las células en modo de reposo — y toma como ejemplo a la clienta María para mostrar cómo leer en el informe el resultado de los telómeros, el hallazgo sobre la dieta mediterránea y las recomendaciones de nutrientes.",
+  "postVideoText": "Con esta formación puedes hablar del informe de edad biológica sobre una base sólida con tus clientes.",
   "introQuestionsHeader": "En esta formación aprenderás:",
   "bullets": [
    "Repasar el informe de edad biológica de forma estructurada",
-   "Plantear el proceso de envejecimiento en términos genéticos",
-   "Derivar recomendaciones antienvejecimiento concretas",
-   "Cómo influye el estilo de vida en la edad biológica"
+   "Explicar los telómeros y el proceso de envejecimiento en un lenguaje sencillo",
+   "Interpretar el resultado de los telómeros con el ejemplo de María",
+   "Recomendaciones de nutrientes y el hallazgo sobre la dieta mediterránea"
   ],
   "introQuestions": [
    "Cómo está estructurado el informe de edad biológica",
    "Cómo explicar el proceso de envejecimiento con claridad",
-   "Qué recomendaciones concretas de estilo de vida se pueden derivar"
+   "Qué recomendaciones de nutrientes se derivan del resultado"
   ],
   "questions": [
    {
-    "q": "¿Cómo le explicas la edad biológica frente a la cronológica al cliente en lenguaje sencillo?",
+    "q": "La formación compara los telómeros con las puntas de plástico de los cordones de los zapatos. ¿Qué ilustra esta comparación?",
     "options": [
-     "Son idénticas",
-     "\"La edad cronológica son los años desde que naciste. La edad biológica describe qué edad tienen realmente tus células — dos personas de la misma edad pueden diferir en 10-20 años biológicamente según los genes y el estilo de vida\"",
-     "La edad biológica es solo un término de marketing",
-     "Es lo mismo que el CI"
+     "Mantienen unidas las dos mitades del cromosoma",
+     "No contienen genes y simplemente protegen el cromosoma",
+     "Contienen los genes más importantes del cromosoma",
+     "Vuelven a crecer después de cada división celular"
     ],
     "correct": 1
    },
    {
-    "q": "Un cliente tiene una telomerasa débil (\"zona roja\"). ¿Cuál es el consejo práctico?",
+    "q": "¿Por qué una célula entra en modo de reposo después de unas 50 a 70 divisiones?",
     "options": [
-     "No se puede hacer nada al respecto",
-     "Reforzar la protección desde fuera: dieta rica en antioxidantes (Vitamina C/E, polifenoles, selenio), nutrientes específicos (Omega-3, D3, Resveratrol), ejercicio moderado y regular (no extremo), 7-9 horas de sueño, reducción del estrés. Los efectos se acumulan a lo largo de los años",
-     "Tomar quimioterapia en dosis altas",
-     "Comer solo carne"
+     "Ha agotado sus reservas de nutrientes y necesita recuperarse",
+     "El sistema inmunitario la ha marcado como dañada y la desactiva",
+     "Ha alcanzado su tamaño máximo y ya no puede dividirse",
+     "Sus telómeros se han agotado y los genes empiezan a desprenderse"
     ],
-    "correct": 1
+    "correct": 3
    },
    {
-    "q": "Un cliente pregunta: \"¿La dieta mediterránea me ayuda a rejuvenecer biológicamente?\"",
+    "q": "¿Pueden los genes que mantienen los telómeros revertir la pérdida de telómeros?",
     "options": [
-     "Sí, siempre",
-     "Depende de la genética: los estudios muestran que la dieta mediterránea alarga los telómeros de forma medible solo en portadores de una variante específica. Para otros, el efecto es más débil. El informe indica si este cliente está en el grupo de respondedores",
-     "No, nunca",
-     "Solo para mujeres"
+     "Sí — reconstruyen los telómeros hasta su longitud original",
+     "No — no influyen en absoluto en la longitud de los telómeros",
+     "No por completo — pero ralentizan el proceso",
+     "Solo en la infancia, mientras el cuerpo sigue creciendo"
     ],
-    "correct": 1
+    "correct": 2
    },
    {
-    "q": "Un cliente joven (25 años) pregunta: \"¿Me sirve de algo el informe de edad biológica?\"",
+    "q": "El resultado de María en el mantenimiento de los telómeros está en la zona media. ¿Cómo se interpreta?",
     "options": [
-     "No, solo es útil a partir de los 60",
-     "Sí — cuanto más joven, mejor momento para empezar. Las debilidades genéticas se acumulan a lo largo de décadas; los ajustes en el estilo de vida a los 25 tienen un efecto acumulado mucho mayor a los 60 que empezar tarde",
-     "Solo es útil para deportistas",
-     "No, la edad biológica es fija"
+     "Como limitado — el mantenimiento de los telómeros no funciona tan bien en su caso",
+     "Como normal — no hace falta actuar",
+     "Como superior a la media — sus telómeros se mantienen especialmente bien",
+     "Como no concluyente — hay que repetir el análisis"
     ],
-    "correct": 1
+    "correct": 0
    },
    {
-    "q": "¿Cómo deberías plantear el resultado de edad biológica para un cliente estresado con varias \"zonas rojas\"?",
+    "q": "¿Ayuda la dieta mediterránea a María a mantener sus telómeros?",
     "options": [
-     "Como un declive inevitable",
-     "Como oportunidades específicas: cada zona roja es una palanca clara — Vitamina D3, Omega-3, ingesta de antioxidantes, sueño, reducción del estrés. El plan es orientado a la acción y motivador, no fatalista",
-     "Como una emergencia médica",
-     "Como una enfermedad intratable"
+     "Sí — ayuda a todas las personas a mantener sus telómeros",
+     "Sí — pero solo en combinación con más vitamina E",
+     "No — acorta los telómeros en la mayoría de las personas",
+     "No — con sus variantes génicas no tiene ningún efecto"
     ],
-    "correct": 1
+    "correct": 3
+   },
+   {
+    "q": "En el informe de María, la vitamina D3, el omega-3, la vitamina E, el resveratrol y el ginkgo están marcados con flechas verdes. ¿Qué significa esto?",
+    "options": [
+     "Sus niveles de estos nutrientes ya son suficientes",
+     "Debería reducir su ingesta de estos nutrientes",
+     "Debería comer más alimentos que contengan estos nutrientes",
+     "Primero necesita un análisis de sangre de estos nutrientes"
+    ],
+    "correct": 2
    }
   ]
  },
@@ -1142,152 +1192,202 @@ const TXT = {
  },
  "bo-sci-en": {
   "topic": "Base científica",
-  "description": "Cómo el gen COMT determina el procesamiento individual del estrés — y por qué el riesgo de burnout es genético.",
-  "longDescription": "En esta formación, el Dr. Daniel Wallerstorfer explica el gen COMT y su papel en la descomposición de la dopamina, el fenotipo Guerrero frente a Preocupado, el BDNF y la neuroplasticidad, y cómo puede deducirse el riesgo individual de burnout a partir del perfil genético.",
-  "postVideoText": "Con este contexto científico podrás analizar el informe de burnout con tus clientes sobre una base sólida y deducir estrategias individuales de gestión del estrés.",
+  "description": "Por qué el mismo estrés afecta de forma distinta a cada persona — y qué tiene que ver el gen COMT con el riesgo de burnout.",
+  "longDescription": "En esta formación, el Dr. Daniel Wallerstorfer explica por qué un estrés masivo y continuo provoca burnout en algunas personas, pero no en otras. Aprenderás qué tres rasgos genéticos examina el análisis, cómo el gen COMT degrada la dopamina después de situaciones emocionantes o estresantes, por qué alrededor del 15 % de las personas son especialmente propensas al estrés — y por qué el estilo de vida adecuado es tanto más importante cuanto menos favorables son los genes.",
+  "postVideoText": "Con este contexto científico podrás analizar el informe de burnout con tus clientes sobre una base sólida y establecer estrategias individuales de gestión del estrés.",
   "introQuestionsHeader": "Esta formación responde a:",
   "bullets": [
-   "COMT — gen central para la descomposición de la dopamina",
-   "Guerrero frente a Preocupado — dos genotipos, dos estrategias de estrés",
-   "BDNF, neuroplasticidad y resiliencia",
-   "Recomendaciones prácticas a partir del perfil genético"
+   "Tres rasgos genéticos: rendimiento bajo estrés, resiliencia emocional, impulsividad",
+   "COMT — el gen central para la degradación de la dopamina",
+   "Degradación de la dopamina: por qué el 15 % es especialmente propenso al estrés",
+   "Recomendaciones de estilo de vida basadas en el perfil genético"
   ],
   "introQuestions": [
    "¿Qué gen es central para el procesamiento individual del estrés?",
-   "¿Cuál es la diferencia entre Guerrero y Preocupado?",
-   "¿Cómo es genético el riesgo de burnout?",
-   "¿Qué recomendaciones concretas de estilo de vida se derivan del perfil?"
+   "¿Por qué el mismo estrés afecta de forma distinta a cada persona — y qué tiene que ver el gen COMT con ello?",
+   "¿Cómo influyen los genes en el riesgo de burnout?",
+   "¿Qué medidas de estilo de vida ayudan — y por qué son más importantes con un perfil desfavorable?"
   ],
   "questions": [
    {
-    "q": "¿Qué gen es el impulsor central del procesamiento individual del estrés en el análisis de burnout?",
+    "q": "Según la formación, ¿qué provoca el burnout?",
     "options": [
-     "MTHFR",
-     "COMT",
-     "CYP1A2",
-     "FTO"
+     "Una única situación de estrés breve, como un examen",
+     "Solo la genética — el estilo de vida no influye",
+     "Un estrés masivo y continuo durante un periodo prolongado",
+     "Demasiado ejercicio físico"
     ],
-    "correct": 1
+    "correct": 2
    },
    {
-    "q": "¿Qué distingue a un genotipo \"Guerrero\" de uno \"Preocupado\" respecto al COMT?",
+    "q": "¿Qué rasgos genéticos examina el análisis del estrés?",
     "options": [
-     "El Guerrero descompone la dopamina más rápido — máximo rendimiento bajo estrés agudo. El Preocupado la descompone más lento — gran concentración diaria, más vulnerable al estrés crónico",
-     "Ninguna diferencia real, solo importa la educación",
-     "El Preocupado descompone la dopamina más rápido",
-     "Los Guerreros son inmunes a toda forma de estrés"
+     "Sensibilidad a la cafeína, duración del sueño y tolerancia al alcohol",
+     "Memoria, concentración y tiempo de reacción",
+     "Frecuencia cardíaca en reposo, presión arterial y niveles de cortisol",
+     "Rendimiento bajo estrés, resiliencia emocional e impulsividad"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "¿Qué gen degrada la dopamina una vez que ha pasado una situación emocionante?",
+    "options": [
+     "COMT",
+     "MTHFR",
+     "FTO",
+     "ACTN3"
     ],
     "correct": 0
    },
    {
-    "q": "¿Qué significa una \"zona roja\" en el informe de burnout para el asesoramiento?",
+    "q": "¿Qué ocurre ante un estrés repetido en una persona cuyo gen COMT funciona mal?",
     "options": [
-     "El cliente ya tiene burnout",
-     "Es un error técnico",
-     "El cliente tiene una predisposición genética desfavorable en este aspecto — las medidas de estilo de vida son especialmente importantes porque el riesgo está elevado",
-     "El cliente debería evitar todo el tema"
-    ],
-    "correct": 2
-   },
-   {
-    "q": "¿Cuál es la recomendación más adecuada para un cliente con una variante lenta de COMT (Preocupado)?",
-    "options": [
-     "Buscar activamente el estrés — lo hace más productivo",
-     "Pausas conscientes de recuperación, meditación, buena higiene del sueño y evitar muchas fuentes de estrés simultáneas — porque la señal de estrés permanece más tiempo en el sistema",
-     "Aumentar drásticamente la cafeína para elevar la dopamina",
-     "Evitar toda forma de esfuerzo, incluso el deporte"
+     "La dopamina se degrada más rápido, por lo que el cerebro se calma antes",
+     "El cerebro no vuelve a su nivel basal, por lo que un nuevo estrés provoca una sobrecarga",
+     "El cerebro se acostumbra al estrés y reacciona menos con cada episodio",
+     "No se libera dopamina en absoluto, por lo que el estrés pasa desapercibido"
     ],
     "correct": 1
    },
    {
-    "q": "¿Cómo debería enmarcarse una predisposición desfavorable al burnout en el asesoramiento?",
+    "q": "¿Cuál es una ventaja paradójica de una degradación lenta de la dopamina?",
     "options": [
-     "Como un destino — no se puede hacer nada",
-     "Como un riesgo elevado, no como un destino — los clientes que conocen su sensibilidad al estrés pueden actuar a tiempo (sueño, meditación, ejercicio, pausas). La información genética es una herramienta, no un veredicto.",
-     "Como algo irrelevante — los genes no afectan al estrés",
-     "Como una enfermedad que requiere tratamiento inmediato"
+     "Una reacción más tranquila ante situaciones estresantes en el día a día",
+     "Una recuperación física más rápida tras un ejercicio intenso",
+     "Un menor riesgo de infarto",
+     "Sentimientos positivos más intensos y una mayor curiosidad"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "¿Qué porcentaje aproximado de personas tiene dos copias del gen COMT que funcionan bien?",
+    "options": [
+     "Alrededor del 5 %",
+     "Alrededor del 15 %",
+     "Alrededor del 40 %",
+     "Alrededor del 80 %"
+    ],
+    "correct": 2
+   },
+   {
+    "q": "¿Qué porcentaje aproximado de personas tiene dos copias defectuosas y una propensión especialmente alta al estrés?",
+    "options": [
+     "Alrededor del 5 %",
+     "Alrededor del 15 %",
+     "Alrededor del 40 %",
+     "Alrededor del 60 %"
     ],
     "correct": 1
    },
    {
-    "q": "¿Por qué una descomposición lenta de la dopamina (Preocupado) también tiene ventajas en el día a día?",
+    "q": "Cuanto menos favorables son los rasgos genéticos de estrés, más importante es el estilo de vida adecuado. ¿Qué recomienda el informe?",
     "options": [
-     "Los hace inmunes a todo estrés",
-     "Provoca una resistencia al estrés constantemente alta",
-     "La dopamina permanece activa más tiempo — estas personas experimentan la emoción, la alegría y la recompensa de forma más intensa; son curiosas y exploradoras. El inconveniente solo aparece bajo estrés crónico, cuando al organismo le cuesta volver a la calma.",
-     "No tiene ventajas, solo desventajas"
+     "Meditación, un estilo de vida con poco estrés, alimentación y ejercicio",
+     "Más cafeína para mantenerse alerta y rendir bajo presión",
+     "Evitar todo deporte para no someter al cuerpo a una carga adicional",
+     "Solo medicación, porque la genética no se puede contrarrestar"
     ],
-    "correct": 2
+    "correct": 0
+   },
+   {
+    "q": "Según la formación, ¿a qué son también más propensas las personas con un gen COMT que funciona mal?",
+    "options": [
+     "A la dependencia de la cafeína",
+     "A los trastornos del sueño",
+     "A los antojos de azúcar",
+     "A los juegos de azar"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "¿Qué indica la zona roja de un rasgo de estrés en el informe?",
+    "options": [
+     "Una genética muy favorable — no hace falta actuar",
+     "Una predisposición desfavorable — un mayor riesgo de burnout",
+     "La persona ya tiene burnout y necesita tratamiento",
+     "Una recomendación estándar que se aplica a todo el mundo"
+    ],
+    "correct": 1
    }
   ]
  },
  "bo-report-en": {
   "topic": "Formación en asesoramiento",
   "description": "Recorre el informe de burnout paso a paso con tu cliente.",
-  "longDescription": "En esta formación en asesoramiento, el Dr. Daniel Wallerstorfer explica cómo recorrer el informe genético de burnout con tus clientes y deducir estrategias individuales de gestión del estrés.",
-  "postVideoText": "Con esta formación podrás analizar el informe de burnout con tus clientes sobre una base sólida. El folleto de demostración que aparece a continuación puede servir como informe de ejemplo para tu propia práctica de asesoramiento.",
+  "longDescription": "En esta formación en asesoramiento, el Dr. Daniel Wallerstorfer toma como ejemplo a la clienta María para mostrar cómo leer la sección de burnout del informe: el gen COMT, los tres rasgos de estrés en la escala que va de la zona roja, pasando por la zona media, hasta la zona verde, y por qué el estilo de vida importa para los clientes en la zona roja y en la zona media.",
+  "postVideoText": "Con esta formación podrás analizar el informe de burnout con tus clientes sobre una base sólida.",
   "introQuestionsHeader": "En esta formación aprenderás:",
   "bullets": [
    "Recorrer el informe de burnout de forma estructurada",
    "Explicar con claridad la predisposición genética al estrés",
-   "Deducir recomendaciones individuales de estilo de vida",
-   "Reconocer a tiempo las señales de alerta"
+   "Interpretar los tres rasgos de estrés en la escala de zona roja, media y verde",
+   "Explicar por qué el estilo de vida importa en la zona roja y en la zona media"
   ],
   "introQuestions": [
-   "Cómo está estructurado el informe de burnout",
+   "Cómo está estructurada la sección de burnout del informe",
    "Cómo explicar con claridad la predisposición individual al estrés",
-   "Cómo deducir recomendaciones concretas de estilo de vida"
+   "Qué significa el resultado para el estilo de vida de tu cliente"
   ],
   "questions": [
    {
-    "q": "Una clienta muestra una variante lenta de COMT (Preocupado). ¿Cuál es el punto central del asesoramiento?",
+    "q": "¿En qué gen se centra la sección de burnout y en qué influye?",
     "options": [
-     "No se necesita ningún consejo especial",
-     "Las señales de estrés permanecen más tiempo en el sistema — recomendar rutinas deliberadas de recuperación, priorizar el sueño, meditación/respiración y evitar varios factores de estrés simultáneos. La información genética es una herramienta para planificar la recuperación de forma activa, no para etiquetar al cliente",
-     "Decirle a la clienta que sufrirá burnout",
-     "Recomendar dosis altas de cafeína"
+     "CYP1A2 — la rapidez con la que el hígado degrada la cafeína",
+     "FTO — la regulación del apetito y la sensación de saciedad",
+     "COMT — el equilibrio de determinados neurotransmisores en el cerebro",
+     "MTHFR — cómo activa el cuerpo el folato"
+    ],
+    "correct": 2
+   },
+   {
+    "q": "¿Qué tres rasgos muestra la sección de burnout del informe?",
+    "options": [
+     "Rendimiento bajo estrés, resistencia a los sentimientos negativos e impulsividad",
+     "Calidad del sueño, sensibilidad a la cafeína y respuesta del cortisol al estrés",
+     "Concentración, memoria y motivación",
+     "Presión arterial, frecuencia cardíaca y frecuencia respiratoria"
+    ],
+    "correct": 0
+   },
+   {
+    "q": "María tiene una copia funcional y una copia defectuosa del gen COMT. ¿Cómo es su resultado?",
+    "options": [
+     "Los tres rasgos en la zona roja — es muy propensa al burnout",
+     "Los tres rasgos en la zona verde — el burnout no es un problema para ella",
+     "El rendimiento bajo estrés en la zona roja y los otros dos rasgos en la zona verde",
+     "Los tres rasgos en la zona media — una resistencia al estrés moderadamente buena"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Las personas que sufren burnout suelen combinar un estilo de vida inadecuado con su genética. ¿Dónde suelen quedar sus resultados y qué deberían hacer?",
+    "options": [
+     "En la zona verde — simplemente deben reducir su carga de trabajo",
+     "Sobre todo en la zona roja — deberían llevar un estilo de vida que evite el estrés",
+     "En la zona media — su estilo de vida influye poco",
+     "Sobre todo en la zona roja — cambiar su estilo de vida ya no marca ninguna diferencia"
     ],
     "correct": 1
    },
    {
-    "q": "Una clienta Preocupada dice que disfruta de su trabajo detallista y se siente productiva — ¿debería cambiar?",
+    "q": "Los resultados de María están en la zona media en los tres rasgos. ¿Importa su estilo de vida?",
     "options": [
-     "Sí, debe cambiar de personalidad",
-     "No — la variante lenta de COMT también aporta ventajas (alta concentración, experiencia intensa de recompensa, curiosidad). La recomendación se centra en la recuperación, no en la personalidad: mantener las fortalezas pero planificar la recuperación para protegerse frente al estrés crónico",
-     "Dejar su trabajo",
-     "Tomar medicación de inmediato"
+     "Sí — evitar el estrés mediante su estilo de vida también es importante para ella",
+     "No — solo los clientes en la zona roja necesitan cambiar su estilo de vida",
+     "No — un resultado en la zona media no tiene relevancia práctica",
+     "Solo cuando muestre los primeros signos de burnout"
     ],
-    "correct": 1
+    "correct": 0
    },
    {
-    "q": "¿Qué significa una \"zona roja\" en el informe de burnout para la conversación de asesoramiento?",
+    "q": "¿Qué significa que un cliente esté en la zona verde en los tres rasgos?",
     "options": [
-     "El cliente ya tiene burnout",
-     "El cliente tiene una predisposición genética desfavorable en este aspecto — las medidas de estilo de vida son especialmente importantes. Es una alerta, no un diagnóstico",
-     "Error de laboratorio",
-     "El cliente debería evitar todos los temas"
+     "El burnout es imposible para este cliente, sea cual sea su estilo de vida",
+     "El cliente es especialmente propenso al burnout",
+     "El burnout no es un peligro tan grande para este cliente",
+     "No se pudo evaluar el análisis"
     ],
-    "correct": 1
-   },
-   {
-    "q": "Un cliente de tipo Guerrero dice que rinde bajo presión — ¿debe preocuparse por el burnout?",
-    "options": [
-     "No, los Guerreros son inmunes",
-     "Menor riesgo agudo que el Preocupado, pero la recuperación sigue siendo importante. Una percepción de ausencia de estrés puede enmascarar una falta de estimulación en las fases tranquilas. Recomendar estructura para la concentración diaria y un sueño adecuado",
-     "Sí, cambiar a un trabajo de bajo estrés",
-     "Aumentar el estrés tanto como sea posible"
-    ],
-    "correct": 1
-   },
-   {
-    "q": "¿Cómo enmarcas el informe general de burnout para el cliente?",
-    "options": [
-     "Como un veredicto — sufrirá burnout",
-     "Como una herramienta: el informe revela el perfil de estrés del cliente para que la recuperación y el estilo de vida puedan planificarse de forma deliberada. No es un veredicto ni un diagnóstico",
-     "Como algo irrelevante",
-     "Como una patología médica que requiere tratamiento inmediato"
-    ],
-    "correct": 1
+    "correct": 2
    }
   ]
  }
@@ -1520,6 +1620,11 @@ const FAQTX = {
    "Selenio"
   ]
  },
+ "bo-report-en": {
+  "videoSegmentTitles": [
+   "Burnout — Gestión individual del estrés"
+  ]
+ },
  "bo-faq-en": {
   "faqGroups": [
    {
@@ -1527,15 +1632,15 @@ const FAQTX = {
     "items": [
      {
       "q": "¿Qué es el gen COMT y por qué es importante?",
-      "a": "COMT (catecol-O-metiltransferasa) degrada la dopamina, la adrenalina y la noradrenalina en la corteza prefrontal. Una variante frecuente (Val158Met) determina la rapidez de esa degradación, con una diferencia de un factor de 3-4 entre las variantes rápidas y las lentas. Esto regula cuánto tiempo permanece una señal de estrés en el sistema."
+      "a": "COMT (catecol-O-metiltransferasa) degrada el neurotransmisor dopamina una vez que ha pasado una situación emocionante o estresante, para que el cerebro pueda volver a su nivel basal. Si el gen funciona mal, la dopamina se degrada mucho más despacio y el cerebro permanece más tiempo en un estado de excitación. Los estudios describen una variante frecuente (Val158Met) con una actividad enzimática claramente distinta entre la forma rápida y la lenta."
      },
      {
       "q": "¿Cuál es la diferencia entre Warrior y Worrier?",
-      "a": "Warrior (Val/Val): la dopamina se degrada rápido; mayor resistencia al estrés agudo y buen rendimiento bajo presión. Worrier (Met/Met): la dopamina se degrada despacio; gran capacidad de concentración en el día a día, pero mayor vulnerabilidad al estrés crónico. Alrededor del 50 % son de tipo mixto."
+      "a": "Estos términos se usan a menudo para los dos extremos de la actividad de la COMT. “Warrior”: la dopamina se degrada rápido; esto suele ir unido a un mejor rendimiento bajo estrés. “Worrier”: la dopamina se degrada despacio; la emoción y los sentimientos positivos se viven con más intensidad, pero al cerebro le cuesta volver a su nivel basal cuando el estrés se repite una y otra vez. Alrededor del 40 % de las personas tiene dos copias del gen que funcionan bien, alrededor del 15 % tiene dos copias defectuosas y el ~45 % restante tiene una de cada."
      },
      {
       "q": "¿Y qué pasa con el BDNF?",
-      "a": "El BDNF (factor neurotrófico derivado del cerebro) favorece el crecimiento neuronal y la resiliencia. La variante Met (Val66Met) reduce la secreción de BDNF; sus portadores se recuperan más lentamente del estrés y son más vulnerables a la depresión bajo una carga crónica. El BDNF puede elevarse con ejercicio, sueño, aprendizaje y ayuno intermitente."
+      "a": "El BDNF (factor neurotrófico derivado del cerebro) favorece el crecimiento y la capacidad de adaptación de las células nerviosas. La variante Met (Val66Met) se asocia con una menor liberación de BDNF dependiente de la actividad; algunos estudios también la relacionan con una mayor vulnerabilidad bajo estrés crónico, pero la evidencia no es concluyente. El ejercicio regular se asocia con niveles más altos de BDNF."
      }
     ]
    },
@@ -1544,15 +1649,15 @@ const FAQTX = {
     "items": [
      {
       "q": "Soy Worrier: ¿estoy condenado al burnout?",
-      "a": "No. La variante lenta de COMT aumenta la sensibilidad, no marca un destino. Conocer la predisposición te permite actuar a tiempo: rutinas claras de recuperación, prioridad al sueño, respiración o meditación, y evitar acumular muchos factores de estrés a la vez. A lo largo de los años, esto impide que el sistema entre en una sobrecarga crónica."
+      "a": "No. Un perfil de COMT menos favorable aumenta la sensibilidad al estrés, pero no es una condena. Cuanto menos favorables son los genes, más importante es el estilo de vida adecuado: meditación, una forma de vida con poco estrés, alimentación y ejercicio. Conocer tu predisposición te permite actuar a tiempo, antes de que el estrés se acumule."
      },
      {
       "q": "Soy Warrior: ¿aun así debo preocuparme por el burnout?",
-      "a": "El riesgo agudo es menor, pero la recuperación sigue importando. La sensación de estar “libre de estrés” puede enmascarar una falta de estimulación en los periodos tranquilos. Planifica estructura para las fases de concentración y protege el sueño."
+      "a": "Tu riesgo genético es menor, pero no es cero: un estrés masivo y continuo puede pasar factura con el tiempo. Las fases de recuperación y un estilo de vida equilibrado siguen siendo importantes."
      },
      {
       "q": "¿Qué le ayuda a todo el mundo, sea cual sea el genotipo?",
-      "a": "Dormir (7-9 h), moverse con regularidad (sobre todo ejercicio de resistencia, que eleva el BDNF y regula el cortisol), el contacto social, encontrar sentido en el trabajo y evitar el abuso de estimulantes (alcohol, exceso de cafeína)."
+      "a": "Dormir lo suficiente, hacer ejercicio con regularidad, la meditación u otras técnicas de relajación, una alimentación equilibrada, el contacto social y la moderación con estimulantes como el alcohol y la cafeína."
      }
     ]
    },
@@ -1561,14 +1666,19 @@ const FAQTX = {
     "items": [
      {
       "q": "En mi informe aparece una “zona roja”. ¿Debo preocuparme?",
-      "a": "No. Una zona roja señala un riesgo elevado en un ámbito concreto, no un diagnóstico. Es una invitación a actuar a tiempo, justo lo contrario de un veredicto fatalista."
+      "a": "No. Una zona roja señala una predisposición genética desfavorable en un ámbito concreto: un riesgo mayor, no un diagnóstico. Es una invitación a actuar a tiempo, justo lo contrario de un veredicto fatalista."
      },
      {
       "q": "¿Dónde encuentro recomendaciones concretas para mi genotipo?",
-      "a": "En el informe de burnout: contiene recomendaciones detalladas sobre meditación, nutrición, movimiento, higiene del sueño y estrategias de afrontamiento, adaptadas a tu perfil individual de COMT y a los demás factores evaluados."
+      "a": "En el informe de burnout: contiene recomendaciones sobre meditación, un estilo de vida con poco estrés, alimentación y ejercicio, adaptadas a tu perfil genético de estrés."
      }
     ]
    }
+  ]
+ },
+ "ba-report-en": {
+  "videoSegmentTitles": [
+   "Proceso de envejecimiento"
   ]
  },
  "ba-faq-en": {

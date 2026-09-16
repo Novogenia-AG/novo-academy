@@ -5,7 +5,16 @@
    Video IDs come from the Novogenia English YouTube channel content
    (Playlist_Genetic_Test_Consultation_Training_ENGLISH + 170-video list).
    Where no English equivalent video exists, `youtubeId` is omitted and the
-   course becomes content-only until an English recording is available. */
+   course becomes content-only until an English recording is available.
+
+   Exception — AI lip-sync: the four burnout and biological-age courses
+   (bo-sci-en, bo-report-en, ba-sci-en, ba-report-en) have no English
+   recording. They get AI lip-sync versions (HeyGen) of the German original
+   videos instead and carry `aiDub: true`, so the app shows the AI disclosure
+   (Art. 50(4) EU AI Act). Their YouTube IDs are added after the upload; until
+   then these courses show the “Video coming soon” placeholder. Their tests
+   are based on the content of the German originals, not on the older EN
+   drafts. */
 
 // T helper — same numbered-thumbnail helper as data.js
 const T = (n) => `/thumbnails/${String(n).padStart(2, '0')}.jpg`
@@ -886,80 +895,115 @@ export const COURSES_EN = [
     category: CATEGORIES_EN.BURNOUT,
     topic: TOPIC_WB_EN,
     contentType: 'course',
-    description: 'How the COMT gene shapes individual stress processing — and why burnout risk is genetic.',
+    description: 'Why the same stress affects people differently — and what the COMT gene has to do with burnout risk.',
     longDescription:
-      'In this training, Dr. Daniel Wallerstorfer explains the COMT gene and its role in dopamine breakdown, the Warrior vs. Worrier phenotype, BDNF and neuroplasticity, and how individual burnout risk can be derived from genetic profile.',
+      'In this training, Dr. Daniel Wallerstorfer explains why massive, continuous stress leads to burnout in some people but not in others. You will learn which three genetic traits the analysis looks at, how the COMT gene breaks down dopamine after exciting or stressful situations, why about 15% of people are especially prone to stress — and why the right lifestyle matters all the more when the genes are less favourable.',
     bullets: [
-      'COMT — central gene for dopamine breakdown',
-      'Warrior vs. Worrier — two genotypes, two stress strategies',
-      'BDNF, neuroplasticity, and resilience',
-      'Practical recommendations from genetic profile',
+      'Three genetic traits: performance under stress, emotional resilience, impulsivity',
+      'COMT — the central gene for dopamine breakdown',
+      'Dopamine breakdown: why 15% are especially stress-prone',
+      'Lifestyle recommendations based on the genetic profile',
     ],
     thumbnail: '/thumbnails/course-burnout.jpg',
+    /* Video: AI lip-sync version (HeyGen) of the German original eOqrJicdJZM
+       (“BURNOUT SENSOR”). The EN youtubeId is added after the upload; until
+       then the course shows the “Video coming soon” placeholder.
+       Questions follow the content of this video. */
+    aiDub: true,
     introQuestionsHeader: 'This training answers:',
     introQuestions: [
       'Which gene is central to individual stress processing?',
-      'What is the difference between Warrior and Worrier?',
-      'How is burnout risk genetic?',
-      'What concrete lifestyle recommendations result from the profile?',
+      'Why does the same stress affect people differently — and what does COMT have to do with it?',
+      'How do genes influence the risk of burnout?',
+      'Which lifestyle measures help — and why do they matter more with an unfavourable profile?',
     ],
     postVideoText:
       'With this scientific background, you can discuss the burnout report with your clients on solid ground and derive individual stress management strategies.',
     questions: [
       {
-        q: 'Which gene is the central driver of individual stress processing in the burnout analysis?',
-        options: ['MTHFR', 'COMT', 'CYP1A2', 'FTO'],
+        q: 'According to the training, what causes burnout?',
+        options: [
+          'A single, short stressful situation such as an exam',
+          'Genetics alone — lifestyle plays no role',
+          'Massive, continuous stress over a long period',
+          'Too much physical exercise',
+        ],
+        correct: 2,
+      },
+      {
+        q: 'Which genetic traits does the stress analysis look at?',
+        options: [
+          'Caffeine sensitivity, sleep duration and alcohol tolerance',
+          'Memory, concentration and reaction time',
+          'Resting heart rate, blood pressure and cortisol levels',
+          'Performance under stress, emotional resilience and impulsivity',
+        ],
+        correct: 3,
+      },
+      {
+        q: 'Which gene breaks down dopamine once an exciting situation is over?',
+        options: ['COMT', 'MTHFR', 'FTO', 'ACTN3'],
+        correct: 0,
+      },
+      {
+        q: 'What happens under repeated stress in someone whose COMT gene works poorly?',
+        options: [
+          'Dopamine is broken down faster, so the brain calms down more quickly',
+          'The brain does not return to baseline, so new stress causes overload',
+          'The brain gets used to stress and reacts less with every episode',
+          'No dopamine is released at all, so the stress goes unnoticed',
+        ],
         correct: 1,
       },
       {
-        q: 'What distinguishes a "Warrior" from a "Worrier" genotype regarding COMT?',
+        q: 'What is a paradoxical advantage of slow dopamine breakdown?',
         options: [
-          'Warrior breaks down dopamine faster — peak performance under acute stress. Worrier breaks down slower — strong daily concentration, more vulnerable to chronic stress',
-          'No real difference, only upbringing matters',
-          'Worrier breaks down dopamine faster',
-          'Warriors are immune to every form of stress',
+          'A calmer reaction to stressful situations in everyday life',
+          'Faster physical recovery after intensive exercise',
+          'A lower risk of heart attack',
+          'More intense positive feelings and greater curiosity',
+        ],
+        correct: 3,
+      },
+      {
+        q: 'Roughly what percentage of people have two well-functioning copies of the COMT gene?',
+        options: ['About 5%', 'About 15%', 'About 40%', 'About 80%'],
+        correct: 2,
+      },
+      {
+        q: 'Roughly what percentage of people have two defective copies and are especially prone to stress?',
+        options: ['About 5%', 'About 15%', 'About 40%', 'About 60%'],
+        correct: 1,
+      },
+      {
+        q: 'The less favourable the genetic stress traits, the more important the right lifestyle. What does the report recommend?',
+        options: [
+          'Meditation, a low-stress lifestyle, nutrition and exercise',
+          'More caffeine to stay alert and perform under pressure',
+          'Avoiding all sport so the body is not put under extra strain',
+          'Medication only, because genetics cannot be counteracted',
         ],
         correct: 0,
       },
       {
-        q: 'What does a "red zone" in the burnout report mean for the consultation?',
+        q: 'According to the training, what are people with a poorly functioning COMT gene also more prone to?',
         options: [
-          'The client already has burnout',
-          'It is a technical error',
-          'The client has an unfavourable genetic predisposition in this aspect — lifestyle measures are especially important because the risk is elevated',
-          'The client should avoid the entire topic',
+          'Caffeine dependence',
+          'Sleep disorders',
+          'Sugar cravings',
+          'Gambling',
         ],
-        correct: 2,
+        correct: 3,
       },
       {
-        q: 'Best fitting recommendation for a client with a slow COMT variant (Worrier)?',
+        q: 'What does the red zone of a stress trait indicate in the report?',
         options: [
-          'Actively seek stress — it makes them more productive',
-          'Conscious recovery breaks, meditation, good sleep hygiene, and avoiding many simultaneous stress sources — because the stress signal lingers longer in the system',
-          'Drastically increase caffeine to raise dopamine',
-          'Avoid every form of strain, even sport',
+          'Very favourable genetics — no action needed',
+          'An unfavourable predisposition — a higher risk of burnout',
+          'The person already has burnout and needs treatment',
+          'A standard recommendation that applies to everyone',
         ],
         correct: 1,
-      },
-      {
-        q: 'How should an unfavourable burnout predisposition be framed in the consultation?',
-        options: [
-          'As fate — nothing can be done',
-          'As elevated risk, not fate — clients who know their stress sensitivity can act early (sleep, meditation, exercise, breaks). The genetic info is a tool, not a verdict.',
-          'As irrelevant — genes don\'t affect stress',
-          'As a disease requiring immediate treatment',
-        ],
-        correct: 1,
-      },
-      {
-        q: 'Why does a slow dopamine breakdown (Worrier) also have everyday advantages?',
-        options: [
-          'It makes them immune to every stress',
-          'It causes constantly high stress resistance',
-          'Dopamine stays active longer — these people experience excitement, joy and reward more intensely; they are curious and exploratory. The downside emerges only under chronic stress when the body struggles to return to calm.',
-          'It has no advantages, only disadvantages',
-        ],
-        correct: 2,
       },
     ],
     // NovoDaily Lifestyle Demo exists only in German — hidden in EN until translated.
@@ -978,75 +1022,90 @@ export const COURSES_EN = [
     contentType: 'course',
     description: 'Walk through the burnout report step by step with your client.',
     longDescription:
-      'In this consultation training, Dr. Daniel Wallerstorfer explains how to walk through the genetic burnout report with your clients and derive individual stress management strategies.',
+      'In this consultation training, Dr. Daniel Wallerstorfer uses the example client Maria to show how to read the burnout section of the report: the COMT gene, the three stress traits on the scale from red through the middle to green, and why lifestyle matters for clients in the red zone and in the middle.',
     bullets: [
-      'Walk through the burnout report structured',
+      'Walk through the burnout report in a structured way',
       'Explain genetic stress predisposition clearly',
-      'Derive individual lifestyle recommendations',
-      'Recognize warning signals early',
+      'Read the three stress traits on the red–middle–green scale',
+      'Explain why lifestyle matters in the red zone and in the middle',
     ],
     thumbnail: '/thumbnails/bo-report-cover.jpg',
     introQuestionsHeader: 'In this training you will learn:',
     introQuestions: [
-      'How the burnout report is structured',
+      'How the burnout section of the report is structured',
       'How to explain individual stress predisposition clearly',
-      'How to derive concrete lifestyle recommendations',
+      'What the result means for your client’s lifestyle',
     ],
     brandNoticeAboveVideos: true,
-    /* Note: a dedicated English burnout video is not yet recorded; this
-       course currently runs without a video block until one is available. */
+    /* Video: AI lip-sync version (HeyGen) of the German original eU5n2iseSdA
+       (“ANALYSEBERATUNG – Teil 33 – Burnout”, 79 s). The EN youtubeId is added
+       after the upload, then as
+         videoSegments: [{ title: 'Burnout — Individual Approach to Stress', youtubeId: '<EN dub ID>' }]
+       Until then the course runs without a video block.
+       Questions follow the content of this video (example client Maria). */
+    aiDub: true,
     postVideoText:
-      'With this training you can discuss the burnout report on solid ground with your clients. The demo booklet below can serve as an example report for your own consultation practice.',
+      'With this training you can discuss the burnout report on solid ground with your clients.',
     questions: [
       {
-        q: 'A client shows a slow COMT variant (Worrier). What is the central piece of consultation?',
+        q: 'Which gene is the focus of the burnout section, and what does it influence?',
         options: [
-          'No special advice needed',
-          'Stress signals stay longer in the system — recommend deliberate recovery routines, sleep priority, meditation/breathing, and avoiding several simultaneous stressors. The genetic info is a tool to plan recovery actively, not to label the client',
-          'Tell the client they will burn out',
-          'Recommend high doses of caffeine',
+          'CYP1A2 — how quickly caffeine is broken down in the liver',
+          'FTO — appetite regulation and the feeling of fullness',
+          'COMT — the balance of certain neurotransmitters in the brain',
+          'MTHFR — how the body activates folate',
+        ],
+        correct: 2,
+      },
+      {
+        q: 'Which three traits does the burnout section of the report show?',
+        options: [
+          'Performance under stress, resistance to negative feelings and impulsivity',
+          'Sleep quality, sensitivity to caffeine and the cortisol response to stress',
+          'Concentration, memory and motivation',
+          'Blood pressure, heart rate and breathing rate',
+        ],
+        correct: 0,
+      },
+      {
+        q: 'Maria has one functioning and one defective copy of the COMT gene. What does her result look like?',
+        options: [
+          'All three traits in the red zone — she is highly prone to burnout',
+          'All three traits in the green zone — burnout is not a concern for her',
+          'Performance under stress in the red zone, the other two traits in the green zone',
+          'All three traits in the middle — moderately good stress resistance',
+        ],
+        correct: 3,
+      },
+      {
+        q: 'People who suffer from burnout often combine the wrong lifestyle with their genetics. Where do their results usually fall, and what should they do?',
+        options: [
+          'In the green zone — they simply need to reduce their workload',
+          'Mostly in the red zone — they should live in a way that avoids stress',
+          'In the middle — their lifestyle has little influence',
+          'Mostly in the red zone — changing their lifestyle no longer makes a difference',
         ],
         correct: 1,
       },
       {
-        q: 'A Worrier client says she enjoys her detailed work and feels productive — should she change?',
+        q: 'Maria’s results are in the middle for all three traits. Does her lifestyle matter?',
         options: [
-          'Yes, she must change personality',
-          'No — the slow COMT variant also brings advantages (high concentration, intense reward experience, curiosity). The recommendation is recovery-focused, not personality-focused: keep the strengths but plan recovery to protect against chronic stress',
-          'Quit her job',
-          'Take medication immediately',
+          'Yes — avoiding stress through her lifestyle matters for her too',
+          'No — only clients in the red zone need to change their lifestyle',
+          'No — a result in the middle has no practical relevance',
+          'Only once she shows the first signs of burnout',
         ],
-        correct: 1,
+        correct: 0,
       },
       {
-        q: 'What does a "red zone" in the burnout report mean for the consultation conversation?',
+        q: 'What does it mean if a client is in the green zone for all three traits?',
         options: [
-          'The client already has burnout',
-          'The client has an unfavourable genetic predisposition in this aspect — lifestyle measures are particularly important. It is an alert, not a diagnosis',
-          'Lab error',
-          'The client should avoid all topics',
+          'Burnout is impossible for this client, whatever their lifestyle',
+          'The client is especially prone to burnout',
+          'Burnout is not such a big danger for this client',
+          'The analysis could not be evaluated',
         ],
-        correct: 1,
-      },
-      {
-        q: 'A Warrior-type client says he thrives under pressure — does he need to worry about burnout?',
-        options: [
-          'No, Warriors are immune',
-          'Less acute risk than Worrier, but recovery still matters. A perceived lack of stress can mask under-stimulation in quiet phases. Recommend structure for daily concentration and adequate sleep',
-          'Yes, switch to a low-stress job',
-          'Increase stress as much as possible',
-        ],
-        correct: 1,
-      },
-      {
-        q: 'How do you frame the overall burnout report for the client?',
-        options: [
-          'As a verdict — they will burn out',
-          'As a tool: the report reveals the client\'s stress profile so recovery and lifestyle can be planned deliberately. It is not a verdict and not a diagnosis',
-          'As irrelevant',
-          'As a medical pathology requiring immediate treatment',
-        ],
-        correct: 1,
+        correct: 2,
       },
     ],
     // NovoDaily Lifestyle Demo exists only in German — hidden in EN until translated.
@@ -1077,24 +1136,24 @@ export const COURSES_EN = [
       {
         title: 'Genetic basis of stress',
         items: [
-          { q: 'What is the COMT gene and why is it important?', a: 'COMT (Catechol-O-Methyltransferase) breaks down dopamine, adrenaline, and noradrenaline in the prefrontal cortex. A common variant (Val158Met) determines how fast this breakdown happens — by a factor of 3-4 between fast and slow variants. This regulates how long a stress signal stays in the system.' },
-          { q: 'What is the difference between Warrior and Worrier?', a: 'Warrior (Val/Val): dopamine is broken down fast — more resistant to acute stress, performs under pressure. Worrier (Met/Met): dopamine is broken down slowly — concentration-strong in daily life but vulnerable to chronic stress. About 50% are mixed type.' },
-          { q: 'What about BDNF?', a: 'BDNF (Brain-Derived Neurotrophic Factor) supports neuron growth and resilience. The Met-variant (Val66Met) reduces BDNF secretion; carriers recover more slowly from stress and are more vulnerable to depression under chronic strain. BDNF can be raised by exercise, sleep, learning, intermittent fasting.' },
+          { q: 'What is the COMT gene and why is it important?', a: 'COMT (catechol-O-methyltransferase) breaks down the neurotransmitter dopamine once an exciting or stressful situation is over, so the brain can return to its baseline. If the gene works poorly, dopamine is broken down much more slowly and the brain stays in an aroused state for longer. Studies describe a common variant (Val158Met) with clearly different enzyme activity between the fast and the slow form.' },
+          { q: 'What is the difference between Warrior and Worrier?', a: 'The terms are often used for the two extremes of COMT activity. “Warrior”: dopamine is broken down quickly — this tends to go with better performance under stress. “Worrier”: dopamine is broken down slowly — excitement and positive feelings are experienced more intensely, but the brain struggles to return to baseline when stress keeps recurring. About 40% of people have two well-functioning copies of the gene, about 15% have two defective copies, and the remaining ~45% have one of each.' },
+          { q: 'What about BDNF?', a: 'BDNF (brain-derived neurotrophic factor) supports the growth and adaptability of nerve cells. The Met variant (Val66Met) is associated with lower activity-dependent BDNF release; some studies also link it to greater vulnerability under chronic stress, but the evidence is mixed. Regular exercise is associated with higher BDNF levels.' },
         ],
       },
       {
         title: 'Practical advice',
         items: [
-          { q: 'I am a Worrier — am I doomed to burn out?', a: 'No. The slow COMT variant raises sensitivity, not destiny. Knowing the predisposition lets you act early: clear recovery routines, sleep priority, breathing or meditation, avoid stacking many stressors at once. Over years this prevents the system from running into chronic overload.' },
-          { q: 'I am a Warrior — do I still need to worry about burnout?', a: 'Lower acute risk, but recovery still matters. A feeling of "stress-free" can mask under-stimulation in quiet periods. Plan structure for concentration phases and protect sleep.' },
-          { q: 'What helps everyone, regardless of genotype?', a: 'Sleep (7-9 h), regular movement (especially endurance — raises BDNF and regulates cortisol), social contact, meaning at work, and avoiding stimulant abuse (alcohol, excessive caffeine).' },
+          { q: 'I am a Worrier — am I doomed to burn out?', a: 'No. A less favourable COMT profile increases sensitivity to stress, but it is not destiny. The less favourable the genes, the more important the right lifestyle: meditation, a low-stress way of life, nutrition and exercise. Knowing your predisposition lets you act early, before stress builds up.' },
+          { q: 'I am a Warrior — do I still need to worry about burnout?', a: 'Your genetic risk is lower, but it is not zero: massive, continuous stress can still take its toll over time. Recovery phases and a balanced lifestyle remain important.' },
+          { q: 'What helps everyone, regardless of genotype?', a: 'Enough sleep, regular exercise, meditation or other relaxation techniques, a balanced diet, social contact and moderation with stimulants such as alcohol and caffeine.' },
         ],
       },
       {
         title: 'What to do with the result',
         items: [
-          { q: 'A "red zone" came up in my report. Should I be worried?', a: 'No. A red zone marks elevated risk in one specific area, not a diagnosis. It is an invitation to act early — exactly the opposite of a fatalistic verdict.' },
-          { q: 'Where do I find concrete recommendations for my genotype?', a: 'In the burnout report — it contains detailed recommendations on meditation, nutrition, movement, sleep hygiene, and coping strategies, tailored to your individual COMT profile and the other evaluated factors.' },
+          { q: 'A “red zone” came up in my report. Should I be worried?', a: 'No. A red zone marks an unfavourable genetic predisposition in one specific area — a higher risk, not a diagnosis. It is an invitation to act early — exactly the opposite of a fatalistic verdict.' },
+          { q: 'Where do I find concrete recommendations for my genotype?', a: 'In the burnout report — it contains recommendations on meditation, a low-stress lifestyle, nutrition and exercise, tailored to your genetic stress profile.' },
         ],
       },
     ],
@@ -1118,81 +1177,114 @@ export const COURSES_EN = [
     category: CATEGORIES_EN.BIOAGE,
     topic: TOPIC_WB_EN,
     contentType: 'course',
-    description: 'How biological age is genetically determined and influenced by lifestyle.',
+    description: 'Why telomeres shorten, how the telomerase gene affects biological age — and which nutrients can help.',
     longDescription:
-      'This training explains the scientific basis behind biological age determination. You will learn which genes influence telomere length and cell aging, how biological age differs from chronological age, and which lifestyle factors can measurably alter biological age.',
+      'This training explains the scientific basis of the biological age analysis. You will learn why telomeres — the protective ends of our chromosomes — get shorter with every cell division, what happens to a cell once they are used up, how the telomerase gene influences this process, and which nutrients can support telomere maintenance when the genes work less well.',
     bullets: [
-      'Telomeres and cell aging — basics',
-      'Chronological vs. biological age',
-      'Genetic factors of aging (TERT, BICD1 & Co.)',
-      'Anti-aging strategies with measurable effect',
+      'Telomeres and cell aging — the basics',
+      'Senescence: when cells switch to sleep mode',
+      'Genetic factors of aging: the telomerase gene',
+      'Supporting nutrients and the genotype-dependent Mediterranean diet',
     ],
     thumbnail: '/thumbnails/course-bioage.jpg',
-    /* No youtubeId on purpose: the previous EN clip (udTodouyDsA — "free radicals
-       & aging") was the WRONG video for this module. Falls back to the
-       "Video coming soon" placeholder until the correct EN video is recorded. */
+    /* Video: AI lip-sync version (HeyGen) of the German original gwmVcvbaNgE
+       (“BIOLOGISCHES ALTER”). The EN youtubeId is added after the upload; until
+       then the course shows the “Video coming soon” placeholder. (The earlier EN
+       clip udTodouyDsA — “free radicals & aging” — was the wrong video for this
+       module.) Questions follow the content of the German original. */
+    aiDub: true,
     introQuestionsHeader: 'This training answers:',
     introQuestions: [
-      'What is the difference between chronological and biological age?',
-      'How are telomeres measured and what do they tell us?',
-      'Which genes influence cell aging?',
-      'Which lifestyle measures demonstrably alter biological age?',
+      'What are telomeres and why do they shorten with every cell division?',
+      'What happens to a cell once its telomeres are used up?',
+      'What does the telomerase gene do?',
+      'Which nutrients support telomere maintenance — and why doesn’t the Mediterranean diet work for everyone?',
     ],
     postVideoText:
       'With this scientific basis, you can discuss the biological age analysis with your clients on solid ground.',
     questions: [
       {
-        q: 'What is the difference between chronological and biological age?',
+        q: 'What are telomeres?',
         options: [
-          'No difference — they are identical',
-          'Chronological age is the time since birth; biological age describes the actual cellular condition — influenced by lifestyle and genetics',
-          'Biological age is always higher than chronological age',
-          'Chronological age is lab-measured, biological age is estimated',
+          'Genes at the start of each chromosome that control cell division',
+          'Proteins that repair damaged DNA',
+          'Structures inside the cell that produce energy',
+          'Protective ends of the chromosomes that contain no genes',
+        ],
+        correct: 3,
+      },
+      {
+        q: 'What happens to the telomeres with every cell division?',
+        options: [
+          'They grow slightly longer each time',
+          'A small piece breaks off and they get shorter',
+          'They are rebuilt from scratch in the new cell',
+          'They stay exactly the same length',
         ],
         correct: 1,
       },
       {
-        q: 'Which cellular structures shorten with every cell division and are a key indicator of biological age?',
-        options: ['Mitochondria', 'Ribosomes', 'Telomeres', 'Cell membranes'],
+        q: 'After roughly how many cell divisions are the telomeres used up?',
+        options: ['About 5 to 10', 'About 20 to 30', 'About 50 to 70', 'About 500 to 700'],
         correct: 2,
       },
       {
-        q: 'What is the role of the enzyme telomerase?',
+        q: 'What happens to a cell whose telomeres are used up?',
         options: [
-          'It breaks down cells that have aged out',
-          'It can repair and extend telomeres — slowing telomere shortening',
-          'It produces free radicals',
-          'It transports oxygen in the blood',
+          'It enters a sleep mode (senescence) and stops doing its job',
+          'It keeps dividing, but more slowly',
+          'It turns back into a young stem cell',
+          'It is broken down and removed by the body straight away',
+        ],
+        correct: 0,
+      },
+      {
+        q: 'Which gene helps maintain the telomeres?',
+        options: ['MTHFR', 'COMT', 'Telomerase', 'FTO'],
+        correct: 2,
+      },
+      {
+        q: 'Which nutrients can support telomere maintenance when the protective gene works less well?',
+        options: [
+          'Vitamin C, Zinc, Selenium, Iron and Magnesium',
+          'Vitamin D3, Omega-3, Vitamin E, Resveratrol and Ginkgo',
+          'Vitamin B12, Folic Acid, Iron, Iodine and Calcium',
+          'Caffeine, Taurine, Creatine, L-Carnitine and Green Tea',
         ],
         correct: 1,
       },
       {
-        q: 'A client has a genetically weak telomerase ("red zone"). Best consultation recommendation?',
+        q: 'Does a Mediterranean diet have the same effect on telomeres in everyone?',
         options: [
-          'Ignore the predisposition — telomeres cannot be influenced',
-          'Compensate the genetic weakness with lifestyle: antioxidant-rich diet, targeted nutrients (D3, Omega-3, Resveratrol), moderate regular exercise, good sleep and stress reduction',
-          'Completely stop exercising — it generates oxidative stress',
-          'See a doctor immediately — the variant is pathological',
+          'Yes — it keeps telomeres longer in everyone',
+          'No — it shortens the telomeres in most people',
+          'Its effect on telomeres has never been studied',
+          'No — it only works with a specific gene variant',
+        ],
+        correct: 3,
+      },
+      {
+        q: 'How large can the difference in biological age be between people with two defective and two functioning copies of the telomerase gene?',
+        options: ['Up to 20 years', 'At most 1 to 2 years', 'At most 5 years', 'There is no measurable difference'],
+        correct: 0,
+      },
+      {
+        q: 'What role do free radicals play in aging?',
+        options: [
+          'They protect the chromosome ends from breaking off during cell division',
+          'They continuously damage cells; antioxidants help counter this',
+          'They only play a role in people over the age of 70',
+          'They repair damaged cells during sleep',
         ],
         correct: 1,
       },
       {
-        q: 'What did research show about Mediterranean diet and telomere length?',
+        q: 'What is the right strategy for a client with a defect in the telomerase gene?',
         options: [
-          'It extends telomeres measurably in everyone',
-          'It only works in carriers of a specific genotype — others see no telomere effect. A clear example that the same lifestyle advice does not work the same for everyone',
-          'It shortens telomeres — should be avoided',
-          'It has no measurable effect on anyone',
-        ],
-        correct: 1,
-      },
-      {
-        q: 'How should an unfavourable anti-aging predisposition be framed in the consultation?',
-        options: [
-          'As unchangeable fate — the client will age prematurely',
-          'As irrelevant — genes don\'t matter for aging',
-          'As elevated risk, not fate: clients who know their genetic weak spots can apply antioxidants, sleep, exercise and stress reduction more deliberately — the effects compound over years',
-          'As a disease requiring immediate treatment',
+          'Ignore it — telomeres cannot be influenced anyway',
+          'Exercise more — nutrition makes no difference',
+          'Increase supporting nutrients to slow telomere shortening',
+          'Switch to a Mediterranean diet — it works for everyone',
         ],
         correct: 2,
       },
@@ -1215,75 +1307,90 @@ export const COURSES_EN = [
     contentType: 'course',
     description: 'Walk through the biological age report with your client.',
     longDescription:
-      'In this consultation training, Dr. Daniel Wallerstorfer explains how to walk through the genetic biological age and aging process report with your clients.',
+      'In this consultation training, Dr. Daniel Wallerstorfer explains the aging process in plain language — from chromosomes and telomeres to cells in sleep mode — and uses the example client Maria to show how to read the telomere result, the Mediterranean diet finding and the nutrient recommendations in the report.',
     bullets: [
-      'Walk through the biological age report structured',
-      'Frame the aging process in genetic terms',
-      'Derive concrete anti-aging recommendations',
-      'How lifestyle influences biological age',
+      'Walk through the biological age report in a structured way',
+      'Explain telomeres and the aging process in plain language',
+      'Read the telomere result using the example of Maria',
+      'Nutrient recommendations and the Mediterranean diet finding',
     ],
     thumbnail: '/thumbnails/ba-report-cover.jpg',
     introQuestionsHeader: 'In this training you will learn:',
     introQuestions: [
       'How the biological age report is structured',
       'How to explain the aging process clearly',
-      'What concrete lifestyle recommendations can be derived',
+      'Which nutrient recommendations follow from the result',
     ],
     brandNoticeAboveVideos: true,
-    /* Note: a dedicated English bio-age consultation video is not yet
-       recorded; this course currently runs without a video block. */
+    /* Video: AI lip-sync version (HeyGen) of the German original kk5aXYY1sWQ
+       (“ANALYSEBERATUNG – Teil 32 – Alterungsprozess”). The EN youtubeId is
+       added after the upload, then as
+         videoSegments: [{ title: 'Aging Process', youtubeId: '<EN dub ID>' }]
+       Until then the course runs without a video block.
+       Questions follow the content of this video (example client Maria). */
+    aiDub: true,
     postVideoText:
-      'With this training you can discuss the biological age report on solid ground with your clients. The demo booklet below can serve as an example report for your own consultation practice.',
+      'With this training you can discuss the biological age report on solid ground with your clients.',
     questions: [
       {
-        q: 'How do you explain biological vs. chronological age to the client in plain language?',
+        q: 'The training compares telomeres to the plastic tips at the ends of shoelaces. What does this comparison illustrate?',
         options: [
-          'They are identical',
-          '"Chronological age is the years since you were born. Biological age describes how old your cells actually are — two people of the same age can differ by 10-20 years biologically depending on genes and lifestyle"',
-          'Biological age is just a marketing term',
-          'It is the same as IQ',
+          'They hold the two halves of the chromosome together',
+          'They carry no genes and simply protect the chromosome',
+          'They carry the most important genes of the chromosome',
+          'They grow back after every cell division',
         ],
         correct: 1,
       },
       {
-        q: 'A client has weak telomerase ("red zone"). What is the practical advice?',
+        q: 'Why does a cell go into sleep mode after about 50 to 70 divisions?',
         options: [
-          'Nothing can be done about it',
-          'Strengthen the protection externally: antioxidant-rich diet (Vitamin C/E, polyphenols, selenium), targeted nutrients (Omega-3, D3, Resveratrol), moderate regular exercise (not extreme), 7-9 hours of sleep, stress reduction. Effects accumulate over years',
-          'Take high-dose chemotherapy',
-          'Eat only meat',
+          'It has used up its nutrient reserves and needs to recover',
+          'The immune system has marked it as damaged and switches it off',
+          'It has reached its maximum size and can no longer divide',
+          'Its telomeres are used up and genes begin to break off',
         ],
-        correct: 1,
+        correct: 3,
       },
       {
-        q: 'A client asks: "Does Mediterranean diet help me get younger biologically?"',
+        q: 'Can the genes that maintain telomeres reverse telomere loss?',
         options: [
-          'Yes, always',
-          'It depends on genetics: studies show Mediterranean diet measurably extends telomeres only in carriers of a specific variant. For others, the effect is weaker. The report shows whether this client is in the responder group',
-          'No, never',
-          'Only for women',
+          'Yes — they rebuild the telomeres to their original length',
+          'No — they have no influence on telomere length at all',
+          'Not completely — but they slow the process down',
+          'Only in childhood, while the body is still growing',
         ],
-        correct: 1,
+        correct: 2,
       },
       {
-        q: 'A young client (25y) asks: "Is the bio-age report even useful for me?"',
+        q: 'Maria’s result for telomere maintenance lies in the middle range. How is this interpreted?',
         options: [
-          'No, only useful at 60+',
-          'Yes — younger is the better time to start. Genetic weaknesses compound over decades; lifestyle adjustments at 25 have a much larger cumulative effect by 60 than starting late',
-          'Only useful for athletes',
-          'No, biological age is fixed',
+          'As impaired — telomere maintenance does not work as well for her',
+          'As normal — no action is needed',
+          'As above average — her telomeres are maintained particularly well',
+          'As inconclusive — the analysis has to be repeated',
         ],
-        correct: 1,
+        correct: 0,
       },
       {
-        q: 'How should you frame the bio-age result for a stressed client with several "red zones"?',
+        q: 'Does a Mediterranean diet help Maria maintain her telomeres?',
         options: [
-          'As inevitable decline',
-          'As targeted opportunities: each red zone is a clear lever — Vit D3, Omega-3, antioxidant intake, sleep, stress reduction. The plan is action-oriented and motivating, not fatalistic',
-          'As a medical emergency',
-          'As untreatable disease',
+          'Yes — it helps everyone maintain their telomeres',
+          'Yes — but only in combination with more Vitamin E',
+          'No — it shortens the telomeres in most people',
+          'No — with her gene variants it has no effect',
         ],
-        correct: 1,
+        correct: 3,
+      },
+      {
+        q: 'In Maria’s report, Vitamin D3, Omega-3, Vitamin E, Resveratrol and Ginkgo are marked with green arrows. What does this mean?',
+        options: [
+          'Her levels of these nutrients are already sufficient',
+          'She should reduce her intake of these nutrients',
+          'She should eat more foods that contain these nutrients',
+          'She needs a blood test for these nutrients first',
+        ],
+        correct: 2,
       },
     ],
     // NovoDaily Lifestyle Demo exists only in German — hidden in EN until translated.
@@ -1366,7 +1473,9 @@ export const COURSES_EN = [
       'Bioavailability of vitamins and minerals',
     ],
     thumbnail: T(15),
-    coverImage: '/thumbnails/supp-sci-cover.jpg',
+    /* No coverImage on purpose: /thumbnails/supp-sci-cover.jpg carries German
+       text. Without it, the video still falls back to the YouTube thumbnail of
+       TIHnA7J6EP4. */
     introQuestionsHeader: 'This training answers:',
     introQuestions: [
       'Why does every person have different micronutrient needs?',

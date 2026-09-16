@@ -1718,12 +1718,12 @@ export const COURSES = [
     ],
     brandNoticeAboveVideos: true,
     videoSegments: [
-      { title: 'Burnout — Individuelle Umgang mit Stress', youtubeId: 'eU5n2iseSdA' },
+      { title: 'Burnout — Individueller Umgang mit Stress', youtubeId: 'eU5n2iseSdA' },
     ],
     postVideoText:
       'Mit dieser Schulung kannst du den Burnout-Bericht fachlich fundiert mit deinen Kunden besprechen. Das folgende Demo-Booklet kannst du als Beispiel-Bericht für deine eigene Beratungspraxis verwenden.',
     /* Themenbezogene Fragen zum Burnout-Beratungsgespräch — Inhalt basiert auf
-       dem Video „Burnout — Individuelle Umgang mit Stress" und dem Burnout-Bericht. */
+       dem Video „Burnout — Individueller Umgang mit Stress" und dem Burnout-Bericht. */
     questions: [
       {
         q: 'Welches Gen ist zentral für die individuelle Stress-Verarbeitung und steht im Fokus der Burnout-Analyse?',
@@ -3174,111 +3174,134 @@ export const CATEGORY_CONTENT = {
   },
 }
 
-/* ============ HOME-SEITE: BONUS-VIDEOSEKTION ============
-   Letzte Sektion auf der Home-Seite — kursvorschau-große YouTube-Tiles.
-   Kein Kurs, keine Zertifizierung — reine Inspirations-Inhalte.
-   Sprach-spezifisch: DE = "Der Weg zum ewigen Leben", EN = Novogenia Tour. */
-const HOME_VIDEO_DE = {
-  category: 'Weitere relevante Inhalte',
-  subtitle: '„Der WEG zum EWIGEN LEBEN?" — Longevity und der Fortschritt der Wissenschaft.',
-  videos: [
-    {
-      youtubeId: 'jHgdDRGy0hA',
-      title: 'Der WEG zum EWIGEN LEBEN?',
-      /* YouTube serves no public thumbnails for this video (unlisted/private)
-         — use a locally generated cover so the tile shows a proper preview. */
-      coverImage: '/thumbnails/ewig-leben-cover.jpg',
-    },
-  ],
-}
-const HOME_VIDEO_EN = {
-  category: 'Further Relevant Content',
-  subtitle: 'See the technology behind the world\'s most advanced personalized products.',
-  videos: [
-    {
-      youtubeId: 'yADG8aygIOI',
-      title: 'Novogenia Tour — See the technology behind the world\'s most advanced personalized products',
-    },
-  ],
-}
-export const HOME_VIDEO_SECTION = HOME_VIDEO_DE          // default for legacy imports
-const HOME_VIDEO_CZ = {
-  category: 'Další relevantní obsah',
-  subtitle: 'Podívej se na technologii za nejpokročilejšími personalizovanými produkty na světě.',
-  videos: [{ youtubeId: 'yADG8aygIOI', title: 'Prohlídka Novogenie — technologie za nejpokročilejšími personalizovanými produkty na světě' }],
-}
-const HOME_VIDEO_FR = {
-  category: 'Autres contenus pertinents',
-  subtitle: 'Découvre la technologie derrière les produits personnalisés les plus avancés au monde.',
-  videos: [{ youtubeId: 'yADG8aygIOI', title: 'Visite de Novogenia — la technologie derrière les produits personnalisés les plus avancés au monde' }],
-}
-const HOME_VIDEO_PT = {
-  category: 'Outros conteúdos relevantes',
-  subtitle: 'Vê a tecnologia por trás dos produtos personalizados mais avançados do mundo.',
-  videos: [{ youtubeId: 'yADG8aygIOI', title: 'Visita à Novogenia — a tecnologia por trás dos produtos personalizados mais avançados do mundo' }],
-}
-// cz/fr/pt: no lip-sync version of the bonus/longevity video yet → hidden (empty videos).
-const HOME_VIDEO_BY_LANG = {
-  de: HOME_VIDEO_DE, en: HOME_VIDEO_EN,
-  cz: { videos: [] }, fr: { videos: [] }, pt: { videos: [] },
-  it: { videos: [] }, nl: { videos: [] }, ro: { videos: [] },
-  es: { videos: [] }, sr: { videos: [] }, ar: { videos: [] },
-}
-/* Fallback auf LEER, nicht auf Englisch. Vorher fiel jede Sprache ohne eigenen
-   Eintrag still auf die englische Bonus-Sektion zurück — it/nl/ro/es/sr/ar
-   zeigten dadurch englische Videos mitten in der übersetzten Oberfläche.
-   Eine neue Sprache zeigt jetzt lieber nichts als das Falsche. */
-export const getHomeVideoSection = (lang = 'de') => HOME_VIDEO_BY_LANG[lang] || { videos: [] }
-void [HOME_VIDEO_CZ, HOME_VIDEO_FR, HOME_VIDEO_PT]   // referenced (ready for lip-sync bonus videos)
+/* ============ HOME-SEITE: STARTSEITEN-VIDEOS ============
+   Drei Videos je Sprache, kein Kurs, keine Zertifizierung:
+     welcome + tour = die zwei Kacheln oben (getHomeTopVideos)
+     longevity      = Bonus-Sektion „Weitere relevante Inhalte" unten (getHomeVideoSection)
 
-/* ============ HOME-SEITE: TOP-WELCOME-VIDEOS ============
-   Zwei nebeneinander stehende Video-Tiles oben auf der Home-Seite.
-   DE: Einleitung NOVO ACADEMY + Firmen-Tour (Dr. Wallerstorfer auf Deutsch).
-   EN: Welcome to Novogenia + Company Tour (Daniel auf Englisch). */
-const HOME_TOP_VIDEOS_DE = [
-  {
-    youtubeId: '71EHqtv3NOA',
-    title: 'Einleitung zur NOVO ACADEMY',
-    sub: 'Wer ist Novogenia und was kann man in diesem Schulungsportal erwarten?',
+   IDs und Texte sind getrennt. Beim Eintragen neuer Lip-Sync-Fassungen wird NUR
+   HOME_VIDEO_IDS angefasst (vorher per oEmbed prüfen: öffentlich/nicht gelistet,
+   einbettbar). null = keine Fassung -> Kachel bzw. Bonus-Sektion ausgeblendet.
+   KEIN Fallback auf EN/DE: eine unvollständige Sprache zeigt lieber nichts als ein
+   Video in der falschen Sprache.
+   Lip-Sync-Quellen: welcome <- EN rDQBNTWt82Y, tour <- EN N9aEz_WAe1I,
+   longevity <- DE jHgdDRGy0hA. Diese Quell-IDs gehören in keine andere Sprache
+   (QA 3 meldet HOME_SOURCE_LEAK). */
+export const HOME_VIDEO_IDS = {
+  de: { welcome: '71EHqtv3NOA', tour: 'CFtFwezScLs', longevity: 'jHgdDRGy0hA' },
+  en: { welcome: 'rDQBNTWt82Y', tour: 'N9aEz_WAe1I', longevity: null },   // longevity = KI-Lip-Sync aus DE (Hinweis kommt automatisch)
+  cz: { welcome: null, tour: null, longevity: null },
+  fr: { welcome: null, tour: null, longevity: null },
+  pt: { welcome: null, tour: null, longevity: null },
+  it: { welcome: null, tour: null, longevity: null },
+  nl: { welcome: null, tour: null, longevity: null },
+  ro: { welcome: null, tour: null, longevity: null },
+  es: { welcome: null, tour: null, longevity: null },
+  sr: { welcome: null, tour: null, longevity: null },
+  ar: { welcome: null, tour: null, longevity: null },
+}
+/* Echte Aufnahmen: de alle drei, en welcome + tour. Alles andere ist HeyGen-Lip-Sync
+   -> KI-Hinweis nach Art. 50 Abs. 4 KI-VO. Default = gekennzeichnet: eine neue
+   Sprache oder ein neuer Slot bekommt automatisch den Hinweis. */
+const HOME_ORIGINALS = { de: ['welcome', 'tour', 'longevity'], en: ['welcome', 'tour'] }
+const isHomeAiDub = (lang, slot) => !(HOME_ORIGINALS[lang] || []).includes(slot)
+
+/* Kacheltexte oben. Übersetzungen: geprüfte Fassungen vom 16.09.2026. */
+const HOME_TOP_TEXT = {
+  de: {
+    welcome: { title: 'Einleitung zur NOVO ACADEMY', sub: 'Wer ist Novogenia und was kann man in diesem Schulungsportal erwarten?' },
+    tour: {
+      title: 'TOUR durch das UNTERNEHMEN',
+      sub: 'Lass dir von Dr. Wallerstorfer zeigen, wie Genanalysen durchgeführt werden, wie personalisierte Nahrungsergänzung und Kosmetik produziert werden kann und wir von Probe und Rohstoffen zu fertigen Produkten kommen.',
+      /* Gestalterisches Cover (Laborfoto ohne Text). Technisch nicht nötig:
+         YouTube liefert für öffentliche/nicht gelistete Videos Thumbnails (geprüft 16.09.2026). */
+      coverImage: '/thumbnails/firmentour-cover.jpg',
+    },
   },
-  {
-    youtubeId: 'CFtFwezScLs',
-    title: 'TOUR durch das UNTERNEHMEN',
-    sub: 'Lass dir von Dr. Wallerstorfer zeigen, wie Genanalysen durchgeführt werden, wie personalisierte Nahrungsergänzung und Kosmetik produziert werden kann und wir von Probe und Rohstoffen zu fertigen Produkten kommen.',
-    coverImage: '/thumbnails/firmentour-cover.jpg',
+  en: {
+    welcome: { title: 'Welcome to NOVO ACADEMY', sub: 'Who is Novogenia and what to expect from this training portal — an introduction to the world of personalized genetics.' },
+    tour: { title: 'TOUR through the COMPANY', sub: 'Daniel Wallerstorfer guides you through Novogenia — see how genetic analyses are performed, how personalized supplements and cosmetics are produced, and how we go from sample and raw materials to finished products.' },
   },
-]
-const HOME_TOP_VIDEOS_EN = [
-  {
-    youtubeId: 'rDQBNTWt82Y',
-    title: 'Welcome to NOVO ACADEMY',
-    sub: 'Who is Novogenia and what to expect from this training portal — an introduction to the world of personalized genetics.',
+  cz: {
+    welcome: { title: 'Vítejte v NOVO ACADEMY', sub: 'Kdo je Novogenia a co můžeš od tohoto vzdělávacího portálu očekávat — úvod do světa personalizované genetiky.' },
+    tour: { title: 'PROHLÍDKA SPOLEČNOSTI', sub: 'Daniel Wallerstorfer tě provede Novogenií — uvidíš, jak probíhají genetické analýzy, jak se vyrábějí personalizované doplňky stravy a kosmetika a jak se ze vzorku a surovin stávají hotové produkty.' },
   },
-  {
-    youtubeId: 'N9aEz_WAe1I',
-    title: 'TOUR through the COMPANY',
-    sub: 'Daniel Wallerstorfer guides you through Novogenia — see how genetic analyses are performed, how personalized supplements and cosmetics are produced, and how we go from sample and raw materials to finished products.',
+  fr: {
+    welcome: { title: 'Bienvenue à NOVO ACADEMY', sub: 'Qui est Novogenia et à quoi t\'attendre sur ce portail de formation — une introduction au monde de la génétique personnalisée.' },
+    tour: { title: 'VISITE de l\'ENTREPRISE', sub: 'Daniel Wallerstorfer te fait visiter Novogenia — découvre comment sont réalisées les analyses génétiques, comment sont produits les compléments et cosmétiques personnalisés, et comment on passe de l\'échantillon et des matières premières aux produits finis.' },
   },
-]
-const HOME_TOP_VIDEOS_CZ = [
-  { youtubeId: 'rDQBNTWt82Y', title: 'Vítejte v NOVO ACADEMY', sub: 'Kdo je Novogenia a co můžeš od tohoto vzdělávacího portálu očekávat — úvod do světa personalizované genetiky.' },
-  { youtubeId: 'N9aEz_WAe1I', title: 'PROHLÍDKA SPOLEČNOSTI', sub: 'Daniel Wallerstorfer tě provede Novogenií — uvidíš, jak probíhají genetické analýzy, jak se vyrábějí personalizované doplňky stravy a kosmetika a jak se ze vzorku a surovin stávají hotové produkty.' },
-]
-const HOME_TOP_VIDEOS_FR = [
-  { youtubeId: 'rDQBNTWt82Y', title: 'Bienvenue à NOVO ACADEMY', sub: 'Qui est Novogenia et à quoi t\'attendre sur ce portail de formation — une introduction au monde de la génétique personnalisée.' },
-  { youtubeId: 'N9aEz_WAe1I', title: 'VISITE de l\'ENTREPRISE', sub: 'Daniel Wallerstorfer te fait visiter Novogenia — découvre comment sont réalisées les analyses génétiques, comment sont produits les compléments et cosmétiques personnalisés, et comment on passe de l\'échantillon et des matières premières aux produits finis.' },
-]
-const HOME_TOP_VIDEOS_PT = [
-  { youtubeId: 'rDQBNTWt82Y', title: 'Bem-vindo à NOVO ACADEMY', sub: 'Quem é a Novogenia e o que esperar deste portal de formação — uma introdução ao mundo da genética personalizada.' },
-  { youtubeId: 'N9aEz_WAe1I', title: 'VISITA à EMPRESA', sub: 'Daniel Wallerstorfer guia-te pela Novogenia — vê como são feitas as análises genéticas, como são produzidos os suplementos e cosméticos personalizados, e como passamos da amostra e matérias-primas aos produtos acabados.' },
-]
-// cz/fr/pt: intro/welcome videos have NO lip-sync version yet → hidden (no English fallback).
-// The translated card texts above (HOME_TOP_VIDEOS_CZ/FR/PT) are kept ready: once the
-// lip-sync intro videos are uploaded, set those entries' youtubeId and point the map back.
-// it/nl/ro/es/sr/ar ebenfalls [] — sonst greift der EN-Fallback und zeigt englische Intro-Karten
-const HOME_TOP_VIDEOS_BY_LANG = { de: HOME_TOP_VIDEOS_DE, en: HOME_TOP_VIDEOS_EN, cz: [], fr: [], pt: [], it: [], nl: [], ro: [], es: [], sr: [], ar: [] }
-export const getHomeTopVideos = (lang = 'de') => HOME_TOP_VIDEOS_BY_LANG[lang] || HOME_TOP_VIDEOS_EN
-void [HOME_TOP_VIDEOS_CZ, HOME_TOP_VIDEOS_FR, HOME_TOP_VIDEOS_PT]   // referenced (ready for lip-sync intros)
+  pt: {
+    welcome: { title: 'Bem-vindo à NOVO ACADEMY', sub: 'Quem é a Novogenia e o que esperar deste portal de formação — uma introdução ao mundo da genética personalizada.' },
+    tour: { title: 'VISITA à EMPRESA', sub: 'Daniel Wallerstorfer guia-te pela Novogenia — vê como são feitas as análises genéticas, como são produzidos os suplementos e cosméticos personalizados, e como passamos da amostra e matérias-primas aos produtos acabados.' },
+  },
+  it: {
+    welcome: { title: 'Benvenuto in NOVO ACADEMY', sub: 'Chi è Novogenia e cosa aspettarti da questo portale di formazione — un\'introduzione al mondo della genetica personalizzata.' },
+    tour: { title: 'TOUR dell\'AZIENDA', sub: 'Daniel Wallerstorfer ti guida all\'interno di Novogenia — scopri come vengono eseguite le analisi genetiche, come vengono prodotti gli integratori e i cosmetici personalizzati e come passiamo dal campione e dalle materie prime ai prodotti finiti.' },
+  },
+  nl: {
+    welcome: { title: 'Welkom bij NOVO ACADEMY', sub: 'Wie is Novogenia en wat kun je van dit opleidingsportaal verwachten — een kennismaking met de wereld van de gepersonaliseerde genetica.' },
+    tour: { title: 'RONDLEIDING door het BEDRIJF', sub: 'Daniel Wallerstorfer leidt je rond bij Novogenia — ontdek hoe genetische analyses worden uitgevoerd, hoe gepersonaliseerde supplementen en cosmetica worden geproduceerd en hoe we van monster en grondstoffen tot eindproducten komen.' },
+  },
+  ro: {
+    welcome: { title: 'Bine ai venit la NOVO ACADEMY', sub: 'Cine este Novogenia și la ce te poți aștepta de la acest portal de instruire — o introducere în lumea geneticii personalizate.' },
+    tour: { title: 'TUR prin COMPANIE', sub: 'Daniel Wallerstorfer te ghidează prin Novogenia — vezi cum se realizează analizele genetice, cum se produc suplimentele și cosmeticele personalizate și cum ajungem de la probă și materii prime la produse finite.' },
+  },
+  es: {
+    welcome: { title: 'Bienvenido a NOVO ACADEMY', sub: 'Quién es Novogenia y qué puedes esperar de este portal de formación — una introducción al mundo de la genética personalizada.' },
+    tour: { title: 'RECORRIDO por la EMPRESA', sub: 'Daniel Wallerstorfer te guía por Novogenia — descubre cómo se realizan los análisis genéticos, cómo se producen los suplementos y cosméticos personalizados y cómo pasamos de la muestra y las materias primas a los productos terminados.' },
+  },
+  sr: {
+    welcome: { title: 'Dobro došli u NOVO ACADEMY', sub: 'Ko je Novogenia i šta možeš da očekuješ od ovog portala za obuku — uvod u svet personalizovane genetike.' },
+    tour: { title: 'OBILAZAK KOMPANIJE', sub: 'Daniel Wallerstorfer te vodi kroz Novogeniju — pogledaj kako se izvode genetske analize, kako se proizvode personalizovani suplementi i kozmetika i kako od uzorka i sirovina dolazimo do gotovih proizvoda.' },
+  },
+  ar: {
+    welcome: { title: 'مرحبًا بك في NOVO ACADEMY', sub: 'من هي Novogenia، وماذا يمكنك أن تتوقع من بوابة التدريب هذه — مقدّمة إلى عالم علم الوراثة الشخصي.' },
+    tour: { title: 'جولة داخل الشركة', sub: 'يأخذك Daniel Wallerstorfer في جولة داخل Novogenia — شاهد كيف تُجرى التحليلات الجينية، وكيف تُنتَج المكملات الغذائية ومستحضرات التجميل المخصّصة، وكيف ننتقل من العيّنة والمواد الخام إلى المنتجات النهائية.' },
+  },
+}
+
+/* Bonus-Sektion. Sichtbar sind nur category (Überschrift) und subtitle — title steht
+   allein im iframe-title-Attribut. subtitle muss daher das Langlebigkeits-Video beschreiben. */
+const HOME_BONUS_TEXT = {
+  de: {
+    category: 'Weitere relevante Inhalte',
+    subtitle: '„Der WEG zum EWIGEN LEBEN?" — Longevity und der Fortschritt der Wissenschaft.',
+    title: 'Der WEG zum EWIGEN LEBEN?',
+    /* Gestalterisches Cover mit DEUTSCHEM Text -> nur DE verwenden. */
+    coverImage: '/thumbnails/ewig-leben-cover.jpg',
+  },
+  en: { category: 'Further Relevant Content', subtitle: '“The PATH to ETERNAL LIFE?” — longevity and the progress of science.', title: 'The PATH to ETERNAL LIFE?' },
+  cz: { category: 'Další relevantní obsah', subtitle: '„CESTA k VĚČNÉMU ŽIVOTU?“ — dlouhověkost a pokrok vědy.', title: 'CESTA k VĚČNÉMU ŽIVOTU?' },
+  fr: { category: 'Autres contenus pertinents', subtitle: '« Le CHEMIN vers la VIE ÉTERNELLE ? » — la longévité et les progrès de la science.', title: 'Le CHEMIN vers la VIE ÉTERNELLE ?' },
+  pt: { category: 'Outros conteúdos relevantes', subtitle: '«O CAMINHO para a VIDA ETERNA?» — a longevidade e o progresso da ciência.', title: 'O CAMINHO para a VIDA ETERNA?' },
+  it: { category: 'Altri contenuti rilevanti', subtitle: '«La STRADA verso la VITA ETERNA?» — la longevità e il progresso della scienza.', title: 'La STRADA verso la VITA ETERNA?' },
+  nl: { category: 'Andere relevante inhoud', subtitle: '“De WEG naar het EEUWIGE LEVEN?” — longevity en de vooruitgang van de wetenschap.', title: 'De WEG naar het EEUWIGE LEVEN?' },
+  ro: { category: 'Alt conținut relevant', subtitle: '„DRUMUL spre VIAȚA VEȘNICĂ?” — longevitatea și progresul științei.', title: 'DRUMUL spre VIAȚA VEȘNICĂ?' },
+  es: { category: 'Otros contenidos relevantes', subtitle: '“¿El CAMINO hacia la VIDA ETERNA?” — la longevidad y el progreso de la ciencia.', title: '¿El CAMINO hacia la VIDA ETERNA?' },
+  sr: { category: 'Dodatni relevantni sadržaji', subtitle: '„PUT do VEČNOG ŽIVOTA?“ — dugovečnost i napredak nauke.', title: 'PUT do VEČNOG ŽIVOTA?' },
+  ar: { category: 'مزيد من المحتوى ذي الصلة', subtitle: '«الطريق إلى الحياة الأبدية؟» — إطالة العمر (Longevity) وتقدّم العلم.', title: 'الطريق إلى الحياة الأبدية؟' },
+}
+
+const TOP_SLOTS = ['welcome', 'tour']
+/* Nur Slots mit gesetzter ID UND Titel. Unbekannte Sprache -> leer (kein EN-Fallback). */
+export const getHomeTopVideos = (lang = 'de') => {
+  const ids = HOME_VIDEO_IDS[lang] || {}
+  const txt = HOME_TOP_TEXT[lang] || {}
+  return TOP_SLOTS
+    .filter(slot => ids[slot] && txt[slot]?.title)
+    .map(slot => ({ ...txt[slot], slot, youtubeId: ids[slot], aiDub: isHomeAiDub(lang, slot) }))
+}
+const NO_BONUS = Object.freeze({ videos: Object.freeze([]) })
+export const getHomeVideoSection = (lang = 'de') => {
+  const id = HOME_VIDEO_IDS[lang]?.longevity
+  const txt = HOME_BONUS_TEXT[lang]
+  if (!id || !txt?.category || !txt?.title) return NO_BONUS
+  return {
+    category: txt.category,
+    subtitle: txt.subtitle,
+    videos: [{ slot: 'longevity', youtubeId: id, title: txt.title, coverImage: txt.coverImage, aiDub: isHomeAiDub(lang, 'longevity') }],
+  }
+}
 
 /* ============ I18N STRINGS ============
    Alle UI-Texte, die nicht aus den Kursdaten kommen. */
@@ -3524,7 +3547,11 @@ export const UI = {
   /* KI-Kennzeichnung nach Art. 50 Abs. 4 KI-VO (VO (EU) 2024/1689), Pflicht seit 02.08.2026.
      Die Sprachfassungen außer de/en sind HeyGen-Lipsync-Dubs: Stimme und Lippenbewegungen
      einer REALEN Person werden KI-erzeugt — das ist ein Deepfake im Sinne von Art. 3 Nr. 60
-     und muss offengelegt werden. de/en sind echte Aufnahmen und werden NICHT gekennzeichnet. */
+     und muss offengelegt werden. de/en sind grundsätzlich echte Aufnahmen und werden
+     pauschal NICHT gekennzeichnet. Ausnahmen (Dubs in de/en) werden pro Eintrag markiert:
+     Startseite über HOME_ORIGINALS/aiDub (en: longevity ist ein Dub aus DE), Kurse über
+     aiDub: true am Kursobjekt (z. B. EN-Burnout/Bioalter, ein deutscher Pharmakogenetik-Dub).
+     Der de-Text wird nur bei solchen Ausnahmen angezeigt. */
   ai_dub_notice:              { de: 'KI-Hinweis: In dieser Sprachfassung wurden Stimme und Lippenbewegungen von Dr. Daniel Wallerstorfer mit künstlicher Intelligenz erzeugt. Die Originalaufnahme und der fachliche Inhalt stammen von ihm.',
                                 en: 'AI disclosure: In this language version, Dr. Daniel Wallerstorfer’s voice and lip movements were generated using artificial intelligence. The original recording and the expert content are his.' },
   ai_dub_badge:               { de: 'KI-synchronisiert',              en: 'AI-dubbed' },
@@ -3676,7 +3703,5 @@ const prefixAssetPaths = (obj) => {
 
 // Mutate all asset-bearing exports in place (one-time pass at module load)
 prefixAssetPaths(COURSES)              // includes COURSES_EN via push
-prefixAssetPaths(HOME_TOP_VIDEOS_DE)
-prefixAssetPaths(HOME_TOP_VIDEOS_EN)
-prefixAssetPaths(HOME_VIDEO_DE)
-prefixAssetPaths(HOME_VIDEO_EN)
+prefixAssetPaths(HOME_TOP_TEXT)
+prefixAssetPaths(HOME_BONUS_TEXT)

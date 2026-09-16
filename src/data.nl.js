@@ -628,152 +628,202 @@ const TXT = {
  },
  "bo-sci-en": {
   "topic": "Wetenschappelijke basis",
-  "description": "Hoe het COMT-gen de individuele stressverwerking vormgeeft — en waarom het burn-outrisico genetisch is.",
-  "longDescription": "In deze training legt dr. Daniel Wallerstorfer het COMT-gen en zijn rol in de dopamineafbraak uit, het Warrior- versus Worrier-fenotype, BDNF en neuroplasticiteit, en hoe het individuele burn-outrisico uit het genetische profiel kan worden afgeleid.",
+  "description": "Waarom dezelfde stress mensen verschillend raakt — en wat het COMT-gen met het burn-outrisico te maken heeft.",
+  "longDescription": "In deze training legt dr. Daniel Wallerstorfer uit waarom zware, aanhoudende stress bij sommige mensen tot een burn-out leidt en bij anderen niet. Je leert naar welke drie genetische eigenschappen de analyse kijkt, hoe het COMT-gen dopamine afbreekt na spannende of stressvolle situaties, waarom ongeveer 15% van de mensen bijzonder stressgevoelig is — en waarom de juiste leefstijl des te belangrijker is naarmate de genen minder gunstig zijn.",
   "bullets": [
-   "COMT — centraal gen voor de dopamineafbraak",
-   "Warrior versus Worrier — twee genotypen, twee stressstrategieën",
-   "BDNF, neuroplasticiteit en veerkracht",
-   "Praktische aanbevelingen op basis van het genetische profiel"
+   "Drie genetische eigenschappen: prestaties onder stress, emotionele veerkracht, impulsiviteit",
+   "COMT — het centrale gen voor de dopamineafbraak",
+   "Dopamineafbraak: waarom 15% bijzonder stressgevoelig is",
+   "Leefstijladviezen op basis van het genetische profiel"
   ],
   "introQuestionsHeader": "Deze training beantwoordt:",
   "introQuestions": [
-   "Welk gen is centraal voor de individuele stressverwerking?",
-   "Wat is het verschil tussen Warrior en Worrier?",
-   "Hoe is het burn-outrisico genetisch?",
-   "Welke concrete leefstijladviezen vloeien voort uit het profiel?"
+   "Welk gen staat centraal bij de individuele stressverwerking?",
+   "Waarom raakt dezelfde stress mensen verschillend — en wat heeft COMT daarmee te maken?",
+   "Hoe beïnvloeden genen het risico op een burn-out?",
+   "Welke leefstijlmaatregelen helpen — en waarom zijn ze bij een ongunstig profiel belangrijker?"
   ],
   "postVideoText": "Met deze wetenschappelijke achtergrond kun je het burn-outrapport met je cliënten op een solide basis bespreken en individuele strategieën voor stressmanagement afleiden.",
   "questions": [
    {
-    "q": "Welk gen is de centrale drijvende kracht achter de individuele stressverwerking in de burn-outanalyse?",
+    "q": "Wat is volgens de training de oorzaak van een burn-out?",
     "options": [
-     "MTHFR",
-     "COMT",
-     "CYP1A2",
-     "FTO"
+     "Eén enkele, korte stressvolle situatie, zoals een examen",
+     "Uitsluitend genetica — leefstijl speelt geen rol",
+     "Zware, aanhoudende stress gedurende een lange periode",
+     "Te veel lichaamsbeweging"
     ],
-    "correct": 1
+    "correct": 2
    },
    {
-    "q": "Wat onderscheidt een \"Warrior\"- van een \"Worrier\"-genotype wat COMT betreft?",
+    "q": "Naar welke genetische eigenschappen kijkt de stressanalyse?",
     "options": [
-     "De Warrior breekt dopamine sneller af — piekprestaties onder acute stress. De Worrier breekt langzamer af — sterke dagelijkse concentratie, kwetsbaarder voor chronische stress",
-     "Geen echt verschil, alleen de opvoeding telt",
-     "De Worrier breekt dopamine sneller af",
-     "Warriors zijn immuun voor elke vorm van stress"
+     "Cafeïnegevoeligheid, slaapduur en tolerantie voor alcohol",
+     "Geheugen, concentratie en reactiesnelheid",
+     "Rusthartslag, bloeddruk en de hoogte van de cortisolspiegel",
+     "Prestaties onder stress, emotionele veerkracht en impulsiviteit"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Welk gen breekt dopamine af zodra een spannende situatie voorbij is?",
+    "options": [
+     "COMT",
+     "MTHFR",
+     "FTO",
+     "ACTN3"
     ],
     "correct": 0
    },
    {
-    "q": "Wat betekent een \"rode zone\" in het burn-outrapport voor het advies?",
+    "q": "Wat gebeurt er bij herhaalde stress als iemands COMT-gen slecht werkt?",
     "options": [
-     "De cliënt heeft al een burn-out",
-     "Het is een technische fout",
-     "De cliënt heeft op dit aspect een ongunstige genetische aanleg — leefstijlmaatregelen zijn bijzonder belangrijk omdat het risico verhoogd is",
-     "De cliënt zou het hele onderwerp moeten vermijden"
-    ],
-    "correct": 2
-   },
-   {
-    "q": "Welke aanbeveling past het best bij een cliënt met een trage COMT-variant (Worrier)?",
-    "options": [
-     "Actief stress opzoeken — dat maakt hem productiever",
-     "Bewuste rustpauzes, meditatie, een goede slaaphygiëne en het vermijden van veel gelijktijdige stressbronnen — omdat het stresssignaal langer in het systeem blijft hangen",
-     "De cafeïne drastisch verhogen om de dopamine op te krikken",
-     "Elke vorm van belasting vermijden, zelfs sport"
+     "Dopamine wordt sneller afgebroken, waardoor de hersenen sneller weer tot rust komen",
+     "De hersenen keren niet terug naar hun basisniveau, waardoor nieuwe stress tot overbelasting leidt",
+     "De hersenen wennen aan stress en reageren bij elke nieuwe episode steeds minder sterk",
+     "Er komt helemaal geen dopamine vrij, waardoor de stress volledig onopgemerkt blijft"
     ],
     "correct": 1
    },
    {
-    "q": "Hoe moet een ongunstige burn-outaanleg in het advies worden gekaderd?",
+    "q": "Wat is een paradoxaal voordeel van een trage dopamineafbraak?",
     "options": [
-     "Als een lot — er is niets aan te doen",
-     "Als een verhoogd risico, niet als een lot — cliënten die hun stressgevoeligheid kennen, kunnen vroeg handelen (slaap, meditatie, beweging, pauzes). De genetische informatie is een hulpmiddel, geen oordeel.",
-     "Als irrelevant — genen beïnvloeden stress niet",
-     "Als een ziekte die onmiddellijke behandeling vereist"
+     "Een rustigere reactie op stressvolle situaties in het dagelijks leven",
+     "Sneller lichamelijk herstel na intensieve training",
+     "Een lager risico op een hartaanval",
+     "Intensere positieve gevoelens en meer nieuwsgierigheid"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Welk percentage van de mensen heeft ongeveer twee goed functionerende kopieën van het COMT-gen?",
+    "options": [
+     "Ongeveer 5%",
+     "Ongeveer 15%",
+     "Ongeveer 40%",
+     "Ongeveer 80%"
+    ],
+    "correct": 2
+   },
+   {
+    "q": "Welk percentage van de mensen heeft ongeveer twee defecte kopieën en is bijzonder stressgevoelig?",
+    "options": [
+     "Ongeveer 5%",
+     "Ongeveer 15%",
+     "Ongeveer 40%",
+     "Ongeveer 60%"
     ],
     "correct": 1
    },
    {
-    "q": "Waarom heeft een trage dopamineafbraak (Worrier) ook alledaagse voordelen?",
+    "q": "Hoe ongunstiger de genetische stresseigenschappen, hoe belangrijker de juiste leefstijl. Wat raadt het rapport aan?",
     "options": [
-     "Het maakt hen immuun voor elke stress",
-     "Het zorgt voor een constant hoge stressbestendigheid",
-     "Dopamine blijft langer actief — deze mensen ervaren opwinding, vreugde en beloning intenser; ze zijn nieuwsgierig en onderzoekend. Het nadeel komt pas naar voren onder chronische stress, wanneer het lichaam moeite heeft om weer tot rust te komen.",
-     "Het heeft geen voordelen, alleen nadelen"
+     "Meditatie, een stressarme leefstijl, voeding en beweging",
+     "Meer cafeïne om alert te blijven en onder druk te presteren",
+     "Alle sport vermijden, zodat het lichaam niet extra wordt belast",
+     "Uitsluitend medicatie, omdat genetica niet te compenseren is"
     ],
-    "correct": 2
+    "correct": 0
+   },
+   {
+    "q": "Waarvoor zijn mensen met een slecht functionerend COMT-gen volgens de training ook vatbaarder?",
+    "options": [
+     "Cafeïneverslaving",
+     "Slaapstoornissen",
+     "Trek in zoetigheid",
+     "Gokken"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Waar wijst de rode zone bij een stresseigenschap in het rapport op?",
+    "options": [
+     "Zeer gunstige genetica — er is geen actie nodig",
+     "Een ongunstige aanleg — een hoger risico op een burn-out",
+     "De persoon heeft al een burn-out en heeft behandeling nodig",
+     "Een standaardadvies dat voor iedereen geldt"
+    ],
+    "correct": 1
    }
   ]
  },
  "bo-report-en": {
   "topic": "Adviestraining",
   "description": "Loop het burn-outrapport stap voor stap met je cliënt door.",
-  "longDescription": "In deze adviestraining legt dr. Daniel Wallerstorfer uit hoe je het genetische burn-outrapport met je cliënten doorloopt en individuele strategieën voor stressmanagement afleidt.",
+  "longDescription": "In deze adviestraining laat dr. Daniel Wallerstorfer aan de hand van voorbeeldcliënt Maria zien hoe je het burn-outgedeelte van het rapport leest: het COMT-gen, de drie stresseigenschappen op de schaal van rood via het midden tot groen, en waarom leefstijl belangrijk is voor cliënten in de rode zone en in het midden.",
   "bullets": [
    "Loop het burn-outrapport gestructureerd door",
    "Leg de genetische stressaanleg helder uit",
-   "Leid individuele leefstijladviezen af",
-   "Herken waarschuwingssignalen vroegtijdig"
+   "Lees de drie stresseigenschappen af op de schaal rood–midden–groen",
+   "Leg uit waarom leefstijl telt in de rode zone en in het midden"
   ],
   "introQuestionsHeader": "In deze training leer je:",
   "introQuestions": [
-   "Hoe het burn-outrapport is opgebouwd",
+   "Hoe het burn-outgedeelte van het rapport is opgebouwd",
    "Hoe je de individuele stressaanleg helder uitlegt",
-   "Hoe je concrete leefstijladviezen afleidt"
+   "Wat het resultaat betekent voor de leefstijl van je cliënt"
   ],
-  "postVideoText": "Met deze training kun je het burn-outrapport op een solide basis met je cliënten bespreken. Het demoboekje hieronder kan als voorbeeldrapport dienen voor je eigen adviespraktijk.",
+  "postVideoText": "Met deze training kun je het burn-outrapport op een solide basis met je cliënten bespreken.",
   "questions": [
    {
-    "q": "Een cliënt vertoont een trage COMT-variant (Worrier). Wat is het centrale onderdeel van het advies?",
+    "q": "Welk gen staat centraal in het burn-outgedeelte, en waarop heeft het invloed?",
     "options": [
-     "Er is geen bijzonder advies nodig",
-     "Stresssignalen blijven langer in het systeem — raad bewuste herstelroutines, voorrang voor slaap, meditatie/ademhaling en het vermijden van meerdere gelijktijdige stressoren aan. De genetische informatie is een hulpmiddel om het herstel actief te plannen, niet om de cliënt te bestempelen",
-     "Vertel de cliënt dat hij een burn-out zal krijgen",
-     "Beveel hoge doses cafeïne aan"
+     "CYP1A2 — hoe snel cafeïne in de lever wordt afgebroken",
+     "FTO — de eetlustregulatie en het verzadigingsgevoel",
+     "COMT — de balans van bepaalde neurotransmitters in de hersenen",
+     "MTHFR — hoe het lichaam folaat activeert"
+    ],
+    "correct": 2
+   },
+   {
+    "q": "Welke drie eigenschappen toont het burn-outgedeelte van het rapport?",
+    "options": [
+     "Prestaties onder stress, weerstand tegen negatieve gevoelens en impulsiviteit",
+     "Slaapkwaliteit, gevoeligheid voor cafeïne en de cortisolreactie op stress",
+     "Concentratie, geheugen en motivatie",
+     "Bloeddruk, hartslag en ademfrequentie"
+    ],
+    "correct": 0
+   },
+   {
+    "q": "Maria heeft één functionerende en één defecte kopie van het COMT-gen. Hoe ziet haar resultaat eruit?",
+    "options": [
+     "Alle drie de eigenschappen in de rode zone — ze is zeer vatbaar voor een burn-out",
+     "Alle drie de eigenschappen in de groene zone — een burn-out is voor haar geen reden tot zorg",
+     "Prestaties onder stress in de rode zone, de andere twee eigenschappen in de groene zone",
+     "Alle drie de eigenschappen in het midden — een matig goede stressbestendigheid"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Mensen met een burn-out combineren vaak de verkeerde leefstijl met hun genetica. Waar liggen hun resultaten meestal, en wat moeten ze doen?",
+    "options": [
+     "In de groene zone — ze hoeven alleen hun werkdruk te verlagen",
+     "Meestal in de rode zone — ze moeten zo leven dat ze stress vermijden",
+     "In het midden — hun leefstijl heeft weinig invloed",
+     "Meestal in de rode zone — een andere leefstijl maakt geen verschil meer"
     ],
     "correct": 1
    },
    {
-    "q": "Een Worrier-cliënt zegt dat ze van haar gedetailleerde werk geniet en zich productief voelt — moet ze veranderen?",
+    "q": "De resultaten van Maria liggen voor alle drie de eigenschappen in het midden. Is haar leefstijl van belang?",
     "options": [
-     "Ja, ze moet haar persoonlijkheid veranderen",
-     "Nee — de trage COMT-variant brengt ook voordelen met zich mee (hoge concentratie, intense beloningsbeleving, nieuwsgierigheid). Het advies is gericht op herstel, niet op de persoonlijkheid: behoud de sterke punten, maar plan herstel om je tegen chronische stress te beschermen",
-     "Haar baan opzeggen",
-     "Onmiddellijk medicatie innemen"
+     "Ja — stress vermijden via haar leefstijl is ook voor haar belangrijk",
+     "Nee — alleen cliënten in de rode zone moeten hun leefstijl aanpassen",
+     "Nee — een resultaat in het midden heeft geen praktische betekenis",
+     "Pas zodra ze de eerste tekenen van een burn-out vertoont"
     ],
-    "correct": 1
+    "correct": 0
    },
    {
-    "q": "Wat betekent een \"rode zone\" in het burn-outrapport voor het adviesgesprek?",
+    "q": "Wat betekent het als een cliënt voor alle drie de eigenschappen in de groene zone ligt?",
     "options": [
-     "De cliënt heeft al een burn-out",
-     "De cliënt heeft op dit aspect een ongunstige genetische aanleg — leefstijlmaatregelen zijn bijzonder belangrijk. Het is een waarschuwing, geen diagnose",
-     "Labfout",
-     "De cliënt zou alle onderwerpen moeten vermijden"
+     "Een burn-out is voor deze cliënt onmogelijk, ongeacht de leefstijl",
+     "De cliënt is bijzonder vatbaar voor een burn-out",
+     "Een burn-out vormt voor deze cliënt niet zo'n groot gevaar",
+     "De analyse kon niet worden beoordeeld"
     ],
-    "correct": 1
-   },
-   {
-    "q": "Een cliënt van het Warrior-type zegt dat hij onder druk floreert — moet hij zich zorgen maken over een burn-out?",
-    "options": [
-     "Nee, Warriors zijn immuun",
-     "Minder acuut risico dan een Worrier, maar herstel blijft belangrijk. Een gevoeld gebrek aan stress kan onderprikkeling in rustige fasen maskeren. Raad structuur voor de dagelijkse concentratie en voldoende slaap aan",
-     "Ja, stap over op een baan met weinig stress",
-     "Verhoog de stress zoveel mogelijk"
-    ],
-    "correct": 1
-   },
-   {
-    "q": "Hoe kader je het volledige burn-outrapport voor de cliënt?",
-    "options": [
-     "Als een oordeel — hij zal een burn-out krijgen",
-     "Als een hulpmiddel: het rapport onthult het stressprofiel van de cliënt zodat herstel en leefstijl bewust kunnen worden gepland. Het is geen oordeel en geen diagnose",
-     "Als irrelevant",
-     "Als een medische pathologie die onmiddellijke behandeling vereist"
-    ],
-    "correct": 1
+    "correct": 2
    }
   ]
  },
@@ -791,80 +841,120 @@ const TXT = {
  },
  "ba-sci-en": {
   "topic": "Wetenschappelijke basis",
-  "description": "Hoe biologische leeftijd genetisch bepaald wordt en beïnvloed wordt door leefstijl.",
-  "longDescription": "Deze training legt de wetenschappelijke basis uit achter de bepaling van de biologische leeftijd. Je leert welke genen de telomeerlengte en celveroudering beïnvloeden, hoe biologische leeftijd verschilt van chronologische leeftijd, en welke leefstijlfactoren de biologische leeftijd meetbaar kunnen veranderen.",
+  "description": "Waarom telomeren korter worden, hoe het telomerasegen de biologische leeftijd beïnvloedt — en welke voedingsstoffen kunnen helpen.",
+  "longDescription": "Deze training legt de wetenschappelijke basis van de analyse van de biologische leeftijd uit. Je leert waarom telomeren — de beschermende uiteinden van onze chromosomen — bij elke celdeling korter worden, wat er met een cel gebeurt zodra ze zijn opgebruikt, hoe het telomerasegen dit proces beïnvloedt, en welke voedingsstoffen het onderhoud van de telomeren kunnen ondersteunen wanneer de genen minder goed werken.",
   "bullets": [
-   "Telomeren en celveroudering — basis",
-   "Chronologische versus biologische leeftijd",
-   "Genetische factoren van veroudering (TERT, BICD1 & Co.)",
-   "Anti-agingstrategieën met meetbaar effect"
+   "Telomeren en celveroudering — de basis",
+   "Senescentie: wanneer cellen in slaapstand gaan",
+   "Genetische factoren van veroudering: het telomerasegen",
+   "Ondersteunende voedingsstoffen en het mediterrane dieet, dat niet bij elk genotype werkt"
   ],
   "introQuestionsHeader": "Deze training beantwoordt:",
   "introQuestions": [
-   "Wat is het verschil tussen chronologische en biologische leeftijd?",
-   "Hoe worden telomeren gemeten en wat vertellen ze ons?",
-   "Welke genen beïnvloeden celveroudering?",
-   "Welke leefstijlmaatregelen veranderen de biologische leeftijd aantoonbaar?"
+   "Wat zijn telomeren en waarom worden ze bij elke celdeling korter?",
+   "Wat gebeurt er met een cel zodra haar telomeren zijn opgebruikt?",
+   "Wat doet het telomerasegen?",
+   "Welke voedingsstoffen ondersteunen het onderhoud van de telomeren — en waarom werkt het mediterrane dieet niet bij iedereen?"
   ],
   "postVideoText": "Met deze wetenschappelijke basis kun je de analyse van de biologische leeftijd op een solide fundament met je cliënten bespreken.",
   "questions": [
    {
-    "q": "Wat is het verschil tussen chronologische en biologische leeftijd?",
+    "q": "Wat zijn telomeren?",
     "options": [
-     "Geen verschil — ze zijn identiek",
-     "Chronologische leeftijd is de tijd sinds de geboorte; biologische leeftijd beschrijft de werkelijke conditie van de cellen — beïnvloed door leefstijl en genetica",
-     "Biologische leeftijd is altijd hoger dan chronologische leeftijd",
-     "Chronologische leeftijd wordt in het lab gemeten, biologische leeftijd wordt geschat"
+     "Genen aan het begin van elk chromosoom die de celdeling sturen",
+     "Eiwitten die beschadigd DNA herstellen",
+     "Structuren in de cel die energie produceren",
+     "Beschermende chromosoomuiteinden die zelf geen genen bevatten"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Wat gebeurt er bij elke celdeling met de telomeren?",
+    "options": [
+     "Ze worden elke keer iets langer",
+     "Er breekt een klein stukje af en ze worden korter",
+     "Ze worden in de nieuwe cel volledig opnieuw opgebouwd",
+     "Ze blijven precies even lang"
     ],
     "correct": 1
    },
    {
-    "q": "Welke cellulaire structuren worden bij elke celdeling korter en zijn een belangrijke indicator van biologische leeftijd?",
+    "q": "Na ongeveer hoeveel celdelingen zijn de telomeren opgebruikt?",
     "options": [
-     "Mitochondriën",
-     "Ribosomen",
-     "Telomeren",
-     "Celmembranen"
+     "Ongeveer 5 tot 10",
+     "Ongeveer 20 tot 30",
+     "Ongeveer 50 tot 70",
+     "Ongeveer 500 tot 700"
     ],
     "correct": 2
    },
    {
-    "q": "Wat is de rol van het enzym telomerase?",
+    "q": "Wat gebeurt er met een cel waarvan de telomeren zijn opgebruikt?",
     "options": [
-     "Het breekt cellen af die verouderd zijn",
-     "Het kan telomeren herstellen en verlengen — waardoor de verkorting van telomeren wordt vertraagd",
-     "Het produceert vrije radicalen",
-     "Het transporteert zuurstof in het bloed"
+     "Ze gaat in slaapstand (senescentie) en doet haar werk niet meer",
+     "Ze blijft zich delen, maar in een steeds trager tempo",
+     "Ze verandert weer in een jonge stamcel",
+     "Ze wordt meteen door het lichaam afgebroken en verwijderd"
+    ],
+    "correct": 0
+   },
+   {
+    "q": "Welk gen helpt de telomeren in stand te houden?",
+    "options": [
+     "MTHFR",
+     "COMT",
+     "Telomerase",
+     "FTO"
+    ],
+    "correct": 2
+   },
+   {
+    "q": "Welke voedingsstoffen kunnen het onderhoud van de telomeren ondersteunen wanneer het beschermende gen minder goed werkt?",
+    "options": [
+     "Vitamine C, Zink, Seleen, IJzer en Magnesium",
+     "Vitamine D3, Omega-3, Vitamine E, Resveratrol en Ginkgo",
+     "Vitamine B12, Foliumzuur, IJzer, Jodium en Calcium",
+     "Cafeïne, Taurine, Creatine, L-Carnitine en Groene thee"
     ],
     "correct": 1
    },
    {
-    "q": "Een cliënt heeft een genetisch zwak telomerase (\"rode zone\"). Beste adviesaanbeveling?",
+    "q": "Heeft een mediterraan dieet bij iedereen hetzelfde effect op de telomeren?",
     "options": [
-     "Negeer de aanleg — telomeren kun je niet beïnvloeden",
-     "Compenseer de genetische zwakte met leefstijl: antioxidantrijke voeding, gerichte voedingsstoffen (D3, Omega-3, Resveratrol), matige regelmatige beweging, goede slaap en stressvermindering",
-     "Stop volledig met bewegen — dat veroorzaakt oxidatieve stress",
-     "Ga onmiddellijk naar een arts — de variant is pathologisch"
+     "Ja — het houdt de telomeren bij iedereen langer",
+     "Nee — het verkort de telomeren bij de meeste mensen",
+     "Het effect op de telomeren is nooit onderzocht",
+     "Nee — het werkt alleen bij een specifieke genvariant"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Hoe groot kan het verschil in biologische leeftijd zijn tussen mensen met twee defecte en mensen met twee functionerende kopieën van het telomerasegen?",
+    "options": [
+     "Tot 20 jaar",
+     "Hooguit 1 tot 2 jaar",
+     "Hooguit 5 jaar",
+     "Er is geen meetbaar verschil"
+    ],
+    "correct": 0
+   },
+   {
+    "q": "Welke rol spelen vrije radicalen bij veroudering?",
+    "options": [
+     "Ze beschermen de uiteinden van de chromosomen tegen afbreken tijdens de celdeling",
+     "Ze beschadigen voortdurend cellen; antioxidanten helpen daartegen",
+     "Ze spelen alleen een rol bij mensen ouder dan 70 jaar",
+     "Ze herstellen beschadigde cellen tijdens de slaap"
     ],
     "correct": 1
    },
    {
-    "q": "Wat toonde onderzoek aan over het mediterrane dieet en telomeerlengte?",
+    "q": "Wat is de juiste strategie voor een cliënt met een defect in het telomerasegen?",
     "options": [
-     "Het verlengt bij iedereen meetbaar de telomeren",
-     "Het werkt alleen bij dragers van een specifiek genotype — bij anderen is er geen telomeereffect. Een duidelijk voorbeeld dat hetzelfde leefstijladvies niet voor iedereen hetzelfde werkt",
-     "Het verkort de telomeren — moet vermeden worden",
-     "Het heeft bij niemand een meetbaar effect"
-    ],
-    "correct": 1
-   },
-   {
-    "q": "Hoe moet een ongunstige anti-agingaanleg in het adviesgesprek worden geformuleerd?",
-    "options": [
-     "Als onveranderlijk lot — de cliënt zal vroegtijdig verouderen",
-     "Als irrelevant — genen doen er niet toe voor veroudering",
-     "Als verhoogd risico, niet als lot: cliënten die hun genetische zwakke plekken kennen, kunnen antioxidanten, slaap, beweging en stressvermindering bewuster toepassen — de effecten stapelen zich op over de jaren",
-     "Als een ziekte die onmiddellijke behandeling vereist"
+     "Niets doen — telomeren kun je sowieso niet beïnvloeden",
+     "Meer bewegen — voeding maakt voor de telomeren helemaal geen verschil",
+     "Meer ondersteunende voedingsstoffen innemen om telomeerverlies te vertragen",
+     "Overstappen op een mediterraan dieet — dat werkt immers bij iedereen"
     ],
     "correct": 2
    }
@@ -873,70 +963,80 @@ const TXT = {
  "ba-report-en": {
   "topic": "Adviestraining",
   "description": "Loop het rapport over de biologische leeftijd door met je cliënt.",
-  "longDescription": "In deze adviestraining legt Dr. Daniel Wallerstorfer uit hoe je het rapport over de genetische biologische leeftijd en het verouderingsproces met je cliënten doorloopt.",
+  "longDescription": "In deze adviestraining legt dr. Daniel Wallerstorfer het verouderingsproces in begrijpelijke taal uit — van chromosomen en telomeren tot cellen in slaapstand — en laat hij aan de hand van voorbeeldcliënt Maria zien hoe je het telomeerresultaat, de bevinding over het mediterrane dieet en de aanbevelingen voor voedingsstoffen in het rapport leest.",
   "bullets": [
    "Loop het rapport over de biologische leeftijd gestructureerd door",
-   "Verwoord het verouderingsproces in genetische termen",
-   "Leid concrete anti-agingaanbevelingen af",
-   "Hoe leefstijl de biologische leeftijd beïnvloedt"
+   "Leg telomeren en het verouderingsproces in begrijpelijke taal uit",
+   "Lees het telomeerresultaat af aan de hand van het voorbeeld van Maria",
+   "Aanbevelingen voor voedingsstoffen en de bevinding over het mediterrane dieet"
   ],
   "introQuestionsHeader": "In deze training leer je:",
   "introQuestions": [
    "Hoe het rapport over de biologische leeftijd is opgebouwd",
    "Hoe je het verouderingsproces duidelijk uitlegt",
-   "Welke concrete leefstijlaanbevelingen kunnen worden afgeleid"
+   "Welke aanbevelingen voor voedingsstoffen uit het resultaat volgen"
   ],
-  "postVideoText": "Met deze training kun je het rapport over de biologische leeftijd op een solide fundament met je cliënten bespreken. Het demoboekje hieronder kan als voorbeeldrapport dienen voor je eigen adviespraktijk.",
+  "postVideoText": "Met deze training kun je het rapport over de biologische leeftijd op een solide fundament met je cliënten bespreken.",
   "questions": [
    {
-    "q": "Hoe leg je biologische versus chronologische leeftijd in begrijpelijke taal uit aan de cliënt?",
+    "q": "De training vergelijkt telomeren met de plastic hulsjes aan de uiteinden van schoenveters. Wat maakt deze vergelijking duidelijk?",
     "options": [
-     "Ze zijn identiek",
-     "\"Chronologische leeftijd is het aantal jaren sinds je geboren bent. Biologische leeftijd beschrijft hoe oud je cellen werkelijk zijn — twee mensen van dezelfde leeftijd kunnen biologisch 10-20 jaar van elkaar verschillen, afhankelijk van genen en leefstijl\"",
-     "Biologische leeftijd is gewoon een marketingterm",
-     "Het is hetzelfde als IQ"
+     "Ze houden de twee helften van het chromosoom bij elkaar",
+     "Ze dragen geen genen en beschermen alleen het chromosoom",
+     "Ze dragen de belangrijkste genen van het chromosoom",
+     "Ze groeien na elke celdeling weer aan"
     ],
     "correct": 1
    },
    {
-    "q": "Een cliënt heeft een zwak telomerase (\"rode zone\"). Wat is het praktische advies?",
+    "q": "Waarom gaat een cel na ongeveer 50 tot 70 delingen in slaapstand?",
     "options": [
-     "Er is niets aan te doen",
-     "Versterk de bescherming van buitenaf: antioxidantrijke voeding (Vitamine C/E, polyfenolen, selenium), gerichte voedingsstoffen (Omega-3, D3, Resveratrol), matige regelmatige beweging (niet extreem), 7-9 uur slaap, stressvermindering. Effecten stapelen zich op over de jaren",
-     "Neem hooggedoseerde chemotherapie",
-     "Eet alleen vlees"
+     "Ze heeft haar voedingsstofreserves opgebruikt en moet herstellen",
+     "Het immuunsysteem heeft haar als beschadigd gemarkeerd en schakelt haar uit",
+     "Ze heeft haar maximale grootte bereikt en kan zich niet meer delen",
+     "Haar telomeren zijn opgebruikt en er beginnen genen af te breken"
     ],
-    "correct": 1
+    "correct": 3
    },
    {
-    "q": "Een cliënt vraagt: \"Helpt het mediterrane dieet me om biologisch jonger te worden?\"",
+    "q": "Kunnen de genen die de telomeren in stand houden het telomeerverlies ongedaan maken?",
     "options": [
-     "Ja, altijd",
-     "Het hangt af van de genetica: studies tonen aan dat het mediterrane dieet de telomeren alleen meetbaar verlengt bij dragers van een specifieke variant. Bij anderen is het effect zwakker. Het rapport laat zien of deze cliënt tot de respondergroep behoort",
-     "Nee, nooit",
-     "Alleen bij vrouwen"
+     "Ja — ze bouwen de telomeren weer op tot hun oorspronkelijke lengte",
+     "Nee — ze hebben helemaal geen invloed op de telomeerlengte",
+     "Niet volledig — maar ze vertragen het proces",
+     "Alleen in de kindertijd, zolang het lichaam nog groeit"
     ],
-    "correct": 1
+    "correct": 2
    },
    {
-    "q": "Een jonge cliënt (25 j.) vraagt: \"Is het rapport over de biologische leeftijd eigenlijk wel nuttig voor mij?\"",
+    "q": "Het resultaat van Maria voor het onderhoud van de telomeren ligt in het middengebied. Hoe wordt dat geïnterpreteerd?",
     "options": [
-     "Nee, pas nuttig vanaf 60+",
-     "Ja — jonger is het betere moment om te beginnen. Genetische zwaktes stapelen zich op over decennia; leefstijlaanpassingen op je 25e hebben tegen je 60e een veel groter cumulatief effect dan wanneer je laat begint",
-     "Alleen nuttig voor sporters",
-     "Nee, biologische leeftijd ligt vast"
+     "Als verminderd — het onderhoud van de telomeren werkt bij haar niet zo goed",
+     "Als normaal — er is geen actie nodig",
+     "Als bovengemiddeld — haar telomeren worden bijzonder goed in stand gehouden",
+     "Als onduidelijk — de analyse moet worden herhaald"
     ],
-    "correct": 1
+    "correct": 0
    },
    {
-    "q": "Hoe moet je het resultaat van de biologische leeftijd formuleren voor een gestreste cliënt met meerdere \"rode zones\"?",
+    "q": "Helpt een mediterraan dieet Maria om haar telomeren in stand te houden?",
     "options": [
-     "Als onvermijdelijke achteruitgang",
-     "Als gerichte kansen: elke rode zone is een duidelijke hefboom — Vit D3, Omega-3, inname van antioxidanten, slaap, stressvermindering. Het plan is actiegericht en motiverend, niet fatalistisch",
-     "Als een medisch noodgeval",
-     "Als onbehandelbare ziekte"
+     "Ja — het helpt iedereen om de telomeren in stand te houden",
+     "Ja — maar alleen in combinatie met meer Vitamine E",
+     "Nee — het verkort de telomeren bij de meeste mensen",
+     "Nee — bij haar genvarianten heeft het geen effect"
     ],
-    "correct": 1
+    "correct": 3
+   },
+   {
+    "q": "In het rapport van Maria zijn Vitamine D3, Omega-3, Vitamine E, Resveratrol en Ginkgo gemarkeerd met groene pijlen. Wat betekent dat?",
+    "options": [
+     "Haar waarden voor deze voedingsstoffen zijn al voldoende",
+     "Ze moet haar inname van deze voedingsstoffen verminderen",
+     "Ze moet meer voedingsmiddelen met deze voedingsstoffen eten",
+     "Ze heeft eerst een bloedtest voor deze voedingsstoffen nodig"
+    ],
+    "correct": 2
    }
   ]
  },
@@ -1560,6 +1660,11 @@ const FAQTX = {
    "Seleen"
   ]
  },
+ "bo-report-en": {
+  "videoSegmentTitles": [
+   "Burn-out — individuele omgang met stress"
+  ]
+ },
  "bo-faq-en": {
   "faqGroups": [
    {
@@ -1567,15 +1672,15 @@ const FAQTX = {
     "items": [
      {
       "q": "Wat is het COMT-gen en waarom is het belangrijk?",
-      "a": "COMT (catechol-O-methyltransferase) breekt dopamine, adrenaline en noradrenaline af in de prefrontale cortex. Een veelvoorkomende variant (Val158Met) bepaalt hoe snel die afbraak verloopt — met een factor 3-4 verschil tussen de snelle en de trage variant. Dat regelt hoe lang een stressignaal in het systeem blijft."
+      "a": "COMT (catechol-O-methyltransferase) breekt de signaalstof dopamine af zodra een spannende of stressvolle situatie voorbij is, zodat de hersenen kunnen terugkeren naar hun basisniveau. Als het gen slecht werkt, wordt dopamine veel langzamer afgebroken en blijven de hersenen langer op scherp staan. Studies beschrijven een veelvoorkomende variant (Val158Met) met een duidelijk verschillende enzymactiviteit tussen de snelle en de trage vorm."
      },
      {
       "q": "Wat is het verschil tussen Warrior en Worrier?",
-      "a": "Warrior (Val/Val): dopamine wordt snel afgebroken — beter bestand tegen acute stress, presteert onder druk. Worrier (Met/Met): dopamine wordt langzaam afgebroken — sterk in concentratie in het dagelijks leven, maar kwetsbaar voor chronische stress. Ongeveer 50% is een mengtype."
+      "a": "De termen worden vaak gebruikt voor de twee uitersten van de COMT-activiteit. “Warrior”: dopamine wordt snel afgebroken — dat gaat meestal samen met betere prestaties onder stress. “Worrier”: dopamine wordt langzaam afgebroken — opwinding en positieve gevoelens worden intenser beleefd, maar de hersenen keren moeilijk terug naar hun basisniveau wanneer stress steeds terugkomt. Ongeveer 40% van de mensen heeft twee goed functionerende kopieën van het gen, ongeveer 15% heeft twee defecte kopieën en de overige ~45% heeft van elk één."
      },
      {
       "q": "En hoe zit het met BDNF?",
-      "a": "BDNF (Brain-Derived Neurotrophic Factor) ondersteunt de groei en de veerkracht van zenuwcellen. De Met-variant (Val66Met) vermindert de afgifte van BDNF; dragers herstellen langzamer van stress en zijn bij chronische belasting kwetsbaarder voor depressie. BDNF kun je verhogen door beweging, slaap, leren en intermittent fasting."
+      "a": "BDNF (brain-derived neurotrophic factor) ondersteunt de groei en het aanpassingsvermogen van zenuwcellen. De Met-variant (Val66Met) wordt in verband gebracht met een lagere activiteitsafhankelijke afgifte van BDNF; sommige studies koppelen deze variant ook aan een grotere kwetsbaarheid bij chronische stress, maar het bewijs is niet eenduidig. Regelmatige beweging gaat samen met hogere BDNF-waarden."
      }
     ]
    },
@@ -1584,15 +1689,15 @@ const FAQTX = {
     "items": [
      {
       "q": "Ik ben een Worrier — ben ik gedoemd om een burn-out te krijgen?",
-      "a": "Nee. De trage COMT-variant verhoogt je gevoeligheid, niet je lot. Als je de aanleg kent, kun je vroeg handelen: duidelijke herstelroutines, slaap als prioriteit, ademhalingsoefeningen of meditatie, en niet veel stressfactoren tegelijk opstapelen. Over de jaren voorkomt dat dat je systeem in chronische overbelasting terechtkomt."
+      "a": "Nee. Een minder gunstig COMT-profiel verhoogt de gevoeligheid voor stress, maar het is geen lot. Hoe minder gunstig de genen, hoe belangrijker de juiste leefstijl: meditatie, een stressarme manier van leven, voeding en beweging. Als je je aanleg kent, kun je vroeg handelen, nog voordat de stress zich opstapelt."
      },
      {
       "q": "Ik ben een Warrior — moet ik me dan toch zorgen maken over burn-out?",
-      "a": "Je acute risico is lager, maar herstel blijft belangrijk. Een gevoel van “stressvrij” kan in rustige periodes onderprikkeling maskeren. Plan structuur in voor concentratiefases en bescherm je slaap."
+      "a": "Je genetische risico is lager, maar niet nul: zware, aanhoudende stress kan na verloop van tijd toch zijn tol eisen. Herstelfases en een evenwichtige leefstijl blijven belangrijk."
      },
      {
       "q": "Wat helpt iedereen, ongeacht het genotype?",
-      "a": "Slaap (7-9 uur), regelmatige beweging (vooral duurtraining — die verhoogt BDNF en reguleert cortisol), sociaal contact, zingeving in je werk en het vermijden van misbruik van stimulerende middelen (alcohol, overmatig cafeïne)."
+      "a": "Voldoende slaap, regelmatige beweging, meditatie of andere ontspanningstechnieken, een evenwichtige voeding, sociaal contact en matig gebruik van genotmiddelen zoals alcohol en cafeïne."
      }
     ]
    },
@@ -1601,14 +1706,19 @@ const FAQTX = {
     "items": [
      {
       "q": "Er staat een “rode zone” in mijn rapport. Moet ik me zorgen maken?",
-      "a": "Nee. Een rode zone markeert een verhoogd risico op één specifiek gebied, geen diagnose. Het is een uitnodiging om vroeg te handelen — precies het tegenovergestelde van een fatalistisch oordeel."
+      "a": "Nee. Een rode zone markeert een ongunstige genetische aanleg op één specifiek gebied — een hoger risico, geen diagnose. Het is een uitnodiging om vroeg te handelen — precies het tegenovergestelde van een fatalistisch oordeel."
      },
      {
       "q": "Waar vind ik concrete aanbevelingen voor mijn genotype?",
-      "a": "In het burn-outrapport — dat bevat gedetailleerde aanbevelingen over meditatie, voeding, beweging, slaaphygiëne en copingstrategieën, afgestemd op je individuele COMT-profiel en de overige beoordeelde factoren."
+      "a": "In het burn-outrapport — dat bevat aanbevelingen over meditatie, een stressarme leefstijl, voeding en beweging, afgestemd op je genetische stressprofiel."
      }
     ]
    }
+  ]
+ },
+ "ba-report-en": {
+  "videoSegmentTitles": [
+   "Verouderingsproces"
   ]
  },
  "ba-faq-en": {

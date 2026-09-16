@@ -10,7 +10,7 @@ const PdfThumb = (props) => (
   <Suspense fallback={null}><PdfThumbLazy {...props} /></Suspense>
 )
 import SupportBotLauncher from './SupportBotLauncher.jsx'
-import { COURSES, isCertifiable, isCertified, buildInitialState, groupForDisplay, SAMPLE_COURSE_LIST, CATEGORY_CONTENT, HOME_VIDEO_SECTION, getHomeVideoSection, getHomeTopVideos, getContentTags, courseKey, t as tBase, getSampleCourseList, assetUrl, bestDisplayName } from './data.js'
+import { COURSES, isCertifiable, isCertified, buildInitialState, groupForDisplay, SAMPLE_COURSE_LIST, CATEGORY_CONTENT, getHomeVideoSection, getHomeTopVideos, getContentTags, courseKey, t as tBase, getSampleCourseList, assetUrl, bestDisplayName } from './data.js'
 import {
   getCurrentSession, onAuthChange, signUpWithEmail, signInWithEmail,
   signInWithGoogle, signOut, loadProgress, saveProgress, isUsingRealSupabase,
@@ -1133,7 +1133,13 @@ function ytUnmuteOnLoad(e) {
    Alle Sprachfassungen außer de/en sind HeyGen-Lipsync-Dubs: Stimme UND
    Lippenbewegungen einer real existierenden Person werden KI-erzeugt. Das
    erfüllt die Deepfake-Definition (Art. 3 Nr. 60) und ist offenzulegen.
-   de/en sind echte Aufnahmen — dort wäre ein Hinweis eine Falschangabe.
+   de/en sind grundsätzlich echte Aufnahmen — dort wäre ein pauschaler Hinweis
+   eine Falschangabe. Dubs IN de/en werden deshalb pro Eintrag markiert:
+   - Startseite: Flag aiDub aus getHomeTopVideos/getHomeVideoSection (data.js,
+     HOME_ORIGINALS). Originale sind de: welcome/tour/longevity, en: welcome/tour;
+     alles andere (auch en: longevity, ein Dub aus DE) ist aiDub.
+   - Kursvideos (FullVideo): Sprache in AI_DUB_LANGS ODER course.aiDub === true
+     (z. B. EN-Burnout/Bioalter-Dubs, ein deutscher Pharmakogenetik-Dub).
 
    Der Hinweis steht bewusst als sichtbarer Text NEBEN dem Player (nicht im
    iframe, nicht als Bild): Art. 50 Abs. 5 verlangt, dass die Offenlegung
@@ -1141,10 +1147,12 @@ function ytUnmuteOnLoad(e) {
    wahrnehmbar ist — also auch vor dem Abspielen und für Screenreader. */
 const AI_DUB_LANGS = ['cz', 'fr', 'pt', 'it', 'nl', 'ro', 'es', 'sr', 'ar']
 
-function AiDubNotice() {
+/* show (optional): explizite Entscheidung des Aufrufers. Ohne show gilt die
+   reine Sprachregel AI_DUB_LANGS. */
+function AiDubNotice({ show } = {}) {
   const lang = useLang()
   const t = useT()
-  if (!AI_DUB_LANGS.includes(lang)) return null
+  if (!(show ?? AI_DUB_LANGS.includes(lang))) return null
   return (
     <p className="ai-dub-notice">
       <span className="ai-dub-badge">{t('ai_dub_badge')}</span>
@@ -1157,8 +1165,8 @@ function WelcomePlayer({ youtubeId = null, coverImage = null }) {
   const lang = useLang()
   const [playing, setPlaying] = useState(false)
   const [consent, setConsent] = useCookieConsent()
-  // Use explicit coverImage if provided (for videos without public YouTube thumbnails,
-  // e.g. unlisted/private). Otherwise fall back to YouTube CDN thumbnail.
+  // coverImage = optionales Gestaltungs-Cover. Ohne Cover das YouTube-Thumbnail
+  // (YouTube liefert es für öffentliche und nicht gelistete Videos).
   const primarySrc = coverImage || (youtubeId ? `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg` : null)
   return (
     <div className="welcome-player" onClick={() => !playing && consent === 'all' && setPlaying(true)}>
@@ -1214,7 +1222,7 @@ function WelcomeText({ title, sub }) {
   return (
     <div className="welcome-text">
       <h2 className="welcome-title">{title}</h2>
-      <p className="welcome-sub">{sub}</p>
+      {sub && <p className="welcome-sub">{sub}</p>}
     </div>
   )
 }
@@ -1243,9 +1251,11 @@ function HomePage({ courseState, navigate, certName, setCertName, completedCerti
           Title + description sit underneath each video. */}
       {topVideos.length > 0 && (
         <div className="home-top-row">
-          {topVideos.map((v, i) => (
-            <div key={i} className="welcome-block">
+          {topVideos.map(v => (
+            <div key={v.slot} className="welcome-block">
               <WelcomePlayer youtubeId={v.youtubeId} coverImage={v.coverImage} />
+              {/* KI-Hinweis nach Flag aus data.js (nicht nach Sprache): en hat Originale UND Dubs */}
+              <AiDubNotice show={!!v.aiDub} />
               <WelcomeText title={v.title} sub={v.sub} />
             </div>
           ))}
@@ -1304,8 +1314,13 @@ function HomePage({ courseState, navigate, certName, setCertName, completedCerti
             <h2 className="home-bonus-title">{hvs.category}</h2>
             {hvs.subtitle && <p className="home-bonus-sub">{hvs.subtitle}</p>}
             <div className="home-bonus-grid">
-              {hvs.videos.map((v, i) => (
-                <RelatedVideoTile key={i} youtubeId={v.youtubeId} title={v.title} coverImage={v.coverImage} />
+              {hvs.videos.map(v => (
+                /* Wrapper, weil .related-video-tile overflow:hidden + aspect-ratio hat —
+                   ein Hinweis darin würde abgeschnitten. */
+                <div key={v.youtubeId} className="home-bonus-item">
+                  <RelatedVideoTile youtubeId={v.youtubeId} title={v.title} coverImage={v.coverImage} />
+                  <AiDubNotice show={!!v.aiDub} />
+                </div>
               ))}
             </div>
           </section>
@@ -1547,7 +1562,7 @@ function FullVideo({ course, youtubeId, title }) {
         </>
       )}
       </div>
-      {yt && <AiDubNotice />}
+      {yt && <AiDubNotice show={AI_DUB_LANGS.includes(lang) || course.aiDub === true} />}
     </>
   )
 }
@@ -1578,8 +1593,8 @@ function RelatedVideoTile({ youtubeId, title, coverImage = null }) {
      luden die verwandten Videos YouTube-Cookies, obwohl der Nutzer nur
      "Nur notwendige" gewaehlt oder noch gar nicht entschieden hatte. */
   const [consent, setConsent] = useCookieConsent()
-  // Use explicit coverImage if provided (for unlisted videos whose YouTube
-  // thumbnails return 404). Otherwise fall back to YouTube CDN.
+  // coverImage = optionales Gestaltungs-Cover. Ohne Cover das YouTube-Thumbnail
+  // (YouTube liefert es für öffentliche und nicht gelistete Videos).
   const stillSrc = coverImage || `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`
   return (
     <div className="related-video-tile" onClick={() => !playing && consent === 'all' && setPlaying(true)}>
@@ -1604,6 +1619,9 @@ function RelatedVideoTile({ youtubeId, title, coverImage = null }) {
                onError={(e) => {
                  if (!coverImage && e.target.src.includes('maxresdefault')) {
                    e.target.src = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`
+                 } else {
+                   // wie WelcomePlayer: kein Symbol für kaputtes Bild, dunkler Kachelgrund bleibt
+                   e.target.style.display = 'none'
                  }
                }} />
           {consent === 'all'
@@ -1748,8 +1766,13 @@ function CourseContentPage({ course, state, onComplete, onBack, onStartTest }) {
         {course.brandNoticeAboveVideos && <BrandNotice />}
 
         {course.articleSections?.length ? (
-          // Text-based training (no video) — render structured article sections
-          course.articleSections.map((sec, i) => {
+          // Text-based training — render structured article sections.
+          // Hat der Kurs ZUSÄTZLICH eine youtubeId (z. B. DE pharma-sci mit Folien +
+          // künftigem Video), steht das Video zuerst, die Abschnitte darunter.
+          // KI-Hinweis regelt FullVideo (Sprache oder course.aiDub).
+          <>
+          {course.youtubeId && <FullVideo course={course} />}
+          {course.articleSections.map((sec, i) => {
             // Normalise callout: accept string or {text, tone}
             const callout = sec.callout
               ? (typeof sec.callout === 'string' ? { text: sec.callout, tone: 'neutral' } : sec.callout)
@@ -1785,7 +1808,8 @@ function CourseContentPage({ course, state, onComplete, onBack, onStartTest }) {
               )}
             </section>
             )
-          })
+          })}
+          </>
         ) : course.videoSegments?.length ? (
           // Multi-chapter consultation course — render each video as its own segment
           course.videoSegments.map((seg, i) => (

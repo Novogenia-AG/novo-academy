@@ -1,9 +1,10 @@
-/* QA 3 — HOME_TOP_VIDEOS_BY_LANG / HOME_VIDEO_BY_LANG und die VIDEOS-Maps
-   der Sprachdateien: fehlende Sprachen, doppelte YouTube-IDs je Sprache. */
+/* QA 3 — Startseiten-Videos (HOME_VIDEO_IDS / getHomeTopVideos / getHomeVideoSection)
+   und die VIDEOS-Maps der Sprachdateien: fehlende Sprachen/Slots, Quell-ID-Lecks,
+   KI-Kennzeichnung, doppelte YouTube-IDs je Sprache. */
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { getHomeTopVideos, getHomeVideoSection, COURSES } from '../src/data.js'
+import { getHomeTopVideos, getHomeVideoSection, HOME_VIDEO_IDS, COURSES } from '../src/data.js'
 import { COURSES_EN } from '../src/data.en.js'
 
 const HERE = path.dirname(fileURLToPath(import.meta.url))
@@ -13,52 +14,50 @@ const AI_LANGS = ['cz', 'fr', 'pt', 'it', 'nl', 'ro', 'es', 'sr', 'ar']
 const out = []
 const add = (sev, code, msg) => out.push({ sev, code, msg })
 
-/* ---- 3a: HOME_TOP_VIDEOS_BY_LANG ----
-   Nicht exportiert -> ueber getHomeTopVideos() gelesen. Fallback ist EN,
-   also unterscheiden wir "Sprache im Map" (eigener Wert) von "faellt auf EN zurueck". */
-const EN_TOP = getHomeTopVideos('en')
-const FALLBACK_PROBE = getHomeTopVideos('__nonexistent__')
-console.log('=== HOME_TOP_VIDEOS_BY_LANG ===')
+/* ---- 3a/3b: Startseiten-Videos ----
+   Rohdaten aus HOME_VIDEO_IDS, Sichtbarkeit über die Getter getHomeTopVideos /
+   getHomeVideoSection (so rendert App.jsx). Geprüft wird: jede Sprache hat alle
+   drei Slots, IDs im 11-Zeichen-Format, keine Quell-ID eines Lip-Sync in fremder
+   Sprache, keine ID doppelt, gesetzte ID wird auch angezeigt (Text vorhanden),
+   nichts ohne ID wird gerendert, KI-Kennzeichnung stimmt, kein deutsches Cover
+   außerhalb von DE, unbekannte Sprache liefert nichts (kein EN-Fallback). */
+const SLOTS = ['welcome', 'tour', 'longevity']
+const LIPSYNC_SRC = { welcome: ['en', 'rDQBNTWt82Y'], tour: ['en', 'N9aEz_WAe1I'], longevity: ['de', 'jHgdDRGy0hA'] }
+/* Unabhängig von data.js definiert: echte Aufnahmen sind de (alle drei) und en welcome/tour. */
+const isOriginal = (l, s) => l === 'de' || (l === 'en' && s !== 'longevity')
+const idOwner = new Map()
+console.log('=== HOME_VIDEO_IDS (Startseite) ===')
 for (const l of UI_LANGS) {
-  const v = getHomeTopVideos(l)
-  const isFallback = v === FALLBACK_PROBE && l !== 'en'
-  const ids = (v || []).map(x => x.youtubeId)
-  console.log(`  ${l.padEnd(3)} n=${String((v || []).length).padStart(2)} ${isFallback ? 'FALLBACK->EN' : 'eigener Eintrag'} ids=[${ids.join(', ')}]`)
-  if (isFallback) add('HOCH', 'HOMETOP_MISSING_LANG', `HOME_TOP_VIDEOS_BY_LANG hat keinen Key "${l}" -> englischer Fallback`)
-  if (!Array.isArray(v)) { add('KRITISCH', 'HOMETOP_NOT_ARRAY', `getHomeTopVideos('${l}') liefert ${typeof v}`); continue }
-  const seen = new Map()
-  v.forEach((x, i) => {
-    if (!x || typeof x.youtubeId !== 'string' || !x.youtubeId.trim()) {
-      add('HOCH', 'HOMETOP_NO_ID', `HOME_TOP_VIDEOS_BY_LANG['${l}'][${i}]: youtubeId=${JSON.stringify(x && x.youtubeId)}`)
-      return
-    }
-    if (!/^[A-Za-z0-9_-]{11}$/.test(x.youtubeId)) add('MITTEL', 'HOMETOP_ID_FORMAT', `HOME_TOP_VIDEOS_BY_LANG['${l}'][${i}]: youtubeId="${x.youtubeId}" kein 11-Zeichen-YouTube-Format`)
-    if (!seen.has(x.youtubeId)) seen.set(x.youtubeId, [])
-    seen.get(x.youtubeId).push(i)
-    if (typeof x.title !== 'string' || !x.title.trim()) add('MITTEL', 'HOMETOP_NO_TITLE', `HOME_TOP_VIDEOS_BY_LANG['${l}'][${i}] (${x.youtubeId}): title leer`)
-  })
-  for (const [id, idxs] of seen) if (idxs.length > 1)
-    add('HOCH', 'HOMETOP_DUP_ID', `HOME_TOP_VIDEOS_BY_LANG['${l}']: YouTube-ID ${id} ${idxs.length}x (Positionen ${idxs.join(', ')}) — dieselbe Kachel doppelt`)
+  const row = HOME_VIDEO_IDS[l]
+  if (!row) { add('HOCH', 'HOME_MISSING_LANG', `HOME_VIDEO_IDS hat keinen Key "${l}"`); continue }
+  const top = getHomeTopVideos(l), hv = getHomeVideoSection(l)
+  console.log(`  ${l.padEnd(3)} ` + SLOTS.map(s => `${s}=${row[s] || '—'}`).join('  ') + `  -> sichtbar top ${top.length}/2, bonus ${hv.videos.length}/1`)
+  for (const k of Object.keys(row)) if (!SLOTS.includes(k)) add('HOCH', 'HOME_SLOT_UNKNOWN', `HOME_VIDEO_IDS['${l}'] hat unbekannten Slot "${k}" (Tippfehler? erlaubt: ${SLOTS.join(', ')})`)
+  for (const s of SLOTS) {
+    if (!(s in row)) { add('HOCH', 'HOME_SLOT_MISSING', `HOME_VIDEO_IDS['${l}'] ohne Slot "${s}" (null setzen)`); continue }
+    const id = row[s]
+    if (id == null) continue
+    if (typeof id !== 'string' || !/^[A-Za-z0-9_-]{11}$/.test(id)) { add('HOCH', 'HOME_ID_FORMAT', `HOME_VIDEO_IDS['${l}'].${s} = ${JSON.stringify(id)} — keine 11-stellige YouTube-ID`); continue }
+    const [srcLang, srcId] = LIPSYNC_SRC[s]
+    if (l !== srcLang && id === srcId) add('KRITISCH', 'HOME_SOURCE_LEAK', `HOME_VIDEO_IDS['${l}'].${s} = Quell-ID ${srcId} (${srcLang}) — Video in falscher Sprache`)
+    if (idOwner.has(id)) add('HOCH', 'HOME_DUP_ID', `YouTube-ID ${id} doppelt: ${idOwner.get(id)} und ${l}.${s}`)
+    else idOwner.set(id, `${l}.${s}`)
+  }
+  const expTop = ['welcome', 'tour'].filter(s => row[s]).length
+  if (top.length !== expTop) add('HOCH', 'HOMETOP_TEXT_MISSING', `${l}: ${expTop} Top-IDs gesetzt, ${top.length} Kacheln sichtbar — Titel fehlt in HOME_TOP_TEXT['${l}']`)
+  if (!!row.longevity !== (hv.videos.length === 1)) add('HOCH', 'HOMEVID_TEXT_MISSING', `${l}: longevity ${row.longevity ? 'gesetzt' : 'leer'}, Bonus ${hv.videos.length ? 'sichtbar' : 'ausgeblendet'} — category/title in HOME_BONUS_TEXT['${l}'] prüfen`)
+  if (hv.videos.length && !String(hv.subtitle || '').trim()) add('MITTEL', 'HOMEVID_NO_SUBTITLE', `${l}: Bonus ohne subtitle — der Video-Titel ist in der Kachel nicht sichtbar`)
+  for (const v of [...top, ...hv.videos]) {
+    if (!v.youtubeId) add('KRITISCH', 'HOME_NULL_RENDERED', `${l}.${v.slot}: Eintrag ohne youtubeId wird gerendert`)
+    if (typeof v.title !== 'string' || !v.title.trim()) add('MITTEL', 'HOME_NO_TITLE', `${l}.${v.slot}: title leer`)
+    if (!isOriginal(l, v.slot) && v.aiDub !== true) add('KRITISCH', 'HOME_AI_LABEL', `${l}.${v.slot}: Lip-Sync ohne aiDub — KI-Hinweis (Art. 50 Abs. 4 KI-VO) fehlt`)
+    if (isOriginal(l, v.slot) && v.aiDub) add('MITTEL', 'HOME_AI_LABEL_ORIGINAL', `${l}.${v.slot}: Originalaufnahme als KI markiert`)
+    if (l !== 'de' && /ewig-leben-cover/.test(v.coverImage || '')) add('HOCH', 'HOME_COVER_DE_TEXT', `${l}.${v.slot}: deutsches Cover (ewig-leben-cover) in fremder Sprache`)
+  }
 }
-
-/* ---- 3b: HOME_VIDEO_BY_LANG ---- */
-console.log('\n=== HOME_VIDEO_BY_LANG (getHomeVideoSection) ===')
-const HV_FALLBACK = getHomeVideoSection('__nonexistent__')
-for (const l of UI_LANGS) {
-  const s = getHomeVideoSection(l)
-  const isFallback = s === HV_FALLBACK && l !== 'en'
-  const ids = (s?.videos || []).map(x => x.youtubeId)
-  console.log(`  ${l.padEnd(3)} n=${String((s?.videos || []).length).padStart(2)} ${isFallback ? 'FALLBACK->EN' : 'eigener Eintrag'} ids=[${ids.join(', ')}]`)
-  if (isFallback) add('HOCH', 'HOMEVID_MISSING_LANG', `HOME_VIDEO_BY_LANG hat keinen Key "${l}" -> englischer Fallback (englische Sektion in ${l})`)
-  const seen = new Map()
-  ;(s?.videos || []).forEach((x, i) => {
-    const id = x?.youtubeId
-    if (typeof id !== 'string' || !id.trim()) { add('HOCH', 'HOMEVID_NO_ID', `HOME_VIDEO_BY_LANG['${l}'].videos[${i}]: youtubeId=${JSON.stringify(id)}`); return }
-    if (!seen.has(id)) seen.set(id, []); seen.get(id).push(i)
-  })
-  for (const [id, idxs] of seen) if (idxs.length > 1)
-    add('HOCH', 'HOMEVID_DUP_ID', `HOME_VIDEO_BY_LANG['${l}']: YouTube-ID ${id} ${idxs.length}x (Positionen ${idxs.join(', ')})`)
-}
+for (const l of Object.keys(HOME_VIDEO_IDS)) if (!UI_LANGS.includes(l)) add('MITTEL', 'HOME_LANG_UNKNOWN', `HOME_VIDEO_IDS hat Sprache "${l}", die nicht in UI_LANGS steht`)
+if (getHomeTopVideos('__nonexistent__').length) add('HOCH', 'HOMETOP_FALLBACK', 'unbekannte Sprache liefert Top-Kacheln — Fallback muss leer sein')
+if (getHomeVideoSection('__nonexistent__').videos.length) add('HOCH', 'HOMEVID_FALLBACK', 'unbekannte Sprache liefert Bonus-Sektion — Fallback muss leer sein')
 
 /* ---- 3c: VIDEOS-Maps der Sprachdateien ----
    Der Map-Block ist modul-intern. Wir lesen ihn als JSON-Objektliteral aus der

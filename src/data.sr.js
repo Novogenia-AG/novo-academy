@@ -209,153 +209,203 @@ const TXT = {
   ]
  },
  "ba-sci-en": {
-  "topic": "Znanstvena osnova",
-  "description": "Kako je biološka dob genetski određena i pod utjecajem načina života.",
-  "longDescription": "Ovaj trening objašnjava znanstvenu osnovu iza određivanja biološke dobi. Naučit ćete koji geni utječu na duljinu telomera i starenje stanica, kako se biološka dob razlikuje od kronološke te koji faktori načina života mogu mjerljivo promijeniti biološku dob.",
-  "postVideoText": "S ovom znanstvenom osnovom možete sa svojim klijentima razgovarati o analizi biološke dobi na čvrstim temeljima.",
-  "introQuestionsHeader": "Ovaj trening odgovara na:",
+  "topic": "Naučna osnova",
+  "description": "Zašto se telomere skraćuju, kako gen za telomerazu utiče na biološku starost — i koji nutrijenti mogu da pomognu.",
+  "longDescription": "Ova obuka objašnjava naučnu osnovu analize biološke starosti. Saznaćeš zašto se telomere — zaštitni krajevi naših hromozoma — skraćuju sa svakom deobom ćelije, šta se dešava sa ćelijom kada se one potroše, kako gen za telomerazu utiče na taj proces i koji nutrijenti mogu da podrže održavanje telomera kada geni rade slabije.",
+  "postVideoText": "Uz ovu naučnu osnovu možeš sa sigurnošću da razgovaraš sa svojim klijentima o analizi biološke starosti.",
+  "introQuestionsHeader": "Ova obuka odgovara na pitanja:",
   "bullets": [
-   "Telomeri i starenje stanica — osnove",
-   "Kronološka vs. biološka dob",
-   "Genetski faktori starenja (TERT, BICD1 i dr.)",
-   "Anti-aging strategije s mjerljivim učinkom"
+   "Telomere i starenje ćelija — osnove",
+   "Senescencija: kada ćelije pređu u režim spavanja",
+   "Genetski faktori starenja: gen za telomerazu",
+   "Nutrijenti koji pomažu i mediteranska ishrana čiji efekat zavisi od genotipa"
   ],
   "introQuestions": [
-   "Koja je razlika između kronološke i biološke dobi?",
-   "Kako se telomeri mjere i što nam govore?",
-   "Koji geni utječu na starenje stanica?",
-   "Koje mjere načina života dokazano mijenjaju biološku dob?"
+   "Šta su telomere i zašto se skraćuju sa svakom deobom ćelije?",
+   "Šta se dešava sa ćelijom kada se njene telomere potroše?",
+   "Šta radi gen za telomerazu?",
+   "Koji nutrijenti podržavaju održavanje telomera — i zašto mediteranska ishrana ne deluje kod svih?"
   ],
   "questions": [
    {
-    "q": "Koja je razlika između kronološke i biološke dobi?",
+    "q": "Šta su telomere?",
     "options": [
-     "Nema razlike — one su identične",
-     "Kronološka dob je vrijeme od rođenja; biološka dob opisuje stvarno stanje stanica — pod utjecajem načina života i genetike",
-     "Biološka dob je uvijek veća od kronološke",
-     "Kronološka dob se mjeri u laboratoriju, biološka se procjenjuje"
+     "Geni na početku svakog hromozoma koji upravljaju deobom ćelije",
+     "Proteini koji popravljaju oštećenu DNK",
+     "Strukture u ćeliji koje proizvode energiju",
+     "Zaštitni krajevi hromozoma koji ne sadrže gene"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Šta se dešava sa telomerama pri svakoj deobi ćelije?",
+    "options": [
+     "Svaki put se malo produže",
+     "Odlomi se mali komadić, pa postaju kraće",
+     "U novoj ćeliji se svaki put grade potpuno iznova",
+     "Ostaju potpuno iste dužine"
     ],
     "correct": 1
    },
    {
-    "q": "Koje se stanične strukture skraćuju sa svakom staničnom diobom i ključni su pokazatelj biološke dobi?",
+    "q": "Posle otprilike koliko deoba ćelije su telomere potrošene?",
     "options": [
-     "Mitohondriji",
-     "Ribosomi",
-     "Telomeri",
-     "Stanične membrane"
+     "Oko 5 do 10",
+     "Oko 20 do 30",
+     "Oko 50 do 70",
+     "Oko 500 do 700"
     ],
     "correct": 2
    },
    {
-    "q": "Koja je uloga enzima telomeraze?",
+    "q": "Šta se dešava sa ćelijom čije su telomere potrošene?",
     "options": [
-     "Razgrađuje stanice koje su ostarjele",
-     "Može popraviti i produžiti telomere — usporavajući njihovo skraćivanje",
-     "Proizvodi slobodne radikale",
-     "Prenosi kisik u krvi"
+     "Prelazi u režim spavanja (senescencija) i prestaje da radi",
+     "Nastavlja da se deli, ali znatno sporije",
+     "Ponovo postaje mlada matična ćelija",
+     "Telo je odmah razgrađuje i u potpunosti uklanja"
+    ],
+    "correct": 0
+   },
+   {
+    "q": "Koji gen pomaže u održavanju telomera?",
+    "options": [
+     "MTHFR",
+     "COMT",
+     "Telomeraza",
+     "FTO"
+    ],
+    "correct": 2
+   },
+   {
+    "q": "Koji nutrijenti mogu da podrže održavanje telomera kada zaštitni gen radi slabije?",
+    "options": [
+     "Vitamin C, cink, selen, gvožđe i magnezijum",
+     "Vitamin D3, omega-3, vitamin E, resveratrol i ginko",
+     "Vitamin B12, folna kiselina, gvožđe, jod i kalcijum",
+     "Kofein, taurin, kreatin, L-karnitin i zeleni čaj"
     ],
     "correct": 1
    },
    {
-    "q": "Klijent ima genetski slabu telomerazu (\"crvena zona\"). Najbolja preporuka u savjetovanju?",
+    "q": "Da li mediteranska ishrana ima isti efekat na telomere kod svih ljudi?",
     "options": [
-     "Ignorirati predispoziciju — na telomere se ne može utjecati",
-     "Nadoknaditi genetsku slabost načinom života: prehrana bogata antioksidansima, ciljani nutrijenti (D3, Omega-3, Resveratrol), umjerena redovita tjelovježba, dobar san i smanjenje stresa",
-     "Potpuno prestati s tjelovježbom — ona stvara oksidativni stres",
-     "Odmah otići liječniku — varijanta je patološka"
+     "Da — kod svih održava telomere dužim",
+     "Ne — kod većine ljudi skraćuje telomere",
+     "Njen efekat na telomere još nikada nije ispitivan",
+     "Ne — deluje samo kod određene genske varijante"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Kolika može biti razlika u biološkoj starosti između ljudi sa dve defektne i ljudi sa dve funkcionalne kopije gena za telomerazu?",
+    "options": [
+     "Do 20 godina",
+     "Najviše 1 do 2 godine",
+     "Najviše 5 godina",
+     "Nema merljive razlike"
+    ],
+    "correct": 0
+   },
+   {
+    "q": "Kakvu ulogu slobodni radikali imaju u starenju?",
+    "options": [
+     "Štite krajeve hromozoma da se ne odlome tokom deobe ćelije",
+     "Stalno oštećuju ćelije, a antioksidansi deluju protiv toga",
+     "Imaju ulogu samo kod ljudi starijih od 70 godina",
+     "Tokom sna popravljaju oštećene ćelije"
     ],
     "correct": 1
    },
    {
-    "q": "Što je istraživanje pokazalo o mediteranskoj prehrani i duljini telomera?",
+    "q": "Koja je prava strategija za klijenta sa defektom u genu za telomerazu?",
     "options": [
-     "Mjerljivo produžuje telomere kod svih",
-     "Djeluje samo kod nositelja određenog genotipa — kod ostalih nema učinka na telomere. Jasan primjer da isti savjet o načinu života ne djeluje jednako kod svih",
-     "Skraćuje telomere — treba je izbjegavati",
-     "Nema mjerljiv učinak ni na koga"
-    ],
-    "correct": 1
-   },
-   {
-    "q": "Kako u savjetovanju uokviriti nepovoljnu anti-aging predispoziciju?",
-    "options": [
-     "Kao nepromjenjivu sudbinu — klijent će prijevremeno ostarjeti",
-     "Kao nevažnu — geni nisu bitni za starenje",
-     "Kao povišen rizik, ne sudbinu: klijenti koji poznaju svoje genetske slabe točke mogu svjesnije primjenjivati antioksidanse, san, tjelovježbu i smanjenje stresa — učinci se zbrajaju tijekom godina",
-     "Kao bolest koja zahtijeva hitno liječenje"
+     "Zanemariti defekt — na telomere se ionako ne može uticati",
+     "Više vežbati — ishrana tu ne pravi nikakvu razliku",
+     "Unositi više nutrijenata koji usporavaju skraćivanje telomera",
+     "Preći na mediteransku ishranu — ona deluje kod svih ljudi"
     ],
     "correct": 2
    }
   ]
  },
  "ba-report-en": {
-  "topic": "Trening savjetovanja",
-  "description": "Prođite kroz izvještaj o biološkoj dobi sa svojim klijentom.",
-  "longDescription": "U ovom treningu savjetovanja dr. Daniel Wallerstorfer objašnjava kako sa svojim klijentima proći kroz izvještaj o genetskoj biološkoj dobi i procesu starenja.",
-  "postVideoText": "S ovim treningom možete sa svojim klijentima razgovarati o izvještaju o biološkoj dobi na čvrstim temeljima. Demo brošura ispod može poslužiti kao primjer izvještaja za vašu vlastitu praksu savjetovanja.",
-  "introQuestionsHeader": "U ovom treningu naučit ćete:",
+  "topic": "Obuka za savetovanje",
+  "description": "Prođi sa svojim klijentom kroz izveštaj o biološkoj starosti.",
+  "longDescription": "U ovoj obuci za savetovanje dr Daniel Wallerstorfer jednostavnim jezikom objašnjava proces starenja — od hromozoma i telomera do ćelija u režimu spavanja — i na primeru klijentkinje Marije pokazuje kako se u izveštaju čitaju rezultat za telomere, nalaz o mediteranskoj ishrani i preporuke za nutrijente.",
+  "postVideoText": "Uz ovu obuku možeš sa sigurnošću da razgovaraš sa svojim klijentima o izveštaju o biološkoj starosti.",
+  "introQuestionsHeader": "U ovoj obuci naučićeš:",
   "bullets": [
-   "Strukturirano proći kroz izvještaj o biološkoj dobi",
-   "Uokviriti proces starenja u genetskim pojmovima",
-   "Izvesti konkretne anti-aging preporuke",
-   "Kako način života utječe na biološku dob"
+   "Strukturisano proći kroz izveštaj o biološkoj starosti",
+   "Jednostavnim jezikom objasniti telomere i proces starenja",
+   "Protumačiti rezultat za telomere na primeru Marije",
+   "Preporuke za nutrijente i nalaz o mediteranskoj ishrani"
   ],
   "introQuestions": [
-   "Kako je strukturiran izvještaj o biološkoj dobi",
-   "Kako jasno objasniti proces starenja",
-   "Koje konkretne preporuke o načinu života se mogu izvesti"
+   "Kako je strukturisan izveštaj o biološkoj starosti",
+   "Kako jasno da objasniš proces starenja",
+   "Koje preporuke za nutrijente proizlaze iz rezultata"
   ],
   "questions": [
    {
-    "q": "Kako klijentu jednostavnim jezikom objasniti biološku vs. kronološku dob?",
+    "q": "Obuka poredi telomere sa plastičnim završecima pertli. Šta ilustruje ovo poređenje?",
     "options": [
-     "One su identične",
-     "\"Kronološka dob su godine otkako ste rođeni. Biološka dob opisuje koliko su vaše stanice zapravo stare — dvije osobe iste dobi mogu se biološki razlikovati za 10-20 godina ovisno o genima i načinu života\"",
-     "Biološka dob je samo marketinški pojam",
-     "Isto je što i IQ"
+     "Da drže dve polovine hromozoma zajedno",
+     "Da ne nose gene, već samo štite hromozom",
+     "Da nose najvažnije gene hromozoma",
+     "Da ponovo izrastu posle svake deobe ćelije"
     ],
     "correct": 1
    },
    {
-    "q": "Klijent ima slabu telomerazu (\"crvena zona\"). Koji je praktičan savjet?",
+    "q": "Zašto ćelija posle otprilike 50 do 70 deoba prelazi u režim spavanja?",
     "options": [
-     "Ništa se ne može učiniti",
-     "Ojačati zaštitu izvana: prehrana bogata antioksidansima (Vitamin C/E, polifenoli, selen), ciljani nutrijenti (Omega-3, D3, Resveratrol), umjerena redovita tjelovježba (ne ekstremna), 7-9 sati sna, smanjenje stresa. Učinci se zbrajaju tijekom godina",
-     "Uzimati visoke doze kemoterapije",
-     "Jesti samo meso"
+     "Potrošila je rezerve hranljivih materija i mora da se oporavi",
+     "Imunski sistem ju je označio kao oštećenu i isključio je",
+     "Dostigla je maksimalnu veličinu i više ne može da se deli",
+     "Njene telomere su potrošene i geni počinju da se odlamaju"
     ],
-    "correct": 1
+    "correct": 3
    },
    {
-    "q": "Klijent pita: \"Pomaže li mi mediteranska prehrana da biološki postanem mlađi?\"",
+    "q": "Da li geni koji održavaju telomere mogu da ponište gubitak telomera?",
     "options": [
-     "Da, uvijek",
-     "Ovisi o genetici: studije pokazuju da mediteranska prehrana mjerljivo produžuje telomere samo kod nositelja određene varijante. Kod ostalih je učinak slabiji. Izvještaj pokazuje je li ovaj klijent u skupini koja reagira",
-     "Ne, nikad",
-     "Samo kod žena"
+     "Da — ponovo izgrađuju telomere do prvobitne dužine",
+     "Ne — uopšte ne utiču na dužinu telomera",
+     "Ne u potpunosti — ali usporavaju taj proces",
+     "Samo u detinjstvu, dok telo još raste"
     ],
-    "correct": 1
+    "correct": 2
    },
    {
-    "q": "Mlad klijent (25 g.) pita: \"Je li izvještaj o biološkoj dobi uopće koristan za mene?\"",
+    "q": "Marijin rezultat za održavanje telomera nalazi se u srednjem opsegu. Kako se to tumači?",
     "options": [
-     "Ne, koristan tek nakon 60. godine",
-     "Da — mlađa dob je bolji trenutak za početak. Genetske slabosti se zbrajaju kroz desetljeća; prilagodbe načina života s 25 godina imaju mnogo veći kumulativni učinak do 60. nego ako se počne kasno",
-     "Koristan samo za sportaše",
-     "Ne, biološka dob je nepromjenjiva"
+     "Kao oslabljeno — telomere se kod nje ne održavaju tako dobro",
+     "Kao normalno — nije potrebno ništa preduzimati",
+     "Kao natprosečno — telomere se kod nje održavaju posebno dobro",
+     "Kao neodređeno — analizu treba ponoviti"
     ],
-    "correct": 1
+    "correct": 0
    },
    {
-    "q": "Kako uokviriti rezultat biološke dobi za stresiranog klijenta s nekoliko \"crvenih zona\"?",
+    "q": "Da li mediteranska ishrana pomaže Mariji da održi telomere?",
     "options": [
-     "Kao neizbježno propadanje",
-     "Kao ciljane prilike: svaka crvena zona je jasna poluga — Vit D3, Omega-3, unos antioksidansa, san, smanjenje stresa. Plan je usmjeren na djelovanje i motivirajuć, ne fatalistički",
-     "Kao medicinsku hitnost",
-     "Kao neizlječivu bolest"
+     "Da — svima pomaže da održe telomere",
+     "Da — ali samo u kombinaciji sa više vitamina E",
+     "Ne — kod većine ljudi skraćuje telomere",
+     "Ne — uz njene genske varijante nema efekta"
     ],
-    "correct": 1
+    "correct": 3
+   },
+   {
+    "q": "U Marijinom izveštaju su vitamin D3, omega-3, vitamin E, resveratrol i ginko označeni zelenim strelicama. Šta to znači?",
+    "options": [
+     "Nivoi ovih nutrijenata kod nje su već sasvim dovoljni",
+     "Treba da smanji unos ovih nutrijenata",
+     "Treba da jede više namirnica sa ovim nutrijentima",
+     "Prvo mora da uradi analizu krvi za ove nutrijente"
+    ],
+    "correct": 2
    }
   ]
  },
@@ -1134,152 +1184,202 @@ const TXT = {
  },
  "bo-sci-en": {
   "topic": "Naučna osnova",
-  "description": "Kako gen COMT oblikuje individualnu obradu stresa — i zašto je rizik od burnouta genetski.",
-  "longDescription": "U ovoj obuci dr. Daniel Wallerstorfer objašnjava gen COMT i njegovu ulogu u razgradnji dopamina, fenotip Warrior naspram Worrier, BDNF i neuroplastičnost, te kako se individualni rizik od burnouta može izvesti iz genetskog profila.",
-  "postVideoText": "S ovom naučnom pozadinom možeš sa svojim klijentima razgovarati o izvještaju o burnoutu na čvrstim temeljima i izvesti individualne strategije upravljanja stresom.",
-  "introQuestionsHeader": "Ova obuka odgovara na:",
+  "description": "Zašto isti stres različito deluje na različite ljude — i kakve veze gen COMT ima sa rizikom od burnouta.",
+  "longDescription": "U ovoj obuci dr Daniel Wallerstorfer objašnjava zašto snažan, neprekidan stres kod nekih ljudi dovodi do burnouta, a kod drugih ne. Saznaćeš koje tri genetske osobine analiza posmatra, kako gen COMT razgrađuje dopamin posle uzbudljivih ili stresnih situacija, zašto je oko 15% ljudi posebno podložno stresu — i zašto je pravi način života utoliko važniji što su geni nepovoljniji.",
+  "postVideoText": "Uz ovu naučnu osnovu možeš sa sigurnošću da razgovaraš sa svojim klijentima o izveštaju o burnoutu i da izvedeš individualne strategije za upravljanje stresom.",
+  "introQuestionsHeader": "Ova obuka odgovara na pitanja:",
   "bullets": [
-   "COMT — centralni gen za razgradnju dopamina",
-   "Warrior naspram Worrier — dva genotipa, dvije strategije za stres",
-   "BDNF, neuroplastičnost i otpornost",
-   "Praktične preporuke iz genetskog profila"
+   "Tri genetske osobine: učinak pod stresom, emocionalna otpornost, impulsivnost",
+   "COMT — ključni gen za razgradnju dopamina",
+   "Razgradnja dopamina: zašto je 15% ljudi posebno podložno stresu",
+   "Preporuke za način života na osnovu genetskog profila"
   ],
   "introQuestions": [
-   "Koji gen je centralan za individualnu obradu stresa?",
-   "Koja je razlika između Warrior i Worrier?",
-   "Kako je rizik od burnouta genetski?",
-   "Koje konkretne preporuke za način života proizlaze iz profila?"
+   "Koji gen je ključan za individualnu obradu stresa?",
+   "Zašto isti stres različito deluje na ljude — i kakve veze s tim ima COMT?",
+   "Kako geni utiču na rizik od burnouta?",
+   "Koje mere u načinu života pomažu — i zašto su važnije kod nepovoljnog profila?"
   ],
   "questions": [
    {
-    "q": "Koji gen je centralni pokretač individualne obrade stresa u analizi burnouta?",
+    "q": "Šta je, prema obuci, uzrok burnouta?",
     "options": [
-     "MTHFR",
-     "COMT",
-     "CYP1A2",
-     "FTO"
+     "Jedna kratka stresna situacija, na primer ispit",
+     "Isključivo genetika — način života ne igra nikakvu ulogu",
+     "Snažan, neprekidan stres tokom dužeg perioda",
+     "Previše fizičke aktivnosti"
     ],
-    "correct": 1
+    "correct": 2
    },
    {
-    "q": "Šta razlikuje genotip \"Warrior\" od \"Worrier\" u pogledu COMT?",
+    "q": "Koje genetske osobine posmatra analiza stresa?",
     "options": [
-     "Warrior brže razgrađuje dopamin — vrhunski učinak pod akutnim stresom. Worrier razgrađuje sporije — jaka svakodnevna koncentracija, ranjiviji na hronični stres",
-     "Nema stvarne razlike, važan je samo odgoj",
-     "Worrier brže razgrađuje dopamin",
-     "Warrior-i su imuni na svaki oblik stresa"
+     "Osetljivost na kofein, trajanje sna i toleranciju na alkohol",
+     "Pamćenje, koncentraciju i vreme reakcije",
+     "Puls u mirovanju, krvni pritisak i nivo kortizola",
+     "Učinak pod stresom, emocionalnu otpornost i impulsivnost"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Koji gen razgrađuje dopamin kada se uzbudljiva situacija završi?",
+    "options": [
+     "COMT",
+     "MTHFR",
+     "FTO",
+     "ACTN3"
     ],
     "correct": 0
    },
    {
-    "q": "Šta \"crvena zona\" u izvještaju o burnoutu znači za savjetovanje?",
+    "q": "Šta se pri ponovljenom stresu dešava kod osobe čiji gen COMT slabo funkcioniše?",
     "options": [
-     "Klijent već ima burnout",
-     "To je tehnička greška",
-     "Klijent ima nepovoljnu genetsku predispoziciju u ovom aspektu — mjere načina života su posebno važne jer je rizik povišen",
-     "Klijent treba da izbjegava čitavu temu"
-    ],
-    "correct": 2
-   },
-   {
-    "q": "Najbolja preporuka za klijenta sa sporom varijantom COMT (Worrier)?",
-    "options": [
-     "Aktivno tražiti stres — čini ga produktivnijim",
-     "Svjesne pauze za oporavak, meditacija, dobra higijena sna i izbjegavanje mnogih istovremenih izvora stresa — jer signal stresa duže ostaje u sistemu",
-     "Drastično povećati kofein da bi se podigao dopamin",
-     "Izbjegavati svaki oblik napora, čak i sport"
+     "Dopamin se brže razgrađuje, pa se mozak brže smiruje",
+     "Mozak se ne vraća u osnovno stanje, pa ga novi stres preopterećuje",
+     "Mozak se navikava na stres i sa svakom novom epizodom reaguje sve slabije",
+     "Dopamin se uopšte ne oslobađa, pa stres prolazi neprimećeno"
     ],
     "correct": 1
    },
    {
-    "q": "Kako treba uokviriti nepovoljnu predispoziciju za burnout u savjetovanju?",
+    "q": "Koja je paradoksalna prednost spore razgradnje dopamina?",
     "options": [
-     "Kao sudbinu — ništa se ne može učiniti",
-     "Kao povišen rizik, ne sudbinu — klijenti koji znaju svoju osjetljivost na stres mogu djelovati rano (san, meditacija, vježba, pauze). Genetska informacija je alat, a ne presuda.",
-     "Kao nebitno — geni ne utiču na stres",
-     "Kao bolest koja zahtijeva hitno liječenje"
+     "Smirenija reakcija na stresne situacije u svakodnevnom životu",
+     "Brži fizički oporavak posle intenzivnog treninga",
+     "Manji rizik od srčanog udara",
+     "Intenzivnija pozitivna osećanja i veća radoznalost"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Koliki je otprilike udeo ljudi koji imaju dve kopije gena COMT koje dobro funkcionišu?",
+    "options": [
+     "Oko 5%",
+     "Oko 15%",
+     "Oko 40%",
+     "Oko 80%"
+    ],
+    "correct": 2
+   },
+   {
+    "q": "Koliki je otprilike udeo ljudi koji imaju dve defektne kopije i posebno su podložni stresu?",
+    "options": [
+     "Oko 5%",
+     "Oko 15%",
+     "Oko 40%",
+     "Oko 60%"
     ],
     "correct": 1
    },
    {
-    "q": "Zašto spora razgradnja dopamina (Worrier) ima i svakodnevne prednosti?",
+    "q": "Što su genetske osobine vezane za stres nepovoljnije, to je pravi način života važniji. Šta preporučuje izveštaj?",
     "options": [
-     "Čini ih imunim na svaki stres",
-     "Uzrokuje stalno visoku otpornost na stres",
-     "Dopamin ostaje duže aktivan — ti ljudi intenzivnije doživljavaju uzbuđenje, radost i nagradu; radoznali su i skloni istraživanju. Nedostatak se javlja tek pod hroničnim stresom kada se tijelo teško vraća u smiraj.",
-     "Nema prednosti, samo nedostatke"
+     "Meditaciju, život sa malo stresa, ishranu i fizičku aktivnost",
+     "Više kofeina za budnost i bolji učinak pod pritiskom",
+     "Izbegavanje svakog sporta, da telo ne bi bilo dodatno opterećeno",
+     "Samo lekove, jer se protiv genetike ne može delovati"
     ],
-    "correct": 2
+    "correct": 0
+   },
+   {
+    "q": "Prema obuci, čemu su ljudi čiji gen COMT slabo funkcioniše takođe skloniji?",
+    "options": [
+     "Zavisnosti od kofeina",
+     "Poremećajima sna",
+     "Žudnji za šećerom",
+     "Kockanju"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Šta u izveštaju označava crvena zona kod neke osobine vezane za stres?",
+    "options": [
+     "Veoma povoljnu genetiku — nije potrebno ništa preduzimati",
+     "Nepovoljnu predispoziciju — veći rizik od burnouta",
+     "Da osoba već ima burnout i treba joj lečenje",
+     "Standardnu preporuku koja važi za sve"
+    ],
+    "correct": 1
    }
   ]
  },
  "bo-report-en": {
-  "topic": "Obuka za savjetovanje",
-  "description": "Prođi kroz izvještaj o burnoutu korak po korak sa svojim klijentom.",
-  "longDescription": "U ovoj obuci za savjetovanje dr. Daniel Wallerstorfer objašnjava kako proći kroz genetski izvještaj o burnoutu sa svojim klijentima i izvesti individualne strategije upravljanja stresom.",
-  "postVideoText": "S ovom obukom možeš na čvrstim temeljima sa svojim klijentima razgovarati o izvještaju o burnoutu. Demo brošura ispod može poslužiti kao primjer izvještaja za tvoju vlastitu praksu savjetovanja.",
-  "introQuestionsHeader": "U ovoj obuci ćeš naučiti:",
+  "topic": "Obuka za savetovanje",
+  "description": "Prođi sa svojim klijentom korak po korak kroz izveštaj o burnoutu.",
+  "longDescription": "U ovoj obuci za savetovanje dr Daniel Wallerstorfer na primeru klijentkinje Marije pokazuje kako se čita deo izveštaja o burnoutu: gen COMT, tri osobine vezane za stres na skali crveno–sredina–zeleno i zašto je način života važan za klijente u crvenoj zoni i u sredini.",
+  "postVideoText": "Uz ovu obuku možeš sa sigurnošću da razgovaraš sa svojim klijentima o izveštaju o burnoutu.",
+  "introQuestionsHeader": "U ovoj obuci naučićeš:",
   "bullets": [
-   "Strukturiran prolazak kroz izvještaj o burnoutu",
+   "Strukturisano proći kroz izveštaj o burnoutu",
    "Jasno objasniti genetsku predispoziciju za stres",
-   "Izvesti individualne preporuke za način života",
-   "Rano prepoznati znakove upozorenja"
+   "Protumačiti tri osobine vezane za stres na skali crveno–sredina–zeleno",
+   "Objasniti zašto je način života važan u crvenoj zoni i u sredini"
   ],
   "introQuestions": [
-   "Kako je strukturiran izvještaj o burnoutu",
-   "Kako jasno objasniti individualnu predispoziciju za stres",
-   "Kako izvesti konkretne preporuke za način života"
+   "Kako je strukturisan deo izveštaja o burnoutu",
+   "Kako jasno da objasniš individualnu predispoziciju za stres",
+   "Šta rezultat znači za način života tvog klijenta"
   ],
   "questions": [
    {
-    "q": "Klijentkinja pokazuje sporu varijantu COMT (Worrier). Šta je centralni dio savjetovanja?",
+    "q": "Koji gen je u središtu dela izveštaja o burnoutu i na šta utiče?",
     "options": [
-     "Nije potreban poseban savjet",
-     "Signali stresa duže ostaju u sistemu — preporučiti namjerne rutine oporavka, prioritet sna, meditaciju/disanje i izbjegavanje više istovremenih stresora. Genetska informacija je alat za aktivno planiranje oporavka, a ne za etiketiranje klijenta",
-     "Reći klijentkinji da će doživjeti burnout",
-     "Preporučiti visoke doze kofeina"
+     "CYP1A2 — brzinu kojom se kofein razgrađuje u jetri",
+     "FTO — regulaciju apetita i osećaj sitosti",
+     "COMT — ravnotežu određenih neurotransmitera u mozgu",
+     "MTHFR — način na koji telo aktivira folat"
+    ],
+    "correct": 2
+   },
+   {
+    "q": "Koje tri osobine prikazuje deo izveštaja o burnoutu?",
+    "options": [
+     "Učinak pod stresom, otpornost na negativna osećanja i impulsivnost",
+     "Kvalitet sna, osetljivost na kofein i reakciju kortizola na stres",
+     "Koncentraciju, pamćenje i motivaciju",
+     "Krvni pritisak, puls i brzinu disanja"
+    ],
+    "correct": 0
+   },
+   {
+    "q": "Marija ima jednu funkcionalnu i jednu defektnu kopiju gena COMT. Kako izgleda njen rezultat?",
+    "options": [
+     "Sve tri osobine su u crvenoj zoni — veoma je podložna burnoutu",
+     "Sve tri osobine su u zelenoj zoni — burnout za nju nije problem",
+     "Učinak pod stresom je u crvenoj zoni, a druge dve osobine u zelenoj",
+     "Sve tri osobine su u sredini — umereno dobra otpornost na stres"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Ljudi koji pate od burnouta često kombinuju pogrešan način života sa svojom genetikom. Gde se obično nalaze njihovi rezultati i šta bi trebalo da urade?",
+    "options": [
+     "U zelenoj zoni — treba samo da smanje obim posla",
+     "Uglavnom u crvenoj zoni — treba da žive tako da izbegavaju stres",
+     "U sredini — njihov način života ima mali uticaj",
+     "Uglavnom u crvenoj zoni — promena načina života više ništa ne menja"
     ],
     "correct": 1
    },
    {
-    "q": "Klijentkinja tipa Worrier kaže da uživa u svom detaljnom radu i osjeća se produktivno — treba li da se mijenja?",
+    "q": "Marijini rezultati su kod sve tri osobine u sredini. Da li je njen način života važan?",
     "options": [
-     "Da, mora promijeniti ličnost",
-     "Ne — spora varijanta COMT donosi i prednosti (visoka koncentracija, intenzivan doživljaj nagrade, radoznalost). Preporuka je usmjerena na oporavak, a ne na ličnost: zadržati snage, ali planirati oporavak radi zaštite od hroničnog stresa",
-     "Dati otkaz na poslu",
-     "Odmah uzeti lijekove"
+     "Da — i za nju je važno da načinom života izbegava stres",
+     "Ne — samo klijenti u crvenoj zoni treba da promene način života",
+     "Ne — rezultat u sredini nema praktičan značaj",
+     "Tek kada se kod nje pojave prvi znaci burnouta"
     ],
-    "correct": 1
+    "correct": 0
    },
    {
-    "q": "Šta \"crvena zona\" u izvještaju o burnoutu znači za razgovor u savjetovanju?",
+    "q": "Šta znači kada je klijent kod sve tri osobine u zelenoj zoni?",
     "options": [
-     "Klijent već ima burnout",
-     "Klijent ima nepovoljnu genetsku predispoziciju u ovom aspektu — mjere načina života su posebno važne. To je upozorenje, a ne dijagnoza",
-     "Laboratorijska greška",
-     "Klijent treba da izbjegava sve teme"
+     "Burnout je kod ovog klijenta nemoguć, bez obzira na način života",
+     "Klijent je posebno podložan burnoutu",
+     "Burnout za ovog klijenta nije tako velika opasnost",
+     "Analizu nije bilo moguće obraditi"
     ],
-    "correct": 1
-   },
-   {
-    "q": "Klijent tipa Warrior kaže da napreduje pod pritiskom — treba li da brine o burnoutu?",
-    "options": [
-     "Ne, Warrior-i su imuni",
-     "Manji akutni rizik nego Worrier, ali oporavak i dalje je važan. Percipirani nedostatak stresa može prikriti nedovoljnu stimulaciju u mirnim fazama. Preporučiti strukturu za svakodnevnu koncentraciju i dovoljno sna",
-     "Da, preći na posao s malo stresa",
-     "Povećati stres što je više moguće"
-    ],
-    "correct": 1
-   },
-   {
-    "q": "Kako uokviruješ cjelokupni izvještaj o burnoutu za klijenta?",
-    "options": [
-     "Kao presudu — doživjet će burnout",
-     "Kao alat: izvještaj otkriva klijentov profil stresa kako bi se oporavak i način života mogli namjerno planirati. Nije presuda niti dijagnoza",
-     "Kao nebitno",
-     "Kao medicinsku patologiju koja zahtijeva hitno liječenje"
-    ],
-    "correct": 1
+    "correct": 2
    }
   ]
  }
@@ -1512,6 +1612,11 @@ const FAQTX = {
    "Selen"
   ]
  },
+ "bo-report-en": {
+  "videoSegmentTitles": [
+   "Burnout — individualni pristup stresu"
+  ]
+ },
  "bo-faq-en": {
   "faqGroups": [
    {
@@ -1519,48 +1624,53 @@ const FAQTX = {
     "items": [
      {
       "q": "Šta je gen COMT i zašto je važan?",
-      "a": "COMT (katehol-O-metiltransferaza) razgrađuje dopamin, adrenalin i noradrenalin u prefrontalnom korteksu. Česta varijanta (Val158Met) određuje koliko brzo se ta razgradnja odvija — za faktor 3-4 između brze i spore varijante. Time se reguliše koliko dugo signal stresa ostaje u sistemu."
+      "a": "COMT (katehol-O-metiltransferaza) razgrađuje neurotransmiter dopamin kada se uzbudljiva ili stresna situacija završi, kako bi mozak mogao da se vrati u osnovno stanje. Ako gen slabo funkcioniše, dopamin se razgrađuje mnogo sporije i mozak duže ostaje u stanju pobuđenosti. Studije opisuju čestu varijantu (Val158Met) kod koje se aktivnost enzima jasno razlikuje između brzog i sporog oblika."
      },
      {
-      "q": "Koja je razlika između Warrior i Worrier?",
-      "a": "Warrior (Val/Val): dopamin se brzo razgrađuje — otporniji na akutni stres, daje vrhunski učinak pod pritiskom. Worrier (Met/Met): dopamin se razgrađuje sporo — jaka koncentracija u svakodnevici, ali ranjivost na hronični stres. Oko 50% ljudi je mješoviti tip."
+      "q": "Koja je razlika između tipova Warrior i Worrier?",
+      "a": "Ovi pojmovi se često koriste za dva krajnja oblika aktivnosti enzima COMT. „Warrior“: dopamin se brzo razgrađuje — to obično ide uz bolji učinak pod stresom. „Worrier“: dopamin se sporo razgrađuje — uzbuđenje i pozitivna osećanja doživljavaju se intenzivnije, ali se mozak teško vraća u osnovno stanje kada se stres stalno ponavlja. Oko 40% ljudi ima dve kopije gena koje dobro funkcionišu, oko 15% ima dve defektne kopije, a preostalih ~45% po jednu od svake."
      },
      {
-      "q": "Šta je sa BDNF?",
-      "a": "BDNF (Brain-Derived Neurotrophic Factor) podržava rast neurona i otpornost. Met-varijanta (Val66Met) smanjuje lučenje BDNF-a; nosioci se sporije oporavljaju od stresa i ranjiviji su na depresiju pod hroničnim opterećenjem. BDNF se može podići vježbanjem, snom, učenjem i povremenim postom."
+      "q": "Šta je sa BDNF-om?",
+      "a": "BDNF (moždani neurotrofni faktor, engl. brain-derived neurotrophic factor) podržava rast i prilagodljivost nervnih ćelija. Met-varijanta (Val66Met) povezuje se sa manjim oslobađanjem BDNF-a zavisnim od aktivnosti; neke studije je povezuju i sa većom ranjivošću pod hroničnim stresom, ali su nalazi neujednačeni. Redovna fizička aktivnost povezuje se sa višim nivoima BDNF-a."
      }
     ]
    },
    {
-    "title": "Praktični savjeti",
+    "title": "Praktični saveti",
     "items": [
      {
-      "q": "Ja sam Worrier — jesam li osuđen na burnout?",
-      "a": "Ne. Spora COMT varijanta povećava osjetljivost, a ne sudbinu. Poznavanje predispozicije omogućava ti da djeluješ rano: jasne rutine oporavka, prioritet sna, disanje ili meditacija, izbjegavanje gomilanja mnogih stresora odjednom. Tokom godina to sprječava da sistem uđe u hronično preopterećenje."
+      "q": "Ja sam Worrier — da li je burnout neizbežan za mene?",
+      "a": "Ne. Nepovoljniji COMT profil povećava osetljivost na stres, ali nije sudbina. Što su geni nepovoljniji, to je pravi način života važniji: meditacija, život sa što manje stresa, ishrana i fizička aktivnost. Kada znaš svoju predispoziciju, možeš da reaguješ na vreme, pre nego što se stres nagomila."
      },
      {
-      "q": "Ja sam Warrior — moram li ipak brinuti o burnoutu?",
-      "a": "Akutni rizik je manji, ali oporavak je i dalje važan. Osjećaj „bez stresa“ može prikriti nedovoljnu stimulaciju u mirnim fazama. Planiraj strukturu za faze koncentracije i čuvaj san."
+      "q": "Ja sam Warrior — da li ipak treba da brinem o burnoutu?",
+      "a": "Tvoj genetski rizik je manji, ali nije nula: snažan, neprekidan stres vremenom i dalje može da ostavi posledice. Faze oporavka i uravnotežen način života ostaju važni."
      },
      {
       "q": "Šta pomaže svima, bez obzira na genotip?",
-      "a": "San (7-9 h), redovno kretanje (posebno izdržljivost — podiže BDNF i reguliše kortizol), društveni kontakti, smisao u poslu i izbjegavanje zloupotrebe stimulansa (alkohol, prekomjeran kofein)."
+      "a": "Dovoljno sna, redovna fizička aktivnost, meditacija ili druge tehnike opuštanja, uravnotežena ishrana, društveni kontakti i umerenost sa stimulansima kao što su alkohol i kofein."
      }
     ]
    },
    {
-    "title": "Šta učiniti s rezultatom",
+    "title": "Šta uraditi sa rezultatom",
     "items": [
      {
-      "q": "U mom izvještaju se pojavila „crvena zona“. Trebam li se brinuti?",
-      "a": "Ne. Crvena zona označava povišen rizik u jednom određenom području, a ne dijagnozu. To je poziv da djeluješ rano — upravo suprotno od fatalističke presude."
+      "q": "U mom izveštaju se pojavila „crvena zona“. Da li treba da brinem?",
+      "a": "Ne. Crvena zona označava nepovoljnu genetsku predispoziciju u jednoj određenoj oblasti — veći rizik, a ne dijagnozu. To je poziv da reaguješ na vreme — upravo suprotno od fatalističke presude."
      },
      {
-      "q": "Gdje pronalazim konkretne preporuke za svoj genotip?",
-      "a": "U izvještaju o burnoutu — on sadrži detaljne preporuke o meditaciji, ishrani, kretanju, higijeni sna i strategijama suočavanja, prilagođene tvom individualnom COMT profilu i ostalim procijenjenim faktorima."
+      "q": "Gde mogu da pronađem konkretne preporuke za svoj genotip?",
+      "a": "U izveštaju o burnoutu — on sadrži preporuke o meditaciji, načinu života sa malo stresa, ishrani i fizičkoj aktivnosti, prilagođene tvom genetskom profilu stresa."
      }
     ]
    }
+  ]
+ },
+ "ba-report-en": {
+  "videoSegmentTitles": [
+   "Proces starenja"
   ]
  },
  "ba-faq-en": {

@@ -88,80 +88,120 @@ const TXT = {
  },
  "ba-sci-en": {
   "topic": "Baza științifică",
-  "description": "Cum este vârsta biologică determinată genetic și influențată de stilul de viață.",
-  "longDescription": "Acest training explică baza științifică din spatele determinării vârstei biologice. Vei afla ce gene influențează lungimea telomerilor și îmbătrânirea celulară, cum diferă vârsta biologică de vârsta cronologică și ce factori ai stilului de viață pot modifica măsurabil vârsta biologică.",
+  "description": "De ce se scurtează telomerii, cum influențează gena telomerazei vârsta biologică — și ce nutrienți pot ajuta.",
+  "longDescription": "Acest training explică baza științifică a analizei vârstei biologice. Vei afla de ce telomerii — capetele protectoare ale cromozomilor noștri — se scurtează la fiecare diviziune celulară, ce se întâmplă cu o celulă atunci când aceștia s-au consumat, cum influențează gena telomerazei acest proces și ce nutrienți pot susține menținerea telomerilor atunci când genele funcționează mai puțin bine.",
   "postVideoText": "Cu această bază științifică poți discuta analiza vârstei biologice cu clienții tăi pe un fundament solid.",
   "introQuestionsHeader": "Acest training răspunde la:",
   "bullets": [
    "Telomeri și îmbătrânirea celulară — noțiuni de bază",
-   "Vârstă cronologică vs. biologică",
-   "Factori genetici ai îmbătrânirii (TERT, BICD1 & Co.)",
-   "Strategii anti-îmbătrânire cu efect măsurabil"
+   "Senescența: când celulele trec în modul de repaus",
+   "Factori genetici ai îmbătrânirii: gena telomerazei",
+   "Nutrienți de sprijin și efectul dietei mediteraneene în funcție de genotip"
   ],
   "introQuestions": [
-   "Care este diferența dintre vârsta cronologică și cea biologică?",
-   "Cum se măsoară telomerii și ce ne spun ei?",
-   "Ce gene influențează îmbătrânirea celulară?",
-   "Ce măsuri ale stilului de viață modifică demonstrabil vârsta biologică?"
+   "Ce sunt telomerii și de ce se scurtează la fiecare diviziune celulară?",
+   "Ce se întâmplă cu o celulă atunci când telomerii ei s-au consumat?",
+   "Ce face gena telomerazei?",
+   "Ce nutrienți susțin menținerea telomerilor — și de ce dieta mediteraneană nu funcționează pentru toată lumea?"
   ],
   "questions": [
    {
-    "q": "Care este diferența dintre vârsta cronologică și cea biologică?",
+    "q": "Ce sunt telomerii?",
     "options": [
-     "Nicio diferență — sunt identice",
-     "Vârsta cronologică este timpul scurs de la naștere; vârsta biologică descrie starea celulară reală — influențată de stilul de viață și genetică",
-     "Vârsta biologică este întotdeauna mai mare decât cea cronologică",
-     "Vârsta cronologică se măsoară în laborator, vârsta biologică se estimează"
+     "Gene aflate la începutul fiecărui cromozom, care controlează diviziunea celulară",
+     "Proteine care repară ADN-ul deteriorat",
+     "Structuri din interiorul celulei care produc energie",
+     "Capete protectoare ale cromozomilor, care nu conțin gene"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Ce se întâmplă cu telomerii la fiecare diviziune celulară?",
+    "options": [
+     "Devin de fiecare dată puțin mai lungi",
+     "Se desprinde o mică bucată și se scurtează",
+     "Sunt reconstruiți de la zero în noua celulă",
+     "Rămân exact la fel de lungi"
     ],
     "correct": 1
    },
    {
-    "q": "Ce structuri celulare se scurtează la fiecare diviziune celulară și sunt un indicator-cheie al vârstei biologice?",
+    "q": "După aproximativ câte diviziuni celulare se consumă telomerii?",
     "options": [
-     "Mitocondriile",
-     "Ribozomii",
-     "Telomerii",
-     "Membranele celulare"
+     "Aproximativ 5-10",
+     "Aproximativ 20-30",
+     "Aproximativ 50-70",
+     "Aproximativ 500-700"
     ],
     "correct": 2
    },
    {
-    "q": "Care este rolul enzimei telomerază?",
+    "q": "Ce se întâmplă cu o celulă ai cărei telomeri s-au consumat?",
     "options": [
-     "Descompune celulele care au îmbătrânit",
-     "Poate repara și extinde telomerii — încetinind scurtarea telomerilor",
-     "Produce radicali liberi",
-     "Transportă oxigenul în sânge"
+     "Intră în repaus (senescență) și nu-și mai face treaba",
+     "Continuă să se dividă, doar că într-un ritm mai lent",
+     "Se transformă din nou într-o celulă stem tânără",
+     "Este descompusă și eliminată imediat de organism"
+    ],
+    "correct": 0
+   },
+   {
+    "q": "Care genă ajută la menținerea telomerilor?",
+    "options": [
+     "MTHFR",
+     "COMT",
+     "Telomeraza",
+     "FTO"
+    ],
+    "correct": 2
+   },
+   {
+    "q": "Ce nutrienți pot susține menținerea telomerilor atunci când gena protectoare funcționează mai puțin bine?",
+    "options": [
+     "Vitamina C, zinc, seleniu, fier și magneziu",
+     "Vitamina D3, Omega-3, vitamina E, resveratrol și ginkgo",
+     "Vitamina B12, acid folic, fier, iod și calciu",
+     "Cafeină, taurină, creatină, L-carnitină și ceai verde"
     ],
     "correct": 1
    },
    {
-    "q": "Un client are o telomerază slabă genetic („zona roșie”). Cea mai bună recomandare de consultanță?",
+    "q": "Are dieta mediteraneană același efect asupra telomerilor la toată lumea?",
     "options": [
-     "Ignoră predispoziția — telomerii nu pot fi influențați",
-     "Compensează slăbiciunea genetică prin stilul de viață: alimentație bogată în antioxidanți, nutrienți țintiți (D3, Omega-3, Resveratrol), exercițiu fizic moderat și regulat, somn bun și reducerea stresului",
-     "Oprește complet exercițiul fizic — generează stres oxidativ",
-     "Consultă imediat un medic — varianta este patologică"
+     "Da — menține telomerii mai lungi la toată lumea",
+     "Nu — scurtează telomerii la majoritatea oamenilor",
+     "Efectul ei asupra telomerilor nu a fost studiat niciodată",
+     "Nu — funcționează doar la o anumită variantă genetică"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Cât de mare poate fi diferența de vârstă biologică între persoanele la care ambele copii ale genei telomerazei sunt defecte și cele la care ambele copii funcționează?",
+    "options": [
+     "Până la 20 de ani",
+     "Cel mult 1-2 ani",
+     "Cel mult 5 ani",
+     "Nu există nicio diferență măsurabilă"
+    ],
+    "correct": 0
+   },
+   {
+    "q": "Ce rol joacă radicalii liberi în îmbătrânire?",
+    "options": [
+     "Împiedică desprinderea capetelor cromozomilor în timpul diviziunii celulare",
+     "Deteriorează continuu celulele; antioxidanții ajută la contracararea lor",
+     "Joacă un rol doar la persoanele de peste 70 de ani",
+     "Repară celulele deteriorate în timpul somnului"
     ],
     "correct": 1
    },
    {
-    "q": "Ce a arătat cercetarea despre dieta mediteraneană și lungimea telomerilor?",
+    "q": "Care este strategia potrivită pentru un client cu un defect al genei telomerazei?",
     "options": [
-     "Extinde telomerii măsurabil la toată lumea",
-     "Funcționează doar la purtătorii unui anumit genotip — ceilalți nu au niciun efect asupra telomerilor. Un exemplu clar că același sfat privind stilul de viață nu funcționează la fel pentru toată lumea",
-     "Scurtează telomerii — ar trebui evitată",
-     "Nu are niciun efect măsurabil la nimeni"
-    ],
-    "correct": 1
-   },
-   {
-    "q": "Cum ar trebui prezentată o predispoziție nefavorabilă anti-îmbătrânire în consultanță?",
-    "options": [
-     "Ca destin de neschimbat — clientul va îmbătrâni prematur",
-     "Ca irelevantă — genele nu contează pentru îmbătrânire",
-     "Ca risc crescut, nu ca destin: clienții care își cunosc punctele slabe genetice pot aplica mai conștient antioxidanți, somn, exercițiu fizic și reducerea stresului — efectele se cumulează de-a lungul anilor",
-     "Ca o boală care necesită tratament imediat"
+     "Să ignore defectul — oricum telomerii nu pot fi influențați",
+     "Să facă mai mult sport — alimentația nu contează",
+     "Să crească aportul de nutrienți care încetinesc scurtarea telomerilor",
+     "Să treacă la dieta mediteraneană — aceasta funcționează la toată lumea"
     ],
     "correct": 2
    }
@@ -170,70 +210,80 @@ const TXT = {
  "ba-report-en": {
   "topic": "Training de consultanță",
   "description": "Parcurge raportul vârstei biologice împreună cu clientul tău.",
-  "longDescription": "În acest training de consultanță, Dr. Daniel Wallerstorfer explică cum să parcurgi raportul genetic al vârstei biologice și al procesului de îmbătrânire împreună cu clienții tăi.",
-  "postVideoText": "Cu acest training poți discuta raportul vârstei biologice pe un fundament solid cu clienții tăi. Broșura demonstrativă de mai jos poate servi drept raport-exemplu pentru propria ta practică de consultanță.",
+  "longDescription": "În acest training de consultanță, Dr. Daniel Wallerstorfer explică pe înțelesul tuturor procesul de îmbătrânire — de la cromozomi și telomeri până la celulele aflate în modul de repaus — și arată, pe exemplul clientei Maria, cum să citești în raport rezultatul privind telomerii, constatarea legată de dieta mediteraneană și recomandările de nutrienți.",
+  "postVideoText": "Cu acest training poți discuta raportul vârstei biologice pe un fundament solid cu clienții tăi.",
   "introQuestionsHeader": "În acest training vei învăța:",
   "bullets": [
-   "Parcurge raportul vârstei biologice structurat",
-   "Prezintă procesul de îmbătrânire în termeni genetici",
-   "Derivă recomandări concrete anti-îmbătrânire",
-   "Cum influențează stilul de viață vârsta biologică"
+   "Parcurgerea structurată a raportului vârstei biologice",
+   "Explicarea pe înțelesul tuturor a telomerilor și a procesului de îmbătrânire",
+   "Citirea rezultatului privind telomerii pe exemplul Mariei",
+   "Recomandările de nutrienți și constatarea privind dieta mediteraneană"
   ],
   "introQuestions": [
    "Cum este structurat raportul vârstei biologice",
    "Cum să explici clar procesul de îmbătrânire",
-   "Ce recomandări concrete privind stilul de viață pot fi derivate"
+   "Ce recomandări de nutrienți decurg din rezultat"
   ],
   "questions": [
    {
-    "q": "Cum îi explici clientului vârsta biologică vs. cea cronologică într-un limbaj simplu?",
+    "q": "Trainingul compară telomerii cu capetele de plastic ale șireturilor. Ce ilustrează această comparație?",
     "options": [
-     "Sunt identice",
-     "„Vârsta cronologică reprezintă anii de la naștere. Vârsta biologică descrie cât de bătrâne sunt de fapt celulele tale — două persoane de aceeași vârstă pot diferi cu 10-20 de ani biologic, în funcție de gene și stilul de viață”",
-     "Vârsta biologică este doar un termen de marketing",
-     "Este același lucru cu IQ-ul"
+     "Țin laolaltă cele două jumătăți ale cromozomului",
+     "Nu conțin gene și doar protejează cromozomul",
+     "Conțin cele mai importante gene ale cromozomului",
+     "Cresc la loc după fiecare diviziune celulară"
     ],
     "correct": 1
    },
    {
-    "q": "Un client are telomerază slabă („zona roșie”). Care este sfatul practic?",
+    "q": "De ce intră o celulă în modul de repaus după aproximativ 50-70 de diviziuni?",
     "options": [
-     "Nu se poate face nimic în această privință",
-     "Întărește protecția din exterior: alimentație bogată în antioxidanți (Vitamina C/E, polifenoli, seleniu), nutrienți țintiți (Omega-3, D3, Resveratrol), exercițiu fizic moderat și regulat (nu extrem), 7-9 ore de somn, reducerea stresului. Efectele se acumulează de-a lungul anilor",
-     "Urmează chimioterapie în doză mare",
-     "Consumă doar carne"
+     "Și-a epuizat rezervele de nutrienți și trebuie să se refacă",
+     "Sistemul imunitar a marcat-o ca deteriorată și o dezactivează",
+     "A atins dimensiunea maximă și nu se mai poate divide",
+     "Telomerii ei s-au consumat, iar genele încep să se desprindă"
     ],
-    "correct": 1
+    "correct": 3
    },
    {
-    "q": "Un client întreabă: „Mă ajută dieta mediteraneană să întineresc biologic?”",
+    "q": "Pot genele care mențin telomerii să inverseze pierderea telomerilor?",
     "options": [
-     "Da, întotdeauna",
-     "Depinde de genetică: studiile arată că dieta mediteraneană extinde măsurabil telomerii doar la purtătorii unei anumite variante. Pentru ceilalți, efectul este mai slab. Raportul arată dacă acest client face parte din grupul care răspunde",
-     "Nu, niciodată",
-     "Doar pentru femei"
+     "Da — reconstruiesc telomerii până la lungimea lor inițială",
+     "Nu — nu au absolut nicio influență asupra lungimii telomerilor",
+     "Nu complet — dar încetinesc procesul",
+     "Doar în copilărie, cât timp organismul este încă în creștere"
     ],
-    "correct": 1
+    "correct": 2
    },
    {
-    "q": "Un client tânăr (25 ani) întreabă: „Îmi este util raportul bio-age?”",
+    "q": "Rezultatul Mariei privind capacitatea de menținere a telomerilor se află în zona de mijloc. Cum se interpretează acest rezultat?",
     "options": [
-     "Nu, util doar la 60+",
-     "Da — cu cât mai tânăr, cu atât mai bun momentul pentru a începe. Slăbiciunile genetice se cumulează de-a lungul deceniilor; ajustările stilului de viață la 25 de ani au un efect cumulativ mult mai mare până la 60 de ani decât dacă începi târziu",
-     "Util doar pentru sportivi",
-     "Nu, vârsta biologică este fixă"
+     "Capacitate afectată — telomerii ei nu sunt menținuți la fel de bine",
+     "Capacitate normală — nu este necesară nicio măsură",
+     "Capacitate peste medie — telomerii ei sunt menținuți deosebit de bine",
+     "Rezultat neconcludent — analiza trebuie repetată"
     ],
-    "correct": 1
+    "correct": 0
    },
    {
-    "q": "Cum ar trebui să prezinți rezultatul bio-age pentru un client stresat cu mai multe „zone roșii”?",
+    "q": "O ajută dieta mediteraneană pe Maria să-și mențină telomerii?",
     "options": [
-     "Ca un declin inevitabil",
-     "Ca oportunități țintite: fiecare zonă roșie este o pârghie clară — Vit D3, Omega-3, aport de antioxidanți, somn, reducerea stresului. Planul este orientat spre acțiune și motivant, nu fatalist",
-     "Ca o urgență medicală",
-     "Ca o boală netratabilă"
+     "Da — ajută pe toată lumea să-și mențină telomerii",
+     "Da — dar numai în combinație cu mai multă vitamină E",
+     "Nu — scurtează telomerii la majoritatea oamenilor",
+     "Nu — la variantele ei genetice nu are niciun efect"
     ],
-    "correct": 1
+    "correct": 3
+   },
+   {
+    "q": "În raportul Mariei, vitamina D3, Omega-3, vitamina E, resveratrolul și ginkgo sunt marcate cu săgeți verzi. Ce înseamnă acest lucru?",
+    "options": [
+     "Are deja un nivel suficient al acestor nutrienți",
+     "Ar trebui să-și reducă aportul acestor nutrienți",
+     "Ar trebui să mănânce mai multe alimente cu acești nutrienți",
+     "Mai întâi are nevoie de un test de sânge pentru acești nutrienți"
+    ],
+    "correct": 2
    }
   ]
  },
@@ -1176,152 +1226,202 @@ const TXT = {
  },
  "bo-sci-en": {
   "topic": "Baze științifice",
-  "description": "Cum modelează gena COMT procesarea individuală a stresului — și de ce riscul de burnout este genetic.",
-  "longDescription": "În acest training, Dr. Daniel Wallerstorfer explică gena COMT și rolul ei în descompunerea dopaminei, fenotipul Warrior vs. Worrier, BDNF și neuroplasticitatea, precum și cum poate fi derivat riscul individual de burnout din profilul genetic.",
+  "description": "De ce același stres îi afectează diferit pe oameni — și ce legătură are gena COMT cu riscul de burnout.",
+  "longDescription": "În acest training, Dr. Daniel Wallerstorfer explică de ce stresul masiv și continuu duce la burnout la unii oameni, dar la alții nu. Vei afla care sunt cele trei trăsături genetice evaluate în analiză, cum descompune gena COMT dopamina după situații palpitante sau stresante, de ce aproximativ 15% dintre oameni sunt deosebit de predispuși la stres — și de ce stilul de viață potrivit contează cu atât mai mult atunci când genele sunt mai puțin favorabile.",
   "postVideoText": "Cu acest fundament științific poți discuta raportul de burnout cu clienții tăi pe o bază solidă și poți deriva strategii individuale de gestionare a stresului.",
   "introQuestionsHeader": "Acest training răspunde la:",
   "bullets": [
+   "Trei trăsături genetice: performanța sub stres, reziliența emoțională, impulsivitatea",
    "COMT — gena centrală pentru descompunerea dopaminei",
-   "Warrior vs. Worrier — două genotipuri, două strategii de stres",
-   "BDNF, neuroplasticitatea și reziliența",
-   "Recomandări practice pornind de la profilul genetic"
+   "Descompunerea dopaminei: de ce 15% sunt deosebit de predispuși la stres",
+   "Recomandări privind stilul de viață pe baza profilului genetic"
   ],
   "introQuestions": [
    "Care genă este centrală pentru procesarea individuală a stresului?",
-   "Care este diferența dintre Warrior și Worrier?",
-   "Cum este riscul de burnout genetic?",
-   "Ce recomandări concrete privind stilul de viață rezultă din profil?"
+   "De ce același stres îi afectează diferit pe oameni — și ce legătură are COMT cu asta?",
+   "Cum influențează genele riscul de burnout?",
+   "Ce măsuri privind stilul de viață ajută — și de ce contează mai mult în cazul unui profil nefavorabil?"
   ],
   "questions": [
    {
-    "q": "Care genă este motorul central al procesării individuale a stresului în analiza de burnout?",
+    "q": "Conform trainingului, ce cauzează burnout-ul?",
     "options": [
-     "MTHFR",
-     "COMT",
-     "CYP1A2",
-     "FTO"
+     "O singură situație stresantă de scurtă durată, cum ar fi un examen",
+     "Doar genetica — stilul de viață nu joacă niciun rol",
+     "Stresul masiv și continuu pe o perioadă lungă",
+     "Prea mult exercițiu fizic"
     ],
-    "correct": 1
+    "correct": 2
    },
    {
-    "q": "Ce distinge un genotip „Warrior” de unul „Worrier” în privința COMT?",
+    "q": "Ce trăsături genetice evaluează analiza stresului?",
     "options": [
-     "Warrior descompune dopamina mai rapid — performanță de vârf sub stres acut. Worrier o descompune mai lent — concentrare zilnică puternică, mai vulnerabil la stresul cronic",
-     "Nicio diferență reală, contează doar educația",
-     "Worrier descompune dopamina mai rapid",
-     "Warrior-ii sunt imuni la orice formă de stres"
+     "Sensibilitatea la cafeină, durata somnului și toleranța la alcool",
+     "Memoria, concentrarea și timpul de reacție",
+     "Pulsul în repaus, tensiunea arterială și nivelul de cortizol",
+     "Performanța sub stres, reziliența emoțională și impulsivitatea"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Care genă descompune dopamina după ce o situație palpitantă s-a încheiat?",
+    "options": [
+     "COMT",
+     "MTHFR",
+     "FTO",
+     "ACTN3"
     ],
     "correct": 0
    },
    {
-    "q": "Ce înseamnă o „zonă roșie” în raportul de burnout pentru consultație?",
+    "q": "Ce se întâmplă sub stres repetat la o persoană a cărei genă COMT funcționează slab?",
     "options": [
-     "Clientul are deja burnout",
-     "Este o eroare tehnică",
-     "Clientul are o predispoziție genetică nefavorabilă în acest aspect — măsurile privind stilul de viață sunt deosebit de importante, deoarece riscul este crescut",
-     "Clientul ar trebui să evite complet subiectul"
-    ],
-    "correct": 2
-   },
-   {
-    "q": "Care este cea mai potrivită recomandare pentru un client cu o variantă COMT lentă (Worrier)?",
-    "options": [
-     "Să caute activ stresul — îl face mai productiv",
-     "Pauze conștiente de recuperare, meditație, igienă bună a somnului și evitarea multor surse simultane de stres — deoarece semnalul de stres persistă mai mult timp în sistem",
-     "Creșterea drastică a cofeinei pentru a mări dopamina",
-     "Evitarea oricărei forme de efort, chiar și a sportului"
+     "Dopamina este descompusă mai rapid, așa că creierul se calmează mai repede",
+     "Creierul nu revine la nivelul de bază, iar un nou stres duce la suprasolicitare",
+     "Creierul se obișnuiește cu stresul și reacționează tot mai slab la fiecare episod",
+     "Nu se eliberează deloc dopamină, așa că stresul trece neobservat"
     ],
     "correct": 1
    },
    {
-    "q": "Cum ar trebui încadrată o predispoziție nefavorabilă la burnout în cadrul consultației?",
+    "q": "Care este un avantaj paradoxal al descompunerii lente a dopaminei?",
     "options": [
-     "Ca destin — nu se poate face nimic",
-     "Ca risc crescut, nu ca destin — clienții care își cunosc sensibilitatea la stres pot acționa din timp (somn, meditație, exercițiu, pauze). Informația genetică este un instrument, nu un verdict.",
-     "Ca fiind irelevant — genele nu afectează stresul",
-     "Ca o boală care necesită tratament imediat"
+     "O reacție mai calmă la situațiile stresante din viața de zi cu zi",
+     "O recuperare fizică mai rapidă după un efort intens",
+     "Un risc mai mic de infarct",
+     "Sentimente pozitive mai intense și o curiozitate mai mare"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "La ce procent aproximativ dintre oameni funcționează bine ambele copii ale genei COMT?",
+    "options": [
+     "Aproximativ 5%",
+     "Aproximativ 15%",
+     "Aproximativ 40%",
+     "Aproximativ 80%"
+    ],
+    "correct": 2
+   },
+   {
+    "q": "Ce procent aproximativ dintre oameni au ambele copii ale genei COMT defecte și sunt deosebit de predispuși la stres?",
+    "options": [
+     "Aproximativ 5%",
+     "Aproximativ 15%",
+     "Aproximativ 40%",
+     "Aproximativ 60%"
     ],
     "correct": 1
    },
    {
-    "q": "De ce o descompunere lentă a dopaminei (Worrier) are și avantaje în viața de zi cu zi?",
+    "q": "Cu cât trăsăturile genetice legate de stres sunt mai puțin favorabile, cu atât stilul de viață potrivit este mai important. Ce recomandă raportul?",
     "options": [
-     "Îi face imuni la orice stres",
-     "Provoacă o rezistență la stres constant ridicată",
-     "Dopamina rămâne activă mai mult timp — aceste persoane experimentează entuziasmul, bucuria și recompensa mai intens; sunt curioase și exploratoare. Dezavantajul apare doar sub stres cronic, când organismul se luptă să revină la calm.",
-     "Nu are niciun avantaj, doar dezavantaje"
+     "Meditație, un stil de viață cu stres redus, alimentație și mișcare",
+     "Mai multă cafeină, pentru a rămâne alert și a performa sub presiune",
+     "Evitarea oricărui sport, ca organismul să nu fie solicitat suplimentar",
+     "Doar medicamente, pentru că genetica nu poate fi contracarată"
     ],
-    "correct": 2
+    "correct": 0
+   },
+   {
+    "q": "Conform trainingului, la ce mai sunt predispuse persoanele cu o genă COMT care funcționează slab?",
+    "options": [
+     "Dependență de cafeină",
+     "Tulburări de somn",
+     "Pofte de dulce",
+     "Jocuri de noroc"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Ce indică în raport zona roșie a unei trăsături legate de stres?",
+    "options": [
+     "O genetică foarte favorabilă — nu este necesară nicio măsură",
+     "O predispoziție nefavorabilă — un risc mai mare de burnout",
+     "Persoana are deja burnout și are nevoie de tratament",
+     "O recomandare standard, valabilă pentru toată lumea"
+    ],
+    "correct": 1
    }
   ]
  },
  "bo-report-en": {
   "topic": "Training de consultanță",
   "description": "Parcurge raportul de burnout pas cu pas împreună cu clientul tău.",
-  "longDescription": "În acest training de consultanță, Dr. Daniel Wallerstorfer explică cum să parcurgi raportul genetic de burnout împreună cu clienții tăi și să derivi strategii individuale de gestionare a stresului.",
-  "postVideoText": "Cu acest training poți discuta raportul de burnout pe o bază solidă cu clienții tăi. Broșura demo de mai jos poate servi drept raport exemplu pentru propria ta practică de consultanță.",
+  "longDescription": "În acest training de consultanță, Dr. Daniel Wallerstorfer arată, pe exemplul clientei Maria, cum să citești secțiunea de burnout a raportului: gena COMT, cele trei trăsături legate de stres pe scala de la roșu, prin zona de mijloc, până la verde, și de ce stilul de viață contează pentru clienții din zona roșie și din zona de mijloc.",
+  "postVideoText": "Cu acest training poți discuta raportul de burnout pe o bază solidă cu clienții tăi.",
   "introQuestionsHeader": "În acest training vei învăța:",
   "bullets": [
    "Parcurgerea structurată a raportului de burnout",
    "Explicarea clară a predispoziției genetice la stres",
-   "Derivarea unor recomandări individuale privind stilul de viață",
-   "Recunoașterea din timp a semnalelor de avertizare"
+   "Citirea celor trei trăsături legate de stres pe scala roșu–mijloc–verde",
+   "Explicarea importanței stilului de viață în zona roșie și în zona de mijloc"
   ],
   "introQuestions": [
-   "Cum este structurat raportul de burnout",
+   "Cum este structurată secțiunea de burnout a raportului",
    "Cum să explici clar predispoziția individuală la stres",
-   "Cum să derivi recomandări concrete privind stilul de viață"
+   "Ce înseamnă rezultatul pentru stilul de viață al clientului tău"
   ],
   "questions": [
    {
-    "q": "Un client prezintă o variantă COMT lentă (Worrier). Care este elementul central al consultației?",
+    "q": "Care genă se află în centrul secțiunii de burnout și ce influențează ea?",
     "options": [
-     "Nu este nevoie de niciun sfat special",
-     "Semnalele de stres rămân mai mult timp în sistem — recomandă rutine deliberate de recuperare, prioritizarea somnului, meditație/respirație și evitarea mai multor factori de stres simultani. Informația genetică este un instrument pentru a planifica recuperarea activ, nu pentru a eticheta clientul",
-     "Spune-i clientului că va face burnout",
-     "Recomandă doze mari de cofeină"
+     "CYP1A2 — cât de repede este descompusă cafeina în ficat",
+     "FTO — reglarea apetitului și senzația de sațietate",
+     "COMT — echilibrul anumitor neurotransmițători din creier",
+     "MTHFR — modul în care organismul activează folatul"
+    ],
+    "correct": 2
+   },
+   {
+    "q": "Care sunt cele trei trăsături prezentate în secțiunea de burnout a raportului?",
+    "options": [
+     "Performanța sub stres, rezistența la sentimente negative și impulsivitatea",
+     "Calitatea somnului, sensibilitatea la cafeină și răspunsul cortizolului la stres",
+     "Concentrarea, memoria și motivația",
+     "Tensiunea arterială, pulsul și frecvența respiratorie"
+    ],
+    "correct": 0
+   },
+   {
+    "q": "Maria are o copie funcțională și o copie defectă a genei COMT. Cum arată rezultatul ei?",
+    "options": [
+     "Toate cele trei trăsături în zona roșie — este foarte predispusă la burnout",
+     "Toate cele trei trăsături în zona verde — burnout-ul nu este o problemă pentru ea",
+     "Performanța sub stres în zona roșie, celelalte două trăsături în zona verde",
+     "Toate cele trei trăsături în zona de mijloc — rezistență la stres relativ bună"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Persoanele care suferă de burnout combină adesea un stil de viață greșit cu genetica lor. Unde se situează de obicei rezultatele lor și ce ar trebui să facă?",
+    "options": [
+     "În zona verde — trebuie doar să-și reducă volumul de muncă",
+     "Mai ales în zona roșie — ar trebui să trăiască astfel încât să evite stresul",
+     "În zona de mijloc — stilul lor de viață are o influență redusă",
+     "Mai ales în zona roșie — o schimbare a stilului de viață nu mai face nicio diferență"
     ],
     "correct": 1
    },
    {
-    "q": "O clientă Worrier spune că îi place munca ei detaliată și se simte productivă — ar trebui să se schimbe?",
+    "q": "Rezultatele Mariei sunt în zona de mijloc la toate cele trei trăsături. Contează stilul ei de viață?",
     "options": [
-     "Da, trebuie să-și schimbe personalitatea",
-     "Nu — varianta COMT lentă aduce și avantaje (concentrare ridicată, experiență intensă a recompensei, curiozitate). Recomandarea este axată pe recuperare, nu pe personalitate: să-și păstreze punctele forte, dar să planifice recuperarea pentru a se proteja de stresul cronic",
-     "Să-și dea demisia",
-     "Să ia imediat medicamente"
+     "Da — și pentru ea este important să evite stresul prin stilul de viață",
+     "Nu — doar clienții din zona roșie trebuie să-și schimbe stilul de viață",
+     "Nu — un rezultat în zona de mijloc nu are relevanță practică",
+     "Doar după ce apar primele semne de burnout"
     ],
-    "correct": 1
+    "correct": 0
    },
    {
-    "q": "Ce înseamnă o „zonă roșie” în raportul de burnout pentru discuția de consultanță?",
+    "q": "Ce înseamnă atunci când un client se află în zona verde la toate cele trei trăsături?",
     "options": [
-     "Clientul are deja burnout",
-     "Clientul are o predispoziție genetică nefavorabilă în acest aspect — măsurile privind stilul de viață sunt deosebit de importante. Este o alertă, nu un diagnostic",
-     "Eroare de laborator",
-     "Clientul ar trebui să evite toate subiectele"
+     "Burnout-ul este imposibil pentru acest client, indiferent de stilul de viață",
+     "Clientul este deosebit de predispus la burnout",
+     "Burnout-ul nu reprezintă un pericol atât de mare pentru acest client",
+     "Analiza nu a putut fi evaluată"
     ],
-    "correct": 1
-   },
-   {
-    "q": "Un client de tip Warrior spune că prosperă sub presiune — trebuie să-și facă griji în privința burnout-ului?",
-    "options": [
-     "Nu, Warrior-ii sunt imuni",
-     "Risc acut mai mic decât Worrier, dar recuperarea rămâne importantă. O lipsă percepută a stresului poate masca sub-stimularea în fazele liniștite. Recomandă structură pentru concentrarea zilnică și somn adecvat",
-     "Da, să treacă la un job cu stres redus",
-     "Să crească stresul cât mai mult posibil"
-    ],
-    "correct": 1
-   },
-   {
-    "q": "Cum încadrezi raportul general de burnout pentru client?",
-    "options": [
-     "Ca un verdict — va face burnout",
-     "Ca un instrument: raportul dezvăluie profilul de stres al clientului, astfel încât recuperarea și stilul de viață să poată fi planificate deliberat. Nu este un verdict și nu este un diagnostic",
-     "Ca fiind irelevant",
-     "Ca o patologie medicală care necesită tratament imediat"
-    ],
-    "correct": 1
+    "correct": 2
    }
   ]
  }
@@ -1554,6 +1654,11 @@ const FAQTX = {
    "Seleniu"
   ]
  },
+ "bo-report-en": {
+  "videoSegmentTitles": [
+   "Burnout — Gestionarea individuală a stresului"
+  ]
+ },
  "bo-faq-en": {
   "faqGroups": [
    {
@@ -1561,15 +1666,15 @@ const FAQTX = {
     "items": [
      {
       "q": "Ce este gena COMT și de ce este importantă?",
-      "a": "COMT (catecol-O-metiltransferaza) descompune dopamina, adrenalina și noradrenalina în cortexul prefrontal. O variantă frecventă (Val158Met) determină cât de repede are loc această descompunere — cu un factor de 3-4 între varianta rapidă și cea lentă. Astfel se reglează cât timp rămâne un semnal de stres în sistem."
+      "a": "COMT (catecol-O-metiltransferaza) descompune neurotransmițătorul dopamină după ce o situație palpitantă sau stresantă s-a încheiat, astfel încât creierul să poată reveni la nivelul de bază. Dacă gena funcționează slab, dopamina este descompusă mult mai lent, iar creierul rămâne mai mult timp într-o stare de activare. Studiile descriu o variantă frecventă (Val158Met) cu o activitate enzimatică net diferită între forma rapidă și cea lentă."
      },
      {
       "q": "Care este diferența dintre Warrior și Worrier?",
-      "a": "Warrior (Val/Val): dopamina este descompusă rapid — rezistență mai mare la stresul acut, performanță sub presiune. Worrier (Met/Met): dopamina este descompusă lent — concentrare puternică în viața de zi cu zi, dar vulnerabilitate la stresul cronic. Aproximativ 50% dintre oameni sunt tip mixt."
+      "a": "Termenii sunt folosiți adesea pentru cele două extreme ale activității COMT. „Warrior”: dopamina este descompusă rapid — acest lucru tinde să fie asociat cu o performanță mai bună sub stres. „Worrier”: dopamina este descompusă lent — entuziasmul și sentimentele pozitive sunt trăite mai intens, dar creierului îi este greu să revină la nivelul de bază atunci când stresul revine iar și iar. La aproximativ 40% dintre oameni ambele copii ale genei funcționează bine, la aproximativ 15% ambele copii sunt defecte, iar restul de ~45% au câte o copie din fiecare fel."
      },
      {
       "q": "Dar BDNF?",
-      "a": "BDNF (Brain-Derived Neurotrophic Factor) susține creșterea neuronilor și reziliența. Varianta Met (Val66Met) reduce secreția de BDNF; purtătorii se recuperează mai lent după stres și sunt mai vulnerabili la depresie în caz de solicitare cronică. BDNF poate fi crescut prin exercițiu fizic, somn, învățare și post intermitent."
+      "a": "BDNF (factorul neurotrofic derivat din creier) susține creșterea și capacitatea de adaptare a celulelor nervoase. Varianta Met (Val66Met) este asociată cu o eliberare mai redusă de BDNF dependentă de activitate; unele studii o leagă și de o vulnerabilitate mai mare la stresul cronic, însă dovezile sunt contradictorii. Exercițiul fizic regulat este asociat cu niveluri mai ridicate de BDNF."
      }
     ]
    },
@@ -1578,15 +1683,15 @@ const FAQTX = {
     "items": [
      {
       "q": "Sunt Worrier — sunt condamnat la burnout?",
-      "a": "Nu. Varianta lentă a COMT crește sensibilitatea, nu este un destin. Dacă îți cunoști predispoziția, poți acționa din timp: rutine clare de recuperare, somnul ca prioritate, respirație sau meditație, evitarea acumulării mai multor factori de stres în același timp. De-a lungul anilor, asta împiedică sistemul să ajungă la o suprasolicitare cronică."
+      "a": "Nu. Un profil COMT mai puțin favorabil crește sensibilitatea la stres, dar nu este un destin. Cu cât genele sunt mai puțin favorabile, cu atât stilul de viață potrivit este mai important: meditație, un stil de viață cu stres redus, alimentație și exercițiu fizic. Dacă îți cunoști predispoziția, poți acționa din timp, înainte ca stresul să se acumuleze."
      },
      {
       "q": "Sunt Warrior — trebuie totuși să-mi fac griji în privința burnout-ului?",
-      "a": "Riscul acut este mai mic, dar recuperarea rămâne importantă. Senzația de „lipsă a stresului” poate masca o sub-stimulare în perioadele liniștite. Planifică structură pentru fazele de concentrare și protejează-ți somnul."
+      "a": "Riscul tău genetic este mai mic, dar nu este zero: stresul masiv și continuu își poate lăsa amprenta în timp. Fazele de recuperare și un stil de viață echilibrat rămân importante."
      },
      {
       "q": "Ce ajută pe toată lumea, indiferent de genotip?",
-      "a": "Somnul (7-9 h), mișcarea regulată (în special anduranța — crește BDNF și reglează cortizolul), contactul social, sensul în muncă și evitarea abuzului de stimulente (alcool, cafeină în exces)."
+      "a": "Somnul suficient, exercițiul fizic regulat, meditația sau alte tehnici de relaxare, o alimentație echilibrată, contactul social și consumul moderat de stimulente precum alcoolul și cafeina."
      }
     ]
    },
@@ -1595,14 +1700,19 @@ const FAQTX = {
     "items": [
      {
       "q": "În raportul meu a apărut o „zonă roșie”. Ar trebui să-mi fac griji?",
-      "a": "Nu. O zonă roșie marchează un risc crescut într-un domeniu anume, nu un diagnostic. Este o invitație de a acționa din timp — exact opusul unui verdict fatalist."
+      "a": "Nu. O zonă roșie marchează o predispoziție genetică nefavorabilă într-un domeniu anume — un risc mai mare, nu un diagnostic. Este o invitație de a acționa din timp — exact opusul unui verdict fatalist."
      },
      {
       "q": "Unde găsesc recomandări concrete pentru genotipul meu?",
-      "a": "În raportul de burnout — acesta conține recomandări detaliate privind meditația, alimentația, mișcarea, igiena somnului și strategiile de gestionare a stresului, adaptate profilului tău individual COMT și celorlalți factori evaluați."
+      "a": "În raportul de burnout — acesta conține recomandări privind meditația, un stil de viață cu stres redus, alimentația și exercițiul fizic, adaptate profilului tău genetic de stres."
      }
     ]
    }
+  ]
+ },
+ "ba-report-en": {
+  "videoSegmentTitles": [
+   "Procesul de îmbătrânire"
   ]
  },
  "ba-faq-en": {

@@ -625,152 +625,202 @@ const TXT = {
  },
  "bo-sci-en": {
   "topic": "Vědecký základ",
-  "description": "Jak gen COMT utváří individuální zpracování stresu — a proč je riziko vyhoření genetické.",
-  "longDescription": "V tomto školení vysvětluje Dr. Daniel Wallerstorfer gen COMT a jeho roli v odbourávání dopaminu, fenotyp Warrior (bojovník) oproti Worrier (znepokojený), BDNF a neuroplasticitu a jak lze z genetického profilu odvodit individuální riziko vyhoření.",
+  "description": "Proč na lidi stejný stres působí různě — a co má gen COMT společného s rizikem vyhoření.",
+  "longDescription": "V tomto školení vysvětluje Dr. Daniel Wallerstorfer, proč masivní a nepřetržitý stres u některých lidí vede k vyhoření a u jiných ne. Dozvíte se, na které tři genetické vlastnosti se analýza zaměřuje, jak gen COMT odbourává dopamin po vzrušujících nebo stresujících situacích, proč je asi 15 % lidí ke stresu obzvlášť náchylných — a proč je správný životní styl o to důležitější, čím méně příznivé jsou geny.",
   "bullets": [
+   "Tři genetické vlastnosti: výkon ve stresu, emoční odolnost, impulzivita",
    "COMT — klíčový gen pro odbourávání dopaminu",
-   "Warrior oproti Worrier — dva genotypy, dvě strategie zvládání stresu",
-   "BDNF, neuroplasticita a odolnost",
-   "Praktická doporučení odvozená z genetického profilu"
+   "Odbourávání dopaminu: proč je 15 % lidí obzvlášť náchylných ke stresu",
+   "Doporučení ohledně životního stylu podle genetického profilu"
   ],
   "introQuestionsHeader": "Toto školení odpovídá na otázky:",
   "introQuestions": [
    "Který gen je klíčový pro individuální zpracování stresu?",
-   "Jaký je rozdíl mezi typem Warrior a Worrier?",
-   "Jak je riziko vyhoření genetické?",
-   "Jaká konkrétní doporučení ohledně životního stylu z profilu vyplývají?"
+   "Proč na lidi stejný stres působí různě — a co s tím má společného COMT?",
+   "Jak geny ovlivňují riziko vyhoření?",
+   "Která opatření v životním stylu pomáhají — a proč jsou při nepříznivém profilu důležitější?"
   ],
   "postVideoText": "S tímto vědeckým pozadím můžete se svými klienty diskutovat o zprávě o vyhoření na pevném podkladu a odvozovat individuální strategie zvládání stresu.",
   "questions": [
    {
-    "q": "Který gen je v analýze vyhoření hlavní hnací silou individuálního zpracování stresu?",
+    "q": "Co podle školení způsobuje vyhoření?",
     "options": [
-     "MTHFR",
-     "COMT",
-     "CYP1A2",
-     "FTO"
+     "Jediná krátká stresová situace, například zkouška",
+     "Samotná genetika — životní styl nehraje žádnou roli",
+     "Masivní, nepřetržitý stres po dlouhou dobu",
+     "Příliš mnoho fyzické aktivity"
     ],
-    "correct": 1
+    "correct": 2
    },
    {
-    "q": "Co odlišuje genotyp „Warrior“ od „Worrier“ z hlediska COMT?",
+    "q": "Na které genetické vlastnosti se analýza stresu zaměřuje?",
     "options": [
-     "Warrior odbourává dopamin rychleji — špičkový výkon při akutním stresu. Worrier odbourává pomaleji — silná každodenní koncentrace, ale větší zranitelnost vůči chronickému stresu",
-     "Žádný skutečný rozdíl, záleží jen na výchově",
-     "Worrier odbourává dopamin rychleji",
-     "Typy Warrior jsou imunní vůči každé formě stresu"
+     "Citlivost na kofein, délka spánku a tolerance alkoholu",
+     "Paměť, koncentrace a reakční doba",
+     "Klidová tepová frekvence, krevní tlak a hladina kortizolu",
+     "Výkon ve stresu, emoční odolnost a impulzivita"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Který gen odbourává dopamin, když vzrušující situace skončí?",
+    "options": [
+     "COMT",
+     "MTHFR",
+     "FTO",
+     "ACTN3"
     ],
     "correct": 0
    },
    {
-    "q": "Co znamená „červená zóna“ ve zprávě o vyhoření pro konzultaci?",
+    "q": "Co se při opakovaném stresu děje u člověka, jehož gen COMT funguje špatně?",
     "options": [
-     "Klient už vyhoření má",
-     "Je to technická chyba",
-     "Klient má v tomto aspektu nepříznivou genetickou predispozici — opatření ohledně životního stylu jsou obzvlášť důležitá, protože riziko je zvýšené",
-     "Klient by se měl celému tématu vyhnout"
-    ],
-    "correct": 2
-   },
-   {
-    "q": "Nejvhodnější doporučení pro klienta s pomalou variantou COMT (Worrier)?",
-    "options": [
-     "Aktivně vyhledávat stres — zvyšuje to jeho produktivitu",
-     "Vědomé pauzy na zotavení, meditace, dobrá spánková hygiena a vyhýbání se mnoha současným zdrojům stresu — protože stresový signál v systému přetrvává déle",
-     "Drasticky zvýšit kofein pro zvýšení dopaminu",
-     "Vyhýbat se každé zátěži, i sportu"
+     "Dopamin se odbourává rychleji, takže se mozek dříve zklidní",
+     "Mozek se nevrací do výchozího stavu a nový stres vede k přetížení",
+     "Mozek si na stres zvykne a s každou epizodou reaguje slaběji",
+     "Dopamin se vůbec neuvolní, takže stres zůstane nepovšimnut"
     ],
     "correct": 1
    },
    {
-    "q": "Jak by se měla nepříznivá predispozice k vyhoření v konzultaci zarámovat?",
+    "q": "Jakou paradoxní výhodu má pomalé odbourávání dopaminu?",
     "options": [
-     "Jako osud — nedá se nic dělat",
-     "Jako zvýšené riziko, nikoli osud — klienti, kteří znají svou citlivost na stres, mohou jednat včas (spánek, meditace, pohyb, pauzy). Genetická informace je nástroj, ne verdikt.",
-     "Jako nepodstatnou — geny stres neovlivňují",
-     "Jako nemoc vyžadující okamžitou léčbu"
+     "Klidnější reakce na stresové situace v běžném životě",
+     "Rychlejší fyzické zotavení po intenzivním tréninku",
+     "Nižší riziko infarktu",
+     "Intenzivnější pozitivní pocity a větší zvídavost"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Kolik procent lidí má přibližně dvě dobře fungující kopie genu COMT?",
+    "options": [
+     "Asi 5 %",
+     "Asi 15 %",
+     "Asi 40 %",
+     "Asi 80 %"
+    ],
+    "correct": 2
+   },
+   {
+    "q": "Kolik procent lidí má přibližně dvě defektní kopie a je obzvlášť náchylných ke stresu?",
+    "options": [
+     "Asi 5 %",
+     "Asi 15 %",
+     "Asi 40 %",
+     "Asi 60 %"
     ],
     "correct": 1
    },
    {
-    "q": "Proč má pomalé odbourávání dopaminu (Worrier) také každodenní výhody?",
+    "q": "Čím méně příznivé jsou genetické vlastnosti týkající se stresu, tím důležitější je správný životní styl. Co zpráva doporučuje?",
     "options": [
-     "Činí je imunními vůči každému stresu",
-     "Způsobuje trvale vysokou odolnost vůči stresu",
-     "Dopamin zůstává déle aktivní — tito lidé prožívají vzrušení, radost a odměnu intenzivněji; jsou zvídaví a objevitelští. Nevýhoda se projeví jen při chronickém stresu, kdy se tělo obtížně vrací do klidu.",
-     "Nemá žádné výhody, jen nevýhody"
+     "Meditaci, život s nízkou mírou stresu, výživu a pohyb",
+     "Více kofeinu, aby člověk zůstal bdělý a podával výkon pod tlakem",
+     "Vyhýbat se veškerému sportu, aby tělo nebylo zatěžováno navíc",
+     "Pouze léky, protože proti genetice se nedá nic dělat"
     ],
-    "correct": 2
+    "correct": 0
+   },
+   {
+    "q": "K čemu mají lidé se špatně fungujícím genem COMT podle školení také větší sklon?",
+    "options": [
+     "K závislosti na kofeinu",
+     "K poruchám spánku",
+     "K chuti na sladké",
+     "K hazardním hrám"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Co ve zprávě znamená červená zóna u vlastnosti týkající se stresu?",
+    "options": [
+     "Velmi příznivá genetika — není třeba nic dělat",
+     "Nepříznivá predispozice — vyšší riziko vyhoření",
+     "Dotyčný už vyhoření má a potřebuje léčbu",
+     "Standardní doporučení, které platí pro všechny"
+    ],
+    "correct": 1
    }
   ]
  },
  "bo-report-en": {
   "topic": "Trénink konzultací",
   "description": "Projděte s klientem zprávu o vyhoření krok za krokem.",
-  "longDescription": "V tomto konzultačním tréninku vysvětluje Dr. Daniel Wallerstorfer, jak s klienty projít genetickou zprávu o vyhoření a odvodit individuální strategie zvládání stresu.",
+  "longDescription": "V tomto konzultačním tréninku ukazuje Dr. Daniel Wallerstorfer na příkladu vzorové klientky jménem Maria, jak číst část zprávy věnovanou vyhoření: gen COMT, tři vlastnosti týkající se stresu na škále od červené přes střed po zelenou a proč je životní styl důležitý pro klienty v červené zóně i pro ty uprostřed.",
   "bullets": [
    "Strukturovaně projděte zprávu o vyhoření",
    "Srozumitelně vysvětlete genetickou predispozici ke stresu",
-   "Odvoďte individuální doporučení ohledně životního stylu",
-   "Rozpoznejte varovné signály včas"
+   "Interpretujte tři vlastnosti týkající se stresu na škále červená – střed – zelená",
+   "Vysvětlete, proč je životní styl důležitý v červené zóně i uprostřed"
   ],
   "introQuestionsHeader": "V tomto školení se naučíte:",
   "introQuestions": [
-   "Jak je zpráva o vyhoření strukturována",
+   "Jak je strukturována část zprávy věnovaná vyhoření",
    "Jak srozumitelně vysvětlit individuální predispozici ke stresu",
-   "Jak odvodit konkrétní doporučení ohledně životního stylu"
+   "Co výsledek znamená pro životní styl vašeho klienta"
   ],
-  "postVideoText": "Po tomto školení můžete se svými klienty diskutovat o zprávě o vyhoření na pevném podkladu. Demonstrační brožura níže může sloužit jako vzorová zpráva pro vaši vlastní poradenskou praxi.",
+  "postVideoText": "Po tomto školení můžete se svými klienty diskutovat o zprávě o vyhoření na pevném podkladu.",
   "questions": [
    {
-    "q": "Klient vykazuje pomalou variantu COMT (Worrier). Co je klíčovou částí konzultace?",
+    "q": "Na který gen se část zprávy o vyhoření zaměřuje a co ovlivňuje?",
     "options": [
-     "Není potřeba žádná zvláštní rada",
-     "Stresové signály zůstávají v systému déle — doporučte záměrné rutiny zotavení, prioritu spánku, meditaci/dýchání a vyhýbání se několika současným stresorům. Genetická informace je nástroj k aktivnímu plánování zotavení, nikoli k nálepkování klienta",
-     "Řekněte klientovi, že vyhoří",
-     "Doporučte vysoké dávky kofeinu"
+     "CYP1A2 — jak rychle se v játrech odbourává kofein",
+     "FTO — regulaci chuti k jídlu a pocit sytosti",
+     "COMT — rovnováhu určitých neurotransmiterů v mozku",
+     "MTHFR — jak tělo aktivuje folát"
+    ],
+    "correct": 2
+   },
+   {
+    "q": "Které tři vlastnosti ukazuje část zprávy věnovaná vyhoření?",
+    "options": [
+     "Výkon ve stresu, odolnost vůči negativním pocitům a impulzivitu",
+     "Kvalitu spánku, citlivost na kofein a reakci kortizolu na stres",
+     "Koncentraci, paměť a motivaci",
+     "Krevní tlak, tepovou frekvenci a dechovou frekvenci"
+    ],
+    "correct": 0
+   },
+   {
+    "q": "Maria má jednu funkční a jednu defektní kopii genu COMT. Jak vypadá její výsledek?",
+    "options": [
+     "Všechny tři vlastnosti v červené zóně — je silně náchylná k vyhoření",
+     "Všechny tři vlastnosti v zelené zóně — vyhoření pro ni není problém",
+     "Výkon ve stresu v červené zóně, ostatní dvě vlastnosti v zelené",
+     "Všechny tři vlastnosti uprostřed — středně dobrá odolnost vůči stresu"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Lidé, kteří trpí vyhořením, často kombinují nesprávný životní styl se svou genetikou. Kde jejich výsledky obvykle leží a co by měli dělat?",
+    "options": [
+     "V zelené zóně — stačí jim snížit pracovní zátěž",
+     "Většinou v červené zóně — měli by žít tak, aby se stresu vyhýbali",
+     "Uprostřed — jejich životní styl má jen malý vliv",
+     "Většinou v červené zóně — změna životního stylu už nic nezmění"
     ],
     "correct": 1
    },
    {
-    "q": "Klientka typu Worrier říká, že ji baví její detailní práce a cítí se produktivní — měla by se změnit?",
+    "q": "Maria má u všech tří vlastností výsledek uprostřed. Hraje u ní životní styl roli?",
     "options": [
-     "Ano, musí změnit osobnost",
-     "Ne — pomalá varianta COMT přináší i výhody (vysoká koncentrace, intenzivní prožitek odměny, zvídavost). Doporučení se zaměřuje na zotavení, nikoli na osobnost: zachovat silné stránky, ale plánovat zotavení jako ochranu před chronickým stresem",
-     "Dát výpověď",
-     "Okamžitě nasadit léky"
+     "Ano — i pro ni je důležité předcházet stresu životním stylem",
+     "Ne — životní styl musí změnit jen klienti v červené zóně",
+     "Ne — výsledek uprostřed nemá žádný praktický význam",
+     "Až když se u ní objeví první známky vyhoření"
     ],
-    "correct": 1
+    "correct": 0
    },
    {
-    "q": "Co znamená „červená zóna“ ve zprávě o vyhoření pro konzultační rozhovor?",
+    "q": "Co znamená, když je klient u všech tří vlastností v zelené zóně?",
     "options": [
-     "Klient už vyhoření má",
-     "Klient má v tomto aspektu nepříznivou genetickou predispozici — opatření ohledně životního stylu jsou obzvlášť důležitá. Je to upozornění, nikoli diagnóza",
-     "Chyba laboratoře",
-     "Klient by se měl vyhnout všem tématům"
+     "Vyhoření je u tohoto klienta vyloučené, ať žije jakkoli",
+     "Klient je k vyhoření obzvlášť náchylný",
+     "Vyhoření pro tohoto klienta nepředstavuje tak velké nebezpečí",
+     "Analýzu nebylo možné vyhodnotit"
     ],
-    "correct": 1
-   },
-   {
-    "q": "Klient typu Warrior říká, že pod tlakem vzkvétá — musí se obávat vyhoření?",
-    "options": [
-     "Ne, typy Warrior jsou imunní",
-     "Menší akutní riziko než u typu Worrier, ale zotavení je stále důležité. Vnímaný nedostatek stresu může v klidných fázích maskovat nedostatečnou stimulaci. Doporučte strukturu pro každodenní koncentraci a dostatečný spánek",
-     "Ano, ať přejde na práci s nízkým stresem",
-     "Co nejvíce zvýšit stres"
-    ],
-    "correct": 1
-   },
-   {
-    "q": "Jak klientovi zarámujete celkovou zprávu o vyhoření?",
-    "options": [
-     "Jako verdikt — vyhoří",
-     "Jako nástroj: zpráva odhaluje klientův stresový profil, aby bylo možné záměrně plánovat zotavení a životní styl. Není to verdikt ani diagnóza",
-     "Jako nepodstatnou",
-     "Jako lékařskou patologii vyžadující okamžitou léčbu"
-    ],
-    "correct": 1
+    "correct": 2
    }
   ]
  },
@@ -787,80 +837,120 @@ const TXT = {
  },
  "ba-sci-en": {
   "topic": "Vědecký základ",
-  "description": "Jak je biologický věk geneticky určen a ovlivněn životním stylem.",
-  "longDescription": "Toto školení vysvětluje vědecký základ určování biologického věku. Dozvíte se, které geny ovlivňují délku telomer a stárnutí buněk, jak se biologický věk liší od chronologického a které faktory životního stylu mohou biologický věk měřitelně změnit.",
+  "description": "Proč se telomery zkracují, jak gen telomerázy ovlivňuje biologický věk — a které živiny mohou pomoci.",
+  "longDescription": "Toto školení vysvětluje vědecký základ analýzy biologického věku. Dozvíte se, proč se telomery — ochranné konce našich chromozomů — s každým buněčným dělením zkracují, co se stane s buňkou, když se spotřebují, jak gen telomerázy tento proces ovlivňuje a které živiny mohou podpořit udržování telomer, když geny fungují hůře.",
   "bullets": [
    "Telomery a stárnutí buněk — základy",
-   "Chronologický oproti biologickému věku",
-   "Genetické faktory stárnutí (TERT, BICD1 a další)",
-   "Anti-aging strategie s měřitelným účinkem"
+   "Senescence: když buňky přejdou do spánkového režimu",
+   "Genetické faktory stárnutí: gen telomerázy",
+   "Podpůrné živiny a středomořská strava, jejíž účinek závisí na genotypu"
   ],
   "introQuestionsHeader": "Toto školení odpovídá na otázky:",
   "introQuestions": [
-   "Jaký je rozdíl mezi chronologickým a biologickým věkem?",
-   "Jak se měří telomery a co nám prozrazují?",
-   "Které geny ovlivňují stárnutí buněk?",
-   "Která opatření životního stylu prokazatelně mění biologický věk?"
+   "Co jsou telomery a proč se s každým buněčným dělením zkracují?",
+   "Co se stane s buňkou, když se její telomery spotřebují?",
+   "Co dělá gen telomerázy?",
+   "Které živiny podporují udržování telomer — a proč středomořská strava nefunguje u každého?"
   ],
   "postVideoText": "S tímto vědeckým základem můžete se svými klienty diskutovat o analýze biologického věku na pevném podkladu.",
   "questions": [
    {
-    "q": "Jaký je rozdíl mezi chronologickým a biologickým věkem?",
+    "q": "Co jsou telomery?",
     "options": [
-     "Žádný rozdíl — jsou totožné",
-     "Chronologický věk je doba od narození; biologický věk popisuje skutečný stav buněk — ovlivněný životním stylem a genetikou",
-     "Biologický věk je vždy vyšší než chronologický",
-     "Chronologický věk se měří v laboratoři, biologický se odhaduje"
+     "Geny na začátku každého chromozomu, které řídí buněčné dělení",
+     "Bílkoviny, které opravují poškozenou DNA",
+     "Struktury uvnitř buňky, které vyrábějí energii",
+     "Ochranné konce chromozomů, které neobsahují žádné geny"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Co se s telomerami děje při každém buněčném dělení?",
+    "options": [
+     "Pokaždé se o malý kousek prodlouží",
+     "Malý kousek se odlomí a telomery se zkrátí",
+     "V nové buňce se vytvoří úplně znovu",
+     "Zůstávají pořád přesně stejně dlouhé"
     ],
     "correct": 1
    },
    {
-    "q": "Které buněčné struktury se s každým buněčným dělením zkracují a jsou klíčovým ukazatelem biologického věku?",
+    "q": "Přibližně po kolika buněčných děleních jsou telomery spotřebované?",
     "options": [
-     "Mitochondrie",
-     "Ribozomy",
-     "Telomery",
-     "Buněčné membrány"
+     "Asi po 5 až 10",
+     "Asi po 20 až 30",
+     "Asi po 50 až 70",
+     "Asi po 500 až 700"
     ],
     "correct": 2
    },
    {
-    "q": "Jakou roli hraje enzym telomeráza?",
+    "q": "Co se stane s buňkou, jejíž telomery jsou spotřebované?",
     "options": [
-     "Odbourává buňky, které dosloužily",
-     "Dokáže telomery opravovat a prodlužovat — zpomaluje jejich zkracování",
-     "Produkuje volné radikály",
-     "Přenáší kyslík v krvi"
+     "Přejde do režimu spánku (senescence) a přestane pracovat",
+     "Dělí se dál, jen mnohem pomaleji než dřív",
+     "Promění se zpět v mladou a zdravou kmenovou buňku",
+     "Tělo ji okamžitě rozloží a beze zbytku ji odstraní"
+    ],
+    "correct": 0
+   },
+   {
+    "q": "Který gen pomáhá udržovat telomery?",
+    "options": [
+     "MTHFR",
+     "COMT",
+     "Telomeráza",
+     "FTO"
+    ],
+    "correct": 2
+   },
+   {
+    "q": "Které živiny mohou podpořit udržování telomer, když ochranný gen funguje hůře?",
+    "options": [
+     "Vitamin C, zinek, selen, železo a hořčík",
+     "Vitamin D3, omega-3, vitamin E, resveratrol a ginkgo",
+     "Vitamin B12, kyselina listová, železo, jód a vápník",
+     "Kofein, taurin, kreatin, L-karnitin a zelený čaj"
     ],
     "correct": 1
    },
    {
-    "q": "Klient má geneticky slabou telomerázu („červená zóna“). Nejlepší poradenské doporučení?",
+    "q": "Má středomořská strava na telomery u všech lidí stejný účinek?",
     "options": [
-     "Predispozici ignorovat — telomery nelze ovlivnit",
-     "Kompenzovat genetickou slabinu životním stylem: strava bohatá na antioxidanty, cílené živiny (D3, omega-3, resveratrol), umírněný pravidelný pohyb, kvalitní spánek a snižování stresu",
-     "Zcela přestat sportovat — vytváří oxidační stres",
-     "Okamžitě navštívit lékaře — varianta je patologická"
+     "Ano — u všech udržuje telomery delší",
+     "Ne — u většiny lidí telomery zkracuje",
+     "Její účinek na telomery nebyl nikdy zkoumán",
+     "Ne — funguje jen při určité genové variantě"
+    ],
+    "correct": 3
+   },
+   {
+    "q": "Jak velký může být rozdíl v biologickém věku mezi lidmi se dvěma defektními a se dvěma funkčními kopiemi genu telomerázy?",
+    "options": [
+     "Až 20 let",
+     "Nejvýše 1 až 2 roky",
+     "Nejvýše 5 let",
+     "Žádný měřitelný rozdíl není"
+    ],
+    "correct": 0
+   },
+   {
+    "q": "Jakou roli hrají při stárnutí volné radikály?",
+    "options": [
+     "Chrání konce chromozomů před odlomením při buněčném dělení",
+     "Neustále poškozují buňky; proti tomu pomáhají antioxidanty",
+     "Hrají roli pouze u lidí starších 70 let",
+     "Během spánku opravují poškozené buňky"
     ],
     "correct": 1
    },
    {
-    "q": "Co výzkum prokázal o středomořské stravě a délce telomer?",
+    "q": "Jaká je správná strategie pro klienta s defektem genu telomerázy?",
     "options": [
-     "Měřitelně prodlužuje telomery u všech",
-     "Funguje pouze u nositelů konkrétního genotypu — u ostatních se na telomery žádný účinek neprojeví. Jasný příklad toho, že stejné doporučení ohledně životního stylu nefunguje u všech stejně",
-     "Zkracuje telomery — je třeba se jí vyhnout",
-     "Nemá na nikoho měřitelný účinek"
-    ],
-    "correct": 1
-   },
-   {
-    "q": "Jak by se měla nepříznivá anti-aging predispozice v konzultaci zarámovat?",
-    "options": [
-     "Jako neměnný osud — klient bude stárnout předčasně",
-     "Jako nepodstatná — geny na stárnutí nemají vliv",
-     "Jako zvýšené riziko, nikoli osud: klienti, kteří znají svá genetická slabá místa, mohou cíleněji využívat antioxidanty, spánek, pohyb a snižování stresu — účinky se v průběhu let sčítají",
-     "Jako nemoc vyžadující okamžitou léčbu"
+     "Ignorovat ho — telomery se stejně nijak ovlivnit nedají",
+     "Více se hýbat — na výživě v tomto případě nezáleží",
+     "Zvýšit příjem podpůrných živin a zpomalit zkracování telomer",
+     "Přejít na středomořskou stravu — funguje u každého"
     ],
     "correct": 2
    }
@@ -869,70 +959,80 @@ const TXT = {
  "ba-report-en": {
   "topic": "Trénink konzultací",
   "description": "Projděte s klientem zprávu o biologickém věku.",
-  "longDescription": "V tomto konzultačním tréninku vysvětluje Dr. Daniel Wallerstorfer, jak s klienty projít genetickou zprávu o biologickém věku a procesu stárnutí.",
+  "longDescription": "V tomto konzultačním tréninku vysvětluje Dr. Daniel Wallerstorfer srozumitelně proces stárnutí — od chromozomů a telomer až po buňky ve spánkovém režimu — a na příkladu vzorové klientky jménem Maria ukazuje, jak ve zprávě číst výsledek týkající se telomer, zjištění ke středomořské stravě a doporučení k živinám.",
   "bullets": [
    "Strukturovaně projděte zprávu o biologickém věku",
-   "Zarámujte proces stárnutí v genetických pojmech",
-   "Odvoďte konkrétní anti-aging doporučení",
-   "Jak životní styl ovlivňuje biologický věk"
+   "Srozumitelně vysvětlete telomery a proces stárnutí",
+   "Interpretujte výsledek týkající se telomer na příkladu klientky jménem Maria",
+   "Doporučení k živinám a zjištění ke středomořské stravě"
   ],
   "introQuestionsHeader": "V tomto školení se naučíte:",
   "introQuestions": [
    "Jak je zpráva o biologickém věku strukturována",
    "Jak srozumitelně vysvětlit proces stárnutí",
-   "Jaká konkrétní doporučení ohledně životního stylu lze odvodit"
+   "Která doporučení k živinám z výsledku vyplývají"
   ],
-  "postVideoText": "Po tomto školení můžete se svými klienty diskutovat o zprávě o biologickém věku na pevném podkladu. Demonstrační brožura níže může sloužit jako vzorová zpráva pro vaši vlastní poradenskou praxi.",
+  "postVideoText": "Po tomto školení můžete se svými klienty diskutovat o zprávě o biologickém věku na pevném podkladu.",
   "questions": [
    {
-    "q": "Jak klientovi srozumitelně vysvětlíte biologický oproti chronologickému věku?",
+    "q": "Školení přirovnává telomery k plastovým koncovkám tkaniček. Co toto přirovnání znázorňuje?",
     "options": [
-     "Jsou totožné",
-     "„Chronologický věk je počet let od vašeho narození. Biologický věk popisuje, jak staré jsou vaše buňky ve skutečnosti — dva lidé stejného věku se mohou biologicky lišit o 10–20 let podle genů a životního stylu“",
-     "Biologický věk je jen marketingový pojem",
-     "Je to totéž co IQ"
+     "Drží obě poloviny chromozomu pohromadě",
+     "Nenesou žádné geny a chromozom pouze chrání",
+     "Nesou nejdůležitější geny chromozomu",
+     "Po každém buněčném dělení znovu dorostou"
     ],
     "correct": 1
    },
    {
-    "q": "Klient má slabou telomerázu („červená zóna“). Jaká je praktická rada?",
+    "q": "Proč buňka po zhruba 50 až 70 děleních přejde do spánkového režimu?",
     "options": [
-     "Nedá se s tím nic dělat",
-     "Posilte ochranu zvenčí: strava bohatá na antioxidanty (vitamin C/E, polyfenoly, selen), cílené živiny (omega-3, D3, resveratrol), umírněný pravidelný pohyb (nikoli extrémní), 7–9 hodin spánku, snižování stresu. Účinky se v průběhu let sčítají",
-     "Podstoupit vysokodávkovou chemoterapii",
-     "Jíst pouze maso"
+     "Vyčerpala své zásoby živin a potřebuje se zotavit",
+     "Imunitní systém ji označil za poškozenou a vypnul ji",
+     "Dosáhla maximální velikosti a už se nemůže dělit",
+     "Telomery jsou spotřebované a začínají se odlamovat geny"
     ],
-    "correct": 1
+    "correct": 3
    },
    {
-    "q": "Klient se ptá: „Pomáhá mi středomořská strava biologicky omládnout?“",
+    "q": "Mohou geny, které udržují telomery, ztrátu telomer zvrátit?",
     "options": [
-     "Ano, vždy",
-     "Záleží na genetice: studie ukazují, že středomořská strava měřitelně prodlužuje telomery pouze u nositelů konkrétní varianty. U ostatních je účinek slabší. Zpráva ukazuje, zda tento klient patří do skupiny reagujících",
-     "Ne, nikdy",
-     "Pouze u žen"
+     "Ano — obnoví telomery na původní délku",
+     "Ne — na délku telomer nemají vůbec žádný vliv",
+     "Ne úplně — ale proces zpomalují",
+     "Jen v dětství, dokud tělo ještě roste"
     ],
-    "correct": 1
+    "correct": 2
    },
    {
-    "q": "Mladý klient (25 let) se ptá: „Je pro mě zpráva o biologickém věku vůbec užitečná?“",
+    "q": "Mariin výsledek v oblasti udržování telomer leží ve středním pásmu. Jak se tento výsledek hodnotí?",
     "options": [
-     "Ne, užitečná je až od 60 let",
-     "Ano — mladší věk je lepší doba pro začátek. Genetické slabiny se v průběhu desetiletí sčítají; úpravy životního stylu ve 25 letech mají do 60 let mnohem větší kumulativní účinek než pozdní začátek",
-     "Užitečná jen pro sportovce",
-     "Ne, biologický věk je daný"
+     "Udržování telomer je oslabené — nefunguje u ní tak dobře",
+     "Udržování telomer je normální — není třeba nic dělat",
+     "Udržování telomer je nadprůměrné — funguje u ní obzvlášť dobře",
+     "Výsledek je neprůkazný — analýzu je nutné zopakovat"
     ],
-    "correct": 1
+    "correct": 0
    },
    {
-    "q": "Jak byste výsledek biologického věku zarámovali pro stresovaného klienta s několika „červenými zónami“?",
+    "q": "Pomáhá Marii středomořská strava udržovat telomery?",
     "options": [
-     "Jako nevyhnutelný úpadek",
-     "Jako cílené příležitosti: každá červená zóna je jasnou pákou — vitamin D3, omega-3, příjem antioxidantů, spánek, snižování stresu. Plán je akčně zaměřený a motivující, nikoli fatalistický",
-     "Jako lékařskou pohotovost",
-     "Jako neléčitelnou nemoc"
+     "Ano — pomáhá udržovat telomery každému",
+     "Ano — ale jen v kombinaci s vyšším příjmem vitaminu E",
+     "Ne — u většiny lidí telomery zkracuje",
+     "Ne — při jejích genových variantách nemá žádný účinek"
     ],
-    "correct": 1
+    "correct": 3
+   },
+   {
+    "q": "V Mariině zprávě jsou vitamin D3, omega-3, vitamin E, resveratrol a ginkgo označeny zelenými šipkami. Co to znamená?",
+    "options": [
+     "Její hladiny těchto živin jsou už dostatečné",
+     "Měla by svůj příjem těchto živin raději snížit",
+     "Měla by jíst více potravin s těmito živinami",
+     "Nejdřív potřebuje krevní test na tyto živiny"
+    ],
+    "correct": 2
    }
   ]
  },
@@ -1553,6 +1653,11 @@ const FAQTX = {
    "Selen"
   ]
  },
+ "bo-report-en": {
+  "videoSegmentTitles": [
+   "Vyhoření — individuální přístup ke stresu"
+  ]
+ },
  "bo-faq-en": {
   "faqGroups": [
    {
@@ -1560,15 +1665,15 @@ const FAQTX = {
     "items": [
      {
       "q": "Co je gen COMT a proč je důležitý?",
-      "a": "COMT (katechol-O-metyltransferáza) odbourává v prefrontální kůře dopamin, adrenalin a noradrenalin. Běžná varianta (Val158Met) určuje, jak rychle toto odbourávání probíhá — mezi rychlou a pomalou variantou je rozdíl 3–4násobný. Tím se reguluje, jak dlouho zůstane stresový signál v systému."
+      "a": "COMT (katechol-O-metyltransferáza) odbourává signální látku dopamin, jakmile vzrušující nebo stresující situace skončí, aby se mozek mohl vrátit do výchozího stavu. Pokud gen funguje špatně, dopamin se odbourává mnohem pomaleji a mozek zůstává déle ve vzrušeném stavu. Studie popisují běžnou variantu (Val158Met), u níž se rychlá a pomalá forma zřetelně liší aktivitou enzymu."
      },
      {
       "q": "Jaký je rozdíl mezi typem Warrior a Worrier?",
-      "a": "Warrior (Val/Val): dopamin se odbourává rychle — vyšší odolnost vůči akutnímu stresu, výkon pod tlakem. Worrier (Met/Met): dopamin se odbourává pomalu — silná koncentrace v běžném dni, ale zranitelnost vůči chronickému stresu. Zhruba 50 % lidí patří ke smíšenému typu."
+      "a": "Tyto pojmy se často používají pro dva krajní případy aktivity COMT. „Warrior“: dopamin se odbourává rychle — to obvykle souvisí s lepším výkonem ve stresu. „Worrier“: dopamin se odbourává pomalu — vzrušení a pozitivní pocity se prožívají intenzivněji, ale když se stres stále opakuje, mozek se jen obtížně vrací do výchozího stavu. Asi 40 % lidí má dvě dobře fungující kopie genu, asi 15 % dvě defektní kopie a zbývajících zhruba 45 % jednu funkční a jednu defektní."
      },
      {
       "q": "A co BDNF?",
-      "a": "BDNF (Brain-Derived Neurotrophic Factor) podporuje růst neuronů a odolnost. Varianta Met (Val66Met) snižuje vylučování BDNF; její nositelé se ze stresu zotavují pomaleji a jsou při chronické zátěži zranitelnější vůči depresi. BDNF lze zvýšit pohybem, spánkem, učením a přerušovaným půstem."
+      "a": "BDNF (mozkový neurotrofní faktor, Brain-Derived Neurotrophic Factor) podporuje růst a přizpůsobivost nervových buněk. Varianta Met (Val66Met) je spojována s nižším uvolňováním BDNF závislým na aktivitě; některé studie ji dávají do souvislosti i s vyšší zranitelností při chronickém stresu, důkazy jsou však nejednoznačné. Pravidelný pohyb je spojován s vyššími hladinami BDNF."
      }
     ]
    },
@@ -1577,15 +1682,15 @@ const FAQTX = {
     "items": [
      {
       "q": "Jsem typ Worrier — jsem odsouzený k vyhoření?",
-      "a": "Ne. Pomalá varianta COMT zvyšuje citlivost, nikoli osud. Když predispozici znáš, můžeš jednat včas: jasné rutiny na zotavení, spánek jako priorita, dechová cvičení nebo meditace, vyhýbání se hromadění mnoha zdrojů stresu najednou. V horizontu let to zabrání tomu, aby se systém dostal do chronického přetížení."
+      "a": "Ne. Méně příznivý profil COMT zvyšuje citlivost na stres, ale není to osud. Čím méně příznivé jsou geny, tím důležitější je správný životní styl: meditace, život s nízkou mírou stresu, výživa a pohyb. Když svou predispozici znáš, můžeš jednat včas — dřív, než se stres nahromadí."
      },
      {
       "q": "Jsem typ Warrior — musím se přesto vyhoření obávat?",
-      "a": "Akutní riziko je nižší, ale zotavení je důležité i tak. Pocit „bez stresu“ může v klidnějších obdobích zakrývat nedostatečnou stimulaci. Naplánuj si strukturu pro fáze soustředění a chraň si spánek."
+      "a": "Tvé genetické riziko je nižší, ale není nulové: masivní, nepřetržitý stres si přesto může časem vybrat svou daň. Fáze zotavení a vyvážený životní styl zůstávají důležité."
      },
      {
       "q": "Co pomáhá všem, bez ohledu na genotyp?",
-      "a": "Spánek (7–9 h), pravidelný pohyb (zejména vytrvalostní — zvyšuje BDNF a reguluje kortizol), sociální kontakt, smysluplná práce a vyhýbání se nadužívání stimulantů (alkohol, nadměrný kofein)."
+      "a": "Dostatek spánku, pravidelný pohyb, meditace nebo jiné relaxační techniky, vyvážená strava, sociální kontakt a střídmost u stimulantů, jako jsou alkohol a kofein."
      }
     ]
    },
@@ -1593,15 +1698,20 @@ const FAQTX = {
     "title": "Co s výsledkem dělat",
     "items": [
      {
-      "q": "Ve zprávě se mi objevila „červená zóna“. Mám se znepokojovat?",
-      "a": "Ne. Červená zóna označuje zvýšené riziko v jedné konkrétní oblasti, nikoli diagnózu. Je to pobídka jednat včas — přesný opak fatalistického verdiktu."
+      "q": "Ve zprávě se mi objevila „červená zóna“. Mám si dělat starosti?",
+      "a": "Ne. Červená zóna označuje nepříznivou genetickou predispozici v jedné konkrétní oblasti — vyšší riziko, nikoli diagnózu. Je to pobídka jednat včas — přesný opak fatalistického verdiktu."
      },
      {
       "q": "Kde najdu konkrétní doporučení pro svůj genotyp?",
-      "a": "Ve zprávě o vyhoření — obsahuje podrobná doporučení k meditaci, výživě, pohybu, spánkové hygieně a strategiím zvládání stresu, přizpůsobená tvému individuálnímu profilu COMT a dalším vyhodnoceným faktorům."
+      "a": "Ve zprávě o vyhoření — obsahuje doporučení k meditaci, životu s nízkou mírou stresu, výživě a pohybu, přizpůsobená tvému genetickému profilu stresu."
      }
     ]
    }
+  ]
+ },
+ "ba-report-en": {
+  "videoSegmentTitles": [
+   "Proces stárnutí"
   ]
  },
  "ba-faq-en": {
