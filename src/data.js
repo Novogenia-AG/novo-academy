@@ -3203,7 +3203,7 @@ export const CATEGORY_CONTENT = {
    (QA 3 meldet HOME_SOURCE_LEAK). */
 export const HOME_VIDEO_IDS = {
   de: { welcome: '71EHqtv3NOA', tour: 'CFtFwezScLs', longevity: 'jHgdDRGy0hA' },
-  en: { welcome: 'rDQBNTWt82Y', tour: 'N9aEz_WAe1I', longevity: null },   // longevity = KI-Lip-Sync aus DE (Hinweis kommt automatisch)
+  en: { welcome: 'rDQBNTWt82Y', tour: 'N9aEz_WAe1I', longevity: 'J5zMYFBtjQA' },   // longevity = KI-Lip-Sync aus DE (Hinweis kommt automatisch)
   cz: { welcome: null, tour: null, longevity: null },
   fr: { welcome: null, tour: null, longevity: null },
   pt: { welcome: null, tour: null, longevity: null },

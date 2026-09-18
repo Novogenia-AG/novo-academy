@@ -13,7 +13,10 @@ const VIDEOS = {
  "DbRx4Kjqkes": "8QqbpYfSfkA",
  "TIHnA7J6EP4": "kAX-uSdG9CU",
  "IgNeWJ6tTng": "ERvY194cnFE",
- "SgzAZyUIx-0": "ry3DbdJvln0"
+ "SgzAZyUIx-0": "ry3DbdJvln0",
+ "-rDHQZtUGas": "3QLZ9jMqOG4",
+ "4M7Wlxw6ke8": "Qw5-f65M_nU",
+ "l--E7nOOiK8": "NWvIpgXzdiU"
 }
 const CAT = {
  "The Gene-Diet": "La dieta genética",

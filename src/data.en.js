@@ -906,9 +906,9 @@ export const COURSES_EN = [
     ],
     thumbnail: '/thumbnails/course-burnout.jpg',
     /* Video: AI lip-sync version (HeyGen) of the German original eOqrJicdJZM
-       (“BURNOUT SENSOR”). The EN youtubeId is added after the upload; until
-       then the course shows the “Video coming soon” placeholder.
+       (“BURNOUT SENSOR”). The EN dub was uploaded on 2026-09-18 (youtubeId below).
        Questions follow the content of this video. */
+    youtubeId: '-rDHQZtUGas',
     aiDub: true,
     introQuestionsHeader: 'This training answers:',
     introQuestions: [
@@ -1038,11 +1038,9 @@ export const COURSES_EN = [
     ],
     brandNoticeAboveVideos: true,
     /* Video: AI lip-sync version (HeyGen) of the German original eU5n2iseSdA
-       (“ANALYSEBERATUNG – Teil 33 – Burnout”, 79 s). The EN youtubeId is added
-       after the upload, then as
-         videoSegments: [{ title: 'Burnout — Individual Approach to Stress', youtubeId: '<EN dub ID>' }]
-       Until then the course runs without a video block.
+       (“ANALYSEBERATUNG – Teil 33 – Burnout”, 79 s). The EN dub was uploaded on 2026-09-18 (videoSegments below).
        Questions follow the content of this video (example client Maria). */
+    videoSegments: [{ title: 'Burnout — Individual Approach to Stress', youtubeId: '4M7Wlxw6ke8' }],
     aiDub: true,
     postVideoText:
       'With this training you can discuss the burnout report on solid ground with your clients.',
@@ -1188,10 +1186,10 @@ export const COURSES_EN = [
     ],
     thumbnail: '/thumbnails/course-bioage.jpg',
     /* Video: AI lip-sync version (HeyGen) of the German original gwmVcvbaNgE
-       (“BIOLOGISCHES ALTER”). The EN youtubeId is added after the upload; until
-       then the course shows the “Video coming soon” placeholder. (The earlier EN
+       (“BIOLOGISCHES ALTER”). The EN dub was uploaded on 2026-09-18 (youtubeId below). (The earlier EN
        clip udTodouyDsA — “free radicals & aging” — was the wrong video for this
        module.) Questions follow the content of the German original. */
+    youtubeId: 'l--E7nOOiK8',
     aiDub: true,
     introQuestionsHeader: 'This training answers:',
     introQuestions: [
@@ -1323,11 +1321,9 @@ export const COURSES_EN = [
     ],
     brandNoticeAboveVideos: true,
     /* Video: AI lip-sync version (HeyGen) of the German original kk5aXYY1sWQ
-       (“ANALYSEBERATUNG – Teil 32 – Alterungsprozess”). The EN youtubeId is
-       added after the upload, then as
-         videoSegments: [{ title: 'Aging Process', youtubeId: '<EN dub ID>' }]
-       Until then the course runs without a video block.
+       (“ANALYSEBERATUNG – Teil 32 – Alterungsprozess”). The EN dub was uploaded on 2026-09-18 (videoSegments below).
        Questions follow the content of this video (example client Maria). */
+    videoSegments: [{ title: 'Aging Process', youtubeId: 'Dy7P90QF1_g' }],
     aiDub: true,
     postVideoText:
       'With this training you can discuss the biological age report on solid ground with your clients.',

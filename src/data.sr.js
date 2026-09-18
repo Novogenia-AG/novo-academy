@@ -6,7 +6,33 @@ import { COURSES_EN, CATEGORIES_EN, MAIN_CATEGORIES_EN, SECTION_PRODUCT_LABELS_E
   TOPIC_WB_EN, TOPIC_REPORT_EN, TOPIC_FAQ_EN } from './data.en.js'
 
 // VIDEOS: EN youtubeId -> SR lip-sync youtubeId. Empty until dubs are uploaded.
-const VIDEOS = {}
+const VIDEOS = {
+ "vIJroun2h-I": "nC4KMeYVU5Y",
+ "IPIr-XoKIHM": "CzRRj36W09I",
+ "Lfh3oYtMSDA": "0HmuB7oreNU",
+ "-C9O5SrbdZQ": "rSYpuYc5kLA",
+ "pYLWY_5frwQ": "c5zHbKt_V6g",
+ "iS1W947McFs": "A__AzVn2suA",
+ "CxcnY6fnz5s": "jh5s8sCXSPM",
+ "CyUqDSeZbJI": "JJs2ifRSpUw",
+ "PA73Rg4iP7k": "QqDm6-yiCzg",
+ "ikDamq8-8yo": "n3AKv2pvsWc",
+ "pzF004M4ErE": "TKhwgJiriHc",
+ "8OyIc_fcdYg": "giW85tpf_6o",
+ "g5GKYyH11hc": "BfE41sq_S3g",
+ "zMb8ebBNGzA": "TdEPfNElsQQ",
+ "dHuDD3Us238": "RiurOOH1rxc",
+ "PTvmWu1Rxrg": "jO5oOMOlymw",
+ "mgfbGW-QKC4": "-rJgwi-YF5E",
+ "6dJMl02X9Tw": "xE76Q3xHBKU",
+ "wE834vw4aAs": "HY_4bdEUNPg",
+ "ofA7l21tMvQ": "OgBD-2FO5E8",
+ "Y9lSzTXj72c": "vJ3D6c4Rssg",
+ "q8RNXZE5t5A": "vtIm6HS2L_s",
+ "DbRx4Kjqkes": "7Swa5M-pWI8",
+ "IgNeWJ6tTng": "T1fp26KXLoI",
+ "SgzAZyUIx-0": "Vr9yO_4VshI"
+}
 const CAT = {
  "The Gene-Diet": "Gen-dijeta",
  "Eat Healthy by Your Genes": "Jedi zdravo u skladu sa svojim genima",
