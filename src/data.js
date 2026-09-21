@@ -3204,15 +3204,15 @@ export const CATEGORY_CONTENT = {
 export const HOME_VIDEO_IDS = {
   de: { welcome: '71EHqtv3NOA', tour: 'CFtFwezScLs', longevity: 'jHgdDRGy0hA' },
   en: { welcome: 'rDQBNTWt82Y', tour: 'N9aEz_WAe1I', longevity: 'J5zMYFBtjQA' },   // longevity = KI-Lip-Sync aus DE (Hinweis kommt automatisch)
-  cz: { welcome: null, tour: null, longevity: null },
-  fr: { welcome: null, tour: null, longevity: null },
-  pt: { welcome: null, tour: null, longevity: null },
-  it: { welcome: null, tour: null, longevity: null },
-  nl: { welcome: null, tour: null, longevity: null },
-  ro: { welcome: null, tour: null, longevity: null },
-  es: { welcome: null, tour: null, longevity: null },
-  sr: { welcome: null, tour: null, longevity: null },
-  ar: { welcome: null, tour: null, longevity: null },
+  cz: { welcome: 'lUDrOJt_JGQ', tour: 'RaaIM7xX7ro', longevity: 'r7qhtDc-Wco' },
+  fr: { welcome: 'IkebsEcV8Ow', tour: '-1ZETS8t-W8', longevity: 'EuDuG1H6Vg4' },
+  pt: { welcome: '8APdAuKodvM', tour: 'i1IDLzRJchs', longevity: 'HKuu0avuin4' },
+  it: { welcome: 'gn5n_ULqUgc', tour: 'iW3zD8rLGIU', longevity: 'sGyVG66EEdU' },
+  nl: { welcome: 'mTXE7rMRTMw', tour: 'DFba9wtfGKQ', longevity: 'RDRyzXSbUN8' },
+  ro: { welcome: 'nnsHycSceKk', tour: 'tL2Sn6JkouU', longevity: 'MpX4w2AGheU' },
+  es: { welcome: 'rPi_JkzqHDA', tour: 'SxlpaNADdlc', longevity: 'brvvOJgEWxI' },
+  sr: { welcome: 'DtHcbNb2IqQ', tour: '5HMT4l79hoE', longevity: 'yr4uW0bl6Jo' },
+  ar: { welcome: 'tfSSH8resUY', tour: 'DC_fqs1_4pA', longevity: 'NTmUDSno5sE' },
 }
 /* Echte Aufnahmen: de alle drei, en welcome + tour. Alles andere ist HeyGen-Lip-Sync
    -> KI-Hinweis nach Art. 50 Abs. 4 KI-VO. Default = gekennzeichnet: eine neue

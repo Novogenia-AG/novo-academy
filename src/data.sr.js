@@ -31,7 +31,20 @@ const VIDEOS = {
  "q8RNXZE5t5A": "vtIm6HS2L_s",
  "DbRx4Kjqkes": "7Swa5M-pWI8",
  "IgNeWJ6tTng": "T1fp26KXLoI",
- "SgzAZyUIx-0": "Vr9yO_4VshI"
+ "SgzAZyUIx-0": "Vr9yO_4VshI",
+ "mJ5joZYBtmk": "4qH7mc01Htk",
+ "iDJz6WEHLOw": "zGA14HlAjPA",
+ "sI73pZ0bPF4": "Du7SFFAlR-c",
+ "Fd8renx2EwE": "k_GIeuG0xXc",
+ "1UFjgQppgMA": "m2OEjbIDKjo",
+ "2HgTRooIjaU": "YaeBblf9AXw",
+ "Ky-yFxo7lEs": "j_OuyQoX8eo",
+ "TSoBij5Drn4": "6S5m_bZiWOA",
+ "BJ0sWv3bpVs": "u2Mt_HSPIFI",
+ "KhwgUetPahI": "R-PrA9LtzCE",
+ "QCgqCo4Qqfk": "wJycnCFL-Kw",
+ "425Pv9mfFmk": "hvsXY2OqDj8",
+ "TIHnA7J6EP4": "0ao4TQL2N_Y"
 }
 const CAT = {
  "The Gene-Diet": "Gen-dijeta",
