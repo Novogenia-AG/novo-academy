@@ -2055,7 +2055,15 @@ export const COURSES_EN = [
       },
     ],
     // Advertising Guideline PDF exists only in German — hidden in EN until translated.
-    documents: [],
+    documents: [
+      {
+        title: 'NovoAcademy PDF - Legal Guideline for Advertising (English)',
+        size: '1,5 MB',
+        type: 'pdf',
+        thumbnail: '/thumbnails/doc-Novogenia_Advertising_Guideline_EN.jpg',
+        url: '/course-materials/legal-advertising/Novogenia_Advertising_Guideline_EN.pdf',
+      },
+    ],
     hasDownload: false, hasText: true,
     initialWatched: false, initialTestPassed: false,
   },
