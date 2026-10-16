@@ -413,6 +413,32 @@ export const adminLoadAllUsers = async ({ includeDeleted = false } = {}) => {
   }))
 }
 
+/** Testauswertung auf dem Server (RPC submit_test, siehe
+ *  supabase/migration-2026-10-16-server-side-tests.sql).
+ *  Rückgabe:
+ *   { score, passed }        — Server hat ausgewertet und gespeichert
+ *   { fallback: true }       — Mock-Modus oder Migration noch nicht eingespielt
+ *                              (Funktion unbekannt) → Aufrufer wertet lokal aus
+ *   { error }                — echter Fehler (Netz, kein Schlüssel …) → NICHT
+ *                              lokal auswerten, der Trigger würde das Ergebnis
+ *                              ohnehin verwerfen. */
+export const submitTestServer = async (courseUid, answers) => {
+  if (!(USE_REAL && supabase)) return { fallback: true }
+  const { data, error } = await supabase.rpc('submit_test', {
+    p_course_uid: courseUid,
+    p_answers: answers,
+  })
+  if (error) {
+    // PGRST202 = Funktion im Schema-Cache nicht gefunden → Migration fehlt noch
+    if (error.code === 'PGRST202' || /submit_test/.test(error.message || '') && /not find|does not exist/i.test(error.message || '')) {
+      return { fallback: true }
+    }
+    console.error('[auth] submit_test fehlgeschlagen:', error.code, error.message)
+    return { error: error.message || 'submit_test failed' }
+  }
+  return { score: Number(data?.score || 0), passed: !!data?.passed }
+}
+
 /**
  * Admin: set a single course's state for another user.
  * action: 'complete' (watched + testPassed=true, score=100)

@@ -16,7 +16,7 @@ import {
   signInWithGoogle, signOut, loadProgress, saveProgress, isUsingRealSupabase,
   getMyProfile, updateMyLang, adminLoadAllUsers, adminSetUserCourseState,
   adminSetIsAdmin, adminUpdateUserName, adminResetAllProgress,
-  adminSoftDeleteUser, adminUndeleteUser,
+  adminSoftDeleteUser, adminUndeleteUser, submitTestServer,
 } from './auth.js'
 
 /* ===================== I18N CONTEXT =====================
@@ -1918,14 +1918,29 @@ function GenReportDemo({ title = 'Fettempfindlichkeit hoch', position = 20, text
 
 function TestPage({ course, onSubmit, onBack }) {
   const [answers, setAnswers] = useState({})
+  const [submitting, setSubmitting] = useState(false)
   const lang = useLang()
 
-  const submit = () => {
+  const submit = async () => {
+    if (submitting) return
     if (Object.keys(answers).length < course.questions.length) {
       if (!confirm(LX(lang,
         'You haven\'t answered all questions. Submit anyway?',
         'Du hast nicht alle Fragen beantwortet. Trotzdem abgeben?'))) return
     }
+    // Auswertung auf dem Server (Antwortschlüssel liegt dort); -1 = unbeantwortet
+    setSubmitting(true)
+    const given = course.questions.map((_, i) => (Number.isInteger(answers[i]) ? answers[i] : -1))
+    const res = await submitTestServer(courseKey(course), given)
+    setSubmitting(false)
+    if (res.error) {
+      alert(LX(lang,
+        'Your test could not be submitted. Please check your connection and try again.',
+        'Dein Test konnte nicht übermittelt werden. Bitte prüfe deine Verbindung und versuche es erneut.'))
+      return
+    }
+    if (!res.fallback) { onSubmit({ score: res.score, passed: res.passed }); return }
+    // Fallback (Mock-Modus / Migration noch nicht eingespielt): lokale Auswertung wie bisher
     let correct = 0
     course.questions.forEach((q, i) => {
       if (answers[i] === q.correct) correct++
@@ -1991,7 +2006,7 @@ function TestPage({ course, onSubmit, onBack }) {
         </div>
 
         <div className="test-submit">
-          <button className="btn-primary big" onClick={submit}>
+          <button className="btn-primary big" onClick={submit} disabled={submitting} aria-busy={submitting}>
             {LXP(lang, 'Finish test (${answered}/${total} answered)',
               `Finish test (${Object.keys(answers).length}/${course.questions.length} answered)`,
               `Test abschließen (${Object.keys(answers).length}/${course.questions.length} beantwortet)`,
