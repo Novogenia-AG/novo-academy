@@ -47,7 +47,10 @@ const VIDEOS = {
  "q8RNXZE5t5A": "eEKREWkUrEs",
  "425Pv9mfFmk": "TbXc3BIphWQ",
  "TIHnA7J6EP4": "HxiEAgRTsZ0",
- "-rDHQZtUGas": "HudReAS1NgI"
+ "-rDHQZtUGas": "HudReAS1NgI",
+ "4M7Wlxw6ke8": "wiO0Mg60erA",
+ "l--E7nOOiK8": "86adxk9zUCY",
+ "Dy7P90QF1_g": "M_kisctELLI"
 }
 const CAT = {
  "The Gene-Diet": "Het Gen-Dieet",

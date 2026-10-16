@@ -38,6 +38,14 @@ public/course-materials/nutrition/Schulungsfolien_Nutrition.pptx
 public/course-materials/performance/Demo_Performance_Trainingsplan.pdf
 public/course-materials/performance/Schulungsfolien_Performance.pptx
 public/course-materials/supplements/Schulungsfolien_Supplements.pptx
+# Seit 16.10.2026 ebenfalls im Release (Deploy-Artefakt war ~180 MB -> Pages-Timeout):
+public/course-materials/pharmacogenetics/Schulungsfolien_Pharmacogenetics.pptx
+public/course-materials/pharmacogenetics/Demo_Pharmaco_Sensor.pdf
+public/course-materials/performance/Demo_Performance_Sensor.pdf
+public/course-materials/performance/Demo_Nutrition_Plan_Performance.pdf
+public/course-materials/beauty/Demo_Beauty_Sensor.pdf
+public/course-materials/shared/Demo_NovoDaily_Lifestyle.pdf
+public/course-materials/gene-diet/01-wissenschaftliche-basis/course/DEMO_SHAPE.pdf
 
 # ===== Env (Supabase keys etc.) =====
 .env

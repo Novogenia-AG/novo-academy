@@ -38,7 +38,20 @@ const VIDEOS = {
  "wE834vw4aAs": "Wu2Az1xwOJM",
  "ofA7l21tMvQ": "GVtBIyaS1p4",
  "Y9lSzTXj72c": "1fjf_nIhGLE",
- "q8RNXZE5t5A": "p_6OAGd6V_Q"
+ "q8RNXZE5t5A": "p_6OAGd6V_Q",
+ "Dy7P90QF1_g": "Pan6rbOK2wU",
+ "mJ5joZYBtmk": "az2Rwyu04DI",
+ "iDJz6WEHLOw": "uRliR8XkC7Q",
+ "sI73pZ0bPF4": "l8CYCDDJRk8",
+ "Fd8renx2EwE": "CCQL83n9PqU",
+ "1UFjgQppgMA": "zmN8joaC_f4",
+ "2HgTRooIjaU": "t_CkeMof8Ss",
+ "Ky-yFxo7lEs": "cG1gJexTpSM",
+ "TSoBij5Drn4": "5uPE2KeKV0A",
+ "BJ0sWv3bpVs": "PQo_ftFI8Go",
+ "KhwgUetPahI": "2uRyqC3rZMk",
+ "QCgqCo4Qqfk": "KUMlO6fgfSc",
+ "425Pv9mfFmk": "j_6K5XdtMTs"
 }
 const CAT = {
  "The Gene-Diet": "La dieta genética",

@@ -46,7 +46,11 @@ const VIDEOS = {
  "TIHnA7J6EP4": "i-J556z23fE",
  "p02EmbTNRqE": "s2kZV-nEu1A",
  "IgNeWJ6tTng": "Y9mdzCyIxK0",
- "SgzAZyUIx-0": "lEJEFPBmpoY"
+ "SgzAZyUIx-0": "lEJEFPBmpoY",
+ "-rDHQZtUGas": "qyKLhPtRTWs",
+ "4M7Wlxw6ke8": "j-e9k_-bIQE",
+ "l--E7nOOiK8": "-olZq6TFzLM",
+ "Dy7P90QF1_g": "icf-Zh7gBBs"
 }
 const CAT = {
  "The Gene-Diet": "Genová dieta",
