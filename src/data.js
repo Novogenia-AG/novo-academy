@@ -596,7 +596,7 @@ export const COURSES = [
     documents: [
       {
         title: 'NovoAcademy FAQ PDF - Gen-Diät',
-        size: 'PDF',
+        size: '840 KB',
         type: 'pdf',
         url: '/course-materials/gene-diet/faq/Novogenia_FAQ_Gen-Diaet.pdf',
       },
@@ -692,7 +692,7 @@ export const COURSES = [
     documents: [
       {
         title: 'NovoAcademy FAQ PDF - Gesund ernähren nach den Genen',
-        size: '121 KB',
+        size: '626 KB',
         type: 'pdf',
         url: '/course-materials/nutrition/Novogenia_FAQ_Gesund_Ernaehren.pdf',
       },
@@ -1105,7 +1105,7 @@ export const COURSES = [
     documents: [
       {
         title: 'NovoAcademy FAQ PDF - Sportliche Leistung',
-        size: '120 KB',
+        size: '578 KB',
         type: 'pdf',
         url: '/course-materials/performance/Novogenia_FAQ_Sportliche_Leistung.pdf',
       },
@@ -1570,7 +1570,7 @@ export const COURSES = [
     documents: [
       {
         title: 'NovoAcademy FAQ PDF - Burnout und Stress',
-        size: '118 KB',
+        size: '519 KB',
         type: 'pdf',
         url: '/course-materials/burnout/Novogenia_FAQ_Burnout_Stress.pdf',
       },
@@ -1884,7 +1884,7 @@ export const COURSES = [
     documents: [
       {
         title: 'NovoAcademy FAQ PDF - Biologisches Alter',
-        size: '119 KB',
+        size: '542 KB',
         type: 'pdf',
         url: '/course-materials/bioage/Novogenia_FAQ_Biologisches_Alter.pdf',
       },
@@ -2334,7 +2334,7 @@ export const COURSES = [
     documents: [
       {
         title: 'NovoAcademy FAQ PDF - Personalisierte Nahrungsergänzung',
-        size: '121 KB',
+        size: '705 KB',
         type: 'pdf',
         url: '/course-materials/supplements/Novogenia_FAQ_Personalisierte_Nahrungsergaenzung.pdf',
       },
@@ -2541,7 +2541,7 @@ export const COURSES = [
     documents: [
       {
         title: 'NovoAcademy FAQ PDF - Gesunde Haut und Aussehen',
-        size: '121 KB',
+        size: '696 KB',
         type: 'pdf',
         url: '/course-materials/beauty/Novogenia_FAQ_Gesunde_Haut.pdf',
       },
