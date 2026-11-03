@@ -4,6 +4,7 @@ import App from './App.jsx'
 import ErrorBoundary from './ErrorBoundary.jsx'
 import './styles.css'
 import './nd-redesign.css'
+import './novopilot-theme.css'  // TEST: NovoPilot-Design
 
 /* Clickjacking-Schutz. X-Frame-Options und CSP frame-ancestors sind als <meta>
    wirkungslos — beides verlangt einen echten HTTP-Header, den GitHub Pages
