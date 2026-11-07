@@ -1,0 +1,266 @@
+/* =====================================================================
+   NOVO ACADEMY — NOVO PILOT Blau-Design „Navy-Nacht" (live seit 07.11.2026)
+   Quelle: NovoPilot-Klickdummy (novopilot-geneius-v1-blau.html):
+   Navy #00225E / #00163C → #000712, Berry #1D468C, Lime #C6D63F,
+   Ink #241F2C, Wash #F1F3F7, Radius 24px, Montserrat + Archivo Black.
+   Aktiv über <html data-np="v1"> in index.html. Rückbau auf das alte
+   Pflaumen-Design: data-np aus index.html entfernen (oder diese Datei).
+   ===================================================================== */
+
+/* ---------- gemeinsame Basis aller drei Varianten ---------- */
+:root[data-np] {
+  --np-navy: #00225E;
+  --np-navy-0: #00163C;
+  --np-navy-1: #000712;
+  --np-berry: #1D468C;
+  --np-lime: #C6D63F;
+  --np-lime-d: #9DB01B;
+  --np-lime-ink: #000E26;
+  --np-ink: #241F2C;
+  --np-soft: #675E6E;
+  --np-wash: #F1F3F7;
+  --np-num: "Archivo Black", "Montserrat", sans-serif;
+
+  --wine: var(--np-navy);
+  --wine-dark: var(--np-navy-0);
+  --wine-light: var(--np-berry);
+  --wine-soft: #E3E9F4;
+  --wine-softer: #F1F3F7;
+  --gold: var(--np-lime);
+  --gold-soft: #F1F5D2;
+  --lime: var(--np-lime);
+  --lime-dark: var(--np-lime-d);
+  --active-bg: #E3E9F4;
+  --badge-bg: var(--np-navy);
+  --tag-video-bg: var(--np-navy);
+  --radius: 24px;
+  --radius-sm: 16px;
+  --shadow-sm: 0 2px 8px rgba(0, 3, 8, .10);
+  --shadow-md: 0 22px 44px -22px rgba(0, 3, 8, .45), 0 2px 8px rgba(0, 3, 8, .10);
+  --shadow-lg: 0 24px 48px -24px rgba(0, 3, 8, .6);
+}
+
+/* Archivo Black für große Überschriften und Zahlen (wie im Klickdummy) */
+:root[data-np] .landing-hero-title,
+:root[data-np] .courses-section-title,
+:root[data-np] .course-hero-title,
+:root[data-np] .cc-title,
+:root[data-np] .landing-final-cta h2,
+:root[data-np] .ap-num,
+:root[data-np] .ap-pct,
+:root[data-np] .tr-score-num {
+  font-family: var(--np-num); font-weight: 400; letter-spacing: -0.01em;
+}
+:root[data-np] .landing-hero-title.nd-grad-head {
+  background: none; -webkit-text-fill-color: currentColor;
+}
+:root[data-np] .courses-section-title { text-transform: none; }
+
+/* Eyebrows / Kategorien: Großbuchstaben, weit gesperrt */
+:root[data-np] .section-h,
+:root[data-np] .main-cat-text,
+:root[data-np] .nd-eyebrow {
+  border-radius: 999px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; font-size: 11px;
+}
+
+/* Knöpfe: Pill, Primär = Lime mit Navy-Schrift */
+:root[data-np] .btn-primary,
+:root[data-np] .btn-primary.big {
+  background: var(--np-lime); color: var(--np-lime-ink);
+  border-radius: 999px; font-weight: 800;
+  box-shadow: 0 12px 26px -12px rgba(198, 214, 63, .7);
+}
+:root[data-np] .btn-primary:hover { background: #D3E152; transform: translateY(-1px); box-shadow: 0 14px 28px -12px rgba(198, 214, 63, .8); }
+:root[data-np] .btn-primary:disabled { background: #C9CDD6; color: #555; box-shadow: none; }
+:root[data-np] .btn-ghost { border-radius: 999px; font-weight: 800; }
+:root[data-np] .cc-action-btn { background: var(--np-navy); border-radius: var(--radius); box-shadow: var(--shadow-md); }
+:root[data-np] .cc-action-btn:hover { background: var(--np-berry); }
+:root[data-np] .cc-action-icon { color: var(--np-lime); }
+
+/* aktive Sprache / Admin-Tab = Lime */
+:root[data-np] .lang-btn.is-active,
+:root[data-np] .admin-tab.active,
+:root[data-np] .admin-tab.is-active { background: var(--np-lime); color: var(--np-lime-ink); }
+
+/* Fortschritt */
+:root[data-np] .ap-bar-fill { background: linear-gradient(90deg, var(--np-lime-d), var(--np-lime)); }
+:root[data-np] .academy-progress { border-radius: var(--radius); }
+
+/* Karten */
+:root[data-np] .faq-item,
+:root[data-np] .landing-feature,
+:root[data-np] .auth-card,
+:root[data-np] .langpick-card,
+:root[data-np] .tr-card,
+:root[data-np] .test-q,
+:root[data-np] .cc-doc,
+:root[data-np] .admin-stat-card,
+:root[data-np] .admin-chart-card { border-radius: var(--radius); }
+:root[data-np] .langpick-option,
+:root[data-np] .test-opt,
+:root[data-np] .landing-who-list li { border-radius: var(--radius-sm); }
+:root[data-np] .tile .thumb, :root[data-np] .thumb-placeholder { border-radius: 18px; }
+:root[data-np] .welcome-player, :root[data-np] .course-hero { border-radius: 28px; }
+:root[data-np] .landing-feature-ico { background: var(--np-navy); color: var(--np-lime); border-radius: 14px; }
+:root[data-np] .landing-who-list li { border-left-color: var(--np-lime); }
+:root[data-np] .cat-row-icon { background: var(--np-navy); color: var(--np-lime); border-radius: 14px; }
+
+/* Support-Bot */
+:root[data-np] .ndc-fab { background: var(--np-lime); color: var(--np-lime-ink); box-shadow: 0 12px 30px -8px rgba(198, 214, 63, .7); }
+:root[data-np] .ndc-fab:hover { background: #D3E152; }
+
+/* =====================================================================
+   V1 — NAVY-NACHT: wie der Klickdummy. Dunkler Navy-Verlauf überall,
+   weiße Karten, Lime-Akzente.
+   ===================================================================== */
+:root[data-np="v1"] {
+  --text: #FFFFFF;
+  --text-soft: rgba(255, 255, 255, .86);
+  --muted: rgba(255, 255, 255, .72);
+  --muted-2: rgba(255, 255, 255, .5);
+  --line: rgba(255, 255, 255, .14);
+  --line-soft: rgba(255, 255, 255, .08);
+  --border: rgba(255, 255, 255, .14);
+  --bg: transparent;
+  --bg-soft: transparent;
+  --bg-warm: transparent;
+  --panel: rgba(255, 255, 255, .06);
+  background: var(--np-navy-1);
+}
+:root[data-np="v1"] body {
+  color: #fff;
+  background:
+    radial-gradient(1200px 700px at 70% -10%, #0A275A 0%, transparent 60%),
+    linear-gradient(180deg, var(--np-navy-0), var(--np-navy-1));
+  background-attachment: fixed;
+}
+:root[data-np="v1"] .app,
+:root[data-np="v1"] .main,
+:root[data-np="v1"] .sidebar,
+:root[data-np="v1"] .course-landing,
+:root[data-np="v1"] .course-content-page,
+:root[data-np="v1"] .landing-page,
+:root[data-np="v1"] .landing-hero,
+:root[data-np="v1"] .landing-features,
+:root[data-np="v1"] .auth-page,
+:root[data-np="v1"] .langpick-page,
+:root[data-np="v1"] .cert-view { background: transparent; }
+
+/* Kopfzeile: gläsernes Navy */
+:root[data-np="v1"] .topbar,
+:root[data-np="v1"] .app.no-sidebar > .main > .topbar,
+:root[data-np="v1"] .landing-header {
+  background: rgba(0, 22, 60, .78);
+  border-bottom: 1px solid rgba(255, 255, 255, .10);
+}
+:root[data-np="v1"] .pt-academy,
+:root[data-np="v1"] .landing-logo .pt-academy { color: var(--np-lime); }
+:root[data-np="v1"] .lang-switcher { background: rgba(255, 255, 255, .08); }
+:root[data-np="v1"] .lang-btn { color: rgba(255, 255, 255, .8); }
+:root[data-np="v1"] .btn-back { background: rgba(255, 255, 255, .08); color: #fff; }
+:root[data-np="v1"] .user-menu-btn { background: rgba(255, 255, 255, .08); border-color: rgba(255, 255, 255, .16); color: #fff; }
+
+/* Eyebrows: Lime auf transparentem Navy */
+:root[data-np="v1"] .section-h,
+:root[data-np="v1"] .main-cat-text,
+:root[data-np="v1"] .nd-eyebrow { background: rgba(198, 214, 63, .12); color: var(--np-lime); border: 1px solid rgba(198, 214, 63, .3); }
+:root[data-np="v1"] .nd-eyebrow-dot { background: var(--np-lime); }
+:root[data-np="v1"] .main-cat-text { color: var(--np-lime); }
+
+/* Willkommen + Fortschritt als Navy-Hero-Karte */
+:root[data-np="v1"] .academy-progress {
+  background: var(--np-navy); border: 1px solid rgba(255, 255, 255, .16);
+  box-shadow: 0 24px 48px -32px rgba(0, 0, 0, .65);
+}
+:root[data-np="v1"] .ap-bar { background: rgba(255, 255, 255, .12); border-color: transparent; }
+:root[data-np="v1"] .ap-num, :root[data-np="v1"] .ap-pct { color: var(--np-lime); }
+:root[data-np="v1"] .btn-ghost { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .3); }
+
+/* weiße Karten: dunkle Schrift zurücksetzen */
+:root[data-np="v1"] :is(.faq-item, .landing-feature, .landing-who-list li, .auth-card, .langpick-card,
+  .langpick-option, .test-q, .test-opt, .tr-card, .cc-doc, .cert-mini-paper, .user-menu-pop,
+  .cookie-banner, .admin-stat-card, .admin-chart-card, .admin-table, .admin-course-row,
+  .admin-actions-pop, .admin-search, .auth-google, .auth-field input, .ndc-ai-hint, .brand-notice, .legal-page-wrap) {
+  --text: var(--np-ink);
+  --text-soft: #3A3542;
+  --muted: var(--np-soft);
+  --muted-2: #8E8794;
+  --line: rgba(0, 34, 94, .12);
+  --line-soft: rgba(0, 34, 94, .07);
+  --border: rgba(0, 34, 94, .14);
+  --bg: #fff; --bg-soft: var(--np-wash); --panel: #fff;
+  color: var(--np-ink);
+  background: #fff;
+  box-shadow: 0 22px 44px -22px rgba(0, 3, 8, .7), 0 2px 8px rgba(0, 3, 8, .14);
+}
+:root[data-np="v1"] .legal-page-wrap { padding: 32px; border-radius: var(--radius); }
+:root[data-np="v1"] .test-opt, :root[data-np="v1"] .langpick-option,
+:root[data-np="v1"] .auth-field input, :root[data-np="v1"] .admin-search { box-shadow: none; border: 1px solid rgba(0, 34, 94, .14); }
+:root[data-np="v1"] .faq-item * { color: inherit; }
+:root[data-np="v1"] .cookie-banner a { color: var(--np-berry); }
+
+/* Fuß: dezent auf Navy */
+:root[data-np="v1"] .legal-footer { background: transparent; border-top: 1px solid rgba(255, 255, 255, .10); color: rgba(255, 255, 255, .6); }
+:root[data-np="v1"] .legal-footer-link { color: rgba(255, 255, 255, .7); }
+:root[data-np="v1"] .legal-footer-link:hover { color: var(--np-lime); }
+:root[data-np="v1"] .landing-final-cta { background: var(--np-navy); border-top: 1px solid rgba(255, 255, 255, .12); border-bottom: 1px solid rgba(255, 255, 255, .12); }
+
+/* ---------- Nachbesserungen nach Screenshot-Prüfung ---------- */
+/* Landing-Überschrift: nd-redesign setzt color:transparent → explizite Farbe */
+:root[data-np="v1"] .landing-hero-title.nd-grad-head { color: #fff; -webkit-text-fill-color: #fff; }
+/* Logo: NOVO weiß / ACADEMY lime */
+:root[data-np="v1"] .landing-logo .pt-novo { color: #fff; }
+:root[data-np="v1"] .landing-logo .pt-academy { color: var(--np-lime); }
+/* Zahnrad im dunklen Kopf */
+:root[data-np="v1"] .admin-gear-btn { background: rgba(255, 255, 255, .08); border-color: rgba(255, 255, 255, .16); color: #fff; }
+/* V1: restliche helle Flächen */
+:root[data-np="v1"] .landing-who,
+:root[data-np="v1"] .auth-card-wrap { background: transparent; }
+:root[data-np="v1"] .landing-who-title { color: #fff; }
+:root[data-np="v1"] .auth-back { color: #fff; }
+/* V1: Testseite, Testergebnis, Kursabschluss, FAQ-Gruppen, Rechtsseiten */
+:root[data-np="v1"] .test-page,
+:root[data-np="v1"] .test-result { background: transparent; }
+:root[data-np="v1"] .cc-complete {
+  background: var(--np-navy); border: 1px solid rgba(255, 255, 255, .16);
+  box-shadow: 0 24px 48px -32px rgba(0, 0, 0, .65);
+}
+:root[data-np] .cc-action-btn-alt { background: var(--np-lime); color: var(--np-lime-ink); box-shadow: 0 12px 26px -12px rgba(198, 214, 63, .7); }
+:root[data-np] .cc-action-btn-alt:hover { background: #D3E152; }
+:root[data-np] .cc-action-btn-alt .cc-action-icon { color: var(--np-lime-ink); }
+:root[data-np] .cc-action-btn-alt :is(.cc-action-title, .cc-action-text, .cc-action-sub) { color: var(--np-lime-ink); }
+:root[data-np="v1"] .faq-group-title { color: var(--np-lime); }
+:root[data-np="v1"] .faq-toolbar input { background: #fff; color: var(--np-ink); border: 0; }
+:root[data-np="v1"] .legal-page-wrap .btn-back { background: var(--np-navy); color: #fff; }
+:root[data-np="v1"] .legal-page-wrap :is(h1, h2, h3, .legal-page-title) { color: var(--np-navy); }
+/* V1: „sanfte" Flächen auf Navy dunkel-transparent, in weißen Karten wieder hell */
+:root[data-np="v1"] {
+  --wine-soft: rgba(255, 255, 255, .10);
+  --wine-softer: rgba(255, 255, 255, .06);
+  --active-bg: rgba(255, 255, 255, .10);
+  --gold-soft: rgba(198, 214, 63, .14);
+  --green-soft: rgba(95, 168, 30, .18);
+  --green-text: #9BD86A;
+}
+:root[data-np="v1"] :is(.faq-item, .landing-feature, .landing-who-list li, .auth-card, .langpick-card,
+  .langpick-option, .test-q, .test-opt, .tr-card, .cc-doc, .cert-mini-paper, .user-menu-pop,
+  .cookie-banner, .admin-stat-card, .admin-chart-card, .admin-table, .admin-course-row,
+  .admin-actions-pop, .admin-search, .brand-notice, .legal-page-wrap) {
+  --wine-soft: #E3E9F4; --wine-softer: #F1F3F7; --active-bg: #E3E9F4;
+  --gold-soft: #F1F5D2; --green-soft: #DCF1E0; --green-text: #157A3F;
+}
+/* KI-Dub-Offenlegung (Art. 50 KI-VO) — muss klar lesbar bleiben */
+:root[data-np="v1"] .ai-dub-notice {
+  background: rgba(255, 255, 255, .08); color: rgba(255, 255, 255, .92);
+  border-inline-start-color: var(--np-lime);
+}
+:root[data-np] .ai-dub-badge { background: var(--np-lime); color: var(--np-lime-ink); }
+/* V1: Text, der im Original --wine nutzt und auf Navy liegt → Lime */
+:root[data-np="v1"] :is(.cc-cert-label, .cc-article-callout-label, .home-bonus-title) { color: var(--np-lime); }
+:root[data-np="v1"] .course-bullets li::before { color: var(--np-lime); }
+:root[data-np="v1"] .cc-question-list li::marker { color: var(--np-lime); }
+:root[data-np="v1"] .cc-cert-badge { border-color: rgba(198, 214, 63, .35); }
+:root[data-np="v1"] :is(.btn-back, .admin-gear-btn):hover { background: rgba(255, 255, 255, .16); color: var(--np-lime); }
+/* Testfrage: <legend> sitzt sonst auf dem Kartenrand (erste Zeile auf Navy) → in die Karte holen */
+:root[data-np] .test-q-legend { float: left; width: 100%; padding: 0; }
+:root[data-np] .test-q-legend ~ * { clear: both; }
