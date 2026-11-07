@@ -1,0 +1,348 @@
+/* =====================================================================
+   NOVO ACADEMY — NOVO PILOT Blau-Design, drei Varianten (TEST-Branch)
+   Quelle: NovoPilot-Klickdummy (novopilot-geneius-v1-blau.html):
+   Navy #00225E / #00163C → #000712, Berry #1D468C, Lime #C6D63F,
+   Ink #241F2C, Wash #F1F3F7, Radius 24px, Montserrat + Archivo Black.
+   Aktiv nur mit <html data-np="v1|v2|v3"> (Umschalter in main.jsx).
+   Ohne data-np sieht die Akademie aus wie live.
+   ===================================================================== */
+
+/* ---------- gemeinsame Basis aller drei Varianten ---------- */
+:root[data-np] {
+  --np-navy: #00225E;
+  --np-navy-0: #00163C;
+  --np-navy-1: #000712;
+  --np-berry: #1D468C;
+  --np-lime: #C6D63F;
+  --np-lime-d: #9DB01B;
+  --np-lime-ink: #000E26;
+  --np-ink: #241F2C;
+  --np-soft: #675E6E;
+  --np-wash: #F1F3F7;
+  --np-num: "Archivo Black", "Montserrat", sans-serif;
+
+  --wine: var(--np-navy);
+  --wine-dark: var(--np-navy-0);
+  --wine-light: var(--np-berry);
+  --wine-soft: #E3E9F4;
+  --wine-softer: #F1F3F7;
+  --gold: var(--np-lime);
+  --gold-soft: #F1F5D2;
+  --lime: var(--np-lime);
+  --lime-dark: var(--np-lime-d);
+  --active-bg: #E3E9F4;
+  --badge-bg: var(--np-navy);
+  --tag-video-bg: var(--np-navy);
+  --radius: 24px;
+  --radius-sm: 16px;
+  --shadow-sm: 0 2px 8px rgba(0, 3, 8, .10);
+  --shadow-md: 0 22px 44px -22px rgba(0, 3, 8, .45), 0 2px 8px rgba(0, 3, 8, .10);
+  --shadow-lg: 0 24px 48px -24px rgba(0, 3, 8, .6);
+}
+
+/* Archivo Black für große Überschriften und Zahlen (wie im Klickdummy) */
+:root[data-np] .landing-hero-title,
+:root[data-np] .courses-section-title,
+:root[data-np] .course-hero-title,
+:root[data-np] .cc-title,
+:root[data-np] .landing-final-cta h2,
+:root[data-np] .ap-num,
+:root[data-np] .ap-pct,
+:root[data-np] .tr-score-num {
+  font-family: var(--np-num); font-weight: 400; letter-spacing: -0.01em;
+}
+:root[data-np] .landing-hero-title.nd-grad-head {
+  background: none; -webkit-text-fill-color: currentColor;
+}
+:root[data-np] .courses-section-title { text-transform: none; }
+
+/* Eyebrows / Kategorien: Großbuchstaben, weit gesperrt */
+:root[data-np] .section-h,
+:root[data-np] .main-cat-text,
+:root[data-np] .nd-eyebrow {
+  border-radius: 999px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; font-size: 11px;
+}
+
+/* Knöpfe: Pill, Primär = Lime mit Navy-Schrift */
+:root[data-np] .btn-primary,
+:root[data-np] .btn-primary.big {
+  background: var(--np-lime); color: var(--np-lime-ink);
+  border-radius: 999px; font-weight: 800;
+  box-shadow: 0 12px 26px -12px rgba(198, 214, 63, .7);
+}
+:root[data-np] .btn-primary:hover { background: #D3E152; transform: translateY(-1px); box-shadow: 0 14px 28px -12px rgba(198, 214, 63, .8); }
+:root[data-np] .btn-primary:disabled { background: #C9CDD6; color: #555; box-shadow: none; }
+:root[data-np] .btn-ghost { border-radius: 999px; font-weight: 800; }
+:root[data-np] .cc-action-btn { background: var(--np-navy); border-radius: var(--radius); box-shadow: var(--shadow-md); }
+:root[data-np] .cc-action-btn:hover { background: var(--np-berry); }
+:root[data-np] .cc-action-icon { color: var(--np-lime); }
+
+/* aktive Sprache / Admin-Tab = Lime */
+:root[data-np] .lang-btn.is-active,
+:root[data-np] .admin-tab.active,
+:root[data-np] .admin-tab.is-active { background: var(--np-lime); color: var(--np-lime-ink); }
+
+/* Fortschritt */
+:root[data-np] .ap-bar-fill { background: linear-gradient(90deg, var(--np-lime-d), var(--np-lime)); }
+:root[data-np] .academy-progress { border-radius: var(--radius); }
+
+/* Karten */
+:root[data-np] .faq-item,
+:root[data-np] .landing-feature,
+:root[data-np] .auth-card,
+:root[data-np] .langpick-card,
+:root[data-np] .tr-card,
+:root[data-np] .test-q,
+:root[data-np] .cc-doc,
+:root[data-np] .admin-stat-card,
+:root[data-np] .admin-chart-card { border-radius: var(--radius); }
+:root[data-np] .langpick-option,
+:root[data-np] .test-opt,
+:root[data-np] .landing-who-list li { border-radius: var(--radius-sm); }
+:root[data-np] .tile .thumb, :root[data-np] .thumb-placeholder { border-radius: 18px; }
+:root[data-np] .welcome-player, :root[data-np] .course-hero { border-radius: 28px; }
+:root[data-np] .landing-feature-ico { background: var(--np-navy); color: var(--np-lime); border-radius: 14px; }
+:root[data-np] .landing-who-list li { border-left-color: var(--np-lime); }
+:root[data-np] .cat-row-icon { background: var(--np-navy); color: var(--np-lime); border-radius: 14px; }
+
+/* Support-Bot */
+:root[data-np] .ndc-fab { background: var(--np-lime); color: var(--np-lime-ink); box-shadow: 0 12px 30px -8px rgba(198, 214, 63, .7); }
+:root[data-np] .ndc-fab:hover { background: #D3E152; }
+
+/* =====================================================================
+   V1 — NAVY-NACHT: wie der Klickdummy. Dunkler Navy-Verlauf überall,
+   weiße Karten, Lime-Akzente.
+   ===================================================================== */
+:root[data-np="v1"] {
+  --text: #FFFFFF;
+  --text-soft: rgba(255, 255, 255, .86);
+  --muted: rgba(255, 255, 255, .72);
+  --muted-2: rgba(255, 255, 255, .5);
+  --line: rgba(255, 255, 255, .14);
+  --line-soft: rgba(255, 255, 255, .08);
+  --border: rgba(255, 255, 255, .14);
+  --bg: transparent;
+  --bg-soft: transparent;
+  --bg-warm: transparent;
+  --panel: rgba(255, 255, 255, .06);
+  background: var(--np-navy-1);
+}
+:root[data-np="v1"] body {
+  color: #fff;
+  background:
+    radial-gradient(1200px 700px at 70% -10%, #0A275A 0%, transparent 60%),
+    linear-gradient(180deg, var(--np-navy-0), var(--np-navy-1));
+  background-attachment: fixed;
+}
+:root[data-np="v1"] .app,
+:root[data-np="v1"] .main,
+:root[data-np="v1"] .sidebar,
+:root[data-np="v1"] .course-landing,
+:root[data-np="v1"] .course-content-page,
+:root[data-np="v1"] .landing-page,
+:root[data-np="v1"] .landing-hero,
+:root[data-np="v1"] .landing-features,
+:root[data-np="v1"] .auth-page,
+:root[data-np="v1"] .langpick-page,
+:root[data-np="v1"] .cert-view { background: transparent; }
+
+/* Kopfzeile: gläsernes Navy */
+:root[data-np="v1"] .topbar,
+:root[data-np="v1"] .app.no-sidebar > .main > .topbar,
+:root[data-np="v1"] .landing-header {
+  background: rgba(0, 22, 60, .78);
+  border-bottom: 1px solid rgba(255, 255, 255, .10);
+}
+:root[data-np="v1"] .pt-academy,
+:root[data-np="v1"] .landing-logo .pt-academy { color: var(--np-lime); }
+:root[data-np="v1"] .lang-switcher { background: rgba(255, 255, 255, .08); }
+:root[data-np="v1"] .lang-btn { color: rgba(255, 255, 255, .8); }
+:root[data-np="v1"] .btn-back { background: rgba(255, 255, 255, .08); color: #fff; }
+:root[data-np="v1"] .user-menu-btn { background: rgba(255, 255, 255, .08); border-color: rgba(255, 255, 255, .16); color: #fff; }
+
+/* Eyebrows: Lime auf transparentem Navy */
+:root[data-np="v1"] .section-h,
+:root[data-np="v1"] .main-cat-text,
+:root[data-np="v1"] .nd-eyebrow { background: rgba(198, 214, 63, .12); color: var(--np-lime); border: 1px solid rgba(198, 214, 63, .3); }
+:root[data-np="v1"] .nd-eyebrow-dot { background: var(--np-lime); }
+:root[data-np="v1"] .main-cat-text { color: var(--np-lime); }
+
+/* Willkommen + Fortschritt als Navy-Hero-Karte */
+:root[data-np="v1"] .academy-progress {
+  background: var(--np-navy); border: 1px solid rgba(255, 255, 255, .16);
+  box-shadow: 0 24px 48px -32px rgba(0, 0, 0, .65);
+}
+:root[data-np="v1"] .ap-bar { background: rgba(255, 255, 255, .12); border-color: transparent; }
+:root[data-np="v1"] .ap-num, :root[data-np="v1"] .ap-pct { color: var(--np-lime); }
+:root[data-np="v1"] .btn-ghost { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .3); }
+
+/* weiße Karten: dunkle Schrift zurücksetzen */
+:root[data-np="v1"] :is(.faq-item, .landing-feature, .landing-who-list li, .auth-card, .langpick-card,
+  .langpick-option, .test-q, .test-opt, .tr-card, .cc-doc, .cert-mini-paper, .user-menu-pop,
+  .cookie-banner, .admin-stat-card, .admin-chart-card, .admin-table, .admin-course-row,
+  .admin-actions-pop, .admin-search, .auth-google, .auth-field input, .ndc-ai-hint, .brand-notice, .legal-page-wrap) {
+  --text: var(--np-ink);
+  --text-soft: #3A3542;
+  --muted: var(--np-soft);
+  --muted-2: #8E8794;
+  --line: rgba(0, 34, 94, .12);
+  --line-soft: rgba(0, 34, 94, .07);
+  --border: rgba(0, 34, 94, .14);
+  --bg: #fff; --bg-soft: var(--np-wash); --panel: #fff;
+  color: var(--np-ink);
+  background: #fff;
+  box-shadow: 0 22px 44px -22px rgba(0, 3, 8, .7), 0 2px 8px rgba(0, 3, 8, .14);
+}
+:root[data-np="v1"] .legal-page-wrap { padding: 32px; border-radius: var(--radius); }
+:root[data-np="v1"] .test-opt, :root[data-np="v1"] .langpick-option,
+:root[data-np="v1"] .auth-field input, :root[data-np="v1"] .admin-search { box-shadow: none; border: 1px solid rgba(0, 34, 94, .14); }
+:root[data-np="v1"] .faq-item * { color: inherit; }
+:root[data-np="v1"] .cookie-banner a { color: var(--np-berry); }
+
+/* Fuß: dezent auf Navy */
+:root[data-np="v1"] .legal-footer { background: transparent; border-top: 1px solid rgba(255, 255, 255, .10); color: rgba(255, 255, 255, .6); }
+:root[data-np="v1"] .legal-footer-link { color: rgba(255, 255, 255, .7); }
+:root[data-np="v1"] .legal-footer-link:hover { color: var(--np-lime); }
+:root[data-np="v1"] .landing-final-cta { background: var(--np-navy); border-top: 1px solid rgba(255, 255, 255, .12); border-bottom: 1px solid rgba(255, 255, 255, .12); }
+
+/* =====================================================================
+   V2 — NAVY-KOPF: dunkler Kopf + Navy-Hero-Bänder, Inhalt auf hellem Wash.
+   ===================================================================== */
+:root[data-np="v2"] {
+  --text: var(--np-ink);
+  --text-soft: #3A3542;
+  --muted: var(--np-soft);
+  --line: rgba(0, 34, 94, .12);
+  --line-soft: rgba(0, 34, 94, .07);
+  --border: rgba(0, 34, 94, .14);
+  --bg: var(--np-wash);
+  --bg-soft: var(--np-wash);
+  --bg-warm: var(--np-wash);
+}
+:root[data-np="v2"] body,
+:root[data-np="v2"] .app,
+:root[data-np="v2"] .main,
+:root[data-np="v2"] .landing-page,
+:root[data-np="v2"] .landing-features,
+:root[data-np="v2"] .auth-page,
+:root[data-np="v2"] .langpick-page { background: var(--np-wash); }
+
+:root[data-np="v2"] .topbar,
+:root[data-np="v2"] .app.no-sidebar > .main > .topbar,
+:root[data-np="v2"] .landing-header {
+  background: var(--np-navy-0); border-bottom: 0; color: #fff;
+  --text: #fff; --muted: rgba(255, 255, 255, .72);
+}
+:root[data-np="v2"] .topbar .pt-novo, :root[data-np="v2"] .landing-header .pt-novo { color: #fff; }
+:root[data-np="v2"] .topbar .pt-academy, :root[data-np="v2"] .landing-header .pt-academy { color: var(--np-lime); }
+:root[data-np="v2"] .lang-switcher { background: rgba(255, 255, 255, .08); }
+:root[data-np="v2"] .lang-btn { color: rgba(255, 255, 255, .8); }
+:root[data-np="v2"] .user-menu-btn { background: rgba(255, 255, 255, .08); border-color: rgba(255, 255, 255, .16); color: #fff; }
+:root[data-np="v2"] .landing-header .btn-ghost { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .3); }
+
+/* Landing-Hero als Navy-Band */
+:root[data-np="v2"] .landing-hero {
+  background: radial-gradient(900px 500px at 70% -10%, #0A275A 0%, transparent 60%), linear-gradient(180deg, var(--np-navy-0), var(--np-navy));
+  color: #fff; --text: #fff; --muted: rgba(255, 255, 255, .78);
+}
+:root[data-np="v2"] .landing-hero-title { color: #fff; }
+:root[data-np="v2"] .landing-hero-sub { color: rgba(255, 255, 255, .8); }
+:root[data-np="v2"] .nd-eyebrow { background: transparent; color: var(--np-lime); padding: 0; }
+:root[data-np="v2"] .nd-eyebrow-dot { background: var(--np-lime); }
+
+/* Fortschritt = Navy-Hero-Karte */
+:root[data-np="v2"] .academy-progress {
+  background: var(--np-navy); border: 0; box-shadow: var(--shadow-lg);
+  --text: #fff; --text-soft: rgba(255, 255, 255, .86); --muted: rgba(255, 255, 255, .72); color: #fff;
+}
+:root[data-np="v2"] .ap-bar { background: rgba(255, 255, 255, .14); border-color: transparent; }
+:root[data-np="v2"] .ap-num, :root[data-np="v2"] .ap-pct { color: var(--np-lime); }
+
+/* Eyebrows: Navy-Pille mit Lime-Schrift */
+:root[data-np="v2"] .section-h,
+:root[data-np="v2"] .main-cat-text { background: var(--np-navy); color: var(--np-lime); }
+
+/* weiße Karten mit Klickdummy-Schatten */
+:root[data-np="v2"] :is(.faq-item, .landing-feature, .landing-who-list li, .auth-card, .langpick-card, .test-q, .tr-card, .cc-doc, .user-menu-pop, .admin-stat-card, .admin-chart-card) {
+  background: #fff; border: 0; box-shadow: 0 18px 40px -24px rgba(0, 22, 60, .35), 0 2px 6px rgba(0, 22, 60, .06);
+}
+:root[data-np="v2"] .tile:hover .thumb { box-shadow: 0 18px 40px -20px rgba(0, 22, 60, .5); }
+:root[data-np="v2"] .legal-footer { background: var(--np-navy-0); color: rgba(255, 255, 255, .6); border-top: 0; }
+:root[data-np="v2"] .legal-footer-link { color: rgba(255, 255, 255, .7); }
+:root[data-np="v2"] .legal-footer-link:hover { color: var(--np-lime); }
+:root[data-np="v2"] .landing-final-cta { background: var(--np-navy); }
+
+/* =====================================================================
+   V3 — HELL: Weiß, Navy für Schrift und Flächen-Akzente, Lime sparsam.
+   ===================================================================== */
+:root[data-np="v3"] {
+  --text: #0B1B3A;
+  --text-soft: #26355A;
+  --muted: #5B6680;
+  --line: #E2E7F0;
+  --line-soft: #EEF1F6;
+  --border: #E2E7F0;
+  --bg: #FFFFFF;
+  --bg-soft: #F7F8FB;
+  --bg-warm: #F7F8FB;
+}
+:root[data-np="v3"] body, :root[data-np="v3"] .main, :root[data-np="v3"] .app { background: #fff; }
+:root[data-np="v3"] .landing-hero { background: linear-gradient(180deg, #F1F3F7 0%, #fff 100%); }
+:root[data-np="v3"] .topbar,
+:root[data-np="v3"] .app.no-sidebar > .main > .topbar,
+:root[data-np="v3"] .landing-header { background: rgba(255, 255, 255, .9); border-bottom: 1px solid var(--line); }
+:root[data-np="v3"] .pt-academy { color: var(--np-berry); }
+:root[data-np="v3"] .landing-hero-title { color: var(--np-navy); }
+:root[data-np="v3"] .section-h,
+:root[data-np="v3"] .main-cat-text,
+:root[data-np="v3"] .nd-eyebrow { background: #E3E9F4; color: var(--np-navy); }
+:root[data-np="v3"] .nd-eyebrow-dot { background: var(--np-lime-d); }
+/* Primärknopf hier Navy, Lime nur als Marker */
+:root[data-np="v3"] .btn-primary,
+:root[data-np="v3"] .btn-primary.big { background: var(--np-navy); color: #fff; box-shadow: 0 12px 26px -14px rgba(0, 34, 94, .7); }
+:root[data-np="v3"] .btn-primary:hover { background: var(--np-berry); }
+:root[data-np="v3"] .lang-btn.is-active { background: var(--np-navy); color: #fff; }
+:root[data-np="v3"] .academy-progress { background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow-md); }
+:root[data-np="v3"] .ap-bar { background: #EEF1F6; border-color: #EEF1F6; }
+:root[data-np="v3"] .ap-num { color: var(--np-navy); }
+:root[data-np="v3"] .ap-pct { color: var(--np-lime-d); }
+:root[data-np="v3"] :is(.faq-item, .landing-feature, .auth-card, .langpick-card, .test-q, .tr-card, .cc-doc, .user-menu-pop) {
+  border: 1px solid var(--line); box-shadow: var(--shadow-md);
+}
+:root[data-np="v3"] .ndc-fab { background: var(--np-navy); color: var(--np-lime); box-shadow: 0 12px 30px -10px rgba(0, 34, 94, .6); }
+:root[data-np="v3"] .legal-footer { background: var(--np-navy); color: rgba(255, 255, 255, .6); border-top: 0; }
+:root[data-np="v3"] .legal-footer-link { color: rgba(255, 255, 255, .75); }
+:root[data-np="v3"] .legal-footer-link:hover { color: var(--np-lime); }
+:root[data-np="v3"] .landing-final-cta { background: var(--np-navy); }
+:root[data-np="v3"] .landing-final-cta .btn-primary { background: var(--np-lime); color: var(--np-lime-ink); }
+
+/* ---------- Varianten-Umschalter (nur Test) ---------- */
+.np-switch {
+  position: fixed; left: 16px; bottom: 16px; z-index: 2000;
+  display: flex; gap: 4px; padding: 5px;
+  background: #000E26; border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  font: 700 12px/1 "Montserrat", sans-serif;
+}
+.np-switch span { color: rgba(255, 255, 255, .6); padding: 8px 8px 8px 10px; }
+.np-switch button { color: #fff; padding: 8px 12px; border-radius: 999px; }
+.np-switch button[aria-pressed="true"] { background: #C6D63F; color: #000E26; }
+
+/* ---------- Nachbesserungen nach Screenshot-Prüfung ---------- */
+/* Landing-Überschrift: nd-redesign setzt color:transparent → explizite Farbe */
+:root[data-np="v1"] .landing-hero-title.nd-grad-head,
+:root[data-np="v2"] .landing-hero-title.nd-grad-head { color: #fff; -webkit-text-fill-color: #fff; }
+:root[data-np="v3"] .landing-hero-title.nd-grad-head { color: var(--np-navy); -webkit-text-fill-color: var(--np-navy); }
+/* Logo: NOVO weiß / ACADEMY lime auf Navy, NOVO navy / ACADEMY berry auf Hell */
+:root[data-np="v1"] .landing-logo .pt-novo,
+:root[data-np="v2"] .landing-logo .pt-novo { color: #fff; }
+:root[data-np="v1"] .landing-logo .pt-academy,
+:root[data-np="v2"] .landing-logo .pt-academy { color: var(--np-lime); }
+:root[data-np="v3"] .landing-logo .pt-novo { color: var(--np-navy); }
+:root[data-np="v3"] .landing-logo .pt-academy { color: var(--np-berry); }
+/* Zahnrad im dunklen Kopf */
+:root[data-np="v1"] .admin-gear-btn,
+:root[data-np="v2"] .admin-gear-btn { background: rgba(255, 255, 255, .08); border-color: rgba(255, 255, 255, .16); color: #fff; }
+.np-switch i { font-style: normal; }
+.np-switch button { white-space: nowrap; }
+@media (max-width: 600px) { .np-switch i, .np-switch span { display: none; } .np-switch { left: 12px; bottom: 12px; } }
