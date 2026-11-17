@@ -264,3 +264,115 @@
 /* Testfrage: <legend> sitzt sonst auf dem Kartenrand (erste Zeile auf Navy) → in die Karte holen */
 :root[data-np] .test-q-legend { float: left; width: 100%; padding: 0; }
 :root[data-np] .test-q-legend ~ * { clear: both; }
+
+/* =====================================================================
+   HELL — wie NovoPilot „Hell" (Standard seit 17.11.2026, Daniels Wahl).
+   Heller Blau-Verlauf, Navy-Schrift, weiße Karten mit weichem Schatten,
+   dunkelblaue Kopfbox als Anker, Lime nur als Akzent. Videos bleiben dunkel.
+   Aktiv über <html data-np="hell">. Zurück auf Navy-Nacht: data-np="v1".
+   ===================================================================== */
+:root[data-np="hell"] {
+  --text: #0B2350;
+  --text-soft: rgba(11, 35, 80, .84);
+  --muted: rgba(11, 35, 80, .68);
+  --muted-2: rgba(11, 35, 80, .5);
+  --line: rgba(0, 34, 94, .14);
+  --line-soft: rgba(0, 34, 94, .08);
+  --border: rgba(0, 34, 94, .14);
+  --bg: transparent;
+  --bg-soft: transparent;
+  --bg-warm: transparent;
+  --panel: #fff;
+  --shadow-sm: 0 2px 8px rgba(0, 34, 94, .08);
+  --shadow-md: 0 14px 34px -22px rgba(0, 34, 94, .45), 0 2px 8px rgba(0, 34, 94, .06);
+  --shadow-lg: 0 20px 44px -24px rgba(0, 34, 94, .5);
+  background: #EEF3FA;
+}
+:root[data-np="hell"] body {
+  color: #0B2350;
+  background:
+    radial-gradient(1100px 600px at 75% -10%, #DCE8F8 0%, transparent 60%),
+    linear-gradient(180deg, #F5F8FC, #E6EDF7);
+  background-attachment: fixed;
+}
+:root[data-np="hell"] :is(.app, .main, .course-landing, .course-content-page, .landing-page,
+  .landing-features, .landing-who, .auth-page, .auth-card-wrap, .langpick-page, .cert-view,
+  .test-page, .test-result) { background: transparent; }
+
+/* Kopfzeile / Seitenleiste: Weiß .86 mit feiner Navy-Linie */
+:root[data-np="hell"] :is(.topbar, .app.no-sidebar > .main > .topbar, .landing-header) {
+  background: rgba(255, 255, 255, .86); border-bottom: 1px solid rgba(0, 34, 94, .14);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+}
+:root[data-np="hell"] .sidebar { background: rgba(255, 255, 255, .86); border-right: 1px solid rgba(0, 34, 94, .14); color: var(--np-navy); }
+:root[data-np="hell"] :is(.pt-novo, .landing-logo .pt-novo) { color: var(--np-navy); }
+:root[data-np="hell"] :is(.pt-academy, .landing-logo .pt-academy) { color: var(--np-lime-d); }
+:root[data-np="hell"] .lang-switcher { background: #fff; border: 1px solid rgba(0, 34, 94, .14); }
+:root[data-np="hell"] .lang-btn { color: var(--np-navy); }
+:root[data-np="hell"] :is(.btn-back, .admin-gear-btn, .user-menu-btn) { background: #fff; border: 1px solid rgba(0, 34, 94, .28); color: var(--np-navy); }
+:root[data-np="hell"] :is(.btn-back, .admin-gear-btn, .user-menu-btn):hover { background: #E3E9F4; color: var(--np-navy); }
+
+/* Eyebrows: Navy auf hellem Blau */
+:root[data-np="hell"] :is(.section-h, .main-cat-text, .nd-eyebrow) { background: #E3E9F4; color: var(--np-navy); border: 1px solid rgba(0, 34, 94, .14); }
+:root[data-np="hell"] .nd-eyebrow-dot { background: var(--np-lime-d); }
+
+/* Überschriften auf dem Seitengrund */
+:root[data-np="hell"] :is(.courses-section-title, .landing-who-title, .faq-group-title, .cc-title) { color: var(--np-navy); }
+
+/* Kopfboxen bleiben dunkelblau (Anker): Landing-Hero, Willkommen/Fortschritt, Kursabschluss, Schluss-CTA */
+:root[data-np="hell"] :is(.landing-hero, .academy-progress, .cc-complete, .landing-final-cta) {
+  --text: #fff; --text-soft: rgba(255, 255, 255, .86); --muted: rgba(255, 255, 255, .74); --muted-2: rgba(255, 255, 255, .55);
+  --line: rgba(255, 255, 255, .16); --border: rgba(255, 255, 255, .16);
+  background: linear-gradient(135deg, #00225E, #1D468C); color: #fff;
+  border: 0; box-shadow: 0 24px 48px -30px rgba(0, 34, 94, .7);
+}
+:root[data-np="hell"] .landing-hero { border-radius: 0 0 32px 32px; }
+:root[data-np="hell"] .landing-hero-title.nd-grad-head { color: #fff; -webkit-text-fill-color: #fff; }
+:root[data-np="hell"] :is(.landing-hero, .academy-progress, .cc-complete, .landing-final-cta) :is(.section-h, .main-cat-text, .nd-eyebrow) {
+  background: rgba(198, 214, 63, .14); color: var(--np-lime); border-color: rgba(198, 214, 63, .35);
+}
+:root[data-np="hell"] :is(.landing-hero, .academy-progress, .cc-complete, .landing-final-cta) :is(h1, h2, h3, p, .ap-label, .ap-text) { color: inherit; }
+:root[data-np="hell"] :is(.ap-num, .ap-pct) { color: var(--np-lime); }
+:root[data-np="hell"] .ap-bar { background: rgba(255, 255, 255, .16); border-color: transparent; }
+:root[data-np="hell"] :is(.landing-hero, .academy-progress, .cc-complete, .landing-final-cta) .btn-ghost { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .4); }
+:root[data-np="hell"] .cc-complete :is(.cc-cert-label) { color: var(--np-lime); }
+
+/* Ghost-Knöpfe außerhalb der Kopfbox */
+:root[data-np="hell"] .btn-ghost { background: #fff; color: var(--np-navy); border: 1px solid rgba(0, 34, 94, .28); }
+:root[data-np="hell"] .btn-ghost:hover { background: #E3E9F4; }
+
+/* Weiße Karten mit weichem Schatten */
+:root[data-np="hell"] :is(.faq-item, .landing-feature, .landing-who-list li, .auth-card, .langpick-card,
+  .test-q, .tr-card, .cc-doc, .user-menu-pop, .cookie-banner, .admin-stat-card, .admin-chart-card,
+  .admin-table, .admin-course-row, .legal-page-wrap, .tile) {
+  --text: var(--np-ink); --muted: var(--np-soft);
+  background: #fff; color: var(--np-ink);
+  box-shadow: 0 14px 34px -22px rgba(0, 34, 94, .45);
+}
+:root[data-np="hell"] .tile { border-radius: 22px; }
+:root[data-np="hell"] :is(.test-opt, .langpick-option, .auth-field input, .admin-search, .faq-toolbar input) {
+  background: #fff; color: var(--np-ink); border: 1px solid rgba(0, 34, 94, .14); box-shadow: none;
+}
+:root[data-np="hell"] .legal-page-wrap { padding: 32px; border-radius: var(--radius); }
+:root[data-np="hell"] .legal-page-wrap :is(h1, h2, h3, .legal-page-title) { color: var(--np-navy); }
+:root[data-np="hell"] .legal-page-wrap .btn-back { background: var(--np-navy); color: #fff; border-color: var(--np-navy); }
+
+/* Text, der im Original --wine nutzt: Navy bleibt lesbar; Lime-Haken in dunklerem Lime */
+:root[data-np="hell"] .course-bullets li::before { color: var(--np-lime-d); }
+:root[data-np="hell"] .cc-question-list li::marker { color: var(--np-navy); }
+
+/* Fuß */
+:root[data-np="hell"] .legal-footer { background: transparent; border-top: 1px solid rgba(0, 34, 94, .14); color: rgba(11, 35, 80, .68); }
+:root[data-np="hell"] .legal-footer-link { color: var(--np-navy); }
+:root[data-np="hell"] .legal-footer-link:hover { color: var(--np-berry); }
+
+/* Videos und Player bleiben dunkel */
+:root[data-np="hell"] :is(.welcome-player, .video-wrap, .yt-wrap, .player) { background: #000712; }
+
+/* KI-Dub-Offenlegung (Art. 50 KI-VO) — klar lesbar */
+:root[data-np="hell"] .ai-dub-notice { background: #fff; color: #0B2350; border-inline-start-color: var(--np-lime-d); box-shadow: 0 8px 20px -16px rgba(0, 34, 94, .5); }
+:root[data-np="hell"] .legal-footer-sep { color: rgba(11, 35, 80, .4); }
+/* Hell: Auswahl- und Hover-Zustände wieder sichtbar */
+:root[data-np="hell"] .test-opt:hover { border-color: rgba(0, 34, 94, .35); background: #F5F8FC; }
+:root[data-np="hell"] .test-opt.is-selected { border: 2px solid var(--np-navy); background: #E3E9F4; }
+:root[data-np="hell"] .langpick-option:hover { border-color: var(--np-navy); background: #E3E9F4; }
