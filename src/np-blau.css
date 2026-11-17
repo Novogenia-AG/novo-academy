@@ -376,3 +376,26 @@
 :root[data-np="hell"] .test-opt:hover { border-color: rgba(0, 34, 94, .35); background: #F5F8FC; }
 :root[data-np="hell"] .test-opt.is-selected { border: 2px solid var(--np-navy); background: #E3E9F4; }
 :root[data-np="hell"] .langpick-option:hover { border-color: var(--np-navy); background: #E3E9F4; }
+/* Hell, Nachtrag 17.11.: mehr Kontrast — dunklerer Grund, Karten mit Rand (wie NovoPilot) */
+:root[data-np="hell"] {
+  --line: rgba(0, 34, 94, .18);
+  --border: rgba(0, 34, 94, .18);
+  --np-wash: #E4EAF3;
+  background: #D5DFEC;
+}
+:root[data-np="hell"] body {
+  background:
+    radial-gradient(1100px 600px at 75% -10%, #E6EEF8 0%, transparent 60%),
+    linear-gradient(180deg, #DCE5F1, #CAD6E7);
+  background-attachment: fixed;
+}
+:root[data-np="hell"] .sidebar { background: #fff; border-right: 1px solid rgba(0, 34, 94, .16); }
+:root[data-np="hell"] :is(.faq-item, .landing-feature, .landing-who-list li, .auth-card, .langpick-card,
+  .test-q, .tr-card, .cc-doc, .user-menu-pop, .cookie-banner, .admin-stat-card, .admin-chart-card,
+  .admin-table, .admin-course-row, .legal-page-wrap, .tile, .ai-dub-notice) {
+  --line: rgba(0, 34, 94, .18); --bg-soft: #E4EAF3; --wine-softer: #E4EAF3;
+  border: 1px solid rgba(0, 34, 94, .10);
+  box-shadow: 0 14px 30px -20px rgba(0, 34, 94, .5), 0 1px 3px rgba(0, 34, 94, .10);
+}
+:root[data-np="hell"] .landing-who-list li { border-left: 4px solid var(--np-lime); }
+:root[data-np="hell"] .ai-dub-notice { border-inline-start: 4px solid var(--np-lime-d); }
