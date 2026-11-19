@@ -68,7 +68,7 @@ export default {
         'Some presentations and sample reports are hosted on GitHub (GitHub Inc., USA). If you download such a file, GitHub receives your IP address and browser details (Art. 6(1)(b) GDPR).',
       ] },
       { h: '8. Support chat "Chat with us"', p: [
-        'The support chat is an AI assistant and opens in a separate window. It is operated for us by TWOxTEN as a processor (servers in Frankfurt am Main). To answer you, your messages are sent via the intermediary service OpenRouter (USA) to an AI language model, currently from OpenAI (USA). For quality control, conversations are logged in the Langfuse service. Chat histories are deleted after 30 days.',
+        'The support chat is an AI assistant and opens in a separate window. It is operated for us by TWOxTEN as a processor (servers in Frankfurt am Main). To answer you, your messages are sent via the intermediary service OpenRouter (USA) to an AI language model, currently from OpenAI (USA). For quality control, conversations are logged in the Langfuse service. Chat histories in the chat database are deleted after 30 days; quality-control logs are kept only as long as necessary for error analysis and operation.',
         'The legal basis is answering your request (Art. 6(1)(b) GDPR). Please do not enter health data, test results or identity document data in the chat.',
       ] },
       { h: '9. Storage on your device', p: [
@@ -82,7 +82,7 @@ export default {
         'Only you, the authorised staff of Novogenia GmbH (academy administration) and our processors, within the scope of their services, have access to your account and progress data. We do not sell data and do not pass it on for advertising.',
       ] },
       { h: '12. Retention period', p: [
-        'We keep your account data for as long as your account exists. If you would like your account deleted, write to datenschutz@novogenia.com; we will then delete your account including progress and test results. Support chat histories: 30 days (section 8). Server logs: according to GitHub\'s rules (section 2).',
+        'We keep your account data for as long as your account exists. If you would like your account deleted, write to datenschutz@novogenia.com; we will then delete your account including progress and test results. Support chat: see section 8. Server logs: according to GitHub\'s rules (section 2).',
       ] },
       { h: '13. Your rights', p: [
         'You have the right of access (Art. 15 GDPR), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18) and data portability (Art. 20). You can withdraw consent at any time with effect for the future (Art. 7(3)).',
@@ -132,7 +132,7 @@ export default {
     ],
   },
 
-  regNote: 'By registering, the {terms} apply. How we process your data is explained in the {privacy}.',
+  regNote: 'When you register or sign in (including with Google), the {terms} apply. How we process your data is explained in the {privacy}.',
   regTerms: 'Terms of Use',
   regPrivacy: 'Privacy Policy',
 }

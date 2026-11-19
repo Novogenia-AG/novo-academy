@@ -72,7 +72,7 @@ export default {
         'Manche Präsentationen und Beispielberichte liegen bei GitHub (GitHub Inc., USA). Wenn du eine solche Datei herunterlädst, erhält GitHub deine IP-Adresse und Browser-Angaben (Art. 6 Abs. 1 lit. b DSGVO).',
       ] },
       { h: '8. Support-Chat „Frag uns!“', p: [
-        'Der Support-Chat ist ein KI-Assistent und öffnet sich in einem eigenen Fenster. Er wird für uns von TWOxTEN als Auftragsverarbeiter betrieben (Server in Frankfurt am Main). Zur Beantwortung werden deine Nachrichten über den Vermittlungsdienst OpenRouter (USA) an ein KI-Sprachmodell übertragen, derzeit von OpenAI (USA). Zur Qualitätskontrolle werden die Gespräche im Dienst Langfuse protokolliert. Gesprächsverläufe werden nach 30 Tagen gelöscht.',
+        'Der Support-Chat ist ein KI-Assistent und öffnet sich in einem eigenen Fenster. Er wird für uns von TWOxTEN als Auftragsverarbeiter betrieben (Server in Frankfurt am Main). Zur Beantwortung werden deine Nachrichten über den Vermittlungsdienst OpenRouter (USA) an ein KI-Sprachmodell übertragen, derzeit von OpenAI (USA). Zur Qualitätskontrolle werden die Gespräche im Dienst Langfuse protokolliert. Gesprächsverläufe in der Chat-Datenbank werden nach 30 Tagen gelöscht; Protokolle zur Qualitätskontrolle werden nur so lange gespeichert, wie es für Fehleranalyse und Betrieb nötig ist.',
         'Rechtsgrundlage ist die Beantwortung deiner Anfrage (Art. 6 Abs. 1 lit. b DSGVO). Bitte gib im Chat keine Gesundheitsdaten, Testergebnisse oder Ausweisdaten ein.',
       ] },
       { h: '9. Speicherung auf deinem Gerät', p: [
@@ -86,7 +86,7 @@ export default {
         'Auf deine Konto- und Fortschrittsdaten haben nur du, die dafür berechtigten Mitarbeitenden der Novogenia GmbH (Verwaltung der Akademie) und unsere Auftragsverarbeiter im Rahmen ihrer Leistung Zugriff. Wir verkaufen keine Daten und geben sie nicht für Werbung weiter.',
       ] },
       { h: '12. Speicherdauer', p: [
-        'Deine Kontodaten speichern wir, solange dein Konto besteht. Möchtest du dein Konto löschen lassen, schreib an datenschutz@novogenia.com; wir löschen dann dein Konto samt Fortschritt und Testergebnissen. Gesprächsverläufe im Support-Chat: 30 Tage (Punkt 8). Server-Protokolle: nach den Vorgaben von GitHub (Punkt 2).',
+        'Deine Kontodaten speichern wir, solange dein Konto besteht. Möchtest du dein Konto löschen lassen, schreib an datenschutz@novogenia.com; wir löschen dann dein Konto samt Fortschritt und Testergebnissen. Support-Chat: siehe Punkt 8. Server-Protokolle: nach den Vorgaben von GitHub (Punkt 2).',
       ] },
       { h: '13. Deine Rechte', p: [
         'Du hast das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18) und Datenübertragbarkeit (Art. 20). Eine Einwilligung kannst du jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3).',
@@ -137,7 +137,7 @@ export default {
   },
 
   /* Hinweis unter dem Registrieren-Knopf; {terms}/{privacy} werden zu Links. */
-  regNote: 'Mit der Registrierung gelten die {terms}. Wie wir deine Daten verarbeiten, steht in der {privacy}.',
+  regNote: 'Mit der Registrierung oder Anmeldung (auch mit Google) gelten die {terms}. Wie wir deine Daten verarbeiten, steht in der {privacy}.',
   regTerms: 'Nutzungsbedingungen',
   regPrivacy: 'Datenschutzerklärung',
 }

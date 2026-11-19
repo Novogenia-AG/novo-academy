@@ -68,7 +68,7 @@ export default {
         'Neke prezentacije i primeri izveštaja nalaze se na GitHub-u (GitHub Inc., SAD). Ako preuzmeš takvu datoteku, GitHub dobija tvoju IP adresu i podatke o pregledaču (čl. 6 st. 1 tač. b GDPR).',
       ] },
       { h: '8. Chat podrške', p: [
-        'Chat podrške je asistent veštačke inteligencije i otvara se u posebnom prozoru. Za nas ga kao obrađivač vodi TWOxTEN (serveri u Frankfurtu na Majni). Da bi ti se odgovorilo, tvoje poruke se preko posredničke usluge OpenRouter (SAD) prenose jezičkom modelu veštačke inteligencije, trenutno kompanije OpenAI (SAD). Radi kontrole kvaliteta razgovori se beleže u servisu Langfuse. Istorija razgovora briše se posle 30 dana.',
+        'Chat podrške je asistent veštačke inteligencije i otvara se u posebnom prozoru. Za nas ga kao obrađivač vodi TWOxTEN (serveri u Frankfurtu na Majni). Da bi ti se odgovorilo, tvoje poruke se preko posredničke usluge OpenRouter (SAD) prenose jezičkom modelu veštačke inteligencije, trenutno kompanije OpenAI (SAD). Radi kontrole kvaliteta razgovori se beleže u servisu Langfuse. Istorija razgovora u bazi podataka chata briše se posle 30 dana; zapisi za kontrolu kvaliteta čuvaju se samo onoliko koliko je potrebno za analizu grešaka i rad.',
         'Pravni osnov je odgovor na tvoj upit (čl. 6 st. 1 tač. b GDPR). Molimo te da u chat ne unosiš zdravstvene podatke, rezultate testova ni podatke iz ličnih dokumenata.',
       ] },
       { h: '9. Čuvanje na tvom uređaju', p: [
@@ -82,7 +82,7 @@ export default {
         'Podacima o tvom nalogu i napretku pristup imaju samo ti, ovlašćeni zaposleni u kompaniji Novogenia GmbH (upravljanje akademijom) i naši obrađivači u okviru svojih usluga. Ne prodajemo podatke i ne prosleđujemo ih radi reklame.',
       ] },
       { h: '12. Rok čuvanja', p: [
-        'Podatke o nalogu čuvamo dok nalog postoji. Ako želiš da ti se nalog obriše, piši na datenschutz@novogenia.com; tada brišemo tvoj nalog zajedno s napretkom i rezultatima testova. Istorija chata podrške: 30 dana (tačka 8). Serverski zapisi: prema pravilima GitHub-a (tačka 2).',
+        'Podatke o nalogu čuvamo dok nalog postoji. Ako želiš da ti se nalog obriše, piši na datenschutz@novogenia.com; tada brišemo tvoj nalog zajedno s napretkom i rezultatima testova. Chat podrške: vidi tačku 8. Serverski zapisi: prema pravilima GitHub-a (tačka 2).',
       ] },
       { h: '13. Tvoja prava', p: [
         'Imaš pravo na pristup (čl. 15 GDPR), ispravku (čl. 16), brisanje (čl. 17), ograničenje obrade (čl. 18) i prenosivost podataka (čl. 20). Saglasnost možeš u svakom trenutku povući sa dejstvom za ubuduće (čl. 7 st. 3).',
@@ -132,7 +132,7 @@ export default {
     ],
   },
 
-  regNote: 'Registracijom važe {terms}. Kako obrađujemo tvoje podatke, piše u {privacy}.',
+  regNote: 'Registracijom ili prijavom (i preko Google-a) važe {terms}. Kako obrađujemo tvoje podatke, piše u {privacy}.',
   regTerms: 'Uslovi korišćenja',
   regPrivacy: 'Politici privatnosti',
 }

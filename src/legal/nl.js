@@ -68,7 +68,7 @@ export default {
         'Sommige presentaties en voorbeeldrapporten staan bij GitHub (GitHub Inc., VS). Als je zo’n bestand downloadt, ontvangt GitHub je IP-adres en browsergegevens (art. 6, lid 1, onder b AVG).',
       ] },
       { h: '8. Supportchat', p: [
-        'De supportchat is een AI-assistent en opent in een eigen venster. Hij wordt voor ons beheerd door TWOxTEN als verwerker (servers in Frankfurt am Main). Om je te antwoorden worden je berichten via de tussendienst OpenRouter (VS) naar een AI-taalmodel gestuurd, momenteel van OpenAI (VS). Voor kwaliteitscontrole worden gesprekken vastgelegd in de dienst Langfuse. Gespreksgeschiedenissen worden na 30 dagen verwijderd.',
+        'De supportchat is een AI-assistent en opent in een eigen venster. Hij wordt voor ons beheerd door TWOxTEN als verwerker (servers in Frankfurt am Main). Om je te antwoorden worden je berichten via de tussendienst OpenRouter (VS) naar een AI-taalmodel gestuurd, momenteel van OpenAI (VS). Voor kwaliteitscontrole worden gesprekken vastgelegd in de dienst Langfuse. Gespreksgeschiedenissen in de chatdatabase worden na 30 dagen verwijderd; logs voor kwaliteitscontrole worden alleen bewaard zolang dat nodig is voor foutanalyse en beheer.',
         'De rechtsgrond is het beantwoorden van je vraag (art. 6, lid 1, onder b AVG). Voer in de chat geen gezondheidsgegevens, testresultaten of gegevens van identiteitsbewijzen in.',
       ] },
       { h: '9. Opslag op je apparaat', p: [
@@ -82,7 +82,7 @@ export default {
         'Tot je account- en voortgangsgegevens hebben alleen jij, de daartoe bevoegde medewerkers van Novogenia GmbH (beheer van de academy) en onze verwerkers binnen hun dienstverlening toegang. We verkopen geen gegevens en geven ze niet door voor reclame.',
       ] },
       { h: '12. Bewaartermijn', p: [
-        'Je accountgegevens bewaren we zolang je account bestaat. Wil je je account laten verwijderen, schrijf dan naar datenschutz@novogenia.com; we verwijderen dan je account inclusief voortgang en testresultaten. Gespreksgeschiedenissen van de supportchat: 30 dagen (punt 8). Serverlogs: volgens de regels van GitHub (punt 2).',
+        'Je accountgegevens bewaren we zolang je account bestaat. Wil je je account laten verwijderen, schrijf dan naar datenschutz@novogenia.com; we verwijderen dan je account inclusief voortgang en testresultaten. Supportchat: zie punt 8. Serverlogs: volgens de regels van GitHub (punt 2).',
       ] },
       { h: '13. Je rechten', p: [
         'Je hebt recht op inzage (art. 15 AVG), rectificatie (art. 16), wissing (art. 17), beperking van de verwerking (art. 18) en gegevensoverdraagbaarheid (art. 20). Je kunt een toestemming altijd intrekken met werking voor de toekomst (art. 7, lid 3).',
@@ -132,7 +132,7 @@ export default {
     ],
   },
 
-  regNote: 'Met je registratie gelden de {terms}. Hoe we je gegevens verwerken, staat in de {privacy}.',
+  regNote: 'Bij registratie of inloggen (ook met Google) gelden de {terms}. Hoe we je gegevens verwerken, staat in de {privacy}.',
   regTerms: 'gebruiksvoorwaarden',
   regPrivacy: 'privacyverklaring',
 }

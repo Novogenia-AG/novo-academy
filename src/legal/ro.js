@@ -68,7 +68,7 @@ export default {
         'Unele prezentări și rapoarte exemplu sunt găzduite pe GitHub (GitHub Inc., SUA). Dacă descarci un astfel de fișier, GitHub primește adresa ta IP și datele browserului (art. 6 alin. (1) lit. b) GDPR).',
       ] },
       { h: '8. Chat de asistență', p: [
-        'Chatul de asistență este un asistent IA și se deschide într-o fereastră separată. Este operat pentru noi de TWOxTEN, ca persoană împuternicită (servere în Frankfurt pe Main). Pentru a-ți răspunde, mesajele tale sunt transmise prin serviciul intermediar OpenRouter (SUA) către un model lingvistic IA, în prezent de la OpenAI (SUA). Pentru controlul calității, conversațiile sunt înregistrate în serviciul Langfuse. Istoricul conversațiilor se șterge după 30 de zile.',
+        'Chatul de asistență este un asistent IA și se deschide într-o fereastră separată. Este operat pentru noi de TWOxTEN, ca persoană împuternicită (servere în Frankfurt pe Main). Pentru a-ți răspunde, mesajele tale sunt transmise prin serviciul intermediar OpenRouter (SUA) către un model lingvistic IA, în prezent de la OpenAI (SUA). Pentru controlul calității, conversațiile sunt înregistrate în serviciul Langfuse. Istoricul conversațiilor din baza de date a chatului se șterge după 30 de zile; jurnalele pentru controlul calității se păstrează doar cât este necesar pentru analiza erorilor și funcționare.',
         'Temeiul juridic este răspunsul la solicitarea ta (art. 6 alin. (1) lit. b) GDPR). Te rugăm să nu introduci în chat date despre sănătate, rezultate ale testelor sau date din acte de identitate.',
       ] },
       { h: '9. Stocarea pe dispozitivul tău', p: [
@@ -82,7 +82,7 @@ export default {
         'La datele contului și ale progresului au acces doar tu, angajații autorizați ai Novogenia GmbH (administrarea academiei) și persoanele noastre împuternicite, în limita serviciilor lor. Nu vindem date și nu le transmitem în scopuri publicitare.',
       ] },
       { h: '12. Durata stocării', p: [
-        'Păstrăm datele contului cât timp există contul. Dacă vrei să-ți fie șters contul, scrie la datenschutz@novogenia.com; vom șterge atunci contul, inclusiv progresul și rezultatele testelor. Istoricul chatului de asistență: 30 de zile (punctul 8). Jurnale de server: conform regulilor GitHub (punctul 2).',
+        'Păstrăm datele contului cât timp există contul. Dacă vrei să-ți fie șters contul, scrie la datenschutz@novogenia.com; vom șterge atunci contul, inclusiv progresul și rezultatele testelor. Chat de asistență: vezi punctul 8. Jurnale de server: conform regulilor GitHub (punctul 2).',
       ] },
       { h: '13. Drepturile tale', p: [
         'Ai dreptul de acces (art. 15 GDPR), rectificare (art. 16), ștergere (art. 17), restricționarea prelucrării (art. 18) și portabilitatea datelor (art. 20). Poți retrage oricând un consimțământ, cu efect pentru viitor (art. 7 alin. (3)).',
@@ -132,7 +132,7 @@ export default {
     ],
   },
 
-  regNote: 'Prin înregistrare se aplică {terms}. Modul în care îți prelucrăm datele este explicat în {privacy}.',
+  regNote: 'Prin înregistrare sau autentificare (inclusiv cu Google) se aplică {terms}. Modul în care îți prelucrăm datele este explicat în {privacy}.',
   regTerms: 'Condițiile de utilizare',
   regPrivacy: 'Politica de confidențialitate',
 }

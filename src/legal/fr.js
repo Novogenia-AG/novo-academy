@@ -68,7 +68,7 @@ export default {
         'Certaines présentations et certains rapports d’exemple sont hébergés chez GitHub (GitHub Inc., États-Unis). Si tu télécharges un tel fichier, GitHub reçoit ton adresse IP et les données de ton navigateur (art. 6, par. 1, point b du RGPD).',
       ] },
       { h: '8. Chat d’assistance', p: [
-        'Le chat d’assistance est un assistant IA qui s’ouvre dans une fenêtre séparée. Il est exploité pour nous par TWOxTEN en tant que sous-traitant (serveurs à Francfort-sur-le-Main). Pour te répondre, tes messages sont transmis via le service intermédiaire OpenRouter (États-Unis) à un modèle de langage IA, actuellement d’OpenAI (États-Unis). Pour le contrôle qualité, les conversations sont enregistrées dans le service Langfuse. Les historiques de conversation sont supprimés après 30 jours.',
+        'Le chat d’assistance est un assistant IA qui s’ouvre dans une fenêtre séparée. Il est exploité pour nous par TWOxTEN en tant que sous-traitant (serveurs à Francfort-sur-le-Main). Pour te répondre, tes messages sont transmis via le service intermédiaire OpenRouter (États-Unis) à un modèle de langage IA, actuellement d’OpenAI (États-Unis). Pour le contrôle qualité, les conversations sont enregistrées dans le service Langfuse. Les historiques de conversation dans la base de données du chat sont supprimés après 30 jours ; les journaux de contrôle qualité ne sont conservés que le temps nécessaire à l’analyse des erreurs et à l’exploitation.',
         'La base juridique est la réponse à ta demande (art. 6, par. 1, point b du RGPD). Merci de ne pas saisir de données de santé, de résultats de tests ni de données de pièces d’identité dans le chat.',
       ] },
       { h: '9. Stockage sur ton appareil', p: [
@@ -82,7 +82,7 @@ export default {
         'Seuls toi, les collaborateurs autorisés de Novogenia GmbH (administration de l’académie) et nos sous-traitants, dans le cadre de leurs prestations, ont accès à tes données de compte et de progression. Nous ne vendons pas de données et ne les transmettons pas à des fins publicitaires.',
       ] },
       { h: '12. Durée de conservation', p: [
-        'Nous conservons tes données de compte tant que ton compte existe. Si tu souhaites faire supprimer ton compte, écris à datenschutz@novogenia.com ; nous supprimerons alors ton compte, y compris ta progression et tes résultats de tests. Historiques du chat d’assistance : 30 jours (point 8). Journaux du serveur : selon les règles de GitHub (point 2).',
+        'Nous conservons tes données de compte tant que ton compte existe. Si tu souhaites faire supprimer ton compte, écris à datenschutz@novogenia.com ; nous supprimerons alors ton compte, y compris ta progression et tes résultats de tests. Chat d’assistance : voir point 8. Journaux du serveur : selon les règles de GitHub (point 2).',
       ] },
       { h: '13. Tes droits', p: [
         'Tu as le droit d’accès (art. 15 du RGPD), de rectification (art. 16), d’effacement (art. 17), de limitation du traitement (art. 18) et à la portabilité des données (art. 20). Tu peux retirer un consentement à tout moment avec effet pour l’avenir (art. 7, par. 3).',
@@ -132,7 +132,7 @@ export default {
     ],
   },
 
-  regNote: 'En t’inscrivant, tu acceptes que les {terms} s’appliquent. La manière dont nous traitons tes données est décrite dans la {privacy}.',
+  regNote: 'En t’inscrivant ou en te connectant (y compris avec Google), tu acceptes que les {terms} s’appliquent. La manière dont nous traitons tes données est décrite dans la {privacy}.',
   regTerms: 'Conditions d’utilisation',
   regPrivacy: 'politique de confidentialité',
 }

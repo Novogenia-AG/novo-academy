@@ -68,7 +68,7 @@ export default {
         'Alcune presentazioni e alcuni report di esempio sono ospitati su GitHub (GitHub Inc., USA). Se scarichi un file di questo tipo, GitHub riceve il tuo indirizzo IP e i dati del browser (art. 6, par. 1, lett. b GDPR).',
       ] },
       { h: '8. Chat di assistenza', p: [
-        'La chat di assistenza è un assistente IA e si apre in una finestra separata. È gestita per nostro conto da TWOxTEN in qualità di responsabile del trattamento (server a Francoforte sul Meno). Per risponderti, i tuoi messaggi vengono trasmessi tramite il servizio intermediario OpenRouter (USA) a un modello linguistico di IA, attualmente di OpenAI (USA). Per il controllo qualità le conversazioni vengono registrate nel servizio Langfuse. Le cronologie delle conversazioni vengono cancellate dopo 30 giorni.',
+        'La chat di assistenza è un assistente IA e si apre in una finestra separata. È gestita per nostro conto da TWOxTEN in qualità di responsabile del trattamento (server a Francoforte sul Meno). Per risponderti, i tuoi messaggi vengono trasmessi tramite il servizio intermediario OpenRouter (USA) a un modello linguistico di IA, attualmente di OpenAI (USA). Per il controllo qualità le conversazioni vengono registrate nel servizio Langfuse. Le cronologie delle conversazioni nel database della chat vengono cancellate dopo 30 giorni; i log per il controllo qualità sono conservati solo per il tempo necessario all’analisi degli errori e al funzionamento.',
         'La base giuridica è la risposta alla tua richiesta (art. 6, par. 1, lett. b GDPR). Ti preghiamo di non inserire nella chat dati sanitari, risultati di test o dati di documenti d’identità.',
       ] },
       { h: '9. Memorizzazione sul tuo dispositivo', p: [
@@ -82,7 +82,7 @@ export default {
         'Ai tuoi dati di account e progressi hanno accesso solo tu, i collaboratori autorizzati di Novogenia GmbH (amministrazione dell’accademia) e i nostri responsabili del trattamento nell’ambito delle loro prestazioni. Non vendiamo dati e non li cediamo a fini pubblicitari.',
       ] },
       { h: '12. Periodo di conservazione', p: [
-        'Conserviamo i dati del tuo account finché l’account esiste. Se desideri far cancellare il tuo account, scrivi a datenschutz@novogenia.com; cancelleremo allora il tuo account, compresi progressi e risultati dei test. Cronologie della chat di assistenza: 30 giorni (punto 8). Log del server: secondo le regole di GitHub (punto 2).',
+        'Conserviamo i dati del tuo account finché l’account esiste. Se desideri far cancellare il tuo account, scrivi a datenschutz@novogenia.com; cancelleremo allora il tuo account, compresi progressi e risultati dei test. Chat di assistenza: vedi punto 8. Log del server: secondo le regole di GitHub (punto 2).',
       ] },
       { h: '13. I tuoi diritti', p: [
         'Hai il diritto di accesso (art. 15 GDPR), rettifica (art. 16), cancellazione (art. 17), limitazione del trattamento (art. 18) e portabilità dei dati (art. 20). Puoi revocare un consenso in qualsiasi momento con effetto per il futuro (art. 7, par. 3).',
@@ -132,7 +132,7 @@ export default {
     ],
   },
 
-  regNote: 'Con la registrazione si applicano le {terms}. Come trattiamo i tuoi dati è spiegato nell’{privacy}.',
+  regNote: 'Con la registrazione o l’accesso (anche con Google) si applicano le {terms}. Come trattiamo i tuoi dati è spiegato nell’{privacy}.',
   regTerms: 'Condizioni d’uso',
   regPrivacy: 'informativa sulla privacy',
 }

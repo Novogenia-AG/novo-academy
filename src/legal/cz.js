@@ -68,7 +68,7 @@ export default {
         'Některé prezentace a ukázkové zprávy jsou uloženy na GitHubu (GitHub Inc., USA). Pokud takový soubor stáhneš, GitHub obdrží tvou IP adresu a údaje o prohlížeči (čl. 6 odst. 1 písm. b GDPR).',
       ] },
       { h: '8. Podpůrný chat', p: [
-        'Podpůrný chat je asistent s umělou inteligencí a otevírá se ve vlastním okně. Provozuje ho pro nás TWOxTEN jako zpracovatel (servery ve Frankfurtu nad Mohanem). K odpovědi se tvé zprávy předávají přes zprostředkující službu OpenRouter (USA) jazykovému modelu AI, v současnosti od OpenAI (USA). Pro kontrolu kvality se rozhovory zaznamenávají ve službě Langfuse. Historie rozhovorů se maže po 30 dnech.',
+        'Podpůrný chat je asistent s umělou inteligencí a otevírá se ve vlastním okně. Provozuje ho pro nás TWOxTEN jako zpracovatel (servery ve Frankfurtu nad Mohanem). K odpovědi se tvé zprávy předávají přes zprostředkující službu OpenRouter (USA) jazykovému modelu AI, v současnosti od OpenAI (USA). Pro kontrolu kvality se rozhovory zaznamenávají ve službě Langfuse. Historie rozhovorů v databázi chatu se maže po 30 dnech; záznamy pro kontrolu kvality se uchovávají jen po dobu nutnou pro analýzu chyb a provoz.',
         'Právním základem je zodpovězení tvého dotazu (čl. 6 odst. 1 písm. b GDPR). Do chatu prosím nezadávej zdravotní údaje, výsledky testů ani údaje z dokladů totožnosti.',
       ] },
       { h: '9. Ukládání na tvém zařízení', p: [
@@ -82,7 +82,7 @@ export default {
         'K údajům o tvém účtu a pokroku máš přístup jen ty, oprávnění zaměstnanci Novogenia GmbH (správa akademie) a naši zpracovatelé v rámci svých služeb. Údaje neprodáváme a nepředáváme je pro reklamu.',
       ] },
       { h: '12. Doba uložení', p: [
-        'Údaje o účtu uchováváme, dokud tvůj účet existuje. Chceš-li účet smazat, napiš na datenschutz@novogenia.com; smažeme pak tvůj účet včetně pokroku a výsledků testů. Historie podpůrného chatu: 30 dní (bod 8). Serverové záznamy: podle pravidel GitHubu (bod 2).',
+        'Údaje o účtu uchováváme, dokud tvůj účet existuje. Chceš-li účet smazat, napiš na datenschutz@novogenia.com; smažeme pak tvůj účet včetně pokroku a výsledků testů. Podpůrný chat: viz bod 8. Serverové záznamy: podle pravidel GitHubu (bod 2).',
       ] },
       { h: '13. Tvá práva', p: [
         'Máš právo na přístup (čl. 15 GDPR), opravu (čl. 16), výmaz (čl. 17), omezení zpracování (čl. 18) a přenositelnost údajů (čl. 20). Souhlas můžeš kdykoli odvolat s účinkem do budoucna (čl. 7 odst. 3).',
@@ -132,7 +132,7 @@ export default {
     ],
   },
 
-  regNote: 'Registrací se uplatní {terms}. Jak zpracováváme tvé údaje, najdeš v {privacy}.',
+  regNote: 'Registrací nebo přihlášením (i přes Google) se uplatní {terms}. Jak zpracováváme tvé údaje, najdeš v {privacy}.',
   regTerms: 'Podmínky užívání',
   regPrivacy: 'Zásadách ochrany osobních údajů',
 }

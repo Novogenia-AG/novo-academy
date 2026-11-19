@@ -68,7 +68,7 @@ export default {
         'Algumas apresentações e relatórios de exemplo estão alojados no GitHub (GitHub Inc., EUA). Se descarregares um ficheiro destes, o GitHub recebe o teu endereço IP e os dados do navegador (art. 6.º, n.º 1, alínea b) do RGPD).',
       ] },
       { h: '8. Chat de apoio', p: [
-        'O chat de apoio é um assistente de IA e abre numa janela própria. É operado por nossa conta pela TWOxTEN enquanto subcontratante (servidores em Frankfurt am Main). Para te responder, as tuas mensagens são transmitidas através do serviço intermediário OpenRouter (EUA) a um modelo de linguagem de IA, atualmente da OpenAI (EUA). Para controlo de qualidade, as conversas são registadas no serviço Langfuse. Os históricos de conversa são apagados após 30 dias.',
+        'O chat de apoio é um assistente de IA e abre numa janela própria. É operado por nossa conta pela TWOxTEN enquanto subcontratante (servidores em Frankfurt am Main). Para te responder, as tuas mensagens são transmitidas através do serviço intermediário OpenRouter (EUA) a um modelo de linguagem de IA, atualmente da OpenAI (EUA). Para controlo de qualidade, as conversas são registadas no serviço Langfuse. Os históricos de conversa na base de dados do chat são apagados após 30 dias; os registos de controlo de qualidade só são guardados durante o tempo necessário para a análise de erros e o funcionamento.',
         'A base jurídica é a resposta ao teu pedido (art. 6.º, n.º 1, alínea b) do RGPD). Por favor, não introduzas no chat dados de saúde, resultados de testes nem dados de documentos de identificação.',
       ] },
       { h: '9. Armazenamento no teu dispositivo', p: [
@@ -82,7 +82,7 @@ export default {
         'Aos teus dados de conta e progresso têm acesso apenas tu, os colaboradores autorizados da Novogenia GmbH (administração da academia) e os nossos subcontratantes, no âmbito dos seus serviços. Não vendemos dados nem os cedemos para publicidade.',
       ] },
       { h: '12. Prazo de conservação', p: [
-        'Conservamos os dados da tua conta enquanto a conta existir. Se quiseres que a tua conta seja apagada, escreve para datenschutz@novogenia.com; apagaremos então a tua conta, incluindo progresso e resultados dos testes. Históricos do chat de apoio: 30 dias (ponto 8). Registos do servidor: segundo as regras do GitHub (ponto 2).',
+        'Conservamos os dados da tua conta enquanto a conta existir. Se quiseres que a tua conta seja apagada, escreve para datenschutz@novogenia.com; apagaremos então a tua conta, incluindo progresso e resultados dos testes. Chat de apoio: ver ponto 8. Registos do servidor: segundo as regras do GitHub (ponto 2).',
       ] },
       { h: '13. Os teus direitos', p: [
         'Tens direito de acesso (art. 15.º do RGPD), retificação (art. 16.º), apagamento (art. 17.º), limitação do tratamento (art. 18.º) e portabilidade dos dados (art. 20.º). Podes retirar um consentimento a qualquer momento com efeitos para o futuro (art. 7.º, n.º 3).',
@@ -132,7 +132,7 @@ export default {
     ],
   },
 
-  regNote: 'Com o registo aplicam-se os {terms}. A forma como tratamos os teus dados está explicada na {privacy}.',
+  regNote: 'Com o registo ou o início de sessão (também com a Google) aplicam-se os {terms}. A forma como tratamos os teus dados está explicada na {privacy}.',
   regTerms: 'Termos de utilização',
   regPrivacy: 'política de privacidade',
 }
