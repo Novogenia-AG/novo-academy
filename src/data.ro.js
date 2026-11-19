@@ -1921,7 +1921,7 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "„Diagnosticăm deficiențele.”"
+      "text": "„Laboratorul nostru partener îți măsoară valorile sanguine; interpretarea este făcută de un medic.”"
      },
      {
       "tone": "safe",
@@ -1936,8 +1936,8 @@ const FAQTX = {
       "text": "Simptomele unei deficiențe (de ex. oboseala cauzată de deficitul de fier) — cel mai bine cu citarea unei surse (de ex. o asociație medicală)."
      },
      {
-      "tone": "safe",
-      "text": "Mărturie: „Eram deseori obosit, testul a identificat un deficit de fier, iar asta m-a ajutat” — permis."
+      "tone": "caveat",
+      "text": "Mărturii despre analizele de sânge doar fără promisiuni de vindecare sau afirmații despre boli și numai după o verificare de la caz la caz."
      }
     ]
    },
@@ -1959,7 +1959,7 @@ const FAQTX = {
     ],
     "callout": {
      "tone": "safe",
-     "text": "Exemplu: „Testul genetic dovedește că acidul folic este ineficient pentru tine” — permis (susținut de studii)."
+     "text": "Exemplu: „Analiza genetică arată dacă organismul tău poate transforma bine acidul folic în forma sa activă.” — fără risc."
     }
    },
    {
@@ -2027,11 +2027,11 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "Exemplu de health claim: „Contribuie la menținerea sănătății pielii” (cu zinc), „Contribuie la funcționarea normală a sistemului imunitar”."
+      "text": "Exemplu de health claims, doar în formularea exactă din lista UE și doar dacă produsul furnizează pe doza zilnică cel puțin 15 % din valoarea de referință a nutrientului (VNR): „Zincul contribuie la menținerea normală a pielii.” / „Zincul contribuie la funcționarea normală a sistemului imunitar.”"
      },
      {
-      "tone": "safe",
-      "text": "Exemplu de mărturie: „Îl iau pentru că am pielea uscată” — combinat cu Health Claim-ul pentru zinc — permis."
+      "tone": "critical",
+      "text": "NU este permis: mărturia „Îl iau pentru că am pielea uscată” combinată cu Health Claim-ul pentru zinc — nu asocia declarațiile clienților cu health claims."
      },
      {
       "tone": "critical",

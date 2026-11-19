@@ -1927,7 +1927,7 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "«Diagnostichiamo le carenze.»"
+      "text": "«Il nostro laboratorio partner misura i tuoi valori del sangue; la refertazione è effettuata da un medico.»"
      },
      {
       "tone": "safe",
@@ -1942,8 +1942,8 @@ const FAQTX = {
       "text": "Sintomi di una carenza (ad es. stanchezza da carenza di ferro), meglio se con l'indicazione della fonte (ad es. una società medico-scientifica)."
      },
      {
-      "tone": "safe",
-      "text": "Testimonianza: «Ero spesso stanco, il test ha individuato una carenza di ferro e questo mi ha aiutato» — ammessa."
+      "tone": "caveat",
+      "text": "Testimonianze sui test del sangue solo senza promesse di guarigione o affermazioni su malattie e solo dopo una verifica caso per caso."
      }
     ]
    },
@@ -1965,7 +1965,7 @@ const FAQTX = {
     ],
     "callout": {
      "tone": "safe",
-     "text": "Esempio: «Il test genetico dimostra che per te l'acido folico è inefficace» — ammesso (supportato da studi)."
+     "text": "Esempio: «L'analisi genetica mostra se il tuo corpo riesce a convertire bene l'acido folico nella sua forma attiva.» — non critico."
     }
    },
    {
@@ -2033,11 +2033,11 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "Esempio di Health Claim: «Contribuisce a una pelle normale» (con lo zinco), «Contribuisce alla normale funzione del sistema immunitario»."
+      "text": "Esempio di Health Claim, solo nella formulazione esatta dell'elenco UE e solo se il prodotto apporta per dose giornaliera almeno il 15 % del valore nutritivo di riferimento (VNR): «Lo zinco contribuisce al mantenimento di una pelle normale.» / «Lo zinco contribuisce alla normale funzione del sistema immunitario.»"
      },
      {
-      "tone": "safe",
-      "text": "Esempio di testimonianza: «Lo prendo perché ho la pelle secca» — in combinazione con l'Health Claim dello zinco — ammessa."
+      "tone": "critical",
+      "text": "NON ammessa: testimonianza «Lo prendo perché ho la pelle secca» in combinazione con l'Health Claim dello zinco — non collegare le affermazioni dei clienti agli Health Claim."
      },
      {
       "tone": "critical",

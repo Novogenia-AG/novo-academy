@@ -1920,7 +1920,7 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "„Diagnostikujeme nedostatky.“"
+      "text": "„Naše partnerská laboratoř měří tvé krevní hodnoty; výsledky hodnotí lékař.“"
      },
      {
       "tone": "safe",
@@ -1935,8 +1935,8 @@ const FAQTX = {
       "text": "Příznaky nedostatku (např. únava při nedostatku železa) — nejlépe s uvedením zdroje (např. odborné lékařské společnosti)."
      },
      {
-      "tone": "safe",
-      "text": "Reference: „Býval jsem často unavený, test odhalil nedostatek železa a pomohlo mi to“ — povoleno."
+      "tone": "caveat",
+      "text": "Reference ke krevním testům jen bez slibů vyléčení či tvrzení o nemocech a až po individuálním posouzení."
      }
     ]
    },
@@ -1958,7 +1958,7 @@ const FAQTX = {
     ],
     "callout": {
      "tone": "safe",
-     "text": "Příklad: „Genový test dokazuje, že kyselina listová je pro tebe neúčinná“ — povoleno (podloženo studiemi)."
+     "text": "Příklad: „Genetická analýza ukáže, zda tvé tělo dokáže dobře přeměnit kyselinu listovou na její aktivní formu.“ — bez rizika."
     }
    },
    {
@@ -2026,11 +2026,11 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "Příklad zdravotního tvrzení: „Přispívá k udržení normálního stavu pokožky“ (u zinku), „Přispívá k normální funkci imunitního systému“."
+      "text": "Příklad zdravotních tvrzení, jen v přesném znění seznamu EU a jen pokud produkt obsahuje v denní dávce alespoň 15 % referenční hodnoty příjmu (NRV): „Zinek přispívá k udržení normálního stavu pokožky.“ / „Zinek přispívá k normální funkci imunitního systému.“"
      },
      {
-      "tone": "safe",
-      "text": "Příklad reference: „Užívám to, protože mám suchou pokožku“ — v kombinaci se zdravotním tvrzením pro zinek — povoleno."
+      "tone": "critical",
+      "text": "NEPOVOLENO: reference „Užívám to, protože mám suchou pokožku“ v kombinaci se zdravotním tvrzením pro zinek — výroky zákazníků nespojuj se zdravotními tvrzeními."
      },
      {
       "tone": "critical",

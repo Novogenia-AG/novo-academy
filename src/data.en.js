@@ -1891,11 +1891,11 @@ export const COURSES_EN = [
         ],
         bullets: [
           { tone: 'safe', text: '"We test blood."' },
-          { tone: 'safe', text: '"We diagnose deficiencies."' },
+          { tone: 'safe', text: '"Our partner laboratory measures your blood values; the results are assessed by a doctor."' },
           { tone: 'safe', text: '"We give micronutrient and nutrition recommendations."' },
           { tone: 'safe', text: '"We personalize supplements based on the result."' },
           { tone: 'safe', text: 'Symptoms of a deficiency (e.g. fatigue from iron deficiency) — best with a source citation (e.g. a medical association).' },
-          { tone: 'safe', text: 'Testimonial: "I was often tired, the test identified iron deficiency, and it helped me" — permitted.' },
+          { tone: 'caveat', text: 'Testimonials on blood tests only without promises of healing or statements about diseases, and only after case-by-case review.' },
         ],
       },
       {
@@ -1908,7 +1908,7 @@ export const COURSES_EN = [
           { tone: 'safe', text: 'Determination of the genetic properties — backed by current science.' },
           { tone: 'critical', text: 'Concrete nutrition, exercise or supplement recommendations derived from the genes — without specific randomized trials on that exact recommendation.' },
         ],
-        callout: { tone: 'safe', text: 'Example: "Gene test proves that folic acid is ineffective for you" — permitted (study-backed).' },
+        callout: { tone: 'safe', text: 'Example: "The gene analysis shows whether your body can convert folic acid well into its active form." — uncritical.' },
       },
       {
         title: 'The safe variant — genetic properties only',
@@ -1943,8 +1943,8 @@ export const COURSES_EN = [
         bullets: [
           { tone: 'safe', text: 'Personalization based on lifestyle and blood values — unproblematic.' },
           { tone: 'caveat', text: 'Personalization based on genetic analysis — only with a disclaimer (see "bolder variant").' },
-          { tone: 'safe', text: 'Example health claim: "Contributes to normal skin" (with zinc), "Contributes to a normal immune system".' },
-          { tone: 'safe', text: 'Example testimonial: "I take it because I have dry skin" — combined with the zinc Health Claim — permitted.' },
+          { tone: 'safe', text: 'Example health claims, only in the exact wording of the EU list and only if the product provides at least 15% of the nutrient reference value (NRV) per daily dose: "Zinc contributes to the maintenance of normal skin." / "Zinc contributes to the normal function of the immune system."' },
+          { tone: 'critical', text: 'NOT permitted: testimonial "I take it because I have dry skin" combined with the zinc health claim — do not link customer statements to health claims.' },
           { tone: 'critical', text: 'NOT permitted: any claim whose Health Claim has not been approved by EFSA (e.g. "heals your disease").' },
         ],
       },

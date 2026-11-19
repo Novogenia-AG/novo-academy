@@ -1927,7 +1927,7 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "«Diagnosticamos carências.»"
+      "text": "«O nosso laboratório parceiro mede os teus valores sanguíneos; a avaliação dos resultados é feita por um médico.»"
      },
      {
       "tone": "safe",
@@ -1942,8 +1942,8 @@ const FAQTX = {
       "text": "Sintomas de uma carência (por ex. cansaço por carência de ferro) — de preferência com indicação da fonte (por ex. uma associação médica)."
      },
      {
-      "tone": "safe",
-      "text": "Testemunho: «Andava muitas vezes cansado, o teste identificou uma carência de ferro e isso ajudou-me» — permitido."
+      "tone": "caveat",
+      "text": "Testemunhos sobre análises ao sangue apenas sem promessas de cura ou afirmações sobre doenças e só após análise caso a caso."
      }
     ]
    },
@@ -1965,7 +1965,7 @@ const FAQTX = {
     ],
     "callout": {
      "tone": "safe",
-     "text": "Exemplo: «O teste genético prova que o ácido fólico é ineficaz para ti» — permitido (sustentado por estudos)."
+     "text": "Exemplo: «A análise genética mostra se o teu corpo consegue converter bem o ácido fólico na sua forma ativa.» — sem risco."
     }
    },
    {
@@ -2033,11 +2033,11 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "Exemplo de health claim: «Contribui para uma pele normal» (com zinco), «Contribui para o normal funcionamento do sistema imunitário»."
+      "text": "Exemplo de health claims, apenas na redação exata da lista da UE e só se o produto fornecer, por dose diária, pelo menos 15 % do valor de referência do nutriente (VRN): «O zinco contribui para a manutenção de uma pele normal.» / «O zinco contribui para o normal funcionamento do sistema imunitário.»"
      },
      {
-      "tone": "safe",
-      "text": "Exemplo de testemunho: «Tomo-o porque tenho a pele seca» — combinado com o Health Claim do zinco — permitido."
+      "tone": "critical",
+      "text": "NÃO permitido: testemunho «Tomo-o porque tenho a pele seca» combinado com o Health Claim do zinco — não associes declarações de clientes a health claims."
      },
      {
       "tone": "critical",

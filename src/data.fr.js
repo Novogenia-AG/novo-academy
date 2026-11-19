@@ -1920,7 +1920,7 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "« Nous diagnostiquons les carences. »"
+      "text": "« Notre laboratoire partenaire mesure tes valeurs sanguines ; l'interprétation est faite par un médecin. »"
      },
      {
       "tone": "safe",
@@ -1935,8 +1935,8 @@ const FAQTX = {
       "text": "Les symptômes d'une carence (p. ex. la fatigue due à une carence en fer) — de préférence avec l'indication d'une source (p. ex. une société médicale)."
      },
      {
-      "tone": "safe",
-      "text": "Témoignage : « J'étais souvent fatigué, le test a identifié une carence en fer, et cela m'a aidé » — autorisé."
+      "tone": "caveat",
+      "text": "Témoignages sur les analyses de sang uniquement sans promesse de guérison ni affirmation sur des maladies, et seulement après un examen au cas par cas."
      }
     ]
    },
@@ -1958,7 +1958,7 @@ const FAQTX = {
     ],
     "callout": {
      "tone": "safe",
-     "text": "Exemple : « Le test génétique prouve que l'acide folique est inefficace chez vous » — autorisé (étayé par des études)."
+     "text": "Exemple : « L'analyse génétique montre si ton corps parvient à bien convertir l'acide folique en sa forme active. » — sans risque."
     }
    },
    {
@@ -2026,11 +2026,11 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "Exemple de health claim : « Contribue au maintien d'une peau normale » (avec le zinc), « Contribue au fonctionnement normal du système immunitaire »."
+      "text": "Exemple de health claims, uniquement dans la formulation exacte de la liste de l'UE et seulement si le produit apporte au moins 15 % de la valeur nutritionnelle de référence (VNR) par dose journalière : « Le zinc contribue au maintien d'une peau normale. » / « Le zinc contribue au fonctionnement normal du système immunitaire. »"
      },
      {
-      "tone": "safe",
-      "text": "Exemple de témoignage : « Je le prends parce que j'ai la peau sèche » — associé au Health Claim du zinc — autorisé."
+      "tone": "critical",
+      "text": "NON autorisé : témoignage « Je le prends parce que j'ai la peau sèche » associé au Health Claim du zinc — ne pas relier les propos de clients à des health claims."
      },
      {
       "tone": "critical",

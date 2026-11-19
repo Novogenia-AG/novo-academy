@@ -1921,7 +1921,7 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "„Dijagnostikujemo manjkove.“"
+      "text": "„Naša partnerska laboratorija mjeri tvoje vrijednosti krvi; nalaz tumači ljekar.“"
      },
      {
       "tone": "safe",
@@ -1936,8 +1936,8 @@ const FAQTX = {
       "text": "Simptomi manjka (npr. umor zbog nedostatka željeza) — najbolje uz navođenje izvora (npr. ljekarskog udruženja)."
      },
      {
-      "tone": "safe",
-      "text": "Preporuka kupca: „Često sam bio umoran, test je otkrio nedostatak željeza i to mi je pomoglo“ — dozvoljeno."
+      "tone": "caveat",
+      "text": "Preporuke kupaca o analizama krvi samo bez obećanja izliječenja ili tvrdnji o bolestima i tek nakon provjere u svakom pojedinačnom slučaju."
      }
     ]
    },
@@ -1959,7 +1959,7 @@ const FAQTX = {
     ],
     "callout": {
      "tone": "safe",
-     "text": "Primjer: „Genski test dokazuje da je folna kiselina za tebe nedjelotvorna“ — dozvoljeno (potkrijepljeno studijama)."
+     "text": "Primjer: „Genska analiza pokazuje da li tvoje tijelo može dobro pretvoriti folnu kiselinu u njen aktivni oblik.“ — bez rizika."
     }
    },
    {
@@ -2027,11 +2027,11 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "Primjer zdravstvene tvrdnje: „Doprinosi normalnom stanju kože“ (uz cink), „Doprinosi normalnom radu imunološkog sistema“."
+      "text": "Primjer zdravstvenih tvrdnji, samo u tačnom tekstu liste EU i samo ako proizvod u dnevnoj dozi sadrži najmanje 15 % referentne vrijednosti unosa (NRV): „Cink doprinosi održavanju normalne kože.“ / „Cink doprinosi normalnoj funkciji imunološkog sistema.“"
      },
      {
-      "tone": "safe",
-      "text": "Primjer preporuke kupca: „Uzimam to jer imam suhu kožu“ — u kombinaciji sa Health Claim za cink — dozvoljeno."
+      "tone": "critical",
+      "text": "NIJE dozvoljeno: preporuka kupca „Uzimam to jer imam suhu kožu“ u kombinaciji sa Health Claim za cink — izjave kupaca ne povezuj sa zdravstvenim tvrdnjama."
      },
      {
       "tone": "critical",

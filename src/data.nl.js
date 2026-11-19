@@ -1927,7 +1927,7 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "“Wij stellen tekorten vast.”"
+      "text": "“Ons partnerlaboratorium meet je bloedwaarden; de beoordeling gebeurt door een arts.”"
      },
      {
       "tone": "safe",
@@ -1942,8 +1942,8 @@ const FAQTX = {
       "text": "Symptomen van een tekort (bijv. vermoeidheid door ijzertekort) — het beste met een bronvermelding (bijv. van een medische beroepsvereniging)."
      },
      {
-      "tone": "safe",
-      "text": "Testimonial: “Ik was vaak moe, de test bracht een ijzertekort aan het licht en dat heeft me geholpen” — toegestaan."
+      "tone": "caveat",
+      "text": "Testimonials over bloedtests alleen zonder genezingsbeloften of uitspraken over ziekten, en pas na beoordeling per geval."
      }
     ]
    },
@@ -1965,7 +1965,7 @@ const FAQTX = {
     ],
     "callout": {
      "tone": "safe",
-     "text": "Voorbeeld: “De gentest toont aan dat foliumzuur bij jou niet werkzaam is” — toegestaan (onderbouwd door studies)."
+     "text": "Voorbeeld: “De genanalyse laat zien of je lichaam foliumzuur goed kan omzetten in de actieve vorm.” — onproblematisch."
     }
    },
    {
@@ -2033,11 +2033,11 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "Voorbeeld van een Health Claim: “Draagt bij aan een normale huid” (bij zink), “Draagt bij aan een normaal immuunsysteem”."
+      "text": "Voorbeeld van Health Claims, alleen in de exacte formulering van de EU-lijst en alleen als het product per dagdosis minstens 15 % van de referentie-inname (RI) levert: “Zink draagt bij tot de instandhouding van een normale huid.” / “Zink draagt bij tot de normale werking van het immuunsysteem.”"
      },
      {
-      "tone": "safe",
-      "text": "Voorbeeld van een testimonial: “Ik neem het omdat ik een droge huid heb” — in combinatie met de Health Claim voor zink — toegestaan."
+      "tone": "critical",
+      "text": "NIET toegestaan: testimonial “Ik neem het omdat ik een droge huid heb” in combinatie met de Health Claim voor zink — koppel uitspraken van klanten niet aan Health Claims."
      },
      {
       "tone": "critical",

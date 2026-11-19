@@ -2676,11 +2676,11 @@ export const COURSES = [
         ],
         bullets: [
           { tone: 'safe', text: '„Wir testen Blut."' },
-          { tone: 'safe', text: '„Wir diagnostizieren Mängel."' },
+          { tone: 'safe', text: '„Unser Partnerlabor misst deine Blutwerte; die Befundung erfolgt durch einen Arzt.“' },
           { tone: 'safe', text: '„Wir geben Mikronährstoff- und Ernährungsempfehlungen."' },
           { tone: 'safe', text: '„Wir personalisieren Nahrungsergänzungen nach dem Ergebnis."' },
           { tone: 'safe', text: 'Symptome eines Mangels (z. B. Müdigkeit bei Eisenmangel) — am besten mit Quellenverweis (z. B. Ärztekammer).' },
-          { tone: 'safe', text: 'Testimonial: „Ich war oft müde, der Test hat Eisenmangel identifiziert und mir geholfen" — zulässig.' },
+          { tone: 'caveat', text: 'Testimonials zu Bluttests nur ohne Heilungs- oder Krankheitsversprechen und nach Prüfung im Einzelfall.' },
         ],
       },
       {
@@ -2693,7 +2693,7 @@ export const COURSES = [
           { tone: 'safe', text: 'Ermittlung der genetischen Eigenschaften und Abgleich mit aktueller Wissenschaft.' },
           { tone: 'critical', text: 'Konkrete Ernährungs-, Sport- oder Nahrungsergänzungs-Empfehlungen, die aus den Genen abgeleitet werden.' },
         ],
-        callout: { tone: 'safe', text: 'Beispiel: „Gentest beweist, Folsäure ist wirkungslos" — zulässig (durch Studien belegt).' },
+        callout: { tone: 'safe', text: 'Beispiel: „Die Gen-Analyse zeigt, ob dein Körper Folsäure gut in die aktive Form umwandeln kann.“ — unkritisch.' },
       },
       {
         title: 'Die sichere Variante — nur genetische Eigenschaften',
@@ -2728,8 +2728,8 @@ export const COURSES = [
         bullets: [
           { tone: 'safe', text: 'Personalisierung nach Lebensstil und Blutwerten — unproblematisch.' },
           { tone: 'caveat', text: 'Personalisierung nach Genanalyse — nur mit Disclaimer (siehe gewagtere Variante).' },
-          { tone: 'safe', text: 'Beispiel Health-Claim: „Trägt zu normaler Haut bei" (bei Zink), „Trägt zu normalem Immunsystem bei".' },
-          { tone: 'safe', text: 'Beispiel Testimonial: „Ich nehme es, weil ich trockene Haut habe" — verbunden mit dem Health Claim Zink-Mangel-Effekt — zulässig.' },
+          { tone: 'safe', text: 'Beispiel Health-Claim, nur im genauen Wortlaut der EU-Liste und nur, wenn das Produkt je Tagesdosis mindestens 15 % der Referenzmenge (NRV) enthält: „Zink trägt zur Erhaltung normaler Haut bei.“ / „Zink trägt zu einer normalen Funktion des Immunsystems bei.“' },
+          { tone: 'critical', text: 'NICHT zulässig: Testimonial „Ich nehme es, weil ich trockene Haut habe“ in Verbindung mit dem Zink-Claim — Kundenaussagen nicht mit Health Claims verknüpfen.' },
           { tone: 'critical', text: 'NICHT zulässig: jede Behauptung, deren Health Claim nicht von der EFSA genehmigt wurde (z. B. „heilt deine Krankheit").' },
         ],
       },

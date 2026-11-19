@@ -1921,7 +1921,7 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "“Diagnosticamos deficiencias.”"
+      "text": "“Nuestro laboratorio asociado mide tus valores sanguíneos; la valoración la realiza un médico.”"
      },
      {
       "tone": "safe",
@@ -1936,8 +1936,8 @@ const FAQTX = {
       "text": "Síntomas de una deficiencia (por ejemplo, cansancio por deficiencia de hierro): mejor con una cita de la fuente (por ejemplo, una sociedad médica)."
      },
      {
-      "tone": "safe",
-      "text": "Testimonio: “Estaba cansado a menudo, la prueba identificó una deficiencia de hierro y eso me ayudó” — permitido."
+      "tone": "caveat",
+      "text": "Testimonios sobre análisis de sangre solo sin promesas de curación ni afirmaciones sobre enfermedades, y solo tras una revisión caso por caso."
      }
     ]
    },
@@ -1959,7 +1959,7 @@ const FAQTX = {
     ],
     "callout": {
      "tone": "safe",
-     "text": "Ejemplo: “La prueba genética demuestra que el ácido fólico no es eficaz para ti” — permitido (respaldado por estudios)."
+     "text": "Ejemplo: “El análisis genético muestra si tu cuerpo puede convertir bien el ácido fólico en su forma activa.” — sin riesgo."
     }
    },
    {
@@ -2027,11 +2027,11 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "Ejemplo de Health Claim: “Contribuye a una piel normal” (con zinc), “Contribuye a un sistema inmunitario normal”."
+      "text": "Ejemplo de Health Claims, solo con la redacción exacta de la lista de la UE y solo si el producto aporta por dosis diaria al menos el 15 % del valor de referencia de nutrientes (VRN): “El zinc contribuye al mantenimiento de la piel en condiciones normales.” / “El zinc contribuye al funcionamiento normal del sistema inmunitario.”"
      },
      {
-      "tone": "safe",
-      "text": "Ejemplo de testimonio: “Lo tomo porque tengo la piel seca”, combinado con el Health Claim del zinc — permitido."
+      "tone": "critical",
+      "text": "NO permitido: testimonio “Lo tomo porque tengo la piel seca” combinado con el Health Claim del zinc — no vincules declaraciones de clientes con Health Claims."
      },
      {
       "tone": "critical",
