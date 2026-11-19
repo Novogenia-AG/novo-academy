@@ -1496,7 +1496,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Šta je Calorie Blocker?",
-      "a": "Calorie Blocker je personalizovan proizvod za mršavljenje u obliku Microtransporter peleta. Sadrži individualni odnos blokatora masti i ugljikohidrata prilagođen tvojoj DNK analizi. U kombinaciji sa smanjenim unosom kalorija i masti dokazano podržava mršavljenje — u kombinaciji sa uravnoteženom ishranom i načinom života pomaže u održavanju težine."
+      "a": "Calorie Blocker je dodatak ishrani u obliku Microtransporter peleta sa vlaknima Opuntia ficus-indica i fazolaminom iz bijelog graha. Omjer sastojaka bira se na osnovu tvoje genetske analize. Ne zamjenjuje uravnoteženu ishranu koja vodi računa o kalorijama."
      },
      {
       "q": "Kako se uzima Calorie Blocker?",
@@ -1504,11 +1504,11 @@ const FAQTX = {
      },
      {
       "q": "Koje su aktivne supstance?",
-      "a": "Blokator masti je Opuntia ficus-indica (OFI) — vlakno kaktusa opuncije. To biljno vlakno u probavnom traktu stvara matricu nalik gelu koja veže masti iz hrane i smanjuje njihovu apsorpciju. Blokator ugljikohidrata je fazolamin (iz bijelog graha) koji inhibira alfa-amilazu. Oba su potpuno biljnog porijekla."
+      "a": "Calorie Blocker sadrži Opuntia ficus-indica (OFI), vlakno kaktusa opuncije, i fazolamin iz bijelog graha. Oba sastojka su potpuno biljnog porijekla."
      },
      {
       "q": "Da li je Calorie Blocker veganski/vegetarijanski?",
-      "a": "Da. I blokator masti (Opuntia ficus-indica) i blokator ugljikohidrata (fazolamin iz bijelog graha) su čisto biljnog porijekla. Calorie Blocker je pogodan za vegetarijance i vegane, bez glutena, bez laktoze i bez vještačkih boja."
+      "a": "Da. Oba sastojka, vlakno Opuntia ficus-indica i fazolamin iz bijelog graha, su čisto biljnog porijekla. Calorie Blocker je pogodan za vegetarijance i vegane, bez glutena, bez laktoze i bez vještačkih boja."
      }
     ]
    }

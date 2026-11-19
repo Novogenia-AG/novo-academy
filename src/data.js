@@ -567,7 +567,7 @@ export const COURSES = [
         items: [
           {
             q: 'Was ist der Kalorienblocker?',
-            a: 'Der Kalorienblocker ist ein personalisiertes Abnehm-Produkt in Mikrotransporter-Pellet-Form. Es enthält ein individuell auf deine DNA-Analyse abgestimmtes Verhältnis aus Fett- und Kohlenhydratblockern. In Kombination mit reduzierter Kalorien- und Fettaufnahme unterstützt es nachweislich beim Abnehmen — in Verbindung mit ausgewogener Ernährung und Lebensstil hilft es beim Halten des Gewichts.',
+            a: 'Der Kalorienblocker ist ein Nahrungsergänzungsmittel in Mikrotransporter-Pellet-Form mit Opuntia-ficus-indica-Faser und Phaseolamin aus weißen Bohnen. Das Mischungsverhältnis wird anhand deiner Gen-Analyse gewählt. Er ersetzt keine ausgewogene, kalorienbewusste Ernährung.',
           },
           {
             q: 'Wie nehme ich den Kalorienblocker ein?',
@@ -575,11 +575,11 @@ export const COURSES = [
           },
           {
             q: 'Was sind die aktiven Wirkstoffe?',
-            a: 'Als Fettblocker dient Opuntia ficus-indica (OFI) — die Faser des Feigenkaktus. Diese pflanzliche Faser bildet im Magen-Darm-Trakt eine gel-artige Matrix, die Nahrungsfett bindet und seine Aufnahme verringert. Als Kohlenhydratblocker wird Phaseolamin (aus weißen Bohnen) eingesetzt — es hemmt das Enzym Alpha-Amylase. Beide Wirkstoffe sind komplett pflanzlich.',
+            a: 'Der Kalorienblocker enthält Opuntia ficus-indica (OFI), die Faser des Feigenkaktus, und Phaseolamin aus weißen Bohnen. Beide Inhaltsstoffe sind rein pflanzlich.',
           },
           {
             q: 'Ist der Kalorienblocker vegan/vegetarisch?',
-            a: 'Ja. Sowohl der Fettblocker (Opuntia ficus-indica) als auch der Kohlenhydratblocker (Phaseolamin aus weißen Bohnen) sind rein pflanzlich. Der Kalorienblocker ist für Vegetarier und Veganer geeignet, glutenfrei, laktosefrei und frei von künstlichen Farbstoffen.',
+            a: 'Ja. Beide Inhaltsstoffe, die Opuntia-ficus-indica-Faser und Phaseolamin aus weißen Bohnen, sind rein pflanzlich. Der Kalorienblocker ist für Vegetarier und Veganer geeignet, glutenfrei, laktosefrei und frei von künstlichen Farbstoffen.',
           },
         ],
       },

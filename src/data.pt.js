@@ -1502,7 +1502,7 @@ const FAQTX = {
     "items": [
      {
       "q": "O que é o Bloqueador de Calorias?",
-      "a": "O Bloqueador de Calorias é um produto personalizado de perda de peso sob a forma de pellets microtransportadores. Contém uma proporção individual de bloqueadores de gordura e de hidratos de carbono, adaptada à tua análise de ADN. Combinado com uma ingestão reduzida de calorias e de gordura, apoia comprovadamente a perda de peso — associado a uma alimentação e a um estilo de vida equilibrados, ajuda a manter o peso."
+      "a": "O Bloqueador de Calorias é um suplemento alimentar sob a forma de pellets microtransportadores com fibra de Opuntia ficus-indica e faseolamina do feijão branco. A proporção da mistura é escolhida com base na tua análise genética. Não substitui uma alimentação equilibrada e atenta às calorias."
      },
      {
       "q": "Como tomo o Bloqueador de Calorias?",
@@ -1510,11 +1510,11 @@ const FAQTX = {
      },
      {
       "q": "Quais são as substâncias ativas?",
-      "a": "O bloqueador de gordura é a Opuntia ficus-indica (OFI) — a fibra do cato figueira-da-índia. Esta fibra vegetal forma no trato gastrointestinal uma matriz gelatinosa que fixa a gordura alimentar e reduz a sua absorção. O bloqueador de hidratos de carbono é a faseolamina (do feijão branco), que inibe a alfa-amilase. Ambos são totalmente de origem vegetal."
+      "a": "O Bloqueador de Calorias contém Opuntia ficus-indica (OFI), a fibra do cato figueira-da-índia, e faseolamina do feijão branco. Ambos os ingredientes são de origem puramente vegetal."
      },
      {
       "q": "O Bloqueador de Calorias é vegano/vegetariano?",
-      "a": "Sim. Tanto o bloqueador de gordura (Opuntia ficus-indica) como o bloqueador de hidratos de carbono (faseolamina do feijão branco) são de origem puramente vegetal. O Bloqueador de Calorias é adequado para vegetarianos e veganos, não contém glúten nem lactose e é isento de corantes artificiais."
+      "a": "Sim. Ambos os ingredientes, a fibra de Opuntia ficus-indica e a faseolamina do feijão branco, são de origem puramente vegetal. O Bloqueador de Calorias é adequado para vegetarianos e veganos, não contém glúten nem lactose e é isento de corantes artificiais."
      }
     ]
    }

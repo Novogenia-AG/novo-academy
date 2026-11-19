@@ -1496,7 +1496,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Ce este Calorie Blocker?",
-      "a": "Calorie Blocker este un produs personalizat pentru slăbire, sub formă de peleți Microtransporter. Conține un raport individual de blocatori de grăsimi și de carbohidrați, adaptat analizei tale ADN. Combinat cu un aport redus de calorii și de grăsimi, sprijină demonstrabil pierderea în greutate — iar împreună cu o alimentație echilibrată și un stil de viață sănătos ajută la menținerea greutății."
+      "a": "Calorie Blocker este un supliment alimentar sub formă de peleți Microtransporter, cu fibră de Opuntia ficus-indica și faseolamină din fasole albă. Raportul de amestec este ales pe baza analizei tale genetice. Nu înlocuiește o alimentație echilibrată, atentă la calorii."
      },
      {
       "q": "Cum se administrează Calorie Blocker?",
@@ -1504,11 +1504,11 @@ const FAQTX = {
      },
      {
       "q": "Care sunt substanțele active?",
-      "a": "Blocatorul de grăsimi este Opuntia ficus-indica (OFI) — fibra cactusului de smochin indian. Această fibră vegetală formează în tractul digestiv o matrice asemănătoare unui gel, care leagă grăsimile alimentare și le reduce absorbția. Blocatorul de carbohidrați este faseolamina (din fasole albă), care inhibă alfa-amilaza. Ambele sunt complet vegetale."
+      "a": "Calorie Blocker conține Opuntia ficus-indica (OFI), fibra cactusului de smochin indian, și faseolamină din fasole albă. Ambele ingrediente sunt complet vegetale."
      },
      {
       "q": "Calorie Blocker este vegan/vegetarian?",
-      "a": "Da. Atât blocatorul de grăsimi (Opuntia ficus-indica), cât și blocatorul de carbohidrați (faseolamina din fasole albă) sunt pur vegetale. Calorie Blocker este potrivit pentru vegetarieni și vegani, fără gluten, fără lactoză și fără coloranți artificiali."
+      "a": "Da. Ambele ingrediente, fibra de Opuntia ficus-indica și faseolamina din fasole albă, sunt pur vegetale. Calorie Blocker este potrivit pentru vegetarieni și vegani, fără gluten, fără lactoză și fără coloranți artificiali."
      }
     ]
    }

@@ -1495,7 +1495,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Qu'est-ce que le Calorie Blocker ?",
-      "a": "Le Calorie Blocker est un produit personnalisé de perte de poids se présentant sous forme de pellets microtransporteurs. Il contient un rapport individuel de bloqueurs de graisses et de glucides adapté à ton analyse ADN. Associé à un apport réduit en calories et en graisses, il soutient de façon démontrée la perte de poids — combiné à une alimentation et à un mode de vie équilibrés, il aide à maintenir le poids."
+      "a": "Le Calorie Blocker est un complément alimentaire sous forme de pellets microtransporteurs contenant de la fibre d'Opuntia ficus-indica et de la phaséolamine issue du haricot blanc. Le rapport de mélange est choisi en fonction de ton analyse génétique. Il ne remplace pas une alimentation équilibrée et attentive aux calories."
      },
      {
       "q": "Comment prendre le Calorie Blocker ?",
@@ -1503,11 +1503,11 @@ const FAQTX = {
      },
      {
       "q": "Quels sont les principes actifs ?",
-      "a": "Le bloqueur de graisses est l'Opuntia ficus-indica (OFI) — la fibre du figuier de Barbarie. Cette fibre végétale forme dans le tube digestif une matrice de type gel qui lie les graisses alimentaires et réduit leur absorption. Le bloqueur de glucides est le Phaseolamin (issu du haricot blanc), qui inhibe l'alpha-amylase. Les deux sont entièrement d'origine végétale."
+      "a": "Le Calorie Blocker contient de l'Opuntia ficus-indica (OFI), la fibre du figuier de Barbarie, et de la phaséolamine issue du haricot blanc. Les deux ingrédients sont entièrement d'origine végétale."
      },
      {
       "q": "Le Calorie Blocker est-il végétalien / végétarien ?",
-      "a": "Oui. Le bloqueur de graisses (Opuntia ficus-indica) comme le bloqueur de glucides (Phaseolamin issu du haricot blanc) sont purement d'origine végétale. Le Calorie Blocker convient aux végétariens et aux végétaliens, il est sans gluten, sans lactose et sans colorants artificiels."
+      "a": "Oui. Les deux ingrédients, la fibre d'Opuntia ficus-indica et la phaséolamine issue du haricot blanc, sont purement d'origine végétale. Le Calorie Blocker convient aux végétariens et aux végétaliens, il est sans gluten, sans lactose et sans colorants artificiels."
      }
     ]
    }

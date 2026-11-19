@@ -1502,7 +1502,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Che cos'è il Calorie Blocker?",
-      "a": "Il Calorie Blocker è un prodotto dimagrante personalizzato in forma di pellet a microtrasportatori. Contiene un rapporto individuale di bloccanti dei grassi e dei carboidrati, calibrato sulla tua analisi del DNA. In combinazione con un apporto ridotto di calorie e di grassi sostiene in modo dimostrabile il dimagrimento; insieme a un'alimentazione e a uno stile di vita equilibrati aiuta a mantenere il peso."
+      "a": "Il Calorie Blocker è un integratore alimentare in forma di pellet a microtrasportatori con fibra di Opuntia ficus-indica e faseolamina dai fagioli bianchi. Il rapporto di miscelazione viene scelto in base alla tua analisi genetica. Non sostituisce un'alimentazione equilibrata e attenta alle calorie."
      },
      {
       "q": "Come si assume il Calorie Blocker?",
@@ -1510,11 +1510,11 @@ const FAQTX = {
      },
      {
       "q": "Quali sono i principi attivi?",
-      "a": "Il bloccante dei grassi è l'Opuntia ficus-indica (OFI), la fibra del fico d'India. Questa fibra vegetale forma nel tratto gastrointestinale una matrice gelatinosa che lega i grassi alimentari e ne riduce l'assorbimento. Il bloccante dei carboidrati è la faseolamina (dai fagioli bianchi), che inibisce l'alfa-amilasi. Entrambi sono di origine completamente vegetale."
+      "a": "Il Calorie Blocker contiene Opuntia ficus-indica (OFI), la fibra del fico d'India, e faseolamina dai fagioli bianchi. Entrambi gli ingredienti sono di origine puramente vegetale."
      },
      {
       "q": "Il Calorie Blocker è vegano/vegetariano?",
-      "a": "Sì. Sia il bloccante dei grassi (Opuntia ficus-indica) sia il bloccante dei carboidrati (faseolamina dai fagioli bianchi) sono di origine puramente vegetale. Il Calorie Blocker è adatto a vegetariani e vegani, senza glutine, senza lattosio e privo di coloranti artificiali."
+      "a": "Sì. Entrambi gli ingredienti, la fibra di Opuntia ficus-indica e la faseolamina dai fagioli bianchi, sono di origine puramente vegetale. Il Calorie Blocker è adatto a vegetariani e vegani, senza glutine, senza lattosio e privo di coloranti artificiali."
      }
     ]
    }

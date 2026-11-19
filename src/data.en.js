@@ -274,10 +274,10 @@ export const COURSES_EN = [
       {
         title: 'Calorie Blocker',
         items: [
-          { q: 'What is the Calorie Blocker?', a: 'The Calorie Blocker is a personalized weight-loss product in microtransporter-pellet form. It contains an individual ratio of fat and carbohydrate blockers tailored to your DNA analysis. Combined with reduced calorie and fat intake, it demonstrably supports weight loss — combined with balanced diet and lifestyle it helps maintain weight.' },
+          { q: 'What is the Calorie Blocker?', a: 'The Calorie Blocker is a food supplement in microtransporter-pellet form containing Opuntia ficus-indica fibre and phaseolamin from white beans. The mixing ratio is chosen on the basis of your gene analysis. It does not replace a balanced, calorie-conscious diet.' },
           { q: 'How do I take the Calorie Blocker?', a: 'Daily before lunch and dinner with a large sip of water. The pellets should be swallowed whole, not chewed.' },
-          { q: 'What are the active ingredients?', a: 'The fat blocker is Opuntia ficus-indica (OFI) — the fiber of the prickly pear cactus. This plant fiber forms a gel-like matrix in the GI tract that binds dietary fat and reduces its absorption. The carbohydrate blocker is Phaseolamin (from white beans) which inhibits alpha-amylase. Both are fully plant-based.' },
-          { q: 'Is the Calorie Blocker vegan/vegetarian?', a: 'Yes. Both the fat blocker (Opuntia ficus-indica) and the carbohydrate blocker (Phaseolamin from white beans) are purely plant-based. The Calorie Blocker is suitable for vegetarians and vegans, gluten-free, lactose-free, and free of artificial colourings.' },
+          { q: 'What are the active ingredients?', a: 'The Calorie Blocker contains Opuntia ficus-indica (OFI), the fibre of the prickly pear cactus, and phaseolamin from white beans. Both ingredients are purely plant-based.' },
+          { q: 'Is the Calorie Blocker vegan/vegetarian?', a: 'Yes. Both ingredients, the Opuntia ficus-indica fibre and phaseolamin from white beans, are purely plant-based. The Calorie Blocker is suitable for vegetarians and vegans, gluten-free, lactose-free, and free of artificial colourings.' },
         ],
       },
     ],

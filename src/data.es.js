@@ -1496,7 +1496,7 @@ const FAQTX = {
     "items": [
      {
       "q": "¿Qué es el Calorie Blocker?",
-      "a": "El Calorie Blocker es un producto personalizado para la pérdida de peso en forma de pellets Microtransporter. Contiene una proporción individual de bloqueadores de grasas y de carbohidratos adaptada a tu análisis de ADN. Combinado con una ingesta reducida de calorías y de grasas, favorece de forma demostrable la pérdida de peso; junto con una alimentación y un estilo de vida equilibrados, ayuda a mantener el peso."
+      "a": "El Calorie Blocker es un complemento alimenticio en forma de pellets Microtransporter con fibra de Opuntia ficus-indica y faseolamina de frijoles blancos. La proporción de la mezcla se elige en función de tu análisis genético. No sustituye una alimentación equilibrada y consciente de las calorías."
      },
      {
       "q": "¿Cómo tomo el Calorie Blocker?",
@@ -1504,11 +1504,11 @@ const FAQTX = {
      },
      {
       "q": "¿Cuáles son los principios activos?",
-      "a": "El bloqueador de grasas es Opuntia ficus-indica (OFI), la fibra del nopal o higo chumbo. Esta fibra vegetal forma una matriz de tipo gel en el tracto gastrointestinal que fija la grasa de la dieta y reduce su absorción. El bloqueador de carbohidratos es la faseolamina (de frijoles blancos), que inhibe la alfa-amilasa. Ambos son totalmente de origen vegetal."
+      "a": "El Calorie Blocker contiene Opuntia ficus-indica (OFI), la fibra del nopal o higo chumbo, y faseolamina de frijoles blancos. Ambos ingredientes son de origen totalmente vegetal."
      },
      {
       "q": "¿El Calorie Blocker es vegano/vegetariano?",
-      "a": "Sí. Tanto el bloqueador de grasas (Opuntia ficus-indica) como el bloqueador de carbohidratos (faseolamina de frijoles blancos) son de origen puramente vegetal. El Calorie Blocker es apto para vegetarianos y veganos, sin gluten, sin lactosa y libre de colorantes artificiales."
+      "a": "Sí. Ambos ingredientes, la fibra de Opuntia ficus-indica y la faseolamina de frijoles blancos, son de origen puramente vegetal. El Calorie Blocker es apto para vegetarianos y veganos, sin gluten, sin lactosa y libre de colorantes artificiales."
      }
     ]
    }

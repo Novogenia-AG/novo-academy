@@ -1495,7 +1495,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Co je Blokátor kalorií?",
-      "a": "Blokátor kalorií je personalizovaný produkt pro hubnutí ve formě pelet mikrotransportérů. Obsahuje individuální poměr blokátorů tuků a sacharidů, sestavený podle tvé DNA analýzy. Ve spojení se sníženým příjmem kalorií a tuků prokazatelně podporuje hubnutí — ve spojení s vyváženou stravou a životním stylem pomáhá udržet hmotnost."
+      "a": "Blokátor kalorií je doplněk stravy ve formě pelet mikrotransportérů s vlákninou Opuntia ficus-indica a fazeolaminem z bílých fazolí. Poměr složek se volí podle tvé genetické analýzy. Nenahrazuje vyváženou stravu s ohledem na příjem kalorií."
      },
      {
       "q": "Jak se Blokátor kalorií užívá?",
@@ -1503,11 +1503,11 @@ const FAQTX = {
      },
      {
       "q": "Jaké jsou účinné látky?",
-      "a": "Blokátorem tuků je Opuntia ficus-indica (OFI) — vláknina z opuncie. Tato rostlinná vláknina vytváří v trávicím traktu gelovitou matrici, která váže tuky z potravy a snižuje jejich vstřebávání. Blokátorem sacharidů je fazeolamin (z bílých fazolí), který inhibuje alfa-amylázu. Obojí je čistě rostlinného původu."
+      "a": "Blokátor kalorií obsahuje Opuntia ficus-indica (OFI), vlákninu z opuncie, a fazeolamin z bílých fazolí. Obě složky jsou čistě rostlinného původu."
      },
      {
       "q": "Je Blokátor kalorií veganský/vegetariánský?",
-      "a": "Ano. Blokátor tuků (Opuntia ficus-indica) i blokátor sacharidů (fazeolamin z bílých fazolí) jsou čistě rostlinného původu. Blokátor kalorií je vhodný pro vegetariány i vegany, je bez lepku, bez laktózy a bez umělých barviv."
+      "a": "Ano. Obě složky, vláknina Opuntia ficus-indica i fazeolamin z bílých fazolí, jsou čistě rostlinného původu. Blokátor kalorií je vhodný pro vegetariány i vegany, je bez lepku, bez laktózy a bez umělých barviv."
      }
     ]
    }

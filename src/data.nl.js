@@ -1502,7 +1502,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Wat is de Calorie Blocker?",
-      "a": "De Calorie Blocker is een gepersonaliseerd afslankproduct in de vorm van microtransporter-pellets. Het bevat een individuele verhouding van vet- en koolhydraatblokkers, afgestemd op je DNA-analyse. In combinatie met een verminderde calorie- en vetinname ondersteunt het aantoonbaar het gewichtsverlies — in combinatie met een evenwichtige voeding en leefstijl helpt het je gewicht te behouden."
+      "a": "De Calorie Blocker is een voedingssupplement in de vorm van microtransporter-pellets met Opuntia-ficus-indica-vezel en phaseolamine uit witte bonen. De mengverhouding wordt gekozen op basis van je genanalyse. Hij vervangt geen evenwichtige, caloriebewuste voeding."
      },
      {
       "q": "Hoe neem ik de Calorie Blocker in?",
@@ -1510,11 +1510,11 @@ const FAQTX = {
      },
      {
       "q": "Wat zijn de werkzame stoffen?",
-      "a": "De vetblokker is Opuntia ficus-indica (OFI) — de vezel van de vijgcactus. Deze plantaardige vezel vormt in het maag-darmkanaal een gelachtige matrix die voedingsvet bindt en de opname ervan vermindert. De koolhydraatblokker is Phaseolamine (uit witte bonen), dat alfa-amylase remt. Beide zijn volledig plantaardig."
+      "a": "De Calorie Blocker bevat Opuntia ficus-indica (OFI), de vezel van de vijgcactus, en phaseolamine uit witte bonen. Beide ingrediënten zijn volledig plantaardig."
      },
      {
       "q": "Is de Calorie Blocker veganistisch/vegetarisch?",
-      "a": "Ja. Zowel de vetblokker (Opuntia ficus-indica) als de koolhydraatblokker (Phaseolamine uit witte bonen) is puur plantaardig. De Calorie Blocker is geschikt voor vegetariërs en veganisten, glutenvrij, lactosevrij en vrij van kunstmatige kleurstoffen."
+      "a": "Ja. Beide ingrediënten, de Opuntia-ficus-indica-vezel en phaseolamine uit witte bonen, zijn puur plantaardig. De Calorie Blocker is geschikt voor vegetariërs en veganisten, glutenvrij, lactosevrij en vrij van kunstmatige kleurstoffen."
      }
     ]
    }
