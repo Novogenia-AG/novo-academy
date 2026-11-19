@@ -1825,7 +1825,7 @@ const FAQTX = {
      },
      {
       "q": "Com que rapidez vou notar um efeito?",
-      "a": "Varia consoante o nutriente. Alguns efeitos (por ex. mais energia com as vitaminas do complexo B) surgem em dias a semanas; outros (por ex. o metabolismo ósseo com a vitamina D) desenvolvem-se ao longo de meses. A suplementação personalizada não é um medicamento de ação rápida — corrige lacunas nutricionais a longo prazo."
+      "a": "Depende do nutriente. Exemplos: a vitamina B12 contribui para a redução do cansaço e da fadiga; a vitamina D contribui para a manutenção de ossos normais. Os suplementos alimentares não atuam como um medicamento — complementam a alimentação."
      },
      {
       "q": "Vou precisar de suplementação para sempre?",
@@ -1837,7 +1837,7 @@ const FAQTX = {
      },
      {
       "q": "Como se compara o custo da versão personalizada com o dos multivitamínicos de farmácia?",
-      "a": "É significativamente mais elevado por dia — tipicamente 3-5× o dos produtos de farmácia mais baratos. Em contrapartida, recebes uma composição geneticamente adaptada que provavelmente é mesmo absorvida, em vez de ser em grande parte excretada sem aproveitamento. A comparação «por mg de vitamina» é enganadora; «por mg que chega efetivamente ao sangue» é bem mais significativa."
+      "a": "Por dia, a variante personalizada custa mais do que simples multivitamínicos. Em contrapartida, a seleção e a dosagem são adaptadas à tua análise genética e ao teu estilo de vida, e os microtransportadores libertam os nutrientes de forma faseada."
      }
     ]
    }

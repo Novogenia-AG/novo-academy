@@ -1825,7 +1825,7 @@ const FAQTX = {
      },
      {
       "q": "Quanto tempo passerà prima di notare un effetto?",
-      "a": "Dipende dal nutriente. Alcuni effetti (ad es. più energia con le vitamine del gruppo B) compaiono nel giro di giorni o settimane; altri (ad es. il metabolismo osseo con la vitamina D) si sviluppano nell'arco di mesi. L'integrazione personalizzata non è un farmaco ad azione rapida: corregge carenze di nutrienti a lungo termine."
+      "a": "Dipende dal nutriente. Esempi: la vitamina B12 contribuisce alla riduzione della stanchezza e dell'affaticamento; la vitamina D contribuisce al mantenimento di ossa normali. Gli integratori alimentari non agiscono come un farmaco: integrano l'alimentazione."
      },
      {
       "q": "Avrò bisogno dell'integrazione per sempre?",
@@ -1837,7 +1837,7 @@ const FAQTX = {
      },
      {
       "q": "Quanto costa l'integrazione personalizzata rispetto ai multivitaminici da supermercato?",
-      "a": "Sensibilmente di più al giorno: tipicamente 3-5 volte i prodotti da supermercato più economici. In cambio ottieni una composizione calibrata geneticamente, che con ogni probabilità viene davvero assorbita invece di essere eliminata in gran parte senza essere utilizzata. Il confronto «per mg di vitamina» è fuorviante; «per mg che arriva davvero nel sangue» è molto più significativo."
+      "a": "Al giorno la variante personalizzata costa più dei semplici multivitaminici. In cambio, la scelta e il dosaggio sono adattati alla tua analisi genetica e al tuo stile di vita, e i microtrasportatori rilasciano i nutrienti in momenti diversi."
      }
     ]
    }

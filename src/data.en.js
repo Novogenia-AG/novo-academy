@@ -1587,10 +1587,10 @@ export const COURSES_EN = [
         title: 'Practical questions',
         items: [
           { q: 'Do I have to take the pills at fixed times?', a: 'We recommend a consistent time of day (e.g. with breakfast) to keep blood levels stable. You don\'t have to watch the minute — a rough routine is enough. The most important thing is taking them regularly at all.' },
-          { q: 'How fast will I notice an effect?', a: 'It varies by nutrient. Some effects (e.g. better energy with B-vitamins) appear within days to weeks; others (e.g. bone metabolism with Vitamin D) develop over months. Personalized supplementation is not a fast-acting medication — it corrects long-term nutrient gaps.' },
+          { q: 'How fast will I notice an effect?', a: 'It varies by nutrient. Examples: vitamin B12 contributes to the reduction of tiredness and fatigue; vitamin D contributes to the maintenance of normal bones. Food supplements do not work like a medicine — they complement the diet.' },
           { q: 'Do I need supplementation forever?', a: 'For genetically caused metabolic weaknesses yes, because the predisposition lasts a lifetime. Lifestyle-driven needs (e.g. higher need during stress, exercise, illness) can change. The analysis also shows you where your genetics produce a permanently elevated need and where lifestyle adjustment alone is sufficient.' },
           { q: 'Can I combine supplementation with medications?', a: 'Generally yes — all nutrients are dosed in food-typical amounts. With chronic disease or long-term medication you should discuss this with your physician, because individual nutrients (e.g. Vitamin K, iron) can interact with certain drugs.' },
-          { q: 'How does personalized cost compare to drugstore multivitamins?', a: 'Significantly more per day — typically 3-5× the cheapest drugstore products. In return you get a genetically tailored composition that probably actually gets absorbed instead of being largely excreted unused. The "per mg of vitamin" comparison is misleading; "per mg that actually reaches the blood" is more meaningful.' },
+          { q: 'How does personalized cost compare to drugstore multivitamins?', a: 'Per day, the personalized version costs more than simple multivitamin products. In return, selection and dosage are tailored to your gene analysis and lifestyle, and the microtransporters release the nutrients at staggered times.' },
         ],
       },
     ],

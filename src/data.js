@@ -2276,7 +2276,7 @@ export const COURSES = [
         items: [
           {
             q: 'Warum brauche ich überhaupt eine personalisierte Nahrungsergänzung?',
-            a: 'Weil dein Körper genetisch bedingt andere Nährstoffe besser oder schlechter verwertet als ein anderer Mensch — und weil dein Lebensstil (Sport, Schlaf, Stress, Ernährung) deinen individuellen Bedarf zusätzlich prägt. Standard-Tabletten gehen vom „Durchschnittsmenschen" aus und decken dadurch viele individuelle Bedarfslagen weder zu wenig noch zu viel ab.',
+            a: 'Weil dein Körper genetisch bedingt andere Nährstoffe besser oder schlechter verwertet als ein anderer Mensch — und weil dein Lebensstil (Sport, Schlaf, Stress, Ernährung) deinen individuellen Bedarf zusätzlich prägt. Standard-Präparate sind für den Durchschnitt dosiert und decken deshalb bei vielen Menschen den individuellen Bedarf entweder zu knapp oder zu reichlich.',
           },
           {
             q: 'Was ist der Unterschied zu Standard-Multivitaminen aus der Drogerie?',
@@ -2314,7 +2314,7 @@ export const COURSES = [
           },
           {
             q: 'Wie schnell merke ich eine Wirkung?',
-            a: 'Das ist je nach Nährstoff sehr unterschiedlich. Manche Effekte (z. B. bessere Energie bei B-Vitaminen) zeigen sich in wenigen Tagen bis Wochen, andere (z. B. Knochenstoffwechsel bei Vitamin D) entwickeln sich über Monate. Eine personalisierte Supplementierung wirkt nicht wie ein Medikament — sie behebt langfristige Nährstoff-Engpässe.',
+            a: 'Das ist je nach Nährstoff verschieden. Beispiele: Vitamin B12 trägt zur Verringerung von Müdigkeit und Ermüdung bei; Vitamin D trägt zur Erhaltung normaler Knochen bei. Nahrungsergänzung wirkt nicht wie ein Medikament, sondern ergänzt die Ernährung.',
           },
           {
             q: 'Brauche ich die Supplementierung dauerhaft?',
@@ -2326,7 +2326,7 @@ export const COURSES = [
           },
           {
             q: 'Was kostet die personalisierte Variante im Vergleich zu Drogerie-Multivitaminen?',
-            a: 'Pro Tag deutlich mehr — typischerweise das 3- bis 5-fache der billigsten Drogerieprodukte. Im Gegenzug bekommst du eine genetisch abgestimmte Zusammensetzung, die wahrscheinlich auch tatsächlich aufgenommen wird statt großteils ungenutzt ausgeschieden zu werden. Der Vergleich „pro mg Vitamin" ist irreführend; sinnvoller ist „pro mg, der tatsächlich im Blut ankommt".',
+            a: 'Pro Tag kostet die personalisierte Variante mehr als einfache Multivitamin-Präparate. Dafür sind Auswahl und Dosierung auf deine Gen-Analyse und deinen Lebensstil abgestimmt, und die Mikrotransporter geben die Nährstoffe zeitlich versetzt frei.',
           },
         ],
       },

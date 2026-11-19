@@ -1818,7 +1818,7 @@ const FAQTX = {
      },
      {
       "q": "Jak rychle pocítím účinek?",
-      "a": "Liší se to podle živiny. Některé účinky (např. lepší energie u vitaminů skupiny B) se dostaví během dní až týdnů; jiné (např. kostní metabolismus u vitaminu D) se rozvíjejí měsíce. Personalizovaná suplementace není rychle působící lék — vyrovnává dlouhodobé mezery v příjmu živin."
+      "a": "Liší se to podle živiny. Příklady: vitamin B12 přispívá ke snížení míry únavy a vyčerpání; vitamin D přispívá k udržení normálního stavu kostí. Doplňky stravy nepůsobí jako lék — doplňují stravu."
      },
      {
       "q": "Budu suplementaci potřebovat navždy?",
@@ -1830,7 +1830,7 @@ const FAQTX = {
      },
      {
       "q": "Jak vychází cena personalizované suplementace ve srovnání s multivitaminy z drogerie?",
-      "a": "Na den výrazně dráž — obvykle 3–5× více než nejlevnější drogeriové produkty. Na oplátku dostaneš geneticky přizpůsobené složení, které se pravděpodobně skutečně vstřebá, místo aby se z velké části nevyužité vyloučilo. Srovnání „na miligram vitaminu“ je zavádějící; smysluplnější je „na miligram, který se opravdu dostane do krve“."
+      "a": "Na den stojí personalizovaná varianta víc než jednoduché multivitaminové přípravky. Za to jsou výběr a dávkování přizpůsobeny tvé genetické analýze a životnímu stylu a mikrotransportéry uvolňují živiny postupně."
      }
     ]
    }

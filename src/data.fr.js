@@ -1818,7 +1818,7 @@ const FAQTX = {
      },
      {
       "q": "Au bout de combien de temps vais-je remarquer un effet ?",
-      "a": "Cela varie selon le nutriment. Certains effets (p. ex. une meilleure énergie avec les vitamines B) apparaissent en quelques jours à quelques semaines ; d'autres (p. ex. le métabolisme osseux avec la vitamine D) se développent sur plusieurs mois. La supplémentation personnalisée n'est pas un médicament à action rapide — elle corrige des déficits nutritionnels de long terme."
+      "a": "Cela dépend du nutriment. Exemples : la vitamine B12 contribue à réduire la fatigue ; la vitamine D contribue au maintien d'une ossature normale. Les compléments alimentaires n'agissent pas comme un médicament — ils complètent l'alimentation."
      },
      {
       "q": "Ai-je besoin d'une supplémentation à vie ?",
@@ -1830,7 +1830,7 @@ const FAQTX = {
      },
      {
       "q": "Quel est le coût de la version personnalisée par rapport aux multivitamines de parapharmacie ?",
-      "a": "Nettement plus élevé par jour — typiquement 3 à 5 fois le prix des produits les moins chers en parapharmacie. En contrepartie, tu obtiens une composition adaptée à ta génétique, qui a de bonnes chances d'être réellement absorbée au lieu d'être en grande partie éliminée sans être utilisée. La comparaison « par mg de vitamine » est trompeuse ; « par mg qui atteint réellement le sang » est bien plus pertinente."
+      "a": "Par jour, la variante personnalisée coûte plus cher que de simples multivitamines. En contrepartie, le choix et le dosage sont adaptés à ton analyse génétique et à ton mode de vie, et les microtransporteurs libèrent les nutriments de façon échelonnée."
      }
     ]
    }

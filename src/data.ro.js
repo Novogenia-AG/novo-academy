@@ -1819,7 +1819,7 @@ const FAQTX = {
      },
      {
       "q": "Cât de repede voi observa un efect?",
-      "a": "Depinde de nutrient. Unele efecte (de ex. mai multă energie cu vitaminele B) apar în câteva zile până la câteva săptămâni; altele (de ex. metabolismul osos cu vitamina D) se dezvoltă de-a lungul lunilor. Suplimentarea personalizată nu este un medicament cu acțiune rapidă — ea corectează deficite de nutrienți pe termen lung."
+      "a": "Diferă în funcție de nutrient. Exemple: vitamina B12 contribuie la reducerea oboselii și extenuării; vitamina D contribuie la menținerea normală a oaselor. Suplimentele alimentare nu acționează ca un medicament — ele completează alimentația."
      },
      {
       "q": "Am nevoie de suplimentare pentru totdeauna?",
@@ -1831,7 +1831,7 @@ const FAQTX = {
      },
      {
       "q": "Cum se compară costul variantei personalizate cu cel al multivitaminelor din drogherie?",
-      "a": "Semnificativ mai mare pe zi — de regulă de 3-5× față de cele mai ieftine produse din drogherie. În schimb primești o compoziție adaptată genetic, care probabil chiar se absoarbe, în loc să fie eliminată în mare parte nefolosită. Comparația „per mg de vitamină” este înșelătoare; „per mg care ajunge efectiv în sânge” este mult mai relevantă."
+      "a": "Pe zi, varianta personalizată costă mai mult decât preparatele multivitaminice simple. În schimb, selecția și dozajul sunt adaptate analizei tale genetice și stilului tău de viață, iar microtransportoarele eliberează nutrienții eșalonat."
      }
     ]
    }

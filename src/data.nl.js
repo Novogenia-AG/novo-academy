@@ -1825,7 +1825,7 @@ const FAQTX = {
      },
      {
       "q": "Hoe snel merk ik effect?",
-      "a": "Dat verschilt per voedingsstof. Sommige effecten (bijv. meer energie door B-vitamines) merk je binnen dagen tot weken; andere (bijv. de botstofwisseling bij Vitamine D) ontwikkelen zich over maanden. Gepersonaliseerde suppletie is geen snelwerkend medicijn — ze corrigeert tekorten aan voedingsstoffen op de lange termijn."
+      "a": "Dat verschilt per voedingsstof. Voorbeelden: vitamine B12 draagt bij tot de vermindering van vermoeidheid en moeheid; vitamine D draagt bij tot de instandhouding van normale botten. Voedingssupplementen werken niet als een geneesmiddel — ze vullen de voeding aan."
      },
      {
       "q": "Heb ik suppletie voor altijd nodig?",
@@ -1837,7 +1837,7 @@ const FAQTX = {
      },
      {
       "q": "Hoe verhouden de kosten van gepersonaliseerde suppletie zich tot multivitamines uit de drogisterij?",
-      "a": "Duidelijk meer per dag — doorgaans 3-5× de prijs van de goedkoopste drogisterijproducten. Daarvoor krijg je een genetisch afgestemde samenstelling die waarschijnlijk daadwerkelijk wordt opgenomen in plaats van grotendeels ongebruikt te worden uitgescheiden. De vergelijking “per mg vitamine” is misleidend; “per mg die daadwerkelijk het bloed bereikt” zegt veel meer."
+      "a": "Per dag kost de gepersonaliseerde variant meer dan eenvoudige multivitaminepreparaten. Daar staat tegenover dat keuze en dosering zijn afgestemd op je genanalyse en leefstijl, en dat de microtransporters de voedingsstoffen gespreid in de tijd afgeven."
      }
     ]
    }

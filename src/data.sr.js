@@ -1819,7 +1819,7 @@ const FAQTX = {
      },
      {
       "q": "Koliko brzo ću primijetiti učinak?",
-      "a": "Zavisi od nutrijenta. Neki učinci (npr. bolja energija uz vitamine B grupe) javljaju se za nekoliko dana do sedmica; drugi (npr. metabolizam kostiju uz vitamin D) razvijaju se mjesecima. Personalizirana suplementacija nije brzodjelujući lijek — ona ispravlja dugoročne praznine u opskrbi nutrijentima."
+      "a": "To zavisi od nutrijenta. Primeri: vitamin B12 doprinosi smanjenju umora i iscrpljenosti; vitamin D doprinosi održavanju normalnih kostiju. Dodaci ishrani ne deluju kao lek — oni dopunjuju ishranu."
      },
      {
       "q": "Treba li mi suplementacija zauvijek?",
@@ -1831,7 +1831,7 @@ const FAQTX = {
      },
      {
       "q": "Kako se cijena personalizirane suplementacije odnosi prema multivitaminima iz drogerije?",
-      "a": "Znatno je viša po danu — tipično 3-5× više od najjeftinijih drogerijskih proizvoda. Zauzvrat dobijaš genetski prilagođen sastav koji se vjerovatno zaista i apsorbira, umjesto da se najvećim dijelom neiskorišten izluči. Poređenje „po miligramu vitamina“ je varljivo; „po miligramu koji zaista dođe do krvi“ je smislenije."
+      "a": "Dnevno personalizovana varijanta košta više od jednostavnih multivitaminskih preparata. Zauzvrat su izbor i doziranje prilagođeni tvojoj genetskoj analizi i načinu života, a mikrotransporteri oslobađaju nutrijente postepeno."
      }
     ]
    }
