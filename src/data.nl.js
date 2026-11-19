@@ -846,7 +846,7 @@ const TXT = {
  "ba-sci-en": {
   "topic": "Wetenschappelijke basis",
   "description": "Waarom telomeren korter worden, hoe het telomerasegen de biologische leeftijd beïnvloedt — en welke voedingsstoffen kunnen helpen.",
-  "longDescription": "Deze training legt de wetenschappelijke basis van de analyse van de biologische leeftijd uit. Je leert waarom telomeren — de beschermende uiteinden van onze chromosomen — bij elke celdeling korter worden, wat er met een cel gebeurt zodra ze zijn opgebruikt, hoe het telomerasegen dit proces beïnvloedt, en welke voedingsstoffen het onderhoud van de telomeren kunnen ondersteunen wanneer de genen minder goed werken.",
+  "longDescription": "Deze training legt de wetenschappelijke basis van de analyse van de biologische leeftijd uit. Je leert waarom telomeren — de beschermende uiteinden van onze chromosomen — bij elke celdeling korter worden, wat er met een cel gebeurt zodra ze zijn opgebruikt, hoe het telomerasegen dit proces beïnvloedt, en welke voedingsstoffen studies in verband brengen met het onderhoud van de telomeren.",
   "bullets": [
    "Telomeren en celveroudering — de basis",
    "Senescentie: wanneer cellen in slaapstand gaan",
@@ -858,7 +858,7 @@ const TXT = {
    "Wat zijn telomeren en waarom worden ze bij elke celdeling korter?",
    "Wat gebeurt er met een cel zodra haar telomeren zijn opgebruikt?",
    "Wat doet het telomerasegen?",
-   "Welke voedingsstoffen ondersteunen het onderhoud van de telomeren — en waarom werkt het mediterrane dieet niet bij iedereen?"
+   "Welke voedingsstoffen brengen studies in verband met het onderhoud van de telomeren — en waarom werkt het mediterrane dieet niet bij iedereen?"
   ],
   "postVideoText": "Met deze wetenschappelijke basis kun je de analyse van de biologische leeftijd op een solide fundament met je cliënten bespreken.",
   "questions": [
@@ -913,7 +913,7 @@ const TXT = {
     "correct": 2
    },
    {
-    "q": "Welke voedingsstoffen kunnen het onderhoud van de telomeren ondersteunen wanneer het beschermende gen minder goed werkt?",
+    "q": "Welke voedingsstoffen brengen studies in verband met het onderhoud van de telomeren?",
     "options": [
      "Vitamine C, Zink, Seleen, IJzer en Magnesium",
      "Vitamine D3, Omega-3, Vitamine E, Resveratrol en Ginkgo",
@@ -957,7 +957,7 @@ const TXT = {
     "options": [
      "Niets doen — telomeren kun je sowieso niet beïnvloeden",
      "Meer bewegen — voeding maakt voor de telomeren helemaal geen verschil",
-     "Meer ondersteunende voedingsstoffen innemen om telomeerverlies te vertragen",
+     "Gerichte leefstijlmaatregelen en een voeding met de juiste voedingsstoffen om de zwakkere genetische beschermingsfunctie te ondersteunen",
      "Overstappen op een mediterraan dieet — dat werkt immers bij iedereen"
     ],
     "correct": 2
@@ -1047,7 +1047,7 @@ const TXT = {
  "ba-faq-en": {
   "topic": "Veelgestelde vragen",
   "description": "Antwoorden op typische vragen van cliënten over de analyse van de biologische leeftijd.",
-  "longDescription": "Een verzameling van de belangrijkste vragen over de telomeer- en anti-aginganalyse. Met inklapbare antwoorden voor zelfstudie.",
+  "longDescription": "Een verzameling van de belangrijkste vragen over de telomeeranalyse en de biologische leeftijd. Met inklapbare antwoorden voor zelfstudie.",
   "bullets": [
    "Wat zijn telomeren en waarom verouderen we?",
    "Hoe beïnvloedt mijn genetica de biologische leeftijd?",
@@ -1756,8 +1756,8 @@ const FAQTX = {
       "a": "Verrassend genoeg niet. Studies hebben aangetoond dat een mediterraan dieet alleen bij mensen met bepaalde genvarianten helpt om de telomeren langer te behouden — bij alle anderen heeft het geen effect op de telomeren. Je rapport laat zien tot welke groep je behoort. Dit geldt alleen voor de telomeren, niet voor andere effecten van het dieet — en het is een duidelijk voorbeeld dat hetzelfde leefstijladvies niet bij iedereen hetzelfde werkt."
      },
      {
-      "q": "Welke voedingsstoffen ondersteunen de telomeren?",
-      "a": "Vitamine D3, Omega-3, Vitamine E, Resveratrol en Ginkgo. Als het genetische beschermingssysteem minder goed werkt, kan een hogere inname van deze voedingsstoffen — bijvoorbeeld door meer voedingsmiddelen te eten die ze bevatten — helpen om de verkorting van de telomeren te vertragen. Terugdraaien kunnen ze die verkorting niet."
+      "q": "Welke voedingsstoffen worden in verband gebracht met de telomeren?",
+      "a": "Studies brengen vitamine D3, omega-3, vitamine E, resveratrol en ginkgo in verband met het onderhoud van de telomeren. Als je genetische beschermingssysteem minder goed werkt, kun je meer voedingsmiddelen eten die rijk zijn aan vitamine D, omega-3-vetzuren en vitamine E. De verkorting kan niet worden teruggedraaid."
      },
      {
       "q": "Kan ik vrije radicalen beïnvloeden?",
@@ -1769,12 +1769,12 @@ const FAQTX = {
     "title": "Invloed en verwachtingen",
     "items": [
      {
-      "q": "Hoe snel zie ik resultaat van anti-agingmaatregelen?",
-      "a": "Niet van de ene dag op de andere. De aanbevolen maatregelen kunnen telomeren niet laten teruggroeien — ze helpen hun verkorting te vertragen, zodat het voordeel zich geleidelijk over vele jaren opbouwt. Let op: de genetische analyse laat je aanleg zien, niet de huidige lengte van je telomeren; het analyseresultaat zelf verandert door deze maatregelen dus niet."
+      "q": "Hoe snel zie ik resultaat van de aanbevolen maatregelen?",
+      "a": "Niet van de ene dag op de andere. De aanbevolen maatregelen kunnen telomeren niet laten teruggroeien; een eventueel voordeel bouwt zich over vele jaren op. Let op: de genetische analyse laat je aanleg zien, niet de huidige lengte van je telomeren; het analyseresultaat zelf verandert door deze maatregelen dus niet."
      },
      {
       "q": "Wat heb ik in de praktijk aan deze kennis?",
-      "a": "Je weet hoe goed je genen je telomeren in stand houden — en of een mediterraan dieet je daarbij helpt. Als het onderhoud van je telomeren verminderd is, kun je daar bewust op reageren door je inname van Vitamine D3, Omega-3, Vitamine E, Resveratrol en Ginkgo te verhogen, bijvoorbeeld via voedingsmiddelen die deze stoffen bevatten. Daarnaast is een algemeen gezonde leefstijl met een antioxidantrijk dieet, regelmatige beweging en voldoende slaap zinvol."
+      "a": "Je weet hoe goed je genen je telomeren in stand houden — en of een mediterraan dieet je daarbij helpt. Als het onderhoud van je telomeren verminderd is, kun je meer voedingsmiddelen eten die rijk zijn aan vitamine D, omega-3-vetzuren en vitamine E. Daarnaast is een algemeen gezonde leefstijl met een antioxidantrijk dieet, regelmatige beweging en voldoende slaap zinvol."
      }
     ]
    }

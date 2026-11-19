@@ -846,7 +846,7 @@ const TXT = {
  "ba-sci-en": {
   "topic": "Fundamentos Científicos",
   "description": "Por que razão os telómeros encurtam, como o gene da telomerase afeta a idade biológica — e que nutrientes podem ajudar.",
-  "longDescription": "Esta formação explica a base científica da análise da idade biológica. Irá aprender por que razão os telómeros — as extremidades protetoras dos nossos cromossomas — ficam mais curtos a cada divisão celular, o que acontece a uma célula quando estes se esgotam, como o gene da telomerase influencia este processo e que nutrientes podem apoiar a manutenção dos telómeros quando os genes funcionam pior.",
+  "longDescription": "Esta formação explica a base científica da análise da idade biológica. Irá aprender por que razão os telómeros — as extremidades protetoras dos nossos cromossomas — ficam mais curtos a cada divisão celular, o que acontece a uma célula quando estes se esgotam, como o gene da telomerase influencia este processo e que nutrientes os estudos associam à manutenção dos telómeros.",
   "bullets": [
    "Telómeros e envelhecimento celular — os fundamentos",
    "Senescência: quando as células entram em modo de repouso",
@@ -858,7 +858,7 @@ const TXT = {
    "O que são os telómeros e por que razão encurtam a cada divisão celular?",
    "O que acontece a uma célula quando os seus telómeros se esgotam?",
    "O que faz o gene da telomerase?",
-   "Que nutrientes apoiam a manutenção dos telómeros — e por que razão a dieta mediterrânica não funciona para toda a gente?"
+   "Que nutrientes os estudos associam à manutenção dos telómeros — e por que razão a dieta mediterrânica não funciona para toda a gente?"
   ],
   "postVideoText": "Com esta base científica, poderá discutir a análise da idade biológica com os seus clientes numa base sólida.",
   "questions": [
@@ -913,7 +913,7 @@ const TXT = {
     "correct": 2
    },
    {
-    "q": "Que nutrientes podem apoiar a manutenção dos telómeros quando o gene protetor funciona pior?",
+    "q": "Que nutrientes os estudos associam à manutenção dos telómeros?",
     "options": [
      "Vitamina C, zinco, selénio, ferro e magnésio",
      "Vitamina D3, ómega-3, vitamina E, resveratrol e ginkgo",
@@ -957,7 +957,7 @@ const TXT = {
     "options": [
      "Ignorá-lo — de qualquer forma, os telómeros não podem ser influenciados",
      "Fazer mais exercício — a alimentação não faz diferença",
-     "Aumentar os nutrientes de apoio para abrandar o encurtamento dos telómeros",
+     "Medidas de estilo de vida direcionadas e uma alimentação com os nutrientes adequados para apoiar a função protetora genética mais fraca",
      "Mudar para a dieta mediterrânica — funciona para toda a gente"
     ],
     "correct": 2
@@ -1047,7 +1047,7 @@ const TXT = {
  "ba-faq-en": {
   "topic": "Perguntas Frequentes",
   "description": "Respostas às perguntas típicas dos clientes sobre a análise da idade biológica.",
-  "longDescription": "Uma coletânea das perguntas mais importantes sobre a análise dos telómeros e anti-envelhecimento. Com respostas recolhíveis para autoestudo.",
+  "longDescription": "Uma coletânea das perguntas mais importantes sobre a análise dos telómeros e a idade biológica. Com respostas recolhíveis para autoestudo.",
   "bullets": [
    "O que são os telómeros e por que envelhecemos?",
    "Como a minha genética afeta a idade biológica?",
@@ -1756,8 +1756,8 @@ const FAQTX = {
       "a": "Surpreendentemente, não. Os estudos mostraram que a dieta mediterrânica só ajuda a manter os telómeros mais longos em pessoas com determinadas variantes genéticas — nas restantes, não tem qualquer efeito nos telómeros. O teu relatório mostra a que grupo pertences. Isto refere-se apenas aos telómeros, não a outros efeitos da dieta — e é um exemplo claro de que o mesmo conselho de estilo de vida não funciona da mesma forma para toda a gente."
      },
      {
-      "q": "Que nutrientes apoiam os telómeros?",
-      "a": "Vitamina D3, ómega-3, vitamina E, resveratrol e ginkgo. Quando o sistema genético de proteção funciona pior, aumentar a ingestão destes nutrientes — por exemplo, comendo mais alimentos que os contenham — pode ajudar a abrandar o encurtamento dos telómeros. No entanto, estes nutrientes não conseguem revertê-lo."
+      "q": "Que nutrientes são associados aos telómeros?",
+      "a": "Os estudos associam a vitamina D3, o ómega-3, a vitamina E, o resveratrol e o ginkgo à manutenção dos telómeros. Se o teu sistema genético de proteção funcionar pior, podes comer mais alimentos ricos em vitamina D, ácidos gordos ómega-3 e vitamina E. O encurtamento não pode ser revertido."
      },
      {
       "q": "Posso influenciar os radicais livres?",
@@ -1769,12 +1769,12 @@ const FAQTX = {
     "title": "Influência e expectativas",
     "items": [
      {
-      "q": "Com que rapidez vou ver resultados das medidas anti-envelhecimento?",
-      "a": "Não de um dia para o outro. As medidas recomendadas não fazem os telómeros voltar a crescer — ajudam a abrandar o seu encurtamento, pelo que o benefício se vai acumulando gradualmente ao longo de muitos anos. Tem em conta que a análise genética mostra a tua predisposição, não o comprimento atual dos teus telómeros; por isso, o resultado da análise em si não se altera com estas medidas."
+      "q": "Com que rapidez vou ver resultados das medidas recomendadas?",
+      "a": "Não de um dia para o outro. As medidas recomendadas não fazem os telómeros voltar a crescer; um eventual benefício acumula-se ao longo de muitos anos. Tem em conta que a análise genética mostra a tua predisposição, não o comprimento atual dos teus telómeros; por isso, o resultado da análise em si não se altera com estas medidas."
      },
      {
       "q": "Que utilidade prática tem para mim este conhecimento?",
-      "a": "Ficas a saber até que ponto os teus genes mantêm os telómeros — e se a dieta mediterrânica te ajuda neste aspeto. Se a manutenção dos teus telómeros estiver comprometida, podes reagir de forma deliberada aumentando a ingestão de vitamina D3, ómega-3, vitamina E, resveratrol e ginkgo, por exemplo através de alimentos que os contenham. Também faz sentido um estilo de vida saudável em geral, com uma alimentação rica em antioxidantes, exercício regular e sono suficiente."
+      "a": "Ficas a saber até que ponto os teus genes mantêm os telómeros — e se a dieta mediterrânica te ajuda neste aspeto. Se a manutenção dos teus telómeros estiver comprometida, podes comer mais alimentos ricos em vitamina D, ácidos gordos ómega-3 e vitamina E. Também faz sentido um estilo de vida saudável em geral, com uma alimentação rica em antioxidantes, exercício regular e sono suficiente."
      }
     ]
    }

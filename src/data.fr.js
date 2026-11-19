@@ -842,7 +842,7 @@ const TXT = {
  "ba-sci-en": {
   "topic": "Bases scientifiques",
   "description": "Pourquoi les télomères raccourcissent, comment le gène de la télomérase influence l'âge biologique — et quels nutriments peuvent aider.",
-  "longDescription": "Cette formation explique les bases scientifiques de l'analyse de l'âge biologique. Vous apprendrez pourquoi les télomères — les extrémités protectrices de nos chromosomes — raccourcissent à chaque division cellulaire, ce qui arrive à une cellule lorsqu'ils sont épuisés, comment le gène de la télomérase influence ce processus, et quels nutriments peuvent soutenir le maintien des télomères lorsque les gènes fonctionnent moins bien.",
+  "longDescription": "Cette formation explique les bases scientifiques de l'analyse de l'âge biologique. Vous apprendrez pourquoi les télomères — les extrémités protectrices de nos chromosomes — raccourcissent à chaque division cellulaire, ce qui arrive à une cellule lorsqu'ils sont épuisés, comment le gène de la télomérase influence ce processus, et quels nutriments les études associent au maintien des télomères.",
   "bullets": [
    "Télomères et vieillissement cellulaire — les bases",
    "Sénescence : quand les cellules passent en mode veille",
@@ -854,7 +854,7 @@ const TXT = {
    "Que sont les télomères et pourquoi raccourcissent-ils à chaque division cellulaire ?",
    "Qu'arrive-t-il à une cellule lorsque ses télomères sont épuisés ?",
    "Quel est le rôle du gène de la télomérase ?",
-   "Quels nutriments soutiennent le maintien des télomères — et pourquoi le régime méditerranéen ne fonctionne-t-il pas chez tout le monde ?"
+   "Quels nutriments les études associent-elles au maintien des télomères — et pourquoi le régime méditerranéen ne fonctionne-t-il pas chez tout le monde ?"
   ],
   "postVideoText": "Avec ce socle scientifique, vous pouvez discuter sur des bases solides de l'analyse de l'âge biologique avec vos clients.",
   "questions": [
@@ -909,7 +909,7 @@ const TXT = {
     "correct": 2
    },
    {
-    "q": "Quels nutriments peuvent soutenir le maintien des télomères lorsque le gène protecteur fonctionne moins bien ?",
+    "q": "Quels nutriments les études associent-elles au maintien des télomères ?",
     "options": [
      "Vitamine C, zinc, sélénium, fer et magnésium",
      "Vitamine D3, oméga-3, vitamine E, resvératrol et ginkgo",
@@ -953,7 +953,7 @@ const TXT = {
     "options": [
      "L'ignorer — les télomères ne peuvent de toute façon pas être influencés",
      "Faire plus d'exercice — l'alimentation ne change rien",
-     "Augmenter l'apport en nutriments qui freinent la perte des télomères",
+     "Des mesures ciblées d'hygiène de vie et une alimentation apportant les bons nutriments pour soutenir la fonction protectrice génétique plus faible",
      "Passer au régime méditerranéen — il fonctionne chez tout le monde"
     ],
     "correct": 2
@@ -1043,7 +1043,7 @@ const TXT = {
  "ba-faq-en": {
   "topic": "Questions fréquemment posées",
   "description": "Réponses aux questions typiques des clients sur l'analyse de l'âge biologique.",
-  "longDescription": "Une collection des questions les plus importantes sur l'analyse des télomères et anti-âge. Avec des réponses dépliables pour l'auto-apprentissage.",
+  "longDescription": "Une collection des questions les plus importantes sur l'analyse des télomères et l'âge biologique. Avec des réponses dépliables pour l'auto-apprentissage.",
   "bullets": [
    "Que sont les télomères et pourquoi vieillissons-nous ?",
    "Comment ma génétique affecte-t-elle l'âge biologique ?",
@@ -1749,8 +1749,8 @@ const FAQTX = {
       "a": "Étonnamment, non. Des études ont montré qu'un régime méditerranéen aide à conserver des télomères plus longs uniquement chez les personnes porteuses de certaines variantes génétiques — chez toutes les autres, il n'a aucun effet sur les télomères. Ton rapport indique à quel groupe tu appartiens. Cela concerne uniquement les télomères, pas les autres effets de ce régime — et cela illustre clairement qu'un même conseil de mode de vie ne fonctionne pas de la même façon pour tout le monde."
      },
      {
-      "q": "Quels nutriments soutiennent les télomères ?",
-      "a": "La vitamine D3, les oméga-3, la vitamine E, le resvératrol et le ginkgo. Lorsque le système de protection génétique fonctionne moins bien, augmenter l'apport en ces nutriments — par exemple en mangeant davantage d'aliments qui en contiennent — peut aider à ralentir le raccourcissement des télomères. Ces nutriments ne peuvent pas l'inverser."
+      "q": "Quels nutriments sont associés aux télomères ?",
+      "a": "Les études associent la vitamine D3, les oméga-3, la vitamine E, le resvératrol et le ginkgo au maintien des télomères. Si ton système de protection génétique fonctionne moins bien, tu peux manger davantage d'aliments riches en vitamine D, en acides gras oméga-3 et en vitamine E. Le raccourcissement ne peut pas être inversé."
      },
      {
       "q": "Puis-je influencer les radicaux libres ?",
@@ -1762,12 +1762,12 @@ const FAQTX = {
     "title": "Influence et attentes",
     "items": [
      {
-      "q": "À quelle vitesse verrai-je les résultats des mesures anti-âge ?",
-      "a": "Pas du jour au lendemain. Les mesures recommandées ne peuvent pas faire repousser les télomères — elles aident à ralentir leur raccourcissement, si bien que le bénéfice s'accumule progressivement au fil de nombreuses années. À noter : l'analyse génétique montre ta prédisposition, pas la longueur actuelle de tes télomères ; le résultat de l'analyse lui-même ne change donc pas sous l'effet de ces mesures."
+      "q": "À quelle vitesse verrai-je les résultats des mesures recommandées ?",
+      "a": "Pas du jour au lendemain. Les mesures recommandées ne peuvent pas faire repousser les télomères ; un éventuel bénéfice s'accumule au fil de nombreuses années. À noter : l'analyse génétique montre ta prédisposition, pas la longueur actuelle de tes télomères ; le résultat de l'analyse lui-même ne change donc pas sous l'effet de ces mesures."
      },
      {
       "q": "Quelle utilité pratique ces connaissances m'apportent-elles ?",
-      "a": "Tu sais avec quelle efficacité tes gènes maintiennent tes télomères — et si un régime méditerranéen t'aide sur ce plan. Si le maintien des télomères est altéré, tu peux réagir de manière ciblée en augmentant l'apport en vitamine D3, oméga-3, vitamine E, resvératrol et ginkgo, par exemple grâce à des aliments qui en contiennent. Un mode de vie globalement sain, avec une alimentation riche en antioxydants, une activité physique régulière et un sommeil suffisant, est également judicieux."
+      "a": "Tu sais avec quelle efficacité tes gènes maintiennent tes télomères — et si un régime méditerranéen t'aide sur ce plan. Si le maintien des télomères est altéré, tu peux manger davantage d'aliments riches en vitamine D, en acides gras oméga-3 et en vitamine E. Un mode de vie globalement sain, avec une alimentation riche en antioxydants, une activité physique régulière et un sommeil suffisant, est également judicieux."
      }
     ]
    }

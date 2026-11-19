@@ -846,7 +846,7 @@ const TXT = {
  "ba-sci-en": {
   "topic": "Basi scientifiche",
   "description": "Perché i telomeri si accorciano, come il gene della telomerasi influisce sull'età biologica e quali nutrienti possono aiutare.",
-  "longDescription": "Questo modulo formativo spiega le basi scientifiche dell'analisi dell'età biologica. Imparerai perché i telomeri, le estremità protettive dei nostri cromosomi, si accorciano a ogni divisione cellulare, che cosa succede a una cellula quando i suoi telomeri sono esauriti, come il gene della telomerasi influenza questo processo e quali nutrienti possono sostenere il mantenimento dei telomeri quando i geni funzionano meno bene.",
+  "longDescription": "Questo modulo formativo spiega le basi scientifiche dell'analisi dell'età biologica. Imparerai perché i telomeri, le estremità protettive dei nostri cromosomi, si accorciano a ogni divisione cellulare, che cosa succede a una cellula quando i suoi telomeri sono esauriti, come il gene della telomerasi influenza questo processo e quali nutrienti gli studi associano al mantenimento dei telomeri.",
   "bullets": [
    "Telomeri e invecchiamento cellulare: le basi",
    "Senescenza: quando le cellule entrano in uno stato di riposo",
@@ -858,7 +858,7 @@ const TXT = {
    "Che cosa sono i telomeri e perché si accorciano a ogni divisione cellulare?",
    "Che cosa succede a una cellula quando i suoi telomeri si sono esauriti?",
    "Che cosa fa il gene della telomerasi?",
-   "Quali nutrienti sostengono il mantenimento dei telomeri, e perché la dieta mediterranea non funziona per tutti?"
+   "Quali nutrienti gli studi associano al mantenimento dei telomeri, e perché la dieta mediterranea non funziona per tutti?"
   ],
   "postVideoText": "Con queste basi scientifiche potrai discutere su solide fondamenta l'analisi dell'età biologica insieme ai tuoi clienti.",
   "questions": [
@@ -913,7 +913,7 @@ const TXT = {
     "correct": 2
    },
    {
-    "q": "Quali nutrienti possono sostenere il mantenimento dei telomeri quando il gene protettivo funziona meno bene?",
+    "q": "Quali nutrienti gli studi associano al mantenimento dei telomeri?",
     "options": [
      "Vitamina C, zinco, selenio, ferro e magnesio",
      "Vitamina D3, Omega-3, vitamina E, resveratrolo e ginkgo",
@@ -957,7 +957,7 @@ const TXT = {
     "options": [
      "Ignorarlo: i telomeri non possono comunque essere influenzati",
      "Fare più attività fisica: l'alimentazione non fa differenza",
-     "Aumentare i nutrienti di supporto per rallentare l'accorciamento dei telomeri",
+     "Misure mirate sullo stile di vita e un'alimentazione con i nutrienti adatti per sostenere la funzione protettiva genetica più debole",
      "Passare alla dieta mediterranea: funziona per tutti"
     ],
     "correct": 2
@@ -1047,7 +1047,7 @@ const TXT = {
  "ba-faq-en": {
   "topic": "Domande frequenti",
   "description": "Risposte alle domande tipiche dei clienti sull'analisi dell'età biologica.",
-  "longDescription": "Una raccolta delle domande più importanti sull'analisi dei telomeri e anti-aging. Con risposte a comparsa per lo studio individuale.",
+  "longDescription": "Una raccolta delle domande più importanti sull'analisi dei telomeri e sull'età biologica. Con risposte a comparsa per lo studio individuale.",
   "bullets": [
    "Cosa sono i telomeri e perché invecchiamo?",
    "Come la mia genetica influisce sull'età biologica?",
@@ -1756,8 +1756,8 @@ const FAQTX = {
       "a": "Sorprendentemente, no. Gli studi hanno mostrato che la dieta mediterranea aiuta a mantenere più lunghi i telomeri solo nelle persone con determinate varianti genetiche; in tutte le altre non ha alcun effetto sui telomeri. Il tuo referto mostra a quale gruppo appartieni. Questo riguarda solo i telomeri, non gli altri effetti della dieta, ed è un chiaro esempio del fatto che lo stesso consiglio sullo stile di vita non funziona allo stesso modo per tutti."
      },
      {
-      "q": "Quali nutrienti sostengono i telomeri?",
-      "a": "Vitamina D3, Omega-3, vitamina E, resveratrolo e ginkgo. Quando il sistema di protezione genetico funziona meno bene, aumentare l'apporto di questi nutrienti, ad esempio mangiando più alimenti che li contengono, può aiutare a rallentare l'accorciamento dei telomeri. Questi nutrienti non possono però invertirlo."
+      "q": "Quali nutrienti vengono associati ai telomeri?",
+      "a": "Gli studi associano vitamina D3, Omega-3, vitamina E, resveratrolo e ginkgo al mantenimento dei telomeri. Se il tuo sistema di protezione genetico funziona meno bene, puoi mangiare più alimenti ricchi di vitamina D, acidi grassi Omega-3 e vitamina E. L'accorciamento non può essere invertito."
      },
      {
       "q": "Posso influire sui radicali liberi?",
@@ -1769,12 +1769,12 @@ const FAQTX = {
     "title": "Influenza e aspettative",
     "items": [
      {
-      "q": "Quanto rapidamente vedrò i risultati delle misure anti-aging?",
-      "a": "Non da un giorno all'altro. Le misure raccomandate non possono far ricrescere i telomeri: aiutano a rallentarne l'accorciamento, quindi il beneficio si accumula gradualmente nel corso di molti anni. Tieni presente che l'analisi genetica mostra la tua predisposizione, non la lunghezza attuale dei tuoi telomeri: il risultato dell'analisi in sé, quindi, non cambia con queste misure."
+      "q": "Quanto rapidamente vedrò i risultati delle misure raccomandate?",
+      "a": "Non da un giorno all'altro. Le misure raccomandate non possono far ricrescere i telomeri; un eventuale beneficio si accumula nel corso di molti anni. Tieni presente che l'analisi genetica mostra la tua predisposizione, non la lunghezza attuale dei tuoi telomeri: il risultato dell'analisi in sé, quindi, non cambia con queste misure."
      },
      {
       "q": "Che utilità pratica ha per me questa conoscenza?",
-      "a": "Sai quanto bene i tuoi geni mantengono i telomeri e se, da questo punto di vista, la dieta mediterranea ti aiuta. Se il mantenimento dei telomeri è compromesso, puoi reagire in modo mirato aumentando l'apporto di vitamina D3, Omega-3, vitamina E, resveratrolo e ginkgo, ad esempio attraverso gli alimenti che li contengono. È inoltre sensato adottare uno stile di vita complessivamente sano, con un'alimentazione ricca di antiossidanti, attività fisica regolare e un sonno sufficiente."
+      "a": "Sai quanto bene i tuoi geni mantengono i telomeri e se, da questo punto di vista, la dieta mediterranea ti aiuta. Se il mantenimento dei telomeri è compromesso, puoi mangiare più alimenti ricchi di vitamina D, acidi grassi Omega-3 e vitamina E. È inoltre sensato adottare uno stile di vita complessivamente sano, con un'alimentazione ricca di antiossidanti, attività fisica regolare e un sonno sufficiente."
      }
     ]
    }

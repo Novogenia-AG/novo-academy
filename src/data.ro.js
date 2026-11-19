@@ -93,7 +93,7 @@ const TXT = {
  "ba-sci-en": {
   "topic": "Baza științifică",
   "description": "De ce se scurtează telomerii, cum influențează gena telomerazei vârsta biologică — și ce nutrienți pot ajuta.",
-  "longDescription": "Acest training explică baza științifică a analizei vârstei biologice. Vei afla de ce telomerii — capetele protectoare ale cromozomilor noștri — se scurtează la fiecare diviziune celulară, ce se întâmplă cu o celulă atunci când aceștia s-au consumat, cum influențează gena telomerazei acest proces și ce nutrienți pot susține menținerea telomerilor atunci când genele funcționează mai puțin bine.",
+  "longDescription": "Acest training explică baza științifică a analizei vârstei biologice. Vei afla de ce telomerii — capetele protectoare ale cromozomilor noștri — se scurtează la fiecare diviziune celulară, ce se întâmplă cu o celulă atunci când aceștia s-au consumat, cum influențează gena telomerazei acest proces și ce nutrienți asociază studiile cu menținerea telomerilor.",
   "postVideoText": "Cu această bază științifică poți discuta analiza vârstei biologice cu clienții tăi pe un fundament solid.",
   "introQuestionsHeader": "Acest training răspunde la:",
   "bullets": [
@@ -106,7 +106,7 @@ const TXT = {
    "Ce sunt telomerii și de ce se scurtează la fiecare diviziune celulară?",
    "Ce se întâmplă cu o celulă atunci când telomerii ei s-au consumat?",
    "Ce face gena telomerazei?",
-   "Ce nutrienți susțin menținerea telomerilor — și de ce dieta mediteraneană nu funcționează pentru toată lumea?"
+   "Ce nutrienți asociază studiile cu menținerea telomerilor — și de ce dieta mediteraneană nu funcționează pentru toată lumea?"
   ],
   "questions": [
    {
@@ -160,7 +160,7 @@ const TXT = {
     "correct": 2
    },
    {
-    "q": "Ce nutrienți pot susține menținerea telomerilor atunci când gena protectoare funcționează mai puțin bine?",
+    "q": "Ce nutrienți asociază studiile cu menținerea telomerilor?",
     "options": [
      "Vitamina C, zinc, seleniu, fier și magneziu",
      "Vitamina D3, Omega-3, vitamina E, resveratrol și ginkgo",
@@ -204,7 +204,7 @@ const TXT = {
     "options": [
      "Să ignore defectul — oricum telomerii nu pot fi influențați",
      "Să facă mai mult sport — alimentația nu contează",
-     "Să crească aportul de nutrienți care încetinesc scurtarea telomerilor",
+     "Măsuri țintite privind stilul de viață și o alimentație cu nutrienții potriviți, pentru a susține funcția genetică de protecție mai slabă",
      "Să treacă la dieta mediteraneană — aceasta funcționează la toată lumea"
     ],
     "correct": 2
@@ -294,7 +294,7 @@ const TXT = {
  "ba-faq-en": {
   "topic": "Întrebări frecvente",
   "description": "Răspunsuri la întrebările tipice ale clienților despre analiza vârstei biologice.",
-  "longDescription": "O colecție a celor mai importante întrebări despre analiza telomerilor și anti-îmbătrânire. Cu răspunsuri pliabile pentru studiu individual.",
+  "longDescription": "O colecție a celor mai importante întrebări despre analiza telomerilor și vârsta biologică. Cu răspunsuri pliabile pentru studiu individual.",
   "bullets": [
    "Ce sunt telomerii și de ce îmbătrânim?",
    "Cum îmi afectează genetica vârsta biologică?",
@@ -1750,8 +1750,8 @@ const FAQTX = {
       "a": "Surprinzător, nu. Studiile au arătat că dieta mediteraneană contribuie la menținerea unor telomeri mai lungi doar la persoanele cu anumite variante genetice — la toți ceilalți nu are niciun efect asupra telomerilor. Raportul tău arată din ce grupă faci parte. Acest lucru se referă doar la telomeri, nu și la alte efecte ale dietei — și este un exemplu clar că același sfat privind stilul de viață nu funcționează la fel pentru toată lumea."
      },
      {
-      "q": "Ce nutrienți susțin telomerii?",
-      "a": "Vitamina D3, Omega-3, vitamina E, resveratrolul și ginkgo. Când sistemul genetic de protecție funcționează mai puțin bine, creșterea aportului acestor nutrienți — de exemplu, prin consumul mai multor alimente care îi conțin — poate ajuta la încetinirea scurtării telomerilor. Acești nutrienți nu o pot însă inversa."
+      "q": "Ce nutrienți sunt asociați cu telomerii?",
+      "a": "Studiile asociază vitamina D3, Omega-3, vitamina E, resveratrolul și ginkgo cu menținerea telomerilor. Dacă sistemul tău genetic de protecție funcționează mai puțin bine, poți consuma mai multe alimente bogate în vitamina D, acizi grași Omega-3 și vitamina E. Scurtarea nu poate fi inversată."
      },
      {
       "q": "Pot influența radicalii liberi?",
@@ -1763,12 +1763,12 @@ const FAQTX = {
     "title": "Influență și așteptări",
     "items": [
      {
-      "q": "Cât de repede voi vedea rezultate în urma măsurilor anti-îmbătrânire?",
-      "a": "Nu peste noapte. Măsurile recomandate nu pot face telomerii să crească la loc — ele ajută la încetinirea scurtării lor, așa că beneficiul se acumulează treptat, de-a lungul multor ani. Reține că analiza genetică arată predispoziția ta, nu lungimea actuală a telomerilor tăi; prin urmare, rezultatul analizei în sine nu se modifică prin aceste măsuri."
+      "q": "Cât de repede voi vedea rezultate în urma măsurilor recomandate?",
+      "a": "Nu peste noapte. Măsurile recomandate nu pot face telomerii să crească la loc; un eventual beneficiu se acumulează de-a lungul multor ani. Reține că analiza genetică arată predispoziția ta, nu lungimea actuală a telomerilor tăi; prin urmare, rezultatul analizei în sine nu se modifică prin aceste măsuri."
      },
      {
       "q": "Ce folos practic îmi aduce această cunoaștere?",
-      "a": "Știi cât de bine îți mențin genele telomerii — și dacă dieta mediteraneană te ajută în această privință. Dacă menținerea telomerilor este afectată, poți reacționa în mod deliberat, crescând aportul de vitamina D3, Omega-3, vitamina E, resveratrol și ginkgo, de exemplu, prin alimente care conțin aceste substanțe. Un stil de viață sănătos în general, cu o alimentație bogată în antioxidanți, exercițiu fizic regulat și somn suficient, este, de asemenea, recomandabil."
+      "a": "Știi cât de bine îți mențin genele telomerii — și dacă dieta mediteraneană te ajută în această privință. Dacă menținerea telomerilor este afectată, poți consuma mai multe alimente bogate în vitamina D, acizi grași Omega-3 și vitamina E. Un stil de viață sănătos în general, cu o alimentație bogată în antioxidanți, exercițiu fizic regulat și somn suficient, este, de asemenea, recomandabil."
      }
     ]
    }

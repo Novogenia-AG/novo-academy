@@ -1177,7 +1177,7 @@ export const COURSES_EN = [
     contentType: 'course',
     description: 'Why telomeres shorten, how the telomerase gene affects biological age — and which nutrients can help.',
     longDescription:
-      'This training explains the scientific basis of the biological age analysis. You will learn why telomeres — the protective ends of our chromosomes — get shorter with every cell division, what happens to a cell once they are used up, how the telomerase gene influences this process, and which nutrients can support telomere maintenance when the genes work less well.',
+      'This training explains the scientific basis of the biological age analysis. You will learn why telomeres — the protective ends of our chromosomes — get shorter with every cell division, what happens to a cell once they are used up, how the telomerase gene influences this process, and which nutrients studies link with telomere maintenance.',
     bullets: [
       'Telomeres and cell aging — the basics',
       'Senescence: when cells switch to sleep mode',
@@ -1196,7 +1196,7 @@ export const COURSES_EN = [
       'What are telomeres and why do they shorten with every cell division?',
       'What happens to a cell once its telomeres are used up?',
       'What does the telomerase gene do?',
-      'Which nutrients support telomere maintenance — and why doesn’t the Mediterranean diet work for everyone?',
+      'Which nutrients do studies link with telomere maintenance — and why doesn’t the Mediterranean diet work for everyone?',
     ],
     postVideoText:
       'With this scientific basis, you can discuss the biological age analysis with your clients on solid ground.',
@@ -1242,7 +1242,7 @@ export const COURSES_EN = [
         correct: 2,
       },
       {
-        q: 'Which nutrients can support telomere maintenance when the protective gene works less well?',
+        q: 'Which nutrients do studies link with telomere maintenance?',
         options: [
           'Vitamin C, Zinc, Selenium, Iron and Magnesium',
           'Vitamin D3, Omega-3, Vitamin E, Resveratrol and Ginkgo',
@@ -1281,7 +1281,7 @@ export const COURSES_EN = [
         options: [
           'Ignore it — telomeres cannot be influenced anyway',
           'Exercise more — nutrition makes no difference',
-          'Increase supporting nutrients to slow telomere shortening',
+          'Targeted lifestyle measures and a diet with the right nutrients to support the weaker genetic protective function',
           'Switch to a Mediterranean diet — it works for everyone',
         ],
         correct: 2,
@@ -1405,7 +1405,7 @@ export const COURSES_EN = [
     contentType: 'faq',
     description: 'Answers to typical client questions about the biological age analysis.',
     longDescription:
-      'A collection of the most important questions about the telomere and anti-aging analysis. With collapsible answers for self-study.',
+      'A collection of the most important questions about the telomere analysis and biological age. With collapsible answers for self-study.',
     bullets: [
       'What are telomeres and why do we age?',
       'How does my genetics affect biological age?',
@@ -1427,15 +1427,15 @@ export const COURSES_EN = [
         title: 'What lifestyle does',
         items: [
           { q: 'Does a Mediterranean diet help maintain telomeres in everyone?', a: 'Surprisingly, no. Studies have shown that a Mediterranean diet helps keep telomeres longer only in people with certain gene variants — in everyone else, it has no effect on the telomeres. Your report shows which group you belong to. This refers only to the telomeres, not to other effects of the diet — and it is a clear example that the same lifestyle advice does not work the same way for everyone.' },
-          { q: 'Which nutrients support telomeres?', a: 'Vitamin D3, Omega-3, Vitamin E, Resveratrol and Ginkgo. When the genetic protection system works less well, increasing these nutrients — for example by eating more foods that contain them — can help slow telomere shortening. They cannot reverse it.' },
+          { q: 'Which nutrients are linked with telomeres?', a: 'Studies link vitamin D3, omega-3, vitamin E, resveratrol and ginkgo with telomere maintenance. If your genetic protective system works less well, you can eat more foods rich in vitamin D, omega-3 fatty acids and vitamin E. Shortening cannot be reversed.' },
           { q: 'Can I influence free radicals?', a: 'Yes, to a degree. Free radicals continuously damage our cells and are one of the reasons we age. Antioxidants help counter this; they are found, for example, in foods rich in Vitamin C and Vitamin E or in polyphenols from berries and tea. An antioxidant-rich diet can therefore support healthy aging.' },
         ],
       },
       {
         title: 'Influence & expectations',
         items: [
-          { q: 'How quickly will I see results from anti-aging measures?', a: 'Not overnight. The recommended measures cannot make telomeres grow back — they help slow down their shortening, so the benefit builds up gradually over many years. Note that the genetic analysis shows your predisposition, not the current length of your telomeres, so the analysis result itself does not change through these measures.' },
-          { q: 'What practical use does this knowledge give me?', a: 'You know how well your genes maintain your telomeres — and whether a Mediterranean diet helps you in this respect. If telomere maintenance is impaired, you can respond deliberately by increasing Vitamin D3, Omega-3, Vitamin E, Resveratrol and Ginkgo, for example through foods that contain them. A generally healthy lifestyle with an antioxidant-rich diet, regular exercise and enough sleep is also sensible.' },
+          { q: 'How quickly will I see results from the recommended measures?', a: 'Not overnight. The recommended measures cannot make telomeres grow back; any benefit builds up over many years. Note that the genetic analysis shows your predisposition, not the current length of your telomeres, so the analysis result itself does not change through these measures.' },
+          { q: 'What practical use does this knowledge give me?', a: 'You know how well your genes maintain your telomeres — and whether a Mediterranean diet helps you in this respect. If telomere maintenance is impaired, you can eat more foods rich in vitamin D, omega-3 fatty acids and vitamin E. A generally healthy lifestyle with an antioxidant-rich diet, regular exercise and enough sleep is also sensible.' },
         ],
       },
     ],

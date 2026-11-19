@@ -842,7 +842,7 @@ const TXT = {
  "ba-sci-en": {
   "topic": "Vědecký základ",
   "description": "Proč se telomery zkracují, jak gen telomerázy ovlivňuje biologický věk — a které živiny mohou pomoci.",
-  "longDescription": "Toto školení vysvětluje vědecký základ analýzy biologického věku. Dozvíte se, proč se telomery — ochranné konce našich chromozomů — s každým buněčným dělením zkracují, co se stane s buňkou, když se spotřebují, jak gen telomerázy tento proces ovlivňuje a které živiny mohou podpořit udržování telomer, když geny fungují hůře.",
+  "longDescription": "Toto školení vysvětluje vědecký základ analýzy biologického věku. Dozvíte se, proč se telomery — ochranné konce našich chromozomů — s každým buněčným dělením zkracují, co se stane s buňkou, když se spotřebují, jak gen telomerázy tento proces ovlivňuje a které živiny studie spojují s udržováním telomer.",
   "bullets": [
    "Telomery a stárnutí buněk — základy",
    "Senescence: když buňky přejdou do spánkového režimu",
@@ -854,7 +854,7 @@ const TXT = {
    "Co jsou telomery a proč se s každým buněčným dělením zkracují?",
    "Co se stane s buňkou, když se její telomery spotřebují?",
    "Co dělá gen telomerázy?",
-   "Které živiny podporují udržování telomer — a proč středomořská strava nefunguje u každého?"
+   "Které živiny studie spojují s udržováním telomer — a proč středomořská strava nefunguje u každého?"
   ],
   "postVideoText": "S tímto vědeckým základem můžete se svými klienty diskutovat o analýze biologického věku na pevném podkladu.",
   "questions": [
@@ -909,7 +909,7 @@ const TXT = {
     "correct": 2
    },
    {
-    "q": "Které živiny mohou podpořit udržování telomer, když ochranný gen funguje hůře?",
+    "q": "Které živiny studie spojují s udržováním telomer?",
     "options": [
      "Vitamin C, zinek, selen, železo a hořčík",
      "Vitamin D3, omega-3, vitamin E, resveratrol a ginkgo",
@@ -953,7 +953,7 @@ const TXT = {
     "options": [
      "Ignorovat ho — telomery se stejně nijak ovlivnit nedají",
      "Více se hýbat — na výživě v tomto případě nezáleží",
-     "Zvýšit příjem podpůrných živin a zpomalit zkracování telomer",
+     "Cílená opatření v životním stylu a strava se vhodnými živinami na podporu slabší genetické ochranné funkce",
      "Přejít na středomořskou stravu — funguje u každého"
     ],
     "correct": 2
@@ -1043,7 +1043,7 @@ const TXT = {
  "ba-faq-en": {
   "topic": "Často kladené otázky",
   "description": "Odpovědi na typické otázky klientů o analýze biologického věku.",
-  "longDescription": "Soubor nejdůležitějších otázek o analýze telomer a anti-agingu. S rozbalovacími odpověďmi pro samostudium.",
+  "longDescription": "Soubor nejdůležitějších otázek o analýze telomer a biologickém věku. S rozbalovacími odpověďmi pro samostudium.",
   "bullets": [
    "Co jsou telomery a proč stárneme?",
    "Jak moje genetika ovlivňuje biologický věk?",
@@ -1749,8 +1749,8 @@ const FAQTX = {
       "a": "Překvapivě ne. Studie ukázaly, že středomořská strava pomáhá udržet telomery delší pouze u lidí s určitými genovými variantami — u všech ostatních na telomery nemá žádný účinek. Tvá zpráva ukazuje, do které skupiny patříš. Týká se to pouze telomer, nikoli jiných účinků této stravy — a je to jasný příklad toho, že stejné doporučení ohledně životního stylu nefunguje u každého stejně."
      },
      {
-      "q": "Které živiny telomery podporují?",
-      "a": "Vitamin D3, omega-3, vitamin E, resveratrol a ginkgo. Když genetický ochranný systém funguje hůře, může zvýšený příjem těchto živin — například tím, že budeš jíst více potravin, které je obsahují — pomoci zkracování telomer zpomalit. Zvrátit ho však tyto živiny nedokážou."
+      "q": "Které živiny jsou spojovány s telomerami?",
+      "a": "Studie spojují vitamin D3, omega-3, vitamin E, resveratrol a ginkgo s udržováním telomer. Když tvůj genetický ochranný systém funguje hůře, můžeš jíst více potravin bohatých na vitamin D, omega-3 mastné kyseliny a vitamin E. Zkracování telomer nelze zvrátit."
      },
      {
       "q": "Můžu volné radikály ovlivnit?",
@@ -1762,12 +1762,12 @@ const FAQTX = {
     "title": "Vliv a očekávání",
     "items": [
      {
-      "q": "Jak rychle uvidím výsledky anti-aging opatření?",
-      "a": "Ne ze dne na den. Doporučená opatření nedokážou telomery znovu prodloužit — pomáhají zpomalit jejich zkracování, takže se přínos buduje postupně během mnoha let. Měj na paměti, že genetická analýza ukazuje tvou predispozici, ne aktuální délku tvých telomer — samotný výsledek analýzy se tedy těmito opatřeními nezmění."
+      "q": "Jak rychle uvidím výsledky doporučených opatření?",
+      "a": "Ne ze dne na den. Doporučená opatření nedokážou telomery znovu prodloužit; případný přínos se buduje během mnoha let. Měj na paměti, že genetická analýza ukazuje tvou predispozici, ne aktuální délku tvých telomer — samotný výsledek analýzy se tedy těmito opatřeními nezmění."
      },
      {
       "q": "Jaký praktický užitek mi tato znalost přináší?",
-      "a": "Víš, jak dobře tvé geny udržují telomery — a zda ti v tomto ohledu pomáhá středomořská strava. Pokud je udržování telomer oslabené, můžeš cíleně reagovat tím, že zvýšíš příjem těchto živin: vitamin D3, omega-3, vitamin E, resveratrol a ginkgo — například prostřednictvím potravin, které je obsahují. Rozumný je také celkově zdravý životní styl se stravou bohatou na antioxidanty, pravidelným pohybem a dostatkem spánku."
+      "a": "Víš, jak dobře tvé geny udržují telomery — a zda ti v tomto ohledu pomáhá středomořská strava. Pokud je udržování telomer oslabené, můžeš jíst více potravin bohatých na vitamin D, omega-3 mastné kyseliny a vitamin E. Rozumný je také celkově zdravý životní styl se stravou bohatou na antioxidanty, pravidelným pohybem a dostatkem spánku."
      }
     ]
    }

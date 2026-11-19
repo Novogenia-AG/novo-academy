@@ -1859,7 +1859,7 @@ export const COURSES = [
           },
           {
             q: 'Welche Nährstoffe werden mit den Telomeren in Verbindung gebracht?',
-            a: 'Studien bringen Vitamin D3, Omega-3, Vitamin E, Resveratrol und Ginkgo mit dem Erhalt der Telomere in Verbindung. Wenn dein genetisches Schutzsystem schwächer arbeitet, kannst du mehr Lebensmittel essen, die diese Stoffe enthalten. Rückgängig machen lässt sich die Verkürzung nicht.',
+            a: 'Studien bringen Vitamin D3, Omega-3, Vitamin E, Resveratrol und Ginkgo mit dem Erhalt der Telomere in Verbindung. Wenn dein genetisches Schutzsystem schwächer arbeitet, kannst du mehr Lebensmittel essen, die reich an Vitamin D, Omega-3-Fettsäuren und Vitamin E sind. Rückgängig machen lässt sich die Verkürzung nicht.',
           },
           {
             q: 'Kann ich freie Radikale beeinflussen?',
@@ -1916,7 +1916,7 @@ export const COURSES = [
       'Was ist der Unterschied zwischen chronologischem und biologischem Alter?',
       'Was sind Telomere und warum werden sie bei jeder Zellteilung kürzer?',
       'Welche Gene beeinflussen die Zellalterung?',
-      'Welche Nährstoffe unterstützen die Erhaltung der Telomere — und warum wirkt mediterrane Ernährung nicht bei jedem?',
+      'Welche Nährstoffe bringen Studien mit dem Erhalt der Telomere in Verbindung – und warum wirkt mediterrane Ernährung nicht bei jedem?',
     ],
     postVideoText:
       'Mit dieser Grundlage kannst du die Analyse des biologischen Alters fachlich fundiert mit deinen Kunden besprechen.',
@@ -1967,7 +1967,7 @@ export const COURSES = [
         correct: 1,
       },
       {
-        q: 'Welche Nährstoffe können das Telomer-Schutzsystem bei genetischer Schwäche unterstützen?',
+        q: 'Welche Nährstoffe bringen Studien mit dem Erhalt der Telomere in Verbindung?',
         options: [
           'Koffein und Theobromin',
           'Vitamin D3, Omega-3, Vitamin E, Resveratrol und Ginkgo',

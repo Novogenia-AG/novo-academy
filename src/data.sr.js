@@ -257,7 +257,7 @@ const TXT = {
  "ba-sci-en": {
   "topic": "Naučna osnova",
   "description": "Zašto se telomere skraćuju, kako gen za telomerazu utiče na biološku starost — i koji nutrijenti mogu da pomognu.",
-  "longDescription": "Ova obuka objašnjava naučnu osnovu analize biološke starosti. Saznaćeš zašto se telomere — zaštitni krajevi naših hromozoma — skraćuju sa svakom deobom ćelije, šta se dešava sa ćelijom kada se one potroše, kako gen za telomerazu utiče na taj proces i koji nutrijenti mogu da podrže održavanje telomera kada geni rade slabije.",
+  "longDescription": "Ova obuka objašnjava naučnu osnovu analize biološke starosti. Saznaćeš zašto se telomere — zaštitni krajevi naših hromozoma — skraćuju sa svakom deobom ćelije, šta se dešava sa ćelijom kada se one potroše, kako gen za telomerazu utiče na taj proces i koje nutrijente studije povezuju sa održavanjem telomera.",
   "postVideoText": "Uz ovu naučnu osnovu možeš sa sigurnošću da razgovaraš sa svojim klijentima o analizi biološke starosti.",
   "introQuestionsHeader": "Ova obuka odgovara na pitanja:",
   "bullets": [
@@ -270,7 +270,7 @@ const TXT = {
    "Šta su telomere i zašto se skraćuju sa svakom deobom ćelije?",
    "Šta se dešava sa ćelijom kada se njene telomere potroše?",
    "Šta radi gen za telomerazu?",
-   "Koji nutrijenti podržavaju održavanje telomera — i zašto mediteranska ishrana ne deluje kod svih?"
+   "Koje nutrijente studije povezuju sa održavanjem telomera — i zašto mediteranska ishrana ne deluje kod svih?"
   ],
   "questions": [
    {
@@ -324,7 +324,7 @@ const TXT = {
     "correct": 2
    },
    {
-    "q": "Koji nutrijenti mogu da podrže održavanje telomera kada zaštitni gen radi slabije?",
+    "q": "Koje nutrijente studije povezuju sa održavanjem telomera?",
     "options": [
      "Vitamin C, cink, selen, gvožđe i magnezijum",
      "Vitamin D3, omega-3, vitamin E, resveratrol i ginko",
@@ -368,7 +368,7 @@ const TXT = {
     "options": [
      "Zanemariti defekt — na telomere se ionako ne može uticati",
      "Više vežbati — ishrana tu ne pravi nikakvu razliku",
-     "Unositi više nutrijenata koji usporavaju skraćivanje telomera",
+     "Ciljane mere u načinu života i ishrana sa odgovarajućim nutrijentima, kako bi se podržala slabija genetska zaštitna funkcija",
      "Preći na mediteransku ishranu — ona deluje kod svih ljudi"
     ],
     "correct": 2
@@ -458,7 +458,7 @@ const TXT = {
  "ba-faq-en": {
   "topic": "Često postavljana pitanja",
   "description": "Odgovori na tipična pitanja klijenata o analizi biološke starosti.",
-  "longDescription": "Zbirka najvažnijih pitanja o analizi telomera i anti-agingu. Sa sklopivim odgovorima za samostalno učenje.",
+  "longDescription": "Zbirka najvažnijih pitanja o analizi telomera i biološkoj starosti. Sa sklopivim odgovorima za samostalno učenje.",
   "bullets": [
    "Šta su telomere i zašto starimo?",
    "Kako moja genetika utiče na biološku starost?",
@@ -1750,8 +1750,8 @@ const FAQTX = {
       "a": "Iznenađujuće, ne. Studije su pokazale da mediteranska ishrana pomaže da se telomere održe dužim samo kod ljudi sa određenim genskim varijantama — kod svih ostalih nema efekta na telomere. Tvoj izveštaj pokazuje kojoj grupi pripadaš. To se odnosi samo na telomere, a ne i na druge efekte ove ishrane — i ujedno je jasan primer da isti savet o načinu života ne deluje jednako kod svih."
      },
      {
-      "q": "Koji nutrijenti podržavaju telomere?",
-      "a": "Vitamin D3, omega-3, vitamin E, resveratrol i ginko. Kada genetski sistem zaštite slabije funkcioniše, veći unos ovih nutrijenata — na primer tako što jedeš više namirnica koje ih sadrže — može da pomogne da se skraćivanje telomera uspori. Ti nutrijenti ne mogu da ponište skraćivanje."
+      "q": "Koji nutrijenti se povezuju sa telomerama?",
+      "a": "Studije povezuju vitamin D3, omega-3, vitamin E, resveratrol i ginko sa održavanjem telomera. Kada tvoj genetski sistem zaštite slabije funkcioniše, možeš da jedeš više namirnica bogatih vitaminom D, omega-3 masnim kiselinama i vitaminom E. Skraćivanje ne može da se poništi."
      },
      {
       "q": "Mogu li da utičem na slobodne radikale?",
@@ -1763,12 +1763,12 @@ const FAQTX = {
     "title": "Uticaj i očekivanja",
     "items": [
      {
-      "q": "Koliko brzo ću videti rezultate anti-aging mera?",
-      "a": "Ne preko noći. Preporučene mere ne mogu da vrate izgubljenu dužinu telomera — one pomažu da se njihovo skraćivanje uspori, pa se korist postepeno sabira tokom mnogo godina. Imaj u vidu da genetska analiza pokazuje tvoju predispoziciju, a ne trenutnu dužinu tvojih telomera, pa se sam rezultat analize ovim merama ne menja."
+      "q": "Koliko brzo ću videti rezultate preporučenih mera?",
+      "a": "Ne preko noći. Preporučene mere ne mogu da vrate izgubljenu dužinu telomera; eventualna korist se sabira tokom mnogo godina. Imaj u vidu da genetska analiza pokazuje tvoju predispoziciju, a ne trenutnu dužinu tvojih telomera, pa se sam rezultat analize ovim merama ne menja."
      },
      {
       "q": "Kakvu praktičnu korist mi donosi ovo znanje?",
-      "a": "Znaš koliko dobro tvoji geni održavaju telomere — i da li ti mediteranska ishrana u tome pomaže. Ako je održavanje telomera oslabljeno, možeš ciljano da reaguješ tako što ćeš povećati unos vitamina D3, omega-3, vitamina E, resveratrola i ginka, na primer kroz namirnice koje ih sadrže. Pored toga, ima smisla i zdrav način života uopšte: ishrana bogata antioksidansima, redovna fizička aktivnost i dovoljno sna."
+      "a": "Znaš koliko dobro tvoji geni održavaju telomere — i da li ti mediteranska ishrana u tome pomaže. Ako je održavanje telomera oslabljeno, možeš da jedeš više namirnica bogatih vitaminom D, omega-3 masnim kiselinama i vitaminom E. Pored toga, ima smisla i zdrav način života uopšte: ishrana bogata antioksidansima, redovna fizička aktivnost i dovoljno sna."
      }
     ]
    }
