@@ -2080,11 +2080,6 @@ function TestResultPage({ course, score, passed, navigate, onBack }) {
 }
 
 /* ===================== CERTIFICATE PAGE ===================== */
-function Signature() {
-  const [err, setErr] = useState(false)
-  if (err) return <span className="sig-empty" aria-hidden="true" />
-  return <img className="sig-img" src={assetUrl("/signature.png")} alt="Dr. Daniel Wallerstorfer" onError={() => setErr(true)} />
-}
 
 const formatDateDE = (d = new Date()) =>
   d.toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' })
