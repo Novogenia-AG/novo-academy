@@ -1089,7 +1089,7 @@ function YtConsentPlaceholder({ onAllow }) {
   const t = useT()
   return (
     <div className="yt-consent-placeholder">
-      <div className="yt-consent-icon">▶</div>
+      <div className="yt-consent-icon" aria-hidden="true">▶</div>
       <p className="yt-consent-hint">{t('cookie_yt_blocked_hint')}</p>
       <button className="btn-primary yt-consent-btn" onClick={onAllow}>{t('cookie_yt_allow')}</button>
     </div>
