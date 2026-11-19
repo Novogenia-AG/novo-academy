@@ -3561,8 +3561,8 @@ export const UI = {
   admin_action_reset_confirm: { de: 'Wirklich allen Kurs-Fortschritt dieses Nutzers löschen?',
                                 en: 'Really wipe ALL course progress for this user?' },
   admin_action_delete:        { de: 'Nutzer entfernen',              en: 'Delete user' },
-  admin_action_delete_confirm:{ de: 'Diesen Nutzer wirklich entfernen?\n\nDer Account bleibt zwar bestehen, wird aber aus der Admin-Liste ausgeblendet und alle Kurs-Fortschritte gelöscht.',
-                                en: 'Really delete this user?\n\nThe account itself stays but disappears from the admin list and all course progress is deleted.' },
+  admin_action_delete_confirm:{ de: 'Diesen Nutzer wirklich entfernen?\n\nDas Konto wird nur als gelöscht markiert: Es verschwindet aus der Admin-Liste und verliert Admin-Rechte. Anmeldung und Kurs-Fortschritte bleiben erhalten; über „Gelöschte anzeigen“ lässt es sich wiederherstellen. Für eine Löschung nach DSGVO reicht das nicht.',
+                                en: 'Really remove this user?\n\nThe account is only marked as deleted: it disappears from the admin list and loses admin rights. Sign-in and course progress are kept; it can be restored via “Show deleted”. This is not sufficient for an erasure under the GDPR.' },
   admin_show_deleted:         { de: 'Gelöschte anzeigen',             en: 'Show deleted' },
 
   // ---- Cookie Banner ----
@@ -3594,15 +3594,10 @@ export const UI = {
   ai_bot_notice:              { de: 'Sie chatten mit einem KI-Assistenten.', en: 'You are chatting with an AI assistant.' },
   footer_impressum:           { de: 'Impressum',                      en: 'Legal Notice' },
   footer_datenschutz:         { de: 'Datenschutz',                    en: 'Privacy Policy' },
+  footer_terms:               { de: 'Nutzungsbedingungen',            en: 'Terms of Use' },
   footer_back:                { de: '← Zurück',                       en: '← Back' },
 
   // ---- Impressum Page ----
-  impressum_title:            { de: 'Impressum',                      en: 'Legal Notice' },
-  impressum_operator:         { de: 'Betreiber',                      en: 'Operator' },
-  impressum_managing:         { de: 'Geschäftsführung',               en: 'Managing Director' },
-  impressum_register:         { de: 'Firmenbuch',                     en: 'Commercial Register' },
-  impressum_uidde:            { de: 'UID',                            en: 'VAT ID' },
-  impressum_authority:        { de: 'Aufsichtsbehörde',               en: 'Regulatory Authority' },
 
   /* Barrierefreiheitserklärung — Konformitätsinformation nach § 14 Abs. 2
      Barrierefreiheitsgesetz (BaFG, Umsetzung der Richtlinie (EU) 2019/882).
@@ -3618,26 +3613,20 @@ export const UI = {
   a11y_state_t:               { de: 'Teilweise vereinbar. Die Plattform erfüllt die Anforderungen weitgehend; die unten genannten Punkte sind noch offen.',
                                 en: 'Partially conformant. The platform largely meets the requirements; the items listed below are still outstanding.' },
   a11y_known_h:               { de: 'Bekannte Einschränkungen',       en: 'Known limitations' },
-  a11y_known_1:               { de: 'Die Schulungsvideos verfügen derzeit nur über automatisch erzeugte Untertitel von YouTube. Manuell geprüfte Untertitel werden schrittweise ergänzt; neue Sprachfassungen erhalten sie vor Veröffentlichung.',
-                                en: 'The training videos currently only have automatically generated YouTube captions. Manually reviewed captions are being added step by step; new language versions receive them before release.' },
-  a11y_known_2:               { de: 'Die als Download angebotenen PDF-Unterlagen sind noch nicht durchgängig getaggt und daher mit Screenreadern eingeschränkt nutzbar.',
-                                en: 'The PDF documents offered for download are not yet consistently tagged and are therefore of limited use with screen readers.' },
+  a11y_known_1:               { de: 'Die Schulungsvideos haben derzeit nur automatisch erzeugte Untertitel von YouTube. Bei den KI-synchronisierten Sprachfassungen fehlen geprüfte Untertitel noch; wir ergänzen sie schrittweise.',
+                                en: 'The training videos currently only have automatically generated YouTube captions. Reviewed captions for the AI-dubbed language versions are still missing; we are adding them step by step.' },
+  a11y_known_2:               { de: 'Die FAQ-Sammlungen als PDF sind seit 17. Oktober 2026 barrierefrei aufbereitet (getaggt). Die übrigen PDF-Unterlagen, etwa die Demo-Berichte, und die Schulungsfolien (PowerPoint) sind noch nicht durchgängig getaggt und daher mit Screenreadern nur eingeschränkt nutzbar. Auf Anfrage senden wir die Inhalte in zugänglicher Form.',
+                                en: 'Since 17 October 2026, the FAQ collections in PDF format have been prepared accessibly (tagged). The other PDF documents, such as the demo reports, and the training slides (PowerPoint) are not yet consistently tagged and are therefore of limited use with screen readers. On request, we will send the content in an accessible format.' },
   a11y_feedback_h:            { de: 'Barriere melden — Kontaktstelle', en: 'Report a barrier — contact point' },
   a11y_feedback_t:            { de: 'Sie können Barrieren melden oder Inhalte in barrierefreier Form anfordern. Wir antworten in der Regel innerhalb von zehn Arbeitstagen.',
                                 en: 'You can report barriers or request content in an accessible format. We usually respond within ten working days.' },
   a11y_enforce_h:             { de: 'Wenn wir nicht weiterhelfen',    en: 'If we cannot help' },
   a11y_enforce_t:             { de: 'Sind Sie mit unserer Antwort nicht zufrieden, können Sie sich an das Sozialministeriumservice (SMS) wenden, das die Einhaltung des Barrierefreiheitsgesetzes in Österreich überwacht.',
                                 en: 'If you are not satisfied with our response, you may contact the Austrian Social Ministry Service (Sozialministeriumservice, SMS), which monitors compliance with the Accessibility Act in Austria.' },
-  a11y_updated:               { de: 'Diese Erklärung wurde am 18. August 2026 erstellt und beruht auf einer Selbstbewertung.',
-                                en: 'This statement was created on 18 August 2026 and is based on a self-assessment.' },
-  impressum_applicable_law:   { de: 'Anwendbare Rechtsvorschriften',  en: 'Applicable Regulations' },
-  impressum_contact:          { de: 'Kontakt',                        en: 'Contact' },
-  impressum_liability:        { de: 'Haftungshinweis',                en: 'Liability Notice' },
-  impressum_liability_text:   { de: 'Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.',
-                                en: 'Despite careful content control, we assume no liability for the content of external links. The operators of linked pages are solely responsible for their content.' },
+  a11y_updated:               { de: 'Diese Erklärung wurde am 18. August 2026 erstellt und am 19. November 2026 aktualisiert. Sie beruht auf einer Selbstbewertung.',
+                                en: 'This statement was created on 18 August 2026 and updated on 19 November 2026. It is based on a self-assessment.' },
 
   // ---- Datenschutz Page ----
-  datenschutz_title:          { de: 'Datenschutzerklärung',           en: 'Privacy Policy' },
 }
 
 export const t = (lang, key) => {

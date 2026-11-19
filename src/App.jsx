@@ -10,6 +10,7 @@ const PdfThumb = (props) => (
   <Suspense fallback={null}><PdfThumbLazy {...props} /></Suspense>
 )
 import SupportBotLauncher from './SupportBotLauncher.jsx'
+import { legalFor, splitLinks } from './legal/index.js'
 import { COURSES, isCertifiable, isCertified, buildInitialState, groupForDisplay, SAMPLE_COURSE_LIST, CATEGORY_CONTENT, getHomeVideoSection, getHomeTopVideos, getContentTags, courseKey, t as tBase, getSampleCourseList, assetUrl, bestDisplayName } from './data.js'
 import {
   getCurrentSession, onAuthChange, signUpWithEmail, signInWithEmail,
@@ -94,22 +95,6 @@ const INLINE_I18N = {
     "Skip to content": "Vai al contenuto",
     "Novogenia training platform": "Piattaforma di formazione di Novogenia",
     "Austria": "Austria",
-    "Regional Court Salzburg": "Tribunale regionale di Salisburgo",
-    "Federal Ministry for Social Affairs, Health, Care and Consumer Protection": "Ministero federale per gli Affari sociali, la Salute, l’Assistenza e la Tutela dei consumatori",
-    "Austrian Trade Regulations 1994 (GewO), Genetic Technology Act (GTG), accessible via RIS Austria (ris.bka.gv.at).": "Regolamento austriaco sulle attività commerciali 1994 (GewO), Legge sulla tecnologia genetica (GTG), consultabili tramite RIS Austria (ris.bka.gv.at).",
-    "Responsible Party": "Titolare del trattamento",
-    "What data we process": "Quali dati trattiamo",
-    "When you create an account, we store your e-mail address, your chosen display name, your language preference, and your course progress (which videos you watched and which tests you passed). This data is stored in Supabase (eu-central-1, Frankfurt, Germany) and processed exclusively for operating NOVO ACADEMY.": "Quando crei un account, memorizziamo il tuo indirizzo e-mail, il nome visualizzato scelto, la tua preferenza linguistica e i tuoi progressi nei corsi (quali video hai guardato e quali test hai superato). Questi dati sono archiviati in Supabase (eu-central-1, Francoforte, Germania) e trattati esclusivamente per il funzionamento di NOVO ACADEMY.",
-    "Legal basis": "Base giuridica",
-    "Processing is based on your consent (Art. 6(1)(a) GDPR) when you register, and on contract performance (Art. 6(1)(b) GDPR) for providing the academy service.": "Il trattamento si basa sul tuo consenso (art. 6, par. 1, lett. a, GDPR) al momento della registrazione e sull’esecuzione del contratto (art. 6, par. 1, lett. b, GDPR) per la fornitura del servizio dell’accademia.",
-    "Cookies": "Cookie",
-    "NOVO ACADEMY uses session cookies that are technically necessary for the login function (Supabase Auth). If you consent to optional cookies, embedded YouTube videos load additional cookies from Google/YouTube. You can withdraw your consent at any time.": "NOVO ACADEMY utilizza cookie di sessione tecnicamente necessari per la funzione di login (Supabase Auth). Se acconsenti ai cookie facoltativi, i video di YouTube incorporati caricano ulteriori cookie da Google/YouTube. Puoi revocare il tuo consenso in qualsiasi momento.",
-    "Third-party services": "Fornitori terzi",
-    "Auth & database (eu-central-1 Frankfurt, Germany). Privacy policy: supabase.com/privacy": "Autenticazione e database (eu-central-1 Francoforte, Germania). Informativa sulla privacy: supabase.com/privacy",
-    "Video embedding (only with your consent). Privacy policy: policies.google.com/privacy": "Incorporamento video (solo con il tuo consenso). Informativa sulla privacy: policies.google.com/privacy",
-    "Your rights": "I tuoi diritti",
-    "You have the right to access, correct, delete, or export your data, and to lodge a complaint with the Austrian Data Protection Authority (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienna, dsb.gv.at).": "Hai il diritto di accedere ai tuoi dati, di rettificarli, cancellarli o esportarli, nonché di presentare reclamo all’Autorità austriaca per la protezione dei dati (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienna, dsb.gv.at).",
-    "To exercise your rights, contact: datenschutz@novogenia.com": "Per esercitare i tuoi diritti, contatta: datenschutz@novogenia.com",
     "Local-only mode: accounts live in this browser. Configure Supabase to sync across devices.": "Modalità solo locale: gli account esistono solo in questo browser. Configura Supabase per sincronizzare tra più dispositivi."
   },
   "cz": {
@@ -160,22 +145,6 @@ const INLINE_I18N = {
     "Skip to content": "Přejít na obsah",
     "Novogenia training platform": "Školicí platforma Novogenia",
     "Austria": "Rakousko",
-    "Regional Court Salzburg": "Zemský soud Salcburk",
-    "Federal Ministry for Social Affairs, Health, Care and Consumer Protection": "Spolkové ministerstvo pro sociální věci, zdraví, péči a ochranu spotřebitele",
-    "Austrian Trade Regulations 1994 (GewO), Genetic Technology Act (GTG), accessible via RIS Austria (ris.bka.gv.at).": "Rakouský živnostenský řád 1994 (GewO), zákon o genové technologii (GTG), dostupné přes RIS Austria (ris.bka.gv.at).",
-    "Responsible Party": "Správce",
-    "What data we process": "Jaké údaje zpracováváme",
-    "When you create an account, we store your e-mail address, your chosen display name, your language preference, and your course progress (which videos you watched and which tests you passed). This data is stored in Supabase (eu-central-1, Frankfurt, Germany) and processed exclusively for operating NOVO ACADEMY.": "Při vytvoření účtu ukládáme tvou e-mailovou adresu, zvolené zobrazované jméno, jazykové nastavení a tvůj pokrok v kurzech (která videa jsi zhlédl a které testy jsi splnil). Tyto údaje jsou uloženy v Supabase (eu-central-1, Frankfurt, Německo) a zpracovávány výhradně za účelem provozu NOVO ACADEMY.",
-    "Legal basis": "Právní základ",
-    "Processing is based on your consent (Art. 6(1)(a) GDPR) when you register, and on contract performance (Art. 6(1)(b) GDPR) for providing the academy service.": "Zpracování probíhá na základě tvého souhlasu (čl. 6 odst. 1 písm. a) GDPR) při registraci a za účelem plnění smlouvy (čl. 6 odst. 1 písm. b) GDPR) pro poskytování služby akademie.",
-    "Cookies": "Cookies",
-    "NOVO ACADEMY uses session cookies that are technically necessary for the login function (Supabase Auth). If you consent to optional cookies, embedded YouTube videos load additional cookies from Google/YouTube. You can withdraw your consent at any time.": "NOVO ACADEMY používá relační cookies, které jsou technicky nezbytné pro funkci přihlášení (Supabase Auth). Pokud souhlasíš s volitelnými cookies, vložená videa z YouTube načítají další cookies od Google/YouTube. Svůj souhlas můžeš kdykoli odvolat.",
-    "Third-party services": "Poskytovatelé třetích stran",
-    "Auth & database (eu-central-1 Frankfurt, Germany). Privacy policy: supabase.com/privacy": "Autentizace a databáze (eu-central-1 Frankfurt, Německo). Ochrana osobních údajů: supabase.com/privacy",
-    "Video embedding (only with your consent). Privacy policy: policies.google.com/privacy": "Vkládání videa (pouze s tvým souhlasem). Ochrana osobních údajů: policies.google.com/privacy",
-    "Your rights": "Tvá práva",
-    "You have the right to access, correct, delete, or export your data, and to lodge a complaint with the Austrian Data Protection Authority (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienna, dsb.gv.at).": "Máš právo na přístup, opravu, výmaz nebo přenositelnost svých údajů a právo podat stížnost u rakouského úřadu pro ochranu osobních údajů (Datenschutzbehörde, Barichgasse 40–42, 1030 Vídeň, dsb.gv.at).",
-    "To exercise your rights, contact: datenschutz@novogenia.com": "K uplatnění svých práv se obrať na: datenschutz@novogenia.com",
     "Local-only mode: accounts live in this browser. Configure Supabase to sync across devices.": "Pouze lokální režim: účty existují jen v tomto prohlížeči. Nakonfiguruj Supabase pro synchronizaci mezi zařízeními."
   },
   "fr": {
@@ -226,22 +195,6 @@ const INLINE_I18N = {
     "Skip to content": "Aller au contenu",
     "Novogenia training platform": "Plateforme de formation de Novogenia",
     "Austria": "Autriche",
-    "Regional Court Salzburg": "Tribunal régional de Salzbourg",
-    "Federal Ministry for Social Affairs, Health, Care and Consumer Protection": "Ministère fédéral des Affaires sociales, de la Santé, des Soins et de la Protection des consommateurs",
-    "Austrian Trade Regulations 1994 (GewO), Genetic Technology Act (GTG), accessible via RIS Austria (ris.bka.gv.at).": "Code autrichien des activités commerciales 1994 (GewO), loi sur la technologie génétique (GTG), consultables via RIS Austria (ris.bka.gv.at).",
-    "Responsible Party": "Responsable du traitement",
-    "What data we process": "Quelles données nous traitons",
-    "When you create an account, we store your e-mail address, your chosen display name, your language preference, and your course progress (which videos you watched and which tests you passed). This data is stored in Supabase (eu-central-1, Frankfurt, Germany) and processed exclusively for operating NOVO ACADEMY.": "Lorsque tu crées un compte, nous enregistrons ton adresse e-mail, le nom d’affichage que tu as choisi, ta préférence linguistique et ta progression dans les cours (quelles vidéos tu as regardées et quels tests tu as réussis). Ces données sont stockées dans Supabase (eu-central-1, Francfort, Allemagne) et traitées exclusivement pour l’exploitation de NOVO ACADEMY.",
-    "Legal basis": "Base juridique",
-    "Processing is based on your consent (Art. 6(1)(a) GDPR) when you register, and on contract performance (Art. 6(1)(b) GDPR) for providing the academy service.": "Le traitement repose sur ton consentement (art. 6, par. 1, point a, RGPD) lors de l’inscription, ainsi que sur l’exécution du contrat (art. 6, par. 1, point b, RGPD) pour la fourniture du service de l’académie.",
-    "Cookies": "Cookies",
-    "NOVO ACADEMY uses session cookies that are technically necessary for the login function (Supabase Auth). If you consent to optional cookies, embedded YouTube videos load additional cookies from Google/YouTube. You can withdraw your consent at any time.": "NOVO ACADEMY utilise des cookies de session techniquement nécessaires à la fonction de connexion (Supabase Auth). Si tu acceptes les cookies facultatifs, les vidéos YouTube intégrées chargent des cookies supplémentaires de Google/YouTube. Tu peux retirer ton consentement à tout moment.",
-    "Third-party services": "Prestataires tiers",
-    "Auth & database (eu-central-1 Frankfurt, Germany). Privacy policy: supabase.com/privacy": "Authentification et base de données (eu-central-1 Francfort, Allemagne). Politique de confidentialité : supabase.com/privacy",
-    "Video embedding (only with your consent). Privacy policy: policies.google.com/privacy": "Intégration vidéo (uniquement avec ton consentement). Politique de confidentialité : policies.google.com/privacy",
-    "Your rights": "Tes droits",
-    "You have the right to access, correct, delete, or export your data, and to lodge a complaint with the Austrian Data Protection Authority (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienna, dsb.gv.at).": "Tu as le droit d’accéder à tes données, de les rectifier, de les supprimer ou de les exporter, ainsi que de déposer une réclamation auprès de l’autorité autrichienne de protection des données (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienne, dsb.gv.at).",
-    "To exercise your rights, contact: datenschutz@novogenia.com": "Pour exercer tes droits, contacte : datenschutz@novogenia.com",
     "Local-only mode: accounts live in this browser. Configure Supabase to sync across devices.": "Mode local uniquement : les comptes existent seulement dans ce navigateur. Configure Supabase pour synchroniser entre les appareils."
   },
   "pt": {
@@ -292,22 +245,6 @@ const INLINE_I18N = {
     "Skip to content": "Saltar para o conteúdo",
     "Novogenia training platform": "Plataforma de formação da Novogenia",
     "Austria": "Áustria",
-    "Regional Court Salzburg": "Tribunal Regional de Salzburgo",
-    "Federal Ministry for Social Affairs, Health, Care and Consumer Protection": "Ministério Federal dos Assuntos Sociais, Saúde, Cuidados e Proteção do Consumidor",
-    "Austrian Trade Regulations 1994 (GewO), Genetic Technology Act (GTG), accessible via RIS Austria (ris.bka.gv.at).": "Regulamento austríaco das atividades comerciais 1994 (GewO), Lei da Tecnologia Genética (GTG), acessíveis através do RIS Austria (ris.bka.gv.at).",
-    "Responsible Party": "Responsável pelo tratamento",
-    "What data we process": "Que dados tratamos",
-    "When you create an account, we store your e-mail address, your chosen display name, your language preference, and your course progress (which videos you watched and which tests you passed). This data is stored in Supabase (eu-central-1, Frankfurt, Germany) and processed exclusively for operating NOVO ACADEMY.": "Quando crias uma conta, guardamos o teu endereço de e-mail, o nome de apresentação escolhido, a tua preferência de idioma e o teu progresso nos cursos (que vídeos viste e que testes aprovaste). Estes dados são armazenados na Supabase (eu-central-1, Frankfurt, Alemanha) e tratados exclusivamente para o funcionamento da NOVO ACADEMY.",
-    "Legal basis": "Base jurídica",
-    "Processing is based on your consent (Art. 6(1)(a) GDPR) when you register, and on contract performance (Art. 6(1)(b) GDPR) for providing the academy service.": "O tratamento baseia-se no teu consentimento (art. 6.º, n.º 1, alínea a), do RGPD) no momento do registo e na execução do contrato (art. 6.º, n.º 1, alínea b), do RGPD) para a prestação do serviço da academia.",
-    "Cookies": "Cookies",
-    "NOVO ACADEMY uses session cookies that are technically necessary for the login function (Supabase Auth). If you consent to optional cookies, embedded YouTube videos load additional cookies from Google/YouTube. You can withdraw your consent at any time.": "A NOVO ACADEMY utiliza cookies de sessão tecnicamente necessários para a função de início de sessão (Supabase Auth). Se consentires nos cookies opcionais, os vídeos do YouTube incorporados carregam cookies adicionais da Google/YouTube. Podes retirar o teu consentimento a qualquer momento.",
-    "Third-party services": "Fornecedores terceiros",
-    "Auth & database (eu-central-1 Frankfurt, Germany). Privacy policy: supabase.com/privacy": "Autenticação e base de dados (eu-central-1 Frankfurt, Alemanha). Política de privacidade: supabase.com/privacy",
-    "Video embedding (only with your consent). Privacy policy: policies.google.com/privacy": "Incorporação de vídeo (apenas com o teu consentimento). Política de privacidade: policies.google.com/privacy",
-    "Your rights": "Os teus direitos",
-    "You have the right to access, correct, delete, or export your data, and to lodge a complaint with the Austrian Data Protection Authority (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienna, dsb.gv.at).": "Tens o direito de aceder, corrigir, eliminar ou exportar os teus dados e de apresentar reclamação junto da Autoridade Austríaca de Proteção de Dados (Datenschutzbehörde, Barichgasse 40–42, 1030 Viena, dsb.gv.at).",
-    "To exercise your rights, contact: datenschutz@novogenia.com": "Para exercer os teus direitos, contacta: datenschutz@novogenia.com",
     "Local-only mode: accounts live in this browser. Configure Supabase to sync across devices.": "Modo apenas local: as contas existem apenas neste navegador. Configura a Supabase para sincronizar entre dispositivos."
   },
   "nl": {
@@ -358,22 +295,6 @@ const INLINE_I18N = {
     "Skip to content": "Ga naar inhoud",
     "Novogenia training platform": "Opleidingsplatform van Novogenia",
     "Austria": "Oostenrijk",
-    "Regional Court Salzburg": "Regionale rechtbank Salzburg",
-    "Federal Ministry for Social Affairs, Health, Care and Consumer Protection": "Federaal Ministerie voor Sociale Zaken, Gezondheid, Zorg en Consumentenbescherming",
-    "Austrian Trade Regulations 1994 (GewO), Genetic Technology Act (GTG), accessible via RIS Austria (ris.bka.gv.at).": "Oostenrijkse Bedrijfsregeling 1994 (GewO), Wet op de gentechnologie (GTG), raadpleegbaar via RIS Austria (ris.bka.gv.at).",
-    "Responsible Party": "Verwerkingsverantwoordelijke",
-    "What data we process": "Welke gegevens we verwerken",
-    "When you create an account, we store your e-mail address, your chosen display name, your language preference, and your course progress (which videos you watched and which tests you passed). This data is stored in Supabase (eu-central-1, Frankfurt, Germany) and processed exclusively for operating NOVO ACADEMY.": "Wanneer je een account aanmaakt, slaan we je e-mailadres, de door jou gekozen weergavenaam, je taalvoorkeur en je cursusvoortgang op (welke video's je hebt bekeken en welke tests je hebt gehaald). Deze gegevens worden opgeslagen in Supabase (eu-central-1, Frankfurt, Duitsland) en uitsluitend verwerkt voor de werking van NOVO ACADEMY.",
-    "Legal basis": "Rechtsgrondslag",
-    "Processing is based on your consent (Art. 6(1)(a) GDPR) when you register, and on contract performance (Art. 6(1)(b) GDPR) for providing the academy service.": "De verwerking is gebaseerd op je toestemming (art. 6, lid 1, onder a, AVG) bij je registratie en op de uitvoering van de overeenkomst (art. 6, lid 1, onder b, AVG) voor het leveren van de academiedienst.",
-    "Cookies": "Cookies",
-    "NOVO ACADEMY uses session cookies that are technically necessary for the login function (Supabase Auth). If you consent to optional cookies, embedded YouTube videos load additional cookies from Google/YouTube. You can withdraw your consent at any time.": "NOVO ACADEMY gebruikt sessiecookies die technisch noodzakelijk zijn voor de inlogfunctie (Supabase Auth). Als je toestemming geeft voor optionele cookies, laden ingesloten YouTube-video's extra cookies van Google/YouTube. Je kunt je toestemming op elk moment intrekken.",
-    "Third-party services": "Diensten van derden",
-    "Auth & database (eu-central-1 Frankfurt, Germany). Privacy policy: supabase.com/privacy": "Authenticatie en database (eu-central-1 Frankfurt, Duitsland). Privacybeleid: supabase.com/privacy",
-    "Video embedding (only with your consent). Privacy policy: policies.google.com/privacy": "Insluiten van video's (alleen met je toestemming). Privacybeleid: policies.google.com/privacy",
-    "Your rights": "Je rechten",
-    "You have the right to access, correct, delete, or export your data, and to lodge a complaint with the Austrian Data Protection Authority (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienna, dsb.gv.at).": "Je hebt het recht om je gegevens in te zien, te corrigeren, te wissen of te exporteren, en om een klacht in te dienen bij de Oostenrijkse gegevensbeschermingsautoriteit (Datenschutzbehörde, Barichgasse 40–42, 1030 Wenen, dsb.gv.at).",
-    "To exercise your rights, contact: datenschutz@novogenia.com": "Om je rechten uit te oefenen, neem contact op met: datenschutz@novogenia.com",
     "Local-only mode: accounts live in this browser. Configure Supabase to sync across devices.": "Alleen-lokaal-modus: accounts bestaan alleen in deze browser. Configureer Supabase om te synchroniseren tussen apparaten."
   },
   "ro": {
@@ -424,22 +345,6 @@ const INLINE_I18N = {
     "Skip to content": "Sari la conținut",
     "Novogenia training platform": "Platforma de instruire Novogenia",
     "Austria": "Austria",
-    "Regional Court Salzburg": "Tribunalul Regional Salzburg",
-    "Federal Ministry for Social Affairs, Health, Care and Consumer Protection": "Ministerul Federal pentru Afaceri Sociale, Sănătate, Îngrijire și Protecția Consumatorilor",
-    "Austrian Trade Regulations 1994 (GewO), Genetic Technology Act (GTG), accessible via RIS Austria (ris.bka.gv.at).": "Regulamentul austriac privind comerțul din 1994 (GewO), Legea privind tehnologia genetică (GTG), accesibile prin RIS Austria (ris.bka.gv.at).",
-    "Responsible Party": "Parte responsabilă",
-    "What data we process": "Ce date prelucrăm",
-    "When you create an account, we store your e-mail address, your chosen display name, your language preference, and your course progress (which videos you watched and which tests you passed). This data is stored in Supabase (eu-central-1, Frankfurt, Germany) and processed exclusively for operating NOVO ACADEMY.": "Când îți creezi un cont, stocăm adresa ta de e-mail, numele de afișare ales, preferința de limbă și progresul cursului (ce videoclipuri ai vizionat și ce teste ai promovat). Aceste date sunt stocate în Supabase (eu-central-1, Frankfurt, Germania) și prelucrate exclusiv pentru operarea NOVO ACADEMY.",
-    "Legal basis": "Temei juridic",
-    "Processing is based on your consent (Art. 6(1)(a) GDPR) when you register, and on contract performance (Art. 6(1)(b) GDPR) for providing the academy service.": "Prelucrarea se bazează pe consimțământul tău (Art. 6 alin. (1) lit. (a) GDPR) la înregistrare și pe executarea contractului (Art. 6 alin. (1) lit. (b) GDPR) pentru furnizarea serviciului academiei.",
-    "Cookies": "Cookie-uri",
-    "NOVO ACADEMY uses session cookies that are technically necessary for the login function (Supabase Auth). If you consent to optional cookies, embedded YouTube videos load additional cookies from Google/YouTube. You can withdraw your consent at any time.": "NOVO ACADEMY utilizează cookie-uri de sesiune care sunt necesare din punct de vedere tehnic pentru funcția de autentificare (Supabase Auth). Dacă îți exprimi consimțământul pentru cookie-urile opționale, videoclipurile YouTube încorporate încarcă cookie-uri suplimentare de la Google/YouTube. Îți poți retrage consimțământul în orice moment.",
-    "Third-party services": "Servicii terțe",
-    "Auth & database (eu-central-1 Frankfurt, Germany). Privacy policy: supabase.com/privacy": "Autentificare și bază de date (eu-central-1 Frankfurt, Germania). Politica de confidențialitate: supabase.com/privacy",
-    "Video embedding (only with your consent). Privacy policy: policies.google.com/privacy": "Încorporare video (numai cu consimțământul tău). Politica de confidențialitate: policies.google.com/privacy",
-    "Your rights": "Drepturile tale",
-    "You have the right to access, correct, delete, or export your data, and to lodge a complaint with the Austrian Data Protection Authority (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienna, dsb.gv.at).": "Ai dreptul de a accesa, corecta, șterge sau exporta datele tale și de a depune o plângere la Autoritatea austriacă pentru protecția datelor (Datenschutzbehörde, Barichgasse 40–42, 1030 Viena, dsb.gv.at).",
-    "To exercise your rights, contact: datenschutz@novogenia.com": "Pentru a-ți exercita drepturile, contactează: datenschutz@novogenia.com",
     "Local-only mode: accounts live in this browser. Configure Supabase to sync across devices.": "Mod exclusiv local: conturile există în acest browser. Configurează Supabase pentru sincronizare între dispozitive."
   },
   "es": {
@@ -490,22 +395,6 @@ const INLINE_I18N = {
     "Skip to content": "Saltar al contenido",
     "Novogenia training platform": "Plataforma de formación de Novogenia",
     "Austria": "Austria",
-    "Regional Court Salzburg": "Tribunal Regional de Salzburgo",
-    "Federal Ministry for Social Affairs, Health, Care and Consumer Protection": "Ministerio Federal de Asuntos Sociales, Salud, Cuidados y Protección del Consumidor",
-    "Austrian Trade Regulations 1994 (GewO), Genetic Technology Act (GTG), accessible via RIS Austria (ris.bka.gv.at).": "Reglamento de Comercio de Austria de 1994 (GewO), Ley de Tecnología Genética (GTG), accesibles a través de RIS Austria (ris.bka.gv.at).",
-    "Responsible Party": "Parte responsable",
-    "What data we process": "Qué datos procesamos",
-    "When you create an account, we store your e-mail address, your chosen display name, your language preference, and your course progress (which videos you watched and which tests you passed). This data is stored in Supabase (eu-central-1, Frankfurt, Germany) and processed exclusively for operating NOVO ACADEMY.": "Cuando creas una cuenta, almacenamos tu dirección de correo electrónico, el nombre para mostrar que elijas, tu preferencia de idioma y tu progreso en el curso (qué vídeos viste y qué tests aprobaste). Estos datos se almacenan en Supabase (eu-central-1, Fráncfort, Alemania) y se procesan exclusivamente para el funcionamiento de NOVO ACADEMY.",
-    "Legal basis": "Base legal",
-    "Processing is based on your consent (Art. 6(1)(a) GDPR) when you register, and on contract performance (Art. 6(1)(b) GDPR) for providing the academy service.": "El procesamiento se basa en tu consentimiento (Art. 6(1)(a) RGPD) cuando te registras, y en la ejecución del contrato (Art. 6(1)(b) RGPD) para prestar el servicio de la academia.",
-    "Cookies": "Cookies",
-    "NOVO ACADEMY uses session cookies that are technically necessary for the login function (Supabase Auth). If you consent to optional cookies, embedded YouTube videos load additional cookies from Google/YouTube. You can withdraw your consent at any time.": "NOVO ACADEMY utiliza cookies de sesión técnicamente necesarias para la función de inicio de sesión (Supabase Auth). Si consientes las cookies opcionales, los vídeos de YouTube incrustados cargan cookies adicionales de Google/YouTube. Puedes retirar tu consentimiento en cualquier momento.",
-    "Third-party services": "Servicios de terceros",
-    "Auth & database (eu-central-1 Frankfurt, Germany). Privacy policy: supabase.com/privacy": "Autenticación y base de datos (eu-central-1 Fráncfort, Alemania). Política de privacidad: supabase.com/privacy",
-    "Video embedding (only with your consent). Privacy policy: policies.google.com/privacy": "Incrustación de vídeos (solo con tu consentimiento). Política de privacidad: policies.google.com/privacy",
-    "Your rights": "Tus derechos",
-    "You have the right to access, correct, delete, or export your data, and to lodge a complaint with the Austrian Data Protection Authority (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienna, dsb.gv.at).": "Tienes derecho a acceder, corregir, eliminar o exportar tus datos, y a presentar una reclamación ante la Autoridad de Protección de Datos de Austria (Datenschutzbehörde, Barichgasse 40–42, 1030 Viena, dsb.gv.at).",
-    "To exercise your rights, contact: datenschutz@novogenia.com": "Para ejercer tus derechos, contacta con: datenschutz@novogenia.com",
     "Local-only mode: accounts live in this browser. Configure Supabase to sync across devices.": "Modo solo local: las cuentas residen en este navegador. Configura Supabase para sincronizar entre dispositivos."
   },
   "sr": {
@@ -556,22 +445,6 @@ const INLINE_I18N = {
     "Skip to content": "Preskoči na sadržaj",
     "Novogenia training platform": "Novogenia platforma za obuku",
     "Austria": "Austrija",
-    "Regional Court Salzburg": "Zemaljski sud u Salzburgu",
-    "Federal Ministry for Social Affairs, Health, Care and Consumer Protection": "Savezno ministarstvo za socijalna pitanja, zdravlje, njegu i zaštitu potrošača",
-    "Austrian Trade Regulations 1994 (GewO), Genetic Technology Act (GTG), accessible via RIS Austria (ris.bka.gv.at).": "Austrijski zakon o obrtu 1994 (GewO), Zakon o genetskoj tehnologiji (GTG), dostupno putem RIS Austria (ris.bka.gv.at).",
-    "Responsible Party": "Odgovorna strana",
-    "What data we process": "Koje podatke obrađujemo",
-    "When you create an account, we store your e-mail address, your chosen display name, your language preference, and your course progress (which videos you watched and which tests you passed). This data is stored in Supabase (eu-central-1, Frankfurt, Germany) and processed exclusively for operating NOVO ACADEMY.": "Kada kreirate nalog, čuvamo vašu e-mail adresu, izabrano prikazno ime, jezičku postavku i vaš napredak u kursu (koje ste video zapise gledali i koje testove položili). Ovi podaci se čuvaju u Supabase (eu-central-1, Frankfurt, Njemačka) i obrađuju isključivo za rad platforme NOVO ACADEMY.",
-    "Legal basis": "Pravni osnov",
-    "Processing is based on your consent (Art. 6(1)(a) GDPR) when you register, and on contract performance (Art. 6(1)(b) GDPR) for providing the academy service.": "Obrada se zasniva na vašoj saglasnosti (čl. 6(1)(a) GDPR) prilikom registracije i na izvršenju ugovora (čl. 6(1)(b) GDPR) za pružanje usluge akademije.",
-    "Cookies": "Kolačići",
-    "NOVO ACADEMY uses session cookies that are technically necessary for the login function (Supabase Auth). If you consent to optional cookies, embedded YouTube videos load additional cookies from Google/YouTube. You can withdraw your consent at any time.": "NOVO ACADEMY koristi kolačiće sesije koji su tehnički neophodni za funkciju prijave (Supabase Auth). Ako pristanete na opcione kolačiće, ugrađeni YouTube video zapisi učitavaju dodatne kolačiće od Google/YouTube. Svoju saglasnost možete povući u bilo kom trenutku.",
-    "Third-party services": "Usluge trećih strana",
-    "Auth & database (eu-central-1 Frankfurt, Germany). Privacy policy: supabase.com/privacy": "Autentifikacija i baza podataka (eu-central-1 Frankfurt, Njemačka). Politika privatnosti: supabase.com/privacy",
-    "Video embedding (only with your consent). Privacy policy: policies.google.com/privacy": "Ugrađivanje videa (samo uz vašu saglasnost). Politika privatnosti: policies.google.com/privacy",
-    "Your rights": "Vaša prava",
-    "You have the right to access, correct, delete, or export your data, and to lodge a complaint with the Austrian Data Protection Authority (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienna, dsb.gv.at).": "Imate pravo na pristup, ispravku, brisanje ili izvoz svojih podataka, kao i pravo da podnesete pritužbu austrijskom Organu za zaštitu podataka (Datenschutzbehörde, Barichgasse 40–42, 1030 Beč, dsb.gv.at).",
-    "To exercise your rights, contact: datenschutz@novogenia.com": "Za ostvarivanje svojih prava kontaktirajte: datenschutz@novogenia.com",
     "Local-only mode: accounts live in this browser. Configure Supabase to sync across devices.": "Lokalni režim: nalozi postoje samo u ovom pregledaču. Konfigurišite Supabase za sinhronizaciju između uređaja."
   },
   "ar": {
@@ -622,22 +495,6 @@ const INLINE_I18N = {
     "Skip to content": "الانتقال إلى المحتوى",
     "Novogenia training platform": "منصة التدريب من Novogenia",
     "Austria": "النمسا",
-    "Regional Court Salzburg": "المحكمة الإقليمية في سالزبورغ",
-    "Federal Ministry for Social Affairs, Health, Care and Consumer Protection": "الوزارة الاتحادية للشؤون الاجتماعية والصحة والرعاية وحماية المستهلك",
-    "Austrian Trade Regulations 1994 (GewO), Genetic Technology Act (GTG), accessible via RIS Austria (ris.bka.gv.at).": "لائحة التجارة النمساوية 1994 (GewO)، قانون التقنية الجينية (GTG)، المتاحان عبر RIS Austria (ris.bka.gv.at).",
-    "Responsible Party": "الجهة المسؤولة",
-    "What data we process": "ما البيانات التي نعالجها",
-    "When you create an account, we store your e-mail address, your chosen display name, your language preference, and your course progress (which videos you watched and which tests you passed). This data is stored in Supabase (eu-central-1, Frankfurt, Germany) and processed exclusively for operating NOVO ACADEMY.": "عند إنشاء حساب، نقوم بتخزين عنوان بريدك الإلكتروني، والاسم المعروض الذي اخترته، وتفضيلك اللغوي، وتقدّمك في الدورة (الفيديوهات التي شاهدتها والاختبارات التي اجتزتها). تُخزَّن هذه البيانات في Supabase (eu-central-1، فرانكفورت، ألمانيا) وتُعالَج حصرياً لتشغيل NOVO ACADEMY.",
-    "Legal basis": "الأساس القانوني",
-    "Processing is based on your consent (Art. 6(1)(a) GDPR) when you register, and on contract performance (Art. 6(1)(b) GDPR) for providing the academy service.": "تستند المعالجة إلى موافقتك (المادة 6(1)(أ) من اللائحة العامة لحماية البيانات) عند التسجيل، وإلى تنفيذ العقد (المادة 6(1)(ب) من اللائحة العامة لحماية البيانات) لتقديم خدمة الأكاديمية.",
-    "Cookies": "ملفات تعريف الارتباط",
-    "NOVO ACADEMY uses session cookies that are technically necessary for the login function (Supabase Auth). If you consent to optional cookies, embedded YouTube videos load additional cookies from Google/YouTube. You can withdraw your consent at any time.": "تستخدم NOVO ACADEMY ملفات تعريف ارتباط الجلسة الضرورية تقنياً لوظيفة تسجيل الدخول (Supabase Auth). إذا وافقت على ملفات تعريف الارتباط الاختيارية، تقوم فيديوهات YouTube المضمّنة بتحميل ملفات تعريف ارتباط إضافية من Google/YouTube. يمكنك سحب موافقتك في أي وقت.",
-    "Third-party services": "خدمات الأطراف الثالثة",
-    "Auth & database (eu-central-1 Frankfurt, Germany). Privacy policy: supabase.com/privacy": "المصادقة وقاعدة البيانات (eu-central-1 فرانكفورت، ألمانيا). سياسة الخصوصية: supabase.com/privacy",
-    "Video embedding (only with your consent). Privacy policy: policies.google.com/privacy": "تضمين الفيديو (بموافقتك فقط). سياسة الخصوصية: policies.google.com/privacy",
-    "Your rights": "حقوقك",
-    "You have the right to access, correct, delete, or export your data, and to lodge a complaint with the Austrian Data Protection Authority (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienna, dsb.gv.at).": "لديك الحق في الوصول إلى بياناتك أو تصحيحها أو حذفها أو تصديرها، وفي تقديم شكوى إلى الهيئة النمساوية لحماية البيانات (Datenschutzbehörde، Barichgasse 40–42، 1030 فيينا، dsb.gv.at).",
-    "To exercise your rights, contact: datenschutz@novogenia.com": "لممارسة حقوقك، تواصل عبر: datenschutz@novogenia.com",
     "Local-only mode: accounts live in this browser. Configure Supabase to sync across devices.": "وضع محلي فقط: تُحفَظ الحسابات في هذا المتصفح. قم بإعداد Supabase للمزامنة عبر الأجهزة."
   }
 }
@@ -2540,14 +2397,31 @@ export default function App() {
     onImpressum:       () => geheZu('impressum'),
     onDatenschutz:     () => geheZu('datenschutz'),
     onBarrierefreiheit:() => geheZu('barrierefreiheit'),
+    onNutzungsbedingungen: () => geheZu('nutzungsbedingungen'),
     onCookieSettings:  () => setConsent(null),
   }
 
-  if (outerRoute === 'impressum') {
+  /* „← Zurück“ auf Rechtsseiten: zur vorigen Ansicht (z. B. Registrierung),
+     nicht pauschal zur Startseite. geheZu() hat dafür einen History-Eintrag
+     geschrieben; onPop stellt beide Router-Ebenen wieder her. */
+  const zurueckVonRechtsseite = () => {
+    if (window.history.state && window.history.state.__novoOuter) window.history.back()
+    else geheZu(null)
+  }
+
+  if (outerRoute === 'nutzungsbedingungen') {
     inhaltEingebettet = true
     page = (
       <div className="legal-page-wrap">
-        <Inhalt><ImpressumPage onBack={() => geheZu(null)} /></Inhalt>
+        <Inhalt><NutzungsbedingungenPage onBack={zurueckVonRechtsseite} /></Inhalt>
+        <LegalFooter {...legalFooterProps} />
+      </div>
+    )
+  } else if (outerRoute === 'impressum') {
+    inhaltEingebettet = true
+    page = (
+      <div className="legal-page-wrap">
+        <Inhalt><ImpressumPage onBack={zurueckVonRechtsseite} /></Inhalt>
         <LegalFooter {...legalFooterProps} />
       </div>
     )
@@ -2555,7 +2429,7 @@ export default function App() {
     inhaltEingebettet = true
     page = (
       <div className="legal-page-wrap">
-        <Inhalt><DatenschutzPage onBack={() => geheZu(null)} onCookieSettings={() => setConsent(null)} /></Inhalt>
+        <Inhalt><DatenschutzPage onBack={zurueckVonRechtsseite} onCookieSettings={() => setConsent(null)} /></Inhalt>
         <LegalFooter {...legalFooterProps} />
       </div>
     )
@@ -2563,7 +2437,7 @@ export default function App() {
     inhaltEingebettet = true
     page = (
       <div className="legal-page-wrap">
-        <Inhalt><BarrierefreiheitPage onBack={() => geheZu(null)} /></Inhalt>
+        <Inhalt><BarrierefreiheitPage onBack={zurueckVonRechtsseite} /></Inhalt>
         <LegalFooter {...legalFooterProps} />
       </div>
     )
@@ -2582,10 +2456,7 @@ export default function App() {
           setLang={setLang}
           onSignUp={() => geheZu('auth-signup')}
           onLogIn={() => geheZu('auth-login')}
-          onImpressum={legalFooterProps.onImpressum}
-          onDatenschutz={legalFooterProps.onDatenschutz}
-          onBarrierefreiheit={legalFooterProps.onBarrierefreiheit}
-          onCookieSettings={legalFooterProps.onCookieSettings}
+          footerProps={legalFooterProps}
         />
       )
     } else {
@@ -2599,6 +2470,7 @@ export default function App() {
           setBusy={setAuthBusy}
           onSwitchMode={() => geheZu(mode === 'signup' ? 'auth-login' : 'auth-signup')}
           onBackToLanding={() => geheZu('landing')}
+          footerProps={legalFooterProps}
         />
       )
     }
@@ -2684,6 +2556,10 @@ export default function App() {
         <p className="speicher-fehler" role="alert">{tBase(lang, 'progress_save_failed')}</p>
       )}
       {inhaltEingebettet ? page : <Inhalt>{page}</Inhalt>}
+      {/* Zweige ohne eigene Fußzeile (Sprachwahl, Kurs, Test, Ergebnis,
+          Zertifikat) bekommen sie hier — außerhalb von <main>, damit sie
+          ihre contentinfo-Rolle behält (ECG § 5 Abs. 1, MedienG § 25). */}
+      {!inhaltEingebettet && <LegalFooter {...legalFooterProps} />}
       {showBanner && (
         <CookieBanner
           onAccept={() => setConsent('all')}
@@ -2803,7 +2679,7 @@ function LangPickPage({ onPick }) {
 }
 
 /* ===================== LANDING PAGE (logged-out intro) ===================== */
-function LandingPage({ lang, setLang, onSignUp, onLogIn, onImpressum, onDatenschutz, onBarrierefreiheit, onCookieSettings }) {
+function LandingPage({ lang, setLang, onSignUp, onLogIn, footerProps }) {
   const t = useT()
   return (
     <div className="landing-page">
@@ -2877,20 +2753,15 @@ function LandingPage({ lang, setLang, onSignUp, onLogIn, onImpressum, onDatensch
       </section>
       </main>
 
-      <footer className="landing-footer">
-        <LegalFooter
-          onImpressum={onImpressum}
-          onDatenschutz={onDatenschutz}
-          onBarrierefreiheit={onBarrierefreiheit}
-          onCookieSettings={onCookieSettings}
-        />
-      </footer>
+      <div className="landing-footer">
+        <LegalFooter {...footerProps} />
+      </div>
     </div>
   )
 }
 
 /* ===================== LEGAL FOOTER ===================== */
-function LegalFooter({ onImpressum, onDatenschutz, onCookieSettings, onBarrierefreiheit }) {
+function LegalFooter({ onImpressum, onDatenschutz, onNutzungsbedingungen, onCookieSettings, onBarrierefreiheit }) {
   const t = useT()
   return (
     <footer className="legal-footer">
@@ -2900,6 +2771,8 @@ function LegalFooter({ onImpressum, onDatenschutz, onCookieSettings, onBarrieref
       <span className="legal-footer-sep">·</span>
       <button className="legal-footer-link" onClick={onDatenschutz}>{t('footer_datenschutz')}</button>
       <span className="legal-footer-sep">·</span>
+      <button className="legal-footer-link" onClick={onNutzungsbedingungen}>{t('footer_terms')}</button>
+      <span className="legal-footer-sep">·</span>
       <button className="legal-footer-link" onClick={onBarrierefreiheit}>{t('footer_a11y')}</button>
       <span className="legal-footer-sep">·</span>
       <button className="legal-footer-link" onClick={onCookieSettings}>{t('cookie_settings')}</button>
@@ -2907,78 +2780,131 @@ function LegalFooter({ onImpressum, onDatenschutz, onCookieSettings, onBarrieref
   )
 }
 
-/* ===================== IMPRESSUM PAGE ===================== */
+/* ===================== RECHTSSEITEN: gemeinsame Bausteine =====================
+   Texte in src/legal/<lang>.js (DE verbindlich). E-Mail- und Web-Adressen im
+   Text werden automatisch zu Links. */
+function LegalText({ text }) {
+  return splitLinks(text).map((s, i) => s.href
+    ? <a key={i} href={s.href} {...(s.external ? { target: '_blank', rel: 'noopener noreferrer' } : { rel: 'noopener noreferrer' })}>{s.text}</a>
+    : <React.Fragment key={i}>{s.text}</React.Fragment>)
+}
+
+function LegalSections({ sections }) {
+  return sections.map((s, i) => (
+    <section className="legal-section" key={i}>
+      <h2>{s.h}</h2>
+      {(s.p || []).map((p, j) => <p key={j}><LegalText text={p} /></p>)}
+      {s.ul && <ul className="legal-list">{s.ul.map((li, j) => <li key={j}><LegalText text={li} /></li>)}</ul>}
+      {(s.p2 || []).map((p, j) => <p key={'b' + j}><LegalText text={p} /></p>)}
+    </section>
+  ))
+}
+
+/* ===================== IMPRESSUM PAGE =====================
+   ECG § 5, UGB § 14, MedienG § 25. Firmendaten nur aus echten Quellen
+   (Firmenbuch FN 323177 k, novogenia.com). Beteiligungsverhältnisse
+   (§ 25 Abs. 2 MedienG) erst eintragen, wenn der Firmenbuchauszug vorliegt. */
 function ImpressumPage({ onBack }) {
   const t = useT()
-  const lang = useLang()
+  const L = legalFor(useLang()).imp
   return (
     <div className="legal-page content">
       <button className="btn-back" onClick={onBack}>{t('footer_back')}</button>
-      <h1 className="legal-page-title">{t('impressum_title')}</h1>
+      <h1 className="legal-page-title">{L.title}</h1>
 
       <section className="legal-section">
-        <h2>{t('impressum_operator')}</h2>
+        <h2>{L.operatorH}</h2>
+        {/* Betreiberin ist die Novogenia GmbH; deren Geschäftsführer ist Dr. Daniel
+            Wallerstorfer. Matthias Probst führt nur die Novogenia Marketing GmbH
+            (Korrektur 16.09.2026, Angabe Daniel Wallerstorfer). */}
         <p>
           Novogenia GmbH<br />
           Strass 19<br />
           5301 Eugendorf<br />
-          {LX(lang, 'Austria', 'Österreich')}
+          {L.country}
         </p>
+        <p>{L.seat}</p>
       </section>
 
       <section className="legal-section">
-        <h2>{t('impressum_managing')}</h2>
-        {/* Betreiberin ist die Novogenia GmbH; deren Geschäftsführer ist Dr. Daniel
-            Wallerstorfer. Matthias Probst führt nur die Novogenia Marketing GmbH
-            (Korrektur 16.09.2026, Angabe Daniel Wallerstorfer). */}
+        <h2>{L.purposeH}</h2>
+        <p>{L.purpose}</p>
+      </section>
+
+      <section className="legal-section">
+        <h2>{L.managingH}</h2>
         <p>Dr. Daniel Wallerstorfer</p>
       </section>
 
       <section className="legal-section">
-        <h2>{t('impressum_register')}</h2>
+        <h2>{L.registerH}</h2>
         {/* FN 531162 x gehörte zur Marketing GmbH — Novogenia GmbH ist FN 323177 k */}
-        <p>FN 323177 k · {LX(lang, 'Regional Court Salzburg', 'Landesgericht Salzburg')}</p>
+        <p>FN 323177 k · {L.court}</p>
       </section>
 
       <section className="legal-section">
-        <h2>{t('impressum_uidde')}</h2>
+        <h2>{L.uidH}</h2>
         <p>ATU64713304</p>
       </section>
 
       <section className="legal-section">
-        <h2>{t('impressum_contact')}</h2>
+        <h2>{L.contactH}</h2>
         <p>
-          E-Mail: <a href="mailto:service@novogenia.com" rel="noopener noreferrer">service@novogenia.com</a>
+          {L.emailL}: <a href="mailto:service@novogenia.com" rel="noopener noreferrer">service@novogenia.com</a><br />
+          {L.phoneL}: <a href="tel:+43662262102"><span dir="ltr">+43 662 262 102</span></a>
         </p>
       </section>
 
       <section className="legal-section">
-        <h2>{t('impressum_authority')}</h2>
+        <h2>{L.authorityH}</h2>
         <p>
           Bezirkshauptmannschaft Salzburg-Umgebung<br />
-          Karl-Wurmb-Straße 17, 5020 Salzburg<br />
-          {LX(lang, 'Federal Ministry for Social Affairs, Health, Care and Consumer Protection', 'Bundesministerium für Soziales, Gesundheit, Pflege und Konsumentenschutz')}
+          Karl-Wurmb-Straße 17, 5020 Salzburg
         </p>
-      </section>
-
-      <section className="legal-section">
-        <h2>{t('impressum_applicable_law')}</h2>
         <p>
-          {LX(lang,
-            'Austrian Trade Regulations 1994 (GewO), Genetic Technology Act (GTG), accessible via RIS Austria (ris.bka.gv.at).',
-            'Gewerbeordnung 1994, Gentechnikgesetz (GTG), abrufbar über RIS Austria (ris.bka.gv.at).')}
+          {L.ministry}<br />
+          {L.ministryAddr}
         </p>
       </section>
 
       <section className="legal-section">
-        <h2>{t('impressum_liability')}</h2>
-        <p>{t('impressum_liability_text')}</p>
+        <h2>{L.chamberH}</h2>
+        <p><LegalText text={L.chamber} /></p>
+      </section>
+
+      <section className="legal-section">
+        <h2>{L.disclosureH}</h2>
+        {L.disclosure.map((d, i) => <p key={i}>{d}</p>)}
+      </section>
+
+      <section className="legal-section">
+        <h2>{L.contentH}</h2>
+        <p>{L.content}</p>
+      </section>
+
+      <section className="legal-section">
+        <h2>{L.liabilityH}</h2>
+        <p>{L.liability}</p>
       </section>
     </div>
   )
 }
 
-/* ===================== DATENSCHUTZ PAGE ===================== */
+/* ===================== NUTZUNGSBEDINGUNGEN =====================
+   Kostenloser Nutzungsvertrag (seit 19.11.2026). Zertifikat = Bestätigung der
+   Novogenia GmbH, keine Berechtigung zu genetischer/ärztlicher Beratung. */
+function NutzungsbedingungenPage({ onBack }) {
+  const t = useT()
+  const L = legalFor(useLang()).terms
+  return (
+    <div className="legal-page content">
+      <button className="btn-back" onClick={onBack}>{t('footer_back')}</button>
+      <h1 className="legal-page-title">{L.title}</h1>
+      <p className="legal-meta">{L.updated}</p>
+      <LegalSections sections={L.sections} />
+    </div>
+  )
+}
 /* ===================== BARRIEREFREIHEITSERKLÄRUNG =====================
    Konformitätsinformation nach § 14 Abs. 2 BaFG. Das Gesetz verlangt eine
    Kontaktstelle "in schriftlicher und mündlicher Form" — daher E-Mail UND
@@ -3044,66 +2970,26 @@ function BarrierefreiheitPage({ onBack }) {
   )
 }
 
+/* ===================== DATENSCHUTZ PAGE =====================
+   Art. 13 DSGVO. Neufassung 19.11.2026 (NOVO LEGAL): alle Dienste mit Zweck,
+   Rechtsgrundlage, Empfänger, Drittland und Speicherdauer. Tragende
+   Grundlage des Kontos ist der Nutzungsvertrag (lit. b) — es gibt KEINE
+   Einwilligung bei der Registrierung. Ändert sich ein Dienst (Hosting,
+   Schriften, Bot-Anbieter, Vorschaubilder), diesen Text mitändern. */
 function DatenschutzPage({ onBack, onCookieSettings }) {
   const t = useT()
-  const lang = useLang()
+  const L = legalFor(useLang()).privacy
   const [consent] = useCookieConsent()
   return (
     <div className="legal-page content">
       <button className="btn-back" onClick={onBack}>{t('footer_back')}</button>
-      <h1 className="legal-page-title">{t('datenschutz_title')}</h1>
-
+      <h1 className="legal-page-title">{L.title}</h1>
+      <p className="legal-meta">{L.updated}</p>
+      <LegalSections sections={L.sections} />
       <section className="legal-section">
-        <h2>{LX(lang, 'Responsible Party', 'Verantwortlicher')}</h2>
-        <p>
-          Novogenia GmbH<br />
-          Strass 19, 5301 Eugendorf, {LX(lang, 'Austria', 'Österreich')}<br />
-          E-Mail: <a href="mailto:datenschutz@novogenia.com" rel="noopener noreferrer">datenschutz@novogenia.com</a>
-        </p>
-      </section>
-
-      <section className="legal-section">
-        <h2>{LX(lang, 'What data we process', 'Welche Daten wir verarbeiten')}</h2>
-        <p>{LX(lang,
-          'When you create an account, we store your e-mail address, your chosen display name, your language preference, and your course progress (which videos you watched and which tests you passed). This data is stored in Supabase (eu-central-1, Frankfurt, Germany) and processed exclusively for operating NOVO ACADEMY.',
-          'Bei Kontoerstellung speichern wir Ihre E-Mail-Adresse, Ihren gewählten Anzeigenamen, Ihre Spracheinstellung und Ihren Kursfortschritt (welche Videos gesehen, welche Tests bestanden). Diese Daten werden in Supabase (eu-central-1, Frankfurt) gespeichert und ausschließlich zum Betrieb von NOVO ACADEMY verarbeitet.')}</p>
-      </section>
-
-      <section className="legal-section">
-        <h2>{LX(lang, 'Legal basis', 'Rechtsgrundlage')}</h2>
-        <p>{LX(lang,
-          'Processing is based on your consent (Art. 6(1)(a) GDPR) when you register, and on contract performance (Art. 6(1)(b) GDPR) for providing the academy service.',
-          'Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) bei der Registrierung sowie zur Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO) für die Erbringung des Akademie-Dienstes.')}</p>
-      </section>
-
-      <section className="legal-section">
-        <h2>{LX(lang, 'Cookies', 'Cookies')}</h2>
-        <p>{LX(lang,
-          'NOVO ACADEMY uses session cookies that are technically necessary for the login function (Supabase Auth). If you consent to optional cookies, embedded YouTube videos load additional cookies from Google/YouTube. You can withdraw your consent at any time.',
-          'NOVO ACADEMY verwendet Session-Cookies, die technisch notwendig für die Login-Funktion sind (Supabase Auth). Wenn Sie optionalen Cookies zustimmen, laden eingebettete YouTube-Videos zusätzlich Cookies von Google/YouTube. Ihre Einwilligung können Sie jederzeit widerrufen.')}</p>
         <button className="btn-secondary legal-cookie-btn" onClick={onCookieSettings}>
-          {consent === 'all'
-            ? t('cookie_revoke')
-            : t('cookie_settings')}
+          {consent === 'all' ? t('cookie_revoke') : t('cookie_settings')}
         </button>
-      </section>
-
-      <section className="legal-section">
-        <h2>{LX(lang, 'Third-party services', 'Drittanbieter')}</h2>
-        <ul className="legal-list">
-          <li><strong>Supabase</strong> — {LX(lang, 'Auth & database (eu-central-1 Frankfurt, Germany). Privacy policy: supabase.com/privacy', 'Auth & Datenbank (eu-central-1 Frankfurt). Datenschutz: supabase.com/privacy')}</li>
-          <li><strong>YouTube / Google</strong> — {LX(lang, 'Video embedding (only with your consent). Privacy policy: policies.google.com/privacy', 'Video-Einbettung (nur mit Ihrer Einwilligung). Datenschutz: policies.google.com/privacy')}</li>
-        </ul>
-      </section>
-
-      <section className="legal-section">
-        <h2>{LX(lang, 'Your rights', 'Ihre Rechte')}</h2>
-        <p>{LX(lang,
-          'You have the right to access, correct, delete, or export your data, and to lodge a complaint with the Austrian Data Protection Authority (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienna, dsb.gv.at).',
-          'Sie haben das Recht auf Auskunft, Berichtigung, Löschung oder Datenübertragbarkeit sowie das Recht, Beschwerde bei der österreichischen Datenschutzbehörde einzulegen (Barichgasse 40–42, 1030 Wien, dsb.gv.at).')}</p>
-        <p>{LX(lang,
-          'To exercise your rights, contact: datenschutz@novogenia.com',
-          'Zur Ausübung Ihrer Rechte wenden Sie sich an: datenschutz@novogenia.com')}</p>
       </section>
     </div>
   )
@@ -3567,7 +3453,7 @@ function AdminUserActionsMenu({ user, onChanged, eigeneId, onError }) {
 }
 
 /* ===================== AUTH PAGE (signup / login) ===================== */
-function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLanding }) {
+function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLanding, footerProps }) {
   const t = useT()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -3693,6 +3579,13 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLa
             </button>
           </form>
 
+          {/* Information bei der Erhebung (Art. 13 DSGVO) und Einbeziehung der
+              Nutzungsbedingungen (ABGB § 864a). Kein Häkchen: das Konto beruht
+              auf dem Nutzungsvertrag (Art. 6 Abs. 1 lit. b), nicht auf einer
+              Einwilligung. In BEIDEN Modi: auch „Anmelden“ mit Google legt beim ersten
+              Mal ein Konto an. */}
+          <RegistrierungsHinweis footerProps={footerProps} />
+
           <button className="auth-switch" onClick={onSwitchMode} disabled={busy}>
             {isSignup ? t('auth_switch_to_login') : t('auth_switch_to_signup')}
           </button>
@@ -3707,7 +3600,22 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLa
         </div>
       </div>
       </main>
+      {footerProps && <LegalFooter {...footerProps} />}
     </div>
+  )
+}
+
+function RegistrierungsHinweis({ footerProps }) {
+  const L = legalFor(useLang())
+  const teile = L.regNote.split(/(\{terms\}|\{privacy\})/)
+  return (
+    <p className="auth-legal-note">
+      {teile.map((s, i) => s === '{terms}'
+        ? <button key={i} type="button" className="auth-legal-link" onClick={footerProps?.onNutzungsbedingungen}>{L.regTerms}</button>
+        : s === '{privacy}'
+        ? <button key={i} type="button" className="auth-legal-link" onClick={footerProps?.onDatenschutz}>{L.regPrivacy}</button>
+        : <React.Fragment key={i}>{s}</React.Fragment>)}
+    </p>
   )
 }
 
