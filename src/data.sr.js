@@ -1627,7 +1627,7 @@ const FAQTX = {
      },
      {
       "q": "Zašto mi izvještaj preporučuje antioksidanse?",
-      "a": "Intenzivno vježbanje stvara velike količine slobodnih radikala. Ako su tvoji antioksidativni geni (SOD2, CAT, GPX) slabi, oporavak je sporiji, a mikroupale se nakupljaju. Vitamin C, vitamin E i selen doprinose zaštiti ćelija od oksidativnog stresa."
+      "a": "Intenzivno vježbanje stvara velike količine slobodnih radikala. Ako su tvoji antioksidativni geni (SOD2, CAT, GPX) slabi, oporavak je sporiji, a mikroupale se nakupljaju. Vitamin C doprinosi zaštiti ćelija od oksidativnog stresa. Isto važi za vitamin E i selen."
      },
      {
       "q": "Šta je „deload“ i koliko često ga treba raditi?",

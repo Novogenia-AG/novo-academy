@@ -1627,7 +1627,7 @@ const FAQTX = {
      },
      {
       "q": "De ce îmi recomandă raportul antioxidanți?",
-      "a": "Efortul intens generează cantități mari de radicali liberi. Dacă genele tale antioxidante (SOD2, CAT, GPX) sunt slabe, regenerarea este mai lentă și se acumulează micro-inflamații. Vitamina C, vitamina E și seleniul contribuie la protejarea celulelor împotriva stresului oxidativ."
+      "a": "Efortul intens generează cantități mari de radicali liberi. Dacă genele tale antioxidante (SOD2, CAT, GPX) sunt slabe, regenerarea este mai lentă și se acumulează micro-inflamații. Vitamina C contribuie la protejarea celulelor împotriva stresului oxidativ. Același lucru este valabil pentru vitamina E și seleniu."
      },
      {
       "q": "Ce este un „deload” și cât de des ar trebui să îl fac?",

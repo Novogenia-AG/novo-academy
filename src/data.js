@@ -174,7 +174,7 @@ export const COURSES = [
       {
         q: 'Welches Ergebnis lieferte unsere interne Studie mit 302 Personen (genbasierte vs. Standard-Diät)?',
         options: [
-          'Beide Phasen lieferten ähnliche Ergebnisse, lediglich die Compliance war besser',
+          'Beide Diäten lieferten ähnliche Ergebnisse, lediglich die Compliance war besser',
           'Das genetisch personalisierte Programm führte zu 1,4-mal mehr Gewichtsverlust',
           'Das genetisch personalisierte Programm führte zu 2,4-mal mehr Gewichtsverlust',
           'Das genetisch personalisierte Programm führte zu 3,8-mal mehr Gewichtsverlust',

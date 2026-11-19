@@ -1633,7 +1633,7 @@ const FAQTX = {
      },
      {
       "q": "Perché il referto mi consiglia gli antiossidanti?",
-      "a": "L'attività fisica intensa genera grandi quantità di radicali liberi. Se i tuoi geni antiossidanti (SOD2, CAT, GPX) sono deboli, il recupero è più lento e le micro-infiammazioni si accumulano. La vitamina C, la vitamina E e il selenio contribuiscono alla protezione delle cellule dallo stress ossidativo."
+      "a": "L'attività fisica intensa genera grandi quantità di radicali liberi. Se i tuoi geni antiossidanti (SOD2, CAT, GPX) sono deboli, il recupero è più lento e le micro-infiammazioni si accumulano. La vitamina C contribuisce alla protezione delle cellule dallo stress ossidativo. Lo stesso vale per la vitamina E e il selenio."
      },
      {
       "q": "Che cos'è un «deload» e ogni quanto va fatto?",

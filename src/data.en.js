@@ -670,7 +670,7 @@ export const COURSES_EN = [
         title: 'Injury risk & regeneration',
         items: [
           { q: 'My report shows unfavourable connective-tissue genes (COL5A1, MMP3). What should I do?', a: 'Train with extra care: thorough warm-up, less explosive loading until adapted, longer recovery between intense sessions, and good protein/Vit-C intake to support collagen synthesis. Avoid sudden volume jumps.' },
-          { q: 'Why does the report recommend antioxidants for me?', a: 'Intense exercise generates large amounts of free radicals. If your antioxidant genes (SOD2, CAT, GPX) are weak, recovery is slower and micro-inflammation accumulates. Vitamin C, vitamin E and selenium contribute to the protection of cells from oxidative stress.' },
+          { q: 'Why does the report recommend antioxidants for me?', a: 'Intense exercise generates large amounts of free radicals. If your antioxidant genes (SOD2, CAT, GPX) are weak, recovery is slower and micro-inflammation accumulates. Vitamin C contributes to the protection of cells from oxidative stress. The same applies to vitamin E and selenium.' },
           { q: 'What is a "deload" and how often should I do it?', a: 'A deload is a week of gentler training (e.g. first session at half the weight, second at two-thirds). It gives the body recovery time for repair and psychological reset. Typically every ~5 weeks, depending on your genetic regeneration and stress predisposition.' },
         ],
       },
