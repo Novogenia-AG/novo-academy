@@ -3561,8 +3561,8 @@ export const UI = {
   admin_action_reset_confirm: { de: 'Wirklich allen Kurs-Fortschritt dieses Nutzers löschen?',
                                 en: 'Really wipe ALL course progress for this user?' },
   admin_action_delete:        { de: 'Nutzer entfernen',              en: 'Delete user' },
-  admin_action_delete_confirm:{ de: 'Diesen Nutzer wirklich entfernen?\n\nDer Account bleibt zwar bestehen, wird aber aus der Admin-Liste ausgeblendet und alle Kurs-Fortschritte gelöscht.',
-                                en: 'Really delete this user?\n\nThe account itself stays but disappears from the admin list and all course progress is deleted.' },
+  admin_action_delete_confirm:{ de: 'Diesen Nutzer wirklich entfernen?\n\nDas Konto wird nur als gelöscht markiert: Es verschwindet aus der Admin-Liste und verliert Admin-Rechte. Anmeldung und Kurs-Fortschritte bleiben erhalten; über „Gelöschte anzeigen“ lässt es sich wiederherstellen. Für eine Löschung nach DSGVO reicht das nicht.',
+                                en: 'Really remove this user?\n\nThe account is only marked as deleted: it disappears from the admin list and loses admin rights. Sign-in and course progress are kept; it can be restored via “Show deleted”. This is not sufficient for an erasure under the GDPR.' },
   admin_show_deleted:         { de: 'Gelöschte anzeigen',             en: 'Show deleted' },
 
   // ---- Cookie Banner ----
