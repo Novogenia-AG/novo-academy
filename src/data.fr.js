@@ -1567,7 +1567,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Que signifie un déficit MTHFR pour moi ?",
-      "a": "MTHFR active l'acide folique en méthylfolate, la forme que ton corps peut réellement utiliser. En cas de déficit, tu peux prendre beaucoup d'acide folique sous forme de complément ordinaire et présenter malgré tout une carence fonctionnelle. Passer au méthylfolate résout le problème."
+      "a": "MTHFR active l'acide folique en méthylfolate, la forme que ton corps peut réellement utiliser. En cas de déficit, tu peux prendre beaucoup d'acide folique sous forme de complément ordinaire et présenter malgré tout une carence fonctionnelle. Le méthylfolate est déjà la forme active et n'a pas besoin de cette étape de conversion. Le mieux est d'en parler avec ton médecin pour savoir s'il te convient."
      },
      {
       "q": "J'ai une variante HFE — la supplémentation en fer est-elle dangereuse pour moi ?",

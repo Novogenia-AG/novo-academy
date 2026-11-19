@@ -1574,7 +1574,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Wat betekent een MTHFR-defect voor mij?",
-      "a": "MTHFR activeert foliumzuur tot methylfolaat, de vorm die je lichaam daadwerkelijk kan gebruiken. Bij een defect kun je veel foliumzuur via een gewoon supplement innemen en toch een functioneel tekort hebben. Overstappen op methylfolaat lost het probleem op."
+      "a": "MTHFR activeert foliumzuur tot methylfolaat, de vorm die je lichaam daadwerkelijk kan gebruiken. Bij een defect kun je veel foliumzuur via een gewoon supplement innemen en toch een functioneel tekort hebben. Methylfolaat is al de actieve vorm en heeft deze omzettingsstap niet nodig. Of het bij jou past, bespreek je het best met je arts."
      },
      {
       "q": "Ik heb een HFE-variant — is ijzersuppletie gevaarlijk voor mij?",

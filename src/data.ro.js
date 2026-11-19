@@ -1568,7 +1568,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Ce înseamnă pentru mine un defect MTHFR?",
-      "a": "MTHFR activează acidul folic transformându-l în metilfolat, forma pe care corpul tău o poate folosi cu adevărat. În cazul unui defect, poți lua mult acid folic dintr-un supliment obișnuit și totuși să ai un deficit funcțional. Trecerea la metilfolat rezolvă problema."
+      "a": "MTHFR activează acidul folic transformându-l în metilfolat, forma pe care corpul tău o poate folosi cu adevărat. În cazul unui defect, poți lua mult acid folic dintr-un supliment obișnuit și totuși să ai un deficit funcțional. Metilfolatul este deja forma activă și nu are nevoie de această etapă de conversie. Dacă este potrivit pentru tine, cel mai bine discuți cu medicul tău."
      },
      {
       "q": "Am o variantă HFE — este periculoasă pentru mine suplimentarea cu fier?",

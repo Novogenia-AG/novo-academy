@@ -1568,7 +1568,7 @@ const FAQTX = {
     "items": [
      {
       "q": "¿Qué significa para mí un defecto en MTHFR?",
-      "a": "MTHFR activa el ácido fólico convirtiéndolo en metilfolato, la forma que tu cuerpo realmente puede utilizar. Con un defecto, puedes tomar mucho ácido fólico en un suplemento convencional y aun así tener una deficiencia funcional. Cambiar a metilfolato resuelve el problema."
+      "a": "MTHFR activa el ácido fólico convirtiéndolo en metilfolato, la forma que tu cuerpo realmente puede utilizar. Con un defecto, puedes tomar mucho ácido fólico en un suplemento convencional y aun así tener una deficiencia funcional. El metilfolato ya es la forma activa y no necesita este paso de conversión. Si es adecuado para ti, lo mejor es consultarlo con tu médico."
      },
      {
       "q": "Tengo una variante en HFE: ¿es peligroso para mí suplementar hierro?",

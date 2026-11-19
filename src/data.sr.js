@@ -1568,7 +1568,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Šta za mene znači MTHFR defekt?",
-      "a": "MTHFR aktivira folnu kiselinu u metilfolat, oblik koji tvoje tijelo zaista može koristiti. Uz defekt možeš uzimati mnogo folne kiseline u običnom dodatku i i dalje imati funkcionalni manjak. Prelazak na metilfolat rješava taj problem."
+      "a": "MTHFR aktivira folnu kiselinu u metilfolat, oblik koji tvoje tijelo zaista može koristiti. Uz defekt možeš uzimati mnogo folne kiseline u običnom dodatku i i dalje imati funkcionalni manjak. Metilfolat je već aktivni oblik i ne treba mu ovaj korak pretvaranja. Da li je pogodan za tebe, najbolje je da razgovaraš sa svojim ljekarom."
      },
      {
       "q": "Imam HFE varijantu — je li suplementacija željezom opasna za mene?",

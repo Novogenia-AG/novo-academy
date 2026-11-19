@@ -1574,7 +1574,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Che cosa significa per me un difetto MTHFR?",
-      "a": "MTHFR attiva l'acido folico trasformandolo in metilfolato, la forma che il tuo corpo può realmente utilizzare. In presenza di un difetto puoi assumere molto acido folico in un integratore comune e avere comunque una carenza funzionale. Il passaggio al metilfolato risolve il problema."
+      "a": "MTHFR attiva l'acido folico trasformandolo in metilfolato, la forma che il tuo corpo può realmente utilizzare. In presenza di un difetto puoi assumere molto acido folico in un integratore comune e avere comunque una carenza funzionale. Il metilfolato è già la forma attiva e non richiede questa fase di conversione. Se sia adatto a te è meglio valutarlo con il tuo medico."
      },
      {
       "q": "Ho una variante HFE: l'integrazione di ferro è pericolosa per me?",

@@ -663,15 +663,15 @@ export const COURSES = [
         items: [
           {
             q: 'Was bedeutet ein MTHFR-Defekt für die Folsäure-Einnahme?',
-            a: 'Folsäure wird im Körper erst durch das MTHFR-Gen in die aktive Form Methylfolat umgewandelt. Bei einem Defekt funktioniert diese Umwandlung schlechter oder gar nicht — die Folsäure wirkt dann nicht, obwohl sie im Blut messbar ist.',
+            a: 'Folsäure wird im Körper erst durch das MTHFR-Gen in die aktive Form Methylfolat umgewandelt. Bei einer MTHFR-Variante funktioniert diese Umwandlung schlechter, auch wenn die Folsäure im Blut messbar ist.',
           },
           {
             q: 'Warum kann ein normaler Bluttest einen MTHFR-Defekt nicht aufdecken?',
-            a: 'Der Bluttest misst nur, wie viel Folsäure im Blut zirkuliert. Er sagt aber nicht, ob die Folsäure auch tatsächlich in die aktive Form umgewandelt wurde. Nur ein Gentest zeigt, ob die Umwandlung funktioniert.',
+            a: 'Der Bluttest zeigt, wie viel Folsäure im Blut ist. Ob dein Körper sie gut in die aktive Form umwandeln kann, zeigt die Gen-Analyse.',
           },
           {
             q: 'Was ist die Lösung bei einem MTHFR-Defekt?',
-            a: 'Direkt die aktive Form Methylfolat supplementieren — diese überspringt den genetischen Umwandlungs-Schritt. Eine berühmte Studie an 12 unfruchtbaren Frauen mit MTHFR-Defekt zeigte: nach Umstellung von Folsäure auf Methylfolat wurden 11 von 12 innerhalb von 12 Monaten schwanger.',
+            a: 'Methylfolat ist die bereits aktive Form und überspringt den genetischen Umwandlungsschritt. Ob und in welcher Menge du es einnimmst, besprichst du am besten mit deiner Ärztin oder deinem Arzt. Bei Kinderwunsch oder Schwangerschaft gehört die Folat-Versorgung in ärztliche Hände.',
           },
         ],
       },

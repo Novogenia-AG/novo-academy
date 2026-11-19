@@ -530,7 +530,7 @@ export const COURSES_EN = [
       {
         title: 'Key gene topics',
         items: [
-          { q: 'What does an MTHFR defect mean for me?', a: 'MTHFR activates folic acid into methylfolate, the form your body can actually use. With a defect, you can take a lot of folic acid in a regular supplement and still have functional deficiency. Switching to methylfolate solves the problem.' },
+          { q: 'What does an MTHFR defect mean for me?', a: 'MTHFR activates folic acid into methylfolate, the form your body can actually use. With a defect, you can take a lot of folic acid in a regular supplement and still have functional deficiency. Methylfolate is the already active form and does not need this conversion step. Whether it is right for you is best discussed with your doctor.' },
           { q: 'I have an HFE variant — is iron supplementation dangerous for me?', a: 'It can be. Some HFE variants cause iron overload over decades — your body absorbs too much from food and stores it in liver, heart, joints. Iron supplements should only be taken if blood tests show a real deficiency.' },
           { q: 'Salt sensitivity (ACE) — does that mean I have to give up salt?', a: 'Not entirely. It means your blood pressure responds more strongly to salt than average. Reducing salt is a powerful lever in your case — much more so than for non-sensitive people.' },
         ],

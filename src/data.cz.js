@@ -1567,7 +1567,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Co pro mě znamená defekt MTHFR?",
-      "a": "MTHFR aktivuje kyselinu listovou na metylfolát — formu, kterou tvé tělo dokáže skutečně využít. Při defektu můžeš užívat běžný doplněk s velkým množstvím kyseliny listové a přesto mít funkční nedostatek. Přechod na metylfolát tento problém řeší."
+      "a": "MTHFR aktivuje kyselinu listovou na metylfolát — formu, kterou tvé tělo dokáže skutečně využít. Při defektu můžeš užívat běžný doplněk s velkým množstvím kyseliny listové a přesto mít funkční nedostatek. Metylfolát je již aktivní forma a tento krok přeměny nepotřebuje. Zda je pro tebe vhodný, je nejlepší probrat s lékařem."
      },
      {
       "q": "Mám variantu HFE — je pro mě suplementace železa nebezpečná?",
