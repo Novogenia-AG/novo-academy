@@ -1626,7 +1626,7 @@ const FAQTX = {
      },
      {
       "q": "Proč mi zpráva doporučuje antioxidanty?",
-      "a": "Intenzivní pohyb produkuje velké množství volných radikálů. Pokud jsou tvé antioxidační geny (SOD2, CAT, GPX) slabé, regenerace je pomalejší a hromadí se mikrozáněty. Vitamin C, vitamin E, polyfenoly a selen tyto obranné systémy přímo podporují."
+      "a": "Intenzivní pohyb produkuje velké množství volných radikálů. Pokud jsou tvé antioxidační geny (SOD2, CAT, GPX) slabé, regenerace je pomalejší a hromadí se mikrozáněty. Vitamin C, vitamin E a selen přispívají k ochraně buněk před oxidativním stresem."
      },
      {
       "q": "Co je „deload“ a jak často ho mám zařazovat?",

@@ -1633,7 +1633,7 @@ const FAQTX = {
      },
      {
       "q": "Waarom raadt het rapport mij antioxidanten aan?",
-      "a": "Intensieve inspanning produceert grote hoeveelheden vrije radicalen. Als je antioxidantgenen (SOD2, CAT, GPX) zwak zijn, verloopt het herstel trager en stapelen micro-ontstekingen zich op. Vitamine C, vitamine E, polyfenolen en seleen ondersteunen deze afweersystemen rechtstreeks."
+      "a": "Intensieve inspanning produceert grote hoeveelheden vrije radicalen. Als je antioxidantgenen (SOD2, CAT, GPX) zwak zijn, verloopt het herstel trager en stapelen micro-ontstekingen zich op. Vitamine C, vitamine E en seleen dragen bij tot de bescherming van cellen tegen oxidatieve stress."
      },
      {
       "q": "Wat is een “deload” en hoe vaak moet ik die inlassen?",

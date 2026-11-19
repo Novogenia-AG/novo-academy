@@ -1627,7 +1627,7 @@ const FAQTX = {
      },
      {
       "q": "¿Por qué el informe me recomienda antioxidantes?",
-      "a": "El ejercicio intenso genera grandes cantidades de radicales libres. Si tus genes antioxidantes (SOD2, CAT, GPX) son débiles, la recuperación es más lenta y se acumula microinflamación. La vitamina C, la vitamina E, los polifenoles y el selenio apoyan directamente estos sistemas de defensa."
+      "a": "El ejercicio intenso genera grandes cantidades de radicales libres. Si tus genes antioxidantes (SOD2, CAT, GPX) son débiles, la recuperación es más lenta y se acumula microinflamación. La vitamina C, la vitamina E y el selenio contribuyen a la protección de las células frente al daño oxidativo."
      },
      {
       "q": "¿Qué es un “deload” y con qué frecuencia debo hacerlo?",

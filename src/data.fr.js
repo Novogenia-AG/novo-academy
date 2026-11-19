@@ -1626,7 +1626,7 @@ const FAQTX = {
      },
      {
       "q": "Pourquoi le rapport me recommande-t-il des antioxydants ?",
-      "a": "L'exercice intense génère de grandes quantités de radicaux libres. Si tes gènes antioxydants (SOD2, CAT, GPX) sont faibles, la récupération est plus lente et une micro-inflammation s'accumule. Les vitamines C et E, les polyphénols et le sélénium soutiennent directement ces systèmes de défense."
+      "a": "L'exercice intense génère de grandes quantités de radicaux libres. Si tes gènes antioxydants (SOD2, CAT, GPX) sont faibles, la récupération est plus lente et une micro-inflammation s'accumule. La vitamine C, la vitamine E et le sélénium contribuent à protéger les cellules contre le stress oxydatif."
      },
      {
       "q": "Qu'est-ce qu'un « deload » et à quelle fréquence en faire ?",

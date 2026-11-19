@@ -1072,15 +1072,15 @@ export const COURSES = [
         items: [
           {
             q: 'Warum erholt sich nicht jeder gleich schnell?',
-            a: 'Zwei genetische Faktoren spielen eine Hauptrolle: Schutzgene gegen oxidativen Stress (freie Radikale) und Gene, die die Aggressivität des Immunsystems bei Muskelschäden steuern. Bei defekten Schutzgenen brauchst du längere Pausen oder gezielt entzündungshemmende Nährstoffe (Omega-3, MSM, Vitamin E, C).',
+            a: 'Zwei genetische Faktoren spielen eine Hauptrolle: Schutzgene gegen oxidativen Stress (freie Radikale) und Gene, die die Aggressivität des Immunsystems bei Muskelschäden steuern. Bei weniger aktiven Schutzgenen brauchst du längere Pausen. Vitamin C trägt dazu bei, die Zellen vor oxidativem Stress zu schützen. Gleiches gilt für Vitamin E und Selen.',
           },
           {
             q: 'Wie aussagekräftig ist das genetische Verletzungs-Risiko?',
-            a: 'Die COL5A1-Studie zeigte: Spieler mit defektem Gen spielten 28 % weniger Spiele wegen Verletzungen. Ein einziger Gendefekt kann also nachweislich 30 % der Karriere kosten. Die Vorbeugung (gezieltes Aufwärmen, Sehnen-Training, Ernährung) ist daher essenziell.',
+            a: 'Die COL5A1-Studie zeigte: Spieler mit der ungünstigen Genvariante spielten 28 % weniger Spiele wegen Verletzungen. Gezieltes Aufwärmen, Sehnentraining und eine passende Ernährung sind deshalb besonders sinnvoll.',
           },
           {
             q: 'Soll ich bei Muskelkater trainieren?',
-            a: 'Nein. Muskeln wachsen außerhalb des Studios, nicht während des Trainings. Beim Training entstehen die Mikrorisse, in der Regenerationsphase werden sie verstärkt wieder aufgebaut. Wer mit Muskelkater trainiert, verkürzt diese Aufbauphase. Mit richtiger Ernährung und Supplementen lässt sich die Muskelkater-Dauer verkürzen.',
+            a: 'Nein. Muskeln wachsen außerhalb des Studios, nicht während des Trainings. Beim Training entstehen die Mikrorisse, in der Regenerationsphase werden sie verstärkt wieder aufgebaut. Wer mit Muskelkater trainiert, verkürzt diese Aufbauphase. Ausreichend Schlaf, Eiweiß und Pausen unterstützen die Regeneration.',
           },
         ],
       },
@@ -1148,10 +1148,10 @@ export const COURSES = [
         correct: 1,
       },
       {
-        q: 'Welche Nährstoffe wirken antientzündlich und unterstützen die Regeneration?',
+        q: 'Welche Nährstoffe tragen dazu bei, die Zellen vor oxidativem Stress zu schützen?',
         options: [
           'Arachidonsäure und Glutamat',
-          'Omega-3 und MSM (organischer Schwefel)',
+          'Vitamin C und Vitamin E',
           'Koffein und Theobromin',
           'Zucker und Fruchtzucker',
         ],
