@@ -1126,6 +1126,15 @@ function ytUnmuteOnLoad(e) {
   setTimeout(tick, 200)
 }
 
+/* YouTube-Vorschaubilder (img.youtube.com) übertragen die IP-Adresse an
+   Google. Sie laden deshalb erst nach "Alle akzeptieren" (Art. 6 Abs. 1 lit. a
+   DSGVO, Datenschutzerklärung: "nur mit Ihrer Einwilligung"). Vorher und bei
+   "Nur notwendige" bleibt der neutrale Kachelgrund bzw. ein eigenes Bild aus
+   /thumbnails stehen. */
+function ytStill(youtubeId, consent) {
+  return (youtubeId && consent === 'all') ? `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg` : null
+}
+
 /* ===================== WELCOME VIDEO ===================== */
 /* Pass `youtubeId` to embed an actual YouTube video; otherwise shows a click-to-play thumbnail */
 /* ===================== KI-KENNZEICHNUNG =====================
@@ -1165,9 +1174,9 @@ function WelcomePlayer({ youtubeId = null, coverImage = null }) {
   const lang = useLang()
   const [playing, setPlaying] = useState(false)
   const [consent, setConsent] = useCookieConsent()
-  // coverImage = optionales Gestaltungs-Cover. Ohne Cover das YouTube-Thumbnail
-  // (YouTube liefert es für öffentliche und nicht gelistete Videos).
-  const primarySrc = coverImage || (youtubeId ? `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg` : null)
+  // coverImage = optionales Gestaltungs-Cover. Ohne Cover das YouTube-Thumbnail,
+  // aber nur mit Einwilligung (ytStill); sonst bleibt .welcome-thumb-fallback.
+  const primarySrc = coverImage || ytStill(youtubeId, consent)
   return (
     <div className="welcome-player" onClick={() => !playing && consent === 'all' && setPlaying(true)}>
       {playing && youtubeId && consent === 'all' ? (
@@ -1522,8 +1531,8 @@ function FullVideo({ course, youtubeId, title }) {
   const v = course.videos?.[0]
   const yt = youtubeId || course.youtubeId
   const explicitCover = course.coverImage
-  const stillSrc = explicitCover
-    || (yt ? `https://img.youtube.com/vi/${yt}/maxresdefault.jpg` : course.thumbnail)
+  // Ohne Einwilligung kein YouTube-Bild: eigenes Kursbild oder dunkler Grund.
+  const stillSrc = explicitCover || ytStill(yt, consent) || course.thumbnail || null
   return (
     <>
       <div className="cc-video-full" onClick={() => !playing && consent === 'all' && setPlaying(true)}>
@@ -1541,7 +1550,7 @@ function FullVideo({ course, youtubeId, title }) {
         <YtConsentPlaceholder onAllow={() => setConsent('all')} />
       ) : (
         <>
-          <img src={stillSrc} alt="" className="cc-video-thumb"
+          {stillSrc && <img src={stillSrc} alt="" className="cc-video-thumb"
                onLoad={(e) => {
                  if (!explicitCover && yt && e.target.src.includes('maxresdefault') && e.target.naturalWidth < 320) {
                    e.target.src = `https://img.youtube.com/vi/${yt}/hqdefault.jpg`
@@ -1551,7 +1560,7 @@ function FullVideo({ course, youtubeId, title }) {
                  if (!explicitCover && yt && e.target.src.includes('maxresdefault')) {
                    e.target.src = `https://img.youtube.com/vi/${yt}/hqdefault.jpg`
                  }
-               }} />
+               }} />}
           {!playing && (
             <button className="cc-video-play" aria-label={LX(lang, 'Play', 'Abspielen')}>
               <Icon.Play />
@@ -1593,9 +1602,9 @@ function RelatedVideoTile({ youtubeId, title, coverImage = null }) {
      luden die verwandten Videos YouTube-Cookies, obwohl der Nutzer nur
      "Nur notwendige" gewaehlt oder noch gar nicht entschieden hatte. */
   const [consent, setConsent] = useCookieConsent()
-  // coverImage = optionales Gestaltungs-Cover. Ohne Cover das YouTube-Thumbnail
-  // (YouTube liefert es für öffentliche und nicht gelistete Videos).
-  const stillSrc = coverImage || `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`
+  // coverImage = optionales Gestaltungs-Cover. Ohne Cover das YouTube-Thumbnail,
+  // aber nur mit Einwilligung (ytStill); sonst bleibt der dunkle Kachelgrund.
+  const stillSrc = coverImage || ytStill(youtubeId, consent)
   return (
     <div className="related-video-tile" onClick={() => !playing && consent === 'all' && setPlaying(true)}>
       {playing && consent === 'all' ? (
@@ -1610,7 +1619,7 @@ function RelatedVideoTile({ youtubeId, title, coverImage = null }) {
         />
       ) : (
         <>
-          <img src={stillSrc} alt="" className="related-video-thumb"
+          {stillSrc && <img src={stillSrc} alt="" className="related-video-thumb"
                onLoad={(e) => {
                  if (!coverImage && e.target.src.includes('maxresdefault') && e.target.naturalWidth < 320) {
                    e.target.src = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`
@@ -1623,7 +1632,7 @@ function RelatedVideoTile({ youtubeId, title, coverImage = null }) {
                    // wie WelcomePlayer: kein Symbol für kaputtes Bild, dunkler Kachelgrund bleibt
                    e.target.style.display = 'none'
                  }
-               }} />
+               }} />}
           {consent === 'all'
             ? (<button className="related-video-play" aria-label={LX(lang, 'Play', 'Abspielen')}>
                  <Icon.Play />
