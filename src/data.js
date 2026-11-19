@@ -942,7 +942,7 @@ export const COURSES = [
       { title: 'Regulierung von Triglyceriden', youtubeId: 'hUFY050zS7k' },
       { title: 'Eisenaufnahme — die richtige Menge', youtubeId: 'jk1N2MDyasY' },
       { title: 'Wirkung von Kaffee und Koffein', youtubeId: '6qNiJE9BYkc' },
-      { title: 'Coenzym Q10: das Anti-Aging Molekül', youtubeId: 'LdQ7zCN9HL4' },
+      { title: 'Coenzym Q10 und deine Gene', youtubeId: 'LdQ7zCN9HL4' },
       { title: 'Alterungsschutz vor oxidativem Stress', youtubeId: 'mHwTrHigqQ8' },
       { title: 'Ausreichende Selenversorgung', youtubeId: '99hQc17CnVo' },
       { title: 'Zusätzliche Gene', youtubeId: '5DgFZxCtZd0' },
