@@ -3352,10 +3352,10 @@ export const UI = {
 
   // ---- Certificate CTA ----
   cert_cta_title:             { de: 'Zertifikat erstellen',        en: 'Generate your certificate' },
-  cert_cta_intro_a:           { de: 'Bestätige deinen Lernerfolg mit dem offiziellen ',
-                                en: 'Confirm your learning progress with the official ' },
-  cert_cta_intro_b:           { de: '-Zertifikat. Es enthält alle ',
-                                en: ' certificate. It includes all of the ' },
+  cert_cta_intro_a:           { de: 'Bestätige deinen Lernerfolg mit dem Zertifikat der Novogenia GmbH als ',
+                                en: 'Confirm your learning progress with the Novogenia GmbH certificate as a ' },
+  cert_cta_intro_b:           { de: '. Es enthält alle ',
+                                en: '. It includes all of the ' },
   cert_cta_intro_c:           { de: ' abgeschlossenen und mit Test bestandenen Module deines Kontos und wird mit der Unterschrift von Dr. Daniel Wallerstorfer ausgestellt.',
                                 en: ' modules in your account that you have completed and passed the test for, and is issued with the signature of Dr. Daniel Wallerstorfer.' },
   cert_cta_name_label:        { de: 'Name auf dem Zertifikat',     en: 'Name on the certificate' },
@@ -3457,15 +3457,15 @@ export const UI = {
   // ---- Landing page ----
   brand_coach:                { de: 'Genetik Coach',                en: 'Genetics Coach' },
   landing_hero_title:         { de: 'Werde Genetik Coach',           en: 'Become a Genetics Coach' },
-  landing_hero_sub:           { de: 'Die offizielle Schulungsplattform von Novogenia. Lerne in deinem Tempo, schließe Module mit Tests ab und erhalte dein offizielles Zertifikat als Novogenia Genetik Coach.',
-                                en: 'The official Novogenia training platform. Learn at your own pace, complete modules with tests, and earn your official Novogenia Genetics Coach certificate.' },
+  landing_hero_sub:           { de: 'Die kostenlose Schulungsplattform der Novogenia GmbH. Lerne in deinem Tempo, schließe Module mit Tests ab und erhalte ein Zertifikat der Novogenia GmbH als Genetik Coach. Es bestätigt die abgeschlossenen Schulungsmodule und ist kein staatlich anerkannter Berufsabschluss.',
+                                en: 'The free training platform of Novogenia GmbH. Learn at your own pace, complete modules with tests and earn a Novogenia GmbH certificate as a Genetics Coach. It confirms the completed training modules and is not a state-recognised professional qualification.' },
   landing_cta_signup:         { de: 'Kostenlos starten',            en: 'Get started for free' },
   landing_cta_login:          { de: 'Schon registriert? Anmelden',  en: 'Already registered? Sign in' },
 
   landing_feature_videos_t:   { de: '22 Online-Kurse',              en: '22 online courses' },
   landing_feature_videos_d:   { de: 'Von Dr. Daniel Wallerstorfer höchstpersönlich unterrichtet — Wissenschaft, Beratung und FAQs zu allen Novogenia-Analysen.',
                                 en: 'Taught by Dr. Daniel Wallerstorfer himself — science, consultation and FAQs covering every Novogenia analysis.' },
-  landing_feature_certs_t:    { de: 'Echtes Zertifikat',            en: 'Real certificate' },
+  landing_feature_certs_t:    { de: 'Persönliches Zertifikat',      en: 'Personal certificate' },
   landing_feature_certs_d:    { de: 'Bestehe die Module mit Tests und erhalte dein personalisiertes Genetik-Coach-Zertifikat als PDF.',
                                 en: 'Pass the module tests and download your personalised Genetics Coach certificate as a PDF.' },
   landing_feature_progress_t: { de: 'Fortschritt überall',          en: 'Progress across devices' },

@@ -92,7 +92,7 @@ const INLINE_I18N = {
     "Download as PDF": "Scarica come PDF",
     "CEO of Novogenia": "CEO di Novogenia",
     "Skip to content": "Vai al contenuto",
-    "Official training platform": "Piattaforma di formazione ufficiale",
+    "Novogenia training platform": "Piattaforma di formazione di Novogenia",
     "Austria": "Austria",
     "Regional Court Salzburg": "Tribunale regionale di Salisburgo",
     "Federal Ministry for Social Affairs, Health, Care and Consumer Protection": "Ministero federale per gli Affari sociali, la Salute, l’Assistenza e la Tutela dei consumatori",
@@ -158,7 +158,7 @@ const INLINE_I18N = {
     "Download as PDF": "Stáhnout jako PDF",
     "CEO of Novogenia": "Generální ředitel Novogenia",
     "Skip to content": "Přejít na obsah",
-    "Official training platform": "Oficiální školicí platforma",
+    "Novogenia training platform": "Školicí platforma Novogenia",
     "Austria": "Rakousko",
     "Regional Court Salzburg": "Zemský soud Salcburk",
     "Federal Ministry for Social Affairs, Health, Care and Consumer Protection": "Spolkové ministerstvo pro sociální věci, zdraví, péči a ochranu spotřebitele",
@@ -224,7 +224,7 @@ const INLINE_I18N = {
     "Download as PDF": "Télécharger en PDF",
     "CEO of Novogenia": "PDG de Novogenia",
     "Skip to content": "Aller au contenu",
-    "Official training platform": "Plateforme de formation officielle",
+    "Novogenia training platform": "Plateforme de formation de Novogenia",
     "Austria": "Autriche",
     "Regional Court Salzburg": "Tribunal régional de Salzbourg",
     "Federal Ministry for Social Affairs, Health, Care and Consumer Protection": "Ministère fédéral des Affaires sociales, de la Santé, des Soins et de la Protection des consommateurs",
@@ -290,7 +290,7 @@ const INLINE_I18N = {
     "Download as PDF": "Descarregar como PDF",
     "CEO of Novogenia": "CEO da Novogenia",
     "Skip to content": "Saltar para o conteúdo",
-    "Official training platform": "Plataforma de formação oficial",
+    "Novogenia training platform": "Plataforma de formação da Novogenia",
     "Austria": "Áustria",
     "Regional Court Salzburg": "Tribunal Regional de Salzburgo",
     "Federal Ministry for Social Affairs, Health, Care and Consumer Protection": "Ministério Federal dos Assuntos Sociais, Saúde, Cuidados e Proteção do Consumidor",
@@ -356,7 +356,7 @@ const INLINE_I18N = {
     "Download as PDF": "Downloaden als pdf",
     "CEO of Novogenia": "CEO van Novogenia",
     "Skip to content": "Ga naar inhoud",
-    "Official training platform": "Officieel trainingsplatform",
+    "Novogenia training platform": "Opleidingsplatform van Novogenia",
     "Austria": "Oostenrijk",
     "Regional Court Salzburg": "Regionale rechtbank Salzburg",
     "Federal Ministry for Social Affairs, Health, Care and Consumer Protection": "Federaal Ministerie voor Sociale Zaken, Gezondheid, Zorg en Consumentenbescherming",
@@ -422,7 +422,7 @@ const INLINE_I18N = {
     "Download as PDF": "Descarcă în format PDF",
     "CEO of Novogenia": "CEO al Novogenia",
     "Skip to content": "Sari la conținut",
-    "Official training platform": "Platformă oficială de instruire",
+    "Novogenia training platform": "Platforma de instruire Novogenia",
     "Austria": "Austria",
     "Regional Court Salzburg": "Tribunalul Regional Salzburg",
     "Federal Ministry for Social Affairs, Health, Care and Consumer Protection": "Ministerul Federal pentru Afaceri Sociale, Sănătate, Îngrijire și Protecția Consumatorilor",
@@ -488,7 +488,7 @@ const INLINE_I18N = {
     "Download as PDF": "Descargar como PDF",
     "CEO of Novogenia": "CEO de Novogenia",
     "Skip to content": "Saltar al contenido",
-    "Official training platform": "Plataforma oficial de formación",
+    "Novogenia training platform": "Plataforma de formación de Novogenia",
     "Austria": "Austria",
     "Regional Court Salzburg": "Tribunal Regional de Salzburgo",
     "Federal Ministry for Social Affairs, Health, Care and Consumer Protection": "Ministerio Federal de Asuntos Sociales, Salud, Cuidados y Protección del Consumidor",
@@ -554,7 +554,7 @@ const INLINE_I18N = {
     "Download as PDF": "Preuzmi kao PDF",
     "CEO of Novogenia": "Izvršni direktor Novogenije",
     "Skip to content": "Preskoči na sadržaj",
-    "Official training platform": "Službena platforma za obuku",
+    "Novogenia training platform": "Novogenia platforma za obuku",
     "Austria": "Austrija",
     "Regional Court Salzburg": "Zemaljski sud u Salzburgu",
     "Federal Ministry for Social Affairs, Health, Care and Consumer Protection": "Savezno ministarstvo za socijalna pitanja, zdravlje, njegu i zaštitu potrošača",
@@ -620,7 +620,7 @@ const INLINE_I18N = {
     "Download as PDF": "تنزيل بصيغة PDF",
     "CEO of Novogenia": "الرئيس التنفيذي لشركة Novogenia",
     "Skip to content": "الانتقال إلى المحتوى",
-    "Official training platform": "منصة التدريب الرسمية",
+    "Novogenia training platform": "منصة التدريب من Novogenia",
     "Austria": "النمسا",
     "Regional Court Salzburg": "المحكمة الإقليمية في سالزبورغ",
     "Federal Ministry for Social Affairs, Health, Care and Consumer Protection": "الوزارة الاتحادية للشؤون الاجتماعية والصحة والرعاية وحماية المستهلك",
@@ -2822,7 +2822,7 @@ function LandingPage({ lang, setLang, onSignUp, onLogIn, onImpressum, onDatensch
       <main id="main-content" tabIndex={-1} className="skip-target">
       <section className="landing-hero">
         <div className="landing-hero-inner">
-          <span className="nd-eyebrow"><span className="nd-eyebrow-dot" aria-hidden="true" />{LX(lang, 'Official training platform', 'Offizielle Schulungsplattform')}</span>
+          <span className="nd-eyebrow"><span className="nd-eyebrow-dot" aria-hidden="true" />{LX(lang, 'Novogenia training platform', 'Schulungsplattform von Novogenia')}</span>
           <h1 className="landing-hero-title nd-grad-head">{t('landing_hero_title')}</h1>
           <p className="landing-hero-sub">{t('landing_hero_sub')}</p>
           <div className="landing-hero-cta">
