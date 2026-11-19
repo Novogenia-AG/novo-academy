@@ -2396,7 +2396,7 @@ export const COURSES = [
         q: 'Welche Aussage zur genetischen UV-Empfindlichkeit (z. B. MC1R) ist korrekt?',
         options: [
           'Genvarianten beeinflussen die UV-Empfindlichkeit nicht — entscheidend ist nur der Hauttyp',
-          'Träger ungünstiger Varianten bekommen schneller Sonnenbrand und haben ein höheres Risiko für UV-bedingte Hautalterung und Hautkrebs — strikter UV-Schutz ist umso wichtiger',
+          'Träger ungünstiger Varianten bekommen schneller Sonnenbrand und eine stärkere Lichtalterung der Haut — konsequenter UV-Schutz ist umso wichtiger',
           'Bei genetisch hoher UV-Empfindlichkeit sollte man die Sonne komplett meiden, auch im Schatten',
           'Sonnencreme wirkt nur bei Menschen mit „normalen" Genen',
         ],
@@ -2508,7 +2508,7 @@ export const COURSES = [
           },
           {
             q: 'Was sagt mein MC1R-Gen über UV-Empfindlichkeit aus?',
-            a: 'MC1R steuert die Produktion von Eumelanin (dunkles Pigment, schützt vor UV) versus Phäomelanin (rötliches Pigment, erzeugt bei UV-Belastung freie Radikale). Ungünstige Varianten: schneller Sonnenbrand, höheres Risiko für UV-Schäden und Hautkrebs — striktere Sonnencreme-Disziplin nötig.',
+            a: 'MC1R steuert die Produktion von Eumelanin (dunkles Pigment, schützt vor UV) versus Phäomelanin (rötliches Pigment, erzeugt bei UV-Belastung freie Radikale). Ungünstige Varianten: schneller Sonnenbrand und stärkere Lichtalterung der Haut — konsequenter Sonnenschutz ist besonders wichtig.',
           },
           {
             q: 'Warum ist FLG (Filaggrin) für meine Hautpflege wichtig?',

@@ -1186,7 +1186,7 @@ const TXT = {
     "q": "Quelle affirmation sur la sensibilité génétique aux UV (p. ex. MC1R) est correcte ?",
     "options": [
      "Les variantes génétiques n'influencent pas la sensibilité aux UV — seul le type de peau compte",
-     "Les porteurs de variantes défavorables brûlent plus facilement et présentent un risque plus élevé de vieillissement cutané lié aux UV et de cancer de la peau — une protection UV stricte est d'autant plus importante",
+     "Les porteurs de variantes défavorables brûlent plus facilement et présentent un photovieillissement cutané plus marqué — une protection UV stricte est d'autant plus importante",
      "En cas de forte sensibilité génétique aux UV, il faut éviter totalement le soleil, même à l'ombre",
      "La crème solaire ne fonctionne que pour les personnes ayant des gènes « normaux »"
     ],
@@ -1868,7 +1868,7 @@ const FAQTX = {
      },
      {
       "q": "Que m'indique MC1R sur ma sensibilité aux UV ?",
-      "a": "MC1R contrôle la production d'eumélanine (pigment foncé, protecteur contre les UV) par rapport à la phéomélanine (pigment rougeâtre, qui génère des radicaux libres sous l'effet des UV). Variantes défavorables : coups de soleil plus rapides, risque accru de dommages liés aux UV et de cancer de la peau — une discipline plus stricte en matière de protection solaire est nécessaire."
+      "a": "MC1R contrôle la production d'eumélanine (pigment foncé, protecteur contre les UV) par rapport à la phéomélanine (pigment rougeâtre, qui génère des radicaux libres sous l'effet des UV). Variantes défavorables : coups de soleil plus rapides, photovieillissement cutané plus marqué — une discipline plus stricte en matière de protection solaire est nécessaire."
      },
      {
       "q": "Pourquoi FLG (filaggrine) est-il important pour mes soins de la peau ?",

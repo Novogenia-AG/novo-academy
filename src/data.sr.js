@@ -1027,7 +1027,7 @@ const TXT = {
     "q": "Koja tvrdnja o genetskoj UV osjetljivosti (npr. MC1R) je tačna?",
     "options": [
      "Genetske varijante ne utiču na UV osjetljivost — bitan je samo tip kože",
-     "Nosioci nepovoljnih varijanti lakše izgore i imaju veći rizik od starenja kože i raka kože povezanih sa UV zračenjem — stroga UV zaštita je još važnija",
+     "Nosioci nepovoljnih varijanti lakše izgore i koža im izraženije stari pod uticajem svetlosti — stroga UV zaštita je još važnija",
      "Kod visoke genetske UV osjetljivosti treba potpuno izbjegavati sunce, čak i u hladu",
      "Krema za sunčanje djeluje samo kod ljudi sa \"normalnim\" genima"
     ],
@@ -1869,7 +1869,7 @@ const FAQTX = {
      },
      {
       "q": "Šta mi MC1R govori o UV osjetljivosti?",
-      "a": "MC1R kontroliše proizvodnju eumelanina (tamni pigment, štiti od UV zračenja) naspram feomelanina (crvenkasti pigment, koji pod UV zračenjem stvara slobodne radikale). Nepovoljne varijante: brže izgaranje na suncu, veći rizik od UV oštećenja i raka kože — potrebna je stroža disciplina u zaštiti od sunca."
+      "a": "MC1R kontroliše proizvodnju eumelanina (tamni pigment, štiti od UV zračenja) naspram feomelanina (crvenkasti pigment, koji pod UV zračenjem stvara slobodne radikale). Nepovoljne varijante: brže izgaranje na suncu, izraženije starenje kože pod uticajem svetlosti — potrebna je stroža disciplina u zaštiti od sunca."
      },
      {
       "q": "Zašto je FLG (filagrin) važan za moju njegu kože?",

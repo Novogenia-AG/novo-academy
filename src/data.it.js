@@ -1192,7 +1192,7 @@ const TXT = {
     "q": "Quale affermazione sulla sensibilità genetica ai raggi UV (ad es. MC1R) è corretta?",
     "options": [
      "Le varianti genetiche non influenzano la sensibilità ai raggi UV: conta solo il tipo di pelle",
-     "I portatori di varianti sfavorevoli si scottano più facilmente e hanno un rischio maggiore di invecchiamento cutaneo e tumori della pelle legati ai raggi UV: una protezione UV rigorosa è per loro ancora più importante",
+     "I portatori di varianti sfavorevoli si scottano più facilmente e mostrano un fotoinvecchiamento cutaneo più marcato: una protezione UV rigorosa è per loro ancora più importante",
      "Con un'elevata sensibilità genetica ai raggi UV bisognerebbe evitare del tutto il sole, persino all'ombra",
      "La protezione solare funziona solo per le persone con geni \"normali\""
     ],
@@ -1875,7 +1875,7 @@ const FAQTX = {
      },
      {
       "q": "Che cosa mi dice MC1R sulla mia sensibilità ai raggi UV?",
-      "a": "MC1R controlla la produzione di eumelanina (pigmento scuro, protettivo contro i raggi UV) rispetto alla feomelanina (pigmento rossastro, che sotto i raggi UV genera radicali liberi). Varianti sfavorevoli: scottature più rapide, rischio maggiore di danni da raggi UV e di tumori della pelle; serve una disciplina più rigorosa nell'uso della protezione solare."
+      "a": "MC1R controlla la produzione di eumelanina (pigmento scuro, protettivo contro i raggi UV) rispetto alla feomelanina (pigmento rossastro, che sotto i raggi UV genera radicali liberi). Varianti sfavorevoli: scottature più rapide, fotoinvecchiamento cutaneo più marcato; serve una disciplina più rigorosa nell'uso della protezione solare."
      },
      {
       "q": "Perché FLG (filaggrina) è importante per la mia cura della pelle?",

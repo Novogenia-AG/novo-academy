@@ -793,7 +793,7 @@ const TXT = {
     "q": "Care afirmație despre sensibilitatea genetică la UV (de ex. MC1R) este corectă?",
     "options": [
      "Variantele genetice nu influențează sensibilitatea la UV — contează doar tipul de piele",
-     "Purtătorii variantelor nefavorabile se ard mai ușor și au un risc mai mare de îmbătrânire a pielii și cancer de piele legate de UV — protecția UV strictă este cu atât mai importantă",
+     "Purtătorii variantelor nefavorabile se ard mai ușor și prezintă o fotoîmbătrânire mai accentuată a pielii — protecția UV strictă este cu atât mai importantă",
      "La o sensibilitate genetică ridicată la UV, ar trebui evitat complet soarele, chiar și la umbră",
      "Crema de protecție solară funcționează doar pentru persoanele cu gene \"normale\""
     ],
@@ -1869,7 +1869,7 @@ const FAQTX = {
      },
      {
       "q": "Ce îmi spune MC1R despre sensibilitatea la UV?",
-      "a": "MC1R controlează producția de eumelanină (pigment închis, care protejează împotriva UV) față de cea de feomelanină (pigment roșiatic, care generează radicali liberi sub acțiunea UV). Variantele nefavorabile: arsuri solare mai rapide, risc mai mare de leziuni UV și de cancer de piele — este necesară o disciplină mai strictă a protecției solare."
+      "a": "MC1R controlează producția de eumelanină (pigment închis, care protejează împotriva UV) față de cea de feomelanină (pigment roșiatic, care generează radicali liberi sub acțiunea UV). Variantele nefavorabile: arsuri solare mai rapide, fotoîmbătrânire mai accentuată a pielii — este necesară o disciplină mai strictă a protecției solare."
      },
      {
       "q": "De ce este FLG (filagrina) importantă pentru îngrijirea pielii mele?",

@@ -1659,7 +1659,7 @@ export const COURSES_EN = [
         q: 'Which statement about genetic UV sensitivity (e.g. MC1R) is correct?',
         options: [
           'Genetic variants do not influence UV sensitivity — only skin type matters',
-          'Carriers of unfavourable variants burn more easily and have a higher risk of UV-related skin aging and skin cancer — strict UV protection is even more important',
+          'Carriers of unfavourable variants burn more easily and show stronger UV-related skin aging (photoaging) — strict UV protection is even more important',
           'At high genetic UV sensitivity, one should avoid sun completely, even in the shade',
           'Sunscreen works only for people with "normal" genes',
         ],
@@ -1736,7 +1736,7 @@ export const COURSES_EN = [
         title: 'Genetics & Skin Aging — Understanding the result',
         items: [
           { q: 'What does an "active" MMP1 variant mean?', a: 'MMP1 (Matrix-Metalloproteinase 1) breaks down collagen in the skin. A genetically highly active variant leads to faster collagen breakdown — the skin loses firmness earlier, wrinkles form faster. Countermeasures: consistent UV protection, antioxidants, no smoking, retinoids or peptide-based care.' },
-          { q: 'What does MC1R tell me about UV sensitivity?', a: 'MC1R controls production of Eumelanin (dark pigment, protective against UV) vs. Pheomelanin (reddish pigment, generates free radicals under UV). Unfavourable variants: faster sunburn, higher risk of UV damage and skin cancer — stricter sunscreen discipline needed.' },
+          { q: 'What does MC1R tell me about UV sensitivity?', a: 'MC1R controls production of Eumelanin (dark pigment, protective against UV) vs. Pheomelanin (reddish pigment, generates free radicals under UV). Unfavourable variants: faster sunburn, stronger photoaging of the skin — stricter sunscreen discipline needed.' },
           { q: 'Why is FLG (filaggrin) important for my skincare?', a: 'FLG produces filaggrin, a protein that holds the natural skin barrier together and binds moisture. With genetically reduced FLG activity, the skin barrier is weaker — moisture is lost faster, irritants penetrate more easily. Recommendation: barrier-strengthening care (Ceramides, Cholesterol, free fatty acids), mild cleansers, no drying surfactants.' },
           { q: 'Does this really affect my appearance measurably?', a: 'Yes, but not overnight. Genetic weaknesses compound over years. Two people of the same age can differ by 10-15 years biologically — depending on how well they compensate genetic weak spots with lifestyle.' },
         ],

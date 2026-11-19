@@ -1192,7 +1192,7 @@ const TXT = {
     "q": "Welke bewering over genetische uv-gevoeligheid (bijv. MC1R) is juist?",
     "options": [
      "Genetische varianten beïnvloeden de uv-gevoeligheid niet — alleen het huidtype telt",
-     "Dragers van ongunstige varianten verbranden makkelijker en hebben een hoger risico op uv-gerelateerde huidveroudering en huidkanker — strikte uv-bescherming is voor hen des te belangrijker",
+     "Dragers van ongunstige varianten verbranden makkelijker en vertonen sterkere lichtveroudering van de huid — strikte uv-bescherming is voor hen des te belangrijker",
      "Bij hoge genetische uv-gevoeligheid moet je de zon volledig mijden, zelfs in de schaduw",
      "Zonnebrandcrème werkt alleen bij mensen met \"normale\" genen"
     ],
@@ -1875,7 +1875,7 @@ const FAQTX = {
      },
      {
       "q": "Wat vertelt MC1R mij over mijn uv-gevoeligheid?",
-      "a": "MC1R stuurt de aanmaak van eumelanine (donker pigment, beschermt tegen uv) versus feomelanine (roodachtig pigment, dat onder uv vrije radicalen vormt). Ongunstige varianten: sneller verbranden, een hoger risico op uv-schade en huidkanker — een strengere discipline met zonnebrandcrème is dan nodig."
+      "a": "MC1R stuurt de aanmaak van eumelanine (donker pigment, beschermt tegen uv) versus feomelanine (roodachtig pigment, dat onder uv vrije radicalen vormt). Ongunstige varianten: sneller verbranden, sterkere lichtveroudering van de huid — een strengere discipline met zonnebrandcrème is dan nodig."
      },
      {
       "q": "Waarom is FLG (filaggrine) belangrijk voor mijn huidverzorging?",

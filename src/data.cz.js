@@ -1186,7 +1186,7 @@ const TXT = {
     "q": "Které tvrzení o genetické citlivosti na UV (např. MC1R) je správné?",
     "options": [
      "Genetické varianty citlivost na UV neovlivňují — záleží jen na typu pleti",
-     "Nositelé nepříznivých variant se snáze spálí a mají vyšší riziko UV podmíněného stárnutí pleti a rakoviny kůže — důsledná UV ochrana je pro ně ještě důležitější",
+     "Nositelé nepříznivých variant se snáze spálí a jejich pleť výrazněji stárne vlivem UV záření — důsledná UV ochrana je pro ně ještě důležitější",
      "Při vysoké genetické citlivosti na UV by se měl člověk slunci vyhýbat zcela, i ve stínu",
      "Opalovací krém funguje jen u lidí s „normálními“ geny"
     ],
@@ -1868,7 +1868,7 @@ const FAQTX = {
      },
      {
       "q": "Co mi MC1R prozradí o citlivosti na UV?",
-      "a": "MC1R řídí tvorbu eumelaninu (tmavý pigment, chrání před UV) oproti feomelaninu (načervenalý pigment, který pod UV zářením vytváří volné radikály). Nepříznivé varianty: rychlejší spálení, vyšší riziko poškození UV zářením a rakoviny kůže — je potřeba přísnější disciplína při používání opalovacího krému."
+      "a": "MC1R řídí tvorbu eumelaninu (tmavý pigment, chrání před UV) oproti feomelaninu (načervenalý pigment, který pod UV zářením vytváří volné radikály). Nepříznivé varianty: rychlejší spálení, výraznější stárnutí pleti vlivem světla — je potřeba přísnější disciplína při používání opalovacího krému."
      },
      {
       "q": "Proč je FLG (filagrin) důležitý pro moji péči o pleť?",
