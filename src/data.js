@@ -3598,12 +3598,6 @@ export const UI = {
   footer_back:                { de: '← Zurück',                       en: '← Back' },
 
   // ---- Impressum Page ----
-  impressum_title:            { de: 'Impressum',                      en: 'Legal Notice' },
-  impressum_operator:         { de: 'Betreiber',                      en: 'Operator' },
-  impressum_managing:         { de: 'Geschäftsführung',               en: 'Managing Director' },
-  impressum_register:         { de: 'Firmenbuch',                     en: 'Commercial Register' },
-  impressum_uidde:            { de: 'UID',                            en: 'VAT ID' },
-  impressum_authority:        { de: 'Aufsichtsbehörde',               en: 'Regulatory Authority' },
 
   /* Barrierefreiheitserklärung — Konformitätsinformation nach § 14 Abs. 2
      Barrierefreiheitsgesetz (BaFG, Umsetzung der Richtlinie (EU) 2019/882).
@@ -3631,14 +3625,8 @@ export const UI = {
                                 en: 'If you are not satisfied with our response, you may contact the Austrian Social Ministry Service (Sozialministeriumservice, SMS), which monitors compliance with the Accessibility Act in Austria.' },
   a11y_updated:               { de: 'Diese Erklärung wurde am 18. August 2026 erstellt und am 19. November 2026 aktualisiert. Sie beruht auf einer Selbstbewertung.',
                                 en: 'This statement was created on 18 August 2026 and updated on 19 November 2026. It is based on a self-assessment.' },
-  impressum_applicable_law:   { de: 'Anwendbare Rechtsvorschriften',  en: 'Applicable Regulations' },
-  impressum_contact:          { de: 'Kontakt',                        en: 'Contact' },
-  impressum_liability:        { de: 'Haftungshinweis',                en: 'Liability Notice' },
-  impressum_liability_text:   { de: 'Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.',
-                                en: 'Despite careful content control, we assume no liability for the content of external links. The operators of linked pages are solely responsible for their content.' },
 
   // ---- Datenschutz Page ----
-  datenschutz_title:          { de: 'Datenschutzerklärung',           en: 'Privacy Policy' },
 }
 
 export const t = (lang, key) => {
