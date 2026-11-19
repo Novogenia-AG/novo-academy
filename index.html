@@ -9,6 +9,40 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="description" content="Die offizielle Schulungsplattform von Novogenia. Lerne genetische Beratung in deinem Tempo, schließe Module mit Tests ab und erhalte dein Zertifikat als Genetik Coach." />
 
+    <link rel="canonical" href="https://academy.novopilot.com/" />
+    <link rel="alternate" hreflang="de" href="https://academy.novopilot.com/kurse/" />
+    <link rel="alternate" hreflang="en" href="https://academy.novopilot.com/en/courses/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NOVO ACADEMY" />
+    <meta property="og:title" content="NOVO ACADEMY: kostenlose Online-Schulung von Novogenia" />
+    <meta property="og:description" content="22 Online-Kurse mit Videos, Tests und Zertifikat als Genetik Coach für Partner, Berater und Fachleute." />
+    <meta property="og:url" content="https://academy.novopilot.com/" />
+    <meta property="og:image" content="https://academy.novopilot.com/apple-touch-icon.png" />
+    <!-- Strukturdaten für Suchmaschinen und KI-Systeme (kein ausführbares Skript, die CSP gilt dafür nicht) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.novogenia.com/#organization",
+          "name": "Novogenia GmbH",
+          "url": "https://www.novogenia.com/",
+          "logo": "https://academy.novopilot.com/novogenia-logo.png"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://academy.novopilot.com/#website",
+          "name": "NOVO ACADEMY",
+          "url": "https://academy.novopilot.com/",
+          "inLanguage": ["de", "en", "cs", "fr", "pt", "it", "nl", "ro", "es", "sr", "ar"],
+          "description": "Kostenlose Online-Schulungsplattform der Novogenia GmbH mit 22 Kursen zu den Novogenia-Analysen, Tests und Zertifikat als Genetik Coach.",
+          "publisher": { "@id": "https://www.novogenia.com/#organization" }
+        }
+      ]
+    }
+    </script>
+
     <!-- ===== SECURITY HEADERS (meta fallback for GitHub Pages static hosting) ===== -->
     <!-- Content-Security-Policy: allowlist every source the app needs.
          connect-src nennt bewusst den KONKRETEN Supabase-Host statt *.supabase.co:
@@ -64,6 +98,25 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- Lesbarer Inhalt für Besucher ohne JavaScript und für Crawler, die kein JavaScript ausführen
+         (Text identisch mit der Startseite der App). -->
+    <noscript>
+      <main style="max-width:760px;margin:0 auto;padding:24px 16px;font-family:Montserrat,Arial,sans-serif;color:#0B2350;line-height:1.6">
+        <p><strong>NOVO ACADEMY</strong> · Offizielle Schulungsplattform von Novogenia</p>
+        <h1>Werde Genetik Coach</h1>
+        <p>Die offizielle Schulungsplattform von Novogenia. Lerne in deinem Tempo, schließe Module mit Tests ab und erhalte dein offizielles Zertifikat als Novogenia Genetik Coach.</p>
+        <h2>22 Online-Kurse</h2>
+        <p>Von Dr. Daniel Wallerstorfer höchstpersönlich unterrichtet — Wissenschaft, Beratung und FAQs zu allen Novogenia-Analysen.</p>
+        <h2>Für wen ist die Akademie?</h2>
+        <ul>
+          <li>Partner und Reseller, die Novogenia-Analysen anbieten und ihre Kunden professionell beraten möchten.</li>
+          <li>Ernährungsberater, Coaches, Apotheker und Mediziner, die ihre Beratung um genetische Aspekte erweitern wollen.</li>
+          <li>Alle, die verstehen wollen, wie Gene unsere Gesundheit, Ernährung, Leistung und Schönheit beeinflussen.</li>
+        </ul>
+        <p><a href="/kurse/">Kursübersicht</a> · <a href="/en/courses/" hreflang="en">Course overview (English)</a></p>
+        <p>Die NOVO ACADEMY braucht JavaScript. Bitte aktiviere JavaScript in deinem Browser.</p>
+      </main>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
