@@ -534,10 +534,10 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Ce recomandare alimentară se potrivește unui client cu un defect HFE (risc de supraîncărcare cu fier)?",
+    "q": "Ce recomandare alimentară se potrivește unui client al cărui raport arată un necesar de fier mai scăzut (HFE)?",
     "options": [
      "Să crească aportul de fier — are nevoie de mai mult",
-     "Să reducă încărcarea cu fier din alimentație: mai puțină carne roșie, fără suplimente îmbogățite cu fier decât în caz de deficit confirmat printr-o analiză de sânge. Excesul de fier se acumulează și afectează ficatul, inima și articulațiile de-a lungul deceniilor",
+     "Să nu crească suplimentar aportul de fier: mai puțină carne roșie, fără suplimente îmbogățite cu fier fără un deficit constatat de medic",
      "Să ia zilnic suplimente de fier ca măsură de precauție",
      "Nu este necesară nicio schimbare"
     ],
@@ -1571,8 +1571,8 @@ const FAQTX = {
       "a": "MTHFR activează acidul folic transformându-l în metilfolat, forma pe care corpul tău o poate folosi cu adevărat. În cazul unui defect, poți lua mult acid folic dintr-un supliment obișnuit și totuși să ai un deficit funcțional. Metilfolatul este deja forma activă și nu are nevoie de această etapă de conversie. Dacă este potrivit pentru tine, cel mai bine discuți cu medicul tău."
      },
      {
-      "q": "Am o variantă HFE — este periculoasă pentru mine suplimentarea cu fier?",
-      "a": "Poate fi. Unele variante HFE duc, de-a lungul deceniilor, la o supraîncărcare cu fier — corpul tău absoarbe prea mult fier din alimente și îl depozitează în ficat, inimă și articulații. Suplimentele de fier ar trebui luate doar dacă analizele de sânge arată un deficit real."
+      "q": "Am o variantă HFE — ar trebui să iau suplimente de fier?",
+      "a": "Rezultatul tău HFE arată un necesar de fier mai scăzut. Așadar, nu lua suplimente de fier din proprie inițiativă — doar dacă un medic a constatat un deficit printr-o analiză de sânge."
      },
      {
       "q": "Sensibilitatea la sare (ACE) — înseamnă că trebuie să renunț la sare?",

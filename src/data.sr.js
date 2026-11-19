@@ -119,10 +119,10 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Koja preporuka u ishrani odgovara klijentu s HFE-defektom (rizik od preopterećenja željezom)?",
+    "q": "Koja preporuka u ishrani odgovara klijentu kod kojeg izvještaj pokazuje manju potrebu za željezom (HFE)?",
     "options": [
      "Povećati unos željeza — treba im više",
-     "Smanjiti unos željeza iz hrane: manje crvenog mesa, bez suplemenata obogaćenih željezom osim ako krvni nalaz pokaže manjak. Višak željeza se nakuplja i decenijama oštećuje jetru, srce i zglobove",
+     "Ne povećavati dodatno unos željeza: manje crvenog mesa, bez suplemenata obogaćenih željezom bez manjka koji je utvrdio ljekar",
      "Uzimati suplemente željeza svakodnevno kao mjeru opreza",
      "Nije potrebna promjena"
     ],
@@ -1571,8 +1571,8 @@ const FAQTX = {
       "a": "MTHFR aktivira folnu kiselinu u metilfolat, oblik koji tvoje tijelo zaista može koristiti. Uz defekt možeš uzimati mnogo folne kiseline u običnom dodatku i i dalje imati funkcionalni manjak. Metilfolat je već aktivni oblik i ne treba mu ovaj korak pretvaranja. Da li je pogodan za tebe, najbolje je da razgovaraš sa svojim ljekarom."
      },
      {
-      "q": "Imam HFE varijantu — je li suplementacija željezom opasna za mene?",
-      "a": "Može biti. Neke HFE varijante decenijama izazivaju preopterećenje željezom — tvoje tijelo apsorbira previše željeza iz hrane i skladišti ga u jetri, srcu i zglobovima. Suplemente željeza treba uzimati samo ako krvni nalaz pokaže stvarni manjak."
+      "q": "Imam HFE varijantu — treba li da uzimam suplemente željeza?",
+      "a": "Tvoj HFE rezultat pokazuje manju potrebu za željezom. Zato ne uzimaj suplemente željeza na svoju ruku — samo ako ljekar u krvnom nalazu utvrdi manjak."
      },
      {
       "q": "Osjetljivost na so (ACE) — znači li to da moram odustati od soli?",

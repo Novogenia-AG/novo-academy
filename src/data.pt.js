@@ -352,10 +352,10 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Que recomendação alimentar se adequa a um cliente com um defeito HFE (risco de sobrecarga de ferro)?",
+    "q": "Que recomendação alimentar se adequa a um cliente cujo relatório indica uma necessidade de ferro mais baixa (HFE)?",
     "options": [
      "Aumentar a ingestão de ferro — ele precisa de mais",
-     "Reduzir a carga de ferro alimentar: menos carne vermelha, sem suplementos enriquecidos com ferro, exceto em caso de carência comprovada por análise ao sangue. O excesso de ferro acumula-se e danifica o fígado, o coração e as articulações ao longo de décadas",
+     "Não aumentar ainda mais a ingestão de ferro: menos carne vermelha, sem suplementos enriquecidos com ferro sem uma carência detetada pelo médico",
      "Tomar suplementos de ferro diariamente, por precaução",
      "Não é necessária qualquer alteração"
     ],
@@ -1577,8 +1577,8 @@ const FAQTX = {
       "a": "O MTHFR ativa o ácido fólico, transformando-o em metilfolato, a forma que o teu corpo consegue efetivamente utilizar. Com um defeito, podes tomar muito ácido fólico num suplemento comum e continuar a ter uma carência funcional. O metilfolato já é a forma ativa e não precisa deste passo de conversão. Se é adequado para ti, é melhor falares com o teu médico."
      },
      {
-      "q": "Tenho uma variante HFE — a suplementação de ferro é perigosa para mim?",
-      "a": "Pode ser. Algumas variantes HFE provocam uma sobrecarga de ferro ao longo de décadas — o teu corpo absorve demasiado ferro dos alimentos e armazena-o no fígado, no coração e nas articulações. Os suplementos de ferro só devem ser tomados se as análises ao sangue revelarem uma carência real."
+      "q": "Tenho uma variante HFE — devo tomar suplementos de ferro?",
+      "a": "O teu resultado HFE indica uma necessidade de ferro mais baixa. Por isso, não tomes suplementos de ferro por iniciativa própria — só se um médico tiver detetado uma carência numa análise ao sangue."
      },
      {
       "q": "Sensibilidade ao sal (ACE) — significa isso que tenho de abdicar do sal?",

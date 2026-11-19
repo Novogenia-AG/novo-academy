@@ -534,10 +534,10 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "¿Qué recomendación dietética es adecuada para un cliente con un defecto en HFE (riesgo de sobrecarga de hierro)?",
+    "q": "¿Qué recomendación dietética es adecuada para un cliente cuyo informe muestra una menor necesidad de hierro (HFE)?",
     "options": [
      "Aumentar la ingesta de hierro: necesitan más",
-     "Reducir la carga de hierro en la dieta: menos carne roja, sin suplementos enriquecidos con hierro salvo que exista deficiencia confirmada por análisis de sangre. El exceso de hierro se acumula y daña el hígado, el corazón y las articulaciones a lo largo de décadas",
+     "No aumentar más la ingesta de hierro: menos carne roja, sin suplementos enriquecidos con hierro sin una deficiencia detectada por un médico",
      "Tomar suplementos de hierro a diario como precaución",
      "No es necesario ningún cambio"
     ],
@@ -1571,8 +1571,8 @@ const FAQTX = {
       "a": "MTHFR activa el ácido fólico convirtiéndolo en metilfolato, la forma que tu cuerpo realmente puede utilizar. Con un defecto, puedes tomar mucho ácido fólico en un suplemento convencional y aun así tener una deficiencia funcional. El metilfolato ya es la forma activa y no necesita este paso de conversión. Si es adecuado para ti, lo mejor es consultarlo con tu médico."
      },
      {
-      "q": "Tengo una variante en HFE: ¿es peligroso para mí suplementar hierro?",
-      "a": "Puede serlo. Algunas variantes de HFE provocan una sobrecarga de hierro a lo largo de décadas: tu cuerpo absorbe demasiado de los alimentos y lo almacena en el hígado, el corazón y las articulaciones. Los suplementos de hierro solo deberían tomarse si los análisis de sangre muestran una deficiencia real."
+      "q": "Tengo una variante en HFE: ¿debo tomar suplementos de hierro?",
+      "a": "Tu resultado de HFE indica una menor necesidad de hierro. Por eso, no tomes suplementos de hierro por tu cuenta, solo si un médico ha detectado una deficiencia en un análisis de sangre."
      },
      {
       "q": "Sensibilidad a la sal (ACE): ¿significa que tengo que renunciar a la sal?",

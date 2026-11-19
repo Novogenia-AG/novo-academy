@@ -351,10 +351,10 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Které dietní doporučení je vhodné pro klienta s defektem HFE (riziko přetížení železem)?",
+    "q": "Které dietní doporučení je vhodné pro klienta, u něhož zpráva ukazuje nižší potřebu železa (HFE)?",
     "options": [
      "Zvýšit příjem železa — potřebují ho víc",
-     "Snížit zátěž železem ze stravy: méně červeného masa, žádné doplňky obohacené železem, pokud není deficit potvrzen krevním testem. Nadbytek železa se hromadí a po desetiletí poškozuje játra, srdce a klouby",
+     "Příjem železa dále nezvyšovat: méně červeného masa, žádné doplňky obohacené železem, pokud lékař nezjistil nedostatek",
      "Preventivně užívat doplňky železa denně",
      "Není potřeba žádná změna"
     ],
@@ -1570,8 +1570,8 @@ const FAQTX = {
       "a": "MTHFR aktivuje kyselinu listovou na metylfolát — formu, kterou tvé tělo dokáže skutečně využít. Při defektu můžeš užívat běžný doplněk s velkým množstvím kyseliny listové a přesto mít funkční nedostatek. Metylfolát je již aktivní forma a tento krok přeměny nepotřebuje. Zda je pro tebe vhodný, je nejlepší probrat s lékařem."
      },
      {
-      "q": "Mám variantu HFE — je pro mě suplementace železa nebezpečná?",
-      "a": "Může být. Některé varianty HFE vedou během desetiletí k přetížení železem — tělo ho z potravy vstřebává příliš mnoho a ukládá ho v játrech, srdci a kloubech. Doplňky se železem proto užívej jen tehdy, když krevní testy prokáží skutečný nedostatek."
+      "q": "Mám variantu HFE — mám užívat doplňky železa?",
+      "a": "Tvůj výsledek HFE ukazuje nižší potřebu železa. Doplňky železa proto neužívej na vlastní pěst — jen tehdy, když lékař v krevním testu zjistí nedostatek."
      },
      {
       "q": "Citlivost na sůl (ACE) — znamená to, že se musím soli vzdát?",

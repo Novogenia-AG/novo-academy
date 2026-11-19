@@ -352,10 +352,10 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Quale raccomandazione alimentare è adatta a un cliente con difetto HFE (rischio di sovraccarico di ferro)?",
+    "q": "Quale raccomandazione alimentare è adatta a un cliente il cui report indica un fabbisogno di ferro più basso (HFE)?",
     "options": [
      "Aumentare l'apporto di ferro, ne ha bisogno di più",
-     "Ridurre l'apporto alimentare di ferro: meno carne rossa, nessun integratore arricchito di ferro a meno di una carenza documentata da esami del sangue. Il ferro in eccesso si accumula e danneggia fegato, cuore e articolazioni nell'arco di decenni",
+     "Non aumentare ulteriormente l'apporto di ferro: meno carne rossa, nessun integratore arricchito di ferro senza una carenza accertata dal medico",
      "Assumere integratori di ferro ogni giorno a scopo precauzionale",
      "Nessun cambiamento necessario"
     ],
@@ -1577,8 +1577,8 @@ const FAQTX = {
       "a": "MTHFR attiva l'acido folico trasformandolo in metilfolato, la forma che il tuo corpo può realmente utilizzare. In presenza di un difetto puoi assumere molto acido folico in un integratore comune e avere comunque una carenza funzionale. Il metilfolato è già la forma attiva e non richiede questa fase di conversione. Se sia adatto a te è meglio valutarlo con il tuo medico."
      },
      {
-      "q": "Ho una variante HFE: l'integrazione di ferro è pericolosa per me?",
-      "a": "Può esserlo. Alcune varianti HFE causano un sovraccarico di ferro nell'arco di decenni: il corpo ne assorbe troppo dagli alimenti e lo accumula in fegato, cuore e articolazioni. Gli integratori di ferro andrebbero assunti solo se gli esami del sangue documentano una carenza reale."
+      "q": "Ho una variante HFE: devo assumere integratori di ferro?",
+      "a": "Il tuo risultato HFE indica un fabbisogno di ferro più basso. Quindi non assumere integratori di ferro di tua iniziativa, ma solo se un medico ha riscontrato una carenza con gli esami del sangue."
      },
      {
       "q": "Sensibilità al sale (ACE): significa che devo rinunciare al sale?",

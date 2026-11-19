@@ -352,10 +352,10 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Welke voedingsaanbeveling past bij een cliënt met een HFE-defect (risico op ijzerstapeling)?",
+    "q": "Welke voedingsaanbeveling past bij een cliënt bij wie het rapport een lagere ijzerbehoefte laat zien (HFE)?",
     "options": [
      "Verhoog de ijzerinname — ze hebben meer nodig",
-     "Verminder de ijzerbelasting uit voeding: minder rood vlees, geen met ijzer verrijkte supplementen tenzij er via een bloedtest een tekort is vastgesteld. Overtollig ijzer stapelt zich op en beschadigt over decennia de lever, het hart en de gewrichten",
+     "De ijzerinname niet extra verhogen: minder rood vlees, geen met ijzer verrijkte supplementen zonder door een arts vastgesteld tekort",
      "Neem uit voorzorg dagelijks ijzersupplementen",
      "Geen verandering nodig"
     ],
@@ -1577,8 +1577,8 @@ const FAQTX = {
       "a": "MTHFR activeert foliumzuur tot methylfolaat, de vorm die je lichaam daadwerkelijk kan gebruiken. Bij een defect kun je veel foliumzuur via een gewoon supplement innemen en toch een functioneel tekort hebben. Methylfolaat is al de actieve vorm en heeft deze omzettingsstap niet nodig. Of het bij jou past, bespreek je het best met je arts."
      },
      {
-      "q": "Ik heb een HFE-variant — is ijzersuppletie gevaarlijk voor mij?",
-      "a": "Dat kan. Sommige HFE-varianten leiden over decennia tot ijzerstapeling — je lichaam neemt te veel ijzer op uit de voeding en slaat het op in lever, hart en gewrichten. IJzersupplementen zou je alleen moeten nemen als een bloedtest een echt tekort aantoont."
+      "q": "Ik heb een HFE-variant — moet ik ijzersupplementen nemen?",
+      "a": "Je HFE-resultaat wijst op een lagere ijzerbehoefte. Neem dus niet op eigen initiatief ijzersupplementen — alleen als een arts via een bloedtest een tekort heeft vastgesteld."
      },
      {
       "q": "Zoutgevoeligheid (ACE) — betekent dat dat ik zout helemaal moet laten staan?",

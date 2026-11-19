@@ -463,10 +463,10 @@ export const COURSES_EN = [
         correct: 1,
       },
       {
-        q: 'Which dietary recommendation fits a client with a HFE-defect (iron-overload risk)?',
+        q: 'Which dietary recommendation fits a client whose report shows a lower iron requirement (HFE)?',
         options: [
           'Increase iron intake — they need more',
-          'Reduce dietary iron load: less red meat, no iron-enriched supplements unless deficient by blood test. Excess iron accumulates and damages liver, heart, joints over decades',
+          'Do not increase iron intake further: less red meat, no iron-enriched supplements unless a doctor has found a deficiency',
           'Take iron supplements daily as a precaution',
           'No change needed',
         ],
@@ -531,7 +531,7 @@ export const COURSES_EN = [
         title: 'Key gene topics',
         items: [
           { q: 'What does an MTHFR defect mean for me?', a: 'MTHFR activates folic acid into methylfolate, the form your body can actually use. With a defect, you can take a lot of folic acid in a regular supplement and still have functional deficiency. Methylfolate is the already active form and does not need this conversion step. Whether it is right for you is best discussed with your doctor.' },
-          { q: 'I have an HFE variant — is iron supplementation dangerous for me?', a: 'It can be. Some HFE variants cause iron overload over decades — your body absorbs too much from food and stores it in liver, heart, joints. Iron supplements should only be taken if blood tests show a real deficiency.' },
+          { q: 'I have an HFE variant — should I take iron supplements?', a: 'Your HFE result shows a lower iron requirement. So do not take iron supplements on your own initiative — only if a doctor has found a deficiency in a blood test.' },
           { q: 'Salt sensitivity (ACE) — does that mean I have to give up salt?', a: 'Not entirely. It means your blood pressure responds more strongly to salt than average. Reducing salt is a powerful lever in your case — much more so than for non-sensitive people.' },
         ],
       },

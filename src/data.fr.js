@@ -351,10 +351,10 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Quelle recommandation alimentaire convient à un client présentant un déficit HFE (risque de surcharge en fer) ?",
+    "q": "Quelle recommandation alimentaire convient à un client dont le rapport indique un besoin en fer plus faible (HFE) ?",
     "options": [
      "Augmenter l'apport en fer — ils en ont besoin de plus",
-     "Réduire la charge alimentaire en fer : moins de viande rouge, pas de compléments enrichis en fer sauf carence confirmée par analyse sanguine. L'excès de fer s'accumule et endommage le foie, le cœur et les articulations au fil des décennies",
+     "Ne pas augmenter davantage l'apport en fer : moins de viande rouge, pas de compléments enrichis en fer sans carence constatée par un médecin",
      "Prendre des compléments de fer quotidiennement par précaution",
      "Aucun changement nécessaire"
     ],
@@ -1570,8 +1570,8 @@ const FAQTX = {
       "a": "MTHFR active l'acide folique en méthylfolate, la forme que ton corps peut réellement utiliser. En cas de déficit, tu peux prendre beaucoup d'acide folique sous forme de complément ordinaire et présenter malgré tout une carence fonctionnelle. Le méthylfolate est déjà la forme active et n'a pas besoin de cette étape de conversion. Le mieux est d'en parler avec ton médecin pour savoir s'il te convient."
      },
      {
-      "q": "J'ai une variante HFE — la supplémentation en fer est-elle dangereuse pour moi ?",
-      "a": "Elle peut l'être. Certaines variantes HFE entraînent une surcharge en fer au fil des décennies — ton corps en absorbe trop à partir de l'alimentation et le stocke dans le foie, le cœur et les articulations. Les compléments de fer ne devraient être pris que si une analyse sanguine met en évidence une véritable carence."
+      "q": "J'ai une variante HFE — dois-je prendre des compléments de fer ?",
+      "a": "Ton résultat HFE indique un besoin en fer plus faible. Ne prends donc pas de compléments de fer de ta propre initiative — seulement si un médecin a constaté une carence par une analyse sanguine."
      },
      {
       "q": "Sensibilité au sel (ACE) — cela signifie-t-il que je dois renoncer au sel ?",

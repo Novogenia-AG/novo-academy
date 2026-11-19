@@ -988,10 +988,10 @@ export const COURSES = [
         correct: 1,
       },
       {
-        q: 'Welche Ernährungsempfehlung passt zu einem Kunden mit HFE-Defekt (Risiko für Eisenüberladung)?',
+        q: 'Welche Ernährungsempfehlung passt zu einem Kunden, bei dem der Bericht einen geringeren Eisenbedarf zeigt (HFE)?',
         options: [
           'Die Eisenzufuhr erhöhen, er braucht mehr davon',
-          'Die Eisenlast senken: weniger rotes Fleisch, keine eisenangereicherten Präparate ohne nachgewiesenen Mangel — überschüssiges Eisen lagert sich über Jahre in Leber, Herz und Gelenken ab',
+          'Eisenzufuhr nicht zusätzlich erhöhen: weniger rotes Fleisch, keine eisenangereicherten Präparate ohne ärztlich festgestellten Mangel',
           'Vorsorglich täglich ein Eisenpräparat einnehmen',
           'Nichts ändern, der Körper reguliert das von allein',
         ],
