@@ -3594,6 +3594,7 @@ export const UI = {
   ai_bot_notice:              { de: 'Sie chatten mit einem KI-Assistenten.', en: 'You are chatting with an AI assistant.' },
   footer_impressum:           { de: 'Impressum',                      en: 'Legal Notice' },
   footer_datenschutz:         { de: 'Datenschutz',                    en: 'Privacy Policy' },
+  footer_terms:               { de: 'Nutzungsbedingungen',            en: 'Terms of Use' },
   footer_back:                { de: '← Zurück',                       en: '← Back' },
 
   // ---- Impressum Page ----

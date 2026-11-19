@@ -10,6 +10,7 @@ const PdfThumb = (props) => (
   <Suspense fallback={null}><PdfThumbLazy {...props} /></Suspense>
 )
 import SupportBotLauncher from './SupportBotLauncher.jsx'
+import { legalFor, splitLinks } from './legal/index.js'
 import { COURSES, isCertifiable, isCertified, buildInitialState, groupForDisplay, SAMPLE_COURSE_LIST, CATEGORY_CONTENT, getHomeVideoSection, getHomeTopVideos, getContentTags, courseKey, t as tBase, getSampleCourseList, assetUrl, bestDisplayName } from './data.js'
 import {
   getCurrentSession, onAuthChange, signUpWithEmail, signInWithEmail,
@@ -2536,10 +2537,19 @@ export default function App() {
     onImpressum:       () => geheZu('impressum'),
     onDatenschutz:     () => geheZu('datenschutz'),
     onBarrierefreiheit:() => geheZu('barrierefreiheit'),
+    onNutzungsbedingungen: () => geheZu('nutzungsbedingungen'),
     onCookieSettings:  () => setConsent(null),
   }
 
-  if (outerRoute === 'impressum') {
+  if (outerRoute === 'nutzungsbedingungen') {
+    inhaltEingebettet = true
+    page = (
+      <div className="legal-page-wrap">
+        <Inhalt><NutzungsbedingungenPage onBack={() => geheZu(null)} /></Inhalt>
+        <LegalFooter {...legalFooterProps} />
+      </div>
+    )
+  } else if (outerRoute === 'impressum') {
     inhaltEingebettet = true
     page = (
       <div className="legal-page-wrap">
@@ -2578,10 +2588,7 @@ export default function App() {
           setLang={setLang}
           onSignUp={() => geheZu('auth-signup')}
           onLogIn={() => geheZu('auth-login')}
-          onImpressum={legalFooterProps.onImpressum}
-          onDatenschutz={legalFooterProps.onDatenschutz}
-          onBarrierefreiheit={legalFooterProps.onBarrierefreiheit}
-          onCookieSettings={legalFooterProps.onCookieSettings}
+          footerProps={legalFooterProps}
         />
       )
     } else {
@@ -2595,6 +2602,7 @@ export default function App() {
           setBusy={setAuthBusy}
           onSwitchMode={() => geheZu(mode === 'signup' ? 'auth-login' : 'auth-signup')}
           onBackToLanding={() => geheZu('landing')}
+          footerProps={legalFooterProps}
         />
       )
     }
@@ -2680,6 +2688,10 @@ export default function App() {
         <p className="speicher-fehler" role="alert">{tBase(lang, 'progress_save_failed')}</p>
       )}
       {inhaltEingebettet ? page : <Inhalt>{page}</Inhalt>}
+      {/* Zweige ohne eigene Fußzeile (Sprachwahl, Kurs, Test, Ergebnis,
+          Zertifikat) bekommen sie hier — außerhalb von <main>, damit sie
+          ihre contentinfo-Rolle behält (ECG § 5 Abs. 1, MedienG § 25). */}
+      {!inhaltEingebettet && <LegalFooter {...legalFooterProps} />}
       {showBanner && (
         <CookieBanner
           onAccept={() => setConsent('all')}
@@ -2799,7 +2811,7 @@ function LangPickPage({ onPick }) {
 }
 
 /* ===================== LANDING PAGE (logged-out intro) ===================== */
-function LandingPage({ lang, setLang, onSignUp, onLogIn, onImpressum, onDatenschutz, onBarrierefreiheit, onCookieSettings }) {
+function LandingPage({ lang, setLang, onSignUp, onLogIn, footerProps }) {
   const t = useT()
   return (
     <div className="landing-page">
@@ -2873,20 +2885,15 @@ function LandingPage({ lang, setLang, onSignUp, onLogIn, onImpressum, onDatensch
       </section>
       </main>
 
-      <footer className="landing-footer">
-        <LegalFooter
-          onImpressum={onImpressum}
-          onDatenschutz={onDatenschutz}
-          onBarrierefreiheit={onBarrierefreiheit}
-          onCookieSettings={onCookieSettings}
-        />
-      </footer>
+      <div className="landing-footer">
+        <LegalFooter {...footerProps} />
+      </div>
     </div>
   )
 }
 
 /* ===================== LEGAL FOOTER ===================== */
-function LegalFooter({ onImpressum, onDatenschutz, onCookieSettings, onBarrierefreiheit }) {
+function LegalFooter({ onImpressum, onDatenschutz, onNutzungsbedingungen, onCookieSettings, onBarrierefreiheit }) {
   const t = useT()
   return (
     <footer className="legal-footer">
@@ -2896,6 +2903,8 @@ function LegalFooter({ onImpressum, onDatenschutz, onCookieSettings, onBarrieref
       <span className="legal-footer-sep">·</span>
       <button className="legal-footer-link" onClick={onDatenschutz}>{t('footer_datenschutz')}</button>
       <span className="legal-footer-sep">·</span>
+      <button className="legal-footer-link" onClick={onNutzungsbedingungen}>{t('footer_terms')}</button>
+      <span className="legal-footer-sep">·</span>
       <button className="legal-footer-link" onClick={onBarrierefreiheit}>{t('footer_a11y')}</button>
       <span className="legal-footer-sep">·</span>
       <button className="legal-footer-link" onClick={onCookieSettings}>{t('cookie_settings')}</button>
@@ -2903,78 +2912,131 @@ function LegalFooter({ onImpressum, onDatenschutz, onCookieSettings, onBarrieref
   )
 }
 
-/* ===================== IMPRESSUM PAGE ===================== */
+/* ===================== RECHTSSEITEN: gemeinsame Bausteine =====================
+   Texte in src/legal/<lang>.js (DE verbindlich). E-Mail- und Web-Adressen im
+   Text werden automatisch zu Links. */
+function LegalText({ text }) {
+  return splitLinks(text).map((s, i) => s.href
+    ? <a key={i} href={s.href} {...(s.external ? { target: '_blank', rel: 'noopener noreferrer' } : { rel: 'noopener noreferrer' })}>{s.text}</a>
+    : <React.Fragment key={i}>{s.text}</React.Fragment>)
+}
+
+function LegalSections({ sections }) {
+  return sections.map((s, i) => (
+    <section className="legal-section" key={i}>
+      <h2>{s.h}</h2>
+      {(s.p || []).map((p, j) => <p key={j}><LegalText text={p} /></p>)}
+      {s.ul && <ul className="legal-list">{s.ul.map((li, j) => <li key={j}><LegalText text={li} /></li>)}</ul>}
+      {(s.p2 || []).map((p, j) => <p key={'b' + j}><LegalText text={p} /></p>)}
+    </section>
+  ))
+}
+
+/* ===================== IMPRESSUM PAGE =====================
+   ECG § 5, UGB § 14, MedienG § 25. Firmendaten nur aus echten Quellen
+   (Firmenbuch FN 323177 k, novogenia.com). Beteiligungsverhältnisse
+   (§ 25 Abs. 2 MedienG) erst eintragen, wenn der Firmenbuchauszug vorliegt. */
 function ImpressumPage({ onBack }) {
   const t = useT()
-  const lang = useLang()
+  const L = legalFor(useLang()).imp
   return (
     <div className="legal-page content">
       <button className="btn-back" onClick={onBack}>{t('footer_back')}</button>
-      <h1 className="legal-page-title">{t('impressum_title')}</h1>
+      <h1 className="legal-page-title">{L.title}</h1>
 
       <section className="legal-section">
-        <h2>{t('impressum_operator')}</h2>
+        <h2>{L.operatorH}</h2>
+        {/* Betreiberin ist die Novogenia GmbH; deren Geschäftsführer ist Dr. Daniel
+            Wallerstorfer. Matthias Probst führt nur die Novogenia Marketing GmbH
+            (Korrektur 16.09.2026, Angabe Daniel Wallerstorfer). */}
         <p>
           Novogenia GmbH<br />
           Strass 19<br />
           5301 Eugendorf<br />
-          {LX(lang, 'Austria', 'Österreich')}
+          {L.country}
         </p>
+        <p>{L.seat}</p>
       </section>
 
       <section className="legal-section">
-        <h2>{t('impressum_managing')}</h2>
-        {/* Betreiberin ist die Novogenia GmbH; deren Geschäftsführer ist Dr. Daniel
-            Wallerstorfer. Matthias Probst führt nur die Novogenia Marketing GmbH
-            (Korrektur 16.09.2026, Angabe Daniel Wallerstorfer). */}
+        <h2>{L.purposeH}</h2>
+        <p>{L.purpose}</p>
+      </section>
+
+      <section className="legal-section">
+        <h2>{L.managingH}</h2>
         <p>Dr. Daniel Wallerstorfer</p>
       </section>
 
       <section className="legal-section">
-        <h2>{t('impressum_register')}</h2>
+        <h2>{L.registerH}</h2>
         {/* FN 531162 x gehörte zur Marketing GmbH — Novogenia GmbH ist FN 323177 k */}
-        <p>FN 323177 k · {LX(lang, 'Regional Court Salzburg', 'Landesgericht Salzburg')}</p>
+        <p>FN 323177 k · {L.court}</p>
       </section>
 
       <section className="legal-section">
-        <h2>{t('impressum_uidde')}</h2>
+        <h2>{L.uidH}</h2>
         <p>ATU64713304</p>
       </section>
 
       <section className="legal-section">
-        <h2>{t('impressum_contact')}</h2>
+        <h2>{L.contactH}</h2>
         <p>
-          E-Mail: <a href="mailto:service@novogenia.com" rel="noopener noreferrer">service@novogenia.com</a>
+          {L.emailL}: <a href="mailto:service@novogenia.com" rel="noopener noreferrer">service@novogenia.com</a><br />
+          {L.phoneL}: <a href="tel:+43662262102"><span dir="ltr">+43 662 262 102</span></a>
         </p>
       </section>
 
       <section className="legal-section">
-        <h2>{t('impressum_authority')}</h2>
+        <h2>{L.authorityH}</h2>
         <p>
           Bezirkshauptmannschaft Salzburg-Umgebung<br />
-          Karl-Wurmb-Straße 17, 5020 Salzburg<br />
-          {LX(lang, 'Federal Ministry for Social Affairs, Health, Care and Consumer Protection', 'Bundesministerium für Soziales, Gesundheit, Pflege und Konsumentenschutz')}
+          Karl-Wurmb-Straße 17, 5020 Salzburg
         </p>
-      </section>
-
-      <section className="legal-section">
-        <h2>{t('impressum_applicable_law')}</h2>
         <p>
-          {LX(lang,
-            'Austrian Trade Regulations 1994 (GewO), Genetic Technology Act (GTG), accessible via RIS Austria (ris.bka.gv.at).',
-            'Gewerbeordnung 1994, Gentechnikgesetz (GTG), abrufbar über RIS Austria (ris.bka.gv.at).')}
+          {L.ministry}<br />
+          {L.ministryAddr}
         </p>
       </section>
 
       <section className="legal-section">
-        <h2>{t('impressum_liability')}</h2>
-        <p>{t('impressum_liability_text')}</p>
+        <h2>{L.chamberH}</h2>
+        <p><LegalText text={L.chamber} /></p>
+      </section>
+
+      <section className="legal-section">
+        <h2>{L.disclosureH}</h2>
+        {L.disclosure.map((d, i) => <p key={i}>{d}</p>)}
+      </section>
+
+      <section className="legal-section">
+        <h2>{L.contentH}</h2>
+        <p>{L.content}</p>
+      </section>
+
+      <section className="legal-section">
+        <h2>{L.liabilityH}</h2>
+        <p>{L.liability}</p>
       </section>
     </div>
   )
 }
 
-/* ===================== DATENSCHUTZ PAGE ===================== */
+/* ===================== NUTZUNGSBEDINGUNGEN =====================
+   Kostenloser Nutzungsvertrag (seit 19.11.2026). Zertifikat = Bestätigung der
+   Novogenia GmbH, keine Berechtigung zu genetischer/ärztlicher Beratung. */
+function NutzungsbedingungenPage({ onBack }) {
+  const t = useT()
+  const L = legalFor(useLang()).terms
+  return (
+    <div className="legal-page content">
+      <button className="btn-back" onClick={onBack}>{t('footer_back')}</button>
+      <h1 className="legal-page-title">{L.title}</h1>
+      <p className="legal-meta">{L.updated}</p>
+      <LegalSections sections={L.sections} />
+    </div>
+  )
+}
 /* ===================== BARRIEREFREIHEITSERKLÄRUNG =====================
    Konformitätsinformation nach § 14 Abs. 2 BaFG. Das Gesetz verlangt eine
    Kontaktstelle "in schriftlicher und mündlicher Form" — daher E-Mail UND
@@ -3040,66 +3102,26 @@ function BarrierefreiheitPage({ onBack }) {
   )
 }
 
+/* ===================== DATENSCHUTZ PAGE =====================
+   Art. 13 DSGVO. Neufassung 19.11.2026 (NOVO LEGAL): alle Dienste mit Zweck,
+   Rechtsgrundlage, Empfänger, Drittland und Speicherdauer. Tragende
+   Grundlage des Kontos ist der Nutzungsvertrag (lit. b) — es gibt KEINE
+   Einwilligung bei der Registrierung. Ändert sich ein Dienst (Hosting,
+   Schriften, Bot-Anbieter, Vorschaubilder), diesen Text mitändern. */
 function DatenschutzPage({ onBack, onCookieSettings }) {
   const t = useT()
-  const lang = useLang()
+  const L = legalFor(useLang()).privacy
   const [consent] = useCookieConsent()
   return (
     <div className="legal-page content">
       <button className="btn-back" onClick={onBack}>{t('footer_back')}</button>
-      <h1 className="legal-page-title">{t('datenschutz_title')}</h1>
-
+      <h1 className="legal-page-title">{L.title}</h1>
+      <p className="legal-meta">{L.updated}</p>
+      <LegalSections sections={L.sections} />
       <section className="legal-section">
-        <h2>{LX(lang, 'Responsible Party', 'Verantwortlicher')}</h2>
-        <p>
-          Novogenia GmbH<br />
-          Strass 19, 5301 Eugendorf, {LX(lang, 'Austria', 'Österreich')}<br />
-          E-Mail: <a href="mailto:datenschutz@novogenia.com" rel="noopener noreferrer">datenschutz@novogenia.com</a>
-        </p>
-      </section>
-
-      <section className="legal-section">
-        <h2>{LX(lang, 'What data we process', 'Welche Daten wir verarbeiten')}</h2>
-        <p>{LX(lang,
-          'When you create an account, we store your e-mail address, your chosen display name, your language preference, and your course progress (which videos you watched and which tests you passed). This data is stored in Supabase (eu-central-1, Frankfurt, Germany) and processed exclusively for operating NOVO ACADEMY.',
-          'Bei Kontoerstellung speichern wir Ihre E-Mail-Adresse, Ihren gewählten Anzeigenamen, Ihre Spracheinstellung und Ihren Kursfortschritt (welche Videos gesehen, welche Tests bestanden). Diese Daten werden in Supabase (eu-central-1, Frankfurt) gespeichert und ausschließlich zum Betrieb von NOVO ACADEMY verarbeitet.')}</p>
-      </section>
-
-      <section className="legal-section">
-        <h2>{LX(lang, 'Legal basis', 'Rechtsgrundlage')}</h2>
-        <p>{LX(lang,
-          'Processing is based on your consent (Art. 6(1)(a) GDPR) when you register, and on contract performance (Art. 6(1)(b) GDPR) for providing the academy service.',
-          'Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) bei der Registrierung sowie zur Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO) für die Erbringung des Akademie-Dienstes.')}</p>
-      </section>
-
-      <section className="legal-section">
-        <h2>{LX(lang, 'Cookies', 'Cookies')}</h2>
-        <p>{LX(lang,
-          'NOVO ACADEMY uses session cookies that are technically necessary for the login function (Supabase Auth). If you consent to optional cookies, embedded YouTube videos load additional cookies from Google/YouTube. You can withdraw your consent at any time.',
-          'NOVO ACADEMY verwendet Session-Cookies, die technisch notwendig für die Login-Funktion sind (Supabase Auth). Wenn Sie optionalen Cookies zustimmen, laden eingebettete YouTube-Videos zusätzlich Cookies von Google/YouTube. Ihre Einwilligung können Sie jederzeit widerrufen.')}</p>
         <button className="btn-secondary legal-cookie-btn" onClick={onCookieSettings}>
-          {consent === 'all'
-            ? t('cookie_revoke')
-            : t('cookie_settings')}
+          {consent === 'all' ? t('cookie_revoke') : t('cookie_settings')}
         </button>
-      </section>
-
-      <section className="legal-section">
-        <h2>{LX(lang, 'Third-party services', 'Drittanbieter')}</h2>
-        <ul className="legal-list">
-          <li><strong>Supabase</strong> — {LX(lang, 'Auth & database (eu-central-1 Frankfurt, Germany). Privacy policy: supabase.com/privacy', 'Auth & Datenbank (eu-central-1 Frankfurt). Datenschutz: supabase.com/privacy')}</li>
-          <li><strong>YouTube / Google</strong> — {LX(lang, 'Video embedding (only with your consent). Privacy policy: policies.google.com/privacy', 'Video-Einbettung (nur mit Ihrer Einwilligung). Datenschutz: policies.google.com/privacy')}</li>
-        </ul>
-      </section>
-
-      <section className="legal-section">
-        <h2>{LX(lang, 'Your rights', 'Ihre Rechte')}</h2>
-        <p>{LX(lang,
-          'You have the right to access, correct, delete, or export your data, and to lodge a complaint with the Austrian Data Protection Authority (Datenschutzbehörde, Barichgasse 40–42, 1030 Vienna, dsb.gv.at).',
-          'Sie haben das Recht auf Auskunft, Berichtigung, Löschung oder Datenübertragbarkeit sowie das Recht, Beschwerde bei der österreichischen Datenschutzbehörde einzulegen (Barichgasse 40–42, 1030 Wien, dsb.gv.at).')}</p>
-        <p>{LX(lang,
-          'To exercise your rights, contact: datenschutz@novogenia.com',
-          'Zur Ausübung Ihrer Rechte wenden Sie sich an: datenschutz@novogenia.com')}</p>
       </section>
     </div>
   )
@@ -3563,7 +3585,7 @@ function AdminUserActionsMenu({ user, onChanged, eigeneId, onError }) {
 }
 
 /* ===================== AUTH PAGE (signup / login) ===================== */
-function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLanding }) {
+function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLanding, footerProps }) {
   const t = useT()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -3689,6 +3711,12 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLa
             </button>
           </form>
 
+          {/* Information bei der Erhebung (Art. 13 DSGVO) und Einbeziehung der
+              Nutzungsbedingungen (ABGB § 864a). Kein Häkchen: das Konto beruht
+              auf dem Nutzungsvertrag (Art. 6 Abs. 1 lit. b), nicht auf einer
+              Einwilligung. Gilt auch für „Mit Google anmelden“ oben. */}
+          {isSignup && <RegistrierungsHinweis footerProps={footerProps} />}
+
           <button className="auth-switch" onClick={onSwitchMode} disabled={busy}>
             {isSignup ? t('auth_switch_to_login') : t('auth_switch_to_signup')}
           </button>
@@ -3703,7 +3731,22 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLa
         </div>
       </div>
       </main>
+      {footerProps && <LegalFooter {...footerProps} />}
     </div>
+  )
+}
+
+function RegistrierungsHinweis({ footerProps }) {
+  const L = legalFor(useLang())
+  const teile = L.regNote.split(/(\{terms\}|\{privacy\})/)
+  return (
+    <p className="auth-legal-note">
+      {teile.map((s, i) => s === '{terms}'
+        ? <button key={i} type="button" className="auth-legal-link" onClick={footerProps?.onNutzungsbedingungen}>{L.regTerms}</button>
+        : s === '{privacy}'
+        ? <button key={i} type="button" className="auth-legal-link" onClick={footerProps?.onDatenschutz}>{L.regPrivacy}</button>
+        : <React.Fragment key={i}>{s}</React.Fragment>)}
+    </p>
   )
 }
 

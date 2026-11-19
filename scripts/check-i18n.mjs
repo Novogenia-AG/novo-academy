@@ -10,6 +10,7 @@
  */
 import { UI } from '../src/data.js'
 import { UI_EXTRA } from '../src/ui-extra.js'
+import { LEGAL } from '../src/legal/index.js'
 
 const SPRACHEN = Object.keys(UI_EXTRA)          // die 9 Zusatzsprachen
 const alleKeys = Object.keys(UI)
@@ -52,7 +53,25 @@ if (verwaist.length) {
   if (verwaist.length > 20) console.error(`  … und ${verwaist.length - 20} weitere`)
 }
 
-if (luecken.length) process.exit(1)
+/* Rechtsseiten (src/legal/*.js): jede Sprache muss dieselbe Struktur haben
+   wie die verbindliche deutsche Fassung — gleiche Felder, gleich viele
+   Abschnitte und Absätze, keine leeren Texte. */
+const rechtsLuecken = []
+const form = (v) => Array.isArray(v) ? v.map(form)
+  : (v && typeof v === 'object') ? Object.fromEntries(Object.entries(v).map(([k, x]) => [k, form(x)]))
+  : (typeof v === 'string' && v.trim() ? 's' : 'LEER')
+const vorlage = JSON.stringify(form(LEGAL.de))
+for (const sprache of ['de', 'en', ...SPRACHEN]) {
+  if (!LEGAL[sprache]) { rechtsLuecken.push(`${sprache}: fehlt`); continue }
+  if (JSON.stringify(form(LEGAL[sprache])) !== vorlage) rechtsLuecken.push(`${sprache}: Struktur weicht von de.js ab`)
+  for (const k of ['{terms}', '{privacy}']) if (!LEGAL[sprache].regNote?.includes(k)) rechtsLuecken.push(`${sprache}: regNote ohne ${k}`)
+}
+if (rechtsLuecken.length) {
+  console.error(`\n✗ Rechtsseiten unvollständig:\n  ${rechtsLuecken.join('\n  ')}\n`)
+}
 
+if (luecken.length || rechtsLuecken.length) process.exit(1)
+
+console.log(`✓ Rechtsseiten: ${Object.keys(LEGAL).length} Sprachen mit gleicher Struktur wie de.js`)
 console.log(`✓ i18n vollständig: ${alleKeys.length} Keys × ${SPRACHEN.length} Sprachen` +
             (verwaist.length ? ` (${verwaist.length} verwaiste Keys, nicht blockierend)` : ''))
