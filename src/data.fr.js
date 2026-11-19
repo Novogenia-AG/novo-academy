@@ -140,7 +140,7 @@ const TXT = {
     "q": "Pourquoi un programme personnalisé surpasse-t-il les conseils standard ?",
     "options": [
      "Il utilise des ingrédients plus coûteux",
-     "Une étude pilote de Novogenia (139 participants) a montré un succès de perte de poids 2,4× supérieur avec la personnalisation génétique par rapport au conseil standard — parce que la stratégie correspond réellement à la biologie sous-jacente",
+     "L'étude interne de Novogenia portant sur 302 personnes (régime basé sur les gènes vs. régime standard) a montré une perte de poids 2,4× plus élevée avec le régime basé sur les gènes",
      "Cela ne fonctionne que sur le papier",
      "C'est identique aux conseils standard"
     ],
@@ -351,10 +351,10 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Quelle recommandation alimentaire convient à un client présentant un déficit HFE (risque de surcharge en fer) ?",
+    "q": "Quelle recommandation alimentaire convient à un client dont le rapport indique un besoin en fer plus faible (HFE) ?",
     "options": [
      "Augmenter l'apport en fer — ils en ont besoin de plus",
-     "Réduire la charge alimentaire en fer : moins de viande rouge, pas de compléments enrichis en fer sauf carence confirmée par analyse sanguine. L'excès de fer s'accumule et endommage le foie, le cœur et les articulations au fil des décennies",
+     "Ne pas augmenter davantage l'apport en fer : moins de viande rouge, pas de compléments enrichis en fer sans carence constatée par un médecin",
      "Prendre des compléments de fer quotidiennement par précaution",
      "Aucun changement nécessaire"
     ],
@@ -629,7 +629,7 @@ const TXT = {
  },
  "bo-sci-en": {
   "topic": "Bases scientifiques",
-  "description": "Pourquoi un même stress n'affecte pas tout le monde de la même manière — et quel rôle joue le gène COMT dans le risque de burnout.",
+  "description": "Pourquoi un même stress n'affecte pas tout le monde de la même manière — et quel rôle joue le gène COMT dans la gestion du stress.",
   "longDescription": "Dans cette formation, le Dr Daniel Wallerstorfer explique pourquoi un stress massif et continu mène au burnout chez certaines personnes, mais pas chez d'autres. Vous découvrirez quelles sont les trois caractéristiques génétiques examinées par l'analyse, comment le gène COMT dégrade la dopamine après des situations excitantes ou stressantes, pourquoi environ 15 % des personnes sont particulièrement sensibles au stress — et pourquoi un mode de vie adapté compte d'autant plus que les gènes sont moins favorables.",
   "bullets": [
    "Trois caractéristiques génétiques : performance sous stress, résilience émotionnelle, impulsivité",
@@ -641,7 +641,7 @@ const TXT = {
   "introQuestions": [
    "Quel gène joue un rôle central dans la réponse individuelle au stress ?",
    "Pourquoi un même stress n'affecte-t-il pas tout le monde de la même manière — et quel est le rôle de COMT ?",
-   "Comment les gènes influencent-ils le risque de burnout ?",
+   "Comment les gènes influencent-ils notre façon de gérer le stress ?",
    "Quelles mesures liées au mode de vie sont utiles — et pourquoi sont-elles d'autant plus importantes en cas de profil défavorable ?"
   ],
   "postVideoText": "Avec ce socle scientifique, vous pouvez discuter sur des bases solides du rapport de burnout avec vos clients et en déduire des stratégies individuelles de gestion du stress.",
@@ -727,12 +727,12 @@ const TXT = {
     "correct": 0
    },
    {
-    "q": "Selon la formation, à quoi les personnes dont le gène COMT fonctionne mal sont-elles aussi plus sujettes ?",
+    "q": "Selon la formation, vers quoi les personnes dont le gène COMT fonctionne mal sont-elles aussi davantage attirées ?",
     "options": [
      "À la dépendance à la caféine",
      "Aux troubles du sommeil",
      "Aux fringales de sucre",
-     "À l'addiction au jeu"
+     "Vers la recherche de sensations fortes"
     ],
     "correct": 3
    },
@@ -740,7 +740,7 @@ const TXT = {
     "q": "Qu'indique la zone rouge d'une caractéristique de stress dans le rapport ?",
     "options": [
      "Une génétique très favorable — aucune mesure n'est nécessaire",
-     "Une prédisposition défavorable — un risque accru de burnout",
+     "Une prédisposition défavorable — une sensibilité accrue au stress",
      "La personne souffre déjà d'un burnout et doit être traitée",
      "Une recommandation standard valable pour tout le monde"
     ],
@@ -789,7 +789,7 @@ const TXT = {
    {
     "q": "Maria possède une copie fonctionnelle et une copie défectueuse du gène COMT. À quoi ressemble son résultat ?",
     "options": [
-     "Les trois caractéristiques en zone rouge — elle est très exposée au burnout",
+     "Les trois caractéristiques en zone rouge — elle est très sensible au stress",
      "Les trois caractéristiques en zone verte — le burnout n'est pas un risque pour elle",
      "La performance sous stress en zone rouge, les deux autres caractéristiques en zone verte",
      "Les trois caractéristiques au milieu — une résistance au stress moyennement bonne"
@@ -820,8 +820,8 @@ const TXT = {
     "q": "Que signifie le fait qu'un client se situe en zone verte pour les trois caractéristiques ?",
     "options": [
      "Le burnout est impossible pour ce client, quel que soit son mode de vie",
-     "Le client est particulièrement exposé au burnout",
-     "Le burnout ne représente pas un grand danger pour ce client",
+     "Le client est particulièrement sensible au stress",
+     "Ce client gère plutôt bien le stress",
      "L'analyse n'a pas pu être interprétée"
     ],
     "correct": 2
@@ -835,14 +835,14 @@ const TXT = {
   "bullets": [
    "Qu'est-ce que le gène COMT ?",
    "Quelles sont les trois caractéristiques de stress présentées dans le rapport ?",
-   "En quoi le risque de burnout est-il génétique ?",
+   "En quoi la sensibilité au stress est-elle génétique ?",
    "Quelles recommandations découlent du profil ?"
   ]
  },
  "ba-sci-en": {
   "topic": "Bases scientifiques",
   "description": "Pourquoi les télomères raccourcissent, comment le gène de la télomérase influence l'âge biologique — et quels nutriments peuvent aider.",
-  "longDescription": "Cette formation explique les bases scientifiques de l'analyse de l'âge biologique. Vous apprendrez pourquoi les télomères — les extrémités protectrices de nos chromosomes — raccourcissent à chaque division cellulaire, ce qui arrive à une cellule lorsqu'ils sont épuisés, comment le gène de la télomérase influence ce processus, et quels nutriments peuvent soutenir le maintien des télomères lorsque les gènes fonctionnent moins bien.",
+  "longDescription": "Cette formation explique les bases scientifiques de l'analyse de l'âge biologique. Vous apprendrez pourquoi les télomères — les extrémités protectrices de nos chromosomes — raccourcissent à chaque division cellulaire, ce qui arrive à une cellule lorsqu'ils sont épuisés, comment le gène de la télomérase influence ce processus, et quels nutriments les études associent au maintien des télomères.",
   "bullets": [
    "Télomères et vieillissement cellulaire — les bases",
    "Sénescence : quand les cellules passent en mode veille",
@@ -854,7 +854,7 @@ const TXT = {
    "Que sont les télomères et pourquoi raccourcissent-ils à chaque division cellulaire ?",
    "Qu'arrive-t-il à une cellule lorsque ses télomères sont épuisés ?",
    "Quel est le rôle du gène de la télomérase ?",
-   "Quels nutriments soutiennent le maintien des télomères — et pourquoi le régime méditerranéen ne fonctionne-t-il pas chez tout le monde ?"
+   "Quels nutriments les études associent-elles au maintien des télomères — et pourquoi le régime méditerranéen ne fonctionne-t-il pas chez tout le monde ?"
   ],
   "postVideoText": "Avec ce socle scientifique, vous pouvez discuter sur des bases solides de l'analyse de l'âge biologique avec vos clients.",
   "questions": [
@@ -909,7 +909,7 @@ const TXT = {
     "correct": 2
    },
    {
-    "q": "Quels nutriments peuvent soutenir le maintien des télomères lorsque le gène protecteur fonctionne moins bien ?",
+    "q": "Quels nutriments les études associent-elles au maintien des télomères ?",
     "options": [
      "Vitamine C, zinc, sélénium, fer et magnésium",
      "Vitamine D3, oméga-3, vitamine E, resvératrol et ginkgo",
@@ -953,7 +953,7 @@ const TXT = {
     "options": [
      "L'ignorer — les télomères ne peuvent de toute façon pas être influencés",
      "Faire plus d'exercice — l'alimentation ne change rien",
-     "Augmenter l'apport en nutriments qui freinent la perte des télomères",
+     "Des mesures ciblées d'hygiène de vie et une alimentation apportant les bons nutriments pour soutenir la fonction protectrice génétique plus faible",
      "Passer au régime méditerranéen — il fonctionne chez tout le monde"
     ],
     "correct": 2
@@ -1043,7 +1043,7 @@ const TXT = {
  "ba-faq-en": {
   "topic": "Questions fréquemment posées",
   "description": "Réponses aux questions typiques des clients sur l'analyse de l'âge biologique.",
-  "longDescription": "Une collection des questions les plus importantes sur l'analyse des télomères et anti-âge. Avec des réponses dépliables pour l'auto-apprentissage.",
+  "longDescription": "Une collection des questions les plus importantes sur l'analyse des télomères et l'âge biologique. Avec des réponses dépliables pour l'auto-apprentissage.",
   "bullets": [
    "Que sont les télomères et pourquoi vieillissons-nous ?",
    "Comment ma génétique affecte-t-elle l'âge biologique ?",
@@ -1186,7 +1186,7 @@ const TXT = {
     "q": "Quelle affirmation sur la sensibilité génétique aux UV (p. ex. MC1R) est correcte ?",
     "options": [
      "Les variantes génétiques n'influencent pas la sensibilité aux UV — seul le type de peau compte",
-     "Les porteurs de variantes défavorables brûlent plus facilement et présentent un risque plus élevé de vieillissement cutané lié aux UV et de cancer de la peau — une protection UV stricte est d'autant plus importante",
+     "Les porteurs de variantes défavorables brûlent plus facilement et présentent un photovieillissement cutané plus marqué — une protection UV stricte est d'autant plus importante",
      "En cas de forte sensibilité génétique aux UV, il faut éviter totalement le soleil, même à l'ombre",
      "La crème solaire ne fonctionne que pour les personnes ayant des gènes « normaux »"
     ],
@@ -1243,16 +1243,16 @@ const TXT = {
    "Enzymes CYP & métabolisme des médicaments",
    "Métaboliseurs rapides et lents",
    "Substances actives cliniquement pertinentes (antidépresseurs, analgésiques, anticoagulants, …)",
-   "Pertinence pratique en consultation"
+   "Pertinence pratique pour les médecins prescripteurs"
   ],
   "introQuestionsHeader": "Cette formation répond à :",
   "introQuestions": [
    "Pourquoi les médicaments agissent-ils différemment selon les personnes ?",
    "Quelles enzymes CYP sont responsables de la dégradation des principales substances actives ?",
    "Que signifie « métaboliseur rapide » vs « lent » dans la pratique clinique quotidienne ?",
-   "Quels médicaments sont particulièrement pertinents pour la consultation pharmacogénétique ?"
+   "Quels médicaments sont particulièrement pertinents pour les décisions de prescription des médecins ?"
   ],
-  "postVideoText": "Avec ces connaissances de fond, vous pouvez discuter de la pertinence du test pharmacogénétique avec les clients et les médecins — en expliquant pourquoi une dose qui convient à la plupart peut être trop forte ou trop faible pour un individu donné selon son génotype CYP.",
+  "postVideoText": "Avec ces connaissances de fond, vous comprenez pourquoi les médecins peuvent recourir au test pharmacogénétique — une dose qui convient à la plupart peut être trop forte ou trop faible pour un individu donné selon son génotype CYP. Si des clients vous posent la question, orientez-les vers leur médecin. Les analyses pharmacogénétiques sont proposées exclusivement par l'intermédiaire de médecins ; cette formation est une information professionnelle et ne remplace pas un avis médical.",
   "questions": [
    {
     "q": "Pourquoi le même médicament agit-il différemment selon les personnes ?",
@@ -1295,7 +1295,7 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Pourquoi la pharmacogénétique est-elle importante en consultation ?",
+    "q": "Pourquoi la pharmacogénétique est-elle importante dans la prise en charge médicale ?",
     "options": [
      "C'est principalement un sujet de vente",
      "Environ 7 % de tous les médicaments disposent de recommandations pharmacogénétiques cliniquement exploitables — connaître le génotype avant la prescription peut éviter des effets secondaires graves et un échec thérapeutique",
@@ -1495,7 +1495,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Qu'est-ce que le Calorie Blocker ?",
-      "a": "Le Calorie Blocker est un produit personnalisé de perte de poids se présentant sous forme de pellets microtransporteurs. Il contient un rapport individuel de bloqueurs de graisses et de glucides adapté à ton analyse ADN. Associé à un apport réduit en calories et en graisses, il soutient de façon démontrée la perte de poids — combiné à une alimentation et à un mode de vie équilibrés, il aide à maintenir le poids."
+      "a": "Le Calorie Blocker est un complément alimentaire sous forme de pellets microtransporteurs contenant de la fibre d'Opuntia ficus-indica et de la phaséolamine issue du haricot blanc. Le rapport de mélange est choisi en fonction de ton analyse génétique. Il ne remplace pas une alimentation équilibrée et attentive aux calories."
      },
      {
       "q": "Comment prendre le Calorie Blocker ?",
@@ -1503,11 +1503,11 @@ const FAQTX = {
      },
      {
       "q": "Quels sont les principes actifs ?",
-      "a": "Le bloqueur de graisses est l'Opuntia ficus-indica (OFI) — la fibre du figuier de Barbarie. Cette fibre végétale forme dans le tube digestif une matrice de type gel qui lie les graisses alimentaires et réduit leur absorption. Le bloqueur de glucides est le Phaseolamin (issu du haricot blanc), qui inhibe l'alpha-amylase. Les deux sont entièrement d'origine végétale."
+      "a": "Le Calorie Blocker contient de l'Opuntia ficus-indica (OFI), la fibre du figuier de Barbarie, et de la phaséolamine issue du haricot blanc. Les deux ingrédients sont entièrement d'origine végétale."
      },
      {
       "q": "Le Calorie Blocker est-il végétalien / végétarien ?",
-      "a": "Oui. Le bloqueur de graisses (Opuntia ficus-indica) comme le bloqueur de glucides (Phaseolamin issu du haricot blanc) sont purement d'origine végétale. Le Calorie Blocker convient aux végétariens et aux végétaliens, il est sans gluten, sans lactose et sans colorants artificiels."
+      "a": "Oui. Les deux ingrédients, la fibre d'Opuntia ficus-indica et la phaséolamine issue du haricot blanc, sont purement d'origine végétale. Le Calorie Blocker convient aux végétariens et aux végétaliens, il est sans gluten, sans lactose et sans colorants artificiels."
      }
     ]
    }
@@ -1567,11 +1567,11 @@ const FAQTX = {
     "items": [
      {
       "q": "Que signifie un déficit MTHFR pour moi ?",
-      "a": "MTHFR active l'acide folique en méthylfolate, la forme que ton corps peut réellement utiliser. En cas de déficit, tu peux prendre beaucoup d'acide folique sous forme de complément ordinaire et présenter malgré tout une carence fonctionnelle. Passer au méthylfolate résout le problème."
+      "a": "MTHFR active l'acide folique en méthylfolate, la forme que ton corps peut réellement utiliser. En cas de déficit, tu peux prendre beaucoup d'acide folique sous forme de complément ordinaire et présenter malgré tout une carence fonctionnelle. Le méthylfolate est déjà la forme active et n'a pas besoin de cette étape de conversion. Le mieux est d'en parler avec ton médecin pour savoir s'il te convient."
      },
      {
-      "q": "J'ai une variante HFE — la supplémentation en fer est-elle dangereuse pour moi ?",
-      "a": "Elle peut l'être. Certaines variantes HFE entraînent une surcharge en fer au fil des décennies — ton corps en absorbe trop à partir de l'alimentation et le stocke dans le foie, le cœur et les articulations. Les compléments de fer ne devraient être pris que si une analyse sanguine met en évidence une véritable carence."
+      "q": "J'ai une variante HFE — dois-je prendre des compléments de fer ?",
+      "a": "Ton résultat HFE indique un besoin en fer plus faible. Ne prends donc pas de compléments de fer de ta propre initiative — seulement si un médecin a constaté une carence par une analyse sanguine."
      },
      {
       "q": "Sensibilité au sel (ACE) — cela signifie-t-il que je dois renoncer au sel ?",
@@ -1626,7 +1626,7 @@ const FAQTX = {
      },
      {
       "q": "Pourquoi le rapport me recommande-t-il des antioxydants ?",
-      "a": "L'exercice intense génère de grandes quantités de radicaux libres. Si tes gènes antioxydants (SOD2, CAT, GPX) sont faibles, la récupération est plus lente et une micro-inflammation s'accumule. Les vitamines C et E, les polyphénols et le sélénium soutiennent directement ces systèmes de défense."
+      "a": "L'exercice intense génère de grandes quantités de radicaux libres. Si tes gènes antioxydants (SOD2, CAT, GPX) sont faibles, la récupération est plus lente et une micro-inflammation s'accumule. La vitamine C contribue à protéger les cellules contre le stress oxydatif. Il en va de même pour la vitamine E et le sélénium."
      },
      {
       "q": "Qu'est-ce qu'un « deload » et à quelle fréquence en faire ?",
@@ -1669,11 +1669,11 @@ const FAQTX = {
     "items": [
      {
       "q": "Qu'est-ce que le gène COMT et pourquoi est-il important ?",
-      "a": "COMT (catéchol-O-méthyltransférase) dégrade le neurotransmetteur dopamine une fois qu'une situation excitante ou stressante est terminée, afin que le cerveau puisse revenir à son niveau de base. Si le gène fonctionne mal, la dopamine est dégradée beaucoup plus lentement : le cerveau reste plus longtemps dans un état d'excitation et, si un nouveau stress survient avant qu'il ne soit revenu à son niveau de base, il peut se retrouver surchargé. Une dégradation plus lente a aussi des avantages — les sentiments positifs sont vécus plus intensément et les personnes concernées ont tendance à être plus curieuses, mais aussi plus exposées à l'addiction au jeu. Les études décrivent une variante fréquente (Val158Met) : l'activité enzymatique diffère nettement entre sa forme rapide et sa forme lente."
+      "a": "COMT (catéchol-O-méthyltransférase) dégrade le neurotransmetteur dopamine une fois qu'une situation excitante ou stressante est terminée, afin que le cerveau puisse revenir à son niveau de base. Si le gène fonctionne mal, la dopamine est dégradée beaucoup plus lentement : le cerveau reste plus longtemps dans un état d'excitation et, si un nouveau stress survient avant qu'il ne soit revenu à son niveau de base, il peut se retrouver surchargé. Une dégradation plus lente a aussi des avantages — les sentiments positifs sont vécus plus intensément et les personnes concernées ont tendance à être plus curieuses, mais elles réagissent aussi plus fortement aux récompenses et aux sensations fortes. Les études décrivent une variante fréquente (Val158Met) : l'activité enzymatique diffère nettement entre sa forme rapide et sa forme lente."
      },
      {
       "q": "Quelles sont les trois caractéristiques évaluées par l'analyse du burnout ?",
-      "a": "La performance sous stress (ton niveau de performance dans les situations stressantes), la résilience émotionnelle (à quel point les sentiments négatifs te pèsent) et l'impulsivité. Chaque caractéristique est représentée sur une échelle allant du rouge au vert en passant par le milieu : le vert est favorable, le rouge signale un risque de burnout plus élevé."
+      "a": "La performance sous stress (ton niveau de performance dans les situations stressantes), la résilience émotionnelle (à quel point les sentiments négatifs te pèsent) et l'impulsivité. Chaque caractéristique est représentée sur une échelle allant du rouge au vert en passant par le milieu : le vert est favorable, le rouge signale une sensibilité au stress plus élevée."
      },
      {
       "q": "Combien de personnes sont génétiquement particulièrement sensibles au stress ?",
@@ -1690,7 +1690,7 @@ const FAQTX = {
      },
      {
       "q": "Mes trois caractéristiques sont toutes en zone verte — dois-je quand même penser au burnout ?",
-      "a": "Pour toi, le burnout ne représente pas un grand danger — mais le risque n'est pas nul : un stress massif et continu peut malgré tout laisser des traces avec le temps. Les phases de récupération et un mode de vie équilibré restent importants."
+      "a": "Tu gères plutôt bien le stress — mais un stress massif et continu peut malgré tout laisser des traces avec le temps. Les phases de récupération et un mode de vie équilibré restent importants."
      },
      {
       "q": "Qu'est-ce qui aide tout le monde, quel que soit le génotype ?",
@@ -1703,7 +1703,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Une « zone rouge » est apparue dans mon rapport. Dois-je m'inquiéter ?",
-      "a": "Ce n'est pas une raison de paniquer, mais c'est une raison d'agir. Une zone rouge signale une prédisposition génétique défavorable dans un domaine précis — un risque accru de burnout, pas un diagnostic. Plus tu as de caractéristiques en zone rouge, plus il est important d'adapter ton mode de vie afin d'éviter le stress. Même avec des résultats situés au milieu, un mode de vie peu stressant reste important."
+      "a": "Ce n'est pas une raison de paniquer, mais c'est une raison d'agir. Une zone rouge signale une prédisposition génétique défavorable dans un domaine précis — une sensibilité accrue au stress, pas un diagnostic. Plus tu as de caractéristiques en zone rouge, plus il est important d'adapter ton mode de vie afin d'éviter le stress. Même avec des résultats situés au milieu, un mode de vie peu stressant reste important."
      },
      {
       "q": "Où trouver des recommandations concrètes pour mon génotype ?",
@@ -1749,8 +1749,8 @@ const FAQTX = {
       "a": "Étonnamment, non. Des études ont montré qu'un régime méditerranéen aide à conserver des télomères plus longs uniquement chez les personnes porteuses de certaines variantes génétiques — chez toutes les autres, il n'a aucun effet sur les télomères. Ton rapport indique à quel groupe tu appartiens. Cela concerne uniquement les télomères, pas les autres effets de ce régime — et cela illustre clairement qu'un même conseil de mode de vie ne fonctionne pas de la même façon pour tout le monde."
      },
      {
-      "q": "Quels nutriments soutiennent les télomères ?",
-      "a": "La vitamine D3, les oméga-3, la vitamine E, le resvératrol et le ginkgo. Lorsque le système de protection génétique fonctionne moins bien, augmenter l'apport en ces nutriments — par exemple en mangeant davantage d'aliments qui en contiennent — peut aider à ralentir le raccourcissement des télomères. Ces nutriments ne peuvent pas l'inverser."
+      "q": "Quels nutriments sont associés aux télomères ?",
+      "a": "Les études associent la vitamine D3, les oméga-3, la vitamine E, le resvératrol et le ginkgo au maintien des télomères. Si ton système de protection génétique fonctionne moins bien, tu peux manger davantage d'aliments riches en vitamine D, en acides gras oméga-3 et en vitamine E. Le raccourcissement ne peut pas être inversé."
      },
      {
       "q": "Puis-je influencer les radicaux libres ?",
@@ -1762,12 +1762,12 @@ const FAQTX = {
     "title": "Influence et attentes",
     "items": [
      {
-      "q": "À quelle vitesse verrai-je les résultats des mesures anti-âge ?",
-      "a": "Pas du jour au lendemain. Les mesures recommandées ne peuvent pas faire repousser les télomères — elles aident à ralentir leur raccourcissement, si bien que le bénéfice s'accumule progressivement au fil de nombreuses années. À noter : l'analyse génétique montre ta prédisposition, pas la longueur actuelle de tes télomères ; le résultat de l'analyse lui-même ne change donc pas sous l'effet de ces mesures."
+      "q": "À quelle vitesse verrai-je les résultats des mesures recommandées ?",
+      "a": "Pas du jour au lendemain. Les mesures recommandées ne peuvent pas faire repousser les télomères ; un éventuel bénéfice s'accumule au fil de nombreuses années. À noter : l'analyse génétique montre ta prédisposition, pas la longueur actuelle de tes télomères ; le résultat de l'analyse lui-même ne change donc pas sous l'effet de ces mesures."
      },
      {
       "q": "Quelle utilité pratique ces connaissances m'apportent-elles ?",
-      "a": "Tu sais avec quelle efficacité tes gènes maintiennent tes télomères — et si un régime méditerranéen t'aide sur ce plan. Si le maintien des télomères est altéré, tu peux réagir de manière ciblée en augmentant l'apport en vitamine D3, oméga-3, vitamine E, resvératrol et ginkgo, par exemple grâce à des aliments qui en contiennent. Un mode de vie globalement sain, avec une alimentation riche en antioxydants, une activité physique régulière et un sommeil suffisant, est également judicieux."
+      "a": "Tu sais avec quelle efficacité tes gènes maintiennent tes télomères — et si un régime méditerranéen t'aide sur ce plan. Si le maintien des télomères est altéré, tu peux manger davantage d'aliments riches en vitamine D, en acides gras oméga-3 et en vitamine E. Un mode de vie globalement sain, avec une alimentation riche en antioxydants, une activité physique régulière et un sommeil suffisant, est également judicieux."
      }
     ]
    }
@@ -1818,7 +1818,7 @@ const FAQTX = {
      },
      {
       "q": "Au bout de combien de temps vais-je remarquer un effet ?",
-      "a": "Cela varie selon le nutriment. Certains effets (p. ex. une meilleure énergie avec les vitamines B) apparaissent en quelques jours à quelques semaines ; d'autres (p. ex. le métabolisme osseux avec la vitamine D) se développent sur plusieurs mois. La supplémentation personnalisée n'est pas un médicament à action rapide — elle corrige des déficits nutritionnels de long terme."
+      "a": "Cela dépend du nutriment. Exemples : la vitamine B12 contribue à réduire la fatigue ; la vitamine D contribue au maintien d'une ossature normale. Les compléments alimentaires n'agissent pas comme un médicament — ils complètent l'alimentation."
      },
      {
       "q": "Ai-je besoin d'une supplémentation à vie ?",
@@ -1830,7 +1830,7 @@ const FAQTX = {
      },
      {
       "q": "Quel est le coût de la version personnalisée par rapport aux multivitamines de parapharmacie ?",
-      "a": "Nettement plus élevé par jour — typiquement 3 à 5 fois le prix des produits les moins chers en parapharmacie. En contrepartie, tu obtiens une composition adaptée à ta génétique, qui a de bonnes chances d'être réellement absorbée au lieu d'être en grande partie éliminée sans être utilisée. La comparaison « par mg de vitamine » est trompeuse ; « par mg qui atteint réellement le sang » est bien plus pertinente."
+      "a": "Par jour, la variante personnalisée coûte plus cher que de simples multivitamines. En contrepartie, le choix et le dosage sont adaptés à ton analyse génétique et à ton mode de vie, et les microtransporteurs libèrent les nutriments de façon échelonnée."
      }
     ]
    }
@@ -1868,7 +1868,7 @@ const FAQTX = {
      },
      {
       "q": "Que m'indique MC1R sur ma sensibilité aux UV ?",
-      "a": "MC1R contrôle la production d'eumélanine (pigment foncé, protecteur contre les UV) par rapport à la phéomélanine (pigment rougeâtre, qui génère des radicaux libres sous l'effet des UV). Variantes défavorables : coups de soleil plus rapides, risque accru de dommages liés aux UV et de cancer de la peau — une discipline plus stricte en matière de protection solaire est nécessaire."
+      "a": "MC1R contrôle la production d'eumélanine (pigment foncé, protecteur contre les UV) par rapport à la phéomélanine (pigment rougeâtre, qui génère des radicaux libres sous l'effet des UV). Variantes défavorables : coups de soleil plus rapides, photovieillissement cutané plus marqué — une discipline plus stricte en matière de protection solaire est nécessaire."
      },
      {
       "q": "Pourquoi FLG (filaggrine) est-il important pour mes soins de la peau ?",
@@ -1920,7 +1920,7 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "« Nous diagnostiquons les carences. »"
+      "text": "« Notre laboratoire partenaire mesure tes valeurs sanguines ; l'interprétation est faite par un médecin. »"
      },
      {
       "tone": "safe",
@@ -1935,8 +1935,8 @@ const FAQTX = {
       "text": "Les symptômes d'une carence (p. ex. la fatigue due à une carence en fer) — de préférence avec l'indication d'une source (p. ex. une société médicale)."
      },
      {
-      "tone": "safe",
-      "text": "Témoignage : « J'étais souvent fatigué, le test a identifié une carence en fer, et cela m'a aidé » — autorisé."
+      "tone": "caveat",
+      "text": "Témoignages sur les analyses de sang uniquement sans promesse de guérison ni affirmation sur des maladies, et seulement après un examen au cas par cas."
      }
     ]
    },
@@ -1958,7 +1958,7 @@ const FAQTX = {
     ],
     "callout": {
      "tone": "safe",
-     "text": "Exemple : « Le test génétique prouve que l'acide folique est inefficace chez vous » — autorisé (étayé par des études)."
+     "text": "Exemple : « L'analyse génétique montre si ton corps parvient à bien convertir l'acide folique en sa forme active. » — sans risque."
     }
    },
    {
@@ -2026,11 +2026,11 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "Exemple de health claim : « Contribue au maintien d'une peau normale » (avec le zinc), « Contribue au fonctionnement normal du système immunitaire »."
+      "text": "Exemple de health claims, uniquement dans la formulation exacte de la liste de l'UE et seulement si le produit apporte au moins 15 % de la valeur nutritionnelle de référence (VNR) par dose journalière : « Le zinc contribue au maintien d'une peau normale. » / « Le zinc contribue au fonctionnement normal du système immunitaire. »"
      },
      {
-      "tone": "safe",
-      "text": "Exemple de témoignage : « Je le prends parce que j'ai la peau sèche » — associé au Health Claim du zinc — autorisé."
+      "tone": "critical",
+      "text": "NON autorisé : témoignage « Je le prends parce que j'ai la peau sèche » associé au Health Claim du zinc — ne pas relier les propos de clients à des health claims."
      },
      {
       "tone": "critical",

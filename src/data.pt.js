@@ -140,7 +140,7 @@ const TXT = {
     "q": "Por que razão um programa personalizado supera os conselhos padrão?",
     "options": [
      "Usa ingredientes mais caros",
-     "Um estudo-piloto da Novogenia (139 participantes) demonstrou um sucesso de perda de peso 2,4× superior com personalização genética face ao aconselhamento padrão — porque a estratégia se ajusta efetivamente à biologia subjacente",
+     "O estudo interno da Novogenia com 302 pessoas (dieta baseada nos genes vs. dieta padrão) mostrou uma perda de peso 2,4× maior com a dieta baseada nos genes",
      "Só funciona no papel",
      "É idêntico aos conselhos padrão"
     ],
@@ -352,10 +352,10 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Que recomendação alimentar se adequa a um cliente com um defeito HFE (risco de sobrecarga de ferro)?",
+    "q": "Que recomendação alimentar se adequa a um cliente cujo relatório indica uma necessidade de ferro mais baixa (HFE)?",
     "options": [
      "Aumentar a ingestão de ferro — ele precisa de mais",
-     "Reduzir a carga de ferro alimentar: menos carne vermelha, sem suplementos enriquecidos com ferro, exceto em caso de carência comprovada por análise ao sangue. O excesso de ferro acumula-se e danifica o fígado, o coração e as articulações ao longo de décadas",
+     "Não aumentar ainda mais a ingestão de ferro: menos carne vermelha, sem suplementos enriquecidos com ferro sem uma carência detetada pelo médico",
      "Tomar suplementos de ferro diariamente, por precaução",
      "Não é necessária qualquer alteração"
     ],
@@ -632,7 +632,7 @@ const TXT = {
  },
  "bo-sci-en": {
   "topic": "Fundamentos Científicos",
-  "description": "Por que razão o mesmo stress afeta as pessoas de forma diferente — e o que tem o gene COMT a ver com o risco de burnout.",
+  "description": "Por que razão o mesmo stress afeta as pessoas de forma diferente — e o que tem o gene COMT a ver com a forma como lidamos com o stress.",
   "longDescription": "Nesta formação, o Dr. Daniel Wallerstorfer explica por que razão um stress massivo e contínuo leva ao burnout em algumas pessoas, mas não noutras. Irá aprender quais as três características genéticas que a análise avalia, como o gene COMT decompõe a dopamina após situações excitantes ou stressantes, por que razão cerca de 15% das pessoas são especialmente propensas ao stress — e por que razão o estilo de vida certo é tanto mais importante quanto menos favoráveis forem os genes.",
   "bullets": [
    "Três características genéticas: desempenho sob stress, resiliência emocional, impulsividade",
@@ -644,7 +644,7 @@ const TXT = {
   "introQuestions": [
    "Que gene é central no processamento individual do stress?",
    "Por que razão o mesmo stress afeta as pessoas de forma diferente — e o que tem o COMT a ver com isso?",
-   "Como influenciam os genes o risco de burnout?",
+   "Como influenciam os genes a forma como lidamos com o stress?",
    "Que medidas de estilo de vida ajudam — e por que razão são mais importantes perante um perfil desfavorável?"
   ],
   "postVideoText": "Com este fundamento científico, poderá discutir o relatório de burnout com os seus clientes numa base sólida e deduzir estratégias individuais de gestão do stress.",
@@ -735,7 +735,7 @@ const TXT = {
      "Dependência de cafeína",
      "Perturbações do sono",
      "Desejo intenso de açúcar",
-     "Jogos de azar"
+     "Procura de emoções fortes"
     ],
     "correct": 3
    },
@@ -743,7 +743,7 @@ const TXT = {
     "q": "O que indica no relatório a zona vermelha de uma característica de stress?",
     "options": [
      "Uma genética muito favorável — não é necessário agir",
-     "Uma predisposição desfavorável — maior risco de burnout",
+     "Uma predisposição desfavorável — maior sensibilidade ao stress",
      "A pessoa já tem burnout e precisa de tratamento",
      "Uma recomendação padrão que se aplica a toda a gente"
     ],
@@ -792,7 +792,7 @@ const TXT = {
    {
     "q": "A Maria tem uma cópia funcional e uma cópia defeituosa do gene COMT. Como é o seu resultado?",
     "options": [
-     "As três características na zona vermelha — tem uma forte propensão para o burnout",
+     "As três características na zona vermelha — é muito sensível ao stress",
      "As três características na zona verde — o burnout não é uma preocupação para ela",
      "Desempenho sob stress na zona vermelha, as outras duas características na zona verde",
      "As três características na zona intermédia — resistência ao stress razoável"
@@ -823,8 +823,8 @@ const TXT = {
     "q": "O que significa um cliente estar na zona verde nas três características?",
     "options": [
      "O burnout é impossível para este cliente, seja qual for o seu estilo de vida",
-     "O cliente é especialmente propenso ao burnout",
-     "O burnout não é um perigo tão grande para este cliente",
+     "O cliente é especialmente sensível ao stress",
+     "Este cliente tende a lidar bem com o stress",
      "Não foi possível avaliar a análise"
     ],
     "correct": 2
@@ -838,7 +838,7 @@ const TXT = {
   "bullets": [
    "O que é o gene COMT?",
    "Que três características de stress mostra o relatório?",
-   "De que forma o risco de burnout é genético?",
+   "De que forma a sensibilidade ao stress é genética?",
    "Que recomendações resultam do perfil?"
   ],
   "questions": []
@@ -846,7 +846,7 @@ const TXT = {
  "ba-sci-en": {
   "topic": "Fundamentos Científicos",
   "description": "Por que razão os telómeros encurtam, como o gene da telomerase afeta a idade biológica — e que nutrientes podem ajudar.",
-  "longDescription": "Esta formação explica a base científica da análise da idade biológica. Irá aprender por que razão os telómeros — as extremidades protetoras dos nossos cromossomas — ficam mais curtos a cada divisão celular, o que acontece a uma célula quando estes se esgotam, como o gene da telomerase influencia este processo e que nutrientes podem apoiar a manutenção dos telómeros quando os genes funcionam pior.",
+  "longDescription": "Esta formação explica a base científica da análise da idade biológica. Irá aprender por que razão os telómeros — as extremidades protetoras dos nossos cromossomas — ficam mais curtos a cada divisão celular, o que acontece a uma célula quando estes se esgotam, como o gene da telomerase influencia este processo e que nutrientes os estudos associam à manutenção dos telómeros.",
   "bullets": [
    "Telómeros e envelhecimento celular — os fundamentos",
    "Senescência: quando as células entram em modo de repouso",
@@ -858,7 +858,7 @@ const TXT = {
    "O que são os telómeros e por que razão encurtam a cada divisão celular?",
    "O que acontece a uma célula quando os seus telómeros se esgotam?",
    "O que faz o gene da telomerase?",
-   "Que nutrientes apoiam a manutenção dos telómeros — e por que razão a dieta mediterrânica não funciona para toda a gente?"
+   "Que nutrientes os estudos associam à manutenção dos telómeros — e por que razão a dieta mediterrânica não funciona para toda a gente?"
   ],
   "postVideoText": "Com esta base científica, poderá discutir a análise da idade biológica com os seus clientes numa base sólida.",
   "questions": [
@@ -913,7 +913,7 @@ const TXT = {
     "correct": 2
    },
    {
-    "q": "Que nutrientes podem apoiar a manutenção dos telómeros quando o gene protetor funciona pior?",
+    "q": "Que nutrientes os estudos associam à manutenção dos telómeros?",
     "options": [
      "Vitamina C, zinco, selénio, ferro e magnésio",
      "Vitamina D3, ómega-3, vitamina E, resveratrol e ginkgo",
@@ -957,7 +957,7 @@ const TXT = {
     "options": [
      "Ignorá-lo — de qualquer forma, os telómeros não podem ser influenciados",
      "Fazer mais exercício — a alimentação não faz diferença",
-     "Aumentar os nutrientes de apoio para abrandar o encurtamento dos telómeros",
+     "Medidas de estilo de vida direcionadas e uma alimentação com os nutrientes adequados para apoiar a função protetora genética mais fraca",
      "Mudar para a dieta mediterrânica — funciona para toda a gente"
     ],
     "correct": 2
@@ -1047,7 +1047,7 @@ const TXT = {
  "ba-faq-en": {
   "topic": "Perguntas Frequentes",
   "description": "Respostas às perguntas típicas dos clientes sobre a análise da idade biológica.",
-  "longDescription": "Uma coletânea das perguntas mais importantes sobre a análise dos telómeros e anti-envelhecimento. Com respostas recolhíveis para autoestudo.",
+  "longDescription": "Uma coletânea das perguntas mais importantes sobre a análise dos telómeros e a idade biológica. Com respostas recolhíveis para autoestudo.",
   "bullets": [
    "O que são os telómeros e por que envelhecemos?",
    "Como a minha genética afeta a idade biológica?",
@@ -1192,7 +1192,7 @@ const TXT = {
     "q": "Qual a afirmação correta sobre a sensibilidade genética aos UV (por ex. MC1R)?",
     "options": [
      "As variantes genéticas não influenciam a sensibilidade aos UV — só o tipo de pele importa",
-     "Os portadores de variantes desfavoráveis queimam-se mais facilmente e têm um risco mais elevado de envelhecimento cutâneo e cancro da pele relacionados com os UV — uma proteção UV rigorosa é ainda mais importante",
+     "Os portadores de variantes desfavoráveis queimam-se mais facilmente e apresentam um fotoenvelhecimento cutâneo mais acentuado — uma proteção UV rigorosa é ainda mais importante",
      "Com uma sensibilidade genética elevada aos UV, deve evitar-se totalmente o sol, mesmo à sombra",
      "O protetor solar só funciona em pessoas com genes \"normais\""
     ],
@@ -1250,16 +1250,16 @@ const TXT = {
    "Enzimas CYP e metabolismo dos medicamentos",
    "Metabolizadores rápidos e lentos",
    "Substâncias ativas clinicamente relevantes (antidepressivos, analgésicos, anticoagulantes, …)",
-   "Relevância prática no aconselhamento"
+   "Relevância prática para os médicos prescritores"
   ],
   "introQuestionsHeader": "Esta formação responde a:",
   "introQuestions": [
    "Por que razão os medicamentos atuam de forma diferente em pessoas diferentes?",
    "Que enzimas CYP são responsáveis pela decomposição das substâncias ativas mais importantes?",
    "O que significa \"metabolizador rápido\" vs. \"lento\" no quotidiano clínico?",
-   "Que medicamentos são particularmente relevantes para o aconselhamento farmacogenético?"
+   "Que medicamentos são particularmente relevantes para as decisões de prescrição dos médicos?"
   ],
-  "postVideoText": "Com este conhecimento de base poderá discutir a relevância do teste farmacogenético com clientes e médicos — explicando por que razão uma dose que resulta na maioria pode ser demasiado forte ou demasiado fraca para um determinado indivíduo, consoante o seu genótipo CYP.",
+  "postVideoText": "Com este conhecimento de base compreenderá por que razão os médicos podem recorrer ao teste farmacogenético — uma dose que resulta na maioria pode ser demasiado forte ou demasiado fraca para um determinado indivíduo, consoante o seu genótipo CYP. Se os clientes perguntarem, encaminhe-os para o seu médico. As análises farmacogenéticas são disponibilizadas exclusivamente através de médicos; esta formação é informação técnica e não substitui o aconselhamento médico.",
   "questions": [
    {
     "q": "Por que razão o mesmo medicamento atua de forma diferente em pessoas diferentes?",
@@ -1302,7 +1302,7 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Por que razão a farmacogenética é importante no aconselhamento?",
+    "q": "Por que razão a farmacogenética é importante nos cuidados médicos?",
     "options": [
      "É sobretudo um tema de vendas",
      "Cerca de 7% de todos os medicamentos têm orientações farmacogenéticas clinicamente acionáveis — conhecer o genótipo antes de prescrever pode prevenir efeitos secundários graves e o insucesso do tratamento",
@@ -1502,7 +1502,7 @@ const FAQTX = {
     "items": [
      {
       "q": "O que é o Bloqueador de Calorias?",
-      "a": "O Bloqueador de Calorias é um produto personalizado de perda de peso sob a forma de pellets microtransportadores. Contém uma proporção individual de bloqueadores de gordura e de hidratos de carbono, adaptada à tua análise de ADN. Combinado com uma ingestão reduzida de calorias e de gordura, apoia comprovadamente a perda de peso — associado a uma alimentação e a um estilo de vida equilibrados, ajuda a manter o peso."
+      "a": "O Bloqueador de Calorias é um suplemento alimentar sob a forma de pellets microtransportadores com fibra de Opuntia ficus-indica e faseolamina do feijão branco. A proporção da mistura é escolhida com base na tua análise genética. Não substitui uma alimentação equilibrada e atenta às calorias."
      },
      {
       "q": "Como tomo o Bloqueador de Calorias?",
@@ -1510,11 +1510,11 @@ const FAQTX = {
      },
      {
       "q": "Quais são as substâncias ativas?",
-      "a": "O bloqueador de gordura é a Opuntia ficus-indica (OFI) — a fibra do cato figueira-da-índia. Esta fibra vegetal forma no trato gastrointestinal uma matriz gelatinosa que fixa a gordura alimentar e reduz a sua absorção. O bloqueador de hidratos de carbono é a faseolamina (do feijão branco), que inibe a alfa-amilase. Ambos são totalmente de origem vegetal."
+      "a": "O Bloqueador de Calorias contém Opuntia ficus-indica (OFI), a fibra do cato figueira-da-índia, e faseolamina do feijão branco. Ambos os ingredientes são de origem puramente vegetal."
      },
      {
       "q": "O Bloqueador de Calorias é vegano/vegetariano?",
-      "a": "Sim. Tanto o bloqueador de gordura (Opuntia ficus-indica) como o bloqueador de hidratos de carbono (faseolamina do feijão branco) são de origem puramente vegetal. O Bloqueador de Calorias é adequado para vegetarianos e veganos, não contém glúten nem lactose e é isento de corantes artificiais."
+      "a": "Sim. Ambos os ingredientes, a fibra de Opuntia ficus-indica e a faseolamina do feijão branco, são de origem puramente vegetal. O Bloqueador de Calorias é adequado para vegetarianos e veganos, não contém glúten nem lactose e é isento de corantes artificiais."
      }
     ]
    }
@@ -1574,11 +1574,11 @@ const FAQTX = {
     "items": [
      {
       "q": "O que significa para mim um defeito no MTHFR?",
-      "a": "O MTHFR ativa o ácido fólico, transformando-o em metilfolato, a forma que o teu corpo consegue efetivamente utilizar. Com um defeito, podes tomar muito ácido fólico num suplemento comum e continuar a ter uma carência funcional. Mudar para metilfolato resolve o problema."
+      "a": "O MTHFR ativa o ácido fólico, transformando-o em metilfolato, a forma que o teu corpo consegue efetivamente utilizar. Com um defeito, podes tomar muito ácido fólico num suplemento comum e continuar a ter uma carência funcional. O metilfolato já é a forma ativa e não precisa deste passo de conversão. Se é adequado para ti, é melhor falares com o teu médico."
      },
      {
-      "q": "Tenho uma variante HFE — a suplementação de ferro é perigosa para mim?",
-      "a": "Pode ser. Algumas variantes HFE provocam uma sobrecarga de ferro ao longo de décadas — o teu corpo absorve demasiado ferro dos alimentos e armazena-o no fígado, no coração e nas articulações. Os suplementos de ferro só devem ser tomados se as análises ao sangue revelarem uma carência real."
+      "q": "Tenho uma variante HFE — devo tomar suplementos de ferro?",
+      "a": "O teu resultado HFE indica uma necessidade de ferro mais baixa. Por isso, não tomes suplementos de ferro por iniciativa própria — só se um médico tiver detetado uma carência numa análise ao sangue."
      },
      {
       "q": "Sensibilidade ao sal (ACE) — significa isso que tenho de abdicar do sal?",
@@ -1633,7 +1633,7 @@ const FAQTX = {
      },
      {
       "q": "Por que razão o relatório me recomenda antioxidantes?",
-      "a": "O exercício intenso gera grandes quantidades de radicais livres. Se os teus genes antioxidantes (SOD2, CAT, GPX) forem fracos, a recuperação é mais lenta e a microinflamação vai-se acumulando. A vitamina C, a vitamina E, os polifenóis e o selénio apoiam diretamente estes sistemas de defesa."
+      "a": "O exercício intenso gera grandes quantidades de radicais livres. Se os teus genes antioxidantes (SOD2, CAT, GPX) forem fracos, a recuperação é mais lenta e a microinflamação vai-se acumulando. A vitamina C contribui para a proteção das células contra o stress oxidativo. O mesmo se aplica à vitamina E e ao selénio."
      },
      {
       "q": "O que é um «deload» e com que frequência o devo fazer?",
@@ -1676,11 +1676,11 @@ const FAQTX = {
     "items": [
      {
       "q": "O que é o gene COMT e por que razão é importante?",
-      "a": "A COMT (catecol-O-metiltransferase) decompõe a dopamina, um mensageiro químico, depois de terminar uma situação excitante ou stressante, para que o cérebro possa regressar ao seu nível basal. Se o gene funcionar mal, a dopamina é decomposta muito mais lentamente: o cérebro permanece mais tempo num estado de excitação e, se surgir uma nova situação de stress antes de ter regressado ao nível basal, pode ficar sobrecarregado. Uma decomposição mais lenta também tem vantagens — os sentimentos positivos são vividos com mais intensidade e as pessoas tendem a ser mais curiosas, mas também mais propensas a jogos de azar. Os estudos descrevem uma variante comum (Val158Met) com uma atividade enzimática claramente diferente entre a forma rápida e a lenta."
+      "a": "A COMT (catecol-O-metiltransferase) decompõe a dopamina, um mensageiro químico, depois de terminar uma situação excitante ou stressante, para que o cérebro possa regressar ao seu nível basal. Se o gene funcionar mal, a dopamina é decomposta muito mais lentamente: o cérebro permanece mais tempo num estado de excitação e, se surgir uma nova situação de stress antes de ter regressado ao nível basal, pode ficar sobrecarregado. Uma decomposição mais lenta também tem vantagens — os sentimentos positivos são vividos com mais intensidade e as pessoas tendem a ser mais curiosas, mas também a reagir mais fortemente a recompensas e emoções fortes. Os estudos descrevem uma variante comum (Val158Met) com uma atividade enzimática claramente diferente entre a forma rápida e a lenta."
      },
      {
       "q": "Que três características avalia a análise de burnout?",
-      "a": "Desempenho sob stress (até que ponto consegues render em situações de stress), resiliência emocional (até que ponto os sentimentos negativos te pesam) e impulsividade. Cada característica é apresentada numa escala que vai do vermelho ao verde, passando por uma zona intermédia: o verde é favorável, o vermelho significa um maior risco de burnout."
+      "a": "Desempenho sob stress (até que ponto consegues render em situações de stress), resiliência emocional (até que ponto os sentimentos negativos te pesam) e impulsividade. Cada característica é apresentada numa escala que vai do vermelho ao verde, passando por uma zona intermédia: o verde é favorável, o vermelho significa uma maior sensibilidade ao stress."
      },
      {
       "q": "Quantas pessoas são, por razões genéticas, especialmente propensas ao stress?",
@@ -1697,7 +1697,7 @@ const FAQTX = {
      },
      {
       "q": "As minhas três características estão na zona verde — mesmo assim tenho de ter o burnout em conta?",
-      "a": "Para ti, o burnout não é um perigo tão grande — mas o risco não é nulo: um stress massivo e contínuo pode, com o tempo, deixar marcas na mesma. As fases de recuperação e um estilo de vida equilibrado continuam a ser importantes."
+      "a": "Tens tendência a lidar bem com o stress — mas um stress massivo e contínuo pode, com o tempo, deixar marcas na mesma. As fases de recuperação e um estilo de vida equilibrado continuam a ser importantes."
      },
      {
       "q": "O que ajuda toda a gente, independentemente do genótipo?",
@@ -1710,7 +1710,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Apareceu uma «zona vermelha» no meu relatório. Devo preocupar-me?",
-      "a": "Não é motivo para pânico, mas é motivo para agir. Uma zona vermelha assinala uma predisposição genética desfavorável numa área específica — um maior risco de burnout, não um diagnóstico. Quanto mais características tiveres na zona vermelha, mais importante é adaptar o teu estilo de vida para evitar o stress. Mesmo com resultados na zona intermédia, um estilo de vida com pouco stress continua a ser importante."
+      "a": "Não é motivo para pânico, mas é motivo para agir. Uma zona vermelha assinala uma predisposição genética desfavorável numa área específica — uma maior sensibilidade ao stress, não um diagnóstico. Quanto mais características tiveres na zona vermelha, mais importante é adaptar o teu estilo de vida para evitar o stress. Mesmo com resultados na zona intermédia, um estilo de vida com pouco stress continua a ser importante."
      },
      {
       "q": "Onde encontro recomendações concretas para o meu genótipo?",
@@ -1756,8 +1756,8 @@ const FAQTX = {
       "a": "Surpreendentemente, não. Os estudos mostraram que a dieta mediterrânica só ajuda a manter os telómeros mais longos em pessoas com determinadas variantes genéticas — nas restantes, não tem qualquer efeito nos telómeros. O teu relatório mostra a que grupo pertences. Isto refere-se apenas aos telómeros, não a outros efeitos da dieta — e é um exemplo claro de que o mesmo conselho de estilo de vida não funciona da mesma forma para toda a gente."
      },
      {
-      "q": "Que nutrientes apoiam os telómeros?",
-      "a": "Vitamina D3, ómega-3, vitamina E, resveratrol e ginkgo. Quando o sistema genético de proteção funciona pior, aumentar a ingestão destes nutrientes — por exemplo, comendo mais alimentos que os contenham — pode ajudar a abrandar o encurtamento dos telómeros. No entanto, estes nutrientes não conseguem revertê-lo."
+      "q": "Que nutrientes são associados aos telómeros?",
+      "a": "Os estudos associam a vitamina D3, o ómega-3, a vitamina E, o resveratrol e o ginkgo à manutenção dos telómeros. Se o teu sistema genético de proteção funcionar pior, podes comer mais alimentos ricos em vitamina D, ácidos gordos ómega-3 e vitamina E. O encurtamento não pode ser revertido."
      },
      {
       "q": "Posso influenciar os radicais livres?",
@@ -1769,12 +1769,12 @@ const FAQTX = {
     "title": "Influência e expectativas",
     "items": [
      {
-      "q": "Com que rapidez vou ver resultados das medidas anti-envelhecimento?",
-      "a": "Não de um dia para o outro. As medidas recomendadas não fazem os telómeros voltar a crescer — ajudam a abrandar o seu encurtamento, pelo que o benefício se vai acumulando gradualmente ao longo de muitos anos. Tem em conta que a análise genética mostra a tua predisposição, não o comprimento atual dos teus telómeros; por isso, o resultado da análise em si não se altera com estas medidas."
+      "q": "Com que rapidez vou ver resultados das medidas recomendadas?",
+      "a": "Não de um dia para o outro. As medidas recomendadas não fazem os telómeros voltar a crescer; um eventual benefício acumula-se ao longo de muitos anos. Tem em conta que a análise genética mostra a tua predisposição, não o comprimento atual dos teus telómeros; por isso, o resultado da análise em si não se altera com estas medidas."
      },
      {
       "q": "Que utilidade prática tem para mim este conhecimento?",
-      "a": "Ficas a saber até que ponto os teus genes mantêm os telómeros — e se a dieta mediterrânica te ajuda neste aspeto. Se a manutenção dos teus telómeros estiver comprometida, podes reagir de forma deliberada aumentando a ingestão de vitamina D3, ómega-3, vitamina E, resveratrol e ginkgo, por exemplo através de alimentos que os contenham. Também faz sentido um estilo de vida saudável em geral, com uma alimentação rica em antioxidantes, exercício regular e sono suficiente."
+      "a": "Ficas a saber até que ponto os teus genes mantêm os telómeros — e se a dieta mediterrânica te ajuda neste aspeto. Se a manutenção dos teus telómeros estiver comprometida, podes comer mais alimentos ricos em vitamina D, ácidos gordos ómega-3 e vitamina E. Também faz sentido um estilo de vida saudável em geral, com uma alimentação rica em antioxidantes, exercício regular e sono suficiente."
      }
     ]
    }
@@ -1825,7 +1825,7 @@ const FAQTX = {
      },
      {
       "q": "Com que rapidez vou notar um efeito?",
-      "a": "Varia consoante o nutriente. Alguns efeitos (por ex. mais energia com as vitaminas do complexo B) surgem em dias a semanas; outros (por ex. o metabolismo ósseo com a vitamina D) desenvolvem-se ao longo de meses. A suplementação personalizada não é um medicamento de ação rápida — corrige lacunas nutricionais a longo prazo."
+      "a": "Depende do nutriente. Exemplos: a vitamina B12 contribui para a redução do cansaço e da fadiga; a vitamina D contribui para a manutenção de ossos normais. Os suplementos alimentares não atuam como um medicamento — complementam a alimentação."
      },
      {
       "q": "Vou precisar de suplementação para sempre?",
@@ -1837,7 +1837,7 @@ const FAQTX = {
      },
      {
       "q": "Como se compara o custo da versão personalizada com o dos multivitamínicos de farmácia?",
-      "a": "É significativamente mais elevado por dia — tipicamente 3-5× o dos produtos de farmácia mais baratos. Em contrapartida, recebes uma composição geneticamente adaptada que provavelmente é mesmo absorvida, em vez de ser em grande parte excretada sem aproveitamento. A comparação «por mg de vitamina» é enganadora; «por mg que chega efetivamente ao sangue» é bem mais significativa."
+      "a": "Por dia, a variante personalizada custa mais do que simples multivitamínicos. Em contrapartida, a seleção e a dosagem são adaptadas à tua análise genética e ao teu estilo de vida, e os microtransportadores libertam os nutrientes de forma faseada."
      }
     ]
    }
@@ -1875,7 +1875,7 @@ const FAQTX = {
      },
      {
       "q": "O que me diz o MC1R sobre a sensibilidade aos UV?",
-      "a": "O MC1R controla a produção de eumelanina (pigmento escuro, protetor contra os UV) versus feomelanina (pigmento avermelhado, que gera radicais livres sob a ação dos UV). Variantes desfavoráveis: queimaduras solares mais rápidas, maior risco de danos por UV e de cancro da pele — é necessária uma disciplina mais rigorosa na aplicação de protetor solar."
+      "a": "O MC1R controla a produção de eumelanina (pigmento escuro, protetor contra os UV) versus feomelanina (pigmento avermelhado, que gera radicais livres sob a ação dos UV). Variantes desfavoráveis: queimaduras solares mais rápidas, fotoenvelhecimento cutâneo mais acentuado — é necessária uma disciplina mais rigorosa na aplicação de protetor solar."
      },
      {
       "q": "Por que razão o FLG (filagrina) é importante para os meus cuidados de pele?",
@@ -1927,7 +1927,7 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "«Diagnosticamos carências.»"
+      "text": "«O nosso laboratório parceiro mede os teus valores sanguíneos; a avaliação dos resultados é feita por um médico.»"
      },
      {
       "tone": "safe",
@@ -1942,8 +1942,8 @@ const FAQTX = {
       "text": "Sintomas de uma carência (por ex. cansaço por carência de ferro) — de preferência com indicação da fonte (por ex. uma associação médica)."
      },
      {
-      "tone": "safe",
-      "text": "Testemunho: «Andava muitas vezes cansado, o teste identificou uma carência de ferro e isso ajudou-me» — permitido."
+      "tone": "caveat",
+      "text": "Testemunhos sobre análises ao sangue apenas sem promessas de cura ou afirmações sobre doenças e só após análise caso a caso."
      }
     ]
    },
@@ -1965,7 +1965,7 @@ const FAQTX = {
     ],
     "callout": {
      "tone": "safe",
-     "text": "Exemplo: «O teste genético prova que o ácido fólico é ineficaz para ti» — permitido (sustentado por estudos)."
+     "text": "Exemplo: «A análise genética mostra se o teu corpo consegue converter bem o ácido fólico na sua forma ativa.» — sem risco."
     }
    },
    {
@@ -2033,11 +2033,11 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "Exemplo de health claim: «Contribui para uma pele normal» (com zinco), «Contribui para o normal funcionamento do sistema imunitário»."
+      "text": "Exemplo de health claims, apenas na redação exata da lista da UE e só se o produto fornecer, por dose diária, pelo menos 15 % do valor de referência do nutriente (VRN): «O zinco contribui para a manutenção de uma pele normal.» / «O zinco contribui para o normal funcionamento do sistema imunitário.»"
      },
      {
-      "tone": "safe",
-      "text": "Exemplo de testemunho: «Tomo-o porque tenho a pele seca» — combinado com o Health Claim do zinco — permitido."
+      "tone": "critical",
+      "text": "NÃO permitido: testemunho «Tomo-o porque tenho a pele seca» combinado com o Health Claim do zinco — não associes declarações de clientes a health claims."
      },
      {
       "tone": "critical",

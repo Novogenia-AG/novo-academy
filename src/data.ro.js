@@ -86,14 +86,14 @@ const TXT = {
   "bullets": [
    "Ce este gena COMT?",
    "Care sunt cele trei trăsături legate de stres prezentate în raport?",
-   "Cum este determinat genetic riscul de burnout?",
+   "Cum este determinată genetic sensibilitatea la stres?",
    "Ce recomandări decurg din profil?"
   ]
  },
  "ba-sci-en": {
   "topic": "Baza științifică",
   "description": "De ce se scurtează telomerii, cum influențează gena telomerazei vârsta biologică — și ce nutrienți pot ajuta.",
-  "longDescription": "Acest training explică baza științifică a analizei vârstei biologice. Vei afla de ce telomerii — capetele protectoare ale cromozomilor noștri — se scurtează la fiecare diviziune celulară, ce se întâmplă cu o celulă atunci când aceștia s-au consumat, cum influențează gena telomerazei acest proces și ce nutrienți pot susține menținerea telomerilor atunci când genele funcționează mai puțin bine.",
+  "longDescription": "Acest training explică baza științifică a analizei vârstei biologice. Vei afla de ce telomerii — capetele protectoare ale cromozomilor noștri — se scurtează la fiecare diviziune celulară, ce se întâmplă cu o celulă atunci când aceștia s-au consumat, cum influențează gena telomerazei acest proces și ce nutrienți asociază studiile cu menținerea telomerilor.",
   "postVideoText": "Cu această bază științifică poți discuta analiza vârstei biologice cu clienții tăi pe un fundament solid.",
   "introQuestionsHeader": "Acest training răspunde la:",
   "bullets": [
@@ -106,7 +106,7 @@ const TXT = {
    "Ce sunt telomerii și de ce se scurtează la fiecare diviziune celulară?",
    "Ce se întâmplă cu o celulă atunci când telomerii ei s-au consumat?",
    "Ce face gena telomerazei?",
-   "Ce nutrienți susțin menținerea telomerilor — și de ce dieta mediteraneană nu funcționează pentru toată lumea?"
+   "Ce nutrienți asociază studiile cu menținerea telomerilor — și de ce dieta mediteraneană nu funcționează pentru toată lumea?"
   ],
   "questions": [
    {
@@ -160,7 +160,7 @@ const TXT = {
     "correct": 2
    },
    {
-    "q": "Ce nutrienți pot susține menținerea telomerilor atunci când gena protectoare funcționează mai puțin bine?",
+    "q": "Ce nutrienți asociază studiile cu menținerea telomerilor?",
     "options": [
      "Vitamina C, zinc, seleniu, fier și magneziu",
      "Vitamina D3, Omega-3, vitamina E, resveratrol și ginkgo",
@@ -204,7 +204,7 @@ const TXT = {
     "options": [
      "Să ignore defectul — oricum telomerii nu pot fi influențați",
      "Să facă mai mult sport — alimentația nu contează",
-     "Să crească aportul de nutrienți care încetinesc scurtarea telomerilor",
+     "Măsuri țintite privind stilul de viață și o alimentație cu nutrienții potriviți, pentru a susține funcția genetică de protecție mai slabă",
      "Să treacă la dieta mediteraneană — aceasta funcționează la toată lumea"
     ],
     "correct": 2
@@ -294,7 +294,7 @@ const TXT = {
  "ba-faq-en": {
   "topic": "Întrebări frecvente",
   "description": "Răspunsuri la întrebările tipice ale clienților despre analiza vârstei biologice.",
-  "longDescription": "O colecție a celor mai importante întrebări despre analiza telomerilor și anti-îmbătrânire. Cu răspunsuri pliabile pentru studiu individual.",
+  "longDescription": "O colecție a celor mai importante întrebări despre analiza telomerilor și vârsta biologică. Cu răspunsuri pliabile pentru studiu individual.",
   "bullets": [
    "Ce sunt telomerii și de ce îmbătrânim?",
    "Cum îmi afectează genetica vârsta biologică?",
@@ -306,19 +306,19 @@ const TXT = {
   "topic": "Bază științifică",
   "description": "Cum influențează variantele genetice metabolizarea și tolerarea medicamentelor — explicat științific.",
   "longDescription": "În acest training, Dr. Daniel Wallerstorfer explică de ce medicamentele acționează diferit la persoane diferite. Vei învăța cum descompun enzimele CYP substanțele active, ce înseamnă „metabolizator rapid\" vs. „metabolizator lent\" și cum ghidează aceste cunoștințe decizii de prescriere mai sigure.",
-  "postVideoText": "Cu acest fundal poți discuta relevanța testării farmacogenetice cu clienți și medici — explicând de ce o doză care funcționează pentru majoritatea poate fi prea puternică sau prea slabă pentru o anumită persoană, în funcție de genotipul său CYP.",
+  "postVideoText": "Cu acest fundal înțelegi de ce medicii pot folosi testarea farmacogenetică — o doză care funcționează pentru majoritatea poate fi prea puternică sau prea slabă pentru o anumită persoană, în funcție de genotipul său CYP. Dacă clienții te întreabă, îndrumă-i către medicul lor. Analizele farmacogenetice sunt oferite exclusiv prin intermediul medicilor; acest training este informație de specialitate și nu înlocuiește consultul medical.",
   "introQuestionsHeader": "Acest training răspunde la:",
   "bullets": [
    "Enzimele CYP și metabolizarea medicamentelor",
    "Metabolizatori rapizi și lenți",
    "Substanțe active relevante clinic (antidepresive, analgezice, anticoagulante, …)",
-   "Relevanță practică în consiliere"
+   "Relevanță practică pentru medicii care prescriu"
   ],
   "introQuestions": [
    "De ce acționează medicamentele diferit la persoane diferite?",
    "Ce enzime CYP sunt responsabile de descompunerea celor mai importante substanțe active?",
    "Ce înseamnă „metabolizator rapid\" vs. „metabolizator lent\" în viața clinică de zi cu zi?",
-   "Ce medicamente sunt deosebit de relevante pentru consilierea farmacogenetică?"
+   "Ce medicamente sunt deosebit de relevante pentru deciziile de prescriere ale medicilor?"
   ],
   "questions": [
    {
@@ -362,7 +362,7 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "De ce este importantă farmacogenetica în consiliere?",
+    "q": "De ce este importantă farmacogenetica în îngrijirea medicală?",
     "options": [
      "Este în principal un subiect de vânzare",
      "Aproximativ 7% dintre toate medicamentele au ghiduri farmacogenetice cu aplicabilitate clinică — cunoașterea genotipului înainte de prescriere poate preveni efecte secundare severe și eșecul tratamentului",
@@ -534,10 +534,10 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Ce recomandare alimentară se potrivește unui client cu un defect HFE (risc de supraîncărcare cu fier)?",
+    "q": "Ce recomandare alimentară se potrivește unui client al cărui raport arată un necesar de fier mai scăzut (HFE)?",
     "options": [
      "Să crească aportul de fier — are nevoie de mai mult",
-     "Să reducă încărcarea cu fier din alimentație: mai puțină carne roșie, fără suplimente îmbogățite cu fier decât în caz de deficit confirmat printr-o analiză de sânge. Excesul de fier se acumulează și afectează ficatul, inima și articulațiile de-a lungul deceniilor",
+     "Să nu crească suplimentar aportul de fier: mai puțină carne roșie, fără suplimente îmbogățite cu fier fără un deficit constatat de medic",
      "Să ia zilnic suplimente de fier ca măsură de precauție",
      "Nu este necesară nicio schimbare"
     ],
@@ -793,7 +793,7 @@ const TXT = {
     "q": "Care afirmație despre sensibilitatea genetică la UV (de ex. MC1R) este corectă?",
     "options": [
      "Variantele genetice nu influențează sensibilitatea la UV — contează doar tipul de piele",
-     "Purtătorii variantelor nefavorabile se ard mai ușor și au un risc mai mare de îmbătrânire a pielii și cancer de piele legate de UV — protecția UV strictă este cu atât mai importantă",
+     "Purtătorii variantelor nefavorabile se ard mai ușor și prezintă o fotoîmbătrânire mai accentuată a pielii — protecția UV strictă este cu atât mai importantă",
      "La o sensibilitate genetică ridicată la UV, ar trebui evitat complet soarele, chiar și la umbră",
      "Crema de protecție solară funcționează doar pentru persoanele cu gene \"normale\""
     ],
@@ -905,7 +905,7 @@ const TXT = {
     "q": "De ce un program personalizat depășește sfaturile standard?",
     "options": [
      "Folosește ingrediente mai scumpe",
-     "Un studiu pilot Novogenia (139 de participanți) a arătat un succes de slăbire de 2,4× mai mare cu personalizarea genetică față de consilierea standard — pentru că strategia se potrivește efectiv cu biologia subiacentă",
+     "Studiul intern Novogenia cu 302 persoane (dietă bazată pe gene vs. dietă standard) a arătat o pierdere în greutate de 2,4× mai mare cu dieta bazată pe gene",
      "Funcționează doar pe hârtie",
      "Este identic cu sfaturile standard"
     ],
@@ -1230,7 +1230,7 @@ const TXT = {
  },
  "bo-sci-en": {
   "topic": "Baze științifice",
-  "description": "De ce același stres îi afectează diferit pe oameni — și ce legătură are gena COMT cu riscul de burnout.",
+  "description": "De ce același stres îi afectează diferit pe oameni — și ce legătură are gena COMT cu felul în care gestionăm stresul.",
   "longDescription": "În acest training, Dr. Daniel Wallerstorfer explică de ce stresul masiv și continuu duce la burnout la unii oameni, dar la alții nu. Vei afla care sunt cele trei trăsături genetice evaluate în analiză, cum descompune gena COMT dopamina după situații palpitante sau stresante, de ce aproximativ 15% dintre oameni sunt deosebit de predispuși la stres — și de ce stilul de viață potrivit contează cu atât mai mult atunci când genele sunt mai puțin favorabile.",
   "postVideoText": "Cu acest fundament științific poți discuta raportul de burnout cu clienții tăi pe o bază solidă și poți deriva strategii individuale de gestionare a stresului.",
   "introQuestionsHeader": "Acest training răspunde la:",
@@ -1243,7 +1243,7 @@ const TXT = {
   "introQuestions": [
    "Care genă este centrală pentru procesarea individuală a stresului?",
    "De ce același stres îi afectează diferit pe oameni — și ce legătură are COMT cu asta?",
-   "Cum influențează genele riscul de burnout?",
+   "Cum influențează genele felul în care gestionăm stresul?",
    "Ce măsuri privind stilul de viață ajută — și de ce contează mai mult în cazul unui profil nefavorabil?"
   ],
   "questions": [
@@ -1333,7 +1333,7 @@ const TXT = {
      "Dependență de cafeină",
      "Tulburări de somn",
      "Pofte de dulce",
-     "Jocuri de noroc"
+     "Căutarea senzațiilor tari"
     ],
     "correct": 3
    },
@@ -1341,7 +1341,7 @@ const TXT = {
     "q": "Ce indică în raport zona roșie a unei trăsături legate de stres?",
     "options": [
      "O genetică foarte favorabilă — nu este necesară nicio măsură",
-     "O predispoziție nefavorabilă — un risc mai mare de burnout",
+     "O predispoziție nefavorabilă — o sensibilitate mai mare la stres",
      "Persoana are deja burnout și are nevoie de tratament",
      "O recomandare standard, valabilă pentru toată lumea"
     ],
@@ -1390,7 +1390,7 @@ const TXT = {
    {
     "q": "Maria are o copie funcțională și o copie defectă a genei COMT. Cum arată rezultatul ei?",
     "options": [
-     "Toate cele trei trăsături în zona roșie — este foarte predispusă la burnout",
+     "Toate cele trei trăsături în zona roșie — este foarte sensibilă la stres",
      "Toate cele trei trăsături în zona verde — burnout-ul nu este o problemă pentru ea",
      "Performanța sub stres în zona roșie, celelalte două trăsături în zona verde",
      "Toate cele trei trăsături în zona de mijloc — rezistență la stres relativ bună"
@@ -1421,8 +1421,8 @@ const TXT = {
     "q": "Ce înseamnă atunci când un client se află în zona verde la toate cele trei trăsături?",
     "options": [
      "Burnout-ul este imposibil pentru acest client, indiferent de stilul de viață",
-     "Clientul este deosebit de predispus la burnout",
-     "Burnout-ul nu reprezintă un pericol atât de mare pentru acest client",
+     "Clientul este deosebit de sensibil la stres",
+     "Acest client tinde să gestioneze bine stresul",
      "Analiza nu a putut fi evaluată"
     ],
     "correct": 2
@@ -1496,7 +1496,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Ce este Calorie Blocker?",
-      "a": "Calorie Blocker este un produs personalizat pentru slăbire, sub formă de peleți Microtransporter. Conține un raport individual de blocatori de grăsimi și de carbohidrați, adaptat analizei tale ADN. Combinat cu un aport redus de calorii și de grăsimi, sprijină demonstrabil pierderea în greutate — iar împreună cu o alimentație echilibrată și un stil de viață sănătos ajută la menținerea greutății."
+      "a": "Calorie Blocker este un supliment alimentar sub formă de peleți Microtransporter, cu fibră de Opuntia ficus-indica și faseolamină din fasole albă. Raportul de amestec este ales pe baza analizei tale genetice. Nu înlocuiește o alimentație echilibrată, atentă la calorii."
      },
      {
       "q": "Cum se administrează Calorie Blocker?",
@@ -1504,11 +1504,11 @@ const FAQTX = {
      },
      {
       "q": "Care sunt substanțele active?",
-      "a": "Blocatorul de grăsimi este Opuntia ficus-indica (OFI) — fibra cactusului de smochin indian. Această fibră vegetală formează în tractul digestiv o matrice asemănătoare unui gel, care leagă grăsimile alimentare și le reduce absorbția. Blocatorul de carbohidrați este faseolamina (din fasole albă), care inhibă alfa-amilaza. Ambele sunt complet vegetale."
+      "a": "Calorie Blocker conține Opuntia ficus-indica (OFI), fibra cactusului de smochin indian, și faseolamină din fasole albă. Ambele ingrediente sunt complet vegetale."
      },
      {
       "q": "Calorie Blocker este vegan/vegetarian?",
-      "a": "Da. Atât blocatorul de grăsimi (Opuntia ficus-indica), cât și blocatorul de carbohidrați (faseolamina din fasole albă) sunt pur vegetale. Calorie Blocker este potrivit pentru vegetarieni și vegani, fără gluten, fără lactoză și fără coloranți artificiali."
+      "a": "Da. Ambele ingrediente, fibra de Opuntia ficus-indica și faseolamina din fasole albă, sunt pur vegetale. Calorie Blocker este potrivit pentru vegetarieni și vegani, fără gluten, fără lactoză și fără coloranți artificiali."
      }
     ]
    }
@@ -1568,11 +1568,11 @@ const FAQTX = {
     "items": [
      {
       "q": "Ce înseamnă pentru mine un defect MTHFR?",
-      "a": "MTHFR activează acidul folic transformându-l în metilfolat, forma pe care corpul tău o poate folosi cu adevărat. În cazul unui defect, poți lua mult acid folic dintr-un supliment obișnuit și totuși să ai un deficit funcțional. Trecerea la metilfolat rezolvă problema."
+      "a": "MTHFR activează acidul folic transformându-l în metilfolat, forma pe care corpul tău o poate folosi cu adevărat. În cazul unui defect, poți lua mult acid folic dintr-un supliment obișnuit și totuși să ai un deficit funcțional. Metilfolatul este deja forma activă și nu are nevoie de această etapă de conversie. Dacă este potrivit pentru tine, cel mai bine discuți cu medicul tău."
      },
      {
-      "q": "Am o variantă HFE — este periculoasă pentru mine suplimentarea cu fier?",
-      "a": "Poate fi. Unele variante HFE duc, de-a lungul deceniilor, la o supraîncărcare cu fier — corpul tău absoarbe prea mult fier din alimente și îl depozitează în ficat, inimă și articulații. Suplimentele de fier ar trebui luate doar dacă analizele de sânge arată un deficit real."
+      "q": "Am o variantă HFE — ar trebui să iau suplimente de fier?",
+      "a": "Rezultatul tău HFE arată un necesar de fier mai scăzut. Așadar, nu lua suplimente de fier din proprie inițiativă — doar dacă un medic a constatat un deficit printr-o analiză de sânge."
      },
      {
       "q": "Sensibilitatea la sare (ACE) — înseamnă că trebuie să renunț la sare?",
@@ -1627,7 +1627,7 @@ const FAQTX = {
      },
      {
       "q": "De ce îmi recomandă raportul antioxidanți?",
-      "a": "Efortul intens generează cantități mari de radicali liberi. Dacă genele tale antioxidante (SOD2, CAT, GPX) sunt slabe, regenerarea este mai lentă și se acumulează micro-inflamații. Vitaminele C și E, polifenolii și seleniul susțin direct aceste sisteme de apărare."
+      "a": "Efortul intens generează cantități mari de radicali liberi. Dacă genele tale antioxidante (SOD2, CAT, GPX) sunt slabe, regenerarea este mai lentă și se acumulează micro-inflamații. Vitamina C contribuie la protejarea celulelor împotriva stresului oxidativ. Același lucru este valabil pentru vitamina E și seleniu."
      },
      {
       "q": "Ce este un „deload” și cât de des ar trebui să îl fac?",
@@ -1670,11 +1670,11 @@ const FAQTX = {
     "items": [
      {
       "q": "Ce este gena COMT și de ce este importantă?",
-      "a": "COMT (catecol-O-metiltransferaza) descompune neurotransmițătorul dopamină după ce o situație palpitantă sau stresantă s-a încheiat, astfel încât creierul să poată reveni la nivelul de bază. Dacă gena funcționează slab, dopamina este descompusă mult mai lent: creierul rămâne mai mult timp într-o stare de activare, iar dacă apare un nou stres înainte ca creierul să fi revenit la nivelul de bază, poate ajunge la suprasolicitare. Descompunerea mai lentă are însă și avantaje — sentimentele pozitive sunt trăite mai intens, iar persoanele respective tind să fie mai curioase, dar și mai predispuse la jocuri de noroc. Studiile descriu o variantă frecventă (Val158Met) cu o activitate enzimatică net diferită între forma rapidă și cea lentă."
+      "a": "COMT (catecol-O-metiltransferaza) descompune neurotransmițătorul dopamină după ce o situație palpitantă sau stresantă s-a încheiat, astfel încât creierul să poată reveni la nivelul de bază. Dacă gena funcționează slab, dopamina este descompusă mult mai lent: creierul rămâne mai mult timp într-o stare de activare, iar dacă apare un nou stres înainte ca creierul să fi revenit la nivelul de bază, poate ajunge la suprasolicitare. Descompunerea mai lentă are însă și avantaje — sentimentele pozitive sunt trăite mai intens, iar persoanele respective tind să fie mai curioase, dar și să reacționeze mai puternic la recompense și senzații tari. Studiile descriu o variantă frecventă (Val158Met) cu o activitate enzimatică net diferită între forma rapidă și cea lentă."
      },
      {
       "q": "Care sunt cele trei trăsături evaluate de analiza de burnout?",
-      "a": "Performanța sub stres (cât de bine performezi în situații stresante), reziliența emoțională (cât de puternic te apasă sentimentele negative) și impulsivitatea. Fiecare trăsătură este reprezentată pe o scală de la roșu, prin zona de mijloc, până la verde: verdele este favorabil, iar roșul înseamnă un risc mai mare de burnout."
+      "a": "Performanța sub stres (cât de bine performezi în situații stresante), reziliența emoțională (cât de puternic te apasă sentimentele negative) și impulsivitatea. Fiecare trăsătură este reprezentată pe o scală de la roșu, prin zona de mijloc, până la verde: verdele este favorabil, iar roșul înseamnă o sensibilitate mai mare la stres."
      },
      {
       "q": "Câți oameni sunt, din punct de vedere genetic, deosebit de predispuși la stres?",
@@ -1691,7 +1691,7 @@ const FAQTX = {
      },
      {
       "q": "Toate cele trei trăsături sunt în zona verde — mai trebuie să mă gândesc la burnout?",
-      "a": "Pentru tine, burnout-ul nu reprezintă un pericol atât de mare — dar riscul nu este zero: stresul masiv și continuu își poate lăsa totuși amprenta în timp. Fazele de recuperare și un stil de viață echilibrat rămân importante."
+      "a": "Tinzi să gestionezi bine stresul — dar stresul masiv și continuu își poate lăsa totuși amprenta în timp. Fazele de recuperare și un stil de viață echilibrat rămân importante."
      },
      {
       "q": "Ce ajută pe toată lumea, indiferent de genotip?",
@@ -1704,7 +1704,7 @@ const FAQTX = {
     "items": [
      {
       "q": "În raportul meu a apărut o „zonă roșie”. Ar trebui să-mi fac griji?",
-      "a": "Nu este un motiv de panică, dar este un motiv să acționezi. O zonă roșie marchează o predispoziție genetică nefavorabilă într-un domeniu anume — un risc mai mare de burnout, nu un diagnostic. Cu cât mai multe dintre trăsăturile tale se află în zona roșie, cu atât este mai important să-ți adaptezi stilul de viață pentru a evita stresul. Chiar și cu rezultate în zona de mijloc, un stil de viață cu stres redus rămâne important."
+      "a": "Nu este un motiv de panică, dar este un motiv să acționezi. O zonă roșie marchează o predispoziție genetică nefavorabilă într-un domeniu anume — o sensibilitate mai mare la stres, nu un diagnostic. Cu cât mai multe dintre trăsăturile tale se află în zona roșie, cu atât este mai important să-ți adaptezi stilul de viață pentru a evita stresul. Chiar și cu rezultate în zona de mijloc, un stil de viață cu stres redus rămâne important."
      },
      {
       "q": "Unde găsesc recomandări concrete pentru genotipul meu?",
@@ -1750,8 +1750,8 @@ const FAQTX = {
       "a": "Surprinzător, nu. Studiile au arătat că dieta mediteraneană contribuie la menținerea unor telomeri mai lungi doar la persoanele cu anumite variante genetice — la toți ceilalți nu are niciun efect asupra telomerilor. Raportul tău arată din ce grupă faci parte. Acest lucru se referă doar la telomeri, nu și la alte efecte ale dietei — și este un exemplu clar că același sfat privind stilul de viață nu funcționează la fel pentru toată lumea."
      },
      {
-      "q": "Ce nutrienți susțin telomerii?",
-      "a": "Vitamina D3, Omega-3, vitamina E, resveratrolul și ginkgo. Când sistemul genetic de protecție funcționează mai puțin bine, creșterea aportului acestor nutrienți — de exemplu, prin consumul mai multor alimente care îi conțin — poate ajuta la încetinirea scurtării telomerilor. Acești nutrienți nu o pot însă inversa."
+      "q": "Ce nutrienți sunt asociați cu telomerii?",
+      "a": "Studiile asociază vitamina D3, Omega-3, vitamina E, resveratrolul și ginkgo cu menținerea telomerilor. Dacă sistemul tău genetic de protecție funcționează mai puțin bine, poți consuma mai multe alimente bogate în vitamina D, acizi grași Omega-3 și vitamina E. Scurtarea nu poate fi inversată."
      },
      {
       "q": "Pot influența radicalii liberi?",
@@ -1763,12 +1763,12 @@ const FAQTX = {
     "title": "Influență și așteptări",
     "items": [
      {
-      "q": "Cât de repede voi vedea rezultate în urma măsurilor anti-îmbătrânire?",
-      "a": "Nu peste noapte. Măsurile recomandate nu pot face telomerii să crească la loc — ele ajută la încetinirea scurtării lor, așa că beneficiul se acumulează treptat, de-a lungul multor ani. Reține că analiza genetică arată predispoziția ta, nu lungimea actuală a telomerilor tăi; prin urmare, rezultatul analizei în sine nu se modifică prin aceste măsuri."
+      "q": "Cât de repede voi vedea rezultate în urma măsurilor recomandate?",
+      "a": "Nu peste noapte. Măsurile recomandate nu pot face telomerii să crească la loc; un eventual beneficiu se acumulează de-a lungul multor ani. Reține că analiza genetică arată predispoziția ta, nu lungimea actuală a telomerilor tăi; prin urmare, rezultatul analizei în sine nu se modifică prin aceste măsuri."
      },
      {
       "q": "Ce folos practic îmi aduce această cunoaștere?",
-      "a": "Știi cât de bine îți mențin genele telomerii — și dacă dieta mediteraneană te ajută în această privință. Dacă menținerea telomerilor este afectată, poți reacționa în mod deliberat, crescând aportul de vitamina D3, Omega-3, vitamina E, resveratrol și ginkgo, de exemplu, prin alimente care conțin aceste substanțe. Un stil de viață sănătos în general, cu o alimentație bogată în antioxidanți, exercițiu fizic regulat și somn suficient, este, de asemenea, recomandabil."
+      "a": "Știi cât de bine îți mențin genele telomerii — și dacă dieta mediteraneană te ajută în această privință. Dacă menținerea telomerilor este afectată, poți consuma mai multe alimente bogate în vitamina D, acizi grași Omega-3 și vitamina E. Un stil de viață sănătos în general, cu o alimentație bogată în antioxidanți, exercițiu fizic regulat și somn suficient, este, de asemenea, recomandabil."
      }
     ]
    }
@@ -1819,7 +1819,7 @@ const FAQTX = {
      },
      {
       "q": "Cât de repede voi observa un efect?",
-      "a": "Depinde de nutrient. Unele efecte (de ex. mai multă energie cu vitaminele B) apar în câteva zile până la câteva săptămâni; altele (de ex. metabolismul osos cu vitamina D) se dezvoltă de-a lungul lunilor. Suplimentarea personalizată nu este un medicament cu acțiune rapidă — ea corectează deficite de nutrienți pe termen lung."
+      "a": "Diferă în funcție de nutrient. Exemple: vitamina B12 contribuie la reducerea oboselii și extenuării; vitamina D contribuie la menținerea normală a oaselor. Suplimentele alimentare nu acționează ca un medicament — ele completează alimentația."
      },
      {
       "q": "Am nevoie de suplimentare pentru totdeauna?",
@@ -1831,7 +1831,7 @@ const FAQTX = {
      },
      {
       "q": "Cum se compară costul variantei personalizate cu cel al multivitaminelor din drogherie?",
-      "a": "Semnificativ mai mare pe zi — de regulă de 3-5× față de cele mai ieftine produse din drogherie. În schimb primești o compoziție adaptată genetic, care probabil chiar se absoarbe, în loc să fie eliminată în mare parte nefolosită. Comparația „per mg de vitamină” este înșelătoare; „per mg care ajunge efectiv în sânge” este mult mai relevantă."
+      "a": "Pe zi, varianta personalizată costă mai mult decât preparatele multivitaminice simple. În schimb, selecția și dozajul sunt adaptate analizei tale genetice și stilului tău de viață, iar microtransportoarele eliberează nutrienții eșalonat."
      }
     ]
    }
@@ -1869,7 +1869,7 @@ const FAQTX = {
      },
      {
       "q": "Ce îmi spune MC1R despre sensibilitatea la UV?",
-      "a": "MC1R controlează producția de eumelanină (pigment închis, care protejează împotriva UV) față de cea de feomelanină (pigment roșiatic, care generează radicali liberi sub acțiunea UV). Variantele nefavorabile: arsuri solare mai rapide, risc mai mare de leziuni UV și de cancer de piele — este necesară o disciplină mai strictă a protecției solare."
+      "a": "MC1R controlează producția de eumelanină (pigment închis, care protejează împotriva UV) față de cea de feomelanină (pigment roșiatic, care generează radicali liberi sub acțiunea UV). Variantele nefavorabile: arsuri solare mai rapide, fotoîmbătrânire mai accentuată a pielii — este necesară o disciplină mai strictă a protecției solare."
      },
      {
       "q": "De ce este FLG (filagrina) importantă pentru îngrijirea pielii mele?",
@@ -1921,7 +1921,7 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "„Diagnosticăm deficiențele.”"
+      "text": "„Laboratorul nostru partener îți măsoară valorile sanguine; interpretarea este făcută de un medic.”"
      },
      {
       "tone": "safe",
@@ -1936,8 +1936,8 @@ const FAQTX = {
       "text": "Simptomele unei deficiențe (de ex. oboseala cauzată de deficitul de fier) — cel mai bine cu citarea unei surse (de ex. o asociație medicală)."
      },
      {
-      "tone": "safe",
-      "text": "Mărturie: „Eram deseori obosit, testul a identificat un deficit de fier, iar asta m-a ajutat” — permis."
+      "tone": "caveat",
+      "text": "Mărturii despre analizele de sânge doar fără promisiuni de vindecare sau afirmații despre boli și numai după o verificare de la caz la caz."
      }
     ]
    },
@@ -1959,7 +1959,7 @@ const FAQTX = {
     ],
     "callout": {
      "tone": "safe",
-     "text": "Exemplu: „Testul genetic dovedește că acidul folic este ineficient pentru tine” — permis (susținut de studii)."
+     "text": "Exemplu: „Analiza genetică arată dacă organismul tău poate transforma bine acidul folic în forma sa activă.” — fără risc."
     }
    },
    {
@@ -2027,11 +2027,11 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "Exemplu de health claim: „Contribuie la menținerea sănătății pielii” (cu zinc), „Contribuie la funcționarea normală a sistemului imunitar”."
+      "text": "Exemplu de health claims, doar în formularea exactă din lista UE și doar dacă produsul furnizează pe doza zilnică cel puțin 15 % din valoarea de referință a nutrientului (VNR): „Zincul contribuie la menținerea normală a pielii.” / „Zincul contribuie la funcționarea normală a sistemului imunitar.”"
      },
      {
-      "tone": "safe",
-      "text": "Exemplu de mărturie: „Îl iau pentru că am pielea uscată” — combinat cu Health Claim-ul pentru zinc — permis."
+      "tone": "critical",
+      "text": "NU este permis: mărturia „Îl iau pentru că am pielea uscată” combinată cu Health Claim-ul pentru zinc — nu asocia declarațiile clienților cu health claims."
      },
      {
       "tone": "critical",

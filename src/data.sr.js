@@ -119,10 +119,10 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Koja preporuka u ishrani odgovara klijentu s HFE-defektom (rizik od preopterećenja željezom)?",
+    "q": "Koja preporuka u ishrani odgovara klijentu kod kojeg izvještaj pokazuje manju potrebu za željezom (HFE)?",
     "options": [
      "Povećati unos željeza — treba im više",
-     "Smanjiti unos željeza iz hrane: manje crvenog mesa, bez suplemenata obogaćenih željezom osim ako krvni nalaz pokaže manjak. Višak željeza se nakuplja i decenijama oštećuje jetru, srce i zglobove",
+     "Ne povećavati dodatno unos željeza: manje crvenog mesa, bez suplemenata obogaćenih željezom bez manjka koji je utvrdio ljekar",
      "Uzimati suplemente željeza svakodnevno kao mjeru opreza",
      "Nije potrebna promjena"
     ],
@@ -250,14 +250,14 @@ const TXT = {
   "bullets": [
    "Šta je gen COMT?",
    "Koje tri osobine vezane za stres prikazuje izveštaj?",
-   "Kako je rizik od burnouta genetski uslovljen?",
+   "Kako je osetljivost na stres genetski uslovljena?",
    "Koje preporuke proizlaze iz profila?"
   ]
  },
  "ba-sci-en": {
   "topic": "Naučna osnova",
   "description": "Zašto se telomere skraćuju, kako gen za telomerazu utiče na biološku starost — i koji nutrijenti mogu da pomognu.",
-  "longDescription": "Ova obuka objašnjava naučnu osnovu analize biološke starosti. Saznaćeš zašto se telomere — zaštitni krajevi naših hromozoma — skraćuju sa svakom deobom ćelije, šta se dešava sa ćelijom kada se one potroše, kako gen za telomerazu utiče na taj proces i koji nutrijenti mogu da podrže održavanje telomera kada geni rade slabije.",
+  "longDescription": "Ova obuka objašnjava naučnu osnovu analize biološke starosti. Saznaćeš zašto se telomere — zaštitni krajevi naših hromozoma — skraćuju sa svakom deobom ćelije, šta se dešava sa ćelijom kada se one potroše, kako gen za telomerazu utiče na taj proces i koje nutrijente studije povezuju sa održavanjem telomera.",
   "postVideoText": "Uz ovu naučnu osnovu možeš sa sigurnošću da razgovaraš sa svojim klijentima o analizi biološke starosti.",
   "introQuestionsHeader": "Ova obuka odgovara na pitanja:",
   "bullets": [
@@ -270,7 +270,7 @@ const TXT = {
    "Šta su telomere i zašto se skraćuju sa svakom deobom ćelije?",
    "Šta se dešava sa ćelijom kada se njene telomere potroše?",
    "Šta radi gen za telomerazu?",
-   "Koji nutrijenti podržavaju održavanje telomera — i zašto mediteranska ishrana ne deluje kod svih?"
+   "Koje nutrijente studije povezuju sa održavanjem telomera — i zašto mediteranska ishrana ne deluje kod svih?"
   ],
   "questions": [
    {
@@ -324,7 +324,7 @@ const TXT = {
     "correct": 2
    },
    {
-    "q": "Koji nutrijenti mogu da podrže održavanje telomera kada zaštitni gen radi slabije?",
+    "q": "Koje nutrijente studije povezuju sa održavanjem telomera?",
     "options": [
      "Vitamin C, cink, selen, gvožđe i magnezijum",
      "Vitamin D3, omega-3, vitamin E, resveratrol i ginko",
@@ -368,7 +368,7 @@ const TXT = {
     "options": [
      "Zanemariti defekt — na telomere se ionako ne može uticati",
      "Više vežbati — ishrana tu ne pravi nikakvu razliku",
-     "Unositi više nutrijenata koji usporavaju skraćivanje telomera",
+     "Ciljane mere u načinu života i ishrana sa odgovarajućim nutrijentima, kako bi se podržala slabija genetska zaštitna funkcija",
      "Preći na mediteransku ishranu — ona deluje kod svih ljudi"
     ],
     "correct": 2
@@ -458,7 +458,7 @@ const TXT = {
  "ba-faq-en": {
   "topic": "Često postavljana pitanja",
   "description": "Odgovori na tipična pitanja klijenata o analizi biološke starosti.",
-  "longDescription": "Zbirka najvažnijih pitanja o analizi telomera i anti-agingu. Sa sklopivim odgovorima za samostalno učenje.",
+  "longDescription": "Zbirka najvažnijih pitanja o analizi telomera i biološkoj starosti. Sa sklopivim odgovorima za samostalno učenje.",
   "bullets": [
    "Šta su telomere i zašto starimo?",
    "Kako moja genetika utiče na biološku starost?",
@@ -470,19 +470,19 @@ const TXT = {
   "topic": "Naučna osnova",
   "description": "Kako genetske varijante utiču na metabolizam i podnošljivost lijekova — objašnjeno naučno.",
   "longDescription": "U ovoj obuci dr. Daniel Wallerstorfer objašnjava zašto lijekovi djeluju različito kod različitih ljudi. Naučit ćete kako CYP enzimi razgrađuju aktivne supstance, šta znači \"brzi\" naspram \"sporog metabolizatora\", i kako to znanje usmjerava sigurnije odluke pri propisivanju.",
-  "postVideoText": "S ovim znanjem možete s klijentima i ljekarima razgovarati o relevantnosti farmakogenetskog testiranja — objašnjavajući zašto doza koja odgovara većini može biti prejaka ili preslaba za pojedinca, ovisno o njegovom CYP genotipu.",
+  "postVideoText": "S ovim znanjem razumijete zašto ljekari mogu koristiti farmakogenetsko testiranje — doza koja odgovara većini može biti prejaka ili preslaba za pojedinca, ovisno o njegovom CYP genotipu. Ako vas klijenti pitaju, uputite ih na njihovog ljekara. Farmakogenetske analize nude se isključivo preko ljekara; ova obuka je stručna informacija i ne zamjenjuje ljekarski savjet.",
   "introQuestionsHeader": "Ova obuka odgovara na:",
   "bullets": [
    "CYP enzimi i metabolizam lijekova",
    "Brzi i spori metabolizatori",
    "Klinički relevantne aktivne supstance (antidepresivi, analgetici, antikoagulansi, …)",
-   "Praktična relevantnost u savjetovanju"
+   "Praktična relevantnost za ljekare koji propisuju terapiju"
   ],
   "introQuestions": [
    "Zašto lijekovi djeluju različito kod različitih ljudi?",
    "Koji su CYP enzimi odgovorni za razgradnju najvažnijih aktivnih supstanci?",
    "Šta znači \"brzi\" naspram \"sporog metabolizatora\" u kliničkoj svakodnevici?",
-   "Koji su lijekovi posebno relevantni za farmakogenetsko savjetovanje?"
+   "Koji su lijekovi posebno relevantni za odluke ljekara o propisivanju terapije?"
   ],
   "questions": [
    {
@@ -526,7 +526,7 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Zašto je farmakogenetika važna u savjetovanju?",
+    "q": "Zašto je farmakogenetika važna u medicinskoj njezi?",
     "options": [
      "To je uglavnom prodajna tema",
      "Oko 7% svih lijekova ima klinički primjenjive farmakogenetske smjernice — poznavanje genotipa prije propisivanja može spriječiti teške nuspojave i neuspjeh liječenja",
@@ -721,7 +721,7 @@ const TXT = {
     "q": "Zašto personalizovani program nadmašuje standardne savjete?",
     "options": [
      "Koristi skuplje sastojke",
-     "Novogenia pilot studija (139 učesnika) pokazala je 2,4× veći uspjeh u mršavljenju uz genetsku personalizaciju u poređenju sa standardnim savjetovanjem — jer strategija zaista odgovara osnovnoj biologiji",
+     "Interna Novogenia studija sa 302 osobe (genetski prilagođena vs. standardna dijeta) pokazala je 2,4× veći gubitak težine uz genetski prilagođenu dijetu",
      "Djeluje samo na papiru",
      "Identičan je standardnim savjetima"
     ],
@@ -1027,7 +1027,7 @@ const TXT = {
     "q": "Koja tvrdnja o genetskoj UV osjetljivosti (npr. MC1R) je tačna?",
     "options": [
      "Genetske varijante ne utiču na UV osjetljivost — bitan je samo tip kože",
-     "Nosioci nepovoljnih varijanti lakše izgore i imaju veći rizik od starenja kože i raka kože povezanih sa UV zračenjem — stroga UV zaštita je još važnija",
+     "Nosioci nepovoljnih varijanti lakše izgore i koža im izraženije stari pod uticajem svetlosti — stroga UV zaštita je još važnija",
      "Kod visoke genetske UV osjetljivosti treba potpuno izbjegavati sunce, čak i u hladu",
      "Krema za sunčanje djeluje samo kod ljudi sa \"normalnim\" genima"
     ],
@@ -1230,7 +1230,7 @@ const TXT = {
  },
  "bo-sci-en": {
   "topic": "Naučna osnova",
-  "description": "Zašto isti stres različito deluje na različite ljude — i kakve veze gen COMT ima sa rizikom od burnouta.",
+  "description": "Zašto isti stres različito deluje na različite ljude — i kakve veze gen COMT ima sa načinom na koji podnosimo stres.",
   "longDescription": "U ovoj obuci dr Daniel Wallerstorfer objašnjava zašto snažan, neprekidan stres kod nekih ljudi dovodi do burnouta, a kod drugih ne. Saznaćeš koje tri genetske osobine analiza posmatra, kako gen COMT razgrađuje dopamin posle uzbudljivih ili stresnih situacija, zašto je oko 15% ljudi posebno podložno stresu — i zašto je pravi način života utoliko važniji što su geni nepovoljniji.",
   "postVideoText": "Uz ovu naučnu osnovu možeš sa sigurnošću da razgovaraš sa svojim klijentima o izveštaju o burnoutu i da izvedeš individualne strategije za upravljanje stresom.",
   "introQuestionsHeader": "Ova obuka odgovara na pitanja:",
@@ -1243,7 +1243,7 @@ const TXT = {
   "introQuestions": [
    "Koji gen je ključan za individualnu obradu stresa?",
    "Zašto isti stres različito deluje na ljude — i kakve veze s tim ima COMT?",
-   "Kako geni utiču na rizik od burnouta?",
+   "Kako geni utiču na to kako podnosimo stres?",
    "Koje mere u načinu života pomažu — i zašto su važnije kod nepovoljnog profila?"
   ],
   "questions": [
@@ -1333,7 +1333,7 @@ const TXT = {
      "Zavisnosti od kofeina",
      "Poremećajima sna",
      "Žudnji za šećerom",
-     "Kockanju"
+     "Traženju uzbuđenja"
     ],
     "correct": 3
    },
@@ -1341,7 +1341,7 @@ const TXT = {
     "q": "Šta u izveštaju označava crvena zona kod neke osobine vezane za stres?",
     "options": [
      "Veoma povoljnu genetiku — nije potrebno ništa preduzimati",
-     "Nepovoljnu predispoziciju — veći rizik od burnouta",
+     "Nepovoljnu predispoziciju — veću osetljivost na stres",
      "Da osoba već ima burnout i treba joj lečenje",
      "Standardnu preporuku koja važi za sve"
     ],
@@ -1390,7 +1390,7 @@ const TXT = {
    {
     "q": "Marija ima jednu funkcionalnu i jednu defektnu kopiju gena COMT. Kako izgleda njen rezultat?",
     "options": [
-     "Sve tri osobine su u crvenoj zoni — veoma je podložna burnoutu",
+     "Sve tri osobine su u crvenoj zoni — veoma je osetljiva na stres",
      "Sve tri osobine su u zelenoj zoni — burnout za nju nije problem",
      "Učinak pod stresom je u crvenoj zoni, a druge dve osobine u zelenoj",
      "Sve tri osobine su u sredini — umereno dobra otpornost na stres"
@@ -1421,8 +1421,8 @@ const TXT = {
     "q": "Šta znači kada je klijent kod sve tri osobine u zelenoj zoni?",
     "options": [
      "Burnout je kod ovog klijenta nemoguć, bez obzira na način života",
-     "Klijent je posebno podložan burnoutu",
-     "Burnout za ovog klijenta nije tako velika opasnost",
+     "Klijent je posebno osetljiv na stres",
+     "Ovaj klijent obično dobro podnosi stres",
      "Analizu nije bilo moguće obraditi"
     ],
     "correct": 2
@@ -1496,7 +1496,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Šta je Calorie Blocker?",
-      "a": "Calorie Blocker je personalizovan proizvod za mršavljenje u obliku Microtransporter peleta. Sadrži individualni odnos blokatora masti i ugljikohidrata prilagođen tvojoj DNK analizi. U kombinaciji sa smanjenim unosom kalorija i masti dokazano podržava mršavljenje — u kombinaciji sa uravnoteženom ishranom i načinom života pomaže u održavanju težine."
+      "a": "Calorie Blocker je dodatak ishrani u obliku Microtransporter peleta sa vlaknima Opuntia ficus-indica i fazolaminom iz bijelog graha. Omjer sastojaka bira se na osnovu tvoje genetske analize. Ne zamjenjuje uravnoteženu ishranu koja vodi računa o kalorijama."
      },
      {
       "q": "Kako se uzima Calorie Blocker?",
@@ -1504,11 +1504,11 @@ const FAQTX = {
      },
      {
       "q": "Koje su aktivne supstance?",
-      "a": "Blokator masti je Opuntia ficus-indica (OFI) — vlakno kaktusa opuncije. To biljno vlakno u probavnom traktu stvara matricu nalik gelu koja veže masti iz hrane i smanjuje njihovu apsorpciju. Blokator ugljikohidrata je fazolamin (iz bijelog graha) koji inhibira alfa-amilazu. Oba su potpuno biljnog porijekla."
+      "a": "Calorie Blocker sadrži Opuntia ficus-indica (OFI), vlakno kaktusa opuncije, i fazolamin iz bijelog graha. Oba sastojka su potpuno biljnog porijekla."
      },
      {
       "q": "Da li je Calorie Blocker veganski/vegetarijanski?",
-      "a": "Da. I blokator masti (Opuntia ficus-indica) i blokator ugljikohidrata (fazolamin iz bijelog graha) su čisto biljnog porijekla. Calorie Blocker je pogodan za vegetarijance i vegane, bez glutena, bez laktoze i bez vještačkih boja."
+      "a": "Da. Oba sastojka, vlakno Opuntia ficus-indica i fazolamin iz bijelog graha, su čisto biljnog porijekla. Calorie Blocker je pogodan za vegetarijance i vegane, bez glutena, bez laktoze i bez vještačkih boja."
      }
     ]
    }
@@ -1568,11 +1568,11 @@ const FAQTX = {
     "items": [
      {
       "q": "Šta za mene znači MTHFR defekt?",
-      "a": "MTHFR aktivira folnu kiselinu u metilfolat, oblik koji tvoje tijelo zaista može koristiti. Uz defekt možeš uzimati mnogo folne kiseline u običnom dodatku i i dalje imati funkcionalni manjak. Prelazak na metilfolat rješava taj problem."
+      "a": "MTHFR aktivira folnu kiselinu u metilfolat, oblik koji tvoje tijelo zaista može koristiti. Uz defekt možeš uzimati mnogo folne kiseline u običnom dodatku i i dalje imati funkcionalni manjak. Metilfolat je već aktivni oblik i ne treba mu ovaj korak pretvaranja. Da li je pogodan za tebe, najbolje je da razgovaraš sa svojim ljekarom."
      },
      {
-      "q": "Imam HFE varijantu — je li suplementacija željezom opasna za mene?",
-      "a": "Može biti. Neke HFE varijante decenijama izazivaju preopterećenje željezom — tvoje tijelo apsorbira previše željeza iz hrane i skladišti ga u jetri, srcu i zglobovima. Suplemente željeza treba uzimati samo ako krvni nalaz pokaže stvarni manjak."
+      "q": "Imam HFE varijantu — treba li da uzimam suplemente željeza?",
+      "a": "Tvoj HFE rezultat pokazuje manju potrebu za željezom. Zato ne uzimaj suplemente željeza na svoju ruku — samo ako ljekar u krvnom nalazu utvrdi manjak."
      },
      {
       "q": "Osjetljivost na so (ACE) — znači li to da moram odustati od soli?",
@@ -1627,7 +1627,7 @@ const FAQTX = {
      },
      {
       "q": "Zašto mi izvještaj preporučuje antioksidanse?",
-      "a": "Intenzivno vježbanje stvara velike količine slobodnih radikala. Ako su tvoji antioksidativni geni (SOD2, CAT, GPX) slabi, oporavak je sporiji, a mikroupale se nakupljaju. Vitamin C, vitamin E, polifenoli i selen direktno podržavaju te odbrambene sisteme."
+      "a": "Intenzivno vježbanje stvara velike količine slobodnih radikala. Ako su tvoji antioksidativni geni (SOD2, CAT, GPX) slabi, oporavak je sporiji, a mikroupale se nakupljaju. Vitamin C doprinosi zaštiti ćelija od oksidativnog stresa. Isto važi za vitamin E i selen."
      },
      {
       "q": "Šta je „deload“ i koliko često ga treba raditi?",
@@ -1670,11 +1670,11 @@ const FAQTX = {
     "items": [
      {
       "q": "Šta je gen COMT i zašto je važan?",
-      "a": "COMT (katehol-O-metiltransferaza) razgrađuje neurotransmiter dopamin kada se uzbudljiva ili stresna situacija završi, kako bi mozak mogao da se vrati u osnovno stanje. Ako gen slabo funkcioniše, dopamin se razgrađuje mnogo sporije: mozak duže ostaje u stanju pobuđenosti, a ako novi stres naiđe pre nego što se on vrati u osnovno stanje, može da dođe do preopterećenja. Sporija razgradnja ima i dobre strane — pozitivna osećanja se doživljavaju intenzivnije i takvi ljudi su obično radoznaliji, ali i skloniji kockanju. Studije opisuju čestu varijantu (Val158Met) kod koje se aktivnost enzima jasno razlikuje između brzog i sporog oblika."
+      "a": "COMT (katehol-O-metiltransferaza) razgrađuje neurotransmiter dopamin kada se uzbudljiva ili stresna situacija završi, kako bi mozak mogao da se vrati u osnovno stanje. Ako gen slabo funkcioniše, dopamin se razgrađuje mnogo sporije: mozak duže ostaje u stanju pobuđenosti, a ako novi stres naiđe pre nego što se on vrati u osnovno stanje, može da dođe do preopterećenja. Sporija razgradnja ima i dobre strane — pozitivna osećanja se doživljavaju intenzivnije i takvi ljudi su obično radoznaliji, ali i snažnije reaguju na nagrade i uzbuđenje. Studije opisuju čestu varijantu (Val158Met) kod koje se aktivnost enzima jasno razlikuje između brzog i sporog oblika."
      },
      {
       "q": "Koje tri osobine procenjuje analiza burnouta?",
-      "a": "Učinak pod stresom (koliko dobro funkcionišeš u stresnim situacijama), emocionalna otpornost (koliko te opterećuju negativna osećanja) i impulsivnost. Svaka osobina je prikazana na skali od crvene zone preko sredine do zelene: zelena je povoljna, a crvena znači veći rizik od burnouta."
+      "a": "Učinak pod stresom (koliko dobro funkcionišeš u stresnim situacijama), emocionalna otpornost (koliko te opterećuju negativna osećanja) i impulsivnost. Svaka osobina je prikazana na skali od crvene zone preko sredine do zelene: zelena je povoljna, a crvena znači veću osetljivost na stres."
      },
      {
       "q": "Koliko je ljudi genetski posebno podložno stresu?",
@@ -1691,7 +1691,7 @@ const FAQTX = {
      },
      {
       "q": "Kod mene su sve tri osobine u zelenoj zoni — da li ipak treba da razmišljam o burnoutu?",
-      "a": "Za tebe burnout nije tako velika opasnost — ali rizik nije nula: snažan, neprekidan stres vremenom i dalje može da ostavi posledice. Faze oporavka i uravnotežen način života ostaju važni."
+      "a": "Stres obično dobro podnosiš — ali snažan, neprekidan stres vremenom i dalje može da ostavi posledice. Faze oporavka i uravnotežen način života ostaju važni."
      },
      {
       "q": "Šta pomaže svima, bez obzira na genotip?",
@@ -1704,7 +1704,7 @@ const FAQTX = {
     "items": [
      {
       "q": "U mom izveštaju se pojavila „crvena zona“. Da li treba da brinem?",
-      "a": "Nema razloga za paniku, ali ima razloga da nešto preduzmeš. Crvena zona označava nepovoljnu genetsku predispoziciju u jednoj određenoj oblasti — veći rizik od burnouta, a ne dijagnozu. Što je više tvojih osobina u crvenoj zoni, to je važnije da način života prilagodiš tako da izbegavaš stres. I kod rezultata u sredini život sa malo stresa ostaje važan."
+      "a": "Nema razloga za paniku, ali ima razloga da nešto preduzmeš. Crvena zona označava nepovoljnu genetsku predispoziciju u jednoj određenoj oblasti — veću osetljivost na stres, a ne dijagnozu. Što je više tvojih osobina u crvenoj zoni, to je važnije da način života prilagodiš tako da izbegavaš stres. I kod rezultata u sredini život sa malo stresa ostaje važan."
      },
      {
       "q": "Gde mogu da pronađem konkretne preporuke za svoj genotip?",
@@ -1750,8 +1750,8 @@ const FAQTX = {
       "a": "Iznenađujuće, ne. Studije su pokazale da mediteranska ishrana pomaže da se telomere održe dužim samo kod ljudi sa određenim genskim varijantama — kod svih ostalih nema efekta na telomere. Tvoj izveštaj pokazuje kojoj grupi pripadaš. To se odnosi samo na telomere, a ne i na druge efekte ove ishrane — i ujedno je jasan primer da isti savet o načinu života ne deluje jednako kod svih."
      },
      {
-      "q": "Koji nutrijenti podržavaju telomere?",
-      "a": "Vitamin D3, omega-3, vitamin E, resveratrol i ginko. Kada genetski sistem zaštite slabije funkcioniše, veći unos ovih nutrijenata — na primer tako što jedeš više namirnica koje ih sadrže — može da pomogne da se skraćivanje telomera uspori. Ti nutrijenti ne mogu da ponište skraćivanje."
+      "q": "Koji nutrijenti se povezuju sa telomerama?",
+      "a": "Studije povezuju vitamin D3, omega-3, vitamin E, resveratrol i ginko sa održavanjem telomera. Kada tvoj genetski sistem zaštite slabije funkcioniše, možeš da jedeš više namirnica bogatih vitaminom D, omega-3 masnim kiselinama i vitaminom E. Skraćivanje ne može da se poništi."
      },
      {
       "q": "Mogu li da utičem na slobodne radikale?",
@@ -1763,12 +1763,12 @@ const FAQTX = {
     "title": "Uticaj i očekivanja",
     "items": [
      {
-      "q": "Koliko brzo ću videti rezultate anti-aging mera?",
-      "a": "Ne preko noći. Preporučene mere ne mogu da vrate izgubljenu dužinu telomera — one pomažu da se njihovo skraćivanje uspori, pa se korist postepeno sabira tokom mnogo godina. Imaj u vidu da genetska analiza pokazuje tvoju predispoziciju, a ne trenutnu dužinu tvojih telomera, pa se sam rezultat analize ovim merama ne menja."
+      "q": "Koliko brzo ću videti rezultate preporučenih mera?",
+      "a": "Ne preko noći. Preporučene mere ne mogu da vrate izgubljenu dužinu telomera; eventualna korist se sabira tokom mnogo godina. Imaj u vidu da genetska analiza pokazuje tvoju predispoziciju, a ne trenutnu dužinu tvojih telomera, pa se sam rezultat analize ovim merama ne menja."
      },
      {
       "q": "Kakvu praktičnu korist mi donosi ovo znanje?",
-      "a": "Znaš koliko dobro tvoji geni održavaju telomere — i da li ti mediteranska ishrana u tome pomaže. Ako je održavanje telomera oslabljeno, možeš ciljano da reaguješ tako što ćeš povećati unos vitamina D3, omega-3, vitamina E, resveratrola i ginka, na primer kroz namirnice koje ih sadrže. Pored toga, ima smisla i zdrav način života uopšte: ishrana bogata antioksidansima, redovna fizička aktivnost i dovoljno sna."
+      "a": "Znaš koliko dobro tvoji geni održavaju telomere — i da li ti mediteranska ishrana u tome pomaže. Ako je održavanje telomera oslabljeno, možeš da jedeš više namirnica bogatih vitaminom D, omega-3 masnim kiselinama i vitaminom E. Pored toga, ima smisla i zdrav način života uopšte: ishrana bogata antioksidansima, redovna fizička aktivnost i dovoljno sna."
      }
     ]
    }
@@ -1819,7 +1819,7 @@ const FAQTX = {
      },
      {
       "q": "Koliko brzo ću primijetiti učinak?",
-      "a": "Zavisi od nutrijenta. Neki učinci (npr. bolja energija uz vitamine B grupe) javljaju se za nekoliko dana do sedmica; drugi (npr. metabolizam kostiju uz vitamin D) razvijaju se mjesecima. Personalizirana suplementacija nije brzodjelujući lijek — ona ispravlja dugoročne praznine u opskrbi nutrijentima."
+      "a": "To zavisi od nutrijenta. Primeri: vitamin B12 doprinosi smanjenju umora i iscrpljenosti; vitamin D doprinosi održavanju normalnih kostiju. Dodaci ishrani ne deluju kao lek — oni dopunjuju ishranu."
      },
      {
       "q": "Treba li mi suplementacija zauvijek?",
@@ -1831,7 +1831,7 @@ const FAQTX = {
      },
      {
       "q": "Kako se cijena personalizirane suplementacije odnosi prema multivitaminima iz drogerije?",
-      "a": "Znatno je viša po danu — tipično 3-5× više od najjeftinijih drogerijskih proizvoda. Zauzvrat dobijaš genetski prilagođen sastav koji se vjerovatno zaista i apsorbira, umjesto da se najvećim dijelom neiskorišten izluči. Poređenje „po miligramu vitamina“ je varljivo; „po miligramu koji zaista dođe do krvi“ je smislenije."
+      "a": "Dnevno personalizovana varijanta košta više od jednostavnih multivitaminskih preparata. Zauzvrat su izbor i doziranje prilagođeni tvojoj genetskoj analizi i načinu života, a mikrotransporteri oslobađaju nutrijente postepeno."
      }
     ]
    }
@@ -1869,7 +1869,7 @@ const FAQTX = {
      },
      {
       "q": "Šta mi MC1R govori o UV osjetljivosti?",
-      "a": "MC1R kontroliše proizvodnju eumelanina (tamni pigment, štiti od UV zračenja) naspram feomelanina (crvenkasti pigment, koji pod UV zračenjem stvara slobodne radikale). Nepovoljne varijante: brže izgaranje na suncu, veći rizik od UV oštećenja i raka kože — potrebna je stroža disciplina u zaštiti od sunca."
+      "a": "MC1R kontroliše proizvodnju eumelanina (tamni pigment, štiti od UV zračenja) naspram feomelanina (crvenkasti pigment, koji pod UV zračenjem stvara slobodne radikale). Nepovoljne varijante: brže izgaranje na suncu, izraženije starenje kože pod uticajem svetlosti — potrebna je stroža disciplina u zaštiti od sunca."
      },
      {
       "q": "Zašto je FLG (filagrin) važan za moju njegu kože?",
@@ -1921,7 +1921,7 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "„Dijagnostikujemo manjkove.“"
+      "text": "„Naša partnerska laboratorija mjeri tvoje vrijednosti krvi; nalaz tumači ljekar.“"
      },
      {
       "tone": "safe",
@@ -1936,8 +1936,8 @@ const FAQTX = {
       "text": "Simptomi manjka (npr. umor zbog nedostatka željeza) — najbolje uz navođenje izvora (npr. ljekarskog udruženja)."
      },
      {
-      "tone": "safe",
-      "text": "Preporuka kupca: „Često sam bio umoran, test je otkrio nedostatak željeza i to mi je pomoglo“ — dozvoljeno."
+      "tone": "caveat",
+      "text": "Preporuke kupaca o analizama krvi samo bez obećanja izliječenja ili tvrdnji o bolestima i tek nakon provjere u svakom pojedinačnom slučaju."
      }
     ]
    },
@@ -1959,7 +1959,7 @@ const FAQTX = {
     ],
     "callout": {
      "tone": "safe",
-     "text": "Primjer: „Genski test dokazuje da je folna kiselina za tebe nedjelotvorna“ — dozvoljeno (potkrijepljeno studijama)."
+     "text": "Primjer: „Genska analiza pokazuje da li tvoje tijelo može dobro pretvoriti folnu kiselinu u njen aktivni oblik.“ — bez rizika."
     }
    },
    {
@@ -2027,11 +2027,11 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "Primjer zdravstvene tvrdnje: „Doprinosi normalnom stanju kože“ (uz cink), „Doprinosi normalnom radu imunološkog sistema“."
+      "text": "Primjer zdravstvenih tvrdnji, samo u tačnom tekstu liste EU i samo ako proizvod u dnevnoj dozi sadrži najmanje 15 % referentne vrijednosti unosa (NRV): „Cink doprinosi održavanju normalne kože.“ / „Cink doprinosi normalnoj funkciji imunološkog sistema.“"
      },
      {
-      "tone": "safe",
-      "text": "Primjer preporuke kupca: „Uzimam to jer imam suhu kožu“ — u kombinaciji sa Health Claim za cink — dozvoljeno."
+      "tone": "critical",
+      "text": "NIJE dozvoljeno: preporuka kupca „Uzimam to jer imam suhu kožu“ u kombinaciji sa Health Claim za cink — izjave kupaca ne povezuj sa zdravstvenim tvrdnjama."
      },
      {
       "tone": "critical",

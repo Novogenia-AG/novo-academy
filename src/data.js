@@ -121,7 +121,7 @@ export const COURSES = [
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/DEMO_SHAPE.pdf',
       },
       {
-        title: 'NovoAcademy Science PDF - 2,4-fach mehr Gewichtsverlust durch genetisch personalisiertes Programm',
+        title: 'NovoAcademy Science PDF - Interne Studie: genbasierte vs. Standard-Diät (302 Personen)',
         size: '610 KB',
         type: 'pdf',
         url: '/course-materials/scientific-reviews/Genetic_Weight_Loss_Study_2,4x.pdf',
@@ -172,9 +172,9 @@ export const COURSES = [
         correct: 1,
       },
       {
-        q: 'Welches Ergebnis lieferte die interne Validierungsstudie mit 300 Teilnehmern beim Vergleich Standard-Diät vs. genetisch personalisiertes Programm in derselben Zeit?',
+        q: 'Welches Ergebnis lieferte unsere interne Studie mit 302 Personen (genbasierte vs. Standard-Diät)?',
         options: [
-          'Beide Phasen lieferten ähnliche Ergebnisse, lediglich die Compliance war besser',
+          'Beide Diäten lieferten ähnliche Ergebnisse, lediglich die Compliance war besser',
           'Das genetisch personalisierte Programm führte zu 1,4-mal mehr Gewichtsverlust',
           'Das genetisch personalisierte Programm führte zu 2,4-mal mehr Gewichtsverlust',
           'Das genetisch personalisierte Programm führte zu 3,8-mal mehr Gewichtsverlust',
@@ -567,7 +567,7 @@ export const COURSES = [
         items: [
           {
             q: 'Was ist der Kalorienblocker?',
-            a: 'Der Kalorienblocker ist ein personalisiertes Abnehm-Produkt in Mikrotransporter-Pellet-Form. Es enthält ein individuell auf deine DNA-Analyse abgestimmtes Verhältnis aus Fett- und Kohlenhydratblockern. In Kombination mit reduzierter Kalorien- und Fettaufnahme unterstützt es nachweislich beim Abnehmen — in Verbindung mit ausgewogener Ernährung und Lebensstil hilft es beim Halten des Gewichts.',
+            a: 'Der Kalorienblocker ist ein Nahrungsergänzungsmittel in Mikrotransporter-Pellet-Form mit Opuntia-ficus-indica-Faser und Phaseolamin aus weißen Bohnen. Das Mischungsverhältnis wird anhand deiner Gen-Analyse gewählt. Er ersetzt keine ausgewogene, kalorienbewusste Ernährung.',
           },
           {
             q: 'Wie nehme ich den Kalorienblocker ein?',
@@ -575,11 +575,11 @@ export const COURSES = [
           },
           {
             q: 'Was sind die aktiven Wirkstoffe?',
-            a: 'Als Fettblocker dient Opuntia ficus-indica (OFI) — die Faser des Feigenkaktus. Diese pflanzliche Faser bildet im Magen-Darm-Trakt eine gel-artige Matrix, die Nahrungsfett bindet und seine Aufnahme verringert. Als Kohlenhydratblocker wird Phaseolamin (aus weißen Bohnen) eingesetzt — es hemmt das Enzym Alpha-Amylase. Beide Wirkstoffe sind komplett pflanzlich.',
+            a: 'Der Kalorienblocker enthält Opuntia ficus-indica (OFI), die Faser des Feigenkaktus, und Phaseolamin aus weißen Bohnen. Beide Inhaltsstoffe sind rein pflanzlich.',
           },
           {
             q: 'Ist der Kalorienblocker vegan/vegetarisch?',
-            a: 'Ja. Sowohl der Fettblocker (Opuntia ficus-indica) als auch der Kohlenhydratblocker (Phaseolamin aus weißen Bohnen) sind rein pflanzlich. Der Kalorienblocker ist für Vegetarier und Veganer geeignet, glutenfrei, laktosefrei und frei von künstlichen Farbstoffen.',
+            a: 'Ja. Beide Inhaltsstoffe, die Opuntia-ficus-indica-Faser und Phaseolamin aus weißen Bohnen, sind rein pflanzlich. Der Kalorienblocker ist für Vegetarier und Veganer geeignet, glutenfrei, laktosefrei und frei von künstlichen Farbstoffen.',
           },
         ],
       },
@@ -588,7 +588,7 @@ export const COURSES = [
         items: [
           {
             q: 'Gibt es wissenschaftliche Belege für die nutrigenetische Analyse?',
-            a: 'Ja. Es existiert umfangreiche peer-reviewte Literatur zu diesem Feld. Beispielsweise zeigen über 16 Studien, dass Menschen genetisch unterschiedlich auf Nahrungsfett reagieren (z. B. FABP2-, PPARG-, FTO-Gene). Novogenia hat zudem eine eigene Pilotstudie mit 139 Teilnehmern durchgeführt, die mit dem genetischen Programm einen 2,4-mal höheren Abnehm-Erfolg im Vergleich zur Standardberatung zeigte. Internationale Experten wie Prof. Ahmed El-Sohemy (University of Toronto) und Prof. Jose Ordovas (Tufts University) forschen und lehren auf diesem Gebiet.',
+            a: 'Ja. Jedes Gen in der Analyse ist durch mindestens drei unabhängige Studien belegt. Beispielsweise zeigen über 16 Studien, dass Menschen genetisch unterschiedlich auf Nahrungsfett reagieren (z. B. FABP2-, PPARG-, FTO-Gene). In unserer internen Studie mit 302 Personen (genbasierte vs. Standard-Diät) war der Gewichtsverlust mit der genbasierten Diät 2,4-fach höher. Methode und Ergebnisse findest du im Studien-PDF im Kurs „Die Gen-Diät – Wissenschaftliche Basis“.',
           },
         ],
       },
@@ -663,15 +663,15 @@ export const COURSES = [
         items: [
           {
             q: 'Was bedeutet ein MTHFR-Defekt für die Folsäure-Einnahme?',
-            a: 'Folsäure wird im Körper erst durch das MTHFR-Gen in die aktive Form Methylfolat umgewandelt. Bei einem Defekt funktioniert diese Umwandlung schlechter oder gar nicht — die Folsäure wirkt dann nicht, obwohl sie im Blut messbar ist.',
+            a: 'Folsäure wird im Körper erst durch das MTHFR-Gen in die aktive Form Methylfolat umgewandelt. Bei einer MTHFR-Variante funktioniert diese Umwandlung schlechter, auch wenn die Folsäure im Blut messbar ist.',
           },
           {
             q: 'Warum kann ein normaler Bluttest einen MTHFR-Defekt nicht aufdecken?',
-            a: 'Der Bluttest misst nur, wie viel Folsäure im Blut zirkuliert. Er sagt aber nicht, ob die Folsäure auch tatsächlich in die aktive Form umgewandelt wurde. Nur ein Gentest zeigt, ob die Umwandlung funktioniert.',
+            a: 'Der Bluttest zeigt, wie viel Folsäure im Blut ist. Ob dein Körper sie gut in die aktive Form umwandeln kann, zeigt die Gen-Analyse.',
           },
           {
             q: 'Was ist die Lösung bei einem MTHFR-Defekt?',
-            a: 'Direkt die aktive Form Methylfolat supplementieren — diese überspringt den genetischen Umwandlungs-Schritt. Eine berühmte Studie an 12 unfruchtbaren Frauen mit MTHFR-Defekt zeigte: nach Umstellung von Folsäure auf Methylfolat wurden 11 von 12 innerhalb von 12 Monaten schwanger.',
+            a: 'Methylfolat ist die bereits aktive Form und überspringt den genetischen Umwandlungsschritt. Ob und in welcher Menge du es einnimmst, besprichst du am besten mit deiner Ärztin oder deinem Arzt. Bei Kinderwunsch oder Schwangerschaft gehört die Folat-Versorgung in ärztliche Hände.',
           },
         ],
       },
@@ -942,7 +942,7 @@ export const COURSES = [
       { title: 'Regulierung von Triglyceriden', youtubeId: 'hUFY050zS7k' },
       { title: 'Eisenaufnahme — die richtige Menge', youtubeId: 'jk1N2MDyasY' },
       { title: 'Wirkung von Kaffee und Koffein', youtubeId: '6qNiJE9BYkc' },
-      { title: 'Coenzym Q10: das Anti-Aging Molekül', youtubeId: 'LdQ7zCN9HL4' },
+      { title: 'Coenzym Q10 und deine Gene', youtubeId: 'LdQ7zCN9HL4' },
       { title: 'Alterungsschutz vor oxidativem Stress', youtubeId: 'mHwTrHigqQ8' },
       { title: 'Ausreichende Selenversorgung', youtubeId: '99hQc17CnVo' },
       { title: 'Zusätzliche Gene', youtubeId: '5DgFZxCtZd0' },
@@ -988,10 +988,10 @@ export const COURSES = [
         correct: 1,
       },
       {
-        q: 'Welche Ernährungsempfehlung passt zu einem Kunden mit HFE-Defekt (Risiko für Eisenüberladung)?',
+        q: 'Welche Ernährungsempfehlung passt zu einem Kunden, bei dem der Bericht einen geringeren Eisenbedarf zeigt (HFE)?',
         options: [
           'Die Eisenzufuhr erhöhen, er braucht mehr davon',
-          'Die Eisenlast senken: weniger rotes Fleisch, keine eisenangereicherten Präparate ohne nachgewiesenen Mangel — überschüssiges Eisen lagert sich über Jahre in Leber, Herz und Gelenken ab',
+          'Eisenzufuhr nicht zusätzlich erhöhen: weniger rotes Fleisch, keine eisenangereicherten Präparate ohne ärztlich festgestellten Mangel',
           'Vorsorglich täglich ein Eisenpräparat einnehmen',
           'Nichts ändern, der Körper reguliert das von allein',
         ],
@@ -1072,15 +1072,15 @@ export const COURSES = [
         items: [
           {
             q: 'Warum erholt sich nicht jeder gleich schnell?',
-            a: 'Zwei genetische Faktoren spielen eine Hauptrolle: Schutzgene gegen oxidativen Stress (freie Radikale) und Gene, die die Aggressivität des Immunsystems bei Muskelschäden steuern. Bei defekten Schutzgenen brauchst du längere Pausen oder gezielt entzündungshemmende Nährstoffe (Omega-3, MSM, Vitamin E, C).',
+            a: 'Zwei genetische Faktoren spielen eine Hauptrolle: Schutzgene gegen oxidativen Stress (freie Radikale) und Gene, die die Aggressivität des Immunsystems bei Muskelschäden steuern. Bei weniger aktiven Schutzgenen brauchst du längere Pausen. Vitamin C trägt dazu bei, die Zellen vor oxidativem Stress zu schützen. Gleiches gilt für Vitamin E und Selen.',
           },
           {
             q: 'Wie aussagekräftig ist das genetische Verletzungs-Risiko?',
-            a: 'Die COL5A1-Studie zeigte: Spieler mit defektem Gen spielten 28 % weniger Spiele wegen Verletzungen. Ein einziger Gendefekt kann also nachweislich 30 % der Karriere kosten. Die Vorbeugung (gezieltes Aufwärmen, Sehnen-Training, Ernährung) ist daher essenziell.',
+            a: 'Die COL5A1-Studie zeigte: Spieler mit der ungünstigen Genvariante spielten 28 % weniger Spiele wegen Verletzungen. Gezieltes Aufwärmen, Sehnentraining und eine passende Ernährung sind deshalb besonders sinnvoll.',
           },
           {
             q: 'Soll ich bei Muskelkater trainieren?',
-            a: 'Nein. Muskeln wachsen außerhalb des Studios, nicht während des Trainings. Beim Training entstehen die Mikrorisse, in der Regenerationsphase werden sie verstärkt wieder aufgebaut. Wer mit Muskelkater trainiert, verkürzt diese Aufbauphase. Mit richtiger Ernährung und Supplementen lässt sich die Muskelkater-Dauer verkürzen.',
+            a: 'Nein. Muskeln wachsen außerhalb des Studios, nicht während des Trainings. Beim Training entstehen die Mikrorisse, in der Regenerationsphase werden sie verstärkt wieder aufgebaut. Wer mit Muskelkater trainiert, verkürzt diese Aufbauphase. Ausreichend Schlaf, Eiweiß und Pausen unterstützen die Regeneration.',
           },
         ],
       },
@@ -1148,10 +1148,10 @@ export const COURSES = [
         correct: 1,
       },
       {
-        q: 'Welche Nährstoffe wirken antientzündlich und unterstützen die Regeneration?',
+        q: 'Welche Nährstoffe tragen dazu bei, die Zellen vor oxidativem Stress zu schützen?',
         options: [
           'Arachidonsäure und Glutamat',
-          'Omega-3 und MSM (organischer Schwefel)',
+          'Vitamin C und Vitamin E',
           'Koffein und Theobromin',
           'Zucker und Fruchtzucker',
         ],
@@ -1535,7 +1535,7 @@ export const COURSES = [
             a: 'Erstens: Leistung unter Stress (können wir gut oder schlecht unter Druck performen?). Zweitens: emotionale Belastbarkeit (wie sehr drücken uns negative Gefühle nieder?). Drittens: Impulsivität (handeln wir spontan oder überlegt?). Alle drei zusammen ergeben das individuelle Stress-Profil.',
           },
           {
-            q: 'Wie viele Menschen sind genetisch besonders anfällig für Burnout?',
+            q: 'Wie viele Menschen reagieren genetisch bedingt besonders empfindlich auf Stress?',
             a: 'Etwa 15 % haben zwei defekte COMT-Varianten und sind dadurch deutlich stress-anfälliger. Etwa 40 % haben zwei gut funktionierende Varianten und sind robust. Die restlichen ~45 % liegen dazwischen mit einer defekten und einer guten Kopie.',
           },
         ],
@@ -1545,11 +1545,11 @@ export const COURSES = [
         items: [
           {
             q: 'Stimmt es, dass langsame Dopamin-Verwerter auch positive Vorteile haben?',
-            a: 'Ja. Im Alltag erleben sie Aufregung und Freude intensiver, sind neugieriger und probierfreudiger. Der Nachteil zeigt sich erst bei wiederholtem Stress — dann kommt das Gehirn nicht zurück in die Basis. Diese Menschen sind auch eher anfällig für Glücksspiel-Sucht, weil "Kicks" für sie stärker wirken.',
+            a: 'Ja. Im Alltag erleben sie Aufregung und Freude intensiver, sind neugieriger und probierfreudiger. Der Nachteil zeigt sich erst bei wiederholtem Stress — dann kommt das Gehirn nicht zurück in die Basis. Sie reagieren auch stärker auf Belohnungen und „Kicks“.',
           },
           {
             q: 'Was bedeutet ein „roter Bereich" in der Burnout-Auswertung?',
-            a: 'Roter Bereich = ungünstige genetische Veranlagung in diesem Aspekt. Die Person ist eher burnout-gefährdet — Lebensstil-Maßnahmen sind besonders wichtig.',
+            a: 'Roter Bereich = ungünstige genetische Veranlagung in diesem Aspekt. Die Person reagiert hier empfindlicher auf Stress — Lebensstil-Maßnahmen sind besonders wichtig.',
           },
         ],
       },
@@ -1558,7 +1558,7 @@ export const COURSES = [
         items: [
           {
             q: 'Bin ich genetisch verurteilt, ein Burnout zu bekommen?',
-            a: 'Nein. Die Veranlagung erhöht das Risiko, ist aber kein Schicksal. Wer seine Stress-Empfindlichkeit kennt, kann gezielt gegensteuern — durch Meditation, stressarme Lebensführung, ausreichend Schlaf, Bewegung und gezielte Ernährung. Je ungünstiger die Genetik, desto wichtiger sind diese Maßnahmen.',
+            a: 'Nein. Die Gene zeigen, wie empfindlich du auf Stress reagierst, nicht, ob du krank wirst. Wer seine Stress-Empfindlichkeit kennt, kann gezielt gegensteuern — durch Meditation, stressarme Lebensführung, ausreichend Schlaf, Bewegung und gezielte Ernährung. Je ungünstiger die Genetik, desto wichtiger sind diese Maßnahmen.',
           },
           {
             q: 'Wo finde ich konkrete Empfehlungen für meinen Genotyp?',
@@ -1586,13 +1586,13 @@ export const COURSES = [
     category: 'Burnout und Stress',
     topic: 'Wissenschaftliche Basis',
     contentType: 'course',
-    description: 'Welche Gene die individuelle Stressantwort und das Burnout-Risiko steuern.',
+    description: 'Welche Gene die individuelle Stressverarbeitung und Belastbarkeit mitbestimmen.',
     longDescription:
       'Diese Schulung erklärt die wissenschaftliche Grundlage hinter der genetischen Burnout-Analyse. Du lernst, welche drei genetischen Eigenschaften die Analyse betrachtet, wie Variationen im COMT-Gen über den Dopamin-Abbau die Stressverarbeitung beeinflussen, warum manche Menschen schneller in einen Erschöpfungszustand kommen und welche Lebensstil-Maßnahmen genetisch optimiert eingesetzt werden können.',
     bullets: [
       'Das Stress-Gen COMT und seine Wirkung auf den Dopamin-Abbau',
       'Warum Menschen Stress unterschiedlich verarbeiten',
-      'Genetische Risikofaktoren für Burnout',
+      'Gene der Stressverarbeitung',
       'Personalisierte Strategien zur Stress-Resilienz',
     ],
     thumbnail: '/thumbnails/course-burnout.webp',
@@ -1600,7 +1600,7 @@ export const COURSES = [
     introQuestionsHeader: 'In dieser Schulung bekommst du Antworten auf folgende Fragen:',
     introQuestions: [
       'Wie unterschiedlich verarbeiten Menschen Stress?',
-      'Welche Gene erhöhen das Burnout-Risiko?',
+      'Welche Gene bestimmen mit, wie empfindlich jemand auf Stress reagiert?',
       'Was passiert im Gehirn, wenn das COMT-Gen Dopamin nur langsam abbaut?',
       'Welche personalisierten Empfehlungen lassen sich daraus ableiten?',
     ],
@@ -1646,7 +1646,7 @@ export const COURSES = [
         q: 'Was ist ein paradoxer Vorteil eines langsamen Dopamin-Abbaus (COMT-Variante)?',
         options: [
           'Geringere Stressempfindlichkeit im Alltag',
-          'Im Alltag intensivere positive Gefühle und höhere Neugier — gleichzeitig aber erhöhtes Risiko für Glücksspielsucht und Stressanfälligkeit',
+          'Im Alltag intensivere positive Gefühle und höhere Neugier — gleichzeitig eine stärkere Reaktion auf Stress und Reize',
           'Bessere körperliche Regeneration',
           'Niedrigeres Herzinfarkt-Risiko',
         ],
@@ -1673,10 +1673,10 @@ export const COURSES = [
         correct: 1,
       },
       {
-        q: 'Bei welcher Tendenz sind Menschen mit defektem COMT laut Schulung zusätzlich gefährdet?',
+        q: 'Welche zusätzliche Neigung zeigen Menschen mit langsamerem COMT laut Schulung?',
         options: [
           'Lebensmittelallergien',
-          'Glücksspiel-Sucht (weil Aufregung und Kicks intensiver wirken)',
+          'Reizsuche (weil Aufregung und Kicks intensiver wirken)',
           'Knochenschwund',
           'Hörverlust',
         ],
@@ -1686,7 +1686,7 @@ export const COURSES = [
         q: 'Was zeigt der „rote Bereich" einer Stress-Kategorie im Bericht an?',
         options: [
           'Sehr gute genetische Voraussetzungen — kein Handlungsbedarf',
-          'Eine ungünstige genetische Veranlagung in diesem Aspekt — die Person ist eher burnout-gefährdet',
+          'Eine ungünstige genetische Veranlagung in diesem Aspekt — die Person reagiert empfindlicher auf Stress',
           'Eine Empfehlung für mehr Kaffee',
           'Eine Standardempfehlung, gilt für alle gleich',
         ],
@@ -1764,7 +1764,7 @@ export const COURSES = [
       {
         q: 'Maria hat ein funktionierendes und ein defektes COMT-Gen. Wie sieht ihr Ergebnis aus?',
         options: [
-          'Alle drei Eigenschaften im roten Bereich — sie ist stark burnout-gefährdet',
+          'Alle drei Eigenschaften im roten Bereich — sie reagiert besonders empfindlich auf Stress',
           'Alle drei Eigenschaften im grünen Bereich — Burnout ist für sie kein Thema',
           'Leistung in Stresssituationen im roten Bereich, die anderen beiden Eigenschaften im grünen Bereich',
           'Alle drei Eigenschaften in der Mitte — mäßig gut für die Stressbeständigkeit',
@@ -1795,8 +1795,8 @@ export const COURSES = [
         q: 'Was bedeutet es, wenn ein Kunde bei allen drei Eigenschaften im grünen Bereich liegt?',
         options: [
           'Burnout ist für diesen Kunden unmöglich, egal wie er lebt',
-          'Der Kunde ist besonders burnout-gefährdet',
-          'Burnout ist für diesen Kunden keine so große Gefahr',
+          'Der Kunde reagiert besonders empfindlich auf Stress',
+          'Dieser Kunde verarbeitet Stress genetisch bedingt eher gut',
           'Die Analyse konnte nicht ausgewertet werden',
         ],
         correct: 2,
@@ -1824,7 +1824,7 @@ export const COURSES = [
     contentType: 'faq',
     description: 'Antworten auf typische Kundenfragen zur Analyse des biologischen Alters.',
     longDescription:
-      'Eine Sammlung der wichtigsten Fragen zur Telomer- und Anti-Aging-Analyse. Mit ausklappbarer Antwort zum Selbsttest.',
+      'Eine Sammlung der wichtigsten Fragen zur Telomer-Analyse und zum biologischen Alter. Mit ausklappbarer Antwort zum Selbsttest.',
     bullets: [
       'Was sind Telomere und warum altern wir?',
       'Wie beeinflusst meine Genetik das biologische Alter?',
@@ -1846,7 +1846,7 @@ export const COURSES = [
           },
           {
             q: 'Welche Gene werden in der Analyse betrachtet?',
-            a: 'Hauptsächlich Telomerase und verwandte Gene (TERT, BICD1, PPARG), die die Erhaltung der Telomerlänge steuern. Sie zeigen, wie gut dein Körper Telomere erhalten kann — eine grobe Schätzung der genetischen Anti-Aging-Kapazität.',
+            a: 'Hauptsächlich Telomerase und verwandte Gene (TERT, BICD1, PPARG), die die Erhaltung der Telomerlänge steuern. Sie zeigen, wie gut dein Körper Telomere erhalten kann.',
           },
         ],
       },
@@ -1858,8 +1858,8 @@ export const COURSES = [
             a: 'Überraschend nein. Sie hilft nur Menschen mit einem bestimmten Gendefekt, die Telomere länger zu erhalten — bei anderen zeigt sie keinen messbaren Effekt auf die Telomerlänge. Eine schöne Veranschaulichung, dass dieselbe Lebensstil-Empfehlung nicht für jeden gleich wirkt.',
           },
           {
-            q: 'Welche Nährstoffe können die Telomere unterstützen?',
-            a: 'Vitamin D3, Omega-3, Vitamin E, Resveratrol und Ginkgo. Wenn das genetische Schutzsystem geschwächt ist, können diese Nährstoffe gezielt eingesetzt werden, um die Telomer-Verkürzung zu verlangsamen.',
+            q: 'Welche Nährstoffe werden mit den Telomeren in Verbindung gebracht?',
+            a: 'Studien bringen Vitamin D3, Omega-3, Vitamin E, Resveratrol und Ginkgo mit dem Erhalt der Telomere in Verbindung. Wenn dein genetisches Schutzsystem schwächer arbeitet, kannst du mehr Lebensmittel essen, die reich an Vitamin D, Omega-3-Fettsäuren und Vitamin E sind. Rückgängig machen lässt sich die Verkürzung nicht.',
           },
           {
             q: 'Kann ich freie Radikale beeinflussen?',
@@ -1876,7 +1876,7 @@ export const COURSES = [
           },
           {
             q: 'Was bringt mir dieses Wissen praktisch?',
-            a: 'Du weißt, ob du genetisch eher zur schnelleren oder langsameren Zellalterung neigst — und kannst gezielt gegensteuern. Bei ungünstiger Veranlagung lohnt sich besonders: antioxidantienreiche Ernährung, gezielte Supplementierung (D3, Omega-3, Resveratrol), regelmäßiger Sport (aber nicht übertrieben), guter Schlaf und Stressreduktion.',
+            a: 'Du weißt, ob du genetisch eher zur schnelleren oder langsameren Zellalterung neigst — und kannst gezielt gegensteuern. Bei ungünstiger Veranlagung lohnt sich besonders: eine Ernährung mit Lebensmitteln, die reich an Vitamin D, Omega-3-Fettsäuren und Antioxidantien sind, regelmäßiger Sport (aber nicht übertrieben), guter Schlaf und Stressreduktion.',
           },
         ],
       },
@@ -1902,12 +1902,12 @@ export const COURSES = [
     contentType: 'course',
     description: 'Wie das biologische Alter genetisch bestimmt und durch Lebensstil beeinflusst wird.',
     longDescription:
-      'Diese Schulung erklärt die wissenschaftliche Grundlage hinter der genetischen Analyse zum biologischen Alter. Du erfährst, welche Gene Telomerlänge und Zellalterung beeinflussen, wie sich biologisches von chronologischem Alter unterscheidet und welche Nährstoffe und Lebensstil-Faktoren die Verkürzung der Telomere verlangsamen können.',
+      'Diese Schulung erklärt die wissenschaftliche Grundlage hinter der genetischen Analyse zum biologischen Alter. Du erfährst, welche Gene Telomerlänge und Zellalterung beeinflussen, wie sich biologisches von chronologischem Alter unterscheidet und welche Nährstoffe und Lebensstil-Faktoren Studien mit dem Erhalt der Telomere in Verbindung bringen.',
     bullets: [
       'Telomere und Zellalterung — Grundlagen',
       'Chronologisches vs. biologisches Alter',
       'Genetische Faktoren der Alterung: das Telomerase-Gen',
-      'Anti-Aging-Strategien: Nährstoffe und genotypabhängige mediterrane Ernährung',
+      'Gesundes Altern: Nährstoffe und genotypabhängige mediterrane Ernährung',
     ],
     thumbnail: '/thumbnails/course-bioage.webp',
     youtubeId: 'gwmVcvbaNgE',
@@ -1916,7 +1916,7 @@ export const COURSES = [
       'Was ist der Unterschied zwischen chronologischem und biologischem Alter?',
       'Was sind Telomere und warum werden sie bei jeder Zellteilung kürzer?',
       'Welche Gene beeinflussen die Zellalterung?',
-      'Welche Nährstoffe unterstützen die Erhaltung der Telomere — und warum wirkt mediterrane Ernährung nicht bei jedem?',
+      'Welche Nährstoffe bringen Studien mit dem Erhalt der Telomere in Verbindung – und warum wirkt mediterrane Ernährung nicht bei jedem?',
     ],
     postVideoText:
       'Mit dieser Grundlage kannst du die Analyse des biologischen Alters fachlich fundiert mit deinen Kunden besprechen.',
@@ -1967,7 +1967,7 @@ export const COURSES = [
         correct: 1,
       },
       {
-        q: 'Welche Nährstoffe können das Telomer-Schutzsystem bei genetischer Schwäche unterstützen?',
+        q: 'Welche Nährstoffe bringen Studien mit dem Erhalt der Telomere in Verbindung?',
         options: [
           'Koffein und Theobromin',
           'Vitamin D3, Omega-3, Vitamin E, Resveratrol und Ginkgo',
@@ -2010,7 +2010,7 @@ export const COURSES = [
         q: 'Was ist die richtige Strategie bei einem Telomerase-Gendefekt?',
         options: [
           'Die Veranlagung ignorieren — die Telomere lassen sich nicht beeinflussen',
-          'Gezielte Lebensstil-Maßnahmen und unterstützende Nährstoffe einsetzen, um die schwächere genetische Schutzfunktion auszugleichen und die Telomer-Verkürzung zu verlangsamen',
+          'Gezielte Lebensstil-Maßnahmen und eine Ernährung mit den passenden Nährstoffen, um die schwächere genetische Schutzfunktion zu unterstützen',
           'Mehr Sport treiben, sonst nichts',
           'Die Ernährung komplett umstellen — egal worauf',
         ],
@@ -2050,7 +2050,7 @@ export const COURSES = [
     bullets: [
       'Den Bericht zum biologischen Alter strukturiert besprechen',
       'Den Alterungsprozess genetisch fundiert einordnen',
-      'Konkrete Anti-Aging-Empfehlungen ableiten',
+      'Empfehlungen für gesundes Altern ableiten',
       'Wie Lebensstil das biologische Alter beeinflusst',
     ],
     thumbnail: '/thumbnails/ba-report-cover.webp',
@@ -2276,7 +2276,7 @@ export const COURSES = [
         items: [
           {
             q: 'Warum brauche ich überhaupt eine personalisierte Nahrungsergänzung?',
-            a: 'Weil dein Körper genetisch bedingt andere Nährstoffe besser oder schlechter verwertet als ein anderer Mensch — und weil dein Lebensstil (Sport, Schlaf, Stress, Ernährung) deinen individuellen Bedarf zusätzlich prägt. Standard-Tabletten gehen vom „Durchschnittsmenschen" aus und decken dadurch viele individuelle Bedarfslagen weder zu wenig noch zu viel ab.',
+            a: 'Weil dein Körper genetisch bedingt andere Nährstoffe besser oder schlechter verwertet als ein anderer Mensch — und weil dein Lebensstil (Sport, Schlaf, Stress, Ernährung) deinen individuellen Bedarf zusätzlich prägt. Standard-Präparate sind für den Durchschnitt dosiert und decken deshalb bei vielen Menschen den individuellen Bedarf entweder zu knapp oder zu reichlich.',
           },
           {
             q: 'Was ist der Unterschied zu Standard-Multivitaminen aus der Drogerie?',
@@ -2314,7 +2314,7 @@ export const COURSES = [
           },
           {
             q: 'Wie schnell merke ich eine Wirkung?',
-            a: 'Das ist je nach Nährstoff sehr unterschiedlich. Manche Effekte (z. B. bessere Energie bei B-Vitaminen) zeigen sich in wenigen Tagen bis Wochen, andere (z. B. Knochenstoffwechsel bei Vitamin D) entwickeln sich über Monate. Eine personalisierte Supplementierung wirkt nicht wie ein Medikament — sie behebt langfristige Nährstoff-Engpässe.',
+            a: 'Das ist je nach Nährstoff verschieden. Beispiele: Vitamin B12 trägt zur Verringerung von Müdigkeit und Ermüdung bei; Vitamin D trägt zur Erhaltung normaler Knochen bei. Nahrungsergänzung wirkt nicht wie ein Medikament, sondern ergänzt die Ernährung.',
           },
           {
             q: 'Brauche ich die Supplementierung dauerhaft?',
@@ -2326,7 +2326,7 @@ export const COURSES = [
           },
           {
             q: 'Was kostet die personalisierte Variante im Vergleich zu Drogerie-Multivitaminen?',
-            a: 'Pro Tag deutlich mehr — typischerweise das 3- bis 5-fache der billigsten Drogerieprodukte. Im Gegenzug bekommst du eine genetisch abgestimmte Zusammensetzung, die wahrscheinlich auch tatsächlich aufgenommen wird statt großteils ungenutzt ausgeschieden zu werden. Der Vergleich „pro mg Vitamin" ist irreführend; sinnvoller ist „pro mg, der tatsächlich im Blut ankommt".',
+            a: 'Pro Tag kostet die personalisierte Variante mehr als einfache Multivitamin-Präparate. Dafür sind Auswahl und Dosierung auf deine Gen-Analyse und deinen Lebensstil abgestimmt, und die Mikrotransporter geben die Nährstoffe zeitlich versetzt frei.',
           },
         ],
       },
@@ -2396,7 +2396,7 @@ export const COURSES = [
         q: 'Welche Aussage zur genetischen UV-Empfindlichkeit (z. B. MC1R) ist korrekt?',
         options: [
           'Genvarianten beeinflussen die UV-Empfindlichkeit nicht — entscheidend ist nur der Hauttyp',
-          'Träger ungünstiger Varianten bekommen schneller Sonnenbrand und haben ein höheres Risiko für UV-bedingte Hautalterung und Hautkrebs — strikter UV-Schutz ist umso wichtiger',
+          'Träger ungünstiger Varianten bekommen schneller Sonnenbrand und eine stärkere Lichtalterung der Haut — konsequenter UV-Schutz ist umso wichtiger',
           'Bei genetisch hoher UV-Empfindlichkeit sollte man die Sonne komplett meiden, auch im Schatten',
           'Sonnencreme wirkt nur bei Menschen mit „normalen" Genen',
         ],
@@ -2508,7 +2508,7 @@ export const COURSES = [
           },
           {
             q: 'Was sagt mein MC1R-Gen über UV-Empfindlichkeit aus?',
-            a: 'MC1R steuert die Produktion von Eumelanin (dunkles Pigment, schützt vor UV) versus Phäomelanin (rötliches Pigment, erzeugt bei UV-Belastung freie Radikale). Ungünstige Varianten: schneller Sonnenbrand, höheres Risiko für UV-Schäden und Hautkrebs — striktere Sonnencreme-Disziplin nötig.',
+            a: 'MC1R steuert die Produktion von Eumelanin (dunkles Pigment, schützt vor UV) versus Phäomelanin (rötliches Pigment, erzeugt bei UV-Belastung freie Radikale). Ungünstige Varianten: schneller Sonnenbrand und stärkere Lichtalterung der Haut — konsequenter Sonnenschutz ist besonders wichtig.',
           },
           {
             q: 'Warum ist FLG (Filaggrin) für meine Hautpflege wichtig?',
@@ -2564,12 +2564,12 @@ export const COURSES = [
     videos: [],
     description: 'Schulungsfolien zur Pharmakogenetik — als PowerPoint zum Selbststudium.',
     longDescription:
-      'Die offiziellen Novogenia-Schulungsfolien zur Pharmakogenetik. Aus dem Master-Foliensatz extrahiert, Animationen erhalten. Wie genetische Varianten den Abbau und die Wirkung von Medikamenten beeinflussen — und warum ein Medikament bei verschiedenen Menschen unterschiedlich wirkt.',
+      'Die Novogenia-Schulungsfolien zur Pharmakogenetik. Aus dem Master-Foliensatz extrahiert, Animationen erhalten. Wie genetische Varianten den Abbau und die Wirkung von Medikamenten beeinflussen — und warum ein Medikament bei verschiedenen Menschen unterschiedlich wirkt.',
     bullets: [
       'CYP-Enzyme & Medikamenten-Metabolismus',
       'Schnelle und langsame Metabolisierer',
       'Klinisch relevante Wirkstoffe (Antidepressiva, Schmerzmittel, Blutverdünner, …)',
-      'Praktische Bedeutung in der Beratung',
+      'Was das für die ärztliche Verordnung bedeutet',
     ],
     thumbnail: T(24),
     introQuestionsHeader: 'Die Schulungsfolien decken folgende Themen ab:',
@@ -2577,14 +2577,14 @@ export const COURSES = [
       'Warum wirken Medikamente bei verschiedenen Menschen unterschiedlich stark?',
       'Welche CYP-Enzyme sind für den Abbau der wichtigsten Wirkstoffe verantwortlich?',
       'Was bedeutet „schneller" vs. „langsamer Metabolisierer" im klinischen Alltag?',
-      'Welche Medikamente sind besonders relevant für die pharmakogenetische Beratung?',
+      'Welche Medikamente sind besonders relevant für ärztliche Verordnungsentscheidungen?',
     ],
     articleSections: [
       {
         title: 'Schulungsfolien zum Download',
         paragraphs: [
-          'Diese Schulungsfolien stammen aus dem zentralen Novogenia-Foliensatz „All Slides to use". Sie erklären die wissenschaftlichen Grundlagen der Pharmakogenetik: relevante CYP-Enzyme, klinisch wichtige Wirkstoffe, Studienlage und Beratungs-Beispiele. Animationen sind erhalten.',
-          'Lade die PowerPoint herunter und gehe sie im eigenen Tempo durch. Du kannst die Folien auch für eigene Kunden-Präsentationen verwenden.',
+          'Diese Schulungsfolien stammen aus dem zentralen Novogenia-Foliensatz „All Slides to use". Sie erklären die wissenschaftlichen Grundlagen der Pharmakogenetik: relevante CYP-Enzyme, klinisch wichtige Wirkstoffe, Studienlage und Anwendungsbeispiele. Animationen sind erhalten.',
+          'Lade die PowerPoint herunter und gehe sie im eigenen Tempo durch. Pharmakogenetische Analysen werden ausschließlich über Ärztinnen und Ärzte angeboten; diese Schulung ist Fachinformation und ersetzt keine ärztliche Beratung.',
         ],
       },
     ],
@@ -2676,11 +2676,11 @@ export const COURSES = [
         ],
         bullets: [
           { tone: 'safe', text: '„Wir testen Blut."' },
-          { tone: 'safe', text: '„Wir diagnostizieren Mängel."' },
+          { tone: 'safe', text: '„Unser Partnerlabor misst deine Blutwerte; die Befundung erfolgt durch einen Arzt.“' },
           { tone: 'safe', text: '„Wir geben Mikronährstoff- und Ernährungsempfehlungen."' },
           { tone: 'safe', text: '„Wir personalisieren Nahrungsergänzungen nach dem Ergebnis."' },
           { tone: 'safe', text: 'Symptome eines Mangels (z. B. Müdigkeit bei Eisenmangel) — am besten mit Quellenverweis (z. B. Ärztekammer).' },
-          { tone: 'safe', text: 'Testimonial: „Ich war oft müde, der Test hat Eisenmangel identifiziert und mir geholfen" — zulässig.' },
+          { tone: 'caveat', text: 'Testimonials zu Bluttests nur ohne Heilungs- oder Krankheitsversprechen und nach Prüfung im Einzelfall.' },
         ],
       },
       {
@@ -2693,7 +2693,7 @@ export const COURSES = [
           { tone: 'safe', text: 'Ermittlung der genetischen Eigenschaften und Abgleich mit aktueller Wissenschaft.' },
           { tone: 'critical', text: 'Konkrete Ernährungs-, Sport- oder Nahrungsergänzungs-Empfehlungen, die aus den Genen abgeleitet werden.' },
         ],
-        callout: { tone: 'safe', text: 'Beispiel: „Gentest beweist, Folsäure ist wirkungslos" — zulässig (durch Studien belegt).' },
+        callout: { tone: 'safe', text: 'Beispiel: „Die Gen-Analyse zeigt, ob dein Körper Folsäure gut in die aktive Form umwandeln kann.“ — unkritisch.' },
       },
       {
         title: 'Die sichere Variante — nur genetische Eigenschaften',
@@ -2728,8 +2728,8 @@ export const COURSES = [
         bullets: [
           { tone: 'safe', text: 'Personalisierung nach Lebensstil und Blutwerten — unproblematisch.' },
           { tone: 'caveat', text: 'Personalisierung nach Genanalyse — nur mit Disclaimer (siehe gewagtere Variante).' },
-          { tone: 'safe', text: 'Beispiel Health-Claim: „Trägt zu normaler Haut bei" (bei Zink), „Trägt zu normalem Immunsystem bei".' },
-          { tone: 'safe', text: 'Beispiel Testimonial: „Ich nehme es, weil ich trockene Haut habe" — verbunden mit dem Health Claim Zink-Mangel-Effekt — zulässig.' },
+          { tone: 'safe', text: 'Beispiel Health-Claim, nur im genauen Wortlaut der EU-Liste und nur, wenn das Produkt je Tagesdosis mindestens 15 % der Referenzmenge (NRV) enthält: „Zink trägt zur Erhaltung normaler Haut bei.“ / „Zink trägt zu einer normalen Funktion des Immunsystems bei.“' },
+          { tone: 'critical', text: 'NICHT zulässig: Testimonial „Ich nehme es, weil ich trockene Haut habe“ in Verbindung mit dem Zink-Claim — Kundenaussagen nicht mit Health Claims verknüpfen.' },
           { tone: 'critical', text: 'NICHT zulässig: jede Behauptung, deren Health Claim nicht von der EFSA genehmigt wurde (z. B. „heilt deine Krankheit").' },
         ],
       },
@@ -3352,10 +3352,10 @@ export const UI = {
 
   // ---- Certificate CTA ----
   cert_cta_title:             { de: 'Zertifikat erstellen',        en: 'Generate your certificate' },
-  cert_cta_intro_a:           { de: 'Bestätige deinen Lernerfolg mit dem offiziellen ',
-                                en: 'Confirm your learning progress with the official ' },
-  cert_cta_intro_b:           { de: '-Zertifikat. Es enthält alle ',
-                                en: ' certificate. It includes all of the ' },
+  cert_cta_intro_a:           { de: 'Bestätige deinen Lernerfolg mit dem Zertifikat der Novogenia GmbH als ',
+                                en: 'Confirm your learning progress with the Novogenia GmbH certificate as a ' },
+  cert_cta_intro_b:           { de: '. Es enthält alle ',
+                                en: '. It includes all of the ' },
   cert_cta_intro_c:           { de: ' abgeschlossenen und mit Test bestandenen Module deines Kontos und wird mit der Unterschrift von Dr. Daniel Wallerstorfer ausgestellt.',
                                 en: ' modules in your account that you have completed and passed the test for, and is issued with the signature of Dr. Daniel Wallerstorfer.' },
   cert_cta_name_label:        { de: 'Name auf dem Zertifikat',     en: 'Name on the certificate' },
@@ -3457,15 +3457,15 @@ export const UI = {
   // ---- Landing page ----
   brand_coach:                { de: 'Genetik Coach',                en: 'Genetics Coach' },
   landing_hero_title:         { de: 'Werde Genetik Coach',           en: 'Become a Genetics Coach' },
-  landing_hero_sub:           { de: 'Die offizielle Schulungsplattform von Novogenia. Lerne in deinem Tempo, schließe Module mit Tests ab und erhalte dein offizielles Zertifikat als Novogenia Genetik Coach.',
-                                en: 'The official Novogenia training platform. Learn at your own pace, complete modules with tests, and earn your official Novogenia Genetics Coach certificate.' },
+  landing_hero_sub:           { de: 'Die kostenlose Schulungsplattform der Novogenia GmbH. Lerne in deinem Tempo, schließe Module mit Tests ab und erhalte ein Zertifikat der Novogenia GmbH als Genetik Coach. Es bestätigt die abgeschlossenen Schulungsmodule und ist kein staatlich anerkannter Berufsabschluss.',
+                                en: 'The free training platform of Novogenia GmbH. Learn at your own pace, complete modules with tests and earn a Novogenia GmbH certificate as a Genetics Coach. It confirms the completed training modules and is not a state-recognised professional qualification.' },
   landing_cta_signup:         { de: 'Kostenlos starten',            en: 'Get started for free' },
   landing_cta_login:          { de: 'Schon registriert? Anmelden',  en: 'Already registered? Sign in' },
 
   landing_feature_videos_t:   { de: '22 Online-Kurse',              en: '22 online courses' },
   landing_feature_videos_d:   { de: 'Von Dr. Daniel Wallerstorfer höchstpersönlich unterrichtet — Wissenschaft, Beratung und FAQs zu allen Novogenia-Analysen.',
                                 en: 'Taught by Dr. Daniel Wallerstorfer himself — science, consultation and FAQs covering every Novogenia analysis.' },
-  landing_feature_certs_t:    { de: 'Echtes Zertifikat',            en: 'Real certificate' },
+  landing_feature_certs_t:    { de: 'Persönliches Zertifikat',      en: 'Personal certificate' },
   landing_feature_certs_d:    { de: 'Bestehe die Module mit Tests und erhalte dein personalisiertes Genetik-Coach-Zertifikat als PDF.',
                                 en: 'Pass the module tests and download your personalised Genetics Coach certificate as a PDF.' },
   landing_feature_progress_t: { de: 'Fortschritt überall',          en: 'Progress across devices' },

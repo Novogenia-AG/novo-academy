@@ -113,7 +113,7 @@ export const COURSES_EN = [
         q: 'Why does a personalized program outperform standard advice?',
         options: [
           'It uses more expensive ingredients',
-          'A Novogenia pilot study (139 participants) showed a 2.4× higher weight-loss success with genetic personalization versus standard counselling — because the strategy actually matches the underlying biology',
+          'Our internal study with 302 people (gene-based vs. standard diet) showed 2.4× greater weight loss with the gene-based diet',
           'It works only on paper',
           'It is identical to standard advice',
         ],
@@ -124,7 +124,7 @@ export const COURSES_EN = [
     documents: [
       // Slides + sample reports exist only in German — hidden in EN until translated.
       {
-        title: 'NovoAcademy Science PDF - 2.4× More Weight Loss with Genetic Program',
+        title: 'NovoAcademy Science PDF - Internal study: gene-based vs. standard diet (302 people)',
         size: '610 KB',
         type: 'pdf',
         url: '/course-materials/scientific-reviews/Genetic_Weight_Loss_Study_2,4x.pdf',
@@ -274,10 +274,10 @@ export const COURSES_EN = [
       {
         title: 'Calorie Blocker',
         items: [
-          { q: 'What is the Calorie Blocker?', a: 'The Calorie Blocker is a personalized weight-loss product in microtransporter-pellet form. It contains an individual ratio of fat and carbohydrate blockers tailored to your DNA analysis. Combined with reduced calorie and fat intake, it demonstrably supports weight loss — combined with balanced diet and lifestyle it helps maintain weight.' },
+          { q: 'What is the Calorie Blocker?', a: 'The Calorie Blocker is a food supplement in microtransporter-pellet form containing Opuntia ficus-indica fibre and phaseolamin from white beans. The mixing ratio is chosen on the basis of your gene analysis. It does not replace a balanced, calorie-conscious diet.' },
           { q: 'How do I take the Calorie Blocker?', a: 'Daily before lunch and dinner with a large sip of water. The pellets should be swallowed whole, not chewed.' },
-          { q: 'What are the active ingredients?', a: 'The fat blocker is Opuntia ficus-indica (OFI) — the fiber of the prickly pear cactus. This plant fiber forms a gel-like matrix in the GI tract that binds dietary fat and reduces its absorption. The carbohydrate blocker is Phaseolamin (from white beans) which inhibits alpha-amylase. Both are fully plant-based.' },
-          { q: 'Is the Calorie Blocker vegan/vegetarian?', a: 'Yes. Both the fat blocker (Opuntia ficus-indica) and the carbohydrate blocker (Phaseolamin from white beans) are purely plant-based. The Calorie Blocker is suitable for vegetarians and vegans, gluten-free, lactose-free, and free of artificial colourings.' },
+          { q: 'What are the active ingredients?', a: 'The Calorie Blocker contains Opuntia ficus-indica (OFI), the fibre of the prickly pear cactus, and phaseolamin from white beans. Both ingredients are purely plant-based.' },
+          { q: 'Is the Calorie Blocker vegan/vegetarian?', a: 'Yes. Both ingredients, the Opuntia ficus-indica fibre and phaseolamin from white beans, are purely plant-based. The Calorie Blocker is suitable for vegetarians and vegans, gluten-free, lactose-free, and free of artificial colourings.' },
         ],
       },
     ],
@@ -463,10 +463,10 @@ export const COURSES_EN = [
         correct: 1,
       },
       {
-        q: 'Which dietary recommendation fits a client with a HFE-defect (iron-overload risk)?',
+        q: 'Which dietary recommendation fits a client whose report shows a lower iron requirement (HFE)?',
         options: [
           'Increase iron intake — they need more',
-          'Reduce dietary iron load: less red meat, no iron-enriched supplements unless deficient by blood test. Excess iron accumulates and damages liver, heart, joints over decades',
+          'Do not increase iron intake further: less red meat, no iron-enriched supplements unless a doctor has found a deficiency',
           'Take iron supplements daily as a precaution',
           'No change needed',
         ],
@@ -530,8 +530,8 @@ export const COURSES_EN = [
       {
         title: 'Key gene topics',
         items: [
-          { q: 'What does an MTHFR defect mean for me?', a: 'MTHFR activates folic acid into methylfolate, the form your body can actually use. With a defect, you can take a lot of folic acid in a regular supplement and still have functional deficiency. Switching to methylfolate solves the problem.' },
-          { q: 'I have an HFE variant — is iron supplementation dangerous for me?', a: 'It can be. Some HFE variants cause iron overload over decades — your body absorbs too much from food and stores it in liver, heart, joints. Iron supplements should only be taken if blood tests show a real deficiency.' },
+          { q: 'What does an MTHFR defect mean for me?', a: 'MTHFR activates folic acid into methylfolate, the form your body can actually use. With a defect, you can take a lot of folic acid in a regular supplement and still have functional deficiency. Methylfolate is the already active form and does not need this conversion step. Whether it is right for you is best discussed with your doctor.' },
+          { q: 'I have an HFE variant — should I take iron supplements?', a: 'Your HFE result shows a lower iron requirement. So do not take iron supplements on your own initiative — only if a doctor has found a deficiency in a blood test.' },
           { q: 'Salt sensitivity (ACE) — does that mean I have to give up salt?', a: 'Not entirely. It means your blood pressure responds more strongly to salt than average. Reducing salt is a powerful lever in your case — much more so than for non-sensitive people.' },
         ],
       },
@@ -670,7 +670,7 @@ export const COURSES_EN = [
         title: 'Injury risk & regeneration',
         items: [
           { q: 'My report shows unfavourable connective-tissue genes (COL5A1, MMP3). What should I do?', a: 'Train with extra care: thorough warm-up, less explosive loading until adapted, longer recovery between intense sessions, and good protein/Vit-C intake to support collagen synthesis. Avoid sudden volume jumps.' },
-          { q: 'Why does the report recommend antioxidants for me?', a: 'Intense exercise generates large amounts of free radicals. If your antioxidant genes (SOD2, CAT, GPX) are weak, recovery is slower and micro-inflammation accumulates. Vitamin C, E, polyphenols and selenium directly support these defense systems.' },
+          { q: 'Why does the report recommend antioxidants for me?', a: 'Intense exercise generates large amounts of free radicals. If your antioxidant genes (SOD2, CAT, GPX) are weak, recovery is slower and micro-inflammation accumulates. Vitamin C contributes to the protection of cells from oxidative stress. The same applies to vitamin E and selenium.' },
           { q: 'What is a "deload" and how often should I do it?', a: 'A deload is a week of gentler training (e.g. first session at half the weight, second at two-thirds). It gives the body recovery time for repair and psychological reset. Typically every ~5 weeks, depending on your genetic regeneration and stress predisposition.' },
         ],
       },
@@ -895,7 +895,7 @@ export const COURSES_EN = [
     category: CATEGORIES_EN.BURNOUT,
     topic: TOPIC_WB_EN,
     contentType: 'course',
-    description: 'Why the same stress affects people differently — and what the COMT gene has to do with burnout risk.',
+    description: 'Why the same stress affects people differently — and what the COMT gene has to do with how we handle stress.',
     longDescription:
       'In this training, Dr. Daniel Wallerstorfer explains why massive, continuous stress leads to burnout in some people but not in others. You will learn which three genetic traits the analysis looks at, how the COMT gene breaks down dopamine after exciting or stressful situations, why about 15% of people are especially prone to stress — and why the right lifestyle matters all the more when the genes are less favourable.',
     bullets: [
@@ -914,7 +914,7 @@ export const COURSES_EN = [
     introQuestions: [
       'Which gene is central to individual stress processing?',
       'Why does the same stress affect people differently — and what does COMT have to do with it?',
-      'How do genes influence the risk of burnout?',
+      'How do genes influence the way we handle stress?',
       'Which lifestyle measures help — and why do they matter more with an unfavourable profile?',
     ],
     postVideoText:
@@ -986,12 +986,12 @@ export const COURSES_EN = [
         correct: 0,
       },
       {
-        q: 'According to the training, what are people with a poorly functioning COMT gene also more prone to?',
+        q: 'According to the training, what are people with a poorly functioning COMT gene also more inclined towards?',
         options: [
           'Caffeine dependence',
           'Sleep disorders',
           'Sugar cravings',
-          'Gambling',
+          'Thrill-seeking',
         ],
         correct: 3,
       },
@@ -999,7 +999,7 @@ export const COURSES_EN = [
         q: 'What does the red zone of a stress trait indicate in the report?',
         options: [
           'Very favourable genetics — no action needed',
-          'An unfavourable predisposition — a higher risk of burnout',
+          'An unfavourable predisposition — a higher sensitivity to stress',
           'The person already has burnout and needs treatment',
           'A standard recommendation that applies to everyone',
         ],
@@ -1068,7 +1068,7 @@ export const COURSES_EN = [
       {
         q: 'Maria has one functioning and one defective copy of the COMT gene. What does her result look like?',
         options: [
-          'All three traits in the red zone — she is highly prone to burnout',
+          'All three traits in the red zone — she is highly sensitive to stress',
           'All three traits in the green zone — burnout is not a concern for her',
           'Performance under stress in the red zone, the other two traits in the green zone',
           'All three traits in the middle — moderately good stress resistance',
@@ -1099,8 +1099,8 @@ export const COURSES_EN = [
         q: 'What does it mean if a client is in the green zone for all three traits?',
         options: [
           'Burnout is impossible for this client, whatever their lifestyle',
-          'The client is especially prone to burnout',
-          'Burnout is not such a big danger for this client',
+          'The client is especially sensitive to stress',
+          'This client tends to handle stress well',
           'The analysis could not be evaluated',
         ],
         correct: 2,
@@ -1126,7 +1126,7 @@ export const COURSES_EN = [
     bullets: [
       'What is the COMT gene?',
       'Which three stress traits does the report show?',
-      'How is burnout risk genetic?',
+      'How is stress sensitivity genetic?',
       'What recommendations follow from the profile?',
     ],
     thumbnail: T(15),
@@ -1134,8 +1134,8 @@ export const COURSES_EN = [
       {
         title: 'Genetic basis of stress',
         items: [
-          { q: 'What is the COMT gene and why is it important?', a: 'COMT (catechol-O-methyltransferase) breaks down the neurotransmitter dopamine once an exciting or stressful situation is over, so the brain can return to its baseline. If the gene works poorly, dopamine is broken down much more slowly: the brain stays in an aroused state for longer, and when new stress comes along before it is back at baseline, it can become overloaded. Slower breakdown also has upsides — positive feelings are experienced more intensely and people tend to be more curious, but also more prone to gambling. Studies describe a common variant (Val158Met) with clearly different enzyme activity between the fast and the slow form.' },
-          { q: 'Which three traits does the burnout analysis evaluate?', a: 'Performance under stress (how well you perform in stressful situations), emotional resilience (how strongly negative feelings weigh on you) and impulsivity. Each trait is shown on a scale from red through the middle to green: green is favourable, red means a greater risk of burnout.' },
+          { q: 'What is the COMT gene and why is it important?', a: 'COMT (catechol-O-methyltransferase) breaks down the neurotransmitter dopamine once an exciting or stressful situation is over, so the brain can return to its baseline. If the gene works poorly, dopamine is broken down much more slowly: the brain stays in an aroused state for longer, and when new stress comes along before it is back at baseline, it can become overloaded. Slower breakdown also has upsides — positive feelings are experienced more intensely and people tend to be more curious, but also react more strongly to rewards and thrills. Studies describe a common variant (Val158Met) with clearly different enzyme activity between the fast and the slow form.' },
+          { q: 'Which three traits does the burnout analysis evaluate?', a: 'Performance under stress (how well you perform in stressful situations), emotional resilience (how strongly negative feelings weigh on you) and impulsivity. Each trait is shown on a scale from red through the middle to green: green is favourable, red means a higher sensitivity to stress.' },
           { q: 'How many people are genetically especially prone to stress?', a: 'About 40% of people have two well-functioning copies of the COMT gene: they tend to perform better under stress, have higher emotional resilience and are less impulsive. About 15% have two defective copies, with exactly the opposite effect — they are the ones who suffer most under stress. The remaining ~45% have one functioning and one defective copy.' },
         ],
       },
@@ -1143,14 +1143,14 @@ export const COURSES_EN = [
         title: 'Practical advice',
         items: [
           { q: 'I have two defective copies of the COMT gene — am I doomed to burn out?', a: 'No. A less favourable COMT profile increases sensitivity to stress, but it is not destiny. The less favourable the genes, the more important the right lifestyle: meditation, a low-stress way of life, nutrition and exercise. Knowing your predisposition lets you act early, before stress builds up.' },
-          { q: 'All three traits are in the green zone — do I still need to think about burnout?', a: 'For you, burnout is not such a big danger — but the risk is not zero: massive, continuous stress can still take its toll over time. Recovery phases and a balanced lifestyle remain important.' },
+          { q: 'All three traits are in the green zone — do I still need to think about burnout?', a: 'You tend to handle stress well — but massive, continuous stress can still take its toll over time. Recovery phases and a balanced lifestyle remain important.' },
           { q: 'What helps everyone, regardless of genotype?', a: 'The measures recommended in the report — meditation, a low-stress way of life, a balanced diet and regular exercise — help everyone reduce stress; they simply matter more the less favourable the genetic profile is. Enough sleep, social contact and moderate consumption of caffeine and alcohol are also commonly recommended.' },
         ],
       },
       {
         title: 'What to do with the result',
         items: [
-          { q: 'A “red zone” came up in my report. Should I be worried?', a: 'It is no reason to panic, but it is a reason to act. A red zone marks an unfavourable genetic predisposition in one specific area — a greater risk of burnout, not a diagnosis. The more of your traits are in the red zone, the more important it is to adapt your lifestyle to avoid stress. Even with results in the middle, a low-stress lifestyle remains important.' },
+          { q: 'A “red zone” came up in my report. Should I be worried?', a: 'It is no reason to panic, but it is a reason to act. A red zone marks an unfavourable genetic predisposition in one specific area — a higher sensitivity to stress, not a diagnosis. The more of your traits are in the red zone, the more important it is to adapt your lifestyle to avoid stress. Even with results in the middle, a low-stress lifestyle remains important.' },
           { q: 'Where do I find concrete recommendations for my genotype?', a: 'In the burnout report — it contains recommendations on meditation, a low-stress lifestyle, nutrition and exercise, tailored to your genetic stress profile.' },
         ],
       },
@@ -1177,7 +1177,7 @@ export const COURSES_EN = [
     contentType: 'course',
     description: 'Why telomeres shorten, how the telomerase gene affects biological age — and which nutrients can help.',
     longDescription:
-      'This training explains the scientific basis of the biological age analysis. You will learn why telomeres — the protective ends of our chromosomes — get shorter with every cell division, what happens to a cell once they are used up, how the telomerase gene influences this process, and which nutrients can support telomere maintenance when the genes work less well.',
+      'This training explains the scientific basis of the biological age analysis. You will learn why telomeres — the protective ends of our chromosomes — get shorter with every cell division, what happens to a cell once they are used up, how the telomerase gene influences this process, and which nutrients studies link with telomere maintenance.',
     bullets: [
       'Telomeres and cell aging — the basics',
       'Senescence: when cells switch to sleep mode',
@@ -1196,7 +1196,7 @@ export const COURSES_EN = [
       'What are telomeres and why do they shorten with every cell division?',
       'What happens to a cell once its telomeres are used up?',
       'What does the telomerase gene do?',
-      'Which nutrients support telomere maintenance — and why doesn’t the Mediterranean diet work for everyone?',
+      'Which nutrients do studies link with telomere maintenance — and why doesn’t the Mediterranean diet work for everyone?',
     ],
     postVideoText:
       'With this scientific basis, you can discuss the biological age analysis with your clients on solid ground.',
@@ -1242,7 +1242,7 @@ export const COURSES_EN = [
         correct: 2,
       },
       {
-        q: 'Which nutrients can support telomere maintenance when the protective gene works less well?',
+        q: 'Which nutrients do studies link with telomere maintenance?',
         options: [
           'Vitamin C, Zinc, Selenium, Iron and Magnesium',
           'Vitamin D3, Omega-3, Vitamin E, Resveratrol and Ginkgo',
@@ -1281,7 +1281,7 @@ export const COURSES_EN = [
         options: [
           'Ignore it — telomeres cannot be influenced anyway',
           'Exercise more — nutrition makes no difference',
-          'Increase supporting nutrients to slow telomere shortening',
+          'Targeted lifestyle measures and a diet with the right nutrients to support the weaker genetic protective function',
           'Switch to a Mediterranean diet — it works for everyone',
         ],
         correct: 2,
@@ -1405,7 +1405,7 @@ export const COURSES_EN = [
     contentType: 'faq',
     description: 'Answers to typical client questions about the biological age analysis.',
     longDescription:
-      'A collection of the most important questions about the telomere and anti-aging analysis. With collapsible answers for self-study.',
+      'A collection of the most important questions about the telomere analysis and biological age. With collapsible answers for self-study.',
     bullets: [
       'What are telomeres and why do we age?',
       'How does my genetics affect biological age?',
@@ -1427,15 +1427,15 @@ export const COURSES_EN = [
         title: 'What lifestyle does',
         items: [
           { q: 'Does a Mediterranean diet help maintain telomeres in everyone?', a: 'Surprisingly, no. Studies have shown that a Mediterranean diet helps keep telomeres longer only in people with certain gene variants — in everyone else, it has no effect on the telomeres. Your report shows which group you belong to. This refers only to the telomeres, not to other effects of the diet — and it is a clear example that the same lifestyle advice does not work the same way for everyone.' },
-          { q: 'Which nutrients support telomeres?', a: 'Vitamin D3, Omega-3, Vitamin E, Resveratrol and Ginkgo. When the genetic protection system works less well, increasing these nutrients — for example by eating more foods that contain them — can help slow telomere shortening. They cannot reverse it.' },
+          { q: 'Which nutrients are linked with telomeres?', a: 'Studies link vitamin D3, omega-3, vitamin E, resveratrol and ginkgo with telomere maintenance. If your genetic protective system works less well, you can eat more foods rich in vitamin D, omega-3 fatty acids and vitamin E. Shortening cannot be reversed.' },
           { q: 'Can I influence free radicals?', a: 'Yes, to a degree. Free radicals continuously damage our cells and are one of the reasons we age. Antioxidants help counter this; they are found, for example, in foods rich in Vitamin C and Vitamin E or in polyphenols from berries and tea. An antioxidant-rich diet can therefore support healthy aging.' },
         ],
       },
       {
         title: 'Influence & expectations',
         items: [
-          { q: 'How quickly will I see results from anti-aging measures?', a: 'Not overnight. The recommended measures cannot make telomeres grow back — they help slow down their shortening, so the benefit builds up gradually over many years. Note that the genetic analysis shows your predisposition, not the current length of your telomeres, so the analysis result itself does not change through these measures.' },
-          { q: 'What practical use does this knowledge give me?', a: 'You know how well your genes maintain your telomeres — and whether a Mediterranean diet helps you in this respect. If telomere maintenance is impaired, you can respond deliberately by increasing Vitamin D3, Omega-3, Vitamin E, Resveratrol and Ginkgo, for example through foods that contain them. A generally healthy lifestyle with an antioxidant-rich diet, regular exercise and enough sleep is also sensible.' },
+          { q: 'How quickly will I see results from the recommended measures?', a: 'Not overnight. The recommended measures cannot make telomeres grow back; any benefit builds up over many years. Note that the genetic analysis shows your predisposition, not the current length of your telomeres, so the analysis result itself does not change through these measures.' },
+          { q: 'What practical use does this knowledge give me?', a: 'You know how well your genes maintain your telomeres — and whether a Mediterranean diet helps you in this respect. If telomere maintenance is impaired, you can eat more foods rich in vitamin D, omega-3 fatty acids and vitamin E. A generally healthy lifestyle with an antioxidant-rich diet, regular exercise and enough sleep is also sensible.' },
         ],
       },
     ],
@@ -1587,10 +1587,10 @@ export const COURSES_EN = [
         title: 'Practical questions',
         items: [
           { q: 'Do I have to take the pills at fixed times?', a: 'We recommend a consistent time of day (e.g. with breakfast) to keep blood levels stable. You don\'t have to watch the minute — a rough routine is enough. The most important thing is taking them regularly at all.' },
-          { q: 'How fast will I notice an effect?', a: 'It varies by nutrient. Some effects (e.g. better energy with B-vitamins) appear within days to weeks; others (e.g. bone metabolism with Vitamin D) develop over months. Personalized supplementation is not a fast-acting medication — it corrects long-term nutrient gaps.' },
+          { q: 'How fast will I notice an effect?', a: 'It varies by nutrient. Examples: vitamin B12 contributes to the reduction of tiredness and fatigue; vitamin D contributes to the maintenance of normal bones. Food supplements do not work like a medicine — they complement the diet.' },
           { q: 'Do I need supplementation forever?', a: 'For genetically caused metabolic weaknesses yes, because the predisposition lasts a lifetime. Lifestyle-driven needs (e.g. higher need during stress, exercise, illness) can change. The analysis also shows you where your genetics produce a permanently elevated need and where lifestyle adjustment alone is sufficient.' },
           { q: 'Can I combine supplementation with medications?', a: 'Generally yes — all nutrients are dosed in food-typical amounts. With chronic disease or long-term medication you should discuss this with your physician, because individual nutrients (e.g. Vitamin K, iron) can interact with certain drugs.' },
-          { q: 'How does personalized cost compare to drugstore multivitamins?', a: 'Significantly more per day — typically 3-5× the cheapest drugstore products. In return you get a genetically tailored composition that probably actually gets absorbed instead of being largely excreted unused. The "per mg of vitamin" comparison is misleading; "per mg that actually reaches the blood" is more meaningful.' },
+          { q: 'How does personalized cost compare to drugstore multivitamins?', a: 'Per day, the personalized version costs more than simple multivitamin products. In return, selection and dosage are tailored to your gene analysis and lifestyle, and the microtransporters release the nutrients at staggered times.' },
         ],
       },
     ],
@@ -1659,7 +1659,7 @@ export const COURSES_EN = [
         q: 'Which statement about genetic UV sensitivity (e.g. MC1R) is correct?',
         options: [
           'Genetic variants do not influence UV sensitivity — only skin type matters',
-          'Carriers of unfavourable variants burn more easily and have a higher risk of UV-related skin aging and skin cancer — strict UV protection is even more important',
+          'Carriers of unfavourable variants burn more easily and show stronger UV-related skin aging (photoaging) — strict UV protection is even more important',
           'At high genetic UV sensitivity, one should avoid sun completely, even in the shade',
           'Sunscreen works only for people with "normal" genes',
         ],
@@ -1736,7 +1736,7 @@ export const COURSES_EN = [
         title: 'Genetics & Skin Aging — Understanding the result',
         items: [
           { q: 'What does an "active" MMP1 variant mean?', a: 'MMP1 (Matrix-Metalloproteinase 1) breaks down collagen in the skin. A genetically highly active variant leads to faster collagen breakdown — the skin loses firmness earlier, wrinkles form faster. Countermeasures: consistent UV protection, antioxidants, no smoking, retinoids or peptide-based care.' },
-          { q: 'What does MC1R tell me about UV sensitivity?', a: 'MC1R controls production of Eumelanin (dark pigment, protective against UV) vs. Pheomelanin (reddish pigment, generates free radicals under UV). Unfavourable variants: faster sunburn, higher risk of UV damage and skin cancer — stricter sunscreen discipline needed.' },
+          { q: 'What does MC1R tell me about UV sensitivity?', a: 'MC1R controls production of Eumelanin (dark pigment, protective against UV) vs. Pheomelanin (reddish pigment, generates free radicals under UV). Unfavourable variants: faster sunburn, stronger photoaging of the skin — stricter sunscreen discipline needed.' },
           { q: 'Why is FLG (filaggrin) important for my skincare?', a: 'FLG produces filaggrin, a protein that holds the natural skin barrier together and binds moisture. With genetically reduced FLG activity, the skin barrier is weaker — moisture is lost faster, irritants penetrate more easily. Recommendation: barrier-strengthening care (Ceramides, Cholesterol, free fatty acids), mild cleansers, no drying surfactants.' },
           { q: 'Does this really affect my appearance measurably?', a: 'Yes, but not overnight. Genetic weaknesses compound over years. Two people of the same age can differ by 10-15 years biologically — depending on how well they compensate genetic weak spots with lifestyle.' },
         ],
@@ -1777,7 +1777,7 @@ export const COURSES_EN = [
       'CYP enzymes & drug metabolism',
       'Fast and slow metabolizers',
       'Clinically relevant active substances (antidepressants, analgesics, anticoagulants, …)',
-      'Practical relevance in consultation',
+      'Practical relevance for prescribing physicians',
     ],
     thumbnail: T(24),
     youtubeId: 'SgzAZyUIx-0',
@@ -1786,10 +1786,10 @@ export const COURSES_EN = [
       'Why do medications work differently in different people?',
       'Which CYP enzymes are responsible for breaking down the most important active substances?',
       'What does "fast" vs. "slow metabolizer" mean in clinical everyday life?',
-      'Which medications are particularly relevant for pharmacogenetic consultation?',
+      'Which medications are particularly relevant for physicians\' prescribing decisions?',
     ],
     postVideoText:
-      'With this background you can discuss the relevance of pharmacogenetic testing with clients and physicians — explaining why a dose that works for most can be too strong or too weak for a given individual depending on their CYP genotype.',
+      'With this background you understand why physicians may use pharmacogenetic testing — a dose that works for most people can be too strong or too weak for an individual depending on their CYP genotype. If clients ask about it, refer them to their physician. Pharmacogenetic analyses are offered exclusively through physicians; this training is professional information and does not replace medical advice.',
     questions: [
       {
         q: 'Why does the same medication work differently in different people?',
@@ -1832,7 +1832,7 @@ export const COURSES_EN = [
         correct: 1,
       },
       {
-        q: 'Why is pharmacogenetics important in consultation?',
+        q: 'Why is pharmacogenetics important in medical care?',
         options: [
           'It is mainly a sales topic',
           'About 7% of all medications have clinically actionable pharmacogenetic guidelines — knowing the genotype before prescribing can prevent severe side effects and treatment failure',
@@ -1891,11 +1891,11 @@ export const COURSES_EN = [
         ],
         bullets: [
           { tone: 'safe', text: '"We test blood."' },
-          { tone: 'safe', text: '"We diagnose deficiencies."' },
+          { tone: 'safe', text: '"Our partner laboratory measures your blood values; the results are assessed by a doctor."' },
           { tone: 'safe', text: '"We give micronutrient and nutrition recommendations."' },
           { tone: 'safe', text: '"We personalize supplements based on the result."' },
           { tone: 'safe', text: 'Symptoms of a deficiency (e.g. fatigue from iron deficiency) — best with a source citation (e.g. a medical association).' },
-          { tone: 'safe', text: 'Testimonial: "I was often tired, the test identified iron deficiency, and it helped me" — permitted.' },
+          { tone: 'caveat', text: 'Testimonials on blood tests only without promises of healing or statements about diseases, and only after case-by-case review.' },
         ],
       },
       {
@@ -1908,7 +1908,7 @@ export const COURSES_EN = [
           { tone: 'safe', text: 'Determination of the genetic properties — backed by current science.' },
           { tone: 'critical', text: 'Concrete nutrition, exercise or supplement recommendations derived from the genes — without specific randomized trials on that exact recommendation.' },
         ],
-        callout: { tone: 'safe', text: 'Example: "Gene test proves that folic acid is ineffective for you" — permitted (study-backed).' },
+        callout: { tone: 'safe', text: 'Example: "The gene analysis shows whether your body can convert folic acid well into its active form." — uncritical.' },
       },
       {
         title: 'The safe variant — genetic properties only',
@@ -1943,8 +1943,8 @@ export const COURSES_EN = [
         bullets: [
           { tone: 'safe', text: 'Personalization based on lifestyle and blood values — unproblematic.' },
           { tone: 'caveat', text: 'Personalization based on genetic analysis — only with a disclaimer (see "bolder variant").' },
-          { tone: 'safe', text: 'Example health claim: "Contributes to normal skin" (with zinc), "Contributes to a normal immune system".' },
-          { tone: 'safe', text: 'Example testimonial: "I take it because I have dry skin" — combined with the zinc Health Claim — permitted.' },
+          { tone: 'safe', text: 'Example health claims, only in the exact wording of the EU list and only if the product provides at least 15% of the nutrient reference value (NRV) per daily dose: "Zinc contributes to the maintenance of normal skin." / "Zinc contributes to the normal function of the immune system."' },
+          { tone: 'critical', text: 'NOT permitted: testimonial "I take it because I have dry skin" combined with the zinc health claim — do not link customer statements to health claims.' },
           { tone: 'critical', text: 'NOT permitted: any claim whose Health Claim has not been approved by EFSA (e.g. "heals your disease").' },
         ],
       },

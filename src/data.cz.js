@@ -140,7 +140,7 @@ const TXT = {
     "q": "Proč personalizovaný program překonává standardní doporučení?",
     "options": [
      "Používá dražší suroviny",
-     "Pilotní studie Novogenia (139 účastníků) prokázala 2,4× vyšší úspěšnost hubnutí s genetickou personalizací oproti standardnímu poradenství — protože strategie skutečně odpovídá biologii daného člověka",
+     "Interní studie Novogenia s 302 osobami (genetická vs. standardní dieta) ukázala při genetické dietě 2,4× vyšší úbytek hmotnosti",
      "Funguje to jen na papíře",
      "Je totožný se standardním doporučením"
     ],
@@ -351,10 +351,10 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Které dietní doporučení je vhodné pro klienta s defektem HFE (riziko přetížení železem)?",
+    "q": "Které dietní doporučení je vhodné pro klienta, u něhož zpráva ukazuje nižší potřebu železa (HFE)?",
     "options": [
      "Zvýšit příjem železa — potřebují ho víc",
-     "Snížit zátěž železem ze stravy: méně červeného masa, žádné doplňky obohacené železem, pokud není deficit potvrzen krevním testem. Nadbytek železa se hromadí a po desetiletí poškozuje játra, srdce a klouby",
+     "Příjem železa dále nezvyšovat: méně červeného masa, žádné doplňky obohacené železem, pokud lékař nezjistil nedostatek",
      "Preventivně užívat doplňky železa denně",
      "Není potřeba žádná změna"
     ],
@@ -629,7 +629,7 @@ const TXT = {
  },
  "bo-sci-en": {
   "topic": "Vědecký základ",
-  "description": "Proč na lidi stejný stres působí různě — a co má gen COMT společného s rizikem vyhoření.",
+  "description": "Proč na lidi stejný stres působí různě — a co má gen COMT společného se zvládáním stresu.",
   "longDescription": "V tomto školení vysvětluje Dr. Daniel Wallerstorfer, proč masivní a nepřetržitý stres u některých lidí vede k vyhoření a u jiných ne. Dozvíte se, na které tři genetické vlastnosti se analýza zaměřuje, jak gen COMT odbourává dopamin po vzrušujících nebo stresujících situacích, proč je asi 15 % lidí ke stresu obzvlášť náchylných — a proč je správný životní styl o to důležitější, čím méně příznivé jsou geny.",
   "bullets": [
    "Tři genetické vlastnosti: výkon ve stresu, emoční odolnost, impulzivita",
@@ -641,7 +641,7 @@ const TXT = {
   "introQuestions": [
    "Který gen je klíčový pro individuální zpracování stresu?",
    "Proč na lidi stejný stres působí různě — a co s tím má společného COMT?",
-   "Jak geny ovlivňují riziko vyhoření?",
+   "Jak geny ovlivňují to, jak zvládáme stres?",
    "Která opatření v životním stylu pomáhají — a proč jsou při nepříznivém profilu důležitější?"
   ],
   "postVideoText": "S tímto vědeckým pozadím můžete se svými klienty diskutovat o zprávě o vyhoření na pevném podkladu a odvozovat individuální strategie zvládání stresu.",
@@ -732,7 +732,7 @@ const TXT = {
      "K závislosti na kofeinu",
      "K poruchám spánku",
      "K chuti na sladké",
-     "K hazardním hrám"
+     "K vyhledávání vzrušení"
     ],
     "correct": 3
    },
@@ -740,7 +740,7 @@ const TXT = {
     "q": "Co ve zprávě znamená červená zóna u vlastnosti týkající se stresu?",
     "options": [
      "Velmi příznivá genetika — není třeba nic dělat",
-     "Nepříznivá predispozice — vyšší riziko vyhoření",
+     "Nepříznivá predispozice — vyšší citlivost na stres",
      "Dotyčný už vyhoření má a potřebuje léčbu",
      "Standardní doporučení, které platí pro všechny"
     ],
@@ -789,7 +789,7 @@ const TXT = {
    {
     "q": "Maria má jednu funkční a jednu defektní kopii genu COMT. Jak vypadá její výsledek?",
     "options": [
-     "Všechny tři vlastnosti v červené zóně — je silně náchylná k vyhoření",
+     "Všechny tři vlastnosti v červené zóně — je velmi citlivá na stres",
      "Všechny tři vlastnosti v zelené zóně — vyhoření pro ni není problém",
      "Výkon ve stresu v červené zóně, ostatní dvě vlastnosti v zelené",
      "Všechny tři vlastnosti uprostřed — středně dobrá odolnost vůči stresu"
@@ -820,8 +820,8 @@ const TXT = {
     "q": "Co znamená, když je klient u všech tří vlastností v zelené zóně?",
     "options": [
      "Vyhoření je u tohoto klienta vyloučené, ať žije jakkoli",
-     "Klient je k vyhoření obzvlášť náchylný",
-     "Vyhoření pro tohoto klienta nepředstavuje tak velké nebezpečí",
+     "Klient je obzvlášť citlivý na stres",
+     "Tento klient zvládá stres spíše dobře",
      "Analýzu nebylo možné vyhodnotit"
     ],
     "correct": 2
@@ -835,14 +835,14 @@ const TXT = {
   "bullets": [
    "Co je gen COMT?",
    "Které tři vlastnosti týkající se stresu zpráva ukazuje?",
-   "Jak je riziko vyhoření genetické?",
+   "Jak je citlivost na stres genetická?",
    "Jaká doporučení z profilu vyplývají?"
   ]
  },
  "ba-sci-en": {
   "topic": "Vědecký základ",
   "description": "Proč se telomery zkracují, jak gen telomerázy ovlivňuje biologický věk — a které živiny mohou pomoci.",
-  "longDescription": "Toto školení vysvětluje vědecký základ analýzy biologického věku. Dozvíte se, proč se telomery — ochranné konce našich chromozomů — s každým buněčným dělením zkracují, co se stane s buňkou, když se spotřebují, jak gen telomerázy tento proces ovlivňuje a které živiny mohou podpořit udržování telomer, když geny fungují hůře.",
+  "longDescription": "Toto školení vysvětluje vědecký základ analýzy biologického věku. Dozvíte se, proč se telomery — ochranné konce našich chromozomů — s každým buněčným dělením zkracují, co se stane s buňkou, když se spotřebují, jak gen telomerázy tento proces ovlivňuje a které živiny studie spojují s udržováním telomer.",
   "bullets": [
    "Telomery a stárnutí buněk — základy",
    "Senescence: když buňky přejdou do spánkového režimu",
@@ -854,7 +854,7 @@ const TXT = {
    "Co jsou telomery a proč se s každým buněčným dělením zkracují?",
    "Co se stane s buňkou, když se její telomery spotřebují?",
    "Co dělá gen telomerázy?",
-   "Které živiny podporují udržování telomer — a proč středomořská strava nefunguje u každého?"
+   "Které živiny studie spojují s udržováním telomer — a proč středomořská strava nefunguje u každého?"
   ],
   "postVideoText": "S tímto vědeckým základem můžete se svými klienty diskutovat o analýze biologického věku na pevném podkladu.",
   "questions": [
@@ -909,7 +909,7 @@ const TXT = {
     "correct": 2
    },
    {
-    "q": "Které živiny mohou podpořit udržování telomer, když ochranný gen funguje hůře?",
+    "q": "Které živiny studie spojují s udržováním telomer?",
     "options": [
      "Vitamin C, zinek, selen, železo a hořčík",
      "Vitamin D3, omega-3, vitamin E, resveratrol a ginkgo",
@@ -953,7 +953,7 @@ const TXT = {
     "options": [
      "Ignorovat ho — telomery se stejně nijak ovlivnit nedají",
      "Více se hýbat — na výživě v tomto případě nezáleží",
-     "Zvýšit příjem podpůrných živin a zpomalit zkracování telomer",
+     "Cílená opatření v životním stylu a strava se vhodnými živinami na podporu slabší genetické ochranné funkce",
      "Přejít na středomořskou stravu — funguje u každého"
     ],
     "correct": 2
@@ -1043,7 +1043,7 @@ const TXT = {
  "ba-faq-en": {
   "topic": "Často kladené otázky",
   "description": "Odpovědi na typické otázky klientů o analýze biologického věku.",
-  "longDescription": "Soubor nejdůležitějších otázek o analýze telomer a anti-agingu. S rozbalovacími odpověďmi pro samostudium.",
+  "longDescription": "Soubor nejdůležitějších otázek o analýze telomer a biologickém věku. S rozbalovacími odpověďmi pro samostudium.",
   "bullets": [
    "Co jsou telomery a proč stárneme?",
    "Jak moje genetika ovlivňuje biologický věk?",
@@ -1186,7 +1186,7 @@ const TXT = {
     "q": "Které tvrzení o genetické citlivosti na UV (např. MC1R) je správné?",
     "options": [
      "Genetické varianty citlivost na UV neovlivňují — záleží jen na typu pleti",
-     "Nositelé nepříznivých variant se snáze spálí a mají vyšší riziko UV podmíněného stárnutí pleti a rakoviny kůže — důsledná UV ochrana je pro ně ještě důležitější",
+     "Nositelé nepříznivých variant se snáze spálí a jejich pleť výrazněji stárne vlivem UV záření — důsledná UV ochrana je pro ně ještě důležitější",
      "Při vysoké genetické citlivosti na UV by se měl člověk slunci vyhýbat zcela, i ve stínu",
      "Opalovací krém funguje jen u lidí s „normálními“ geny"
     ],
@@ -1243,16 +1243,16 @@ const TXT = {
    "Enzymy CYP a metabolismus léků",
    "Rychlí a pomalí metabolizéři",
    "Klinicky relevantní účinné látky (antidepresiva, analgetika, antikoagulancia, …)",
-   "Praktický význam v poradenství"
+   "Praktický význam pro předepisující lékaře"
   ],
   "introQuestionsHeader": "Toto školení odpovídá na otázky:",
   "introQuestions": [
    "Proč léky působí na různé lidi různě?",
    "Které enzymy CYP odpovídají za odbourávání nejdůležitějších účinných látek?",
    "Co znamená „rychlý“ oproti „pomalému metabolizéru“ v klinické praxi?",
-   "Které léky jsou pro farmakogenetické poradenství obzvlášť relevantní?"
+   "Které léky jsou obzvlášť relevantní pro rozhodování lékařů o předepisování?"
   ],
-  "postVideoText": "S tímto pozadím můžete s klienty a lékaři diskutovat o významu farmakogenetického testování — vysvětlit, proč dávka, která funguje pro většinu, může být pro daného jedince příliš silná nebo příliš slabá podle jeho genotypu CYP.",
+  "postVideoText": "S tímto pozadím chápete, proč lékaři mohou využívat farmakogenetické testování — dávka, která funguje pro většinu, může být pro daného jedince podle jeho genotypu CYP příliš silná nebo příliš slabá. Pokud se klienti zeptají, odkažte je na jejich lékaře. Farmakogenetické analýzy se nabízejí výhradně prostřednictvím lékařů; toto školení je odbornou informací a nenahrazuje lékařskou konzultaci.",
   "questions": [
    {
     "q": "Proč stejný lék působí na různé lidi různě?",
@@ -1295,7 +1295,7 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Proč je farmakogenetika v poradenství důležitá?",
+    "q": "Proč je farmakogenetika důležitá v lékařské péči?",
     "options": [
      "Je to hlavně prodejní téma",
      "Asi 7 % všech léků má klinicky využitelná farmakogenetická doporučení — znalost genotypu před předepsáním může zabránit závažným nežádoucím účinkům a selhání léčby",
@@ -1495,7 +1495,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Co je Blokátor kalorií?",
-      "a": "Blokátor kalorií je personalizovaný produkt pro hubnutí ve formě pelet mikrotransportérů. Obsahuje individuální poměr blokátorů tuků a sacharidů, sestavený podle tvé DNA analýzy. Ve spojení se sníženým příjmem kalorií a tuků prokazatelně podporuje hubnutí — ve spojení s vyváženou stravou a životním stylem pomáhá udržet hmotnost."
+      "a": "Blokátor kalorií je doplněk stravy ve formě pelet mikrotransportérů s vlákninou Opuntia ficus-indica a fazeolaminem z bílých fazolí. Poměr složek se volí podle tvé genetické analýzy. Nenahrazuje vyváženou stravu s ohledem na příjem kalorií."
      },
      {
       "q": "Jak se Blokátor kalorií užívá?",
@@ -1503,11 +1503,11 @@ const FAQTX = {
      },
      {
       "q": "Jaké jsou účinné látky?",
-      "a": "Blokátorem tuků je Opuntia ficus-indica (OFI) — vláknina z opuncie. Tato rostlinná vláknina vytváří v trávicím traktu gelovitou matrici, která váže tuky z potravy a snižuje jejich vstřebávání. Blokátorem sacharidů je fazeolamin (z bílých fazolí), který inhibuje alfa-amylázu. Obojí je čistě rostlinného původu."
+      "a": "Blokátor kalorií obsahuje Opuntia ficus-indica (OFI), vlákninu z opuncie, a fazeolamin z bílých fazolí. Obě složky jsou čistě rostlinného původu."
      },
      {
       "q": "Je Blokátor kalorií veganský/vegetariánský?",
-      "a": "Ano. Blokátor tuků (Opuntia ficus-indica) i blokátor sacharidů (fazeolamin z bílých fazolí) jsou čistě rostlinného původu. Blokátor kalorií je vhodný pro vegetariány i vegany, je bez lepku, bez laktózy a bez umělých barviv."
+      "a": "Ano. Obě složky, vláknina Opuntia ficus-indica i fazeolamin z bílých fazolí, jsou čistě rostlinného původu. Blokátor kalorií je vhodný pro vegetariány i vegany, je bez lepku, bez laktózy a bez umělých barviv."
      }
     ]
    }
@@ -1567,11 +1567,11 @@ const FAQTX = {
     "items": [
      {
       "q": "Co pro mě znamená defekt MTHFR?",
-      "a": "MTHFR aktivuje kyselinu listovou na metylfolát — formu, kterou tvé tělo dokáže skutečně využít. Při defektu můžeš užívat běžný doplněk s velkým množstvím kyseliny listové a přesto mít funkční nedostatek. Přechod na metylfolát tento problém řeší."
+      "a": "MTHFR aktivuje kyselinu listovou na metylfolát — formu, kterou tvé tělo dokáže skutečně využít. Při defektu můžeš užívat běžný doplněk s velkým množstvím kyseliny listové a přesto mít funkční nedostatek. Metylfolát je již aktivní forma a tento krok přeměny nepotřebuje. Zda je pro tebe vhodný, je nejlepší probrat s lékařem."
      },
      {
-      "q": "Mám variantu HFE — je pro mě suplementace železa nebezpečná?",
-      "a": "Může být. Některé varianty HFE vedou během desetiletí k přetížení železem — tělo ho z potravy vstřebává příliš mnoho a ukládá ho v játrech, srdci a kloubech. Doplňky se železem proto užívej jen tehdy, když krevní testy prokáží skutečný nedostatek."
+      "q": "Mám variantu HFE — mám užívat doplňky železa?",
+      "a": "Tvůj výsledek HFE ukazuje nižší potřebu železa. Doplňky železa proto neužívej na vlastní pěst — jen tehdy, když lékař v krevním testu zjistí nedostatek."
      },
      {
       "q": "Citlivost na sůl (ACE) — znamená to, že se musím soli vzdát?",
@@ -1626,7 +1626,7 @@ const FAQTX = {
      },
      {
       "q": "Proč mi zpráva doporučuje antioxidanty?",
-      "a": "Intenzivní pohyb produkuje velké množství volných radikálů. Pokud jsou tvé antioxidační geny (SOD2, CAT, GPX) slabé, regenerace je pomalejší a hromadí se mikrozáněty. Vitamin C, vitamin E, polyfenoly a selen tyto obranné systémy přímo podporují."
+      "a": "Intenzivní pohyb produkuje velké množství volných radikálů. Pokud jsou tvé antioxidační geny (SOD2, CAT, GPX) slabé, regenerace je pomalejší a hromadí se mikrozáněty. Vitamin C přispívá k ochraně buněk před oxidativním stresem. Totéž platí pro vitamin E a selen."
      },
      {
       "q": "Co je „deload“ a jak často ho mám zařazovat?",
@@ -1669,11 +1669,11 @@ const FAQTX = {
     "items": [
      {
       "q": "Co je gen COMT a proč je důležitý?",
-      "a": "COMT (katechol-O-metyltransferáza) odbourává signální látku dopamin, jakmile vzrušující nebo stresující situace skončí, aby se mozek mohl vrátit do výchozího stavu. Pokud gen funguje špatně, dopamin se odbourává mnohem pomaleji: mozek zůstává déle ve vzrušeném stavu, a když přijde nový stres dřív, než se do výchozího stavu vrátí, může dojít k přetížení. Pomalejší odbourávání má ale i své výhody — pozitivní pocity se prožívají intenzivněji a lidé bývají zvídavější, zároveň však mají větší sklon k hazardním hrám. Studie popisují běžnou variantu (Val158Met), u níž se rychlá a pomalá forma zřetelně liší aktivitou enzymu."
+      "a": "COMT (katechol-O-metyltransferáza) odbourává signální látku dopamin, jakmile vzrušující nebo stresující situace skončí, aby se mozek mohl vrátit do výchozího stavu. Pokud gen funguje špatně, dopamin se odbourává mnohem pomaleji: mozek zůstává déle ve vzrušeném stavu, a když přijde nový stres dřív, než se do výchozího stavu vrátí, může dojít k přetížení. Pomalejší odbourávání má ale i své výhody — pozitivní pocity se prožívají intenzivněji a lidé bývají zvídavější, zároveň však silněji reagují na odměny a vzrušení. Studie popisují běžnou variantu (Val158Met), u níž se rychlá a pomalá forma zřetelně liší aktivitou enzymu."
      },
      {
       "q": "Které tři vlastnosti analýza vyhoření vyhodnocuje?",
-      "a": "Výkon ve stresu (jak dobře podáváš výkon ve stresových situacích), emoční odolnost (jak silně tě zatěžují negativní pocity) a impulzivitu. Každá vlastnost je zobrazena na škále od červené přes střed po zelenou: zelená je příznivá, červená znamená vyšší riziko vyhoření."
+      "a": "Výkon ve stresu (jak dobře podáváš výkon ve stresových situacích), emoční odolnost (jak silně tě zatěžují negativní pocity) a impulzivitu. Každá vlastnost je zobrazena na škále od červené přes střed po zelenou: zelená je příznivá, červená znamená vyšší citlivost na stres."
      },
      {
       "q": "Kolik lidí je geneticky obzvlášť náchylných ke stresu?",
@@ -1690,7 +1690,7 @@ const FAQTX = {
      },
      {
       "q": "Všechny tři vlastnosti mám v zelené zóně — musím na vyhoření přesto myslet?",
-      "a": "Pro tebe vyhoření nepředstavuje tak velké nebezpečí — riziko ale není nulové: masivní, nepřetržitý stres si přesto může časem vybrat svou daň. Fáze zotavení a vyvážený životní styl zůstávají důležité."
+      "a": "Stres zvládáš spíše dobře — masivní, nepřetržitý stres si ale přesto může časem vybrat svou daň. Fáze zotavení a vyvážený životní styl zůstávají důležité."
      },
      {
       "q": "Co pomáhá všem, bez ohledu na genotyp?",
@@ -1703,7 +1703,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Ve zprávě se mi objevila „červená zóna“. Mám si dělat starosti?",
-      "a": "Důvod k panice to není, ale je to důvod jednat. Červená zóna označuje nepříznivou genetickou predispozici v jedné konkrétní oblasti — vyšší riziko vyhoření, nikoli diagnózu. Čím víc tvých vlastností leží v červené zóně, tím důležitější je přizpůsobit životní styl tak, aby předcházel stresu. I s výsledky uprostřed zůstává život s nízkou mírou stresu důležitý."
+      "a": "Důvod k panice to není, ale je to důvod jednat. Červená zóna označuje nepříznivou genetickou predispozici v jedné konkrétní oblasti — vyšší citlivost na stres, nikoli diagnózu. Čím víc tvých vlastností leží v červené zóně, tím důležitější je přizpůsobit životní styl tak, aby předcházel stresu. I s výsledky uprostřed zůstává život s nízkou mírou stresu důležitý."
      },
      {
       "q": "Kde najdu konkrétní doporučení pro svůj genotyp?",
@@ -1749,8 +1749,8 @@ const FAQTX = {
       "a": "Překvapivě ne. Studie ukázaly, že středomořská strava pomáhá udržet telomery delší pouze u lidí s určitými genovými variantami — u všech ostatních na telomery nemá žádný účinek. Tvá zpráva ukazuje, do které skupiny patříš. Týká se to pouze telomer, nikoli jiných účinků této stravy — a je to jasný příklad toho, že stejné doporučení ohledně životního stylu nefunguje u každého stejně."
      },
      {
-      "q": "Které živiny telomery podporují?",
-      "a": "Vitamin D3, omega-3, vitamin E, resveratrol a ginkgo. Když genetický ochranný systém funguje hůře, může zvýšený příjem těchto živin — například tím, že budeš jíst více potravin, které je obsahují — pomoci zkracování telomer zpomalit. Zvrátit ho však tyto živiny nedokážou."
+      "q": "Které živiny jsou spojovány s telomerami?",
+      "a": "Studie spojují vitamin D3, omega-3, vitamin E, resveratrol a ginkgo s udržováním telomer. Když tvůj genetický ochranný systém funguje hůře, můžeš jíst více potravin bohatých na vitamin D, omega-3 mastné kyseliny a vitamin E. Zkracování telomer nelze zvrátit."
      },
      {
       "q": "Můžu volné radikály ovlivnit?",
@@ -1762,12 +1762,12 @@ const FAQTX = {
     "title": "Vliv a očekávání",
     "items": [
      {
-      "q": "Jak rychle uvidím výsledky anti-aging opatření?",
-      "a": "Ne ze dne na den. Doporučená opatření nedokážou telomery znovu prodloužit — pomáhají zpomalit jejich zkracování, takže se přínos buduje postupně během mnoha let. Měj na paměti, že genetická analýza ukazuje tvou predispozici, ne aktuální délku tvých telomer — samotný výsledek analýzy se tedy těmito opatřeními nezmění."
+      "q": "Jak rychle uvidím výsledky doporučených opatření?",
+      "a": "Ne ze dne na den. Doporučená opatření nedokážou telomery znovu prodloužit; případný přínos se buduje během mnoha let. Měj na paměti, že genetická analýza ukazuje tvou predispozici, ne aktuální délku tvých telomer — samotný výsledek analýzy se tedy těmito opatřeními nezmění."
      },
      {
       "q": "Jaký praktický užitek mi tato znalost přináší?",
-      "a": "Víš, jak dobře tvé geny udržují telomery — a zda ti v tomto ohledu pomáhá středomořská strava. Pokud je udržování telomer oslabené, můžeš cíleně reagovat tím, že zvýšíš příjem těchto živin: vitamin D3, omega-3, vitamin E, resveratrol a ginkgo — například prostřednictvím potravin, které je obsahují. Rozumný je také celkově zdravý životní styl se stravou bohatou na antioxidanty, pravidelným pohybem a dostatkem spánku."
+      "a": "Víš, jak dobře tvé geny udržují telomery — a zda ti v tomto ohledu pomáhá středomořská strava. Pokud je udržování telomer oslabené, můžeš jíst více potravin bohatých na vitamin D, omega-3 mastné kyseliny a vitamin E. Rozumný je také celkově zdravý životní styl se stravou bohatou na antioxidanty, pravidelným pohybem a dostatkem spánku."
      }
     ]
    }
@@ -1818,7 +1818,7 @@ const FAQTX = {
      },
      {
       "q": "Jak rychle pocítím účinek?",
-      "a": "Liší se to podle živiny. Některé účinky (např. lepší energie u vitaminů skupiny B) se dostaví během dní až týdnů; jiné (např. kostní metabolismus u vitaminu D) se rozvíjejí měsíce. Personalizovaná suplementace není rychle působící lék — vyrovnává dlouhodobé mezery v příjmu živin."
+      "a": "Liší se to podle živiny. Příklady: vitamin B12 přispívá ke snížení míry únavy a vyčerpání; vitamin D přispívá k udržení normálního stavu kostí. Doplňky stravy nepůsobí jako lék — doplňují stravu."
      },
      {
       "q": "Budu suplementaci potřebovat navždy?",
@@ -1830,7 +1830,7 @@ const FAQTX = {
      },
      {
       "q": "Jak vychází cena personalizované suplementace ve srovnání s multivitaminy z drogerie?",
-      "a": "Na den výrazně dráž — obvykle 3–5× více než nejlevnější drogeriové produkty. Na oplátku dostaneš geneticky přizpůsobené složení, které se pravděpodobně skutečně vstřebá, místo aby se z velké části nevyužité vyloučilo. Srovnání „na miligram vitaminu“ je zavádějící; smysluplnější je „na miligram, který se opravdu dostane do krve“."
+      "a": "Na den stojí personalizovaná varianta víc než jednoduché multivitaminové přípravky. Za to jsou výběr a dávkování přizpůsobeny tvé genetické analýze a životnímu stylu a mikrotransportéry uvolňují živiny postupně."
      }
     ]
    }
@@ -1868,7 +1868,7 @@ const FAQTX = {
      },
      {
       "q": "Co mi MC1R prozradí o citlivosti na UV?",
-      "a": "MC1R řídí tvorbu eumelaninu (tmavý pigment, chrání před UV) oproti feomelaninu (načervenalý pigment, který pod UV zářením vytváří volné radikály). Nepříznivé varianty: rychlejší spálení, vyšší riziko poškození UV zářením a rakoviny kůže — je potřeba přísnější disciplína při používání opalovacího krému."
+      "a": "MC1R řídí tvorbu eumelaninu (tmavý pigment, chrání před UV) oproti feomelaninu (načervenalý pigment, který pod UV zářením vytváří volné radikály). Nepříznivé varianty: rychlejší spálení, výraznější stárnutí pleti vlivem světla — je potřeba přísnější disciplína při používání opalovacího krému."
      },
      {
       "q": "Proč je FLG (filagrin) důležitý pro moji péči o pleť?",
@@ -1920,7 +1920,7 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "„Diagnostikujeme nedostatky.“"
+      "text": "„Naše partnerská laboratoř měří tvé krevní hodnoty; výsledky hodnotí lékař.“"
      },
      {
       "tone": "safe",
@@ -1935,8 +1935,8 @@ const FAQTX = {
       "text": "Příznaky nedostatku (např. únava při nedostatku železa) — nejlépe s uvedením zdroje (např. odborné lékařské společnosti)."
      },
      {
-      "tone": "safe",
-      "text": "Reference: „Býval jsem často unavený, test odhalil nedostatek železa a pomohlo mi to“ — povoleno."
+      "tone": "caveat",
+      "text": "Reference ke krevním testům jen bez slibů vyléčení či tvrzení o nemocech a až po individuálním posouzení."
      }
     ]
    },
@@ -1958,7 +1958,7 @@ const FAQTX = {
     ],
     "callout": {
      "tone": "safe",
-     "text": "Příklad: „Genový test dokazuje, že kyselina listová je pro tebe neúčinná“ — povoleno (podloženo studiemi)."
+     "text": "Příklad: „Genetická analýza ukáže, zda tvé tělo dokáže dobře přeměnit kyselinu listovou na její aktivní formu.“ — bez rizika."
     }
    },
    {
@@ -2026,11 +2026,11 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "Příklad zdravotního tvrzení: „Přispívá k udržení normálního stavu pokožky“ (u zinku), „Přispívá k normální funkci imunitního systému“."
+      "text": "Příklad zdravotních tvrzení, jen v přesném znění seznamu EU a jen pokud produkt obsahuje v denní dávce alespoň 15 % referenční hodnoty příjmu (NRV): „Zinek přispívá k udržení normálního stavu pokožky.“ / „Zinek přispívá k normální funkci imunitního systému.“"
      },
      {
-      "tone": "safe",
-      "text": "Příklad reference: „Užívám to, protože mám suchou pokožku“ — v kombinaci se zdravotním tvrzením pro zinek — povoleno."
+      "tone": "critical",
+      "text": "NEPOVOLENO: reference „Užívám to, protože mám suchou pokožku“ v kombinaci se zdravotním tvrzením pro zinek — výroky zákazníků nespojuj se zdravotními tvrzeními."
      },
      {
       "tone": "critical",

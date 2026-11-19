@@ -140,7 +140,7 @@ const TXT = {
     "q": "Waarom presteert een gepersonaliseerd programma beter dan standaardadvies?",
     "options": [
      "Het gebruikt duurdere ingrediënten",
-     "Een pilotstudie van Novogenia (139 deelnemers) liet een 2,4× hoger succes bij gewichtsverlies zien met genetische personalisatie ten opzichte van standaardbegeleiding — omdat de strategie daadwerkelijk aansluit op de onderliggende biologie",
+     "De interne studie van Novogenia met 302 personen (genbaseerd vs. standaarddieet) liet met het genbaseerde dieet een 2,4× groter gewichtsverlies zien",
      "Het werkt alleen op papier",
      "Het is identiek aan standaardadvies"
     ],
@@ -352,10 +352,10 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Welke voedingsaanbeveling past bij een cliënt met een HFE-defect (risico op ijzerstapeling)?",
+    "q": "Welke voedingsaanbeveling past bij een cliënt bij wie het rapport een lagere ijzerbehoefte laat zien (HFE)?",
     "options": [
      "Verhoog de ijzerinname — ze hebben meer nodig",
-     "Verminder de ijzerbelasting uit voeding: minder rood vlees, geen met ijzer verrijkte supplementen tenzij er via een bloedtest een tekort is vastgesteld. Overtollig ijzer stapelt zich op en beschadigt over decennia de lever, het hart en de gewrichten",
+     "De ijzerinname niet extra verhogen: minder rood vlees, geen met ijzer verrijkte supplementen zonder door een arts vastgesteld tekort",
      "Neem uit voorzorg dagelijks ijzersupplementen",
      "Geen verandering nodig"
     ],
@@ -632,7 +632,7 @@ const TXT = {
  },
  "bo-sci-en": {
   "topic": "Wetenschappelijke basis",
-  "description": "Waarom dezelfde stress mensen verschillend raakt — en wat het COMT-gen met het burn-outrisico te maken heeft.",
+  "description": "Waarom dezelfde stress mensen verschillend raakt — en wat het COMT-gen te maken heeft met hoe we met stress omgaan.",
   "longDescription": "In deze training legt dr. Daniel Wallerstorfer uit waarom zware, aanhoudende stress bij sommige mensen tot een burn-out leidt en bij anderen niet. Je leert naar welke drie genetische eigenschappen de analyse kijkt, hoe het COMT-gen dopamine afbreekt na spannende of stressvolle situaties, waarom ongeveer 15% van de mensen bijzonder stressgevoelig is — en waarom de juiste leefstijl des te belangrijker is naarmate de genen minder gunstig zijn.",
   "bullets": [
    "Drie genetische eigenschappen: prestaties onder stress, emotionele veerkracht, impulsiviteit",
@@ -644,7 +644,7 @@ const TXT = {
   "introQuestions": [
    "Welk gen staat centraal bij de individuele stressverwerking?",
    "Waarom raakt dezelfde stress mensen verschillend — en wat heeft COMT daarmee te maken?",
-   "Hoe beïnvloeden genen het risico op een burn-out?",
+   "Hoe beïnvloeden genen de manier waarop we met stress omgaan?",
    "Welke leefstijlmaatregelen helpen — en waarom zijn ze bij een ongunstig profiel belangrijker?"
   ],
   "postVideoText": "Met deze wetenschappelijke achtergrond kun je het burn-outrapport met je cliënten op een solide basis bespreken en individuele strategieën voor stressmanagement afleiden.",
@@ -730,12 +730,12 @@ const TXT = {
     "correct": 0
    },
    {
-    "q": "Waarvoor zijn mensen met een slecht functionerend COMT-gen volgens de training ook vatbaarder?",
+    "q": "Waar neigen mensen met een slecht functionerend COMT-gen volgens de training ook meer naar?",
     "options": [
      "Cafeïneverslaving",
      "Slaapstoornissen",
      "Trek in zoetigheid",
-     "Gokken"
+     "Het zoeken naar spanning"
     ],
     "correct": 3
    },
@@ -743,7 +743,7 @@ const TXT = {
     "q": "Waar wijst de rode zone bij een stresseigenschap in het rapport op?",
     "options": [
      "Zeer gunstige genetica — er is geen actie nodig",
-     "Een ongunstige aanleg — een hoger risico op een burn-out",
+     "Een ongunstige aanleg — een hogere stressgevoeligheid",
      "De persoon heeft al een burn-out en heeft behandeling nodig",
      "Een standaardadvies dat voor iedereen geldt"
     ],
@@ -792,7 +792,7 @@ const TXT = {
    {
     "q": "Maria heeft één functionerende en één defecte kopie van het COMT-gen. Hoe ziet haar resultaat eruit?",
     "options": [
-     "Alle drie de eigenschappen in de rode zone — ze is zeer vatbaar voor een burn-out",
+     "Alle drie de eigenschappen in de rode zone — ze is zeer stressgevoelig",
      "Alle drie de eigenschappen in de groene zone — een burn-out is voor haar geen reden tot zorg",
      "Prestaties onder stress in de rode zone, de andere twee eigenschappen in de groene zone",
      "Alle drie de eigenschappen in het midden — een matig goede stressbestendigheid"
@@ -823,8 +823,8 @@ const TXT = {
     "q": "Wat betekent het als een cliënt voor alle drie de eigenschappen in de groene zone ligt?",
     "options": [
      "Een burn-out is voor deze cliënt onmogelijk, ongeacht de leefstijl",
-     "De cliënt is bijzonder vatbaar voor een burn-out",
-     "Een burn-out vormt voor deze cliënt niet zo'n groot gevaar",
+     "De cliënt is bijzonder stressgevoelig",
+     "Deze cliënt gaat doorgaans goed om met stress",
      "De analyse kon niet worden beoordeeld"
     ],
     "correct": 2
@@ -838,7 +838,7 @@ const TXT = {
   "bullets": [
    "Wat is het COMT-gen?",
    "Welke drie stresseigenschappen laat het rapport zien?",
-   "Hoe is burn-outrisico genetisch bepaald?",
+   "Hoe is stressgevoeligheid genetisch bepaald?",
    "Welke aanbevelingen volgen uit het profiel?"
   ],
   "questions": []
@@ -846,7 +846,7 @@ const TXT = {
  "ba-sci-en": {
   "topic": "Wetenschappelijke basis",
   "description": "Waarom telomeren korter worden, hoe het telomerasegen de biologische leeftijd beïnvloedt — en welke voedingsstoffen kunnen helpen.",
-  "longDescription": "Deze training legt de wetenschappelijke basis van de analyse van de biologische leeftijd uit. Je leert waarom telomeren — de beschermende uiteinden van onze chromosomen — bij elke celdeling korter worden, wat er met een cel gebeurt zodra ze zijn opgebruikt, hoe het telomerasegen dit proces beïnvloedt, en welke voedingsstoffen het onderhoud van de telomeren kunnen ondersteunen wanneer de genen minder goed werken.",
+  "longDescription": "Deze training legt de wetenschappelijke basis van de analyse van de biologische leeftijd uit. Je leert waarom telomeren — de beschermende uiteinden van onze chromosomen — bij elke celdeling korter worden, wat er met een cel gebeurt zodra ze zijn opgebruikt, hoe het telomerasegen dit proces beïnvloedt, en welke voedingsstoffen studies in verband brengen met het onderhoud van de telomeren.",
   "bullets": [
    "Telomeren en celveroudering — de basis",
    "Senescentie: wanneer cellen in slaapstand gaan",
@@ -858,7 +858,7 @@ const TXT = {
    "Wat zijn telomeren en waarom worden ze bij elke celdeling korter?",
    "Wat gebeurt er met een cel zodra haar telomeren zijn opgebruikt?",
    "Wat doet het telomerasegen?",
-   "Welke voedingsstoffen ondersteunen het onderhoud van de telomeren — en waarom werkt het mediterrane dieet niet bij iedereen?"
+   "Welke voedingsstoffen brengen studies in verband met het onderhoud van de telomeren — en waarom werkt het mediterrane dieet niet bij iedereen?"
   ],
   "postVideoText": "Met deze wetenschappelijke basis kun je de analyse van de biologische leeftijd op een solide fundament met je cliënten bespreken.",
   "questions": [
@@ -913,7 +913,7 @@ const TXT = {
     "correct": 2
    },
    {
-    "q": "Welke voedingsstoffen kunnen het onderhoud van de telomeren ondersteunen wanneer het beschermende gen minder goed werkt?",
+    "q": "Welke voedingsstoffen brengen studies in verband met het onderhoud van de telomeren?",
     "options": [
      "Vitamine C, Zink, Seleen, IJzer en Magnesium",
      "Vitamine D3, Omega-3, Vitamine E, Resveratrol en Ginkgo",
@@ -957,7 +957,7 @@ const TXT = {
     "options": [
      "Niets doen — telomeren kun je sowieso niet beïnvloeden",
      "Meer bewegen — voeding maakt voor de telomeren helemaal geen verschil",
-     "Meer ondersteunende voedingsstoffen innemen om telomeerverlies te vertragen",
+     "Gerichte leefstijlmaatregelen en een voeding met de juiste voedingsstoffen om de zwakkere genetische beschermingsfunctie te ondersteunen",
      "Overstappen op een mediterraan dieet — dat werkt immers bij iedereen"
     ],
     "correct": 2
@@ -1047,7 +1047,7 @@ const TXT = {
  "ba-faq-en": {
   "topic": "Veelgestelde vragen",
   "description": "Antwoorden op typische vragen van cliënten over de analyse van de biologische leeftijd.",
-  "longDescription": "Een verzameling van de belangrijkste vragen over de telomeer- en anti-aginganalyse. Met inklapbare antwoorden voor zelfstudie.",
+  "longDescription": "Een verzameling van de belangrijkste vragen over de telomeeranalyse en de biologische leeftijd. Met inklapbare antwoorden voor zelfstudie.",
   "bullets": [
    "Wat zijn telomeren en waarom verouderen we?",
    "Hoe beïnvloedt mijn genetica de biologische leeftijd?",
@@ -1192,7 +1192,7 @@ const TXT = {
     "q": "Welke bewering over genetische uv-gevoeligheid (bijv. MC1R) is juist?",
     "options": [
      "Genetische varianten beïnvloeden de uv-gevoeligheid niet — alleen het huidtype telt",
-     "Dragers van ongunstige varianten verbranden makkelijker en hebben een hoger risico op uv-gerelateerde huidveroudering en huidkanker — strikte uv-bescherming is voor hen des te belangrijker",
+     "Dragers van ongunstige varianten verbranden makkelijker en vertonen sterkere lichtveroudering van de huid — strikte uv-bescherming is voor hen des te belangrijker",
      "Bij hoge genetische uv-gevoeligheid moet je de zon volledig mijden, zelfs in de schaduw",
      "Zonnebrandcrème werkt alleen bij mensen met \"normale\" genen"
     ],
@@ -1250,16 +1250,16 @@ const TXT = {
    "CYP-enzymen & afbraak van geneesmiddelen",
    "Snelle en trage metaboliseerders",
    "Klinisch relevante werkzame stoffen (antidepressiva, pijnstillers, antistollingsmiddelen, …)",
-   "Praktische relevantie in het advies"
+   "Praktische relevantie voor voorschrijvende artsen"
   ],
   "introQuestionsHeader": "Deze training beantwoordt:",
   "introQuestions": [
    "Waarom werken medicijnen bij verschillende mensen anders?",
    "Welke CYP-enzymen zijn verantwoordelijk voor de afbraak van de belangrijkste werkzame stoffen?",
    "Wat betekent \"snelle\" versus \"trage metaboliseerder\" in de klinische praktijk?",
-   "Welke medicijnen zijn bijzonder relevant voor farmacogenetisch advies?"
+   "Welke medicijnen zijn bijzonder relevant voor de voorschrijfbeslissingen van artsen?"
   ],
-  "postVideoText": "Met deze achtergrond kun je de relevantie van farmacogenetische tests met cliënten en artsen bespreken — en uitleggen waarom een dosis die voor de meesten werkt, voor een bepaald individu te sterk of te zwak kan zijn, afhankelijk van diens CYP-genotype.",
+  "postVideoText": "Met deze achtergrond begrijp je waarom artsen farmacogenetische tests kunnen inzetten — een dosis die voor de meesten werkt, kan voor een bepaald individu te sterk of te zwak zijn, afhankelijk van diens CYP-genotype. Als cliënten ernaar vragen, verwijs je ze naar hun arts. Farmacogenetische analyses worden uitsluitend via artsen aangeboden; deze training is vakinformatie en vervangt geen medisch advies.",
   "questions": [
    {
     "q": "Waarom werkt hetzelfde medicijn bij verschillende mensen anders?",
@@ -1302,7 +1302,7 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Waarom is farmacogenetica belangrijk in het advies?",
+    "q": "Waarom is farmacogenetica belangrijk in de medische zorg?",
     "options": [
      "Het is vooral een verkoopthema",
      "Voor ongeveer 7% van alle medicijnen bestaan klinisch bruikbare farmacogenetische richtlijnen — het genotype kennen vóór het voorschrijven kan ernstige bijwerkingen en behandelfalen voorkomen",
@@ -1502,7 +1502,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Wat is de Calorie Blocker?",
-      "a": "De Calorie Blocker is een gepersonaliseerd afslankproduct in de vorm van microtransporter-pellets. Het bevat een individuele verhouding van vet- en koolhydraatblokkers, afgestemd op je DNA-analyse. In combinatie met een verminderde calorie- en vetinname ondersteunt het aantoonbaar het gewichtsverlies — in combinatie met een evenwichtige voeding en leefstijl helpt het je gewicht te behouden."
+      "a": "De Calorie Blocker is een voedingssupplement in de vorm van microtransporter-pellets met Opuntia-ficus-indica-vezel en phaseolamine uit witte bonen. De mengverhouding wordt gekozen op basis van je genanalyse. Hij vervangt geen evenwichtige, caloriebewuste voeding."
      },
      {
       "q": "Hoe neem ik de Calorie Blocker in?",
@@ -1510,11 +1510,11 @@ const FAQTX = {
      },
      {
       "q": "Wat zijn de werkzame stoffen?",
-      "a": "De vetblokker is Opuntia ficus-indica (OFI) — de vezel van de vijgcactus. Deze plantaardige vezel vormt in het maag-darmkanaal een gelachtige matrix die voedingsvet bindt en de opname ervan vermindert. De koolhydraatblokker is Phaseolamine (uit witte bonen), dat alfa-amylase remt. Beide zijn volledig plantaardig."
+      "a": "De Calorie Blocker bevat Opuntia ficus-indica (OFI), de vezel van de vijgcactus, en phaseolamine uit witte bonen. Beide ingrediënten zijn volledig plantaardig."
      },
      {
       "q": "Is de Calorie Blocker veganistisch/vegetarisch?",
-      "a": "Ja. Zowel de vetblokker (Opuntia ficus-indica) als de koolhydraatblokker (Phaseolamine uit witte bonen) is puur plantaardig. De Calorie Blocker is geschikt voor vegetariërs en veganisten, glutenvrij, lactosevrij en vrij van kunstmatige kleurstoffen."
+      "a": "Ja. Beide ingrediënten, de Opuntia-ficus-indica-vezel en phaseolamine uit witte bonen, zijn puur plantaardig. De Calorie Blocker is geschikt voor vegetariërs en veganisten, glutenvrij, lactosevrij en vrij van kunstmatige kleurstoffen."
      }
     ]
    }
@@ -1574,11 +1574,11 @@ const FAQTX = {
     "items": [
      {
       "q": "Wat betekent een MTHFR-defect voor mij?",
-      "a": "MTHFR activeert foliumzuur tot methylfolaat, de vorm die je lichaam daadwerkelijk kan gebruiken. Bij een defect kun je veel foliumzuur via een gewoon supplement innemen en toch een functioneel tekort hebben. Overstappen op methylfolaat lost het probleem op."
+      "a": "MTHFR activeert foliumzuur tot methylfolaat, de vorm die je lichaam daadwerkelijk kan gebruiken. Bij een defect kun je veel foliumzuur via een gewoon supplement innemen en toch een functioneel tekort hebben. Methylfolaat is al de actieve vorm en heeft deze omzettingsstap niet nodig. Of het bij jou past, bespreek je het best met je arts."
      },
      {
-      "q": "Ik heb een HFE-variant — is ijzersuppletie gevaarlijk voor mij?",
-      "a": "Dat kan. Sommige HFE-varianten leiden over decennia tot ijzerstapeling — je lichaam neemt te veel ijzer op uit de voeding en slaat het op in lever, hart en gewrichten. IJzersupplementen zou je alleen moeten nemen als een bloedtest een echt tekort aantoont."
+      "q": "Ik heb een HFE-variant — moet ik ijzersupplementen nemen?",
+      "a": "Je HFE-resultaat wijst op een lagere ijzerbehoefte. Neem dus niet op eigen initiatief ijzersupplementen — alleen als een arts via een bloedtest een tekort heeft vastgesteld."
      },
      {
       "q": "Zoutgevoeligheid (ACE) — betekent dat dat ik zout helemaal moet laten staan?",
@@ -1633,7 +1633,7 @@ const FAQTX = {
      },
      {
       "q": "Waarom raadt het rapport mij antioxidanten aan?",
-      "a": "Intensieve inspanning produceert grote hoeveelheden vrije radicalen. Als je antioxidantgenen (SOD2, CAT, GPX) zwak zijn, verloopt het herstel trager en stapelen micro-ontstekingen zich op. Vitamine C, vitamine E, polyfenolen en seleen ondersteunen deze afweersystemen rechtstreeks."
+      "a": "Intensieve inspanning produceert grote hoeveelheden vrije radicalen. Als je antioxidantgenen (SOD2, CAT, GPX) zwak zijn, verloopt het herstel trager en stapelen micro-ontstekingen zich op. Vitamine C draagt bij tot de bescherming van cellen tegen oxidatieve stress. Hetzelfde geldt voor vitamine E en seleen."
      },
      {
       "q": "Wat is een “deload” en hoe vaak moet ik die inlassen?",
@@ -1676,11 +1676,11 @@ const FAQTX = {
     "items": [
      {
       "q": "Wat is het COMT-gen en waarom is het belangrijk?",
-      "a": "COMT (catechol-O-methyltransferase) breekt de signaalstof dopamine af zodra een spannende of stressvolle situatie voorbij is, zodat de hersenen kunnen terugkeren naar hun basisniveau. Als het gen slecht werkt, wordt dopamine veel langzamer afgebroken: de hersenen blijven langer op scherp staan, en als er nieuwe stress bijkomt voordat ze weer op hun basisniveau zijn, kunnen ze overbelast raken. Een tragere afbraak heeft ook voordelen — positieve gevoelens worden intenser beleefd en mensen zijn vaak nieuwsgieriger, maar ook vatbaarder voor gokken. Studies beschrijven een veelvoorkomende variant (Val158Met) met een duidelijk verschillende enzymactiviteit tussen de snelle en de trage vorm."
+      "a": "COMT (catechol-O-methyltransferase) breekt de signaalstof dopamine af zodra een spannende of stressvolle situatie voorbij is, zodat de hersenen kunnen terugkeren naar hun basisniveau. Als het gen slecht werkt, wordt dopamine veel langzamer afgebroken: de hersenen blijven langer op scherp staan, en als er nieuwe stress bijkomt voordat ze weer op hun basisniveau zijn, kunnen ze overbelast raken. Een tragere afbraak heeft ook voordelen — positieve gevoelens worden intenser beleefd en mensen zijn vaak nieuwsgieriger, maar reageren ook sterker op beloningen en spanning. Studies beschrijven een veelvoorkomende variant (Val158Met) met een duidelijk verschillende enzymactiviteit tussen de snelle en de trage vorm."
      },
      {
       "q": "Welke drie eigenschappen beoordeelt de burn-outanalyse?",
-      "a": "Prestaties onder stress (hoe goed je presteert in stressvolle situaties), emotionele veerkracht (hoe zwaar negatieve gevoelens op je wegen) en impulsiviteit. Elke eigenschap wordt weergegeven op een schaal van rood via het midden tot groen: groen is gunstig, rood betekent een groter risico op een burn-out."
+      "a": "Prestaties onder stress (hoe goed je presteert in stressvolle situaties), emotionele veerkracht (hoe zwaar negatieve gevoelens op je wegen) en impulsiviteit. Elke eigenschap wordt weergegeven op een schaal van rood via het midden tot groen: groen is gunstig, rood betekent een hogere stressgevoeligheid."
      },
      {
       "q": "Hoeveel mensen zijn genetisch bijzonder stressgevoelig?",
@@ -1697,7 +1697,7 @@ const FAQTX = {
      },
      {
       "q": "Alle drie de eigenschappen liggen in de groene zone — moet ik dan nog wel rekening houden met een burn-out?",
-      "a": "Een burn-out vormt voor jou niet zo'n groot gevaar — maar het risico is niet nul: zware, aanhoudende stress kan na verloop van tijd toch zijn tol eisen. Herstelfases en een evenwichtige leefstijl blijven belangrijk."
+      "a": "Je gaat doorgaans goed om met stress — maar zware, aanhoudende stress kan na verloop van tijd toch zijn tol eisen. Herstelfases en een evenwichtige leefstijl blijven belangrijk."
      },
      {
       "q": "Wat helpt iedereen, ongeacht het genotype?",
@@ -1710,7 +1710,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Er staat een “rode zone” in mijn rapport. Moet ik me zorgen maken?",
-      "a": "Het is geen reden tot paniek, maar wel een reden om in actie te komen. Een rode zone markeert een ongunstige genetische aanleg op één specifiek gebied — een groter risico op een burn-out, geen diagnose. Hoe meer van je eigenschappen in de rode zone liggen, hoe belangrijker het is om je leefstijl zo aan te passen dat je stress vermijdt. Ook bij resultaten in het midden blijft een stressarme leefstijl belangrijk."
+      "a": "Het is geen reden tot paniek, maar wel een reden om in actie te komen. Een rode zone markeert een ongunstige genetische aanleg op één specifiek gebied — een hogere stressgevoeligheid, geen diagnose. Hoe meer van je eigenschappen in de rode zone liggen, hoe belangrijker het is om je leefstijl zo aan te passen dat je stress vermijdt. Ook bij resultaten in het midden blijft een stressarme leefstijl belangrijk."
      },
      {
       "q": "Waar vind ik concrete aanbevelingen voor mijn genotype?",
@@ -1756,8 +1756,8 @@ const FAQTX = {
       "a": "Verrassend genoeg niet. Studies hebben aangetoond dat een mediterraan dieet alleen bij mensen met bepaalde genvarianten helpt om de telomeren langer te behouden — bij alle anderen heeft het geen effect op de telomeren. Je rapport laat zien tot welke groep je behoort. Dit geldt alleen voor de telomeren, niet voor andere effecten van het dieet — en het is een duidelijk voorbeeld dat hetzelfde leefstijladvies niet bij iedereen hetzelfde werkt."
      },
      {
-      "q": "Welke voedingsstoffen ondersteunen de telomeren?",
-      "a": "Vitamine D3, Omega-3, Vitamine E, Resveratrol en Ginkgo. Als het genetische beschermingssysteem minder goed werkt, kan een hogere inname van deze voedingsstoffen — bijvoorbeeld door meer voedingsmiddelen te eten die ze bevatten — helpen om de verkorting van de telomeren te vertragen. Terugdraaien kunnen ze die verkorting niet."
+      "q": "Welke voedingsstoffen worden in verband gebracht met de telomeren?",
+      "a": "Studies brengen vitamine D3, omega-3, vitamine E, resveratrol en ginkgo in verband met het onderhoud van de telomeren. Als je genetische beschermingssysteem minder goed werkt, kun je meer voedingsmiddelen eten die rijk zijn aan vitamine D, omega-3-vetzuren en vitamine E. De verkorting kan niet worden teruggedraaid."
      },
      {
       "q": "Kan ik vrije radicalen beïnvloeden?",
@@ -1769,12 +1769,12 @@ const FAQTX = {
     "title": "Invloed en verwachtingen",
     "items": [
      {
-      "q": "Hoe snel zie ik resultaat van anti-agingmaatregelen?",
-      "a": "Niet van de ene dag op de andere. De aanbevolen maatregelen kunnen telomeren niet laten teruggroeien — ze helpen hun verkorting te vertragen, zodat het voordeel zich geleidelijk over vele jaren opbouwt. Let op: de genetische analyse laat je aanleg zien, niet de huidige lengte van je telomeren; het analyseresultaat zelf verandert door deze maatregelen dus niet."
+      "q": "Hoe snel zie ik resultaat van de aanbevolen maatregelen?",
+      "a": "Niet van de ene dag op de andere. De aanbevolen maatregelen kunnen telomeren niet laten teruggroeien; een eventueel voordeel bouwt zich over vele jaren op. Let op: de genetische analyse laat je aanleg zien, niet de huidige lengte van je telomeren; het analyseresultaat zelf verandert door deze maatregelen dus niet."
      },
      {
       "q": "Wat heb ik in de praktijk aan deze kennis?",
-      "a": "Je weet hoe goed je genen je telomeren in stand houden — en of een mediterraan dieet je daarbij helpt. Als het onderhoud van je telomeren verminderd is, kun je daar bewust op reageren door je inname van Vitamine D3, Omega-3, Vitamine E, Resveratrol en Ginkgo te verhogen, bijvoorbeeld via voedingsmiddelen die deze stoffen bevatten. Daarnaast is een algemeen gezonde leefstijl met een antioxidantrijk dieet, regelmatige beweging en voldoende slaap zinvol."
+      "a": "Je weet hoe goed je genen je telomeren in stand houden — en of een mediterraan dieet je daarbij helpt. Als het onderhoud van je telomeren verminderd is, kun je meer voedingsmiddelen eten die rijk zijn aan vitamine D, omega-3-vetzuren en vitamine E. Daarnaast is een algemeen gezonde leefstijl met een antioxidantrijk dieet, regelmatige beweging en voldoende slaap zinvol."
      }
     ]
    }
@@ -1825,7 +1825,7 @@ const FAQTX = {
      },
      {
       "q": "Hoe snel merk ik effect?",
-      "a": "Dat verschilt per voedingsstof. Sommige effecten (bijv. meer energie door B-vitamines) merk je binnen dagen tot weken; andere (bijv. de botstofwisseling bij Vitamine D) ontwikkelen zich over maanden. Gepersonaliseerde suppletie is geen snelwerkend medicijn — ze corrigeert tekorten aan voedingsstoffen op de lange termijn."
+      "a": "Dat verschilt per voedingsstof. Voorbeelden: vitamine B12 draagt bij tot de vermindering van vermoeidheid en moeheid; vitamine D draagt bij tot de instandhouding van normale botten. Voedingssupplementen werken niet als een geneesmiddel — ze vullen de voeding aan."
      },
      {
       "q": "Heb ik suppletie voor altijd nodig?",
@@ -1837,7 +1837,7 @@ const FAQTX = {
      },
      {
       "q": "Hoe verhouden de kosten van gepersonaliseerde suppletie zich tot multivitamines uit de drogisterij?",
-      "a": "Duidelijk meer per dag — doorgaans 3-5× de prijs van de goedkoopste drogisterijproducten. Daarvoor krijg je een genetisch afgestemde samenstelling die waarschijnlijk daadwerkelijk wordt opgenomen in plaats van grotendeels ongebruikt te worden uitgescheiden. De vergelijking “per mg vitamine” is misleidend; “per mg die daadwerkelijk het bloed bereikt” zegt veel meer."
+      "a": "Per dag kost de gepersonaliseerde variant meer dan eenvoudige multivitaminepreparaten. Daar staat tegenover dat keuze en dosering zijn afgestemd op je genanalyse en leefstijl, en dat de microtransporters de voedingsstoffen gespreid in de tijd afgeven."
      }
     ]
    }
@@ -1875,7 +1875,7 @@ const FAQTX = {
      },
      {
       "q": "Wat vertelt MC1R mij over mijn uv-gevoeligheid?",
-      "a": "MC1R stuurt de aanmaak van eumelanine (donker pigment, beschermt tegen uv) versus feomelanine (roodachtig pigment, dat onder uv vrije radicalen vormt). Ongunstige varianten: sneller verbranden, een hoger risico op uv-schade en huidkanker — een strengere discipline met zonnebrandcrème is dan nodig."
+      "a": "MC1R stuurt de aanmaak van eumelanine (donker pigment, beschermt tegen uv) versus feomelanine (roodachtig pigment, dat onder uv vrije radicalen vormt). Ongunstige varianten: sneller verbranden, sterkere lichtveroudering van de huid — een strengere discipline met zonnebrandcrème is dan nodig."
      },
      {
       "q": "Waarom is FLG (filaggrine) belangrijk voor mijn huidverzorging?",
@@ -1927,7 +1927,7 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "“Wij stellen tekorten vast.”"
+      "text": "“Ons partnerlaboratorium meet je bloedwaarden; de beoordeling gebeurt door een arts.”"
      },
      {
       "tone": "safe",
@@ -1942,8 +1942,8 @@ const FAQTX = {
       "text": "Symptomen van een tekort (bijv. vermoeidheid door ijzertekort) — het beste met een bronvermelding (bijv. van een medische beroepsvereniging)."
      },
      {
-      "tone": "safe",
-      "text": "Testimonial: “Ik was vaak moe, de test bracht een ijzertekort aan het licht en dat heeft me geholpen” — toegestaan."
+      "tone": "caveat",
+      "text": "Testimonials over bloedtests alleen zonder genezingsbeloften of uitspraken over ziekten, en pas na beoordeling per geval."
      }
     ]
    },
@@ -1965,7 +1965,7 @@ const FAQTX = {
     ],
     "callout": {
      "tone": "safe",
-     "text": "Voorbeeld: “De gentest toont aan dat foliumzuur bij jou niet werkzaam is” — toegestaan (onderbouwd door studies)."
+     "text": "Voorbeeld: “De genanalyse laat zien of je lichaam foliumzuur goed kan omzetten in de actieve vorm.” — onproblematisch."
     }
    },
    {
@@ -2033,11 +2033,11 @@ const FAQTX = {
      },
      {
       "tone": "safe",
-      "text": "Voorbeeld van een Health Claim: “Draagt bij aan een normale huid” (bij zink), “Draagt bij aan een normaal immuunsysteem”."
+      "text": "Voorbeeld van Health Claims, alleen in de exacte formulering van de EU-lijst en alleen als het product per dagdosis minstens 15 % van de referentie-inname (RI) levert: “Zink draagt bij tot de instandhouding van een normale huid.” / “Zink draagt bij tot de normale werking van het immuunsysteem.”"
      },
      {
-      "tone": "safe",
-      "text": "Voorbeeld van een testimonial: “Ik neem het omdat ik een droge huid heb” — in combinatie met de Health Claim voor zink — toegestaan."
+      "tone": "critical",
+      "text": "NIET toegestaan: testimonial “Ik neem het omdat ik een droge huid heb” in combinatie met de Health Claim voor zink — koppel uitspraken van klanten niet aan Health Claims."
      },
      {
       "tone": "critical",
