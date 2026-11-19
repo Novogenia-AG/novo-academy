@@ -306,19 +306,19 @@ const TXT = {
   "topic": "Bază științifică",
   "description": "Cum influențează variantele genetice metabolizarea și tolerarea medicamentelor — explicat științific.",
   "longDescription": "În acest training, Dr. Daniel Wallerstorfer explică de ce medicamentele acționează diferit la persoane diferite. Vei învăța cum descompun enzimele CYP substanțele active, ce înseamnă „metabolizator rapid\" vs. „metabolizator lent\" și cum ghidează aceste cunoștințe decizii de prescriere mai sigure.",
-  "postVideoText": "Cu acest fundal poți discuta relevanța testării farmacogenetice cu clienți și medici — explicând de ce o doză care funcționează pentru majoritatea poate fi prea puternică sau prea slabă pentru o anumită persoană, în funcție de genotipul său CYP.",
+  "postVideoText": "Cu acest fundal înțelegi de ce medicii pot folosi testarea farmacogenetică — o doză care funcționează pentru majoritatea poate fi prea puternică sau prea slabă pentru o anumită persoană, în funcție de genotipul său CYP. Dacă clienții te întreabă, îndrumă-i către medicul lor. Analizele farmacogenetice sunt oferite exclusiv prin intermediul medicilor; acest training este informație de specialitate și nu înlocuiește consultul medical.",
   "introQuestionsHeader": "Acest training răspunde la:",
   "bullets": [
    "Enzimele CYP și metabolizarea medicamentelor",
    "Metabolizatori rapizi și lenți",
    "Substanțe active relevante clinic (antidepresive, analgezice, anticoagulante, …)",
-   "Relevanță practică în consiliere"
+   "Relevanță practică pentru medicii care prescriu"
   ],
   "introQuestions": [
    "De ce acționează medicamentele diferit la persoane diferite?",
    "Ce enzime CYP sunt responsabile de descompunerea celor mai importante substanțe active?",
    "Ce înseamnă „metabolizator rapid\" vs. „metabolizator lent\" în viața clinică de zi cu zi?",
-   "Ce medicamente sunt deosebit de relevante pentru consilierea farmacogenetică?"
+   "Ce medicamente sunt deosebit de relevante pentru deciziile de prescriere ale medicilor?"
   ],
   "questions": [
    {
@@ -362,7 +362,7 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "De ce este importantă farmacogenetica în consiliere?",
+    "q": "De ce este importantă farmacogenetica în îngrijirea medicală?",
     "options": [
      "Este în principal un subiect de vânzare",
      "Aproximativ 7% dintre toate medicamentele au ghiduri farmacogenetice cu aplicabilitate clinică — cunoașterea genotipului înainte de prescriere poate preveni efecte secundare severe și eșecul tratamentului",

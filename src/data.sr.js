@@ -470,19 +470,19 @@ const TXT = {
   "topic": "Naučna osnova",
   "description": "Kako genetske varijante utiču na metabolizam i podnošljivost lijekova — objašnjeno naučno.",
   "longDescription": "U ovoj obuci dr. Daniel Wallerstorfer objašnjava zašto lijekovi djeluju različito kod različitih ljudi. Naučit ćete kako CYP enzimi razgrađuju aktivne supstance, šta znači \"brzi\" naspram \"sporog metabolizatora\", i kako to znanje usmjerava sigurnije odluke pri propisivanju.",
-  "postVideoText": "S ovim znanjem možete s klijentima i ljekarima razgovarati o relevantnosti farmakogenetskog testiranja — objašnjavajući zašto doza koja odgovara većini može biti prejaka ili preslaba za pojedinca, ovisno o njegovom CYP genotipu.",
+  "postVideoText": "S ovim znanjem razumijete zašto ljekari mogu koristiti farmakogenetsko testiranje — doza koja odgovara većini može biti prejaka ili preslaba za pojedinca, ovisno o njegovom CYP genotipu. Ako vas klijenti pitaju, uputite ih na njihovog ljekara. Farmakogenetske analize nude se isključivo preko ljekara; ova obuka je stručna informacija i ne zamjenjuje ljekarski savjet.",
   "introQuestionsHeader": "Ova obuka odgovara na:",
   "bullets": [
    "CYP enzimi i metabolizam lijekova",
    "Brzi i spori metabolizatori",
    "Klinički relevantne aktivne supstance (antidepresivi, analgetici, antikoagulansi, …)",
-   "Praktična relevantnost u savjetovanju"
+   "Praktična relevantnost za ljekare koji propisuju terapiju"
   ],
   "introQuestions": [
    "Zašto lijekovi djeluju različito kod različitih ljudi?",
    "Koji su CYP enzimi odgovorni za razgradnju najvažnijih aktivnih supstanci?",
    "Šta znači \"brzi\" naspram \"sporog metabolizatora\" u kliničkoj svakodnevici?",
-   "Koji su lijekovi posebno relevantni za farmakogenetsko savjetovanje?"
+   "Koji su lijekovi posebno relevantni za odluke ljekara o propisivanju terapije?"
   ],
   "questions": [
    {
@@ -526,7 +526,7 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Zašto je farmakogenetika važna u savjetovanju?",
+    "q": "Zašto je farmakogenetika važna u medicinskoj njezi?",
     "options": [
      "To je uglavnom prodajna tema",
      "Oko 7% svih lijekova ima klinički primjenjive farmakogenetske smjernice — poznavanje genotipa prije propisivanja može spriječiti teške nuspojave i neuspjeh liječenja",

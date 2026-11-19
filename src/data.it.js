@@ -1250,16 +1250,16 @@ const TXT = {
    "Enzimi CYP e metabolismo dei farmaci",
    "Metabolizzatori rapidi e lenti",
    "Principi attivi clinicamente rilevanti (antidepressivi, analgesici, anticoagulanti, ...)",
-   "Rilevanza pratica nella consulenza"
+   "Rilevanza pratica per i medici prescrittori"
   ],
   "introQuestionsHeader": "Questo modulo risponde a:",
   "introQuestions": [
    "Perché i farmaci agiscono in modo diverso su persone diverse?",
    "Quali enzimi CYP sono responsabili della degradazione dei principi attivi più importanti?",
    "Cosa significa \"metabolizzatore rapido\" vs. \"lento\" nella pratica clinica quotidiana?",
-   "Quali farmaci sono particolarmente rilevanti per la consulenza farmacogenetica?"
+   "Quali farmaci sono particolarmente rilevanti per le decisioni di prescrizione dei medici?"
   ],
-  "postVideoText": "Con queste basi potrai discutere la rilevanza del test farmacogenetico con clienti e medici, spiegando perché una dose efficace per la maggior parte delle persone può risultare troppo forte o troppo debole per un dato individuo, a seconda del suo genotipo CYP.",
+  "postVideoText": "Con queste basi capirai perché i medici possono ricorrere al test farmacogenetico: una dose efficace per la maggior parte delle persone può risultare troppo forte o troppo debole per un dato individuo, a seconda del suo genotipo CYP. Se i clienti ti fanno domande, indirizzali al loro medico. Le analisi farmacogenetiche sono offerte esclusivamente tramite medici; questa formazione è un'informazione specialistica e non sostituisce la consulenza medica.",
   "questions": [
    {
     "q": "Perché lo stesso farmaco agisce in modo diverso su persone diverse?",
@@ -1302,7 +1302,7 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Perché la farmacogenetica è importante in consulenza?",
+    "q": "Perché la farmacogenetica è importante nell'assistenza medica?",
     "options": [
      "È soprattutto un argomento di vendita",
      "Circa il 7% di tutti i farmaci dispone di linee guida farmacogenetiche clinicamente attuabili: conoscere il genotipo prima di prescrivere può prevenire gravi effetti collaterali e fallimenti terapeutici",

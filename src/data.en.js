@@ -1777,7 +1777,7 @@ export const COURSES_EN = [
       'CYP enzymes & drug metabolism',
       'Fast and slow metabolizers',
       'Clinically relevant active substances (antidepressants, analgesics, anticoagulants, …)',
-      'Practical relevance in consultation',
+      'Practical relevance for prescribing physicians',
     ],
     thumbnail: T(24),
     youtubeId: 'SgzAZyUIx-0',
@@ -1786,10 +1786,10 @@ export const COURSES_EN = [
       'Why do medications work differently in different people?',
       'Which CYP enzymes are responsible for breaking down the most important active substances?',
       'What does "fast" vs. "slow metabolizer" mean in clinical everyday life?',
-      'Which medications are particularly relevant for pharmacogenetic consultation?',
+      'Which medications are particularly relevant for physicians\' prescribing decisions?',
     ],
     postVideoText:
-      'With this background you can discuss the relevance of pharmacogenetic testing with clients and physicians — explaining why a dose that works for most can be too strong or too weak for a given individual depending on their CYP genotype.',
+      'With this background you understand why physicians may use pharmacogenetic testing — a dose that works for most people can be too strong or too weak for an individual depending on their CYP genotype. If clients ask about it, refer them to their physician. Pharmacogenetic analyses are offered exclusively through physicians; this training is professional information and does not replace medical advice.',
     questions: [
       {
         q: 'Why does the same medication work differently in different people?',
@@ -1832,7 +1832,7 @@ export const COURSES_EN = [
         correct: 1,
       },
       {
-        q: 'Why is pharmacogenetics important in consultation?',
+        q: 'Why is pharmacogenetics important in medical care?',
         options: [
           'It is mainly a sales topic',
           'About 7% of all medications have clinically actionable pharmacogenetic guidelines — knowing the genotype before prescribing can prevent severe side effects and treatment failure',

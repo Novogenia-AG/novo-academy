@@ -306,19 +306,19 @@ const TXT = {
   "topic": "Fundamento científico",
   "description": "Cómo las variantes genéticas influyen en el metabolismo y la tolerancia a los medicamentos, explicado científicamente.",
   "longDescription": "En esta formación, el Dr. Daniel Wallerstorfer explica por qué los medicamentos actúan de forma diferente en distintas personas. Aprenderás cómo las enzimas CYP degradan los principios activos, qué significa \"metabolizador rápido\" frente a \"metabolizador lento\", y cómo este conocimiento orienta decisiones de prescripción más seguras.",
-  "postVideoText": "Con estos conocimientos podrás analizar con clientes y médicos la relevancia de las pruebas farmacogenéticas, explicando por qué una dosis que funciona para la mayoría puede resultar demasiado fuerte o demasiado débil para una persona concreta según su genotipo CYP.",
+  "postVideoText": "Con estos conocimientos entenderás por qué los médicos pueden recurrir a las pruebas farmacogenéticas: una dosis que funciona para la mayoría puede resultar demasiado fuerte o demasiado débil para una persona concreta según su genotipo CYP. Si los clientes te preguntan, remítelos a su médico. Los análisis farmacogenéticos se ofrecen exclusivamente a través de médicos; esta formación es información especializada y no sustituye el asesoramiento médico.",
   "introQuestionsHeader": "Esta formación responde a:",
   "bullets": [
    "Enzimas CYP y metabolismo de fármacos",
    "Metabolizadores rápidos y lentos",
    "Principios activos clínicamente relevantes (antidepresivos, analgésicos, anticoagulantes, …)",
-   "Relevancia práctica en la consulta"
+   "Relevancia práctica para los médicos prescriptores"
   ],
   "introQuestions": [
    "¿Por qué los medicamentos actúan de forma diferente en distintas personas?",
    "¿Qué enzimas CYP son responsables de degradar los principios activos más importantes?",
    "¿Qué significa \"metabolizador rápido\" frente a \"lento\" en la práctica clínica diaria?",
-   "¿Qué medicamentos son especialmente relevantes para la consulta farmacogenética?"
+   "¿Qué medicamentos son especialmente relevantes para las decisiones de prescripción de los médicos?"
   ],
   "questions": [
    {
@@ -362,7 +362,7 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "¿Por qué es importante la farmacogenética en la consulta?",
+    "q": "¿Por qué es importante la farmacogenética en la atención médica?",
     "options": [
      "Es principalmente un tema de ventas",
      "Alrededor del 7% de todos los medicamentos tienen directrices farmacogenéticas clínicamente accionables: conocer el genotipo antes de prescribir puede evitar efectos secundarios graves y fracasos terapéuticos",

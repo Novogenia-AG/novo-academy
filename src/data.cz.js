@@ -1243,16 +1243,16 @@ const TXT = {
    "Enzymy CYP a metabolismus léků",
    "Rychlí a pomalí metabolizéři",
    "Klinicky relevantní účinné látky (antidepresiva, analgetika, antikoagulancia, …)",
-   "Praktický význam v poradenství"
+   "Praktický význam pro předepisující lékaře"
   ],
   "introQuestionsHeader": "Toto školení odpovídá na otázky:",
   "introQuestions": [
    "Proč léky působí na různé lidi různě?",
    "Které enzymy CYP odpovídají za odbourávání nejdůležitějších účinných látek?",
    "Co znamená „rychlý“ oproti „pomalému metabolizéru“ v klinické praxi?",
-   "Které léky jsou pro farmakogenetické poradenství obzvlášť relevantní?"
+   "Které léky jsou obzvlášť relevantní pro rozhodování lékařů o předepisování?"
   ],
-  "postVideoText": "S tímto pozadím můžete s klienty a lékaři diskutovat o významu farmakogenetického testování — vysvětlit, proč dávka, která funguje pro většinu, může být pro daného jedince příliš silná nebo příliš slabá podle jeho genotypu CYP.",
+  "postVideoText": "S tímto pozadím chápete, proč lékaři mohou využívat farmakogenetické testování — dávka, která funguje pro většinu, může být pro daného jedince podle jeho genotypu CYP příliš silná nebo příliš slabá. Pokud se klienti zeptají, odkažte je na jejich lékaře. Farmakogenetické analýzy se nabízejí výhradně prostřednictvím lékařů; toto školení je odbornou informací a nenahrazuje lékařskou konzultaci.",
   "questions": [
    {
     "q": "Proč stejný lék působí na různé lidi různě?",
@@ -1295,7 +1295,7 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Proč je farmakogenetika v poradenství důležitá?",
+    "q": "Proč je farmakogenetika důležitá v lékařské péči?",
     "options": [
      "Je to hlavně prodejní téma",
      "Asi 7 % všech léků má klinicky využitelná farmakogenetická doporučení — znalost genotypu před předepsáním může zabránit závažným nežádoucím účinkům a selhání léčby",

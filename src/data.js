@@ -2564,12 +2564,12 @@ export const COURSES = [
     videos: [],
     description: 'Schulungsfolien zur Pharmakogenetik — als PowerPoint zum Selbststudium.',
     longDescription:
-      'Die offiziellen Novogenia-Schulungsfolien zur Pharmakogenetik. Aus dem Master-Foliensatz extrahiert, Animationen erhalten. Wie genetische Varianten den Abbau und die Wirkung von Medikamenten beeinflussen — und warum ein Medikament bei verschiedenen Menschen unterschiedlich wirkt.',
+      'Die Novogenia-Schulungsfolien zur Pharmakogenetik. Aus dem Master-Foliensatz extrahiert, Animationen erhalten. Wie genetische Varianten den Abbau und die Wirkung von Medikamenten beeinflussen — und warum ein Medikament bei verschiedenen Menschen unterschiedlich wirkt.',
     bullets: [
       'CYP-Enzyme & Medikamenten-Metabolismus',
       'Schnelle und langsame Metabolisierer',
       'Klinisch relevante Wirkstoffe (Antidepressiva, Schmerzmittel, Blutverdünner, …)',
-      'Praktische Bedeutung in der Beratung',
+      'Was das für die ärztliche Verordnung bedeutet',
     ],
     thumbnail: T(24),
     introQuestionsHeader: 'Die Schulungsfolien decken folgende Themen ab:',
@@ -2577,14 +2577,14 @@ export const COURSES = [
       'Warum wirken Medikamente bei verschiedenen Menschen unterschiedlich stark?',
       'Welche CYP-Enzyme sind für den Abbau der wichtigsten Wirkstoffe verantwortlich?',
       'Was bedeutet „schneller" vs. „langsamer Metabolisierer" im klinischen Alltag?',
-      'Welche Medikamente sind besonders relevant für die pharmakogenetische Beratung?',
+      'Welche Medikamente sind besonders relevant für ärztliche Verordnungsentscheidungen?',
     ],
     articleSections: [
       {
         title: 'Schulungsfolien zum Download',
         paragraphs: [
-          'Diese Schulungsfolien stammen aus dem zentralen Novogenia-Foliensatz „All Slides to use". Sie erklären die wissenschaftlichen Grundlagen der Pharmakogenetik: relevante CYP-Enzyme, klinisch wichtige Wirkstoffe, Studienlage und Beratungs-Beispiele. Animationen sind erhalten.',
-          'Lade die PowerPoint herunter und gehe sie im eigenen Tempo durch. Du kannst die Folien auch für eigene Kunden-Präsentationen verwenden.',
+          'Diese Schulungsfolien stammen aus dem zentralen Novogenia-Foliensatz „All Slides to use". Sie erklären die wissenschaftlichen Grundlagen der Pharmakogenetik: relevante CYP-Enzyme, klinisch wichtige Wirkstoffe, Studienlage und Anwendungsbeispiele. Animationen sind erhalten.',
+          'Lade die PowerPoint herunter und gehe sie im eigenen Tempo durch. Pharmakogenetische Analysen werden ausschließlich über Ärztinnen und Ärzte angeboten; diese Schulung ist Fachinformation und ersetzt keine ärztliche Beratung.',
         ],
       },
     ],

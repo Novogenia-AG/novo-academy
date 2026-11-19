@@ -1243,16 +1243,16 @@ const TXT = {
    "Enzymes CYP & métabolisme des médicaments",
    "Métaboliseurs rapides et lents",
    "Substances actives cliniquement pertinentes (antidépresseurs, analgésiques, anticoagulants, …)",
-   "Pertinence pratique en consultation"
+   "Pertinence pratique pour les médecins prescripteurs"
   ],
   "introQuestionsHeader": "Cette formation répond à :",
   "introQuestions": [
    "Pourquoi les médicaments agissent-ils différemment selon les personnes ?",
    "Quelles enzymes CYP sont responsables de la dégradation des principales substances actives ?",
    "Que signifie « métaboliseur rapide » vs « lent » dans la pratique clinique quotidienne ?",
-   "Quels médicaments sont particulièrement pertinents pour la consultation pharmacogénétique ?"
+   "Quels médicaments sont particulièrement pertinents pour les décisions de prescription des médecins ?"
   ],
-  "postVideoText": "Avec ces connaissances de fond, vous pouvez discuter de la pertinence du test pharmacogénétique avec les clients et les médecins — en expliquant pourquoi une dose qui convient à la plupart peut être trop forte ou trop faible pour un individu donné selon son génotype CYP.",
+  "postVideoText": "Avec ces connaissances de fond, vous comprenez pourquoi les médecins peuvent recourir au test pharmacogénétique — une dose qui convient à la plupart peut être trop forte ou trop faible pour un individu donné selon son génotype CYP. Si des clients vous posent la question, orientez-les vers leur médecin. Les analyses pharmacogénétiques sont proposées exclusivement par l'intermédiaire de médecins ; cette formation est une information professionnelle et ne remplace pas un avis médical.",
   "questions": [
    {
     "q": "Pourquoi le même médicament agit-il différemment selon les personnes ?",
@@ -1295,7 +1295,7 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Pourquoi la pharmacogénétique est-elle importante en consultation ?",
+    "q": "Pourquoi la pharmacogénétique est-elle importante dans la prise en charge médicale ?",
     "options": [
      "C'est principalement un sujet de vente",
      "Environ 7 % de tous les médicaments disposent de recommandations pharmacogénétiques cliniquement exploitables — connaître le génotype avant la prescription peut éviter des effets secondaires graves et un échec thérapeutique",

@@ -1250,16 +1250,16 @@ const TXT = {
    "CYP-enzymen & afbraak van geneesmiddelen",
    "Snelle en trage metaboliseerders",
    "Klinisch relevante werkzame stoffen (antidepressiva, pijnstillers, antistollingsmiddelen, …)",
-   "Praktische relevantie in het advies"
+   "Praktische relevantie voor voorschrijvende artsen"
   ],
   "introQuestionsHeader": "Deze training beantwoordt:",
   "introQuestions": [
    "Waarom werken medicijnen bij verschillende mensen anders?",
    "Welke CYP-enzymen zijn verantwoordelijk voor de afbraak van de belangrijkste werkzame stoffen?",
    "Wat betekent \"snelle\" versus \"trage metaboliseerder\" in de klinische praktijk?",
-   "Welke medicijnen zijn bijzonder relevant voor farmacogenetisch advies?"
+   "Welke medicijnen zijn bijzonder relevant voor de voorschrijfbeslissingen van artsen?"
   ],
-  "postVideoText": "Met deze achtergrond kun je de relevantie van farmacogenetische tests met cliënten en artsen bespreken — en uitleggen waarom een dosis die voor de meesten werkt, voor een bepaald individu te sterk of te zwak kan zijn, afhankelijk van diens CYP-genotype.",
+  "postVideoText": "Met deze achtergrond begrijp je waarom artsen farmacogenetische tests kunnen inzetten — een dosis die voor de meesten werkt, kan voor een bepaald individu te sterk of te zwak zijn, afhankelijk van diens CYP-genotype. Als cliënten ernaar vragen, verwijs je ze naar hun arts. Farmacogenetische analyses worden uitsluitend via artsen aangeboden; deze training is vakinformatie en vervangt geen medisch advies.",
   "questions": [
    {
     "q": "Waarom werkt hetzelfde medicijn bij verschillende mensen anders?",
@@ -1302,7 +1302,7 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Waarom is farmacogenetica belangrijk in het advies?",
+    "q": "Waarom is farmacogenetica belangrijk in de medische zorg?",
     "options": [
      "Het is vooral een verkoopthema",
      "Voor ongeveer 7% van alle medicijnen bestaan klinisch bruikbare farmacogenetische richtlijnen — het genotype kennen vóór het voorschrijven kan ernstige bijwerkingen en behandelfalen voorkomen",

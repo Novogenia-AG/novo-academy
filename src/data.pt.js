@@ -1250,16 +1250,16 @@ const TXT = {
    "Enzimas CYP e metabolismo dos medicamentos",
    "Metabolizadores rápidos e lentos",
    "Substâncias ativas clinicamente relevantes (antidepressivos, analgésicos, anticoagulantes, …)",
-   "Relevância prática no aconselhamento"
+   "Relevância prática para os médicos prescritores"
   ],
   "introQuestionsHeader": "Esta formação responde a:",
   "introQuestions": [
    "Por que razão os medicamentos atuam de forma diferente em pessoas diferentes?",
    "Que enzimas CYP são responsáveis pela decomposição das substâncias ativas mais importantes?",
    "O que significa \"metabolizador rápido\" vs. \"lento\" no quotidiano clínico?",
-   "Que medicamentos são particularmente relevantes para o aconselhamento farmacogenético?"
+   "Que medicamentos são particularmente relevantes para as decisões de prescrição dos médicos?"
   ],
-  "postVideoText": "Com este conhecimento de base poderá discutir a relevância do teste farmacogenético com clientes e médicos — explicando por que razão uma dose que resulta na maioria pode ser demasiado forte ou demasiado fraca para um determinado indivíduo, consoante o seu genótipo CYP.",
+  "postVideoText": "Com este conhecimento de base compreenderá por que razão os médicos podem recorrer ao teste farmacogenético — uma dose que resulta na maioria pode ser demasiado forte ou demasiado fraca para um determinado indivíduo, consoante o seu genótipo CYP. Se os clientes perguntarem, encaminhe-os para o seu médico. As análises farmacogenéticas são disponibilizadas exclusivamente através de médicos; esta formação é informação técnica e não substitui o aconselhamento médico.",
   "questions": [
    {
     "q": "Por que razão o mesmo medicamento atua de forma diferente em pessoas diferentes?",
@@ -1302,7 +1302,7 @@ const TXT = {
     "correct": 1
    },
    {
-    "q": "Por que razão a farmacogenética é importante no aconselhamento?",
+    "q": "Por que razão a farmacogenética é importante nos cuidados médicos?",
     "options": [
      "É sobretudo um tema de vendas",
      "Cerca de 7% de todos os medicamentos têm orientações farmacogenéticas clinicamente acionáveis — conhecer o genótipo antes de prescrever pode prevenir efeitos secundários graves e o insucesso do tratamento",
