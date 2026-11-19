@@ -17,7 +17,7 @@
    drafts. */
 
 // T helper — same numbered-thumbnail helper as data.js
-const T = (n) => `/thumbnails/${String(n).padStart(2, '0')}.jpg`
+const T = (n) => `/thumbnails/${String(n).padStart(2, '0')}.webp`
 
 /* ---- English category labels (must match the keys used in MAIN_CATEGORIES_EN) ---- */
 export const CATEGORIES_EN = {
@@ -56,7 +56,7 @@ export const COURSES_EN = [
       'Exercise responders vs. non-responders',
       'Personalized diet strategy from genetics',
     ],
-    thumbnail: '/thumbnails/course-nutrition.jpg',
+    thumbnail: '/thumbnails/course-nutrition.webp',
     introQuestionsHeader: 'This training answers:',
     introQuestions: [
       'Why do some people gain weight on carbs, others on fat?',
@@ -151,7 +151,7 @@ export const COURSES_EN = [
       'Apply daily menus, recipes, and food lists',
       'Answer typical client questions confidently',
     ],
-    thumbnail: '/thumbnails/wm-report-cover.jpg',
+    thumbnail: '/thumbnails/wm-report-cover.webp',
     introQuestionsHeader: 'In this training you will learn:',
     introQuestions: [
       'How the report is structured and how to walk through it with clients',
@@ -310,7 +310,7 @@ export const COURSES_EN = [
       'Studies on nutrigenetics',
       'Practical implementation in consultation',
     ],
-    thumbnail: '/thumbnails/course-nutrition.jpg',
+    thumbnail: '/thumbnails/course-nutrition.webp',
     youtubeId: 'pRU2p2Banno',
     introQuestionsHeader: 'This training answers:',
     introQuestions: [
@@ -406,7 +406,7 @@ export const COURSES_EN = [
       'Interpret effects on cholesterol, triglycerides, blood pressure & homocysteine',
       'Convey personalized food recommendations clearly',
     ],
-    thumbnail: '/thumbnails/nut-report-cover.jpg',
+    thumbnail: '/thumbnails/nut-report-cover.webp',
     introQuestionsHeader: 'In this training you will learn:',
     introQuestions: [
       'How the nutrition report is structured',
@@ -573,7 +573,7 @@ export const COURSES_EN = [
       'Inflammation response and regeneration time',
       'Practical implementation in training planning',
     ],
-    thumbnail: '/thumbnails/course-performance.jpg',
+    thumbnail: '/thumbnails/course-performance.webp',
     youtubeId: 'cdsMJEPUv5A',
     introQuestionsHeader: 'This training answers:',
     introQuestions: [
@@ -812,7 +812,7 @@ export const COURSES_EN = [
       'Frame aging protection against oxidative stress',
       'Advise on selenium supply and alcohol/drug metabolism',
     ],
-    thumbnail: '/thumbnails/tx-report-cover.jpg',
+    thumbnail: '/thumbnails/tx-report-cover.webp',
     introQuestionsHeader: 'In this training you will learn:',
     introQuestions: [
       'How the detoxification report is structured',
@@ -904,7 +904,7 @@ export const COURSES_EN = [
       'Dopamine breakdown: why 15% are especially stress-prone',
       'Lifestyle recommendations based on the genetic profile',
     ],
-    thumbnail: '/thumbnails/course-burnout.jpg',
+    thumbnail: '/thumbnails/course-burnout.webp',
     /* Video: AI lip-sync version (HeyGen) of the German original eOqrJicdJZM
        (“BURNOUT SENSOR”). The EN dub was uploaded on 2026-09-18 (youtubeId below).
        Questions follow the content of this video. */
@@ -1029,7 +1029,7 @@ export const COURSES_EN = [
       'Read the three stress traits on the red–middle–green scale',
       'Explain why lifestyle matters in the red zone and in the middle',
     ],
-    thumbnail: '/thumbnails/bo-report-cover.jpg',
+    thumbnail: '/thumbnails/bo-report-cover.webp',
     introQuestionsHeader: 'In this training you will learn:',
     introQuestions: [
       'How the burnout section of the report is structured',
@@ -1184,7 +1184,7 @@ export const COURSES_EN = [
       'Genetic factors of aging: the telomerase gene',
       'Supporting nutrients and the genotype-dependent Mediterranean diet',
     ],
-    thumbnail: '/thumbnails/course-bioage.jpg',
+    thumbnail: '/thumbnails/course-bioage.webp',
     /* Video: AI lip-sync version (HeyGen) of the German original gwmVcvbaNgE
        (“BIOLOGISCHES ALTER”). The EN dub was uploaded on 2026-09-18 (youtubeId below). (The earlier EN
        clip udTodouyDsA — “free radicals & aging” — was the wrong video for this
@@ -1312,7 +1312,7 @@ export const COURSES_EN = [
       'Read the telomere result using the example of Maria',
       'Nutrient recommendations and the Mediterranean diet finding',
     ],
-    thumbnail: '/thumbnails/ba-report-cover.jpg',
+    thumbnail: '/thumbnails/ba-report-cover.webp',
     introQuestionsHeader: 'In this training you will learn:',
     introQuestions: [
       'How the biological age report is structured',
@@ -1412,7 +1412,7 @@ export const COURSES_EN = [
       'Which nutrients and lifestyle measures help?',
       'Mediterranean diet — does it work for everyone?',
     ],
-    thumbnail: '/thumbnails/ba-faq-cover.jpg',
+    thumbnail: '/thumbnails/ba-faq-cover.webp',
     faqGroups: [
       {
         title: 'Basics — Telomeres & Aging',
@@ -1469,7 +1469,7 @@ export const COURSES_EN = [
       'Bioavailability of vitamins and minerals',
     ],
     thumbnail: T(15),
-    /* No coverImage on purpose: /thumbnails/supp-sci-cover.jpg carries German
+    /* No coverImage on purpose: /thumbnails/supp-sci-cover.webp carries German
        text. Without it, the video still falls back to the YouTube thumbnail of
        TIHnA7J6EP4. */
     introQuestionsHeader: 'This training answers:',
@@ -1721,7 +1721,7 @@ export const COURSES_EN = [
       'Which genes we look at (MMP1, MC1R, FLG, …)',
       'What practical care recommendations look like',
     ],
-    thumbnail: '/thumbnails/beauty-faq-cover.jpg',
+    thumbnail: '/thumbnails/beauty-faq-cover.webp',
     faqGroups: [
       {
         title: 'Basics — What the genetic skin analysis does',
@@ -2060,7 +2060,7 @@ export const COURSES_EN = [
         title: 'NovoAcademy PDF - Legal Guideline for Advertising (English)',
         size: '1,5 MB',
         type: 'pdf',
-        thumbnail: '/thumbnails/doc-Novogenia_Advertising_Guideline_EN.jpg',
+        thumbnail: '/thumbnails/doc-Novogenia_Advertising_Guideline_EN.webp',
         url: '/course-materials/legal-advertising/Novogenia_Advertising_Guideline_EN.pdf',
       },
     ],

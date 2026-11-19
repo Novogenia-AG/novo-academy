@@ -55,3 +55,6 @@ public/course-materials/gene-diet/01-wissenschaftliche-basis/course/DEMO_SHAPE.p
 # ===== Misc =====
 *.pyc
 __pycache__/
+
+# bilder.py-Merker (Zeitstempel der Originale), nur lokal
+public/thumbnails/*.quelle

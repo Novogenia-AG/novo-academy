@@ -1,0 +1,8 @@
+{
+  "quellen": "src/assets/img-orig/thumbnails",
+  "ziel": "public/thumbnails",
+  "standard_breite": 1280,
+  "qualitaet": 74,
+  "warnung_kb": 120,
+  "breiten": { "doc-*": 456, "pptx-template": 456 }
+}

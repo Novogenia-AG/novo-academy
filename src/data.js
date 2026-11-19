@@ -1,5 +1,5 @@
 /* Thumbnail helper */
-export const T = (n) => `/thumbnails/${String(n).padStart(2, '0')}.jpg`
+export const T = (n) => `/thumbnails/${String(n).padStart(2, '0')}.webp`
 
 /* Generic 5-question test, reused across courses (prototype) */
 const GENERIC_QUESTIONS = [
@@ -110,14 +110,14 @@ export const COURSES = [
         title: 'NovoAcademy Demo Bericht - Ernährungsplan',
         size: '113 MB',
         type: 'pdf',
-        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Nutrition_Plan.jpg',
+        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Nutrition_Plan.webp',
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Demo_NovoDaily_Nutrition_Plan.pdf',
       },
       {
         title: 'NovoAcademy Demo Bericht - Gen-Diät Analysebericht',
         size: '17 MB',
         type: 'pdf',
-        thumbnail: '/thumbnails/doc-DEMO_SHAPE.jpg',
+        thumbnail: '/thumbnails/doc-DEMO_SHAPE.webp',
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/DEMO_SHAPE.pdf',
       },
       {
@@ -264,7 +264,7 @@ export const COURSES = [
       'Häufige Kundenfragen souverän beantworten',
     ],
     /* Cover-Standbild aus Teil 1 (rqae12uqZkE) — zeigt absichtlich den Bericht */
-    thumbnail: '/thumbnails/wm-report-cover.jpg',
+    thumbnail: '/thumbnails/wm-report-cover.webp',
     introQuestionsHeader: 'In dieser Schulung lernst du:',
     introQuestions: [
       'Wie der Bericht aufgebaut ist und wie du ihn strukturiert mit Kunden besprichst',
@@ -299,14 +299,14 @@ export const COURSES = [
         title: 'NovoAcademy Demo Bericht - Ernährungsplan',
         size: '113 MB',
         type: 'pdf',
-        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Nutrition_Plan.jpg',
+        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Nutrition_Plan.webp',
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Demo_NovoDaily_Nutrition_Plan.pdf',
       },
       {
         title: 'NovoAcademy Demo Bericht - Gen-Diät Analysebericht',
         size: '17 MB',
         type: 'pdf',
-        thumbnail: '/thumbnails/doc-DEMO_SHAPE.jpg',
+        thumbnail: '/thumbnails/doc-DEMO_SHAPE.webp',
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/DEMO_SHAPE.pdf',
       },
     ],
@@ -501,7 +501,7 @@ export const COURSES = [
       'Gen-Diät-Programm, Lebensmittelbewertung, Kalorienblocker & wissenschaftliche Belege',
       'Komplette FAQ-Sammlung als PDF zum Download',
     ],
-    thumbnail: '/thumbnails/wm-faq-cover.jpg',
+    thumbnail: '/thumbnails/wm-faq-cover.webp',
     faqGroups: [
       {
         title: 'Was ist die Gen-Diät?',
@@ -622,7 +622,7 @@ export const COURSES = [
       'Koffein, Folsäure, Bluttest vs. Gentest',
       'Hintergrund zur Lebensmittelbewertung',
     ],
-    thumbnail: '/thumbnails/nut-faq-cover.jpg',
+    thumbnail: '/thumbnails/nut-faq-cover.webp',
     faqGroups: [
       {
         title: 'Allgemeines zur Ernährungsgenetik',
@@ -717,7 +717,7 @@ export const COURSES = [
       'Studienlage zur Nutrigenetik',
       'Praktische Umsetzung in der Beratung',
     ],
-    thumbnail: '/thumbnails/course-nutrition.jpg',
+    thumbnail: '/thumbnails/course-nutrition.webp',
     youtubeId: '79MPy6BFqu8',
     introQuestionsHeader: 'In dieser Schulung bekommst du Antworten auf folgende Fragen:',
     introQuestions: [
@@ -824,7 +824,7 @@ export const COURSES = [
       {
         title: 'NovoAcademy Folien - Gesund ernähren nach den Genen',
         size: '78 MB',
-        type: 'pptx',        thumbnail: '/thumbnails/pptx-template.jpg',
+        type: 'pptx',        thumbnail: '/thumbnails/pptx-template.webp',
 
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Schulungsfolien_Nutrition.pptx',
       },
@@ -832,14 +832,14 @@ export const COURSES = [
         title: 'NovoAcademy Demo Bericht - NovoDaily Nutrition Plan',
         size: '113 MB',
         type: 'pdf',
-        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Nutrition_Plan.jpg',
+        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Nutrition_Plan.webp',
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Demo_NovoDaily_Nutrition_Plan.pdf',
       },
       {
         title: 'NovoAcademy Demo Bericht - NovoDaily Lifestyle',
         size: '20 MB',
         type: 'pdf',
-        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Lifestyle.jpg',
+        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Lifestyle.webp',
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Demo_NovoDaily_Lifestyle.pdf',
       },
       {
@@ -919,7 +919,7 @@ export const COURSES = [
       'Wirkung auf Cholesterin, Triglyceride, Blutdruck & Homocystein einordnen',
       'Personalisierte Lebensmittel-Empfehlungen verständlich vermitteln',
     ],
-    thumbnail: '/thumbnails/nut-report-cover.jpg',
+    thumbnail: '/thumbnails/nut-report-cover.webp',
     introQuestionsHeader: 'In dieser Schulung lernst du:',
     introQuestions: [
       'Wie der Ernährungs-Bericht aufgebaut ist',
@@ -955,14 +955,14 @@ export const COURSES = [
         title: 'NovoAcademy Demo Bericht - NovoDaily Nutrition Plan',
         size: '113 MB',
         type: 'pdf',
-        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Nutrition_Plan.jpg',
+        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Nutrition_Plan.webp',
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Demo_NovoDaily_Nutrition_Plan.pdf',
       },
       {
         title: 'NovoAcademy Demo Bericht - NovoDaily Lifestyle',
         size: '20 MB',
         type: 'pdf',
-        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Lifestyle.jpg',
+        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Lifestyle.webp',
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Demo_NovoDaily_Lifestyle.pdf',
       },
     ],
@@ -1048,7 +1048,7 @@ export const COURSES = [
       'Regeneration und Ernährung',
       'Trainingssteuerung nach Genotyp',
     ],
-    thumbnail: '/thumbnails/pg-faq-cover.jpg',
+    thumbnail: '/thumbnails/pg-faq-cover.webp',
     faqGroups: [
       {
         title: 'Talent & Genetik im Sport',
@@ -1130,7 +1130,7 @@ export const COURSES = [
       'Genetik der Regeneration',
       'Talent vs. Training — was sagt die Forschung?',
     ],
-    thumbnail: '/thumbnails/course-performance.jpg',
+    thumbnail: '/thumbnails/course-performance.webp',
     youtubeId: 'GyIfKaYmLoE',
     introQuestionsHeader: 'In dieser Schulung bekommst du Antworten auf folgende Fragen:',
     introQuestions: [
@@ -1227,7 +1227,7 @@ export const COURSES = [
       {
         title: 'NovoAcademy Folien - Sportliche Leistung',
         size: '194 MB',
-        type: 'pptx',        thumbnail: '/thumbnails/pptx-template.jpg',
+        type: 'pptx',        thumbnail: '/thumbnails/pptx-template.webp',
 
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Schulungsfolien_Performance.pptx',
       },
@@ -1235,21 +1235,21 @@ export const COURSES = [
         title: 'NovoAcademy Demo Bericht - Performance Sensor',
         size: '37 MB',
         type: 'pdf',
-        thumbnail: '/thumbnails/doc-Demo_Performance_Sensor.jpg',
+        thumbnail: '/thumbnails/doc-Demo_Performance_Sensor.webp',
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Demo_Performance_Sensor.pdf',
       },
       {
         title: 'NovoAcademy Demo Bericht - Performance Trainingsplan',
         size: '73 MB',
         type: 'pdf',
-        thumbnail: '/thumbnails/doc-Demo_Performance_Trainingsplan.jpg',
+        thumbnail: '/thumbnails/doc-Demo_Performance_Trainingsplan.webp',
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Demo_Performance_Trainingsplan.pdf',
       },
       {
         title: 'NovoAcademy Demo Bericht - Nutrition Plan (Performance)',
         size: '10 MB',
         type: 'pdf',
-        thumbnail: '/thumbnails/doc-Demo_Nutrition_Plan_Performance.jpg',
+        thumbnail: '/thumbnails/doc-Demo_Nutrition_Plan_Performance.webp',
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Demo_Nutrition_Plan_Performance.pdf',
       },
       {
@@ -1358,14 +1358,14 @@ export const COURSES = [
         title: 'NovoAcademy Folien - Entgiftung',
         size: '78 MB',
         type: 'pptx',
-        thumbnail: '/thumbnails/pptx-template.jpg',
+        thumbnail: '/thumbnails/pptx-template.webp',
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Schulungsfolien_Detox.pptx',
       },
       {
         title: 'NovoAcademy Demo Bericht - NovoDaily Lifestyle',
         size: '20 MB',
         type: 'pdf',
-        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Lifestyle.jpg',
+        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Lifestyle.webp',
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Demo_NovoDaily_Lifestyle.pdf',
       },
       {
@@ -1413,7 +1413,7 @@ export const COURSES = [
       'Alterungsschutz vor oxidativem Stress einordnen',
       'Selenversorgung und Alkohol-/Drogen-Verarbeitung beraten',
     ],
-    thumbnail: '/thumbnails/tx-report-cover.jpg',
+    thumbnail: '/thumbnails/tx-report-cover.webp',
     introQuestionsHeader: 'In dieser Schulung lernst du:',
     introQuestions: [
       'Wie der Entgiftungs-Bericht aufgebaut ist',
@@ -1436,7 +1436,7 @@ export const COURSES = [
         title: 'NovoAcademy Demo Bericht - NovoDaily Lifestyle',
         size: '20 MB',
         type: 'pdf',
-        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Lifestyle.jpg',
+        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Lifestyle.webp',
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Demo_NovoDaily_Lifestyle.pdf',
       },
     ],
@@ -1521,7 +1521,7 @@ export const COURSES = [
       'Welche Lebensstil-Maßnahmen wirklich helfen',
       'Wann ist genetisch bedingte Anfälligkeit ein Problem?',
     ],
-    thumbnail: '/thumbnails/bo-faq-cover.jpg',
+    thumbnail: '/thumbnails/bo-faq-cover.webp',
     faqGroups: [
       {
         title: 'Genetik & Stress',
@@ -1595,7 +1595,7 @@ export const COURSES = [
       'Genetische Risikofaktoren für Burnout',
       'Personalisierte Strategien zur Stress-Resilienz',
     ],
-    thumbnail: '/thumbnails/course-burnout.jpg',
+    thumbnail: '/thumbnails/course-burnout.webp',
     youtubeId: 'eOqrJicdJZM',
     introQuestionsHeader: 'In dieser Schulung bekommst du Antworten auf folgende Fragen:',
     introQuestions: [
@@ -1698,7 +1698,7 @@ export const COURSES = [
         title: 'NovoAcademy Demo Bericht - NovoDaily Lifestyle',
         size: '20 MB',
         type: 'pdf',
-        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Lifestyle.jpg',
+        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Lifestyle.webp',
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Demo_NovoDaily_Lifestyle.pdf',
       },
     ],
@@ -1723,7 +1723,7 @@ export const COURSES = [
       'Individuelle Lebensstil-Empfehlungen ableiten',
       'Warning-Signale früh erkennen',
     ],
-    thumbnail: '/thumbnails/bo-report-cover.jpg',
+    thumbnail: '/thumbnails/bo-report-cover.webp',
     introQuestionsHeader: 'In dieser Schulung lernst du:',
     introQuestions: [
       'Wie der Burnout-Bericht aufgebaut ist',
@@ -1807,7 +1807,7 @@ export const COURSES = [
         title: 'NovoAcademy Demo Bericht - NovoDaily Lifestyle',
         size: '20 MB',
         type: 'pdf',
-        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Lifestyle.jpg',
+        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Lifestyle.webp',
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Demo_NovoDaily_Lifestyle.pdf',
       },
     ],
@@ -1831,7 +1831,7 @@ export const COURSES = [
       'Welche Nährstoffe und Lebensstil-Maßnahmen helfen?',
       'Mediterrane Ernährung — wirkt sie bei jedem?',
     ],
-    thumbnail: '/thumbnails/ba-faq-cover.jpg',
+    thumbnail: '/thumbnails/ba-faq-cover.webp',
     faqGroups: [
       {
         title: 'Grundlagen — Telomere & Alterung',
@@ -1909,7 +1909,7 @@ export const COURSES = [
       'Genetische Faktoren der Alterung: das Telomerase-Gen',
       'Anti-Aging-Strategien: Nährstoffe und genotypabhängige mediterrane Ernährung',
     ],
-    thumbnail: '/thumbnails/course-bioage.jpg',
+    thumbnail: '/thumbnails/course-bioage.webp',
     youtubeId: 'gwmVcvbaNgE',
     introQuestionsHeader: 'In dieser Schulung bekommst du Antworten auf folgende Fragen:',
     introQuestions: [
@@ -2022,7 +2022,7 @@ export const COURSES = [
         title: 'NovoAcademy Demo Bericht - NovoDaily Lifestyle',
         size: '20 MB',
         type: 'pdf',
-        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Lifestyle.jpg',
+        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Lifestyle.webp',
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Demo_NovoDaily_Lifestyle.pdf',
       },
       {
@@ -2053,7 +2053,7 @@ export const COURSES = [
       'Konkrete Anti-Aging-Empfehlungen ableiten',
       'Wie Lebensstil das biologische Alter beeinflusst',
     ],
-    thumbnail: '/thumbnails/ba-report-cover.jpg',
+    thumbnail: '/thumbnails/ba-report-cover.webp',
     introQuestionsHeader: 'In dieser Schulung lernst du:',
     introQuestions: [
       'Wie der Bericht zum biologischen Alter aufgebaut ist',
@@ -2137,7 +2137,7 @@ export const COURSES = [
         title: 'NovoAcademy Demo Bericht - NovoDaily Lifestyle',
         size: '20 MB',
         type: 'pdf',
-        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Lifestyle.jpg',
+        thumbnail: '/thumbnails/doc-Demo_NovoDaily_Lifestyle.webp',
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Demo_NovoDaily_Lifestyle.pdf',
       },
     ],
@@ -2164,7 +2164,7 @@ export const COURSES = [
     ],
     thumbnail: T(15),
     youtubeId: 'WV2pfawe6zI', // DE Supplements-Schnitt aus "Gesund oder ungesund?" (13:23–Ende), public hochgeladen 2026-06
-    coverImage: '/thumbnails/supp-sci-cover.jpg',
+    coverImage: '/thumbnails/supp-sci-cover.webp',
     introQuestionsHeader: 'In dieser Schulung bekommst du Antworten auf folgende Fragen:',
     introQuestions: [
       'Warum hat jeder Mensch einen anderen Mikronährstoffbedarf?',
@@ -2237,7 +2237,7 @@ export const COURSES = [
       {
         title: 'NovoAcademy Folien - Personalisierte Nahrungsergänzung',
         size: '94 MB',
-        type: 'pptx',        thumbnail: '/thumbnails/pptx-template.jpg',
+        type: 'pptx',        thumbnail: '/thumbnails/pptx-template.webp',
 
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Schulungsfolien_Supplements.pptx',
       },
@@ -2269,7 +2269,7 @@ export const COURSES = [
       'Wie passt sich die Dosis an den genetischen Bedarf an?',
       'Was kostet die personalisierte Supplementierung im Vergleich?',
     ],
-    thumbnail: '/thumbnails/supp-faq-cover.jpg',
+    thumbnail: '/thumbnails/supp-faq-cover.webp',
     faqGroups: [
       {
         title: 'Grundlagen — Warum personalisiert?',
@@ -2438,14 +2438,14 @@ export const COURSES = [
         title: 'NovoAcademy Folien - Gesunde Haut und Aussehen',
         size: '114 MB',
         type: 'pptx',
-        thumbnail: '/thumbnails/pptx-template.jpg',
+        thumbnail: '/thumbnails/pptx-template.webp',
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Schulungsfolien_Beauty.pptx',
       },
       {
         title: 'NovoAcademy Demo Bericht - Beauty Sensor',
         size: '23 MB',
         type: 'pdf',
-        thumbnail: '/thumbnails/doc-Demo_Beauty_Sensor.jpg',
+        thumbnail: '/thumbnails/doc-Demo_Beauty_Sensor.webp',
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Demo_Beauty_Sensor.pdf',
       },
       {
@@ -2476,7 +2476,7 @@ export const COURSES = [
       'Welche Gene wir betrachten (MMP1, MC1R, FLG, …)',
       'Wie praktische Pflegeempfehlungen aussehen',
     ],
-    thumbnail: '/thumbnails/beauty-faq-cover.jpg',
+    thumbnail: '/thumbnails/beauty-faq-cover.webp',
     faqGroups: [
       {
         title: 'Grundlagen — Was die genetische Hautanalyse leistet',
@@ -2592,7 +2592,7 @@ export const COURSES = [
       {
         title: 'NovoAcademy Folien - Pharmakogenetik',
         size: '46 MB',
-        type: 'pptx',        thumbnail: '/thumbnails/pptx-template.jpg',
+        type: 'pptx',        thumbnail: '/thumbnails/pptx-template.webp',
 
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Schulungsfolien_Pharmacogenetics.pptx',
       },
@@ -2600,7 +2600,7 @@ export const COURSES = [
         title: 'NovoAcademy Demo Bericht - Pharmaco Sensor',
         size: '9 MB',
         type: 'pdf',
-        thumbnail: '/thumbnails/doc-Demo_Pharmaco_Sensor.jpg',
+        thumbnail: '/thumbnails/doc-Demo_Pharmaco_Sensor.webp',
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/Demo_Pharmaco_Sensor.pdf',
       },
       {
@@ -3251,7 +3251,7 @@ const HOME_TOP_TEXT = {
       sub: 'Lass dir von Dr. Wallerstorfer zeigen, wie Genanalysen durchgeführt werden, wie personalisierte Nahrungsergänzung und Kosmetik produziert werden kann und wir von Probe und Rohstoffen zu fertigen Produkten kommen.',
       /* Gestalterisches Cover (Laborfoto ohne Text). Technisch nicht nötig:
          YouTube liefert für öffentliche/nicht gelistete Videos Thumbnails (geprüft 16.09.2026). */
-      coverImage: '/thumbnails/firmentour-cover.jpg',
+      coverImage: '/thumbnails/firmentour-cover.webp',
     },
   },
   en: {
@@ -3304,7 +3304,7 @@ const HOME_BONUS_TEXT = {
     subtitle: '„Der WEG zum EWIGEN LEBEN?" — Longevity und der Fortschritt der Wissenschaft.',
     title: 'Der WEG zum EWIGEN LEBEN?',
     /* Gestalterisches Cover mit DEUTSCHEM Text -> nur DE verwenden. */
-    coverImage: '/thumbnails/ewig-leben-cover.jpg',
+    coverImage: '/thumbnails/ewig-leben-cover.webp',
   },
   en: { category: 'Further Relevant Content', subtitle: '“The PATH to ETERNAL LIFE?” — longevity and the progress of science.', title: 'The PATH to ETERNAL LIFE?' },
   cz: { category: 'Další relevantní obsah', subtitle: '„CESTA k VĚČNÉMU ŽIVOTU?“ — dlouhověkost a pokrok vědy.', title: 'CESTA k VĚČNÉMU ŽIVOTU?' },
@@ -3671,7 +3671,7 @@ export const getSampleCourseList = (lang = 'de') => lang === 'de' ? SAMPLE_COURS
    ASSET PATH PREFIXING (production safe)
    ------------------------------------------------------------
    The app is deployed under /novo-academy/ on GitHub Pages.
-   Raw absolute paths like '/thumbnails/01.jpg' would resolve to
+   Raw absolute paths like '/thumbnails/01.webp' would resolve to
    the wrong location. Vite doesn't auto-prefix raw strings in
    attribute values or fetch calls, so we walk the course data
    and prefix any asset path with import.meta.env.BASE_URL.
