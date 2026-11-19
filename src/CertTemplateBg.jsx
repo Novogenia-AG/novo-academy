@@ -18,7 +18,11 @@ export default function CertTemplateBg() {
     ;(async () => {
       try {
         const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '')
-        const loadingTask = pdfjs.getDocument(`${base}/cert-template.pdf`)
+        // Härtung (NOVO CODE 03-F5): isEvalSupported: false verbietet pdf.js,
+        // Schriften per eval/new Function zu kompilieren (CVE-2024-4367).
+        // pdfjs-dist 5.x hat diesen Pfad bereits entfernt und ignoriert die
+        // Option; sie bleibt als Absicherung bei einem Versionswechsel stehen.
+        const loadingTask = pdfjs.getDocument({ url: `${base}/cert-template.pdf`, isEvalSupported: false })
         const doc = await loadingTask.promise
         const page = await doc.getPage(1)
 

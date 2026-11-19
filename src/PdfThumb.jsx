@@ -18,10 +18,15 @@ export default function PdfThumb({ url, className = 'cc-doc-thumb' }) {
     let doc = null
     ;(async () => {
       try {
+        // Härtung (NOVO CODE 03-F5): isEvalSupported: false verbietet pdf.js,
+        // Schriften per eval/new Function zu kompilieren (CVE-2024-4367).
+        // pdfjs-dist 5.x hat diesen Pfad bereits entfernt und ignoriert die
+        // Option; sie bleibt als Absicherung bei einem Versionswechsel stehen.
         const loadingTask = pdfjs.getDocument({
           url,
           disableStream: false,
           disableAutoFetch: true, // only fetch what's needed for page 1
+          isEvalSupported: false,
         })
         doc = await loadingTask.promise
         const page = await doc.getPage(1)
