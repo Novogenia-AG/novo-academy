@@ -86,7 +86,7 @@ const TXT = {
   "bullets": [
    "¿Qué es el gen COMT?",
    "¿Qué tres rasgos de estrés muestra el informe?",
-   "¿Qué papel desempeña la genética en el riesgo de burnout?",
+   "¿Qué papel desempeña la genética en la sensibilidad al estrés?",
    "¿Qué recomendaciones se derivan del perfil?"
   ]
  },
@@ -1230,7 +1230,7 @@ const TXT = {
  },
  "bo-sci-en": {
   "topic": "Base científica",
-  "description": "Por qué el mismo estrés afecta de forma distinta a cada persona — y qué tiene que ver el gen COMT con el riesgo de burnout.",
+  "description": "Por qué el mismo estrés afecta de forma distinta a cada persona — y qué tiene que ver el gen COMT con la forma en que gestionamos el estrés.",
   "longDescription": "En esta formación, el Dr. Daniel Wallerstorfer explica por qué un estrés masivo y continuo provoca burnout en algunas personas, pero no en otras. Aprenderás qué tres rasgos genéticos examina el análisis, cómo el gen COMT degrada la dopamina después de situaciones emocionantes o estresantes, por qué alrededor del 15 % de las personas son especialmente propensas al estrés — y por qué el estilo de vida adecuado es tanto más importante cuanto menos favorables son los genes.",
   "postVideoText": "Con este contexto científico podrás analizar el informe de burnout con tus clientes sobre una base sólida y establecer estrategias individuales de gestión del estrés.",
   "introQuestionsHeader": "Esta formación responde a:",
@@ -1243,7 +1243,7 @@ const TXT = {
   "introQuestions": [
    "¿Qué gen es central para el procesamiento individual del estrés?",
    "¿Por qué el mismo estrés afecta de forma distinta a cada persona — y qué tiene que ver el gen COMT con ello?",
-   "¿Cómo influyen los genes en el riesgo de burnout?",
+   "¿Cómo influyen los genes en la forma en que gestionamos el estrés?",
    "¿Qué medidas de estilo de vida ayudan — y por qué son más importantes con un perfil desfavorable?"
   ],
   "questions": [
@@ -1333,7 +1333,7 @@ const TXT = {
      "A la dependencia de la cafeína",
      "A los trastornos del sueño",
      "A los antojos de azúcar",
-     "A los juegos de azar"
+     "A la búsqueda de emociones fuertes"
     ],
     "correct": 3
    },
@@ -1341,7 +1341,7 @@ const TXT = {
     "q": "¿Qué indica la zona roja de un rasgo de estrés en el informe?",
     "options": [
      "Una genética muy favorable — no hace falta actuar",
-     "Una predisposición desfavorable — un mayor riesgo de burnout",
+     "Una predisposición desfavorable — una mayor sensibilidad al estrés",
      "La persona ya tiene burnout y necesita tratamiento",
      "Una recomendación estándar que se aplica a todo el mundo"
     ],
@@ -1390,7 +1390,7 @@ const TXT = {
    {
     "q": "María tiene una copia funcional y una copia defectuosa del gen COMT. ¿Cómo es su resultado?",
     "options": [
-     "Los tres rasgos en la zona roja — es muy propensa al burnout",
+     "Los tres rasgos en la zona roja — es muy sensible al estrés",
      "Los tres rasgos en la zona verde — el burnout no es un problema para ella",
      "El rendimiento bajo estrés en la zona roja y los otros dos rasgos en la zona verde",
      "Los tres rasgos en la zona media — una resistencia al estrés moderadamente buena"
@@ -1421,8 +1421,8 @@ const TXT = {
     "q": "¿Qué significa que un cliente esté en la zona verde en los tres rasgos?",
     "options": [
      "El burnout es imposible para este cliente, sea cual sea su estilo de vida",
-     "El cliente es especialmente propenso al burnout",
-     "El burnout no es un peligro tan grande para este cliente",
+     "El cliente es especialmente sensible al estrés",
+     "Este cliente suele gestionar bien el estrés",
      "No se pudo evaluar el análisis"
     ],
     "correct": 2
@@ -1670,11 +1670,11 @@ const FAQTX = {
     "items": [
      {
       "q": "¿Qué es el gen COMT y por qué es importante?",
-      "a": "COMT (catecol-O-metiltransferasa) degrada el neurotransmisor dopamina una vez que ha pasado una situación emocionante o estresante, para que el cerebro pueda volver a su nivel basal. Si el gen funciona mal, la dopamina se degrada mucho más despacio: el cerebro permanece más tiempo en un estado de excitación y, si aparece un nuevo estrés antes de que haya regresado a su nivel basal, puede sobrecargarse. Una degradación más lenta también tiene ventajas: los sentimientos positivos se viven con más intensidad y estas personas suelen ser más curiosas, aunque también más propensas a los juegos de azar. Los estudios describen una variante frecuente (Val158Met) con una actividad enzimática claramente distinta entre la forma rápida y la lenta."
+      "a": "COMT (catecol-O-metiltransferasa) degrada el neurotransmisor dopamina una vez que ha pasado una situación emocionante o estresante, para que el cerebro pueda volver a su nivel basal. Si el gen funciona mal, la dopamina se degrada mucho más despacio: el cerebro permanece más tiempo en un estado de excitación y, si aparece un nuevo estrés antes de que haya regresado a su nivel basal, puede sobrecargarse. Una degradación más lenta también tiene ventajas: los sentimientos positivos se viven con más intensidad y estas personas suelen ser más curiosas, aunque también reaccionan con más intensidad a las recompensas y las emociones fuertes. Los estudios describen una variante frecuente (Val158Met) con una actividad enzimática claramente distinta entre la forma rápida y la lenta."
      },
      {
       "q": "¿Qué tres rasgos evalúa el análisis de burnout?",
-      "a": "El rendimiento bajo estrés (lo bien que rindes en situaciones estresantes), la resiliencia emocional (cuánto te pesan los sentimientos negativos) y la impulsividad. Cada rasgo se muestra en una escala que va de la zona roja, pasando por la zona media, hasta la zona verde: la zona verde es favorable y la zona roja indica un mayor riesgo de burnout."
+      "a": "El rendimiento bajo estrés (lo bien que rindes en situaciones estresantes), la resiliencia emocional (cuánto te pesan los sentimientos negativos) y la impulsividad. Cada rasgo se muestra en una escala que va de la zona roja, pasando por la zona media, hasta la zona verde: la zona verde es favorable y la zona roja indica una mayor sensibilidad al estrés."
      },
      {
       "q": "¿Cuántas personas tienen una propensión genética especialmente alta al estrés?",
@@ -1691,7 +1691,7 @@ const FAQTX = {
      },
      {
       "q": "Los tres rasgos están en la zona verde: ¿aun así tengo que pensar en el burnout?",
-      "a": "Para ti, el burnout no es un peligro tan grande, pero el riesgo no es cero: un estrés masivo y continuo puede pasar factura con el tiempo. Las fases de recuperación y un estilo de vida equilibrado siguen siendo importantes."
+      "a": "Sueles gestionar bien el estrés, pero un estrés masivo y continuo puede pasar factura con el tiempo. Las fases de recuperación y un estilo de vida equilibrado siguen siendo importantes."
      },
      {
       "q": "¿Qué le ayuda a todo el mundo, sea cual sea el genotipo?",
@@ -1704,7 +1704,7 @@ const FAQTX = {
     "items": [
      {
       "q": "En mi informe aparece una “zona roja”. ¿Debo preocuparme?",
-      "a": "No es motivo para entrar en pánico, pero sí para actuar. Una zona roja señala una predisposición genética desfavorable en un ámbito concreto: un mayor riesgo de burnout, no un diagnóstico. Cuantos más rasgos tengas en la zona roja, más importante es adaptar tu estilo de vida para evitar el estrés. Incluso con resultados en la zona media, un estilo de vida con poco estrés sigue siendo importante."
+      "a": "No es motivo para entrar en pánico, pero sí para actuar. Una zona roja señala una predisposición genética desfavorable en un ámbito concreto: una mayor sensibilidad al estrés, no un diagnóstico. Cuantos más rasgos tengas en la zona roja, más importante es adaptar tu estilo de vida para evitar el estrés. Incluso con resultados en la zona media, un estilo de vida con poco estrés sigue siendo importante."
      },
      {
       "q": "¿Dónde encuentro recomendaciones concretas para mi genotipo?",

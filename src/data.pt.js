@@ -632,7 +632,7 @@ const TXT = {
  },
  "bo-sci-en": {
   "topic": "Fundamentos Científicos",
-  "description": "Por que razão o mesmo stress afeta as pessoas de forma diferente — e o que tem o gene COMT a ver com o risco de burnout.",
+  "description": "Por que razão o mesmo stress afeta as pessoas de forma diferente — e o que tem o gene COMT a ver com a forma como lidamos com o stress.",
   "longDescription": "Nesta formação, o Dr. Daniel Wallerstorfer explica por que razão um stress massivo e contínuo leva ao burnout em algumas pessoas, mas não noutras. Irá aprender quais as três características genéticas que a análise avalia, como o gene COMT decompõe a dopamina após situações excitantes ou stressantes, por que razão cerca de 15% das pessoas são especialmente propensas ao stress — e por que razão o estilo de vida certo é tanto mais importante quanto menos favoráveis forem os genes.",
   "bullets": [
    "Três características genéticas: desempenho sob stress, resiliência emocional, impulsividade",
@@ -644,7 +644,7 @@ const TXT = {
   "introQuestions": [
    "Que gene é central no processamento individual do stress?",
    "Por que razão o mesmo stress afeta as pessoas de forma diferente — e o que tem o COMT a ver com isso?",
-   "Como influenciam os genes o risco de burnout?",
+   "Como influenciam os genes a forma como lidamos com o stress?",
    "Que medidas de estilo de vida ajudam — e por que razão são mais importantes perante um perfil desfavorável?"
   ],
   "postVideoText": "Com este fundamento científico, poderá discutir o relatório de burnout com os seus clientes numa base sólida e deduzir estratégias individuais de gestão do stress.",
@@ -735,7 +735,7 @@ const TXT = {
      "Dependência de cafeína",
      "Perturbações do sono",
      "Desejo intenso de açúcar",
-     "Jogos de azar"
+     "Procura de emoções fortes"
     ],
     "correct": 3
    },
@@ -743,7 +743,7 @@ const TXT = {
     "q": "O que indica no relatório a zona vermelha de uma característica de stress?",
     "options": [
      "Uma genética muito favorável — não é necessário agir",
-     "Uma predisposição desfavorável — maior risco de burnout",
+     "Uma predisposição desfavorável — maior sensibilidade ao stress",
      "A pessoa já tem burnout e precisa de tratamento",
      "Uma recomendação padrão que se aplica a toda a gente"
     ],
@@ -792,7 +792,7 @@ const TXT = {
    {
     "q": "A Maria tem uma cópia funcional e uma cópia defeituosa do gene COMT. Como é o seu resultado?",
     "options": [
-     "As três características na zona vermelha — tem uma forte propensão para o burnout",
+     "As três características na zona vermelha — é muito sensível ao stress",
      "As três características na zona verde — o burnout não é uma preocupação para ela",
      "Desempenho sob stress na zona vermelha, as outras duas características na zona verde",
      "As três características na zona intermédia — resistência ao stress razoável"
@@ -823,8 +823,8 @@ const TXT = {
     "q": "O que significa um cliente estar na zona verde nas três características?",
     "options": [
      "O burnout é impossível para este cliente, seja qual for o seu estilo de vida",
-     "O cliente é especialmente propenso ao burnout",
-     "O burnout não é um perigo tão grande para este cliente",
+     "O cliente é especialmente sensível ao stress",
+     "Este cliente tende a lidar bem com o stress",
      "Não foi possível avaliar a análise"
     ],
     "correct": 2
@@ -838,7 +838,7 @@ const TXT = {
   "bullets": [
    "O que é o gene COMT?",
    "Que três características de stress mostra o relatório?",
-   "De que forma o risco de burnout é genético?",
+   "De que forma a sensibilidade ao stress é genética?",
    "Que recomendações resultam do perfil?"
   ],
   "questions": []
@@ -1676,11 +1676,11 @@ const FAQTX = {
     "items": [
      {
       "q": "O que é o gene COMT e por que razão é importante?",
-      "a": "A COMT (catecol-O-metiltransferase) decompõe a dopamina, um mensageiro químico, depois de terminar uma situação excitante ou stressante, para que o cérebro possa regressar ao seu nível basal. Se o gene funcionar mal, a dopamina é decomposta muito mais lentamente: o cérebro permanece mais tempo num estado de excitação e, se surgir uma nova situação de stress antes de ter regressado ao nível basal, pode ficar sobrecarregado. Uma decomposição mais lenta também tem vantagens — os sentimentos positivos são vividos com mais intensidade e as pessoas tendem a ser mais curiosas, mas também mais propensas a jogos de azar. Os estudos descrevem uma variante comum (Val158Met) com uma atividade enzimática claramente diferente entre a forma rápida e a lenta."
+      "a": "A COMT (catecol-O-metiltransferase) decompõe a dopamina, um mensageiro químico, depois de terminar uma situação excitante ou stressante, para que o cérebro possa regressar ao seu nível basal. Se o gene funcionar mal, a dopamina é decomposta muito mais lentamente: o cérebro permanece mais tempo num estado de excitação e, se surgir uma nova situação de stress antes de ter regressado ao nível basal, pode ficar sobrecarregado. Uma decomposição mais lenta também tem vantagens — os sentimentos positivos são vividos com mais intensidade e as pessoas tendem a ser mais curiosas, mas também a reagir mais fortemente a recompensas e emoções fortes. Os estudos descrevem uma variante comum (Val158Met) com uma atividade enzimática claramente diferente entre a forma rápida e a lenta."
      },
      {
       "q": "Que três características avalia a análise de burnout?",
-      "a": "Desempenho sob stress (até que ponto consegues render em situações de stress), resiliência emocional (até que ponto os sentimentos negativos te pesam) e impulsividade. Cada característica é apresentada numa escala que vai do vermelho ao verde, passando por uma zona intermédia: o verde é favorável, o vermelho significa um maior risco de burnout."
+      "a": "Desempenho sob stress (até que ponto consegues render em situações de stress), resiliência emocional (até que ponto os sentimentos negativos te pesam) e impulsividade. Cada característica é apresentada numa escala que vai do vermelho ao verde, passando por uma zona intermédia: o verde é favorável, o vermelho significa uma maior sensibilidade ao stress."
      },
      {
       "q": "Quantas pessoas são, por razões genéticas, especialmente propensas ao stress?",
@@ -1697,7 +1697,7 @@ const FAQTX = {
      },
      {
       "q": "As minhas três características estão na zona verde — mesmo assim tenho de ter o burnout em conta?",
-      "a": "Para ti, o burnout não é um perigo tão grande — mas o risco não é nulo: um stress massivo e contínuo pode, com o tempo, deixar marcas na mesma. As fases de recuperação e um estilo de vida equilibrado continuam a ser importantes."
+      "a": "Tens tendência a lidar bem com o stress — mas um stress massivo e contínuo pode, com o tempo, deixar marcas na mesma. As fases de recuperação e um estilo de vida equilibrado continuam a ser importantes."
      },
      {
       "q": "O que ajuda toda a gente, independentemente do genótipo?",
@@ -1710,7 +1710,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Apareceu uma «zona vermelha» no meu relatório. Devo preocupar-me?",
-      "a": "Não é motivo para pânico, mas é motivo para agir. Uma zona vermelha assinala uma predisposição genética desfavorável numa área específica — um maior risco de burnout, não um diagnóstico. Quanto mais características tiveres na zona vermelha, mais importante é adaptar o teu estilo de vida para evitar o stress. Mesmo com resultados na zona intermédia, um estilo de vida com pouco stress continua a ser importante."
+      "a": "Não é motivo para pânico, mas é motivo para agir. Uma zona vermelha assinala uma predisposição genética desfavorável numa área específica — uma maior sensibilidade ao stress, não um diagnóstico. Quanto mais características tiveres na zona vermelha, mais importante é adaptar o teu estilo de vida para evitar o stress. Mesmo com resultados na zona intermédia, um estilo de vida com pouco stress continua a ser importante."
      },
      {
       "q": "Onde encontro recomendações concretas para o meu genótipo?",

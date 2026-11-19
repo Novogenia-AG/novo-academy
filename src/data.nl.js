@@ -632,7 +632,7 @@ const TXT = {
  },
  "bo-sci-en": {
   "topic": "Wetenschappelijke basis",
-  "description": "Waarom dezelfde stress mensen verschillend raakt — en wat het COMT-gen met het burn-outrisico te maken heeft.",
+  "description": "Waarom dezelfde stress mensen verschillend raakt — en wat het COMT-gen te maken heeft met hoe we met stress omgaan.",
   "longDescription": "In deze training legt dr. Daniel Wallerstorfer uit waarom zware, aanhoudende stress bij sommige mensen tot een burn-out leidt en bij anderen niet. Je leert naar welke drie genetische eigenschappen de analyse kijkt, hoe het COMT-gen dopamine afbreekt na spannende of stressvolle situaties, waarom ongeveer 15% van de mensen bijzonder stressgevoelig is — en waarom de juiste leefstijl des te belangrijker is naarmate de genen minder gunstig zijn.",
   "bullets": [
    "Drie genetische eigenschappen: prestaties onder stress, emotionele veerkracht, impulsiviteit",
@@ -644,7 +644,7 @@ const TXT = {
   "introQuestions": [
    "Welk gen staat centraal bij de individuele stressverwerking?",
    "Waarom raakt dezelfde stress mensen verschillend — en wat heeft COMT daarmee te maken?",
-   "Hoe beïnvloeden genen het risico op een burn-out?",
+   "Hoe beïnvloeden genen de manier waarop we met stress omgaan?",
    "Welke leefstijlmaatregelen helpen — en waarom zijn ze bij een ongunstig profiel belangrijker?"
   ],
   "postVideoText": "Met deze wetenschappelijke achtergrond kun je het burn-outrapport met je cliënten op een solide basis bespreken en individuele strategieën voor stressmanagement afleiden.",
@@ -730,12 +730,12 @@ const TXT = {
     "correct": 0
    },
    {
-    "q": "Waarvoor zijn mensen met een slecht functionerend COMT-gen volgens de training ook vatbaarder?",
+    "q": "Waar neigen mensen met een slecht functionerend COMT-gen volgens de training ook meer naar?",
     "options": [
      "Cafeïneverslaving",
      "Slaapstoornissen",
      "Trek in zoetigheid",
-     "Gokken"
+     "Het zoeken naar spanning"
     ],
     "correct": 3
    },
@@ -743,7 +743,7 @@ const TXT = {
     "q": "Waar wijst de rode zone bij een stresseigenschap in het rapport op?",
     "options": [
      "Zeer gunstige genetica — er is geen actie nodig",
-     "Een ongunstige aanleg — een hoger risico op een burn-out",
+     "Een ongunstige aanleg — een hogere stressgevoeligheid",
      "De persoon heeft al een burn-out en heeft behandeling nodig",
      "Een standaardadvies dat voor iedereen geldt"
     ],
@@ -792,7 +792,7 @@ const TXT = {
    {
     "q": "Maria heeft één functionerende en één defecte kopie van het COMT-gen. Hoe ziet haar resultaat eruit?",
     "options": [
-     "Alle drie de eigenschappen in de rode zone — ze is zeer vatbaar voor een burn-out",
+     "Alle drie de eigenschappen in de rode zone — ze is zeer stressgevoelig",
      "Alle drie de eigenschappen in de groene zone — een burn-out is voor haar geen reden tot zorg",
      "Prestaties onder stress in de rode zone, de andere twee eigenschappen in de groene zone",
      "Alle drie de eigenschappen in het midden — een matig goede stressbestendigheid"
@@ -823,8 +823,8 @@ const TXT = {
     "q": "Wat betekent het als een cliënt voor alle drie de eigenschappen in de groene zone ligt?",
     "options": [
      "Een burn-out is voor deze cliënt onmogelijk, ongeacht de leefstijl",
-     "De cliënt is bijzonder vatbaar voor een burn-out",
-     "Een burn-out vormt voor deze cliënt niet zo'n groot gevaar",
+     "De cliënt is bijzonder stressgevoelig",
+     "Deze cliënt gaat doorgaans goed om met stress",
      "De analyse kon niet worden beoordeeld"
     ],
     "correct": 2
@@ -838,7 +838,7 @@ const TXT = {
   "bullets": [
    "Wat is het COMT-gen?",
    "Welke drie stresseigenschappen laat het rapport zien?",
-   "Hoe is burn-outrisico genetisch bepaald?",
+   "Hoe is stressgevoeligheid genetisch bepaald?",
    "Welke aanbevelingen volgen uit het profiel?"
   ],
   "questions": []
@@ -1676,11 +1676,11 @@ const FAQTX = {
     "items": [
      {
       "q": "Wat is het COMT-gen en waarom is het belangrijk?",
-      "a": "COMT (catechol-O-methyltransferase) breekt de signaalstof dopamine af zodra een spannende of stressvolle situatie voorbij is, zodat de hersenen kunnen terugkeren naar hun basisniveau. Als het gen slecht werkt, wordt dopamine veel langzamer afgebroken: de hersenen blijven langer op scherp staan, en als er nieuwe stress bijkomt voordat ze weer op hun basisniveau zijn, kunnen ze overbelast raken. Een tragere afbraak heeft ook voordelen — positieve gevoelens worden intenser beleefd en mensen zijn vaak nieuwsgieriger, maar ook vatbaarder voor gokken. Studies beschrijven een veelvoorkomende variant (Val158Met) met een duidelijk verschillende enzymactiviteit tussen de snelle en de trage vorm."
+      "a": "COMT (catechol-O-methyltransferase) breekt de signaalstof dopamine af zodra een spannende of stressvolle situatie voorbij is, zodat de hersenen kunnen terugkeren naar hun basisniveau. Als het gen slecht werkt, wordt dopamine veel langzamer afgebroken: de hersenen blijven langer op scherp staan, en als er nieuwe stress bijkomt voordat ze weer op hun basisniveau zijn, kunnen ze overbelast raken. Een tragere afbraak heeft ook voordelen — positieve gevoelens worden intenser beleefd en mensen zijn vaak nieuwsgieriger, maar reageren ook sterker op beloningen en spanning. Studies beschrijven een veelvoorkomende variant (Val158Met) met een duidelijk verschillende enzymactiviteit tussen de snelle en de trage vorm."
      },
      {
       "q": "Welke drie eigenschappen beoordeelt de burn-outanalyse?",
-      "a": "Prestaties onder stress (hoe goed je presteert in stressvolle situaties), emotionele veerkracht (hoe zwaar negatieve gevoelens op je wegen) en impulsiviteit. Elke eigenschap wordt weergegeven op een schaal van rood via het midden tot groen: groen is gunstig, rood betekent een groter risico op een burn-out."
+      "a": "Prestaties onder stress (hoe goed je presteert in stressvolle situaties), emotionele veerkracht (hoe zwaar negatieve gevoelens op je wegen) en impulsiviteit. Elke eigenschap wordt weergegeven op een schaal van rood via het midden tot groen: groen is gunstig, rood betekent een hogere stressgevoeligheid."
      },
      {
       "q": "Hoeveel mensen zijn genetisch bijzonder stressgevoelig?",
@@ -1697,7 +1697,7 @@ const FAQTX = {
      },
      {
       "q": "Alle drie de eigenschappen liggen in de groene zone — moet ik dan nog wel rekening houden met een burn-out?",
-      "a": "Een burn-out vormt voor jou niet zo'n groot gevaar — maar het risico is niet nul: zware, aanhoudende stress kan na verloop van tijd toch zijn tol eisen. Herstelfases en een evenwichtige leefstijl blijven belangrijk."
+      "a": "Je gaat doorgaans goed om met stress — maar zware, aanhoudende stress kan na verloop van tijd toch zijn tol eisen. Herstelfases en een evenwichtige leefstijl blijven belangrijk."
      },
      {
       "q": "Wat helpt iedereen, ongeacht het genotype?",
@@ -1710,7 +1710,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Er staat een “rode zone” in mijn rapport. Moet ik me zorgen maken?",
-      "a": "Het is geen reden tot paniek, maar wel een reden om in actie te komen. Een rode zone markeert een ongunstige genetische aanleg op één specifiek gebied — een groter risico op een burn-out, geen diagnose. Hoe meer van je eigenschappen in de rode zone liggen, hoe belangrijker het is om je leefstijl zo aan te passen dat je stress vermijdt. Ook bij resultaten in het midden blijft een stressarme leefstijl belangrijk."
+      "a": "Het is geen reden tot paniek, maar wel een reden om in actie te komen. Een rode zone markeert een ongunstige genetische aanleg op één specifiek gebied — een hogere stressgevoeligheid, geen diagnose. Hoe meer van je eigenschappen in de rode zone liggen, hoe belangrijker het is om je leefstijl zo aan te passen dat je stress vermijdt. Ook bij resultaten in het midden blijft een stressarme leefstijl belangrijk."
      },
      {
       "q": "Waar vind ik concrete aanbevelingen voor mijn genotype?",

@@ -629,7 +629,7 @@ const TXT = {
  },
  "bo-sci-en": {
   "topic": "Bases scientifiques",
-  "description": "Pourquoi un même stress n'affecte pas tout le monde de la même manière — et quel rôle joue le gène COMT dans le risque de burnout.",
+  "description": "Pourquoi un même stress n'affecte pas tout le monde de la même manière — et quel rôle joue le gène COMT dans la gestion du stress.",
   "longDescription": "Dans cette formation, le Dr Daniel Wallerstorfer explique pourquoi un stress massif et continu mène au burnout chez certaines personnes, mais pas chez d'autres. Vous découvrirez quelles sont les trois caractéristiques génétiques examinées par l'analyse, comment le gène COMT dégrade la dopamine après des situations excitantes ou stressantes, pourquoi environ 15 % des personnes sont particulièrement sensibles au stress — et pourquoi un mode de vie adapté compte d'autant plus que les gènes sont moins favorables.",
   "bullets": [
    "Trois caractéristiques génétiques : performance sous stress, résilience émotionnelle, impulsivité",
@@ -641,7 +641,7 @@ const TXT = {
   "introQuestions": [
    "Quel gène joue un rôle central dans la réponse individuelle au stress ?",
    "Pourquoi un même stress n'affecte-t-il pas tout le monde de la même manière — et quel est le rôle de COMT ?",
-   "Comment les gènes influencent-ils le risque de burnout ?",
+   "Comment les gènes influencent-ils notre façon de gérer le stress ?",
    "Quelles mesures liées au mode de vie sont utiles — et pourquoi sont-elles d'autant plus importantes en cas de profil défavorable ?"
   ],
   "postVideoText": "Avec ce socle scientifique, vous pouvez discuter sur des bases solides du rapport de burnout avec vos clients et en déduire des stratégies individuelles de gestion du stress.",
@@ -727,12 +727,12 @@ const TXT = {
     "correct": 0
    },
    {
-    "q": "Selon la formation, à quoi les personnes dont le gène COMT fonctionne mal sont-elles aussi plus sujettes ?",
+    "q": "Selon la formation, vers quoi les personnes dont le gène COMT fonctionne mal sont-elles aussi davantage attirées ?",
     "options": [
      "À la dépendance à la caféine",
      "Aux troubles du sommeil",
      "Aux fringales de sucre",
-     "À l'addiction au jeu"
+     "Vers la recherche de sensations fortes"
     ],
     "correct": 3
    },
@@ -740,7 +740,7 @@ const TXT = {
     "q": "Qu'indique la zone rouge d'une caractéristique de stress dans le rapport ?",
     "options": [
      "Une génétique très favorable — aucune mesure n'est nécessaire",
-     "Une prédisposition défavorable — un risque accru de burnout",
+     "Une prédisposition défavorable — une sensibilité accrue au stress",
      "La personne souffre déjà d'un burnout et doit être traitée",
      "Une recommandation standard valable pour tout le monde"
     ],
@@ -789,7 +789,7 @@ const TXT = {
    {
     "q": "Maria possède une copie fonctionnelle et une copie défectueuse du gène COMT. À quoi ressemble son résultat ?",
     "options": [
-     "Les trois caractéristiques en zone rouge — elle est très exposée au burnout",
+     "Les trois caractéristiques en zone rouge — elle est très sensible au stress",
      "Les trois caractéristiques en zone verte — le burnout n'est pas un risque pour elle",
      "La performance sous stress en zone rouge, les deux autres caractéristiques en zone verte",
      "Les trois caractéristiques au milieu — une résistance au stress moyennement bonne"
@@ -820,8 +820,8 @@ const TXT = {
     "q": "Que signifie le fait qu'un client se situe en zone verte pour les trois caractéristiques ?",
     "options": [
      "Le burnout est impossible pour ce client, quel que soit son mode de vie",
-     "Le client est particulièrement exposé au burnout",
-     "Le burnout ne représente pas un grand danger pour ce client",
+     "Le client est particulièrement sensible au stress",
+     "Ce client gère plutôt bien le stress",
      "L'analyse n'a pas pu être interprétée"
     ],
     "correct": 2
@@ -835,7 +835,7 @@ const TXT = {
   "bullets": [
    "Qu'est-ce que le gène COMT ?",
    "Quelles sont les trois caractéristiques de stress présentées dans le rapport ?",
-   "En quoi le risque de burnout est-il génétique ?",
+   "En quoi la sensibilité au stress est-elle génétique ?",
    "Quelles recommandations découlent du profil ?"
   ]
  },
@@ -1669,11 +1669,11 @@ const FAQTX = {
     "items": [
      {
       "q": "Qu'est-ce que le gène COMT et pourquoi est-il important ?",
-      "a": "COMT (catéchol-O-méthyltransférase) dégrade le neurotransmetteur dopamine une fois qu'une situation excitante ou stressante est terminée, afin que le cerveau puisse revenir à son niveau de base. Si le gène fonctionne mal, la dopamine est dégradée beaucoup plus lentement : le cerveau reste plus longtemps dans un état d'excitation et, si un nouveau stress survient avant qu'il ne soit revenu à son niveau de base, il peut se retrouver surchargé. Une dégradation plus lente a aussi des avantages — les sentiments positifs sont vécus plus intensément et les personnes concernées ont tendance à être plus curieuses, mais aussi plus exposées à l'addiction au jeu. Les études décrivent une variante fréquente (Val158Met) : l'activité enzymatique diffère nettement entre sa forme rapide et sa forme lente."
+      "a": "COMT (catéchol-O-méthyltransférase) dégrade le neurotransmetteur dopamine une fois qu'une situation excitante ou stressante est terminée, afin que le cerveau puisse revenir à son niveau de base. Si le gène fonctionne mal, la dopamine est dégradée beaucoup plus lentement : le cerveau reste plus longtemps dans un état d'excitation et, si un nouveau stress survient avant qu'il ne soit revenu à son niveau de base, il peut se retrouver surchargé. Une dégradation plus lente a aussi des avantages — les sentiments positifs sont vécus plus intensément et les personnes concernées ont tendance à être plus curieuses, mais elles réagissent aussi plus fortement aux récompenses et aux sensations fortes. Les études décrivent une variante fréquente (Val158Met) : l'activité enzymatique diffère nettement entre sa forme rapide et sa forme lente."
      },
      {
       "q": "Quelles sont les trois caractéristiques évaluées par l'analyse du burnout ?",
-      "a": "La performance sous stress (ton niveau de performance dans les situations stressantes), la résilience émotionnelle (à quel point les sentiments négatifs te pèsent) et l'impulsivité. Chaque caractéristique est représentée sur une échelle allant du rouge au vert en passant par le milieu : le vert est favorable, le rouge signale un risque de burnout plus élevé."
+      "a": "La performance sous stress (ton niveau de performance dans les situations stressantes), la résilience émotionnelle (à quel point les sentiments négatifs te pèsent) et l'impulsivité. Chaque caractéristique est représentée sur une échelle allant du rouge au vert en passant par le milieu : le vert est favorable, le rouge signale une sensibilité au stress plus élevée."
      },
      {
       "q": "Combien de personnes sont génétiquement particulièrement sensibles au stress ?",
@@ -1690,7 +1690,7 @@ const FAQTX = {
      },
      {
       "q": "Mes trois caractéristiques sont toutes en zone verte — dois-je quand même penser au burnout ?",
-      "a": "Pour toi, le burnout ne représente pas un grand danger — mais le risque n'est pas nul : un stress massif et continu peut malgré tout laisser des traces avec le temps. Les phases de récupération et un mode de vie équilibré restent importants."
+      "a": "Tu gères plutôt bien le stress — mais un stress massif et continu peut malgré tout laisser des traces avec le temps. Les phases de récupération et un mode de vie équilibré restent importants."
      },
      {
       "q": "Qu'est-ce qui aide tout le monde, quel que soit le génotype ?",
@@ -1703,7 +1703,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Une « zone rouge » est apparue dans mon rapport. Dois-je m'inquiéter ?",
-      "a": "Ce n'est pas une raison de paniquer, mais c'est une raison d'agir. Une zone rouge signale une prédisposition génétique défavorable dans un domaine précis — un risque accru de burnout, pas un diagnostic. Plus tu as de caractéristiques en zone rouge, plus il est important d'adapter ton mode de vie afin d'éviter le stress. Même avec des résultats situés au milieu, un mode de vie peu stressant reste important."
+      "a": "Ce n'est pas une raison de paniquer, mais c'est une raison d'agir. Une zone rouge signale une prédisposition génétique défavorable dans un domaine précis — une sensibilité accrue au stress, pas un diagnostic. Plus tu as de caractéristiques en zone rouge, plus il est important d'adapter ton mode de vie afin d'éviter le stress. Même avec des résultats situés au milieu, un mode de vie peu stressant reste important."
      },
      {
       "q": "Où trouver des recommandations concrètes pour mon génotype ?",

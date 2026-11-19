@@ -1535,7 +1535,7 @@ export const COURSES = [
             a: 'Erstens: Leistung unter Stress (können wir gut oder schlecht unter Druck performen?). Zweitens: emotionale Belastbarkeit (wie sehr drücken uns negative Gefühle nieder?). Drittens: Impulsivität (handeln wir spontan oder überlegt?). Alle drei zusammen ergeben das individuelle Stress-Profil.',
           },
           {
-            q: 'Wie viele Menschen sind genetisch besonders anfällig für Burnout?',
+            q: 'Wie viele Menschen reagieren genetisch bedingt besonders empfindlich auf Stress?',
             a: 'Etwa 15 % haben zwei defekte COMT-Varianten und sind dadurch deutlich stress-anfälliger. Etwa 40 % haben zwei gut funktionierende Varianten und sind robust. Die restlichen ~45 % liegen dazwischen mit einer defekten und einer guten Kopie.',
           },
         ],
@@ -1545,11 +1545,11 @@ export const COURSES = [
         items: [
           {
             q: 'Stimmt es, dass langsame Dopamin-Verwerter auch positive Vorteile haben?',
-            a: 'Ja. Im Alltag erleben sie Aufregung und Freude intensiver, sind neugieriger und probierfreudiger. Der Nachteil zeigt sich erst bei wiederholtem Stress — dann kommt das Gehirn nicht zurück in die Basis. Diese Menschen sind auch eher anfällig für Glücksspiel-Sucht, weil "Kicks" für sie stärker wirken.',
+            a: 'Ja. Im Alltag erleben sie Aufregung und Freude intensiver, sind neugieriger und probierfreudiger. Der Nachteil zeigt sich erst bei wiederholtem Stress — dann kommt das Gehirn nicht zurück in die Basis. Sie reagieren auch stärker auf Belohnungen und „Kicks“.',
           },
           {
             q: 'Was bedeutet ein „roter Bereich" in der Burnout-Auswertung?',
-            a: 'Roter Bereich = ungünstige genetische Veranlagung in diesem Aspekt. Die Person ist eher burnout-gefährdet — Lebensstil-Maßnahmen sind besonders wichtig.',
+            a: 'Roter Bereich = ungünstige genetische Veranlagung in diesem Aspekt. Die Person reagiert hier empfindlicher auf Stress — Lebensstil-Maßnahmen sind besonders wichtig.',
           },
         ],
       },
@@ -1558,7 +1558,7 @@ export const COURSES = [
         items: [
           {
             q: 'Bin ich genetisch verurteilt, ein Burnout zu bekommen?',
-            a: 'Nein. Die Veranlagung erhöht das Risiko, ist aber kein Schicksal. Wer seine Stress-Empfindlichkeit kennt, kann gezielt gegensteuern — durch Meditation, stressarme Lebensführung, ausreichend Schlaf, Bewegung und gezielte Ernährung. Je ungünstiger die Genetik, desto wichtiger sind diese Maßnahmen.',
+            a: 'Nein. Die Gene zeigen, wie empfindlich du auf Stress reagierst, nicht, ob du krank wirst. Wer seine Stress-Empfindlichkeit kennt, kann gezielt gegensteuern — durch Meditation, stressarme Lebensführung, ausreichend Schlaf, Bewegung und gezielte Ernährung. Je ungünstiger die Genetik, desto wichtiger sind diese Maßnahmen.',
           },
           {
             q: 'Wo finde ich konkrete Empfehlungen für meinen Genotyp?',
@@ -1586,13 +1586,13 @@ export const COURSES = [
     category: 'Burnout und Stress',
     topic: 'Wissenschaftliche Basis',
     contentType: 'course',
-    description: 'Welche Gene die individuelle Stressantwort und das Burnout-Risiko steuern.',
+    description: 'Welche Gene die individuelle Stressverarbeitung und Belastbarkeit mitbestimmen.',
     longDescription:
       'Diese Schulung erklärt die wissenschaftliche Grundlage hinter der genetischen Burnout-Analyse. Du lernst, welche drei genetischen Eigenschaften die Analyse betrachtet, wie Variationen im COMT-Gen über den Dopamin-Abbau die Stressverarbeitung beeinflussen, warum manche Menschen schneller in einen Erschöpfungszustand kommen und welche Lebensstil-Maßnahmen genetisch optimiert eingesetzt werden können.',
     bullets: [
       'Das Stress-Gen COMT und seine Wirkung auf den Dopamin-Abbau',
       'Warum Menschen Stress unterschiedlich verarbeiten',
-      'Genetische Risikofaktoren für Burnout',
+      'Gene der Stressverarbeitung',
       'Personalisierte Strategien zur Stress-Resilienz',
     ],
     thumbnail: '/thumbnails/course-burnout.jpg',
@@ -1600,7 +1600,7 @@ export const COURSES = [
     introQuestionsHeader: 'In dieser Schulung bekommst du Antworten auf folgende Fragen:',
     introQuestions: [
       'Wie unterschiedlich verarbeiten Menschen Stress?',
-      'Welche Gene erhöhen das Burnout-Risiko?',
+      'Welche Gene bestimmen mit, wie empfindlich jemand auf Stress reagiert?',
       'Was passiert im Gehirn, wenn das COMT-Gen Dopamin nur langsam abbaut?',
       'Welche personalisierten Empfehlungen lassen sich daraus ableiten?',
     ],
@@ -1646,7 +1646,7 @@ export const COURSES = [
         q: 'Was ist ein paradoxer Vorteil eines langsamen Dopamin-Abbaus (COMT-Variante)?',
         options: [
           'Geringere Stressempfindlichkeit im Alltag',
-          'Im Alltag intensivere positive Gefühle und höhere Neugier — gleichzeitig aber erhöhtes Risiko für Glücksspielsucht und Stressanfälligkeit',
+          'Im Alltag intensivere positive Gefühle und höhere Neugier — gleichzeitig eine stärkere Reaktion auf Stress und Reize',
           'Bessere körperliche Regeneration',
           'Niedrigeres Herzinfarkt-Risiko',
         ],
@@ -1673,10 +1673,10 @@ export const COURSES = [
         correct: 1,
       },
       {
-        q: 'Bei welcher Tendenz sind Menschen mit defektem COMT laut Schulung zusätzlich gefährdet?',
+        q: 'Welche zusätzliche Neigung zeigen Menschen mit langsamerem COMT laut Schulung?',
         options: [
           'Lebensmittelallergien',
-          'Glücksspiel-Sucht (weil Aufregung und Kicks intensiver wirken)',
+          'Reizsuche (weil Aufregung und Kicks intensiver wirken)',
           'Knochenschwund',
           'Hörverlust',
         ],
@@ -1686,7 +1686,7 @@ export const COURSES = [
         q: 'Was zeigt der „rote Bereich" einer Stress-Kategorie im Bericht an?',
         options: [
           'Sehr gute genetische Voraussetzungen — kein Handlungsbedarf',
-          'Eine ungünstige genetische Veranlagung in diesem Aspekt — die Person ist eher burnout-gefährdet',
+          'Eine ungünstige genetische Veranlagung in diesem Aspekt — die Person reagiert empfindlicher auf Stress',
           'Eine Empfehlung für mehr Kaffee',
           'Eine Standardempfehlung, gilt für alle gleich',
         ],
@@ -1764,7 +1764,7 @@ export const COURSES = [
       {
         q: 'Maria hat ein funktionierendes und ein defektes COMT-Gen. Wie sieht ihr Ergebnis aus?',
         options: [
-          'Alle drei Eigenschaften im roten Bereich — sie ist stark burnout-gefährdet',
+          'Alle drei Eigenschaften im roten Bereich — sie reagiert besonders empfindlich auf Stress',
           'Alle drei Eigenschaften im grünen Bereich — Burnout ist für sie kein Thema',
           'Leistung in Stresssituationen im roten Bereich, die anderen beiden Eigenschaften im grünen Bereich',
           'Alle drei Eigenschaften in der Mitte — mäßig gut für die Stressbeständigkeit',
@@ -1795,8 +1795,8 @@ export const COURSES = [
         q: 'Was bedeutet es, wenn ein Kunde bei allen drei Eigenschaften im grünen Bereich liegt?',
         options: [
           'Burnout ist für diesen Kunden unmöglich, egal wie er lebt',
-          'Der Kunde ist besonders burnout-gefährdet',
-          'Burnout ist für diesen Kunden keine so große Gefahr',
+          'Der Kunde reagiert besonders empfindlich auf Stress',
+          'Dieser Kunde verarbeitet Stress genetisch bedingt eher gut',
           'Die Analyse konnte nicht ausgewertet werden',
         ],
         correct: 2,

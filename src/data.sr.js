@@ -250,7 +250,7 @@ const TXT = {
   "bullets": [
    "Šta je gen COMT?",
    "Koje tri osobine vezane za stres prikazuje izveštaj?",
-   "Kako je rizik od burnouta genetski uslovljen?",
+   "Kako je osetljivost na stres genetski uslovljena?",
    "Koje preporuke proizlaze iz profila?"
   ]
  },
@@ -1230,7 +1230,7 @@ const TXT = {
  },
  "bo-sci-en": {
   "topic": "Naučna osnova",
-  "description": "Zašto isti stres različito deluje na različite ljude — i kakve veze gen COMT ima sa rizikom od burnouta.",
+  "description": "Zašto isti stres različito deluje na različite ljude — i kakve veze gen COMT ima sa načinom na koji podnosimo stres.",
   "longDescription": "U ovoj obuci dr Daniel Wallerstorfer objašnjava zašto snažan, neprekidan stres kod nekih ljudi dovodi do burnouta, a kod drugih ne. Saznaćeš koje tri genetske osobine analiza posmatra, kako gen COMT razgrađuje dopamin posle uzbudljivih ili stresnih situacija, zašto je oko 15% ljudi posebno podložno stresu — i zašto je pravi način života utoliko važniji što su geni nepovoljniji.",
   "postVideoText": "Uz ovu naučnu osnovu možeš sa sigurnošću da razgovaraš sa svojim klijentima o izveštaju o burnoutu i da izvedeš individualne strategije za upravljanje stresom.",
   "introQuestionsHeader": "Ova obuka odgovara na pitanja:",
@@ -1243,7 +1243,7 @@ const TXT = {
   "introQuestions": [
    "Koji gen je ključan za individualnu obradu stresa?",
    "Zašto isti stres različito deluje na ljude — i kakve veze s tim ima COMT?",
-   "Kako geni utiču na rizik od burnouta?",
+   "Kako geni utiču na to kako podnosimo stres?",
    "Koje mere u načinu života pomažu — i zašto su važnije kod nepovoljnog profila?"
   ],
   "questions": [
@@ -1333,7 +1333,7 @@ const TXT = {
      "Zavisnosti od kofeina",
      "Poremećajima sna",
      "Žudnji za šećerom",
-     "Kockanju"
+     "Traženju uzbuđenja"
     ],
     "correct": 3
    },
@@ -1341,7 +1341,7 @@ const TXT = {
     "q": "Šta u izveštaju označava crvena zona kod neke osobine vezane za stres?",
     "options": [
      "Veoma povoljnu genetiku — nije potrebno ništa preduzimati",
-     "Nepovoljnu predispoziciju — veći rizik od burnouta",
+     "Nepovoljnu predispoziciju — veću osetljivost na stres",
      "Da osoba već ima burnout i treba joj lečenje",
      "Standardnu preporuku koja važi za sve"
     ],
@@ -1390,7 +1390,7 @@ const TXT = {
    {
     "q": "Marija ima jednu funkcionalnu i jednu defektnu kopiju gena COMT. Kako izgleda njen rezultat?",
     "options": [
-     "Sve tri osobine su u crvenoj zoni — veoma je podložna burnoutu",
+     "Sve tri osobine su u crvenoj zoni — veoma je osetljiva na stres",
      "Sve tri osobine su u zelenoj zoni — burnout za nju nije problem",
      "Učinak pod stresom je u crvenoj zoni, a druge dve osobine u zelenoj",
      "Sve tri osobine su u sredini — umereno dobra otpornost na stres"
@@ -1421,8 +1421,8 @@ const TXT = {
     "q": "Šta znači kada je klijent kod sve tri osobine u zelenoj zoni?",
     "options": [
      "Burnout je kod ovog klijenta nemoguć, bez obzira na način života",
-     "Klijent je posebno podložan burnoutu",
-     "Burnout za ovog klijenta nije tako velika opasnost",
+     "Klijent je posebno osetljiv na stres",
+     "Ovaj klijent obično dobro podnosi stres",
      "Analizu nije bilo moguće obraditi"
     ],
     "correct": 2
@@ -1670,11 +1670,11 @@ const FAQTX = {
     "items": [
      {
       "q": "Šta je gen COMT i zašto je važan?",
-      "a": "COMT (katehol-O-metiltransferaza) razgrađuje neurotransmiter dopamin kada se uzbudljiva ili stresna situacija završi, kako bi mozak mogao da se vrati u osnovno stanje. Ako gen slabo funkcioniše, dopamin se razgrađuje mnogo sporije: mozak duže ostaje u stanju pobuđenosti, a ako novi stres naiđe pre nego što se on vrati u osnovno stanje, može da dođe do preopterećenja. Sporija razgradnja ima i dobre strane — pozitivna osećanja se doživljavaju intenzivnije i takvi ljudi su obično radoznaliji, ali i skloniji kockanju. Studije opisuju čestu varijantu (Val158Met) kod koje se aktivnost enzima jasno razlikuje između brzog i sporog oblika."
+      "a": "COMT (katehol-O-metiltransferaza) razgrađuje neurotransmiter dopamin kada se uzbudljiva ili stresna situacija završi, kako bi mozak mogao da se vrati u osnovno stanje. Ako gen slabo funkcioniše, dopamin se razgrađuje mnogo sporije: mozak duže ostaje u stanju pobuđenosti, a ako novi stres naiđe pre nego što se on vrati u osnovno stanje, može da dođe do preopterećenja. Sporija razgradnja ima i dobre strane — pozitivna osećanja se doživljavaju intenzivnije i takvi ljudi su obično radoznaliji, ali i snažnije reaguju na nagrade i uzbuđenje. Studije opisuju čestu varijantu (Val158Met) kod koje se aktivnost enzima jasno razlikuje između brzog i sporog oblika."
      },
      {
       "q": "Koje tri osobine procenjuje analiza burnouta?",
-      "a": "Učinak pod stresom (koliko dobro funkcionišeš u stresnim situacijama), emocionalna otpornost (koliko te opterećuju negativna osećanja) i impulsivnost. Svaka osobina je prikazana na skali od crvene zone preko sredine do zelene: zelena je povoljna, a crvena znači veći rizik od burnouta."
+      "a": "Učinak pod stresom (koliko dobro funkcionišeš u stresnim situacijama), emocionalna otpornost (koliko te opterećuju negativna osećanja) i impulsivnost. Svaka osobina je prikazana na skali od crvene zone preko sredine do zelene: zelena je povoljna, a crvena znači veću osetljivost na stres."
      },
      {
       "q": "Koliko je ljudi genetski posebno podložno stresu?",
@@ -1691,7 +1691,7 @@ const FAQTX = {
      },
      {
       "q": "Kod mene su sve tri osobine u zelenoj zoni — da li ipak treba da razmišljam o burnoutu?",
-      "a": "Za tebe burnout nije tako velika opasnost — ali rizik nije nula: snažan, neprekidan stres vremenom i dalje može da ostavi posledice. Faze oporavka i uravnotežen način života ostaju važni."
+      "a": "Stres obično dobro podnosiš — ali snažan, neprekidan stres vremenom i dalje može da ostavi posledice. Faze oporavka i uravnotežen način života ostaju važni."
      },
      {
       "q": "Šta pomaže svima, bez obzira na genotip?",
@@ -1704,7 +1704,7 @@ const FAQTX = {
     "items": [
      {
       "q": "U mom izveštaju se pojavila „crvena zona“. Da li treba da brinem?",
-      "a": "Nema razloga za paniku, ali ima razloga da nešto preduzmeš. Crvena zona označava nepovoljnu genetsku predispoziciju u jednoj određenoj oblasti — veći rizik od burnouta, a ne dijagnozu. Što je više tvojih osobina u crvenoj zoni, to je važnije da način života prilagodiš tako da izbegavaš stres. I kod rezultata u sredini život sa malo stresa ostaje važan."
+      "a": "Nema razloga za paniku, ali ima razloga da nešto preduzmeš. Crvena zona označava nepovoljnu genetsku predispoziciju u jednoj određenoj oblasti — veću osetljivost na stres, a ne dijagnozu. Što je više tvojih osobina u crvenoj zoni, to je važnije da način života prilagodiš tako da izbegavaš stres. I kod rezultata u sredini život sa malo stresa ostaje važan."
      },
      {
       "q": "Gde mogu da pronađem konkretne preporuke za svoj genotip?",

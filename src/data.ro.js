@@ -86,7 +86,7 @@ const TXT = {
   "bullets": [
    "Ce este gena COMT?",
    "Care sunt cele trei trăsături legate de stres prezentate în raport?",
-   "Cum este determinat genetic riscul de burnout?",
+   "Cum este determinată genetic sensibilitatea la stres?",
    "Ce recomandări decurg din profil?"
   ]
  },
@@ -1230,7 +1230,7 @@ const TXT = {
  },
  "bo-sci-en": {
   "topic": "Baze științifice",
-  "description": "De ce același stres îi afectează diferit pe oameni — și ce legătură are gena COMT cu riscul de burnout.",
+  "description": "De ce același stres îi afectează diferit pe oameni — și ce legătură are gena COMT cu felul în care gestionăm stresul.",
   "longDescription": "În acest training, Dr. Daniel Wallerstorfer explică de ce stresul masiv și continuu duce la burnout la unii oameni, dar la alții nu. Vei afla care sunt cele trei trăsături genetice evaluate în analiză, cum descompune gena COMT dopamina după situații palpitante sau stresante, de ce aproximativ 15% dintre oameni sunt deosebit de predispuși la stres — și de ce stilul de viață potrivit contează cu atât mai mult atunci când genele sunt mai puțin favorabile.",
   "postVideoText": "Cu acest fundament științific poți discuta raportul de burnout cu clienții tăi pe o bază solidă și poți deriva strategii individuale de gestionare a stresului.",
   "introQuestionsHeader": "Acest training răspunde la:",
@@ -1243,7 +1243,7 @@ const TXT = {
   "introQuestions": [
    "Care genă este centrală pentru procesarea individuală a stresului?",
    "De ce același stres îi afectează diferit pe oameni — și ce legătură are COMT cu asta?",
-   "Cum influențează genele riscul de burnout?",
+   "Cum influențează genele felul în care gestionăm stresul?",
    "Ce măsuri privind stilul de viață ajută — și de ce contează mai mult în cazul unui profil nefavorabil?"
   ],
   "questions": [
@@ -1333,7 +1333,7 @@ const TXT = {
      "Dependență de cafeină",
      "Tulburări de somn",
      "Pofte de dulce",
-     "Jocuri de noroc"
+     "Căutarea senzațiilor tari"
     ],
     "correct": 3
    },
@@ -1341,7 +1341,7 @@ const TXT = {
     "q": "Ce indică în raport zona roșie a unei trăsături legate de stres?",
     "options": [
      "O genetică foarte favorabilă — nu este necesară nicio măsură",
-     "O predispoziție nefavorabilă — un risc mai mare de burnout",
+     "O predispoziție nefavorabilă — o sensibilitate mai mare la stres",
      "Persoana are deja burnout și are nevoie de tratament",
      "O recomandare standard, valabilă pentru toată lumea"
     ],
@@ -1390,7 +1390,7 @@ const TXT = {
    {
     "q": "Maria are o copie funcțională și o copie defectă a genei COMT. Cum arată rezultatul ei?",
     "options": [
-     "Toate cele trei trăsături în zona roșie — este foarte predispusă la burnout",
+     "Toate cele trei trăsături în zona roșie — este foarte sensibilă la stres",
      "Toate cele trei trăsături în zona verde — burnout-ul nu este o problemă pentru ea",
      "Performanța sub stres în zona roșie, celelalte două trăsături în zona verde",
      "Toate cele trei trăsături în zona de mijloc — rezistență la stres relativ bună"
@@ -1421,8 +1421,8 @@ const TXT = {
     "q": "Ce înseamnă atunci când un client se află în zona verde la toate cele trei trăsături?",
     "options": [
      "Burnout-ul este imposibil pentru acest client, indiferent de stilul de viață",
-     "Clientul este deosebit de predispus la burnout",
-     "Burnout-ul nu reprezintă un pericol atât de mare pentru acest client",
+     "Clientul este deosebit de sensibil la stres",
+     "Acest client tinde să gestioneze bine stresul",
      "Analiza nu a putut fi evaluată"
     ],
     "correct": 2
@@ -1670,11 +1670,11 @@ const FAQTX = {
     "items": [
      {
       "q": "Ce este gena COMT și de ce este importantă?",
-      "a": "COMT (catecol-O-metiltransferaza) descompune neurotransmițătorul dopamină după ce o situație palpitantă sau stresantă s-a încheiat, astfel încât creierul să poată reveni la nivelul de bază. Dacă gena funcționează slab, dopamina este descompusă mult mai lent: creierul rămâne mai mult timp într-o stare de activare, iar dacă apare un nou stres înainte ca creierul să fi revenit la nivelul de bază, poate ajunge la suprasolicitare. Descompunerea mai lentă are însă și avantaje — sentimentele pozitive sunt trăite mai intens, iar persoanele respective tind să fie mai curioase, dar și mai predispuse la jocuri de noroc. Studiile descriu o variantă frecventă (Val158Met) cu o activitate enzimatică net diferită între forma rapidă și cea lentă."
+      "a": "COMT (catecol-O-metiltransferaza) descompune neurotransmițătorul dopamină după ce o situație palpitantă sau stresantă s-a încheiat, astfel încât creierul să poată reveni la nivelul de bază. Dacă gena funcționează slab, dopamina este descompusă mult mai lent: creierul rămâne mai mult timp într-o stare de activare, iar dacă apare un nou stres înainte ca creierul să fi revenit la nivelul de bază, poate ajunge la suprasolicitare. Descompunerea mai lentă are însă și avantaje — sentimentele pozitive sunt trăite mai intens, iar persoanele respective tind să fie mai curioase, dar și să reacționeze mai puternic la recompense și senzații tari. Studiile descriu o variantă frecventă (Val158Met) cu o activitate enzimatică net diferită între forma rapidă și cea lentă."
      },
      {
       "q": "Care sunt cele trei trăsături evaluate de analiza de burnout?",
-      "a": "Performanța sub stres (cât de bine performezi în situații stresante), reziliența emoțională (cât de puternic te apasă sentimentele negative) și impulsivitatea. Fiecare trăsătură este reprezentată pe o scală de la roșu, prin zona de mijloc, până la verde: verdele este favorabil, iar roșul înseamnă un risc mai mare de burnout."
+      "a": "Performanța sub stres (cât de bine performezi în situații stresante), reziliența emoțională (cât de puternic te apasă sentimentele negative) și impulsivitatea. Fiecare trăsătură este reprezentată pe o scală de la roșu, prin zona de mijloc, până la verde: verdele este favorabil, iar roșul înseamnă o sensibilitate mai mare la stres."
      },
      {
       "q": "Câți oameni sunt, din punct de vedere genetic, deosebit de predispuși la stres?",
@@ -1691,7 +1691,7 @@ const FAQTX = {
      },
      {
       "q": "Toate cele trei trăsături sunt în zona verde — mai trebuie să mă gândesc la burnout?",
-      "a": "Pentru tine, burnout-ul nu reprezintă un pericol atât de mare — dar riscul nu este zero: stresul masiv și continuu își poate lăsa totuși amprenta în timp. Fazele de recuperare și un stil de viață echilibrat rămân importante."
+      "a": "Tinzi să gestionezi bine stresul — dar stresul masiv și continuu își poate lăsa totuși amprenta în timp. Fazele de recuperare și un stil de viață echilibrat rămân importante."
      },
      {
       "q": "Ce ajută pe toată lumea, indiferent de genotip?",
@@ -1704,7 +1704,7 @@ const FAQTX = {
     "items": [
      {
       "q": "În raportul meu a apărut o „zonă roșie”. Ar trebui să-mi fac griji?",
-      "a": "Nu este un motiv de panică, dar este un motiv să acționezi. O zonă roșie marchează o predispoziție genetică nefavorabilă într-un domeniu anume — un risc mai mare de burnout, nu un diagnostic. Cu cât mai multe dintre trăsăturile tale se află în zona roșie, cu atât este mai important să-ți adaptezi stilul de viață pentru a evita stresul. Chiar și cu rezultate în zona de mijloc, un stil de viață cu stres redus rămâne important."
+      "a": "Nu este un motiv de panică, dar este un motiv să acționezi. O zonă roșie marchează o predispoziție genetică nefavorabilă într-un domeniu anume — o sensibilitate mai mare la stres, nu un diagnostic. Cu cât mai multe dintre trăsăturile tale se află în zona roșie, cu atât este mai important să-ți adaptezi stilul de viață pentru a evita stresul. Chiar și cu rezultate în zona de mijloc, un stil de viață cu stres redus rămâne important."
      },
      {
       "q": "Unde găsesc recomandări concrete pentru genotipul meu?",

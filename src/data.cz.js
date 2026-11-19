@@ -629,7 +629,7 @@ const TXT = {
  },
  "bo-sci-en": {
   "topic": "Vědecký základ",
-  "description": "Proč na lidi stejný stres působí různě — a co má gen COMT společného s rizikem vyhoření.",
+  "description": "Proč na lidi stejný stres působí různě — a co má gen COMT společného se zvládáním stresu.",
   "longDescription": "V tomto školení vysvětluje Dr. Daniel Wallerstorfer, proč masivní a nepřetržitý stres u některých lidí vede k vyhoření a u jiných ne. Dozvíte se, na které tři genetické vlastnosti se analýza zaměřuje, jak gen COMT odbourává dopamin po vzrušujících nebo stresujících situacích, proč je asi 15 % lidí ke stresu obzvlášť náchylných — a proč je správný životní styl o to důležitější, čím méně příznivé jsou geny.",
   "bullets": [
    "Tři genetické vlastnosti: výkon ve stresu, emoční odolnost, impulzivita",
@@ -641,7 +641,7 @@ const TXT = {
   "introQuestions": [
    "Který gen je klíčový pro individuální zpracování stresu?",
    "Proč na lidi stejný stres působí různě — a co s tím má společného COMT?",
-   "Jak geny ovlivňují riziko vyhoření?",
+   "Jak geny ovlivňují to, jak zvládáme stres?",
    "Která opatření v životním stylu pomáhají — a proč jsou při nepříznivém profilu důležitější?"
   ],
   "postVideoText": "S tímto vědeckým pozadím můžete se svými klienty diskutovat o zprávě o vyhoření na pevném podkladu a odvozovat individuální strategie zvládání stresu.",
@@ -732,7 +732,7 @@ const TXT = {
      "K závislosti na kofeinu",
      "K poruchám spánku",
      "K chuti na sladké",
-     "K hazardním hrám"
+     "K vyhledávání vzrušení"
     ],
     "correct": 3
    },
@@ -740,7 +740,7 @@ const TXT = {
     "q": "Co ve zprávě znamená červená zóna u vlastnosti týkající se stresu?",
     "options": [
      "Velmi příznivá genetika — není třeba nic dělat",
-     "Nepříznivá predispozice — vyšší riziko vyhoření",
+     "Nepříznivá predispozice — vyšší citlivost na stres",
      "Dotyčný už vyhoření má a potřebuje léčbu",
      "Standardní doporučení, které platí pro všechny"
     ],
@@ -789,7 +789,7 @@ const TXT = {
    {
     "q": "Maria má jednu funkční a jednu defektní kopii genu COMT. Jak vypadá její výsledek?",
     "options": [
-     "Všechny tři vlastnosti v červené zóně — je silně náchylná k vyhoření",
+     "Všechny tři vlastnosti v červené zóně — je velmi citlivá na stres",
      "Všechny tři vlastnosti v zelené zóně — vyhoření pro ni není problém",
      "Výkon ve stresu v červené zóně, ostatní dvě vlastnosti v zelené",
      "Všechny tři vlastnosti uprostřed — středně dobrá odolnost vůči stresu"
@@ -820,8 +820,8 @@ const TXT = {
     "q": "Co znamená, když je klient u všech tří vlastností v zelené zóně?",
     "options": [
      "Vyhoření je u tohoto klienta vyloučené, ať žije jakkoli",
-     "Klient je k vyhoření obzvlášť náchylný",
-     "Vyhoření pro tohoto klienta nepředstavuje tak velké nebezpečí",
+     "Klient je obzvlášť citlivý na stres",
+     "Tento klient zvládá stres spíše dobře",
      "Analýzu nebylo možné vyhodnotit"
     ],
     "correct": 2
@@ -835,7 +835,7 @@ const TXT = {
   "bullets": [
    "Co je gen COMT?",
    "Které tři vlastnosti týkající se stresu zpráva ukazuje?",
-   "Jak je riziko vyhoření genetické?",
+   "Jak je citlivost na stres genetická?",
    "Jaká doporučení z profilu vyplývají?"
   ]
  },
@@ -1669,11 +1669,11 @@ const FAQTX = {
     "items": [
      {
       "q": "Co je gen COMT a proč je důležitý?",
-      "a": "COMT (katechol-O-metyltransferáza) odbourává signální látku dopamin, jakmile vzrušující nebo stresující situace skončí, aby se mozek mohl vrátit do výchozího stavu. Pokud gen funguje špatně, dopamin se odbourává mnohem pomaleji: mozek zůstává déle ve vzrušeném stavu, a když přijde nový stres dřív, než se do výchozího stavu vrátí, může dojít k přetížení. Pomalejší odbourávání má ale i své výhody — pozitivní pocity se prožívají intenzivněji a lidé bývají zvídavější, zároveň však mají větší sklon k hazardním hrám. Studie popisují běžnou variantu (Val158Met), u níž se rychlá a pomalá forma zřetelně liší aktivitou enzymu."
+      "a": "COMT (katechol-O-metyltransferáza) odbourává signální látku dopamin, jakmile vzrušující nebo stresující situace skončí, aby se mozek mohl vrátit do výchozího stavu. Pokud gen funguje špatně, dopamin se odbourává mnohem pomaleji: mozek zůstává déle ve vzrušeném stavu, a když přijde nový stres dřív, než se do výchozího stavu vrátí, může dojít k přetížení. Pomalejší odbourávání má ale i své výhody — pozitivní pocity se prožívají intenzivněji a lidé bývají zvídavější, zároveň však silněji reagují na odměny a vzrušení. Studie popisují běžnou variantu (Val158Met), u níž se rychlá a pomalá forma zřetelně liší aktivitou enzymu."
      },
      {
       "q": "Které tři vlastnosti analýza vyhoření vyhodnocuje?",
-      "a": "Výkon ve stresu (jak dobře podáváš výkon ve stresových situacích), emoční odolnost (jak silně tě zatěžují negativní pocity) a impulzivitu. Každá vlastnost je zobrazena na škále od červené přes střed po zelenou: zelená je příznivá, červená znamená vyšší riziko vyhoření."
+      "a": "Výkon ve stresu (jak dobře podáváš výkon ve stresových situacích), emoční odolnost (jak silně tě zatěžují negativní pocity) a impulzivitu. Každá vlastnost je zobrazena na škále od červené přes střed po zelenou: zelená je příznivá, červená znamená vyšší citlivost na stres."
      },
      {
       "q": "Kolik lidí je geneticky obzvlášť náchylných ke stresu?",
@@ -1690,7 +1690,7 @@ const FAQTX = {
      },
      {
       "q": "Všechny tři vlastnosti mám v zelené zóně — musím na vyhoření přesto myslet?",
-      "a": "Pro tebe vyhoření nepředstavuje tak velké nebezpečí — riziko ale není nulové: masivní, nepřetržitý stres si přesto může časem vybrat svou daň. Fáze zotavení a vyvážený životní styl zůstávají důležité."
+      "a": "Stres zvládáš spíše dobře — masivní, nepřetržitý stres si ale přesto může časem vybrat svou daň. Fáze zotavení a vyvážený životní styl zůstávají důležité."
      },
      {
       "q": "Co pomáhá všem, bez ohledu na genotyp?",
@@ -1703,7 +1703,7 @@ const FAQTX = {
     "items": [
      {
       "q": "Ve zprávě se mi objevila „červená zóna“. Mám si dělat starosti?",
-      "a": "Důvod k panice to není, ale je to důvod jednat. Červená zóna označuje nepříznivou genetickou predispozici v jedné konkrétní oblasti — vyšší riziko vyhoření, nikoli diagnózu. Čím víc tvých vlastností leží v červené zóně, tím důležitější je přizpůsobit životní styl tak, aby předcházel stresu. I s výsledky uprostřed zůstává život s nízkou mírou stresu důležitý."
+      "a": "Důvod k panice to není, ale je to důvod jednat. Červená zóna označuje nepříznivou genetickou predispozici v jedné konkrétní oblasti — vyšší citlivost na stres, nikoli diagnózu. Čím víc tvých vlastností leží v červené zóně, tím důležitější je přizpůsobit životní styl tak, aby předcházel stresu. I s výsledky uprostřed zůstává život s nízkou mírou stresu důležitý."
      },
      {
       "q": "Kde najdu konkrétní doporučení pro svůj genotyp?",

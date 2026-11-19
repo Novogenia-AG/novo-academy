@@ -895,7 +895,7 @@ export const COURSES_EN = [
     category: CATEGORIES_EN.BURNOUT,
     topic: TOPIC_WB_EN,
     contentType: 'course',
-    description: 'Why the same stress affects people differently — and what the COMT gene has to do with burnout risk.',
+    description: 'Why the same stress affects people differently — and what the COMT gene has to do with how we handle stress.',
     longDescription:
       'In this training, Dr. Daniel Wallerstorfer explains why massive, continuous stress leads to burnout in some people but not in others. You will learn which three genetic traits the analysis looks at, how the COMT gene breaks down dopamine after exciting or stressful situations, why about 15% of people are especially prone to stress — and why the right lifestyle matters all the more when the genes are less favourable.',
     bullets: [
@@ -914,7 +914,7 @@ export const COURSES_EN = [
     introQuestions: [
       'Which gene is central to individual stress processing?',
       'Why does the same stress affect people differently — and what does COMT have to do with it?',
-      'How do genes influence the risk of burnout?',
+      'How do genes influence the way we handle stress?',
       'Which lifestyle measures help — and why do they matter more with an unfavourable profile?',
     ],
     postVideoText:
@@ -986,12 +986,12 @@ export const COURSES_EN = [
         correct: 0,
       },
       {
-        q: 'According to the training, what are people with a poorly functioning COMT gene also more prone to?',
+        q: 'According to the training, what are people with a poorly functioning COMT gene also more inclined towards?',
         options: [
           'Caffeine dependence',
           'Sleep disorders',
           'Sugar cravings',
-          'Gambling',
+          'Thrill-seeking',
         ],
         correct: 3,
       },
@@ -999,7 +999,7 @@ export const COURSES_EN = [
         q: 'What does the red zone of a stress trait indicate in the report?',
         options: [
           'Very favourable genetics — no action needed',
-          'An unfavourable predisposition — a higher risk of burnout',
+          'An unfavourable predisposition — a higher sensitivity to stress',
           'The person already has burnout and needs treatment',
           'A standard recommendation that applies to everyone',
         ],
@@ -1068,7 +1068,7 @@ export const COURSES_EN = [
       {
         q: 'Maria has one functioning and one defective copy of the COMT gene. What does her result look like?',
         options: [
-          'All three traits in the red zone — she is highly prone to burnout',
+          'All three traits in the red zone — she is highly sensitive to stress',
           'All three traits in the green zone — burnout is not a concern for her',
           'Performance under stress in the red zone, the other two traits in the green zone',
           'All three traits in the middle — moderately good stress resistance',
@@ -1099,8 +1099,8 @@ export const COURSES_EN = [
         q: 'What does it mean if a client is in the green zone for all three traits?',
         options: [
           'Burnout is impossible for this client, whatever their lifestyle',
-          'The client is especially prone to burnout',
-          'Burnout is not such a big danger for this client',
+          'The client is especially sensitive to stress',
+          'This client tends to handle stress well',
           'The analysis could not be evaluated',
         ],
         correct: 2,
@@ -1126,7 +1126,7 @@ export const COURSES_EN = [
     bullets: [
       'What is the COMT gene?',
       'Which three stress traits does the report show?',
-      'How is burnout risk genetic?',
+      'How is stress sensitivity genetic?',
       'What recommendations follow from the profile?',
     ],
     thumbnail: T(15),
@@ -1134,8 +1134,8 @@ export const COURSES_EN = [
       {
         title: 'Genetic basis of stress',
         items: [
-          { q: 'What is the COMT gene and why is it important?', a: 'COMT (catechol-O-methyltransferase) breaks down the neurotransmitter dopamine once an exciting or stressful situation is over, so the brain can return to its baseline. If the gene works poorly, dopamine is broken down much more slowly: the brain stays in an aroused state for longer, and when new stress comes along before it is back at baseline, it can become overloaded. Slower breakdown also has upsides — positive feelings are experienced more intensely and people tend to be more curious, but also more prone to gambling. Studies describe a common variant (Val158Met) with clearly different enzyme activity between the fast and the slow form.' },
-          { q: 'Which three traits does the burnout analysis evaluate?', a: 'Performance under stress (how well you perform in stressful situations), emotional resilience (how strongly negative feelings weigh on you) and impulsivity. Each trait is shown on a scale from red through the middle to green: green is favourable, red means a greater risk of burnout.' },
+          { q: 'What is the COMT gene and why is it important?', a: 'COMT (catechol-O-methyltransferase) breaks down the neurotransmitter dopamine once an exciting or stressful situation is over, so the brain can return to its baseline. If the gene works poorly, dopamine is broken down much more slowly: the brain stays in an aroused state for longer, and when new stress comes along before it is back at baseline, it can become overloaded. Slower breakdown also has upsides — positive feelings are experienced more intensely and people tend to be more curious, but also react more strongly to rewards and thrills. Studies describe a common variant (Val158Met) with clearly different enzyme activity between the fast and the slow form.' },
+          { q: 'Which three traits does the burnout analysis evaluate?', a: 'Performance under stress (how well you perform in stressful situations), emotional resilience (how strongly negative feelings weigh on you) and impulsivity. Each trait is shown on a scale from red through the middle to green: green is favourable, red means a higher sensitivity to stress.' },
           { q: 'How many people are genetically especially prone to stress?', a: 'About 40% of people have two well-functioning copies of the COMT gene: they tend to perform better under stress, have higher emotional resilience and are less impulsive. About 15% have two defective copies, with exactly the opposite effect — they are the ones who suffer most under stress. The remaining ~45% have one functioning and one defective copy.' },
         ],
       },
@@ -1143,14 +1143,14 @@ export const COURSES_EN = [
         title: 'Practical advice',
         items: [
           { q: 'I have two defective copies of the COMT gene — am I doomed to burn out?', a: 'No. A less favourable COMT profile increases sensitivity to stress, but it is not destiny. The less favourable the genes, the more important the right lifestyle: meditation, a low-stress way of life, nutrition and exercise. Knowing your predisposition lets you act early, before stress builds up.' },
-          { q: 'All three traits are in the green zone — do I still need to think about burnout?', a: 'For you, burnout is not such a big danger — but the risk is not zero: massive, continuous stress can still take its toll over time. Recovery phases and a balanced lifestyle remain important.' },
+          { q: 'All three traits are in the green zone — do I still need to think about burnout?', a: 'You tend to handle stress well — but massive, continuous stress can still take its toll over time. Recovery phases and a balanced lifestyle remain important.' },
           { q: 'What helps everyone, regardless of genotype?', a: 'The measures recommended in the report — meditation, a low-stress way of life, a balanced diet and regular exercise — help everyone reduce stress; they simply matter more the less favourable the genetic profile is. Enough sleep, social contact and moderate consumption of caffeine and alcohol are also commonly recommended.' },
         ],
       },
       {
         title: 'What to do with the result',
         items: [
-          { q: 'A “red zone” came up in my report. Should I be worried?', a: 'It is no reason to panic, but it is a reason to act. A red zone marks an unfavourable genetic predisposition in one specific area — a greater risk of burnout, not a diagnosis. The more of your traits are in the red zone, the more important it is to adapt your lifestyle to avoid stress. Even with results in the middle, a low-stress lifestyle remains important.' },
+          { q: 'A “red zone” came up in my report. Should I be worried?', a: 'It is no reason to panic, but it is a reason to act. A red zone marks an unfavourable genetic predisposition in one specific area — a higher sensitivity to stress, not a diagnosis. The more of your traits are in the red zone, the more important it is to adapt your lifestyle to avoid stress. Even with results in the middle, a low-stress lifestyle remains important.' },
           { q: 'Where do I find concrete recommendations for my genotype?', a: 'In the burnout report — it contains recommendations on meditation, a low-stress lifestyle, nutrition and exercise, tailored to your genetic stress profile.' },
         ],
       },
