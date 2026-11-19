@@ -140,7 +140,7 @@ const TXT = {
     "q": "Pourquoi un programme personnalisé surpasse-t-il les conseils standard ?",
     "options": [
      "Il utilise des ingrédients plus coûteux",
-     "Une étude pilote de Novogenia (139 participants) a montré un succès de perte de poids 2,4× supérieur avec la personnalisation génétique par rapport au conseil standard — parce que la stratégie correspond réellement à la biologie sous-jacente",
+     "L'étude interne de Novogenia portant sur 302 personnes (régime basé sur les gènes vs. régime standard) a montré une perte de poids 2,4× plus élevée avec le régime basé sur les gènes",
      "Cela ne fonctionne que sur le papier",
      "C'est identique aux conseils standard"
     ],

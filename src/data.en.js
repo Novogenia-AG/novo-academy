@@ -113,7 +113,7 @@ export const COURSES_EN = [
         q: 'Why does a personalized program outperform standard advice?',
         options: [
           'It uses more expensive ingredients',
-          'A Novogenia pilot study (139 participants) showed a 2.4× higher weight-loss success with genetic personalization versus standard counselling — because the strategy actually matches the underlying biology',
+          'Our internal study with 302 people (gene-based vs. standard diet) showed 2.4× greater weight loss with the gene-based diet',
           'It works only on paper',
           'It is identical to standard advice',
         ],
@@ -124,7 +124,7 @@ export const COURSES_EN = [
     documents: [
       // Slides + sample reports exist only in German — hidden in EN until translated.
       {
-        title: 'NovoAcademy Science PDF - 2.4× More Weight Loss with Genetic Program',
+        title: 'NovoAcademy Science PDF - Internal study: gene-based vs. standard diet (302 people)',
         size: '610 KB',
         type: 'pdf',
         url: '/course-materials/scientific-reviews/Genetic_Weight_Loss_Study_2,4x.pdf',

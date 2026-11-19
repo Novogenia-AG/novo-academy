@@ -905,7 +905,7 @@ const TXT = {
     "q": "¿Por qué un programa personalizado supera a los consejos estándar?",
     "options": [
      "Utiliza ingredientes más caros",
-     "Un estudio piloto de Novogenia (139 participantes) mostró un éxito de pérdida de peso 2,4× mayor con personalización genética frente al asesoramiento estándar — porque la estrategia se ajusta realmente a la biología subyacente",
+     "El estudio interno de Novogenia con 302 personas (dieta basada en los genes vs. dieta estándar) mostró una pérdida de peso 2,4× mayor con la dieta basada en los genes",
      "Solo funciona en teoría",
      "Es idéntico a los consejos estándar"
     ],

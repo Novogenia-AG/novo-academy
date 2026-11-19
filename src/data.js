@@ -121,7 +121,7 @@ export const COURSES = [
         url: 'https://github.com/Novogenia-AG/novo-academy/releases/download/course-materials/DEMO_SHAPE.pdf',
       },
       {
-        title: 'NovoAcademy Science PDF - 2,4-fach mehr Gewichtsverlust durch genetisch personalisiertes Programm',
+        title: 'NovoAcademy Science PDF - Interne Studie: genbasierte vs. Standard-Diät (302 Personen)',
         size: '610 KB',
         type: 'pdf',
         url: '/course-materials/scientific-reviews/Genetic_Weight_Loss_Study_2,4x.pdf',
@@ -172,7 +172,7 @@ export const COURSES = [
         correct: 1,
       },
       {
-        q: 'Welches Ergebnis lieferte die interne Validierungsstudie mit 300 Teilnehmern beim Vergleich Standard-Diät vs. genetisch personalisiertes Programm in derselben Zeit?',
+        q: 'Welches Ergebnis lieferte unsere interne Studie mit 302 Personen (genbasierte vs. Standard-Diät)?',
         options: [
           'Beide Phasen lieferten ähnliche Ergebnisse, lediglich die Compliance war besser',
           'Das genetisch personalisierte Programm führte zu 1,4-mal mehr Gewichtsverlust',
@@ -588,7 +588,7 @@ export const COURSES = [
         items: [
           {
             q: 'Gibt es wissenschaftliche Belege für die nutrigenetische Analyse?',
-            a: 'Ja. Es existiert umfangreiche peer-reviewte Literatur zu diesem Feld. Beispielsweise zeigen über 16 Studien, dass Menschen genetisch unterschiedlich auf Nahrungsfett reagieren (z. B. FABP2-, PPARG-, FTO-Gene). Novogenia hat zudem eine eigene Pilotstudie mit 139 Teilnehmern durchgeführt, die mit dem genetischen Programm einen 2,4-mal höheren Abnehm-Erfolg im Vergleich zur Standardberatung zeigte. Internationale Experten wie Prof. Ahmed El-Sohemy (University of Toronto) und Prof. Jose Ordovas (Tufts University) forschen und lehren auf diesem Gebiet.',
+            a: 'Ja. Jedes Gen in der Analyse ist durch mindestens drei unabhängige Studien belegt. Beispielsweise zeigen über 16 Studien, dass Menschen genetisch unterschiedlich auf Nahrungsfett reagieren (z. B. FABP2-, PPARG-, FTO-Gene). In unserer internen Studie mit 302 Personen (genbasierte vs. Standard-Diät) war der Gewichtsverlust mit der genbasierten Diät 2,4-fach höher. Methode und Ergebnisse findest du im Studien-PDF im Kurs „Die Gen-Diät – Wissenschaftliche Basis“.',
           },
         ],
       },

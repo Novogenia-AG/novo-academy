@@ -721,7 +721,7 @@ const TXT = {
     "q": "Zašto personalizovani program nadmašuje standardne savjete?",
     "options": [
      "Koristi skuplje sastojke",
-     "Novogenia pilot studija (139 učesnika) pokazala je 2,4× veći uspjeh u mršavljenju uz genetsku personalizaciju u poređenju sa standardnim savjetovanjem — jer strategija zaista odgovara osnovnoj biologiji",
+     "Interna Novogenia studija sa 302 osobe (genetski prilagođena vs. standardna dijeta) pokazala je 2,4× veći gubitak težine uz genetski prilagođenu dijetu",
      "Djeluje samo na papiru",
      "Identičan je standardnim savjetima"
     ],

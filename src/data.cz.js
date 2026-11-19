@@ -140,7 +140,7 @@ const TXT = {
     "q": "Proč personalizovaný program překonává standardní doporučení?",
     "options": [
      "Používá dražší suroviny",
-     "Pilotní studie Novogenia (139 účastníků) prokázala 2,4× vyšší úspěšnost hubnutí s genetickou personalizací oproti standardnímu poradenství — protože strategie skutečně odpovídá biologii daného člověka",
+     "Interní studie Novogenia s 302 osobami (genetická vs. standardní dieta) ukázala při genetické dietě 2,4× vyšší úbytek hmotnosti",
      "Funguje to jen na papíře",
      "Je totožný se standardním doporučením"
     ],

@@ -140,7 +140,7 @@ const TXT = {
     "q": "Por que razão um programa personalizado supera os conselhos padrão?",
     "options": [
      "Usa ingredientes mais caros",
-     "Um estudo-piloto da Novogenia (139 participantes) demonstrou um sucesso de perda de peso 2,4× superior com personalização genética face ao aconselhamento padrão — porque a estratégia se ajusta efetivamente à biologia subjacente",
+     "O estudo interno da Novogenia com 302 pessoas (dieta baseada nos genes vs. dieta padrão) mostrou uma perda de peso 2,4× maior com a dieta baseada nos genes",
      "Só funciona no papel",
      "É idêntico aos conselhos padrão"
     ],

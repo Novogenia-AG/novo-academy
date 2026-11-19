@@ -140,7 +140,7 @@ const TXT = {
     "q": "Waarom presteert een gepersonaliseerd programma beter dan standaardadvies?",
     "options": [
      "Het gebruikt duurdere ingrediënten",
-     "Een pilotstudie van Novogenia (139 deelnemers) liet een 2,4× hoger succes bij gewichtsverlies zien met genetische personalisatie ten opzichte van standaardbegeleiding — omdat de strategie daadwerkelijk aansluit op de onderliggende biologie",
+     "De interne studie van Novogenia met 302 personen (genbaseerd vs. standaarddieet) liet met het genbaseerde dieet een 2,4× groter gewichtsverlies zien",
      "Het werkt alleen op papier",
      "Het is identiek aan standaardadvies"
     ],

@@ -140,7 +140,7 @@ const TXT = {
     "q": "Perché un programma personalizzato supera i consigli standard?",
     "options": [
      "Perché utilizza ingredienti più costosi",
-     "Uno studio pilota Novogenia (139 partecipanti) ha mostrato un successo nel dimagrimento 2,4 volte superiore con la personalizzazione genetica rispetto alla consulenza standard, perché la strategia rispecchia davvero la biologia sottostante",
+     "Lo studio interno di Novogenia su 302 persone (dieta basata sui geni vs. dieta standard) ha mostrato una perdita di peso 2,4 volte maggiore con la dieta basata sui geni",
      "Funziona solo sulla carta",
      "È identico ai consigli standard"
     ],
