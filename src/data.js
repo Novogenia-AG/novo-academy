@@ -1824,7 +1824,7 @@ export const COURSES = [
     contentType: 'faq',
     description: 'Antworten auf typische Kundenfragen zur Analyse des biologischen Alters.',
     longDescription:
-      'Eine Sammlung der wichtigsten Fragen zur Telomer- und Anti-Aging-Analyse. Mit ausklappbarer Antwort zum Selbsttest.',
+      'Eine Sammlung der wichtigsten Fragen zur Telomer-Analyse und zum biologischen Alter. Mit ausklappbarer Antwort zum Selbsttest.',
     bullets: [
       'Was sind Telomere und warum altern wir?',
       'Wie beeinflusst meine Genetik das biologische Alter?',
@@ -1846,7 +1846,7 @@ export const COURSES = [
           },
           {
             q: 'Welche Gene werden in der Analyse betrachtet?',
-            a: 'Hauptsächlich Telomerase und verwandte Gene (TERT, BICD1, PPARG), die die Erhaltung der Telomerlänge steuern. Sie zeigen, wie gut dein Körper Telomere erhalten kann — eine grobe Schätzung der genetischen Anti-Aging-Kapazität.',
+            a: 'Hauptsächlich Telomerase und verwandte Gene (TERT, BICD1, PPARG), die die Erhaltung der Telomerlänge steuern. Sie zeigen, wie gut dein Körper Telomere erhalten kann.',
           },
         ],
       },
@@ -1858,8 +1858,8 @@ export const COURSES = [
             a: 'Überraschend nein. Sie hilft nur Menschen mit einem bestimmten Gendefekt, die Telomere länger zu erhalten — bei anderen zeigt sie keinen messbaren Effekt auf die Telomerlänge. Eine schöne Veranschaulichung, dass dieselbe Lebensstil-Empfehlung nicht für jeden gleich wirkt.',
           },
           {
-            q: 'Welche Nährstoffe können die Telomere unterstützen?',
-            a: 'Vitamin D3, Omega-3, Vitamin E, Resveratrol und Ginkgo. Wenn das genetische Schutzsystem geschwächt ist, können diese Nährstoffe gezielt eingesetzt werden, um die Telomer-Verkürzung zu verlangsamen.',
+            q: 'Welche Nährstoffe werden mit den Telomeren in Verbindung gebracht?',
+            a: 'Studien bringen Vitamin D3, Omega-3, Vitamin E, Resveratrol und Ginkgo mit dem Erhalt der Telomere in Verbindung. Wenn dein genetisches Schutzsystem schwächer arbeitet, kannst du mehr Lebensmittel essen, die diese Stoffe enthalten. Rückgängig machen lässt sich die Verkürzung nicht.',
           },
           {
             q: 'Kann ich freie Radikale beeinflussen?',
@@ -1876,7 +1876,7 @@ export const COURSES = [
           },
           {
             q: 'Was bringt mir dieses Wissen praktisch?',
-            a: 'Du weißt, ob du genetisch eher zur schnelleren oder langsameren Zellalterung neigst — und kannst gezielt gegensteuern. Bei ungünstiger Veranlagung lohnt sich besonders: antioxidantienreiche Ernährung, gezielte Supplementierung (D3, Omega-3, Resveratrol), regelmäßiger Sport (aber nicht übertrieben), guter Schlaf und Stressreduktion.',
+            a: 'Du weißt, ob du genetisch eher zur schnelleren oder langsameren Zellalterung neigst — und kannst gezielt gegensteuern. Bei ungünstiger Veranlagung lohnt sich besonders: eine Ernährung mit Lebensmitteln, die reich an Vitamin D, Omega-3-Fettsäuren und Antioxidantien sind, regelmäßiger Sport (aber nicht übertrieben), guter Schlaf und Stressreduktion.',
           },
         ],
       },
@@ -1902,12 +1902,12 @@ export const COURSES = [
     contentType: 'course',
     description: 'Wie das biologische Alter genetisch bestimmt und durch Lebensstil beeinflusst wird.',
     longDescription:
-      'Diese Schulung erklärt die wissenschaftliche Grundlage hinter der genetischen Analyse zum biologischen Alter. Du erfährst, welche Gene Telomerlänge und Zellalterung beeinflussen, wie sich biologisches von chronologischem Alter unterscheidet und welche Nährstoffe und Lebensstil-Faktoren die Verkürzung der Telomere verlangsamen können.',
+      'Diese Schulung erklärt die wissenschaftliche Grundlage hinter der genetischen Analyse zum biologischen Alter. Du erfährst, welche Gene Telomerlänge und Zellalterung beeinflussen, wie sich biologisches von chronologischem Alter unterscheidet und welche Nährstoffe und Lebensstil-Faktoren Studien mit dem Erhalt der Telomere in Verbindung bringen.',
     bullets: [
       'Telomere und Zellalterung — Grundlagen',
       'Chronologisches vs. biologisches Alter',
       'Genetische Faktoren der Alterung: das Telomerase-Gen',
-      'Anti-Aging-Strategien: Nährstoffe und genotypabhängige mediterrane Ernährung',
+      'Gesundes Altern: Nährstoffe und genotypabhängige mediterrane Ernährung',
     ],
     thumbnail: '/thumbnails/course-bioage.jpg',
     youtubeId: 'gwmVcvbaNgE',
@@ -2010,7 +2010,7 @@ export const COURSES = [
         q: 'Was ist die richtige Strategie bei einem Telomerase-Gendefekt?',
         options: [
           'Die Veranlagung ignorieren — die Telomere lassen sich nicht beeinflussen',
-          'Gezielte Lebensstil-Maßnahmen und unterstützende Nährstoffe einsetzen, um die schwächere genetische Schutzfunktion auszugleichen und die Telomer-Verkürzung zu verlangsamen',
+          'Gezielte Lebensstil-Maßnahmen und eine Ernährung mit den passenden Nährstoffen, um die schwächere genetische Schutzfunktion zu unterstützen',
           'Mehr Sport treiben, sonst nichts',
           'Die Ernährung komplett umstellen — egal worauf',
         ],
@@ -2050,7 +2050,7 @@ export const COURSES = [
     bullets: [
       'Den Bericht zum biologischen Alter strukturiert besprechen',
       'Den Alterungsprozess genetisch fundiert einordnen',
-      'Konkrete Anti-Aging-Empfehlungen ableiten',
+      'Empfehlungen für gesundes Altern ableiten',
       'Wie Lebensstil das biologische Alter beeinflusst',
     ],
     thumbnail: '/thumbnails/ba-report-cover.jpg',
