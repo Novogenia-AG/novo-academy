@@ -2350,17 +2350,39 @@ const saveUserState = (state) => {
 
 const LANG_KEY = 'novoacademy_lang'
 const LANG_CHOSEN_KEY = 'novoacademy_lang_chosen'   // marker so we know lang-pick was done
-const loadLang = () => {
-  try { return localStorage.getItem(LANG_KEY) || 'de' } catch { return 'de' }
-}
 const hasChosenLang = () => {
   try { return localStorage.getItem(LANG_CHOSEN_KEY) === '1' } catch { return false }
+}
+/* Erstbesuch (novo-shop G1): passt die Browsersprache zu einer der elf
+   Sprachen, wird sie übernommen und die Sprachwahl übersprungen. Der
+   Umschalter oben bleibt. Passt keine, erscheint die Sprachwahl wie bisher. */
+const BROWSER_LANG_MAP = {
+  de: 'de', en: 'en', cs: 'cz', fr: 'fr', pt: 'pt', it: 'it', nl: 'nl',
+  ro: 'ro', es: 'es', sr: 'sr', hr: 'sr', bs: 'sr', ar: 'ar',
+}
+const detectBrowserLang = () => {
+  try {
+    const list = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language]
+    for (const l of list) {
+      const code = BROWSER_LANG_MAP[String(l || '').toLowerCase().split('-')[0]]
+      if (code) return code
+    }
+  } catch {}
+  return null
+}
+const loadLang = () => {
+  let stored = null
+  try { stored = localStorage.getItem(LANG_KEY) } catch {}
+  // Gespeichert wird die Sprache schon vor der ersten Wahl (Standard 'de');
+  // sie zählt deshalb nur, wenn wirklich gewählt wurde.
+  if (stored && hasChosenLang()) return stored
+  return detectBrowserLang() || stored || 'de'
 }
 
 export default function App() {
   // ---- Outer flow ----
   // Phase: 'lang-pick' (first visit) → 'landing' (intro) → 'auth' (signup/login) → 'app' (logged-in academy)
-  const [langChosen, setLangChosen] = useState(hasChosenLang)
+  const [langChosen, setLangChosen] = useState(() => hasChosenLang() || Boolean(detectBrowserLang()))
   const [session, setSession] = useState(() => getCurrentSession())
   const [profile, setProfile] = useState(null)
   const [outerRoute, setOuterRoute] = useState(null) // null = derived from phase; otherwise 'landing'|'auth-signup'|'auth-login'|'impressum'|'datenschutz'|'barrierefreiheit'
@@ -2410,6 +2432,8 @@ export default function App() {
     updateMyLang(newLang).catch(() => {})
   }
   useEffect(() => { try { localStorage.setItem(LANG_KEY, lang) } catch {} }, [lang])
+  // Automatisch übernommene Browsersprache als gewählt merken (G1).
+  useEffect(() => { if (langChosen) { try { localStorage.setItem(LANG_CHOSEN_KEY, '1') } catch {} } }, [langChosen])
 
   // Set <html lang> + text direction (RTL for Arabic) — must come after `lang` is declared
   useEffect(() => {
