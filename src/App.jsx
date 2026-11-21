@@ -2620,7 +2620,11 @@ export default function App() {
           onOpenPrivacy={() => geheZu('datenschutz')}
         />
       )}
-      <SupportBotLauncher lang={lang} />
+      {/* Solange der Cookie-Banner offen ist, bleibt der Chat-Knopf weg: auf dem
+          Handy lag sein KI-Hinweis genau über „Nur notwendige“ und „Alle
+          akzeptieren“ (novo-shop H1). Der KI-Hinweis erscheint mit dem Knopf
+          wieder, also weiterhin vor der ersten Nutzung (Art. 50 Abs. 1 KI-VO). */}
+      {!showBanner && <SupportBotLauncher lang={lang} />}
       </CookieContext.Provider>
     </LangContext.Provider>
   )
