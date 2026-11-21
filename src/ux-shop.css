@@ -212,3 +212,14 @@
   outline-color: #C6D63F;
 }
 .skip-to-content { min-height: 48px; display: inline-flex; align-items: center; }
+
+/* ---------- G2 · Weniger Bewegung, wenn das System es wünscht ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+  .btn-primary:hover, .cc-action-btn:hover, .tile:hover, .admin-gear-btn:hover { transform: none !important; }
+}
