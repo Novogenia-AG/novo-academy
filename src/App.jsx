@@ -18,6 +18,8 @@ import {
   getMyProfile, updateMyLang, adminLoadAllUsers, adminSetUserCourseState,
   adminSetIsAdmin, adminUpdateUserName, adminResetAllProgress,
   adminSoftDeleteUser, adminUndeleteUser, submitTestServer,
+  requestPasswordReset, updatePassword, onPasswordRecovery, isPasswordRecovery,
+  endPasswordRecovery, mockOpenResetLink,
 } from './auth.js'
 
 /* ===================== I18N CONTEXT =====================
@@ -2202,6 +2204,10 @@ export default function App() {
   const [profile, setProfile] = useState(null)
   const [outerRoute, setOuterRoute] = useState(null) // null = derived from phase; otherwise 'landing'|'auth-signup'|'auth-login'|'impressum'|'datenschutz'|'barrierefreiheit'
   const [authBusy, setAuthBusy] = useState(false)
+  /* Link aus der Passwort-Mail (Supabase-Ereignis PASSWORD_RECOVERY):
+     solange true, zeigt die App "Neues Passwort festlegen" (novo-shop H2). */
+  const [recovery, setRecovery] = useState(isPasswordRecovery)
+  useEffect(() => onPasswordRecovery(setRecovery), [])
   /* Einzige Quelle der Wahrheit für die Cookie-Zustimmung; wird unten per
      CookieContext an alle Player und die Datenschutzseite verteilt. */
   const cookieConsent = useCookieConsentState()
@@ -2494,12 +2500,27 @@ export default function App() {
         <LegalFooter {...legalFooterProps} />
       </div>
     )
+  } else if (recovery) {
+    inhaltEingebettet = true
+    page = (
+      <AuthPage
+        mode="reset"
+        lang={lang}
+        setLang={setLang}
+        busy={authBusy}
+        setBusy={setAuthBusy}
+        onBackToLanding={() => endPasswordRecovery()}
+        onDone={() => { endPasswordRecovery(); geheZu(null) }}
+        footerProps={legalFooterProps}
+      />
+    )
   } else if (!langChosen) {
     page = <LangPickPage onPick={(l) => setLang(l)} />
   } else if (!session) {
     // Not logged in — show landing or auth
     const mode = outerRoute === 'auth-signup' ? 'signup'
               : outerRoute === 'auth-login'  ? 'login'
+              : outerRoute === 'auth-forgot' ? 'forgot'
               : 'landing'
     if (mode === 'landing') {
       inhaltEingebettet = true
@@ -2522,6 +2543,8 @@ export default function App() {
           busy={authBusy}
           setBusy={setAuthBusy}
           onSwitchMode={() => geheZu(mode === 'signup' ? 'auth-login' : 'auth-signup')}
+          onForgot={() => geheZu('auth-forgot')}
+          onBackToLogin={() => geheZu('auth-login')}
           onBackToLanding={() => geheZu('landing')}
           footerProps={legalFooterProps}
         />
@@ -3510,7 +3533,7 @@ function AdminUserActionsMenu({ user, onChanged, eigeneId, onError }) {
 }
 
 /* ===================== AUTH PAGE (signup / login) ===================== */
-function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLanding, footerProps }) {
+function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onForgot, onBackToLogin, onDone, onBackToLanding, footerProps }) {
   const t = useT()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -3518,6 +3541,8 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLa
   const [errorKey, setErrorKey] = useState(null)
 
   const isSignup = mode === 'signup'
+  const isForgot = mode === 'forgot'
+  const isReset = mode === 'reset'
 
   const submit = async (e) => {
     e?.preventDefault?.()
@@ -3579,6 +3604,11 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLa
       <main id="main-content" tabIndex={-1} className="skip-target">
       <div className="auth-card-wrap">
         <div className="auth-card">
+          {isForgot ? (
+            <ForgotPasswordForm busy={busy} setBusy={setBusy} onBackToLogin={onBackToLogin} />
+          ) : isReset ? (
+            <NewPasswordForm busy={busy} setBusy={setBusy} onDone={onDone} />
+          ) : (<>
           <h1 className="auth-title">{isSignup ? t('auth_signup_title') : t('auth_login_title')}</h1>
           <p className="auth-sub">{isSignup ? t('auth_signup_sub') : t('auth_login_sub')}</p>
 
@@ -3629,7 +3659,18 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLa
               />
             </label>
 
-            {errorKey && <div className="auth-error" role="alert">{t(errorKey)}</div>}
+            {!isSignup && (
+              <button type="button" className="auth-forgot-link" onClick={onForgot}>{t('auth_forgot_link')}</button>
+            )}
+
+            {errorKey && (
+              <div className="auth-error" role="alert">
+                {t(errorKey)}
+                {errorKey === 'auth_error_invalid' && !isSignup && (
+                  <> <button type="button" className="auth-inline-link" onClick={onForgot}>{t('auth_forgot_inline')}</button></>
+                )}
+              </div>
+            )}
 
             <button type="submit" className="btn-primary big auth-submit" disabled={busy}>
               {busy ? t('auth_loading') : (isSignup ? t('auth_submit_signup') : t('auth_submit_login'))}
@@ -3646,6 +3687,7 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLa
           <button className="auth-switch" onClick={onSwitchMode} disabled={busy}>
             {isSignup ? t('auth_switch_to_login') : t('auth_switch_to_signup')}
           </button>
+          </>)}
 
           {!isUsingRealSupabase() && (
             <div className="auth-local-notice">
@@ -3659,6 +3701,171 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onBackToLa
       </main>
       {footerProps && <LegalFooter {...footerProps} />}
     </div>
+  )
+}
+
+/* ===================== PASSWORT ZURÜCKSETZEN (novo-shop H2) =====================
+   1. "Passwort vergessen?" → E-Mail eingeben → resetPasswordForEmail.
+      Die Bestätigung ist bewusst neutral: sie verrät nicht, ob es das Konto gibt.
+   2. Link aus der Mail → Supabase meldet PASSWORD_RECOVERY → NewPasswordForm
+      → updateUser({ password }).
+   Im Demo-Modus (ohne Supabase) spielt ein Knopf den Mail-Link nach. */
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
+
+function PasswordField({ id, label, value, onChange, autoComplete, showRule = false, error = null, onBlur }) {
+  const t = useT()
+  const [show, setShow] = useState(false)
+  const ruleOk = value.length >= 8
+  const describedBy = [showRule ? `${id}-rule` : null, error ? `${id}-err` : null].filter(Boolean).join(' ') || undefined
+  return (
+    <div className="auth-field">
+      <label className="auth-label" htmlFor={id}>{label}</label>
+      <div className="auth-pw-wrap">
+        <input
+          id={id}
+          type={show ? 'text' : 'password'}
+          value={value}
+          onChange={e => onChange(e.target.value.slice(0, 128))}
+          onBlur={onBlur}
+          autoComplete={autoComplete}
+          maxLength={128}
+          aria-invalid={error ? true : undefined}
+          aria-describedby={describedBy}
+        />
+        <button type="button" className="auth-pw-toggle" onClick={() => setShow(v => !v)}
+                aria-pressed={show} aria-controls={id}>
+          {show ? t('auth_password_hide') : t('auth_password_show')}
+        </button>
+      </div>
+      {showRule && (
+        <span id={`${id}-rule`} className={`auth-pw-rule${ruleOk ? ' is-ok' : ''}`}>
+          <span aria-hidden="true">{ruleOk ? '✓' : '•'}</span> {t('auth_password_placeholder')}
+        </span>
+      )}
+      {error && <span id={`${id}-err`} className="auth-field-error" role="alert">{error}</span>}
+    </div>
+  )
+}
+
+function ForgotPasswordForm({ busy, setBusy, onBackToLogin }) {
+  const t = useT()
+  const [email, setEmail] = useState('')
+  const [emailError, setEmailError] = useState(false)
+  const [errorKey, setErrorKey] = useState(null)
+  const [sent, setSent] = useState(false)
+  const [mockLink, setMockLink] = useState(false)
+
+  const submit = async (e) => {
+    e?.preventDefault?.()
+    setErrorKey(null)
+    if (!EMAIL_RE.test(email.trim())) { setEmailError(true); return }
+    setBusy(true)
+    try {
+      const r = await requestPasswordReset(email.trim())
+      if (r.error) {
+        setErrorKey(r.error?.code === 'rate_limited' ? 'auth_error_rate_limited'
+          : r.error === 'email' ? 'auth_email_invalid' : 'auth_forgot_failed')
+        return
+      }
+      setMockLink(Boolean(r.mockLinkAvailable))
+      setSent(true)
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  if (sent) {
+    return (
+      <div className="auth-sent" role="status">
+        <h1 className="auth-title">{t('auth_forgot_sent_title')}</h1>
+        <p className="auth-sub">{t('auth_forgot_sent')}</p>
+        {!isUsingRealSupabase() && mockLink && (
+          <button type="button" className="btn-ghost big auth-demo-link" onClick={() => mockOpenResetLink()}>
+            {t('auth_forgot_demo_open')}
+          </button>
+        )}
+        <button type="button" className="btn-primary big auth-submit" onClick={onBackToLogin}>{t('auth_forgot_back')}</button>
+      </div>
+    )
+  }
+
+  return (
+    <>
+      <h1 className="auth-title">{t('auth_forgot_title')}</h1>
+      <p className="auth-sub">{t('auth_forgot_sub')}</p>
+      <form className="auth-form" onSubmit={submit} noValidate>
+        <div className="auth-field">
+          <label className="auth-label" htmlFor="forgot-email">{t('auth_email_label')}</label>
+          <input
+            id="forgot-email"
+            type="email"
+            value={email}
+            onChange={e => { setEmail(e.target.value.slice(0, 254)); if (emailError && EMAIL_RE.test(e.target.value.trim())) setEmailError(false) }}
+            onBlur={() => setEmailError(email.trim() !== '' && !EMAIL_RE.test(email.trim()))}
+            placeholder={t('auth_email_placeholder')}
+            autoComplete="email"
+            maxLength={254}
+            aria-invalid={emailError || undefined}
+            aria-describedby={emailError ? 'forgot-email-err' : undefined}
+          />
+          {emailError && <span id="forgot-email-err" className="auth-field-error" role="alert">{t('auth_email_invalid')}</span>}
+        </div>
+        {errorKey && <div className="auth-error" role="alert">{t(errorKey)}</div>}
+        <button type="submit" className="btn-primary big auth-submit" disabled={busy} aria-busy={busy}>
+          {busy ? t('auth_loading') : t('auth_forgot_submit')}
+        </button>
+      </form>
+      <button type="button" className="auth-switch" onClick={onBackToLogin} disabled={busy}>{t('auth_forgot_back')}</button>
+    </>
+  )
+}
+
+function NewPasswordForm({ busy, setBusy, onDone }) {
+  const t = useT()
+  const [password, setPassword] = useState('')
+  const [errorKey, setErrorKey] = useState(null)
+  const [done, setDone] = useState(false)
+
+  const submit = async (e) => {
+    e?.preventDefault?.()
+    setErrorKey(null)
+    if (password.length < 8) { setErrorKey('auth_error_weak'); return }
+    setBusy(true)
+    try {
+      const r = await updatePassword(password)
+      if (r.error) {
+        setErrorKey(r.error === 'weak' ? 'auth_error_weak' : r.error === 'same' ? 'auth_reset_same' : 'auth_reset_failed')
+        return
+      }
+      setDone(true)
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  if (done) {
+    return (
+      <div className="auth-sent" role="status">
+        <h1 className="auth-title">{t('auth_reset_title')}</h1>
+        <p className="auth-sub">{t('auth_reset_done')}</p>
+        <button type="button" className="btn-primary big auth-submit" onClick={onDone}>{t('auth_reset_continue')}</button>
+      </div>
+    )
+  }
+
+  return (
+    <>
+      <h1 className="auth-title">{t('auth_reset_title')}</h1>
+      <p className="auth-sub">{t('auth_reset_sub')}</p>
+      <form className="auth-form" onSubmit={submit} noValidate>
+        <PasswordField id="reset-password" label={t('auth_reset_label')} value={password} onChange={setPassword}
+          autoComplete="new-password" showRule error={errorKey === 'auth_error_weak' ? t('auth_error_weak') : null} />
+        {errorKey && errorKey !== 'auth_error_weak' && <div className="auth-error" role="alert">{t(errorKey)}</div>}
+        <button type="submit" className="btn-primary big auth-submit" disabled={busy} aria-busy={busy}>
+          {busy ? t('auth_loading') : t('auth_reset_submit')}
+        </button>
+      </form>
+    </>
   )
 }
 

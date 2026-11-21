@@ -13,6 +13,9 @@
      signOut()                                  → void
      loadProgress(userId)      → Promise<state>
      saveProgress(userId, st)  → Promise<void>
+     requestPasswordReset(email)                → { error? }   (novo-shop H2)
+     updatePassword(password)                   → { error? }
+     onPasswordRecovery(cb) / isPasswordRecovery() / endPasswordRecovery()
 */
 
 import { createClient } from '@supabase/supabase-js'
@@ -129,6 +132,25 @@ const _uuid = () => {
 const listeners = new Set()
 let _cachedSession = null
 
+/* ===== Passwort zurücksetzen: Wiederherstellungs-Modus =====
+   true, solange jemand über den Link aus der Passwort-Mail gekommen ist und
+   noch kein neues Passwort gespeichert hat. Der Hash-Test fängt den Fall ab,
+   dass Supabase das Ereignis schon vor dem ersten Abonnenten meldet. */
+let _recoveryMode = false
+try { if (USE_REAL && /type=recovery/.test(window.location.hash || '')) _recoveryMode = true } catch {}
+const recoveryListeners = new Set()
+const _setRecovery = (v) => {
+  _recoveryMode = !!v
+  for (const cb of recoveryListeners) { try { cb(_recoveryMode) } catch {} }
+}
+export const isPasswordRecovery = () => _recoveryMode
+export const onPasswordRecovery = (cb) => {
+  recoveryListeners.add(cb)
+  try { cb(_recoveryMode) } catch {}
+  return () => recoveryListeners.delete(cb)
+}
+export const endPasswordRecovery = () => _setRecovery(false)
+
 const _emit = () => {
   for (const cb of listeners) {
     try { cb(_cachedSession) } catch {}
@@ -159,6 +181,10 @@ if (USE_REAL && supabase) {
   // Hydrate async — components subscribe via onAuthChange
   _refreshSession().then(_emit)
   supabase.auth.onAuthStateChange((_event, _session) => {
+    // Link aus der Passwort-Mail: Supabase meldet PASSWORD_RECOVERY und legt
+    // eine Sitzung an. Die App zeigt dann "Neues Passwort festlegen" statt
+    // direkt die Startseite.
+    if (_event === 'PASSWORD_RECOVERY') _setRecovery(true)
     _refreshSession().then(_emit)
   })
 }
@@ -258,6 +284,80 @@ export const signOut = async () => {
   _cachedSession = null
   _saveMockSession(null)
   _emit()
+}
+
+/* ===== Passwort zurücksetzen (novo-shop H2) =====
+   Nur Supabase-Client-Funktionen, keine Server- oder SQL-Änderung.
+   Voraussetzung im Supabase-Dashboard (Auth → URL Configuration): die
+   Live-Adresse https://academy.novopilot.com muss als Redirect-URL erlaubt
+   sein, sonst landet der Link auf der Site URL. */
+const MOCK_RESET_KEY = 'novoacademy_mock_reset'
+
+export const requestPasswordReset = async (email) => {
+  const validErr = _validateAuthInput({ email })
+  if (validErr) return { error: 'email' }
+  const rateErr = _rateLimitCheck()
+  if (rateErr) return { error: rateErr }
+  if (USE_REAL && supabase) {
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: window.location.origin + '/',
+    })
+    if (error) {
+      if (error.status === 429) return { error: { code: 'rate_limited' } }
+      return { error: 'failed' }
+    }
+    // Bewusst neutral: Supabase verrät nicht, ob es das Konto gibt, und die
+    // Oberfläche auch nicht.
+    return {}
+  }
+  // ----- Mock: "Mail" merken, damit der Demo-Knopf den Link nachspielen kann -----
+  const users = _loadMockUsers()
+  try {
+    if (users[email]) localStorage.setItem(MOCK_RESET_KEY, email)
+    else localStorage.removeItem(MOCK_RESET_KEY)
+  } catch {}
+  return { mockLinkAvailable: Boolean(users[email]) }
+}
+
+/** Nur im Demo-Modus: spielt den Klick auf den Link aus der Mail nach. */
+export const mockOpenResetLink = () => {
+  if (USE_REAL) return false
+  let email = null
+  try { email = localStorage.getItem(MOCK_RESET_KEY) } catch {}
+  const u = email && _loadMockUsers()[email]
+  if (!u) return false
+  _cachedSession = { user: { id: u.id, email: u.email }, profile: { name: u.name } }
+  _saveMockSession(_cachedSession)
+  _emit()
+  _setRecovery(true)
+  return true
+}
+
+export const updatePassword = async (password) => {
+  if (!password || typeof password !== 'string' || password.length < 8) return { error: 'weak' }
+  if (password.length > MAX_PASSWORD_LEN) return { error: 'weak' }
+  if (USE_REAL && supabase) {
+    const { error } = await supabase.auth.updateUser({ password })
+    if (error) {
+      const msg = String(error.message || '').toLowerCase()
+      if (msg.includes('different') || msg.includes('same')) return { error: 'same' }
+      return { error: 'failed' }
+    }
+    _rateLimitReset()
+    return {}
+  }
+  // ----- Mock -----
+  let email = null
+  try { email = localStorage.getItem(MOCK_RESET_KEY) } catch {}
+  email = email || _cachedSession?.user?.email
+  const users = _loadMockUsers()
+  if (!email || !users[email]) return { error: 'failed' }
+  if (users[email].password === password) return { error: 'same' }
+  users[email] = { ...users[email], password }
+  _saveMockUsers(users)
+  try { localStorage.removeItem(MOCK_RESET_KEY) } catch {}
+  _rateLimitReset()
+  return {}
 }
 
 /* ===== Per-user progress storage ===== */
