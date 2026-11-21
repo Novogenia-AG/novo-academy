@@ -2197,13 +2197,23 @@ function FauxQR({ size = 88 }) {
   )
 }
 
-function CertificatePage({ name, courses, isSample, onBack }) {
+function CertificatePage({ name, courses, isSample, onBack, onNameChange }) {
   const lang = useLang()
   const t = useT()
   const fallbackName = LX(lang, 'Jane Doe', 'Maria Mustermann')
   const dateStr = formatDate(lang, isSample ? new Date(2026, 4, 5) : new Date())
   const [downloading, setDownloading] = useState(false)
   const [pdfError, setPdfError] = useState(false)
+  /* Vor dem Download den Namen prüfen lassen (novo-shop M5): er steht danach
+     im PDF. Ändern geht direkt hier, ohne zurück zur Startseite. */
+  const [editName, setEditName] = useState(false)
+  const [draft, setDraft] = useState(name || '')
+  const saveName = (e) => {
+    e?.preventDefault?.()
+    if (!draft.trim()) return
+    onNameChange?.(draft.trim().slice(0, 80))
+    setEditName(false)
+  }
 
   const downloadPdf = async () => {
     setDownloading(true)
@@ -2233,6 +2243,24 @@ function CertificatePage({ name, courses, isSample, onBack }) {
 
       {pdfError && (
         <p className="cert-pdf-error" role="alert">{t('cert_pdf_error')}</p>
+      )}
+
+      {!isSample && onNameChange && (
+        <div className="cert-name-check">
+          {editName ? (
+            <form className="cert-name-form" onSubmit={saveName}>
+              <label htmlFor="cert-name-edit">{t('cert_cta_name_label')}</label>
+              <input id="cert-name-edit" type="text" value={draft} maxLength={80} autoComplete="name"
+                     onChange={e => setDraft(e.target.value.slice(0, 80))} autoFocus />
+              <button type="submit" className="btn-primary" disabled={!draft.trim()}>{t('cert_name_save')}</button>
+            </form>
+          ) : (
+            <>
+              <p>{t('cert_name_check')} <strong>{name}</strong></p>
+              <button type="button" className="btn-ghost" onClick={() => { setDraft(name || ''); setEditName(true) }}>{t('cert_name_change')}</button>
+            </>
+          )}
+        </div>
       )}
 
       <div className="cert-canvas">
@@ -2732,7 +2760,8 @@ export default function App() {
   } else if (route.name === 'certificate') {
     page = <CertificatePage name={route.isSample ? sampleName : certName}
       courses={route.isSample ? getSampleCourseList(lang) : certifiedCourses}
-      isSample={route.isSample} onBack={() => navigate({ name: 'home' })} />
+      isSample={route.isSample} onBack={() => navigate({ name: 'home' })}
+      onNameChange={route.isSample ? undefined : setCertName} />
   } else if (route.name === 'admin' && profile?.is_admin) {
     inhaltEingebettet = true
     page = (

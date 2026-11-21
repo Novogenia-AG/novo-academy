@@ -146,3 +146,20 @@
   width: 100%; max-width: 1180px; margin: 0 0 16px; padding: 12px 16px; border-radius: 12px;
   background: #FDECEE; color: #6B0F1E; font-weight: 600; font-size: 14px;
 }
+
+/* ---------- M5 · Name vor dem Download prüfen ---------- */
+.cert-name-check {
+  width: 100%; max-width: 1180px; margin: 0 0 18px; padding: 12px 16px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px 16px;
+  background: linear-gradient(135deg, #00225E, #1D468C); border: 0; color: #fff;
+}
+.cert-name-check p { margin: 0; font-size: 14.5px; color: #fff; }
+.cert-name-check strong { color: #E4EE9A; }
+.cert-name-check .btn-ghost { min-height: 48px; padding: 0 20px; background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, .5); }
+.cert-name-form { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; width: 100%; }
+.cert-name-form label { font-size: 13px; font-weight: 700; color: #fff; }
+.cert-name-form input {
+  flex: 1; min-width: 200px; min-height: 48px; padding: 0 14px; border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, .4); background: rgba(255, 255, 255, .1); color: #fff; font: 500 16px "Montserrat", sans-serif;
+}
+.cert-name-form .btn-primary { min-height: 48px; padding: 0 22px; }

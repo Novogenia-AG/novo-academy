@@ -3756,6 +3756,14 @@ export const UI = {
   // ---- UX (novo-shop 21.11.2026) ----
   test_evaluating: { de: 'Wird ausgewertet …',
                    en: 'Evaluating …' },
+
+  // ---- UX (novo-shop 21.11.2026) ----
+  cert_name_check: { de: 'Steht dein Name richtig? So erscheint er im PDF:',
+                   en: 'Is your name correct? This is how it will appear in the PDF:' },
+  cert_name_change: { de: 'Name ändern',
+                    en: 'Change name' },
+  cert_name_save: { de: 'Übernehmen',
+                  en: 'Apply' },
 }
 
 export const t = (lang, key) => {
