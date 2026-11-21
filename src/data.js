@@ -3360,7 +3360,8 @@ export const UI = {
                                 en: ' modules in your account that you have completed and passed the test for, and is issued with the signature of Dr. Daniel Wallerstorfer.' },
   cert_cta_name_label:        { de: 'Name auf dem Zertifikat',     en: 'Name on the certificate' },
   cert_cta_name_placeholder:  { de: 'z. B. Maria Mustermann',      en: 'e.g. Jane Doe' },
-  cert_cta_generate:          { de: 'Zertifikat generieren →',     en: 'Generate certificate →' },
+  cert_cta_generate: { de: 'Zertifikat ansehen und herunterladen',
+                     en: 'View and download certificate' },
   cert_cta_sample:            { de: 'Beispiel ansehen',            en: 'View example' },
   cert_cta_empty_hint:        { de: 'Du hast noch keine Kurse zertifiziert. Sieh dir ein Beispielzertifikat an.',
                                 en: 'You haven\'t certified any courses yet. Take a look at the example certificate.' },
@@ -3627,6 +3628,30 @@ export const UI = {
                                 en: 'This statement was created on 18 August 2026 and updated on 19 November 2026. It is based on a self-assessment.' },
 
   // ---- Datenschutz Page ----
+
+  // ---- UX (novo-shop 21.11.2026) ----
+  cert_top_eyebrow: { de: 'Dein Zertifikat',
+                    en: 'Your certificate' },
+  cert_top_hello: { de: 'Hallo {name}!',
+                  en: 'Hi {name}!' },
+  cert_top_title_ready: { de: 'Dein Zertifikat ist bereit',
+                        en: 'Your certificate is ready' },
+  cert_top_title_start: { de: 'Hol dir dein Zertifikat',
+                        en: 'Earn your certificate' },
+  cert_top_progress: { de: '{done} von {total} Modulen bestanden',
+                     en: '{done} of {total} modules passed' },
+  cert_top_intro_none: { de: 'Sieh dir ein Modul an und bestehe den Test mit mindestens 80 %. Jedes bestandene Modul kommt auf dein persönliches Zertifikat der Novogenia GmbH.',
+                       en: 'Watch a module and pass its test with at least 80 %. Every module you pass goes onto your personal Novogenia GmbH certificate.' },
+  cert_cta_intro_one: { de: '. Es enthält dein abgeschlossenes und mit Test bestandenes Modul und wird mit der Unterschrift von Dr. Daniel Wallerstorfer ausgestellt.',
+                      en: '. It includes the module you have completed and passed the test for, and is issued with the signature of Dr. Daniel Wallerstorfer.' },
+  cert_cta_name_required: { de: 'Bitte gib den Namen ein, der auf dem Zertifikat stehen soll.',
+                          en: 'Please enter the name that should appear on the certificate.' },
+  cert_top_continue: { de: 'Weiter mit: {topic}',
+                     en: 'Continue with: {topic}' },
+  cert_top_start_next: { de: 'Nächstes Modul starten',
+                       en: 'Start next module' },
+  cert_top_next_hint: { de: 'Als Nächstes: {title}',
+                      en: 'Up next: {title}' },
 }
 
 export const t = (lang, key) => {

@@ -5,6 +5,7 @@ import ErrorBoundary from './ErrorBoundary.jsx'
 import './styles.css'
 import './nd-redesign.css'
 import './np-blau.css'  // NOVO PILOT Blau-Design (aktiv über data-np in index.html)
+import './ux-shop.css' // UX-Korrekturen novo-shop (21.11.2026), nach dem Design laden
 
 /* Clickjacking-Schutz. X-Frame-Options und CSP frame-ancestors sind als <meta>
    wirkungslos — beides verlangt einen echten HTTP-Header, den GitHub Pages

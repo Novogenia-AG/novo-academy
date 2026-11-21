@@ -1094,7 +1094,7 @@ function WelcomeText({ title, sub }) {
 }
 
 /* ===================== HOME PAGE ===================== */
-function HomePage({ courseState, navigate, certName, setCertName, completedCertifiableCount, certifiedTitles, lang = 'de' }) {
+function HomePage({ courseState, navigate, certName, setCertName, completedCertifiableCount, lang = 'de', firstName = '' }) {
   const mains = useMemo(
     () => groupForDisplay(lang),
     [lang]
@@ -1105,14 +1105,36 @@ function HomePage({ courseState, navigate, certName, setCertName, completedCerti
   const realCourses = COURSES.filter(c => isCertifiable(c) && c.contentType !== 'placeholder' && (c.lang || 'de') === lang
     && (!!c.youtubeId || (Array.isArray(c.videoSegments) && c.videoSegments.length > 0)))
   const totalModules = realCourses.length
-  const completedModules = realCourses.filter(c => courseState[courseKey(c)]?.watched).length
-  const pct = totalModules > 0 ? Math.round((completedModules / totalModules) * 100) : 0
+  /* Fortschritt oben in der Zertifikatsbox zählt BESTANDENE Module (Training
+     abgeschlossen + Test bestanden), also genau das, was aufs Zertifikat kommt. */
+  const passedModules = realCourses.filter(c => isCertified(c, courseState)).length
+  /* Nächster Schritt: erstes noch nicht zertifiziertes Modul in der
+     Anzeige-Reihenfolge der Startseite (novo-shop M2). */
+  const realKeys = new Set(realCourses.map(courseKey))
+  const nextCourse = mains.flatMap(m => m.sections.flatMap(s => s.items))
+    .find(c => realKeys.has(courseKey(c)) && !isCertified(c, courseState)) || null
 
   const topVideos = getHomeTopVideos(lang)
   const t = (k) => tBase(lang, k)
 
   return (
     <div className="content">
+      {/* Zertifikat ganz oben (Daniel, 21.11.2026): Fortschritt und nächster
+          Schritt sind ohne Scrollen sichtbar. Ersetzt die frühere Box am
+          Seitenende und den Fortschrittsbalken über den Kursen. */}
+      <CertificateCTA
+        name={certName}
+        onNameChange={setCertName}
+        onGenerate={() => navigate({ name: 'certificate', isSample: false })}
+        onShowSample={() => navigate({ name: 'certificate', isSample: true })}
+        completedCount={completedCertifiableCount}
+        passedModules={passedModules}
+        totalModules={totalModules}
+        nextCourse={nextCourse}
+        onStartNext={() => nextCourse && navigate({ name: 'course-landing', courseId: nextCourse.id })}
+        firstName={firstName}
+      />
+
       {/* Two introduction videos side-by-side, each ~2 tile widths.
           Title + description sit underneath each video. */}
       {topVideos.length > 0 && (
@@ -1135,21 +1157,6 @@ function HomePage({ courseState, navigate, certName, setCertName, completedCerti
           <span className="cs-accent" />
         </h2>
         <p className="courses-section-sub">{t('home_courses_section_sub')}</p>
-
-        <section className="academy-progress">
-          <div className="ap-text">
-            <div className="ap-stats">
-              <span className="ap-num">{completedModules}</span>
-              <span className="ap-of">{t('home_progress_of')}</span>
-              <span className="ap-total">{totalModules}</span>
-              <span className="ap-label">{t('home_progress_label')}</span>
-            </div>
-            <div className="ap-pct">{pct}%</div>
-          </div>
-          <div className="ap-bar">
-            <div className="ap-bar-fill" style={{ width: `${pct}%` }} />
-          </div>
-        </section>
       </div>
 
       {mains.map(main => (
@@ -1192,15 +1199,6 @@ function HomePage({ courseState, navigate, certName, setCertName, completedCerti
           </section>
         )
       })()}
-
-      <CertificateCTA
-        name={certName}
-        onNameChange={setCertName}
-        onGenerate={() => navigate({ name: 'certificate', isSample: false })}
-        onShowSample={() => navigate({ name: 'certificate', isSample: true })}
-        completedCount={completedCertifiableCount}
-        certifiedTitles={certifiedTitles}
-      />
     </div>
   )
 }
@@ -1234,32 +1232,87 @@ function CertificateMini({ name }) {
   )
 }
 
-/* ===================== CERTIFICATE CTA (on home, wine bg with seal + preview) ===================== */
-function CertificateCTA({ name, onNameChange, onGenerate, onShowSample, completedCount }) {
+/* ===================== CERTIFICATE CTA (oben auf der Startseite) =====================
+   Seit 21.11.2026 die erste Box unter der Kopfzeile (Daniels Wunsch). Zeigt,
+   wie viele Module bestanden sind, und genau eine Hauptaktion:
+   „Zertifikat ansehen und herunterladen“, sobald mindestens ein Modul
+   bestanden ist, sonst „Nächstes Modul starten“. */
+const fillVars = (s, vars) => String(s).replace(/\{(\w+)\}/g, (m, k) => (k in vars ? vars[k] : m))
+
+function CertificateCTA({ name, onNameChange, onGenerate, onShowSample, completedCount, passedModules = 0, totalModules = 0, nextCourse = null, onStartNext, firstName = '' }) {
   const t = useT()
+  const [nameError, setNameError] = useState(false)
+  const inputRef = useRef(null)
+  const hasCert = completedCount > 0
+  const pct = totalModules > 0 ? Math.min(100, Math.round((passedModules / totalModules) * 100)) : 0
+  const progressText = fillVars(t('cert_top_progress'), { done: passedModules, total: totalModules })
+
+  /* Der Knopf bleibt aktiv (novo-shop M5). Fehlt der Name, steht der Grund
+     direkt unter dem Feld, statt dass der Knopf kommentarlos grau bleibt. */
+  const tryGenerate = () => {
+    if (!name.trim()) {
+      setNameError(true)
+      try { inputRef.current?.focus() } catch {}
+      return
+    }
+    onGenerate()
+  }
+
   return (
-    <section className="cert-cta">
+    <section className="cert-cta cert-cta-top" aria-labelledby="cert-cta-h">
       <div className="cert-cta-body">
-        <h2>{t('cert_cta_title')}</h2>
-        <p>
-          {t('cert_cta_intro_a')}<strong>Novogenia {t('brand_coach')}</strong>{t('cert_cta_intro_b')}<strong>{completedCount}</strong>{t('cert_cta_intro_c')}
-        </p>
-        <div className="cert-form">
-          <label className="cert-input-wrap">
-            <span>{t('cert_cta_name_label')}</span>
-            <input type="text" value={name} onChange={e => onNameChange(e.target.value.slice(0, 80))} placeholder={t('cert_cta_name_placeholder')} maxLength={80} />
-          </label>
-          <div className="cert-actions">
-            <button className="btn-primary" onClick={onGenerate} disabled={!name.trim() || completedCount === 0}>
-              {t('cert_cta_generate')}
-            </button>
-            <button className="btn-ghost" onClick={onShowSample}>{t('cert_cta_sample')}</button>
+        <span className="nd-eyebrow"><span className="nd-eyebrow-dot" aria-hidden="true" />{t('cert_top_eyebrow')}</span>
+        {firstName && <p className="cert-top-hello">{fillVars(t('cert_top_hello'), { name: firstName })}</p>}
+        <h2 id="cert-cta-h">{hasCert ? t('cert_top_title_ready') : t('cert_top_title_start')}</h2>
+
+        <div className="cert-top-progress">
+          <p className="cert-top-count">{progressText}</p>
+          <div className="ap-bar" role="progressbar" aria-valuemin={0} aria-valuemax={totalModules}
+               aria-valuenow={passedModules} aria-label={progressText}>
+            <div className="ap-bar-fill" style={{ width: `${pct}%` }} />
           </div>
-          {completedCount === 0 && <p className="cert-hint">{t('cert_cta_empty_hint')}</p>}
+        </div>
+
+        <p className="cert-top-intro">
+          {!hasCert ? t('cert_top_intro_none')
+            : completedCount === 1
+            ? <>{t('cert_cta_intro_a')}<strong>Novogenia {t('brand_coach')}</strong>{t('cert_cta_intro_one')}</>
+            : <>{t('cert_cta_intro_a')}<strong>Novogenia {t('brand_coach')}</strong>{t('cert_cta_intro_b')}<strong>{completedCount}</strong>{t('cert_cta_intro_c')}</>}
+        </p>
+
+        <div className="cert-form">
+          {hasCert && (
+            <div className="cert-input-wrap">
+              <label htmlFor="cert-name-input">{t('cert_cta_name_label')}</label>
+              <input id="cert-name-input" ref={inputRef} type="text" value={name}
+                onChange={e => { onNameChange(e.target.value.slice(0, 80)); if (e.target.value.trim()) setNameError(false) }}
+                placeholder={t('cert_cta_name_placeholder')} maxLength={80} autoComplete="name"
+                aria-invalid={nameError || undefined} aria-describedby={nameError ? 'cert-name-err' : undefined} />
+              {nameError && <p id="cert-name-err" className="cert-field-error" role="alert">{t('cert_cta_name_required')}</p>}
+            </div>
+          )}
+          <div className="cert-actions">
+            {hasCert ? (
+              <>
+                <button className="btn-primary big" onClick={tryGenerate}>{t('cert_cta_generate')}</button>
+                {nextCourse && (
+                  <button className="btn-ghost big" onClick={onStartNext}>{fillVars(t('cert_top_continue'), { topic: nextCourse.topic })}</button>
+                )}
+              </>
+            ) : (
+              <>
+                {nextCourse && <button className="btn-primary big" onClick={onStartNext}>{t('cert_top_start_next')}</button>}
+                <button className="btn-ghost big" onClick={onShowSample}>{t('cert_cta_sample')}</button>
+              </>
+            )}
+          </div>
+          {!hasCert && nextCourse && (
+            <p className="cert-hint">{fillVars(t('cert_top_next_hint'), { title: `${nextCourse.category}: ${nextCourse.topic}` })}</p>
+          )}
         </div>
       </div>
 
-      <div className="cert-cta-visual">
+      <div className="cert-cta-visual" aria-hidden="true">
         <div className="cert-cta-stack">
           <CertificateMini name={name?.trim() || t('cert_cta_name_placeholder_seal')} />
           <div className="cert-cta-bigseal">
@@ -2530,8 +2583,8 @@ export default function App() {
             certName={certName}
             setCertName={setCertName}
             completedCertifiableCount={certifiedCourses.length}
-            certifiedTitles={certifiedCourses}
             lang={lang}
+            firstName={(bestDisplayName(session.profile?.name, session.user?.email) || '').split(/\s+/)[0]}
           /></Inhalt>
         </div>
         <LegalFooter {...legalFooterProps} />

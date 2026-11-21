@@ -320,7 +320,7 @@
 :root[data-np="hell"] :is(.courses-section-title, .landing-who-title, .faq-group-title, .cc-title) { color: var(--np-navy); }
 
 /* Kopfboxen bleiben dunkelblau (Anker): Landing-Hero, Willkommen/Fortschritt, Kursabschluss, Schluss-CTA */
-:root[data-np="hell"] :is(.landing-hero, .academy-progress, .cc-complete, .landing-final-cta) {
+:root[data-np="hell"] :is(.landing-hero, .academy-progress, .cc-complete, .landing-final-cta, .cert-cta) {
   --text: #fff; --text-soft: rgba(255, 255, 255, .86); --muted: rgba(255, 255, 255, .74); --muted-2: rgba(255, 255, 255, .55);
   --line: rgba(255, 255, 255, .16); --border: rgba(255, 255, 255, .16);
   background: linear-gradient(135deg, #00225E, #1D468C); color: #fff;
@@ -328,13 +328,13 @@
 }
 :root[data-np="hell"] .landing-hero { border-radius: 0 0 32px 32px; }
 :root[data-np="hell"] .landing-hero-title.nd-grad-head { color: #fff; -webkit-text-fill-color: #fff; }
-:root[data-np="hell"] :is(.landing-hero, .academy-progress, .cc-complete, .landing-final-cta) :is(.section-h, .main-cat-text, .nd-eyebrow) {
+:root[data-np="hell"] :is(.landing-hero, .academy-progress, .cc-complete, .landing-final-cta, .cert-cta) :is(.section-h, .main-cat-text, .nd-eyebrow) {
   background: rgba(198, 214, 63, .14); color: var(--np-lime); border-color: rgba(198, 214, 63, .35);
 }
-:root[data-np="hell"] :is(.landing-hero, .academy-progress, .cc-complete, .landing-final-cta) :is(h1, h2, h3, p, .ap-label, .ap-text) { color: inherit; }
+:root[data-np="hell"] :is(.landing-hero, .academy-progress, .cc-complete, .landing-final-cta, .cert-cta) :is(h1, h2, h3, p, .ap-label, .ap-text) { color: inherit; }
 :root[data-np="hell"] :is(.ap-num, .ap-pct) { color: var(--np-lime); }
 :root[data-np="hell"] .ap-bar { background: rgba(255, 255, 255, .16); border-color: transparent; }
-:root[data-np="hell"] :is(.landing-hero, .academy-progress, .cc-complete, .landing-final-cta) .btn-ghost { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .4); }
+:root[data-np="hell"] :is(.landing-hero, .academy-progress, .cc-complete, .landing-final-cta, .cert-cta) .btn-ghost { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .4); }
 :root[data-np="hell"] .cc-complete :is(.cc-cert-label) { color: var(--np-lime); }
 
 /* Ghost-Knöpfe außerhalb der Kopfbox */
