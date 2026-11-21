@@ -1095,6 +1095,44 @@ function WelcomeText({ title, sub }) {
   )
 }
 
+/* ===================== ROTER FADEN (novo-shop H3) =====================
+   Module, die zählen: zertifizierbar, kein Platzhalter, mit Video. Das
+   nächste offene Modul ist das erste davon in der Reihenfolge der Startseite,
+   das noch nicht zertifiziert ist. */
+const realCoursesFor = (lang) => COURSES.filter(c => isCertifiable(c) && c.contentType !== 'placeholder' && (c.lang || 'de') === lang
+  && (!!c.youtubeId || (Array.isArray(c.videoSegments) && c.videoSegments.length > 0)))
+function findNextCourse(lang, courseState, excludeId = null) {
+  const realKeys = new Set(realCoursesFor(lang).map(courseKey))
+  return groupForDisplay(lang).flatMap(m => m.sections.flatMap(s => s.items))
+    .find(c => c.id !== excludeId && realKeys.has(courseKey(c)) && !isCertified(c, courseState)) || null
+}
+
+/* Schrittleiste „Schritt x von 3“: 1 Video (bzw. Lesen) · 2 Test · 3 Zertifikat.
+   Ein Schritt gilt als erledigt, wenn das Training abgeschlossen bzw. der Test
+   bestanden ist; das Zertifikat, wenn beides erfüllt ist. */
+function CourseSteps({ course, state = {}, current }) {
+  const t = useT()
+  if (!isCertifiable(course)) return null
+  const hasVideo = !!course.youtubeId || (course.videoSegments || []).some(v => v && v.youtubeId)
+  const done = [!!state.watched, !!state.testPassed, !!(state.watched && state.testPassed)]
+  const now = current || (!state.watched ? 1 : !state.testPassed ? 2 : 3)
+  const labels = [hasVideo ? t('step_video') : t('step_read'), t('step_test'), t('step_cert')]
+  return (
+    <nav className="course-steps" aria-label={t('steps_label')}>
+      <p className="course-steps-now">{fillVars(t('steps_now'), { n: now })}</p>
+      <ol className="course-steps-list">
+        {labels.map((label, i) => (
+          <li key={i} className={`course-step${done[i] ? ' is-done' : ''}${now === i + 1 ? ' is-current' : ''}`}
+              aria-current={now === i + 1 ? 'step' : undefined}>
+            <span className="course-step-dot" aria-hidden="true">{done[i] ? '✓' : i + 1}</span>
+            <span className="course-step-label">{label}</span>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )
+}
+
 /* ===================== HOME PAGE ===================== */
 function HomePage({ courseState, navigate, certName, setCertName, completedCertifiableCount, lang = 'de', firstName = '' }) {
   const mains = useMemo(
@@ -1104,17 +1142,14 @@ function HomePage({ courseState, navigate, certName, setCertName, completedCerti
   // Progress counts only CERTIFIABLE modules (exclude FAQ + supplementary +
   // placeholders) so that 100% is actually reachable. FAQ/supplementary modules
   // have no test/completion, so including them made the max stuck at ~68%.
-  const realCourses = COURSES.filter(c => isCertifiable(c) && c.contentType !== 'placeholder' && (c.lang || 'de') === lang
-    && (!!c.youtubeId || (Array.isArray(c.videoSegments) && c.videoSegments.length > 0)))
+  const realCourses = realCoursesFor(lang)
   const totalModules = realCourses.length
   /* Fortschritt oben in der Zertifikatsbox zählt BESTANDENE Module (Training
      abgeschlossen + Test bestanden), also genau das, was aufs Zertifikat kommt. */
   const passedModules = realCourses.filter(c => isCertified(c, courseState)).length
   /* Nächster Schritt: erstes noch nicht zertifiziertes Modul in der
      Anzeige-Reihenfolge der Startseite (novo-shop M2). */
-  const realKeys = new Set(realCourses.map(courseKey))
-  const nextCourse = mains.flatMap(m => m.sections.flatMap(s => s.items))
-    .find(c => realKeys.has(courseKey(c)) && !isCertified(c, courseState)) || null
+  const nextCourse = findNextCourse(lang, courseState)
 
   const topVideos = getHomeTopVideos(lang)
   const t = (k) => tBase(lang, k)
@@ -1298,7 +1333,7 @@ function CertificateCTA({ name, onNameChange, onGenerate, onShowSample, complete
               <>
                 <button className="btn-primary big" onClick={tryGenerate}>{t('cert_cta_generate')}</button>
                 {nextCourse && (
-                  <button className="btn-ghost big" onClick={onStartNext}>{fillVars(t('cert_top_continue'), { topic: nextCourse.topic })}</button>
+                  <button className="btn-ghost big" onClick={onStartNext}>{fillVars(t('cert_top_continue'), { topic: `${nextCourse.category}: ${nextCourse.topic}` })}</button>
                 )}
               </>
             ) : (
@@ -1382,6 +1417,8 @@ function CourseLandingPage({ course, state, navigate, onBack }) {
             : <span className="cert-info muted">{t('cl_certifiable_no')}</span>}
           {certified && <span className="cert-info success">{t('cl_certified_done')}</span>}
         </div>
+
+        <CourseSteps course={course} state={state} />
 
         <p className="course-paragraph">{course.longDescription}</p>
         <ContentTags course={course} size="lg" />
@@ -1640,8 +1677,9 @@ function FaqPage({ course, state, onComplete, onBack }) {
   )
 }
 
-function CourseContentPage({ course, state, onComplete, onBack, onStartTest }) {
+function CourseContentPage({ course, state, onComplete, onCompleteAndTest, onGoCertificate, onBack, onStartTest }) {
   const lang = useLang()
+  const t = useT()
   // CATEGORY_CONTENT is only keyed for German categories. For EN courses
   // (which always use introText/introQuestions), this lookup returns {} and is unused.
   const content = CATEGORY_CONTENT[course.category] || {}
@@ -1664,6 +1702,8 @@ function CourseContentPage({ course, state, onComplete, onBack, onStartTest }) {
             </div>
           )}
         </div>
+
+        <CourseSteps course={course} state={state} current={1} />
 
         {useIntroText ? (
           <>
@@ -1794,28 +1834,44 @@ function CourseContentPage({ course, state, onComplete, onBack, onStartTest }) {
           </>
         )}
 
+        {/* Kursende: EINE Hauptaktion (novo-shop H3). „Weiter zum Test“ schließt
+            das Training ab und startet den Test in einem Schritt; wer den Test
+            später machen will, nimmt die Nebenaktion. Ist das Modul schon
+            zertifiziert, führt die Hauptaktion zum Zertifikat. */}
         <div className="cc-complete">
           {state.watched
             ? <p className="cc-already">{LX(lang, 'You have already successfully completed this module.', 'Du hast dieses Modul bereits erfolgreich abgeschlossen.')}</p>
             : <p className="cc-prompt">{LX(lang, 'When you have watched all relevant content, complete the module and take your test.', 'Wenn du alle relevanten Inhalte angesehen hast, schließe das Modul ab und lege deinen Test ab.')}</p>}
-          <div className="cc-actions-row">
-            <button className="cc-action-btn" onClick={onComplete}>
-              <span className="cc-action-icon"><Icon.Cap /></span>
-              <span className="cc-action-text">
-                <span className="cc-action-title">{LX(lang, 'Complete training', 'Training abschließen')}</span>
-                <span className="cc-action-sub">{LX(lang, 'Mark this module as successfully completed', 'Markiere dieses Modul als erfolgreich abgeschlossen')}</span>
-              </span>
-            </button>
-            {isCertifiable(course) && onStartTest && (
-              <button className="cc-action-btn cc-action-btn-alt" onClick={onStartTest}>
+          <div className="cc-actions-row cc-actions-one">
+            {certifiable && state.watched && state.testPassed && onGoCertificate ? (
+              <button className="cc-action-btn cc-action-btn-alt" onClick={onGoCertificate}>
+                <span className="cc-action-icon"><Icon.CertIcon /></span>
+                <span className="cc-action-text">
+                  <span className="cc-action-title">{t('cc_to_cert')}</span>
+                  <span className="cc-action-sub">{t('cc_to_cert_sub')}</span>
+                </span>
+              </button>
+            ) : certifiable && onStartTest ? (
+              <button className="cc-action-btn cc-action-btn-alt" onClick={onCompleteAndTest || onStartTest}>
                 <span className="cc-action-icon"><Icon.Quiz /></span>
                 <span className="cc-action-text">
-                  <span className="cc-action-title">{LX(lang, 'Start the test', 'Test beginnen')}</span>
-                  <span className="cc-action-sub">{LX(lang, 'Prove your knowledge and secure your certificate', 'Stelle dein Wissen unter Beweis und sichere dein Zertifikat')}</span>
+                  <span className="cc-action-title">{t('cc_next_test')}</span>
+                  <span className="cc-action-sub">{state.watched ? t('cc_next_test_sub_done') : t('cc_next_test_sub')}</span>
+                </span>
+              </button>
+            ) : (
+              <button className="cc-action-btn" onClick={onComplete}>
+                <span className="cc-action-icon"><Icon.Cap /></span>
+                <span className="cc-action-text">
+                  <span className="cc-action-title">{LX(lang, 'Complete training', 'Training abschließen')}</span>
+                  <span className="cc-action-sub">{LX(lang, 'Mark this module as successfully completed', 'Markiere dieses Modul als erfolgreich abgeschlossen')}</span>
                 </span>
               </button>
             )}
           </div>
+          {certifiable && onStartTest && !state.watched && (
+            <button className="btn-ghost big cc-secondary" onClick={onComplete}>{t('cc_later')}</button>
+          )}
         </div>
       </div>
     </div>
@@ -1837,7 +1893,7 @@ function GenReportDemo({ title = 'Fettempfindlichkeit hoch', position = 20, text
   )
 }
 
-function TestPage({ course, onSubmit, onBack }) {
+function TestPage({ course, state = {}, onSubmit, onBack }) {
   const [answers, setAnswers] = useState({})
   const [submitting, setSubmitting] = useState(false)
   const lang = useLang()
@@ -1879,6 +1935,7 @@ function TestPage({ course, onSubmit, onBack }) {
 
       <div className="cc-wrap">
         <h1 className="cc-title">{LX(lang, 'Test', 'Test')}: {course.category}: {course.topic}</h1>
+        <CourseSteps course={course} state={state} current={2} />
         <p className="cc-sub">
           {({
             en: <>Answer all questions in a single attempt. Pass threshold: <strong>80&nbsp;% correct answers</strong>. After submission you will only receive the overall result (no per-question breakdown).</>,
@@ -1940,8 +1997,10 @@ function TestPage({ course, onSubmit, onBack }) {
 }
 
 /* ===================== TEST RESULT ===================== */
-function TestResultPage({ course, score, passed, navigate, onBack }) {
+function TestResultPage({ course, score, passed, state = {}, nextCourse = null, onFinishAndCertificate, onGoCertificate, navigate, onBack }) {
   const lang = useLang()
+  const t = useT()
+  const certifiedNow = passed && !!state.watched
   return (
     <div className="test-result">
       <div className="course-landing-bar">
@@ -1960,11 +2019,15 @@ function TestResultPage({ course, score, passed, navigate, onBack }) {
           <div className="tr-score-num">{score}<span>%</span></div>
         </div>
 
+        <CourseSteps course={course} state={state} current={certifiedNow ? 3 : passed ? 1 : 2} />
+
         <h1 className={`tr-h ${passed ? 'pass' : 'fail'}`}>
           {passed ? LX(lang, 'Passed!', 'Bestanden!') : LX(lang, 'Unfortunately not passed', 'Leider nicht bestanden')}
         </h1>
         <p className="tr-msg">
-          {passed
+          {certifiedNow
+            ? fillVars(t('tr_pass_certified'), { topic: course.topic, score })
+            : passed
             ? LXP(lang, 'You passed the "${topic}" test with ${score}%. Once the training is also completed, the module counts as certified.',
                 `You passed the "${course.topic}" test with ${score}%. Once the training is also completed, the module counts as certified.`,
                 `Du hast den Test zu „${course.topic}" mit ${score}% bestanden. Sobald auch das Training abgeschlossen ist, gilt das Modul als zertifiziert.`,
@@ -1978,8 +2041,14 @@ function TestResultPage({ course, score, passed, navigate, onBack }) {
         <div className="tr-actions">
           {passed
             ? (<>
-                <button className="btn-primary big" onClick={onBack}>{LX(lang, 'To course overview', 'Zur Kursübersicht')}</button>
-                <button className="btn-ghost big" onClick={() => navigate({ name: 'home' })}>{LX(lang, 'All courses', 'Alle Kurse')}</button>
+                {/* Nach „Bestanden!“ führt der nächste offene Schritt weiter
+                    (novo-shop H3): Zertifikat, sonst Training abschließen. */}
+                {certifiedNow
+                  ? <button className="btn-primary big" onClick={onGoCertificate}>{t('tr_to_cert')}</button>
+                  : <button className="btn-primary big" onClick={onFinishAndCertificate}>{t('tr_finish_and_cert')}</button>}
+                {nextCourse
+                  ? <button className="btn-ghost big" onClick={() => navigate({ name: 'course-landing', courseId: nextCourse.id })}>{t('tr_next_module')}</button>
+                  : <button className="btn-ghost big" onClick={() => navigate({ name: 'home' })}>{LX(lang, 'All courses', 'Alle Kurse')}</button>}
               </>)
             : (<>
                 <button className="btn-primary big" onClick={() => navigate({ name: 'test', courseId: course.id })}>{LX(lang, 'Try again', 'Erneut versuchen')}</button>
@@ -2445,6 +2514,12 @@ export default function App() {
 
   const sampleName = LX(lang, 'Jane Doe', 'Maria Mustermann')
 
+  /* „Zum Zertifikat“: mit Namen direkt zur Vorschau, sonst zur Startseite,
+     wo das Namensfeld ganz oben in der Zertifikatsbox steht. */
+  const goCertificate = () => (certName.trim()
+    ? navigate({ name: 'certificate', isSample: false })
+    : navigate({ name: 'home' }))
+
   /* ===== Decide which top-level screen to render ===== */
   let page
   /* true, wenn der Zweig seine main-Landmarke selbst setzt — nämlich dann,
@@ -2562,13 +2637,15 @@ export default function App() {
     } else {
       page = <CourseContentPage course={course} state={courseState[courseKey(course)] || {}}
         onComplete={() => { markCompleted(course); navigate({ name: 'course-landing', courseId: course.id }) }}
+        onCompleteAndTest={() => { markCompleted(course); navigate({ name: 'test', courseId: course.id }) }}
+        onGoCertificate={goCertificate}
         onStartTest={() => navigate({ name: 'test', courseId: course.id })}
         onBack={() => navigate({ name: 'course-landing', courseId: course.id })}
         navigate={navigate} />
     }
   } else if (route.name === 'test' && courseById(route.courseId)) {
     const course = courseById(route.courseId)
-    page = <TestPage course={course}
+    page = <TestPage course={course} state={courseState[courseKey(course)] || {}}
       onSubmit={({ score, passed }) => {
         recordTest(course, score, passed)
         setLastTestResult({ courseId: course.id, score, passed })
@@ -2578,6 +2655,10 @@ export default function App() {
   } else if (route.name === 'test-result' && courseById(route.courseId)) {
     const course = courseById(route.courseId)
     page = <TestResultPage course={course} score={lastTestResult?.score || 0} passed={lastTestResult?.passed || false}
+      state={courseState[courseKey(course)] || {}}
+      nextCourse={findNextCourse(lang, courseState, course.id)}
+      onGoCertificate={goCertificate}
+      onFinishAndCertificate={() => { markCompleted(course); goCertificate() }}
       navigate={navigate} onBack={() => navigate({ name: 'course-landing', courseId: course.id })} />
   } else if (route.name === 'certificate') {
     page = <CertificatePage name={route.isSample ? sampleName : certName}

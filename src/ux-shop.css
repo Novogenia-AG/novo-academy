@@ -81,3 +81,29 @@
 .auth-sent .auth-submit { margin-top: 4px; }
 .auth-demo-link { width: 100%; margin-bottom: 10px; }
 .auth-switch { min-height: 48px; }
+
+/* ---------- 4 · H3 Roter Faden: Schrittleiste und eine Hauptaktion ---------- */
+.course-steps { margin: 4px 0 26px; }
+.course-steps-now { margin: 0 0 8px; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #3A4C6E; }
+.course-steps-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.course-step {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 40px;
+  padding: 6px 14px 6px 6px; border-radius: 999px;
+  background: #fff; border: 1px solid rgba(0, 34, 94, .18); color: #0B2350;
+  font-size: 14px; font-weight: 600;
+}
+.course-step + .course-step::before { content: ""; display: none; }
+.course-step-dot {
+  width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: #E3E9F4; color: #00225E; font-size: 13px; font-weight: 800;
+}
+.course-step.is-current { border: 2px solid #00225E; }
+.course-step.is-current .course-step-dot { background: #00225E; color: #fff; }
+.course-step.is-done .course-step-dot { background: #157A3F; color: #fff; }
+.tr-card .course-steps { display: flex; flex-direction: column; align-items: center; margin: 0 0 18px; }
+.course-body .course-steps { margin-top: 0; }
+
+.cc-actions-row.cc-actions-one { grid-template-columns: minmax(0, 560px); justify-content: center; }
+.cc-complete .cc-secondary { margin-top: 14px; min-height: 48px; }
+.btn-primary.big, .btn-ghost.big, .cc-action-btn { min-height: 48px; }
