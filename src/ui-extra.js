@@ -238,6 +238,7 @@ export const UI_EXTRA = {
  "test_send_error": "Neodesláno. Tvoje odpovědi tu zůstaly. Zkontroluj připojení a pošli test znovu.",
  "test_send_retry": "Odeslat znovu",
  "cert_pdf_error": "PDF se nepodařilo vytvořit. Zkus to prosím znovu.",
+ "test_evaluating": "Vyhodnocuje se …",
   },
   it: {
  "home_courses_section_title": "I TUOI CORSI ONLINE",
@@ -477,6 +478,7 @@ export const UI_EXTRA = {
  "test_send_error": "Non inviato. Le tue risposte sono ancora qui. Controlla la connessione e invia di nuovo il test.",
  "test_send_retry": "Invia di nuovo",
  "cert_pdf_error": "Non è stato possibile creare il PDF. Riprova.",
+ "test_evaluating": "Valutazione in corso …",
   },
   fr: {
  "home_courses_section_title": "TES COURS EN LIGNE",
@@ -716,6 +718,7 @@ export const UI_EXTRA = {
  "test_send_error": "Pas envoyé. Tes réponses sont toujours là. Vérifie ta connexion et renvoie le test.",
  "test_send_retry": "Renvoyer",
  "cert_pdf_error": "Le PDF n’a pas pu être créé. Réessaie.",
+ "test_evaluating": "Évaluation en cours …",
   },
   pt: {
  "home_courses_section_title": "OS TEUS CURSOS ONLINE",
@@ -955,6 +958,7 @@ export const UI_EXTRA = {
  "test_send_error": "Não enviado. As tuas respostas continuam aqui. Verifica a ligação e envia o teste novamente.",
  "test_send_retry": "Enviar novamente",
  "cert_pdf_error": "Não foi possível criar o PDF. Tenta novamente.",
+ "test_evaluating": "A avaliar …",
   },
   nl: {
  "home_courses_section_title": "JOUW ONLINECURSUSSEN",
@@ -1194,6 +1198,7 @@ export const UI_EXTRA = {
  "test_send_error": "Niet verzonden. Je antwoorden staan er nog. Controleer je verbinding en verstuur de test opnieuw.",
  "test_send_retry": "Opnieuw versturen",
  "cert_pdf_error": "De pdf kon niet worden gemaakt. Probeer het opnieuw.",
+ "test_evaluating": "Wordt beoordeeld …",
   },
   ro: {
  "home_courses_section_title": "CURSURILE TALE ONLINE",
@@ -1433,6 +1438,7 @@ export const UI_EXTRA = {
  "test_send_error": "Netrimis. Răspunsurile tale sunt încă aici. Verifică-ți conexiunea și trimite din nou testul.",
  "test_send_retry": "Trimite din nou",
  "cert_pdf_error": "PDF-ul nu a putut fi creat. Încearcă din nou.",
+ "test_evaluating": "Se evaluează …",
   },
   es: {
  "home_courses_section_title": "TUS CURSOS EN LÍNEA",
@@ -1672,6 +1678,7 @@ export const UI_EXTRA = {
  "test_send_error": "No enviado. Tus respuestas siguen aquí. Comprueba tu conexión y vuelve a enviar el test.",
  "test_send_retry": "Enviar de nuevo",
  "cert_pdf_error": "No se ha podido crear el PDF. Vuelve a intentarlo.",
+ "test_evaluating": "Evaluando …",
   },
   sr: {
  "home_courses_section_title": "VAŠI ONLINE KURSEVI",
@@ -1911,6 +1918,7 @@ export const UI_EXTRA = {
  "test_send_error": "Nije poslato. Tvoji odgovori su i dalje tu. Proveri vezu i ponovo pošalji test.",
  "test_send_retry": "Pošalji ponovo",
  "cert_pdf_error": "PDF nije mogao da se napravi. Pokušaj ponovo.",
+ "test_evaluating": "Ocenjuje se …",
   },
   ar: {
  "home_courses_section_title": "دوراتك التدريبية عبر الإنترنت",
@@ -2150,5 +2158,6 @@ export const UI_EXTRA = {
  "test_send_error": "لم يُرسل. إجاباتك ما زالت محفوظة هنا. تحقّق من اتصالك وأرسل الاختبار مرة أخرى.",
  "test_send_retry": "إعادة الإرسال",
  "cert_pdf_error": "تعذّر إنشاء ملف PDF. يرجى المحاولة مرة أخرى.",
+ "test_evaluating": "جارٍ التقييم …",
   }
 }

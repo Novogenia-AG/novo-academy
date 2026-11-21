@@ -2043,7 +2043,7 @@ function TestPage({ course, state = {}, onSubmit, onBack }) {
 
         <div className="test-submit">
           <button className="btn-primary big" onClick={() => submit(false)} disabled={submitting} aria-busy={submitting}>
-            {LXP(lang, 'Finish test (${answered}/${total} answered)',
+            {submitting ? t('test_evaluating') : LXP(lang, 'Finish test (${answered}/${total} answered)',
               `Finish test (${Object.keys(answers).length}/${course.questions.length} answered)`,
               `Test abschließen (${Object.keys(answers).length}/${course.questions.length} beantwortet)`,
               { answered: Object.keys(answers).length, total: course.questions.length })}
@@ -2561,9 +2561,14 @@ export default function App() {
     const k = courseKey(course)
     setCourseState(s => ({ ...s, [k]: { ...s[k], watched: true } }))
   }
+  /* Bestes Ergebnis behalten (novo-shop G3): Eine schwächere Wiederholung
+     überschrieb sonst die Punktzahl, während "bestanden" stehen blieb, und die
+     Kursseite zeigte z. B. "✓ Test erfolgreich abgeschlossen (40 %)". */
   const recordTest = (course, score, passed) => {
     const k = courseKey(course)
-    setCourseState(s => ({ ...s, [k]: { ...s[k], testScore: score, testPassed: passed || s[k]?.testPassed } }))
+    setCourseState(s => ({ ...s, [k]: { ...s[k],
+      testScore: Math.max(Number(score) || 0, Number(s[k]?.testScore) || 0),
+      testPassed: passed || s[k]?.testPassed } }))
   }
 
   const courseById = (id) => COURSES.find(c => c.id === id)

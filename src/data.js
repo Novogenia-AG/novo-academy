@@ -3752,6 +3752,10 @@ export const UI = {
                    en: 'Send again' },
   cert_pdf_error: { de: 'Das PDF konnte nicht erstellt werden. Bitte versuche es noch einmal.',
                   en: 'The PDF could not be created. Please try again.' },
+
+  // ---- UX (novo-shop 21.11.2026) ----
+  test_evaluating: { de: 'Wird ausgewertet …',
+                   en: 'Evaluating …' },
 }
 
 export const t = (lang, key) => {
