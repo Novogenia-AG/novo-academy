@@ -3730,6 +3730,12 @@ export const UI = {
                   en: 'Next module' },
   tr_pass_certified: { de: 'Du hast den Test zu „{topic}“ mit {score} % bestanden. Das Modul steht jetzt auf deinem Zertifikat.',
                      en: 'You passed the “{topic}” test with {score} %. The module is now on your certificate.' },
+
+  // ---- UX (novo-shop 21.11.2026) ----
+  test_progress: { de: '{answered} von {total} Fragen beantwortet',
+                 en: '{answered} of {total} questions answered' },
+  test_q_open: { de: 'Noch offen',
+               en: 'Not answered yet' },
 }
 
 export const t = (lang, key) => {

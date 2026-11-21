@@ -1896,11 +1896,18 @@ function GenReportDemo({ title = 'Fettempfindlichkeit hoch', position = 20, text
 function TestPage({ course, state = {}, onSubmit, onBack }) {
   const [answers, setAnswers] = useState({})
   const [submitting, setSubmitting] = useState(false)
+  /* true nach einem Abgabeversuch mit offenen Fragen: offene Fragen werden
+     dann markiert (novo-shop M4). */
+  const [attempted, setAttempted] = useState(false)
   const lang = useLang()
+  const t = useT()
+  const total = course.questions.length
+  const answered = Object.keys(answers).length
 
   const submit = async () => {
     if (submitting) return
     if (Object.keys(answers).length < course.questions.length) {
+      setAttempted(true)
       if (!confirm(LX(lang,
         'You haven\'t answered all questions. Submit anyway?',
         'Du hast nicht alle Fragen beantwortet. Trotzdem abgeben?'))) return
@@ -1954,6 +1961,14 @@ function TestPage({ course, state = {}, onSubmit, onBack }) {
           )}
         </p>
 
+        {/* Fortschritt immer sichtbar, nicht erst im Knopf ganz unten (novo-shop M4) */}
+        <div className="test-progress">
+          <span className="test-progress-text">{fillVars(t('test_progress'), { answered, total })}</span>
+          <span className="test-progress-bar" aria-hidden="true">
+            <span className="test-progress-fill" style={{ width: `${total ? Math.round((answered / total) * 100) : 0}%` }} />
+          </span>
+        </div>
+
         <div className="test-questions">
           {course.questions.map((q, qi) => {
             let visual = null
@@ -1965,8 +1980,12 @@ function TestPage({ course, state = {}, onSubmit, onBack }) {
               visual = q.image
             }
             return (
-              <fieldset key={qi} className="test-q">
-                <legend className="test-q-legend"><span className="test-q-no">{LX(lang, 'Question', 'Frage')} {qi + 1}</span> {q.q}</legend>
+              <fieldset key={qi} id={`frage-${qi + 1}`} className={`test-q${attempted && !Number.isInteger(answers[qi]) ? ' is-open' : ''}`}>
+                <legend className="test-q-legend">
+                  <span className="test-q-no">{LX(lang, 'Question', 'Frage')} {qi + 1}</span>
+                  {attempted && !Number.isInteger(answers[qi]) && <span className="test-q-open">{t('test_q_open')}</span>}
+                  {' '}{q.q}
+                </legend>
                 {visual && <div className="test-q-image">{visual}</div>}
                 <div className="test-options">
                   {q.options.map((o, oi) => (

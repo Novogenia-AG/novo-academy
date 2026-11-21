@@ -229,6 +229,8 @@ export const UI_EXTRA = {
  "tr_finish_and_cert": "Dokončit trénink a přejít k certifikátu",
  "tr_next_module": "Další modul",
  "tr_pass_certified": "Test „{topic}“ jsi složil(a) na {score} %. Modul je teď na tvém certifikátu.",
+ "test_progress": "Zodpovězeno {answered} z {total} otázek",
+ "test_q_open": "Zatím bez odpovědi",
   },
   it: {
  "home_courses_section_title": "I TUOI CORSI ONLINE",
@@ -459,6 +461,8 @@ export const UI_EXTRA = {
  "tr_finish_and_cert": "Completa la formazione e vai al certificato",
  "tr_next_module": "Prossimo modulo",
  "tr_pass_certified": "Hai superato il test “{topic}” con il {score} %. Il modulo ora è sul tuo certificato.",
+ "test_progress": "{answered} domande su {total} con risposta",
+ "test_q_open": "Ancora aperta",
   },
   fr: {
  "home_courses_section_title": "TES COURS EN LIGNE",
@@ -689,6 +693,8 @@ export const UI_EXTRA = {
  "tr_finish_and_cert": "Terminer la formation et voir le certificat",
  "tr_next_module": "Module suivant",
  "tr_pass_certified": "Tu as réussi le test « {topic} » avec {score} %. Le module figure maintenant sur ton certificat.",
+ "test_progress": "{answered} questions sur {total} répondues",
+ "test_q_open": "Pas encore répondue",
   },
   pt: {
  "home_courses_section_title": "OS TEUS CURSOS ONLINE",
@@ -919,6 +925,8 @@ export const UI_EXTRA = {
  "tr_finish_and_cert": "Concluir a formação e ir para o certificado",
  "tr_next_module": "Próximo módulo",
  "tr_pass_certified": "Passaste no teste “{topic}” com {score} %. O módulo já consta do teu certificado.",
+ "test_progress": "{answered} de {total} perguntas respondidas",
+ "test_q_open": "Ainda por responder",
   },
   nl: {
  "home_courses_section_title": "JOUW ONLINECURSUSSEN",
@@ -1149,6 +1157,8 @@ export const UI_EXTRA = {
  "tr_finish_and_cert": "Training afronden en naar het certificaat",
  "tr_next_module": "Volgende module",
  "tr_pass_certified": "Je hebt de test „{topic}” gehaald met {score} %. De module staat nu op je certificaat.",
+ "test_progress": "{answered} van {total} vragen beantwoord",
+ "test_q_open": "Nog open",
   },
   ro: {
  "home_courses_section_title": "CURSURILE TALE ONLINE",
@@ -1379,6 +1389,8 @@ export const UI_EXTRA = {
  "tr_finish_and_cert": "Finalizează instruirea și mergi la certificat",
  "tr_next_module": "Modulul următor",
  "tr_pass_certified": "Ai promovat testul „{topic}” cu {score} %. Modulul apare acum pe certificatul tău.",
+ "test_progress": "{answered} din {total} întrebări cu răspuns",
+ "test_q_open": "Încă fără răspuns",
   },
   es: {
  "home_courses_section_title": "TUS CURSOS EN LÍNEA",
@@ -1609,6 +1621,8 @@ export const UI_EXTRA = {
  "tr_finish_and_cert": "Completar la formación e ir al certificado",
  "tr_next_module": "Siguiente módulo",
  "tr_pass_certified": "Has aprobado el test «{topic}» con un {score} %. El módulo ya figura en tu certificado.",
+ "test_progress": "{answered} de {total} preguntas respondidas",
+ "test_q_open": "Sin responder",
   },
   sr: {
  "home_courses_section_title": "VAŠI ONLINE KURSEVI",
@@ -1839,6 +1853,8 @@ export const UI_EXTRA = {
  "tr_finish_and_cert": "Završi obuku i idi na certifikat",
  "tr_next_module": "Sledeći modul",
  "tr_pass_certified": "Položio si test „{topic}“ sa {score} %. Modul je sada na tvom certifikatu.",
+ "test_progress": "Odgovoreno {answered} od {total} pitanja",
+ "test_q_open": "Još bez odgovora",
   },
   ar: {
  "home_courses_section_title": "دوراتك التدريبية عبر الإنترنت",
@@ -2069,5 +2085,7 @@ export const UI_EXTRA = {
  "tr_finish_and_cert": "إكمال التدريب والانتقال إلى الشهادة",
  "tr_next_module": "الوحدة التالية",
  "tr_pass_certified": "لقد اجتزت اختبار «{topic}» بنسبة {score} %. أصبحت الوحدة الآن ضمن شهادتك.",
+ "test_progress": "تمت الإجابة على {answered} من {total} سؤالاً",
+ "test_q_open": "لم تتم الإجابة بعد",
   }
 }
