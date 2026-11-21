@@ -19,7 +19,7 @@ import {
   adminSetIsAdmin, adminUpdateUserName, adminResetAllProgress,
   adminSoftDeleteUser, adminUndeleteUser, submitTestServer,
   requestPasswordReset, updatePassword, onPasswordRecovery, isPasswordRecovery,
-  endPasswordRecovery, mockOpenResetLink,
+  endPasswordRecovery, mockOpenResetLink, takeRecoveryLinkError,
 } from './auth.js'
 
 /* ===================== I18N CONTEXT =====================
@@ -1100,7 +1100,11 @@ function WelcomeText({ title, sub }) {
    nächste offene Modul ist das erste davon in der Reihenfolge der Startseite,
    das noch nicht zertifiziert ist. */
 const realCoursesFor = (lang) => COURSES.filter(c => isCertifiable(c) && c.contentType !== 'placeholder' && (c.lang || 'de') === lang
-  && (!!c.youtubeId || (Array.isArray(c.videoSegments) && c.videoSegments.length > 0)))
+  && (!!c.youtubeId || (Array.isArray(c.videoSegments) && c.videoSegments.length > 0)
+      || (Array.isArray(c.articleSections) && c.articleSections.length > 0 && Array.isArray(c.questions) && c.questions.length > 0)))
+/* Gleiche Liste wie das Zertifikat (Review M-2): auch reine Artikelkurse mit
+   Test (z. B. legal-basics) zählen, sonst zeigte die Box „bereit“ und
+   „0 von 13“ zugleich. */
 function findNextCourse(lang, courseState, excludeId = null) {
   const realKeys = new Set(realCoursesFor(lang).map(courseKey))
   return groupForDisplay(lang).flatMap(m => m.sections.flatMap(s => s.items))
@@ -1143,10 +1147,10 @@ function HomePage({ courseState, navigate, certName, setCertName, completedCerti
   // placeholders) so that 100% is actually reachable. FAQ/supplementary modules
   // have no test/completion, so including them made the max stuck at ~68%.
   const realCourses = realCoursesFor(lang)
-  const totalModules = realCourses.length
+  const totalModules = Math.max(realCourses.length, completedCertifiableCount)
   /* Fortschritt oben in der Zertifikatsbox zählt BESTANDENE Module (Training
      abgeschlossen + Test bestanden), also genau das, was aufs Zertifikat kommt. */
-  const passedModules = realCourses.filter(c => isCertified(c, courseState)).length
+  const passedModules = Math.max(realCourses.filter(c => isCertified(c, courseState)).length, completedCertifiableCount)
   /* Nächster Schritt: erstes noch nicht zertifiziertes Modul in der
      Anzeige-Reihenfolge der Startseite (novo-shop M2). */
   const nextCourse = findNextCourse(lang, courseState)
@@ -2385,7 +2389,9 @@ export default function App() {
   const [langChosen, setLangChosen] = useState(() => hasChosenLang() || Boolean(detectBrowserLang()))
   const [session, setSession] = useState(() => getCurrentSession())
   const [profile, setProfile] = useState(null)
-  const [outerRoute, setOuterRoute] = useState(null) // null = derived from phase; otherwise 'landing'|'auth-signup'|'auth-login'|'impressum'|'datenschutz'|'barrierefreiheit'
+  /* Abgelaufener Passwort-Link → gleich "Passwort vergessen" mit Hinweis (Review N-4) */
+  const [linkError] = useState(() => takeRecoveryLinkError())
+  const [outerRoute, setOuterRoute] = useState(() => (linkError ? 'auth-forgot' : null)) // null = derived from phase; otherwise 'landing'|'auth-signup'|'auth-login'|'impressum'|'datenschutz'|'barrierefreiheit'
   const [authBusy, setAuthBusy] = useState(false)
   /* Link aus der Passwort-Mail (Supabase-Ereignis PASSWORD_RECOVERY):
      solange true, zeigt die App "Neues Passwort festlegen" (novo-shop H2). */
@@ -2705,7 +2711,7 @@ export default function App() {
         setLang={setLang}
         busy={authBusy}
         setBusy={setAuthBusy}
-        onBackToLanding={() => endPasswordRecovery()}
+        onBackToLanding={async () => { await signOut(); endPasswordRecovery(); geheZu('landing') }}
         onDone={() => { endPasswordRecovery(); geheZu(null) }}
         footerProps={legalFooterProps}
       />
@@ -2740,6 +2746,7 @@ export default function App() {
           setBusy={setAuthBusy}
           onSwitchMode={() => geheZu(mode === 'signup' ? 'auth-login' : 'auth-signup')}
           onForgot={() => geheZu('auth-forgot')}
+          linkExpired={mode === 'forgot' && !!linkError}
           onBackToLogin={() => geheZu('auth-login')}
           onBackToLanding={() => geheZu('landing')}
           footerProps={legalFooterProps}
@@ -2871,7 +2878,7 @@ function LangSwitcher({ lang, setLang }) {
       <div className="lang-switcher" title="Language / Sprache">
         {codes.map(l => (
           <button key={l} className={`lang-btn${lang === l ? ' is-active' : ''}`} aria-pressed={lang === l}
-                  lang={l === 'cz' ? 'cs' : l} aria-label={LANG_NAMES[l]} onClick={() => setLang(l)}>{l.toUpperCase()}</button>
+                  lang={l === 'cz' ? 'cs' : l} aria-label={`${l.toUpperCase()} – ${LANG_NAMES[l]}`} onClick={() => setLang(l)}>{l.toUpperCase()}</button>
         ))}
       </div>
       <label className="lang-select-wrap">
@@ -3758,7 +3765,7 @@ function AdminUserActionsMenu({ user, onChanged, eigeneId, onError }) {
 }
 
 /* ===================== AUTH PAGE (signup / login) ===================== */
-function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onForgot, onBackToLogin, onDone, onBackToLanding, footerProps }) {
+function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onForgot, onBackToLogin, onDone, onBackToLanding, footerProps, linkExpired = false }) {
   const t = useT()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -3836,7 +3843,7 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onForgot, 
       <div className="auth-card-wrap">
         <div className="auth-card">
           {isForgot ? (
-            <ForgotPasswordForm busy={busy} setBusy={setBusy} onBackToLogin={onBackToLogin} />
+            <ForgotPasswordForm busy={busy} setBusy={setBusy} onBackToLogin={onBackToLogin} linkExpired={linkExpired} />
           ) : isReset ? (
             <NewPasswordForm busy={busy} setBusy={setBusy} onDone={onDone} />
           ) : (<>
@@ -3979,7 +3986,7 @@ function PasswordField({ id, label, value, onChange, autoComplete, showRule = fa
   )
 }
 
-function ForgotPasswordForm({ busy, setBusy, onBackToLogin }) {
+function ForgotPasswordForm({ busy, setBusy, onBackToLogin, linkExpired = false }) {
   const t = useT()
   const [email, setEmail] = useState('')
   const [emailError, setEmailError] = useState(false)
@@ -4024,6 +4031,7 @@ function ForgotPasswordForm({ busy, setBusy, onBackToLogin }) {
   return (
     <>
       <h1 className="auth-title">{t('auth_forgot_title')}</h1>
+      {linkExpired && <div className="auth-error" role="alert">{t('auth_link_expired')}</div>}
       <p className="auth-sub">{t('auth_forgot_sub')}</p>
       <form className="auth-form" onSubmit={submit} noValidate>
         <div className="auth-field">

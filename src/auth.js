@@ -33,21 +33,21 @@ const RATE_KEY = 'nova-auth-attempts'
 const MAX_ATTEMPTS = 5
 const WINDOW_MS = 15 * 60 * 1000 // 15 minutes
 
-function _rateLimitCheck() {
+function _rateLimitCheck(key = RATE_KEY, max = MAX_ATTEMPTS) {
   try {
-    const raw = localStorage.getItem(RATE_KEY)
+    const raw = localStorage.getItem(key)
     const rec = raw ? JSON.parse(raw) : { count: 0, since: Date.now() }
     if (Date.now() - rec.since > WINDOW_MS) {
       // Window expired — reset
-      localStorage.setItem(RATE_KEY, JSON.stringify({ count: 1, since: Date.now() }))
+      localStorage.setItem(key, JSON.stringify({ count: 1, since: Date.now() }))
       return null
     }
-    if (rec.count >= MAX_ATTEMPTS) {
+    if (rec.count >= max) {
       const waitMin = Math.ceil((WINDOW_MS - (Date.now() - rec.since)) / 60000)
       // Strukturierter Code statt englischem Satz — die UI übersetzt ihn.
       return { code: 'rate_limited', minutes: waitMin }
     }
-    localStorage.setItem(RATE_KEY, JSON.stringify({ count: rec.count + 1, since: rec.since }))
+    localStorage.setItem(key, JSON.stringify({ count: rec.count + 1, since: rec.since }))
     return null
   } catch { return null }
 }
@@ -138,6 +138,19 @@ let _cachedSession = null
    dass Supabase das Ereignis schon vor dem ersten Abonnenten meldet. */
 let _recoveryMode = false
 try { if (USE_REAL && /type=recovery/.test(window.location.hash || '')) _recoveryMode = true } catch {}
+/* Abgelaufener oder schon benutzter Link aus der Passwort-Mail: Supabase
+   hängt #error=access_denied&error_code=otp_expired an, ohne Sitzung und
+   ohne PASSWORD_RECOVERY. Die App zeigt dann "Passwort vergessen" mit
+   Hinweis (Review N-4). Den Hash räumen wir weg. */
+let _linkError = null
+try {
+  const h = window.location.hash || ''
+  if (/error_code=|error=access_denied/.test(h)) {
+    _linkError = (h.match(/error_code=([^&]+)/) || [])[1] || 'access_denied'
+    window.history.replaceState(window.history.state, '', window.location.pathname + window.location.search)
+  }
+} catch {}
+export const takeRecoveryLinkError = () => { const e = _linkError; _linkError = null; return e }
 const recoveryListeners = new Set()
 const _setRecovery = (v) => {
   _recoveryMode = !!v
@@ -292,11 +305,16 @@ export const signOut = async () => {
    Live-Adresse https://academy.novopilot.com muss als Redirect-URL erlaubt
    sein, sonst landet der Link auf der Site URL. */
 const MOCK_RESET_KEY = 'novoacademy_mock_reset'
+const RESET_RATE_KEY = 'nova-reset-attempts'
+const RESET_MAX = 3
 
 export const requestPasswordReset = async (email) => {
   const validErr = _validateAuthInput({ email })
   if (validErr) return { error: 'email' }
-  const rateErr = _rateLimitCheck()
+  /* Eigener Zähler (3 Anfragen / 15 Min): Wer sich fünfmal vertippt hat,
+     muss trotzdem einen Reset-Link anfordern können (Review M-1). Supabase
+     begrenzt die Mails zusätzlich selbst (429). */
+  const rateErr = _rateLimitCheck(RESET_RATE_KEY, RESET_MAX)
   if (rateErr) return { error: rateErr }
   if (USE_REAL && supabase) {
     const { error } = await supabase.auth.resetPasswordForEmail(email, {

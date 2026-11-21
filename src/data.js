@@ -3774,6 +3774,10 @@ export const UI = {
   // ---- UX (novo-shop 21.11.2026) ----
   landing_courses_link: { de: 'Kursübersicht ansehen',
                         en: 'View course overview' },
+
+  // ---- UX (novo-shop 21.11.2026) ----
+  auth_link_expired: { de: 'Dieser Link ist abgelaufen oder wurde schon benutzt. Gib unten deine E-Mail-Adresse ein, dann bekommst du einen neuen.',
+                     en: 'This link has expired or has already been used. Enter your email address below and we’ll send you a new one.' },
 }
 
 export const t = (lang, key) => {
