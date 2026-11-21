@@ -223,3 +223,11 @@
   }
   .btn-primary:hover, .cc-action-btn:hover, .tile:hover, .admin-gear-btn:hover { transform: none !important; }
 }
+
+/* ---------- M1 · Kursübersicht vor der Anmeldung ---------- */
+.landing-hero-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.landing-courses-link { display: inline-flex; align-items: center; min-height: 48px; text-decoration: none; }
+@media (max-width: 600px) {
+  .landing-hero-cta { flex-direction: column; align-items: stretch; }
+  .landing-hero-cta > * { justify-content: center; text-align: center; }
+}

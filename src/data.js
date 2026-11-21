@@ -3770,6 +3770,10 @@ export const UI = {
                           en: 'Please enter your password.' },
   auth_error_google: { de: 'Die Anmeldung mit Google hat nicht geklappt. Bitte versuche es noch einmal.',
                      en: 'Signing in with Google didn’t work. Please try again.' },
+
+  // ---- UX (novo-shop 21.11.2026) ----
+  landing_courses_link: { de: 'Kursübersicht ansehen',
+                        en: 'View course overview' },
 }
 
 export const t = (lang, key) => {

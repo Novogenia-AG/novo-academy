@@ -244,6 +244,7 @@ export const UI_EXTRA = {
  "cert_name_save": "Použít",
  "auth_password_required": "Zadej prosím své heslo.",
  "auth_error_google": "Přihlášení přes Google se nepovedlo. Zkus to prosím znovu.",
+ "landing_courses_link": "Přehled kurzů (anglicky)",
   },
   it: {
  "home_courses_section_title": "I TUOI CORSI ONLINE",
@@ -489,6 +490,7 @@ export const UI_EXTRA = {
  "cert_name_save": "Applica",
  "auth_password_required": "Inserisci la tua password.",
  "auth_error_google": "L’accesso con Google non è riuscito. Riprova.",
+ "landing_courses_link": "Panoramica dei corsi (in inglese)",
   },
   fr: {
  "home_courses_section_title": "TES COURS EN LIGNE",
@@ -734,6 +736,7 @@ export const UI_EXTRA = {
  "cert_name_save": "Valider",
  "auth_password_required": "Saisis ton mot de passe.",
  "auth_error_google": "La connexion avec Google n’a pas marché. Réessaie.",
+ "landing_courses_link": "Aperçu des cours (en anglais)",
   },
   pt: {
  "home_courses_section_title": "OS TEUS CURSOS ONLINE",
@@ -979,6 +982,7 @@ export const UI_EXTRA = {
  "cert_name_save": "Aplicar",
  "auth_password_required": "Escreve a tua palavra-passe.",
  "auth_error_google": "O início de sessão com o Google não funcionou. Tenta novamente.",
+ "landing_courses_link": "Ver lista de cursos (em inglês)",
   },
   nl: {
  "home_courses_section_title": "JOUW ONLINECURSUSSEN",
@@ -1224,6 +1228,7 @@ export const UI_EXTRA = {
  "cert_name_save": "Toepassen",
  "auth_password_required": "Vul je wachtwoord in.",
  "auth_error_google": "Inloggen met Google is niet gelukt. Probeer het opnieuw.",
+ "landing_courses_link": "Cursusoverzicht (Engels)",
   },
   ro: {
  "home_courses_section_title": "CURSURILE TALE ONLINE",
@@ -1469,6 +1474,7 @@ export const UI_EXTRA = {
  "cert_name_save": "Aplică",
  "auth_password_required": "Introdu parola.",
  "auth_error_google": "Autentificarea cu Google nu a reușit. Încearcă din nou.",
+ "landing_courses_link": "Prezentarea cursurilor (în engleză)",
   },
   es: {
  "home_courses_section_title": "TUS CURSOS EN LÍNEA",
@@ -1714,6 +1720,7 @@ export const UI_EXTRA = {
  "cert_name_save": "Aplicar",
  "auth_password_required": "Escribe tu contraseña.",
  "auth_error_google": "No se ha podido iniciar sesión con Google. Vuelve a intentarlo.",
+ "landing_courses_link": "Ver los cursos (en inglés)",
   },
   sr: {
  "home_courses_section_title": "VAŠI ONLINE KURSEVI",
@@ -1959,6 +1966,7 @@ export const UI_EXTRA = {
  "cert_name_save": "Primeni",
  "auth_password_required": "Upiši svoju lozinku.",
  "auth_error_google": "Prijava preko Google naloga nije uspela. Pokušaj ponovo.",
+ "landing_courses_link": "Pregled kurseva (na engleskom)",
   },
   ar: {
  "home_courses_section_title": "دوراتك التدريبية عبر الإنترنت",
@@ -2204,5 +2212,6 @@ export const UI_EXTRA = {
  "cert_name_save": "تطبيق",
  "auth_password_required": "يرجى إدخال كلمة المرور.",
  "auth_error_google": "تعذّر تسجيل الدخول عبر Google. يرجى المحاولة مرة أخرى.",
+ "landing_courses_link": "نظرة عامة على الدورات (بالإنجليزية)",
   }
 }

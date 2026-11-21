@@ -3006,6 +3006,12 @@ function LandingPage({ lang, setLang, onSignUp, onLogIn, footerProps }) {
           <p className="landing-hero-sub">{t('landing_hero_sub')}</p>
           <div className="landing-hero-cta">
             <button className="btn-primary big landing-signup-btn" onClick={onSignUp}>{t('landing_cta_signup')}</button>
+            {/* Nutzen vor der Anmeldung (novo-shop M1, leichte Fassung): Link auf die
+                statische Kursübersicht. Sie gibt es auf Deutsch und Englisch;
+                die übrigen Sprachen führen zur englischen Seite. */}
+            <a className="btn-ghost big landing-courses-link" href={assetUrl(lang === 'de' ? '/kurse/' : '/en/courses/')}>
+              {t('landing_courses_link')}
+            </a>
           </div>
         </div>
       </section>
