@@ -1899,28 +1899,40 @@ function TestPage({ course, state = {}, onSubmit, onBack }) {
   /* true nach einem Abgabeversuch mit offenen Fragen: offene Fragen werden
      dann markiert (novo-shop M4). */
   const [attempted, setAttempted] = useState(false)
+  /* Eigene Hinweise statt Browser-Dialogen (novo-shop M3): offene Fragen mit
+     Sprungknöpfen, Übertragungsfehler mit „Erneut senden“. */
+  const [missingOpen, setMissingOpen] = useState(false)
+  const [sendError, setSendError] = useState(false)
   const lang = useLang()
   const t = useT()
   const total = course.questions.length
   const answered = Object.keys(answers).length
+  const openNums = course.questions.map((_, i) => i).filter(i => !Number.isInteger(answers[i])).map(i => i + 1)
 
-  const submit = async () => {
+  const jumpTo = (n) => {
+    const el = document.getElementById(`frage-${n}`)
+    if (!el) return
+    const ruhig = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+    el.scrollIntoView({ behavior: ruhig ? 'auto' : 'smooth', block: 'start' })
+    try { el.querySelector('input')?.focus({ preventScroll: true }) } catch {}
+  }
+
+  const submit = async (force = false) => {
     if (submitting) return
-    if (Object.keys(answers).length < course.questions.length) {
+    setSendError(false)
+    if (!force && Object.keys(answers).length < course.questions.length) {
       setAttempted(true)
-      if (!confirm(LX(lang,
-        'You haven\'t answered all questions. Submit anyway?',
-        'Du hast nicht alle Fragen beantwortet. Trotzdem abgeben?'))) return
+      setMissingOpen(true)
+      return
     }
+    setMissingOpen(false)
     // Auswertung auf dem Server (Antwortschlüssel liegt dort); -1 = unbeantwortet
     setSubmitting(true)
     const given = course.questions.map((_, i) => (Number.isInteger(answers[i]) ? answers[i] : -1))
     const res = await submitTestServer(courseKey(course), given)
     setSubmitting(false)
     if (res.error) {
-      alert(LX(lang,
-        'Your test could not be submitted. Please check your connection and try again.',
-        'Dein Test konnte nicht übermittelt werden. Bitte prüfe deine Verbindung und versuche es erneut.'))
+      setSendError(true)
       return
     }
     if (!res.fallback) { onSubmit({ score: res.score, passed: res.passed }); return }
@@ -2002,8 +2014,35 @@ function TestPage({ course, state = {}, onSubmit, onBack }) {
           })}
         </div>
 
+        {missingOpen && openNums.length > 0 && (
+          <div className="test-notice" role="alert">
+            <p className="test-notice-title">
+              {openNums.length === 1 ? t('test_missing_one') : fillVars(t('test_missing_many'), { n: openNums.length })}
+            </p>
+            <div className="test-notice-jumps">
+              {openNums.map(n => (
+                <button key={n} type="button" className="test-jump" onClick={() => jumpTo(n)}>
+                  {LX(lang, 'Question', 'Frage')} {n}
+                </button>
+              ))}
+            </div>
+            <div className="test-notice-actions">
+              <button type="button" className="btn-primary big" onClick={() => jumpTo(openNums[0])}>{t('test_missing_show')}</button>
+              <button type="button" className="btn-ghost big" onClick={() => submit(true)} disabled={submitting}>{t('test_missing_anyway')}</button>
+            </div>
+          </div>
+        )}
+        {sendError && (
+          <div className="test-notice is-error" role="alert">
+            <p className="test-notice-title">{t('test_send_error')}</p>
+            <div className="test-notice-actions">
+              <button type="button" className="btn-primary big" onClick={() => submit(true)} disabled={submitting}>{t('test_send_retry')}</button>
+            </div>
+          </div>
+        )}
+
         <div className="test-submit">
-          <button className="btn-primary big" onClick={submit} disabled={submitting} aria-busy={submitting}>
+          <button className="btn-primary big" onClick={() => submit(false)} disabled={submitting} aria-busy={submitting}>
             {LXP(lang, 'Finish test (${answered}/${total} answered)',
               `Finish test (${Object.keys(answers).length}/${course.questions.length} answered)`,
               `Test abschließen (${Object.keys(answers).length}/${course.questions.length} beantwortet)`,
@@ -2164,16 +2203,18 @@ function CertificatePage({ name, courses, isSample, onBack }) {
   const fallbackName = LX(lang, 'Jane Doe', 'Maria Mustermann')
   const dateStr = formatDate(lang, isSample ? new Date(2026, 4, 5) : new Date())
   const [downloading, setDownloading] = useState(false)
+  const [pdfError, setPdfError] = useState(false)
 
   const downloadPdf = async () => {
     setDownloading(true)
+    setPdfError(false)
     try {
       // pdf-lib + fontkit load on demand (keeps them out of the initial bundle)
       const { downloadCertificate } = await import('./generateCert.js')
       await downloadCertificate({ name: name || fallbackName, courses, dateStr, lang })
     } catch (err) {
       console.error('PDF generation failed', err)
-      alert(LX(lang, 'Failed to generate the PDF. Please try again.', 'PDF konnte nicht erstellt werden. Bitte erneut versuchen.'))
+      setPdfError(true)   // Hinweis auf der Seite statt alert() (novo-shop M3)
     } finally {
       setDownloading(false)
     }
@@ -2189,6 +2230,10 @@ function CertificatePage({ name, courses, isSample, onBack }) {
           <Icon.Download /> {downloading ? LX(lang, 'Generating...', 'Wird erstellt...') : LX(lang, 'Download as PDF', 'Als PDF herunterladen')}
         </button>
       </div>
+
+      {pdfError && (
+        <p className="cert-pdf-error" role="alert">{t('cert_pdf_error')}</p>
+      )}
 
       <div className="cert-canvas">
         <div className="certificate" id="certificate-print">

@@ -126,3 +126,23 @@
   background: #FDE8EB; color: #8A0F22; font-size: 12px; font-weight: 700; vertical-align: middle;
 }
 .test-q { scroll-margin-top: 84px; }
+
+/* ---------- M3 · Eigene Hinweise statt Browser-Dialogen ---------- */
+.test-notice {
+  margin: 28px 0 0; padding: 18px 20px; border-radius: 16px;
+  background: #FFF6E5; border: 1.5px solid #E0A526; color: #4A3300;
+}
+.test-notice.is-error { background: #FDECEE; border-color: #D2475D; color: #6B0F1E; }
+.test-notice-title { margin: 0 0 10px; font-size: 15px; font-weight: 700; color: inherit; }
+.test-notice-jumps { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; }
+.test-jump {
+  min-height: 44px; padding: 0 14px; border-radius: 999px; cursor: pointer;
+  background: #fff; border: 1px solid rgba(74, 51, 0, .35); color: #4A3300;
+  font: 700 13.5px/1 "Montserrat", sans-serif;
+}
+.test-jump:hover { background: #FFEBC2; }
+.test-notice-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.cert-pdf-error {
+  width: 100%; max-width: 1180px; margin: 0 0 16px; padding: 12px 16px; border-radius: 12px;
+  background: #FDECEE; color: #6B0F1E; font-weight: 600; font-size: 14px;
+}

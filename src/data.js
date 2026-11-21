@@ -3736,6 +3736,22 @@ export const UI = {
                  en: '{answered} of {total} questions answered' },
   test_q_open: { de: 'Noch offen',
                en: 'Not answered yet' },
+
+  // ---- UX (novo-shop 21.11.2026) ----
+  test_missing_one: { de: 'Noch 1 Frage offen:',
+                    en: '1 question still open:' },
+  test_missing_many: { de: 'Noch {n} Fragen offen:',
+                     en: '{n} questions still open:' },
+  test_missing_show: { de: 'Offene Fragen ansehen',
+                     en: 'Show open questions' },
+  test_missing_anyway: { de: 'Trotzdem abgeben',
+                       en: 'Submit anyway' },
+  test_send_error: { de: 'Nicht gesendet. Deine Antworten sind noch da. Prüfe deine Verbindung und sende den Test erneut.',
+                   en: 'Not sent. Your answers are still here. Check your connection and send the test again.' },
+  test_send_retry: { de: 'Erneut senden',
+                   en: 'Send again' },
+  cert_pdf_error: { de: 'Das PDF konnte nicht erstellt werden. Bitte versuche es noch einmal.',
+                  en: 'The PDF could not be created. Please try again.' },
 }
 
 export const t = (lang, key) => {
