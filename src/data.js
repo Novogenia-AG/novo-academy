@@ -3764,6 +3764,12 @@ export const UI = {
                     en: 'Change name' },
   cert_name_save: { de: 'Übernehmen',
                   en: 'Apply' },
+
+  // ---- UX (novo-shop 21.11.2026) ----
+  auth_password_required: { de: 'Bitte gib dein Passwort ein.',
+                          en: 'Please enter your password.' },
+  auth_error_google: { de: 'Die Anmeldung mit Google hat nicht geklappt. Bitte versuche es noch einmal.',
+                     en: 'Signing in with Google didn’t work. Please try again.' },
 }
 
 export const t = (lang, key) => {

@@ -3734,6 +3734,10 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onForgot, 
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
   const [errorKey, setErrorKey] = useState(null)
+  /* Feldfehler unter dem Feld statt Browser-Blase (novo-shop M7):
+     E-Mail beim Verlassen des Felds prüfen, Passwortregel live. */
+  const [emailError, setEmailError] = useState(false)
+  const [pwError, setPwError] = useState(null)
 
   const isSignup = mode === 'signup'
   const isForgot = mode === 'forgot'
@@ -3742,6 +3746,13 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onForgot, 
   const submit = async (e) => {
     e?.preventDefault?.()
     setErrorKey(null)
+    const emailOk = EMAIL_RE.test(email.trim())
+    const pwMsg = !password ? 'auth_password_required'
+      : (isSignup && password.length < 8) ? 'auth_error_weak' : null
+    setEmailError(!emailOk)
+    setPwError(pwMsg)
+    if (!emailOk) { try { document.getElementById('auth-email')?.focus() } catch {} ; return }
+    if (pwMsg) { try { document.getElementById('auth-password')?.focus() } catch {} ; return }
     setBusy(true)
     try {
       const fn = isSignup ? signUpWithEmail : signInWithEmail
@@ -3769,7 +3780,7 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onForgot, 
     setBusy(true)
     try {
       const { error } = await signInWithGoogle()
-      if (error) setErrorKey('auth_error_invalid')
+      if (error) setErrorKey('auth_error_google')
     } finally {
       setBusy(false)
     }
@@ -3808,7 +3819,7 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onForgot, 
 
           <div className="auth-divider"><span>{t('auth_or_continue_with')}</span></div>
 
-          <form className="auth-form" onSubmit={submit}>
+          <form className="auth-form" onSubmit={submit} noValidate>
             {isSignup && (
               <label className="auth-field">
                 <span className="auth-label">{t('auth_name_label')}</span>
@@ -3823,31 +3834,32 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onForgot, 
                 <span className="auth-hint">{t('auth_name_hint')}</span>
               </label>
             )}
-            <label className="auth-field">
-              <span className="auth-label">{t('auth_email_label')}</span>
+            <div className="auth-field">
+              <label className="auth-label" htmlFor="auth-email">{t('auth_email_label')}</label>
               <input
+                id="auth-email"
                 type="email"
                 value={email}
-                onChange={e => setEmail(e.target.value.slice(0, 254))}
+                onChange={e => { setEmail(e.target.value.slice(0, 254)); if (emailError && EMAIL_RE.test(e.target.value.trim())) setEmailError(false) }}
+                onBlur={() => setEmailError(email.trim() !== '' && !EMAIL_RE.test(email.trim()))}
                 placeholder={t('auth_email_placeholder')}
                 autoComplete="email"
                 maxLength={254}
-                required
+                aria-required="true"
+                aria-invalid={emailError || undefined}
+                aria-describedby={emailError ? 'auth-email-err' : undefined}
               />
-            </label>
-            <label className="auth-field">
-              <span className="auth-label">{t('auth_password_label')}</span>
-              <input
-                type="password"
-                value={password}
-                onChange={e => setPassword(e.target.value.slice(0, 128))}
-                placeholder={t('auth_password_placeholder')}
-                autoComplete={isSignup ? 'new-password' : 'current-password'}
-                required
-                maxLength={128}
-                minLength={isSignup ? 8 : undefined}
-              />
-            </label>
+              {emailError && <span id="auth-email-err" className="auth-field-error" role="alert">{t('auth_email_invalid')}</span>}
+            </div>
+            <PasswordField
+              id="auth-password"
+              label={t('auth_password_label')}
+              value={password}
+              onChange={(v) => { setPassword(v); if (pwError && v && (!isSignup || v.length >= 8)) setPwError(null) }}
+              autoComplete={isSignup ? 'new-password' : 'current-password'}
+              showRule={isSignup}
+              error={pwError ? t(pwError) : null}
+            />
 
             {!isSignup && (
               <button type="button" className="auth-forgot-link" onClick={onForgot}>{t('auth_forgot_link')}</button>

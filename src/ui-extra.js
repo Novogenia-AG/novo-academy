@@ -242,6 +242,8 @@ export const UI_EXTRA = {
  "cert_name_check": "Je tvoje jméno správně? Takto bude v PDF:",
  "cert_name_change": "Změnit jméno",
  "cert_name_save": "Použít",
+ "auth_password_required": "Zadej prosím své heslo.",
+ "auth_error_google": "Přihlášení přes Google se nepovedlo. Zkus to prosím znovu.",
   },
   it: {
  "home_courses_section_title": "I TUOI CORSI ONLINE",
@@ -485,6 +487,8 @@ export const UI_EXTRA = {
  "cert_name_check": "Il tuo nome è corretto? Così comparirà nel PDF:",
  "cert_name_change": "Cambia nome",
  "cert_name_save": "Applica",
+ "auth_password_required": "Inserisci la tua password.",
+ "auth_error_google": "L’accesso con Google non è riuscito. Riprova.",
   },
   fr: {
  "home_courses_section_title": "TES COURS EN LIGNE",
@@ -728,6 +732,8 @@ export const UI_EXTRA = {
  "cert_name_check": "Ton nom est-il correct ? Il apparaîtra ainsi dans le PDF :",
  "cert_name_change": "Modifier le nom",
  "cert_name_save": "Valider",
+ "auth_password_required": "Saisis ton mot de passe.",
+ "auth_error_google": "La connexion avec Google n’a pas marché. Réessaie.",
   },
   pt: {
  "home_courses_section_title": "OS TEUS CURSOS ONLINE",
@@ -971,6 +977,8 @@ export const UI_EXTRA = {
  "cert_name_check": "O teu nome está correto? É assim que aparece no PDF:",
  "cert_name_change": "Alterar nome",
  "cert_name_save": "Aplicar",
+ "auth_password_required": "Escreve a tua palavra-passe.",
+ "auth_error_google": "O início de sessão com o Google não funcionou. Tenta novamente.",
   },
   nl: {
  "home_courses_section_title": "JOUW ONLINECURSUSSEN",
@@ -1214,6 +1222,8 @@ export const UI_EXTRA = {
  "cert_name_check": "Klopt je naam? Zo komt hij in de pdf:",
  "cert_name_change": "Naam wijzigen",
  "cert_name_save": "Toepassen",
+ "auth_password_required": "Vul je wachtwoord in.",
+ "auth_error_google": "Inloggen met Google is niet gelukt. Probeer het opnieuw.",
   },
   ro: {
  "home_courses_section_title": "CURSURILE TALE ONLINE",
@@ -1457,6 +1467,8 @@ export const UI_EXTRA = {
  "cert_name_check": "Numele tău este corect? Așa va apărea în PDF:",
  "cert_name_change": "Schimbă numele",
  "cert_name_save": "Aplică",
+ "auth_password_required": "Introdu parola.",
+ "auth_error_google": "Autentificarea cu Google nu a reușit. Încearcă din nou.",
   },
   es: {
  "home_courses_section_title": "TUS CURSOS EN LÍNEA",
@@ -1700,6 +1712,8 @@ export const UI_EXTRA = {
  "cert_name_check": "¿Tu nombre es correcto? Así aparecerá en el PDF:",
  "cert_name_change": "Cambiar nombre",
  "cert_name_save": "Aplicar",
+ "auth_password_required": "Escribe tu contraseña.",
+ "auth_error_google": "No se ha podido iniciar sesión con Google. Vuelve a intentarlo.",
   },
   sr: {
  "home_courses_section_title": "VAŠI ONLINE KURSEVI",
@@ -1943,6 +1957,8 @@ export const UI_EXTRA = {
  "cert_name_check": "Da li je tvoje ime tačno? Ovako će stajati u PDF-u:",
  "cert_name_change": "Promeni ime",
  "cert_name_save": "Primeni",
+ "auth_password_required": "Upiši svoju lozinku.",
+ "auth_error_google": "Prijava preko Google naloga nije uspela. Pokušaj ponovo.",
   },
   ar: {
  "home_courses_section_title": "دوراتك التدريبية عبر الإنترنت",
@@ -2186,5 +2202,7 @@ export const UI_EXTRA = {
  "cert_name_check": "هل اسمك صحيح؟ هكذا سيظهر في ملف PDF:",
  "cert_name_change": "تغيير الاسم",
  "cert_name_save": "تطبيق",
+ "auth_password_required": "يرجى إدخال كلمة المرور.",
+ "auth_error_google": "تعذّر تسجيل الدخول عبر Google. يرجى المحاولة مرة أخرى.",
   }
 }
