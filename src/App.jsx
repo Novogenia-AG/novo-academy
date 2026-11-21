@@ -2233,10 +2233,10 @@ function CertificatePage({ name, courses, isSample, onBack, onNameChange }) {
   return (
     <div className="cert-view">
       <div className="cert-toolbar">
-        <button className="btn-ghost" onClick={onBack}><Icon.ChevronLeft /> {LX(lang, 'Back', 'Zurück')}</button>
+        <button className="btn-ghost cert-back" onClick={onBack}><Icon.ChevronLeft /> {LX(lang, 'Back', 'Zurück')}</button>
         <div className="cert-toolbar-spacer" />
         {isSample && <span className="sample-badge">{LX(lang, 'EXAMPLE', 'BEISPIEL')}</span>}
-        <button className="btn-primary" onClick={downloadPdf} disabled={downloading}>
+        <button className="btn-primary big cert-download" onClick={downloadPdf} disabled={downloading} aria-busy={downloading}>
           <Icon.Download /> {downloading ? LX(lang, 'Generating...', 'Wird erstellt...') : LX(lang, 'Download as PDF', 'Als PDF herunterladen')}
         </button>
       </div>
@@ -2832,6 +2832,34 @@ export default function App() {
   )
 }
 
+/* ===================== SPRACHUMSCHALTER =====================
+   Breite Bildschirme: elf Knöpfe wie bisher. Bis 760 px ersetzt ein einziges
+   Sprachmenü (natives <select>, 48 px hoch) die elf kleinen Knöpfe
+   (novo-shop M6). Welche Variante sichtbar ist, regelt nur CSS. */
+const LANG_NAMES = {
+  de: 'Deutsch', en: 'English', cz: 'Čeština', fr: 'Français', pt: 'Português', it: 'Italiano',
+  nl: 'Nederlands', ro: 'Română', es: 'Español', sr: 'Srpski / Hrvatski', ar: 'العربية',
+}
+function LangSwitcher({ lang, setLang }) {
+  const codes = ['de', 'en', 'cz', 'fr', 'pt', 'it', 'nl', 'ro', 'es', 'sr', 'ar']
+  return (
+    <>
+      <div className="lang-switcher" title="Language / Sprache">
+        {codes.map(l => (
+          <button key={l} className={`lang-btn${lang === l ? ' is-active' : ''}`} aria-pressed={lang === l}
+                  lang={l === 'cz' ? 'cs' : l} aria-label={LANG_NAMES[l]} onClick={() => setLang(l)}>{l.toUpperCase()}</button>
+        ))}
+      </div>
+      <label className="lang-select-wrap">
+        <span className="sr-only">Language / Sprache</span>
+        <select className="lang-select" value={lang} onChange={e => setLang(e.target.value)}>
+          {codes.map(l => <option key={l} value={l}>{l.toUpperCase()} · {LANG_NAMES[l]}</option>)}
+        </select>
+      </label>
+    </>
+  )
+}
+
 /* ===================== TOP BAR ===================== */
 function TopBar({ lang, setLang, session, profile, navigate }) {
   const t = useT()
@@ -2853,15 +2881,7 @@ function TopBar({ lang, setLang, session, profile, navigate }) {
       </div>
       <div className="topbar-actions">
         {lang && setLang && (
-          <div className="lang-switcher" title="Language / Sprache">
-            {['de','en','cz','fr','pt','it','nl','ro','es','sr','ar'].map(l => (
-              <button
-                key={l}
-                className={`lang-btn${lang === l ? ' is-active' : ''}`} aria-pressed={lang === l}
-                onClick={() => setLang(l)}
-              >{l.toUpperCase()}</button>
-            ))}
-          </div>
+          <LangSwitcher lang={lang} setLang={setLang} />
         )}
         {isAdmin && navigate && (
           <button
@@ -2948,11 +2968,7 @@ function LandingPage({ lang, setLang, onSignUp, onLogIn, footerProps }) {
             <span className="pt-novo">NOVO</span><span className="pt-academy">ACADEMY</span>
           </div>
           <div className="landing-header-right">
-            <div className="lang-switcher" title="Language / Sprache">
-              {['de','en','cz','fr','pt','it','nl','ro','es','sr','ar'].map(l => (
-                <button key={l} className={`lang-btn${lang === l ? ' is-active' : ''}`} aria-pressed={lang === l} onClick={() => setLang(l)}>{l.toUpperCase()}</button>
-              ))}
-            </div>
+            <LangSwitcher lang={lang} setLang={setLang} />
             <button className="btn-ghost landing-login-btn" onClick={onLogIn}>{t('landing_cta_login')}</button>
           </div>
         </div>
@@ -3770,12 +3786,7 @@ function AuthPage({ mode, lang, setLang, busy, setBusy, onSwitchMode, onForgot, 
             <span className="pt-novo">NOVO</span><span className="pt-academy">ACADEMY</span>
           </div>
           <div className="landing-header-right">
-            <div className="lang-switcher" title="Language / Sprache">
-              {['de','en','cz','fr','pt','it','nl','ro','es','sr','ar'].map(l => (
-                <button key={l} className={`lang-btn${lang === l ? ' is-active' : ''}`} aria-pressed={lang === l}
-                        onClick={() => setLang(l)}>{l.toUpperCase()}</button>
-              ))}
-            </div>
+            <LangSwitcher lang={lang} setLang={setLang} />
           </div>
         </div>
       </header>

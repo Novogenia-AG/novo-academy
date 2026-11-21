@@ -163,3 +163,52 @@
   border: 1px solid rgba(255, 255, 255, .4); background: rgba(255, 255, 255, .1); color: #fff; font: 500 16px "Montserrat", sans-serif;
 }
 .cert-name-form .btn-primary { min-height: 48px; padding: 0 22px; }
+
+/* ---------- M6 · Bedienelemente mindestens 48 px ---------- */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+/* Sprachumschalter: Knöpfe auf breiten Bildschirmen, Menü bis 760 px */
+.lang-btn { min-height: 48px; min-width: 40px; padding: 0 10px; }
+.lang-switcher { padding: 2px; }
+.lang-select-wrap { display: none; }
+.lang-select {
+  min-height: 48px; padding: 0 40px 0 16px; border-radius: 999px;
+  border: 1px solid rgba(0, 34, 94, .28); background: #fff; color: #00225E;
+  font: 700 14px "Montserrat", sans-serif; cursor: pointer;
+  -webkit-appearance: none; appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2300225E' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 16px center;
+}
+[dir="rtl"] .lang-select { padding: 0 16px 0 40px; background-position: left 16px center; }
+@media (max-width: 760px) {
+  .lang-switcher { display: none !important; }
+  .lang-select-wrap { display: inline-flex; }
+}
+
+/* Zurück-, Kopf- und Nebenknöpfe */
+.btn-back { min-height: 48px; padding: 0 18px; }
+.auth-back { min-width: 48px; min-height: 48px; }
+.landing-login-btn { min-height: 48px; }
+.admin-gear-btn { width: 48px; height: 48px; }
+.user-menu-btn { min-height: 48px; }
+.user-menu-pop-action { min-height: 48px; }
+.yt-consent-btn { min-height: 48px; padding: 0 22px; font-size: 14px; }
+.cert-toolbar .cert-back { min-height: 48px; padding: 0 18px; }
+.cert-toolbar .cert-download { min-height: 48px; padding: 0 24px; display: inline-flex; align-items: center; gap: 8px; }
+/* Fußzeilen-Links: größere Klickfläche ohne sichtbare Änderung */
+.legal-footer-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; }
+@media (max-width: 600px) {
+  .landing-header .lang-btn { padding: 0 9px; }
+  .landing-login-btn { padding: 0 14px; }
+}
+
+/* Sichtbarer Tastaturfokus für alle Knöpfe und Links (WCAG 2.4.7) */
+:where(button, a, select, input, [tabindex]):focus-visible {
+  outline: 3px solid #1D468C; outline-offset: 2px;
+}
+:where(.cert-cta, .cc-complete, .landing-hero, .landing-final-cta, .cert-name-check) :where(button, a, input, select):focus-visible {
+  outline-color: #C6D63F;
+}
+.skip-to-content { min-height: 48px; display: inline-flex; align-items: center; }
